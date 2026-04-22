@@ -29,7 +29,7 @@
       --radius-xl: 26px;
       --radius-lg: 20px;
       --radius-md: 14px;
-      --max: 1240px;
+      --max: 1280px;
       --top-strip-h: 44px;
       --main-nav-h: 92px;
     }
@@ -114,6 +114,19 @@
       background: rgba(255,255,255,0.08);
     }
 
+    .btn-text {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #21417a;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .btn-text:hover {
+      color: #102c60;
+    }
+
     /* HEADER */
     .site-header {
       position: sticky;
@@ -143,9 +156,10 @@
     .main-nav {
       min-height: var(--main-nav-h);
       display: grid;
-      grid-template-columns: auto 1fr auto;
+      grid-template-columns: auto minmax(0, 1fr) auto;
       align-items: center;
-      gap: 26px;
+      gap: 18px;
+      padding: 0 0;
     }
 
     .brand {
@@ -165,24 +179,27 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      flex-wrap: wrap;
+      gap: 2px;
+      flex-wrap: nowrap;
+      min-width: 0;
     }
 
     .nav-item {
       position: relative;
+      flex: 0 0 auto;
     }
 
     .nav-link {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 16px 18px;
+      padding: 16px 14px;
       border-radius: 10px;
       color: #29457d;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 800;
       transition: 0.2s ease;
+      white-space: nowrap;
     }
 
     .nav-link:hover,
@@ -211,29 +228,34 @@
     /* DROPDOWN */
     .dropdown {
       position: absolute;
-      top: calc(100% + 8px);
-      left: 0;
-      min-width: 290px;
+      top: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      min-width: 300px;
       background: #fff;
-      border-radius: 18px;
+      border-radius: 20px;
       box-shadow: var(--shadow);
       border: 1px solid rgba(0,0,0,0.06);
-      padding: 18px;
+      padding: 20px;
       opacity: 0;
       visibility: hidden;
-      transform: translateY(8px);
       transition: 0.18s ease;
     }
 
     .dropdown.wide {
-      min-width: 760px;
+      min-width: 880px;
       padding: 26px;
+    }
+
+    .dropdown.medium {
+      min-width: 760px;
+      padding: 24px;
     }
 
     .nav-item:hover .dropdown {
       opacity: 1;
       visibility: visible;
-      transform: translateY(0);
+      transform: translateX(-50%) translateY(0);
     }
 
     .dropdown-grid {
@@ -244,12 +266,19 @@
 
     .dropdown-grid-3 {
       display: grid;
-      grid-template-columns: 1.1fr 1.1fr 0.9fr;
+      grid-template-columns: 1.05fr 1.05fr 0.9fr;
+      gap: 22px 28px;
+    }
+
+    .dropdown-grid-4 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 0.92fr;
       gap: 22px 28px;
     }
 
     .dropdown-col {
-      padding-right: 8px;
+      padding-right: 6px;
+      min-width: 0;
     }
 
     .dropdown-col + .dropdown-col {
@@ -258,9 +287,11 @@
     }
 
     .dropdown-title {
-      font-size: 16px;
+      font-size: 13px;
       font-weight: 800;
-      color: #34528e;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #3c5e9d;
       margin-bottom: 14px;
     }
 
@@ -271,14 +302,24 @@
     }
 
     .dropdown-list li + li {
-      margin-top: 12px;
+      margin-top: 14px;
     }
 
     .dropdown-list a {
       display: block;
       color: #22375d;
       font-size: 15px;
-      font-weight: 600;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .dropdown-list a small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.55;
     }
 
     .dropdown-list a:hover {
@@ -287,16 +328,27 @@
 
     .dropdown-card {
       background: #f8fafc;
-      border-radius: 14px;
-      padding: 16px;
+      border-radius: 16px;
+      padding: 18px;
       border: 1px solid rgba(15, 23, 42, 0.06);
       height: 100%;
+    }
+
+    .dropdown-card.dark {
+      background: linear-gradient(180deg, #0d2a63 0%, #081d4a 100%);
+      color: #fff;
+      border: none;
     }
 
     .dropdown-card h4 {
       margin: 0 0 10px;
       color: #2f4e8f;
       font-size: 16px;
+      line-height: 1.3;
+    }
+
+    .dropdown-card.dark h4 {
+      color: #ffffff;
     }
 
     .dropdown-card p {
@@ -306,26 +358,40 @@
       line-height: 1.6;
     }
 
+    .dropdown-card.dark p {
+      color: rgba(255,255,255,0.82);
+    }
+
+    .dropdown-card .mini-kicker {
+      display: inline-block;
+      margin-bottom: 10px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #86efac;
+    }
+
     /* HERO */
     .hero-wrap {
       background:
         linear-gradient(90deg, rgba(7,27,70,0.98) 0%, rgba(7,27,70,0.96) 48%, rgba(7,27,70,0.56) 100%),
         var(--navy);
       color: #fff;
-      padding: 32px 0 0;
+      padding: 28px 0 0;
       overflow: hidden;
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 1.02fr 0.98fr;
+      grid-template-columns: 1.04fr 0.96fr;
       gap: 34px;
       align-items: center;
       min-height: 610px;
     }
 
     .hero-left {
-      padding: 30px 0 74px;
+      padding: 24px 0 44px;
     }
 
     .eyebrow {
@@ -365,7 +431,7 @@
     }
 
     .hero-copy {
-      margin: 0 0 28px;
+      margin: 0 0 26px;
       max-width: 560px;
       color: #d8e3f3;
       font-size: 19px;
@@ -376,13 +442,14 @@
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
+      margin-bottom: 0;
     }
 
     .hero-right {
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      padding-top: 20px;
+      padding-top: 10px;
     }
 
     .hero-image {
@@ -396,7 +463,7 @@
 
     .hero-badges-wrap {
       position: relative;
-      margin-top: -52px;
+      margin-top: -98px;
       z-index: 3;
     }
 
@@ -410,7 +477,7 @@
     }
 
     .hero-badge {
-      padding: 26px 22px 24px;
+      padding: 24px 22px 22px;
       border-right: 1px solid rgba(20, 35, 61, 0.08);
       text-align: left;
     }
@@ -722,7 +789,7 @@
     }
 
     /* RESPONSIVE */
-    @media (max-width: 1180px) {
+    @media (max-width: 1260px) {
       .main-nav {
         grid-template-columns: 1fr;
         justify-items: center;
@@ -732,6 +799,7 @@
 
       .nav-center {
         justify-content: center;
+        flex-wrap: wrap;
       }
 
       .hero,
@@ -752,8 +820,11 @@
       }
 
       .dropdown,
-      .dropdown.wide {
+      .dropdown.wide,
+      .dropdown.medium {
         position: static;
+        left: auto;
+        top: auto;
         transform: none;
         opacity: 1;
         visibility: visible;
@@ -766,7 +837,8 @@
         display: block;
       }
 
-      .dropdown-grid-3 {
+      .dropdown-grid-3,
+      .dropdown-grid-4 {
         grid-template-columns: 1fr;
       }
 
@@ -785,17 +857,22 @@
         width: min(var(--max), calc(100% - 24px));
       }
 
+      .top-strip {
+        height: auto;
+      }
+
       .top-strip-inner {
         justify-content: center;
-        gap: 20px;
+        gap: 16px;
         flex-wrap: wrap;
+        padding: 10px 0;
       }
 
       .brand img {
         width: 180px;
       }
 
-      .nav-links {
+      .nav-center {
         justify-content: center;
         gap: 4px;
       }
@@ -820,6 +897,10 @@
 
       .hero-image {
         height: 360px;
+      }
+
+      .hero-badges-wrap {
+        margin-top: -42px;
       }
 
       .hero-badges,
@@ -861,34 +942,102 @@
         <div class="nav-item">
           <a href="#services" class="nav-link">Services <span class="caret">▼</span></a>
           <div class="dropdown wide">
-            <div class="dropdown-grid-3">
+            <div class="dropdown-grid-4">
               <div class="dropdown-col">
-                <div class="dropdown-title">Who We Serve</div>
+                <div class="dropdown-title">Core Solutions</div>
                 <ul class="dropdown-list">
-                  <li><a href="#services">Providers</a></li>
-                  <li><a href="#services">Disability Service Agencies</a></li>
-                  <li><a href="#services">Home and Community-Based Programs</a></li>
-                  <li><a href="#services">Care Management Teams</a></li>
+                  <li>
+                    <a href="#services">
+                      Care Operations
+                      <small>Organize schedules, workflow, and daily team coordination.</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#services">
+                      Documentation Support
+                      <small>Support notes, records, and operational consistency.</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#services">
+                      Compliance Readiness
+                      <small>Improve visibility and audit preparedness.</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#services">
+                      Provider Growth
+                      <small>Build scalable systems that support expansion.</small>
+                    </a>
+                  </li>
                 </ul>
               </div>
 
               <div class="dropdown-col">
-                <div class="dropdown-title">What We Do For Providers</div>
+                <div class="dropdown-title">Who We Support</div>
                 <ul class="dropdown-list">
-                  <li><a href="#services">Care Operations</a></li>
-                  <li><a href="#services">Documentation Support</a></li>
-                  <li><a href="#services">Compliance Readiness</a></li>
-                  <li><a href="#services">Provider Growth</a></li>
+                  <li>
+                    <a href="#services">
+                      Disability Service Providers
+                      <small>Structured tools for agencies serving complex care populations.</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#services">
+                      Home &amp; Community Programs
+                      <small>Flexible systems for community-based care delivery.</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#services">
+                      Care Management Teams
+                      <small>Operational support for coordination and oversight.</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#services">
+                      Growing Agencies
+                      <small>Solutions designed to scale as organizations expand.</small>
+                    </a>
+                  </li>
                 </ul>
               </div>
 
               <div class="dropdown-col">
-                <div class="dropdown-card">
-                  <h4>Integration Partners</h4>
+                <div class="dropdown-title">Service Highlights</div>
+                <ul class="dropdown-list">
+                  <li>
+                    <a href="#services">
+                      Workflow Standardization
+                      <small>Reduce friction across teams, visits, and internal processes.</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#services">
+                      Team Accountability
+                      <small>Support stronger visibility across service delivery.</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#services">
+                      Operational Clarity
+                      <small>Make daily work easier to manage and easier to improve.</small>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="dropdown-col">
+                <div class="dropdown-card dark">
+                  <span class="mini-kicker">Featured</span>
+                  <h4>Request a Guided Demo</h4>
                   <p>
-                    Structured solutions that support providers with better
-                    workflow, stronger compliance, and operational clarity.
+                    See how True Care System can support your organization with
+                    cleaner workflows, better documentation, and stronger care operations.
                   </p>
+                  <div style="margin-top:16px;">
+                    <a class="btn btn-green" href="mailto:thetruecaresystem@gmail.com?subject=Request%20Your%20Demo">Request Demo</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -897,15 +1046,64 @@
 
         <div class="nav-item">
           <a href="#services" class="nav-link">Technology <span class="caret">▼</span></a>
-          <div class="dropdown">
-            <div class="dropdown-grid">
-              <div class="dropdown-card">
-                <h4>Secure, Scalable Platform</h4>
-                <p>Practical infrastructure built to support provider operations.</p>
+          <div class="dropdown medium">
+            <div class="dropdown-grid-3">
+              <div class="dropdown-col">
+                <div class="dropdown-title">Platform Capabilities</div>
+                <ul class="dropdown-list">
+                  <li>
+                    <a href="#services">
+                      Secure Infrastructure
+                      <small>Built to support operational reliability and modern care workflows.</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#services">
+                      Documentation Workflows
+                      <small>Practical tools that reduce friction in day-to-day use.</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#services">
+                      Operational Visibility
+                      <small>Clearer reporting for management and support teams.</small>
+                    </a>
+                  </li>
+                </ul>
               </div>
-              <div class="dropdown-card">
-                <h4>Data Reporting & Insights</h4>
-                <p>Better visibility for documentation, workflow, and decision support.</p>
+
+              <div class="dropdown-col">
+                <div class="dropdown-title">Built For Teams</div>
+                <ul class="dropdown-list">
+                  <li>
+                    <a href="#services">
+                      Admin &amp; Office Teams
+                      <small>Better oversight for operations, documentation, and growth.</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#services">
+                      Field &amp; Service Staff
+                      <small>Simple, structured experiences that support daily work.</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#services">
+                      Leadership &amp; Compliance
+                      <small>Stronger visibility into performance and readiness.</small>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="dropdown-col">
+                <div class="dropdown-card">
+                  <h4>Technology With Purpose</h4>
+                  <p>
+                    Designed for care organizations that need systems to feel practical,
+                    professional, and easy to grow with.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -913,23 +1111,67 @@
 
         <div class="nav-item">
           <a href="#resources" class="nav-link">Resources <span class="caret">▼</span></a>
-          <div class="dropdown">
-            <div class="dropdown-grid">
-              <div class="dropdown-card">
-                <h4>Resource Library</h4>
-                <p>Helpful material, guidance, and future educational content.</p>
+          <div class="dropdown medium">
+            <div class="dropdown-grid-3">
+              <div class="dropdown-col">
+                <div class="dropdown-title">Learn</div>
+                <ul class="dropdown-list">
+                  <li>
+                    <a href="#resources">
+                      Resource Library
+                      <small>Helpful materials, guidance, and practical reference content.</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#resources">
+                      Blog &amp; Insights
+                      <small>Articles about provider operations, systems, and growth.</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#resources">
+                      State Info Centers
+                      <small>Information hubs and future state-based support resources.</small>
+                    </a>
+                  </li>
+                </ul>
               </div>
-              <div class="dropdown-card">
-                <h4>Customer Stories</h4>
-                <p>Real examples of how better systems support better care.</p>
+
+              <div class="dropdown-col">
+                <div class="dropdown-title">Explore</div>
+                <ul class="dropdown-list">
+                  <li>
+                    <a href="#resources">
+                      Customer Stories
+                      <small>Examples of how better systems support better care delivery.</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#resources">
+                      Guides &amp; Checklists
+                      <small>Operational tools for cleaner processes and stronger readiness.</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#resources">
+                      Events &amp; Webinars
+                      <small>Future educational sessions and community conversations.</small>
+                    </a>
+                  </li>
+                </ul>
               </div>
-              <div class="dropdown-card">
-                <h4>Blog</h4>
-                <p>Insights about provider operations, systems, and growth.</p>
-              </div>
-              <div class="dropdown-card">
-                <h4>Events</h4>
-                <p>Future webinars, discussions, and educational opportunities.</p>
+
+              <div class="dropdown-col">
+                <div class="dropdown-card">
+                  <h4>Need something specific?</h4>
+                  <p>
+                    Contact our team to learn more about resources, demos,
+                    and future education materials for providers.
+                  </p>
+                  <div style="margin-top:16px;">
+                    <a class="btn-text" href="mailto:thetruecaresystem@gmail.com">Contact our team →</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -937,23 +1179,65 @@
 
         <div class="nav-item">
           <a href="#about" class="nav-link">Company <span class="caret">▼</span></a>
-          <div class="dropdown">
-            <div class="dropdown-grid">
-              <div class="dropdown-card">
-                <h4>About Us</h4>
-                <p>Learn more about our mission, values, and direction.</p>
+          <div class="dropdown medium">
+            <div class="dropdown-grid-3">
+              <div class="dropdown-col">
+                <div class="dropdown-title">About True Care System</div>
+                <ul class="dropdown-list">
+                  <li>
+                    <a href="#about">
+                      About Us
+                      <small>Learn more about our mission, direction, and commitment.</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#about">
+                      Our Approach
+                      <small>Professional systems designed around people and care delivery.</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#about">
+                      Why We Built This
+                      <small>Created to support providers with better structure and clarity.</small>
+                    </a>
+                  </li>
+                </ul>
               </div>
-              <div class="dropdown-card">
-                <h4>Leadership</h4>
-                <p>Built with provider needs and long-term growth in mind.</p>
+
+              <div class="dropdown-col">
+                <div class="dropdown-title">Connect</div>
+                <ul class="dropdown-list">
+                  <li>
+                    <a href="#contact">
+                      Contact Us
+                      <small>Reach out for demos, partnerships, or general questions.</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mailto:thetruecaresystem@gmail.com?subject=Request%20Your%20Demo">
+                      Request Your Demo
+                      <small>See how our solutions can support your organization.</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#resources">
+                      News &amp; Updates
+                      <small>Follow future announcements and helpful updates.</small>
+                    </a>
+                  </li>
+                </ul>
               </div>
-              <div class="dropdown-card">
-                <h4>Careers</h4>
-                <p>Future opportunities to build meaningful care solutions.</p>
-              </div>
-              <div class="dropdown-card">
-                <h4>Contact Us</h4>
-                <p>Reach out for demos, partnerships, or general information.</p>
+
+              <div class="dropdown-col">
+                <div class="dropdown-card dark">
+                  <span class="mini-kicker">True Care System</span>
+                  <h4>Built for providers. Focused on people.</h4>
+                  <p>
+                    A modern care operations partner for organizations that want
+                    better workflow, stronger support, and sustainable growth.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
