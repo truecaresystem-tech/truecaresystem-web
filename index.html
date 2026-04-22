@@ -715,17 +715,18 @@
     }
 
     .cta-row {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 20px;
-      align-items: center;
-    }
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) auto;
+  gap: 16px;
+  align-items: center;
+}
 
-    .cta h2 {
-      margin: 0 0 12px;
-      font-size: clamp(34px, 4vw, 54px);
-      line-height: 1.08;
-    }
+  .cta h2 {
+  margin: 0 0 12px;
+  font-size: clamp(28px, 3vw, 44px);
+  line-height: 1.06;
+  max-width: 900px;
+}
 
     .cta p {
       margin: 0;
