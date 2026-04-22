@@ -1133,6 +1133,199 @@
       line-height: 1.5;
     }
 
+    /* AI CHAT WIDGET */
+    .ai-widget {
+      position: fixed;
+      right: 22px;
+      bottom: 18px;
+      z-index: 999;
+      width: 330px;
+      max-width: calc(100vw - 24px);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.22);
+      background: #fff;
+    }
+
+    .ai-widget.hidden-panel .ai-widget-panel {
+      display: none;
+    }
+
+    .ai-widget-toggle {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 68px;
+      height: 68px;
+      border: none;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #5e7ec2, #4b66a3);
+      color: #fff;
+      font-size: 30px;
+      cursor: pointer;
+      box-shadow: 0 14px 28px rgba(59, 84, 147, 0.32);
+      display: none;
+    }
+
+    .ai-widget.hidden-panel .ai-widget-toggle {
+      display: block;
+    }
+
+    .ai-widget-panel {
+      background: #fff;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .ai-widget-header {
+      padding: 16px 16px 10px;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .ai-widget-title {
+      margin: 0;
+      font-size: 24px;
+      color: #6b7280;
+      line-height: 1.1;
+      font-weight: 500;
+    }
+
+    .ai-widget-subtitle {
+      margin: 2px 0 0;
+      color: #9ca3af;
+      font-size: 14px;
+    }
+
+    .ai-widget-minimize {
+      border: none;
+      background: transparent;
+      color: #6b7280;
+      font-size: 20px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 2px 6px;
+      border-radius: 8px;
+    }
+
+    .ai-widget-minimize:hover {
+      background: #f3f4f6;
+    }
+
+    .ai-widget-body {
+      padding: 14px 16px 10px;
+      background: #fff;
+    }
+
+    .ai-assistant-message {
+      margin: 0 0 14px;
+      color: #374151;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .ai-quick-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .ai-chip {
+      border: none;
+      border-radius: 999px;
+      background: #dce3f7;
+      color: #50669b;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 7px 12px;
+      cursor: pointer;
+    }
+
+    .ai-chip:hover {
+      background: #cfd9f4;
+    }
+
+    .ai-chat-log {
+      max-height: 168px;
+      overflow: auto;
+      display: grid;
+      gap: 10px;
+      margin-bottom: 12px;
+      padding-right: 2px;
+    }
+
+    .ai-bubble {
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .ai-bubble.bot {
+      background: #f3f4f6;
+      color: #1f2937;
+    }
+
+    .ai-bubble.user {
+      background: #eef4ff;
+      color: #29457d;
+    }
+
+    .ai-input-row {
+      display: grid;
+      grid-template-columns: 1fr 40px;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .ai-input {
+      height: 40px;
+      border: 1px solid rgba(15, 23, 42, 0.14);
+      border-radius: 10px;
+      padding: 0 12px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .ai-input:focus {
+      border-color: #3b5493;
+      box-shadow: 0 0 0 3px rgba(59, 84, 147, 0.1);
+    }
+
+    .ai-send {
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 10px;
+      background: transparent;
+      color: #3b5493;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .ai-send:hover {
+      background: #f3f4f6;
+    }
+
+    .ai-widget-footer {
+      border-top: 1px solid rgba(15, 23, 42, 0.08);
+      padding: 12px 16px 14px;
+      color: #6b7280;
+      font-size: 12px;
+      line-height: 1.55;
+      background: #fafafa;
+    }
+
+    .ai-widget-footer a {
+      color: #3b5493;
+      text-decoration: underline;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 1260px) {
       .main-nav {
@@ -1298,6 +1491,12 @@
       .contact-form-card,
       .contact-side-card {
         padding: 24px 20px;
+      }
+
+      .ai-widget {
+        right: 12px;
+        bottom: 12px;
+        width: calc(100vw - 24px);
       }
     }
   </style>
@@ -1697,8 +1896,8 @@
         <div>
           <h4>Contact Us</h4>
           <ul class="footer-links">
-            <li>Email: thetruecaresystem@gmail.com</li>
-            <li>Website: http://www.truecaresystem.com</li>
+            <li>thetruecaresystem@gmail.com</li>
+            <li>truecaresystem.com</li>
           </ul>
         </div>
       </div>
@@ -1761,11 +1960,7 @@
         </div>
 
         <div class="demo-form">
-          <form action="https://formsubmit.co/thetruecaresystem@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="NEW DEMO REQUEST - TRUE CARE SYSTEM">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="https://truecaresystem.com/thank-you.html">
+          <form id="demoRequestForm">
             <div class="form-grid">
               <div class="form-field">
                 <label for="demoFirstName">First Name*</label>
@@ -1838,11 +2033,7 @@
 
       <div class="contact-modal-grid">
         <div class="contact-form-card">
-          <form action="https://formsubmit.co/thetruecaresystem@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="NEW CONTACT REQUEST - TRUE CARE SYSTEM">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="https://truecaresystem.com/thank-you.html">
+          <form id="contactRequestForm">
             <div class="contact-form-layout">
               <div class="form-field">
                 <input id="contactFirstName" name="firstName" type="text" placeholder="First Name*" required />
@@ -1941,12 +2132,61 @@
     </div>
   </div>
 
+  <!-- AI ASSISTANT -->
+  <div class="ai-widget" id="aiWidget">
+    <button class="ai-widget-toggle" id="aiWidgetToggle" type="button" aria-label="Open assistant">💬</button>
+
+    <div class="ai-widget-panel">
+      <div class="ai-widget-header">
+        <div>
+          <h3 class="ai-widget-title">Lina</h3>
+          <p class="ai-widget-subtitle">Virtual AI Assistant</p>
+        </div>
+        <button class="ai-widget-minimize" id="aiWidgetMinimize" type="button" aria-label="Minimize assistant">—</button>
+      </div>
+
+      <div class="ai-widget-body">
+        <p class="ai-assistant-message">
+          Welcome back! I'm Lina, your Virtual AI Assistant from True Care System.
+          Are there any questions you have about our services or how we can support your needs?
+        </p>
+
+        <div class="ai-quick-actions">
+          <button class="ai-chip ai-quick" data-action="demo" type="button">Request a Demo</button>
+          <button class="ai-chip ai-quick" data-action="contact" type="button">Contact Us</button>
+          <button class="ai-chip ai-quick" data-action="services" type="button">Our Services</button>
+        </div>
+
+        <div class="ai-chat-log" id="aiChatLog">
+          <div class="ai-bubble bot">
+            Ask me about scheduling, EVV, documentation, billing, compliance, reporting, mobile tools, or how to get started.
+          </div>
+        </div>
+
+        <div class="ai-input-row">
+          <input
+            class="ai-input"
+            id="aiInput"
+            type="text"
+            placeholder="Ask a question"
+          />
+          <button class="ai-send" id="aiSend" type="button" aria-label="Send message">➤</button>
+        </div>
+      </div>
+
+      <div class="ai-widget-footer">
+        By messaging, you agree this chat may be monitored and shared with our internal team to support your request.
+        For questions, contact <a href="mailto:thetruecaresystem@gmail.com">thetruecaresystem@gmail.com</a>.
+      </div>
+    </div>
+  </div>
+
   <script>
     (function () {
       const body = document.body;
 
       function openModal(id, event) {
-        if (event && event.type !== "submit") event.preventDefault();
+        if (event) event.preventDefault();
         const modal = document.getElementById(id);
         if (!modal) return;
         modal.classList.add("active");
@@ -2015,6 +2255,121 @@
           contactForm.reset();
         });
       }
+
+      /* AI WIDGET */
+      const aiWidget = document.getElementById("aiWidget");
+      const aiWidgetToggle = document.getElementById("aiWidgetToggle");
+      const aiWidgetMinimize = document.getElementById("aiWidgetMinimize");
+      const aiSend = document.getElementById("aiSend");
+      const aiInput = document.getElementById("aiInput");
+      const aiChatLog = document.getElementById("aiChatLog");
+      const aiQuickButtons = document.querySelectorAll(".ai-quick");
+
+      function appendBubble(text, type) {
+        const bubble = document.createElement("div");
+        bubble.className = `ai-bubble ${type}`;
+        bubble.textContent = text;
+        aiChatLog.appendChild(bubble);
+        aiChatLog.scrollTop = aiChatLog.scrollHeight;
+      }
+
+      function getBotReply(message) {
+        const q = message.toLowerCase();
+
+        if (q.includes("demo") || q.includes("pricing") || q.includes("price")) {
+          return {
+            type: "demo",
+            text: "I can help you request a personalized demo. Click the demo option below and our team can follow up with you."
+          };
+        }
+
+        if (q.includes("contact") || q.includes("sales") || q.includes("support") || q.includes("email")) {
+          return {
+            type: "contact",
+            text: "You can contact our team directly through the contact form, or email thetruecaresystem@gmail.com for support or sales questions."
+          };
+        }
+
+        if (q.includes("service") || q.includes("scheduling") || q.includes("evv") || q.includes("documentation") || q.includes("billing") || q.includes("payroll") || q.includes("compliance") || q.includes("reporting") || q.includes("mobile")) {
+          return {
+            type: "services",
+            text: "True Care System supports scheduling, EVV, documentation, billing, payroll, compliance, reporting, and mobile workflows in one connected platform."
+          };
+        }
+
+        if (q.includes("hello") || q.includes("hi")) {
+          return {
+            type: "general",
+            text: "Hello. I can help you explore services, request a demo, or contact our team."
+          };
+        }
+
+        return {
+          type: "general",
+          text: "I can help with services, demos, contact information, scheduling, EVV, documentation, billing, compliance, reporting, and mobile tools."
+        };
+      }
+
+      function handleAiMessage(message) {
+        if (!message.trim()) return;
+
+        appendBubble(message, "user");
+        const reply = getBotReply(message);
+
+        setTimeout(() => {
+          appendBubble(reply.text, "bot");
+
+          if (reply.type === "demo") {
+            setTimeout(() => openModal("demoModal"), 350);
+          } else if (reply.type === "contact") {
+            setTimeout(() => openModal("contactModal"), 350);
+          } else if (reply.type === "services") {
+            setTimeout(() => {
+              document.getElementById("services").scrollIntoView({ behavior: "smooth" });
+            }, 250);
+          }
+        }, 300);
+      }
+
+      aiSend.addEventListener("click", function () {
+        const text = aiInput.value;
+        aiInput.value = "";
+        handleAiMessage(text);
+      });
+
+      aiInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          aiSend.click();
+        }
+      });
+
+      aiQuickButtons.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const action = btn.getAttribute("data-action");
+          if (action === "demo") {
+            appendBubble("Request a Demo", "user");
+            appendBubble("I’ll open the demo form for you now.", "bot");
+            openModal("demoModal");
+          } else if (action === "contact") {
+            appendBubble("Contact Us", "user");
+            appendBubble("I’ll open the contact form for you now.", "bot");
+            openModal("contactModal");
+          } else if (action === "services") {
+            appendBubble("Our Services", "user");
+            appendBubble("Here are some of the areas we support: scheduling, EVV, documentation, billing, compliance, reporting, and mobile workflows.", "bot");
+            document.getElementById("services").scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+
+      aiWidgetMinimize.addEventListener("click", function () {
+        aiWidget.classList.add("hidden-panel");
+      });
+
+      aiWidgetToggle.addEventListener("click", function () {
+        aiWidget.classList.remove("hidden-panel");
+      });
     })();
   </script>
 </body>
