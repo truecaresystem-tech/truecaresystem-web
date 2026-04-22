@@ -373,12 +373,13 @@
     }
 
     /* HERO */
-    .hero-left {
+    .hero-wrap {
       background:
         linear-gradient(90deg, rgba(7,27,70,0.98) 0%, rgba(7,27,70,0.96) 48%, rgba(7,27,70,0.56) 100%),
         var(--navy);
       color: #fff;
-      padding: 0px 0 42px;
+      margin-top: -10px;
+      padding: 0 0 42px;
       overflow: hidden;
     }
 
@@ -388,20 +389,21 @@
       gap: 34px;
       align-items: center;
       min-height: 555px;
+      margin-top: -4px;
     }
 
     .hero-left {
-      padding: 2px 0 30px;
+      padding: 0 0 30px;
     }
 
     .eyebrow {
       display: inline-block;
-      color: #ffc857; /* vàng đẹp hơn */
+      color: #ffc857;
       text-transform: uppercase;
-      font-size: 18px; /* giảm nhẹ cho tinh tế */
-      font-weight: 700; /* bớt đậm chút cho sang */
-      letter-spacing: 1.8px; /* giãn chữ đẹp hơn */
-      margin-bottom: 12px;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      margin-bottom: 8px;
       text-shadow: 0 0 6px rgba(255, 200, 87, 0.35);
     }
 
@@ -424,7 +426,7 @@
 
     .hero-subtitle {
       margin: 0 0 18px;
-      max-width: 500px;
+      max-width: 700px;
       color: #f3f7fb;
       font-size: clamp(24px, 2.9vw, 40px);
       line-height: 1.2;
@@ -433,7 +435,7 @@
 
     .hero-copy {
       margin: 0 0 26px;
-      max-width: 560px;
+      max-width: 740px;
       color: #d8e3f3;
       font-size: 19px;
       line-height: 1.72;
@@ -715,7 +717,7 @@
       overflow: hidden;
     }
 
-     .cta-row {
+    .cta-row {
       display: grid;
       grid-template-columns: minmax(0, 1.7fr) auto;
       gap: 12px;
