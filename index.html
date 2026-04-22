@@ -50,6 +50,10 @@
       line-height: 1.5;
     }
 
+    body.modal-open {
+      overflow: hidden;
+    }
+
     img {
       display: block;
       max-width: 100%;
@@ -60,7 +64,10 @@
       text-decoration: none;
     }
 
-    button {
+    button,
+    input,
+    select,
+    textarea {
       font: inherit;
     }
 
@@ -792,6 +799,192 @@
       font-size: 14px;
     }
 
+    /* DEMO MODAL */
+    .demo-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 24, 55, 0.56);
+      backdrop-filter: blur(2px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      z-index: 1000;
+    }
+
+    .demo-modal-overlay.active {
+      display: flex;
+    }
+
+    .demo-modal {
+      position: relative;
+      width: min(1340px, calc(100vw - 48px));
+      max-height: calc(100vh - 48px);
+      overflow: auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 30px 80px rgba(7, 27, 70, 0.3);
+      padding: 34px 38px 34px;
+    }
+
+    .demo-close {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      width: 42px;
+      height: 42px;
+      border: none;
+      background: transparent;
+      color: #111827;
+      font-size: 26px;
+      line-height: 1;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .demo-close:hover {
+      background: #f3f4f6;
+    }
+
+    .demo-modal-grid {
+      display: grid;
+      grid-template-columns: 1.22fr 0.9fr;
+      gap: 46px;
+      align-items: start;
+    }
+
+    .demo-heading {
+      margin: 14px 0 24px;
+      color: #3b5493;
+      font-size: clamp(42px, 5vw, 64px);
+      line-height: 0.98;
+      letter-spacing: -1.8px;
+      font-weight: 800;
+      max-width: 760px;
+    }
+
+    .demo-subheading {
+      margin: 0 0 32px;
+      color: #3b5493;
+      font-size: 28px;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .demo-benefits {
+      display: grid;
+      gap: 28px;
+      margin-bottom: 28px;
+    }
+
+    .demo-benefit {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .demo-benefit-icon {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      color: var(--orange);
+      font-size: 26px;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .demo-benefit h4 {
+      margin: 0 0 10px;
+      color: #3b5493;
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .demo-benefit p {
+      margin: 0;
+      color: #111827;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .demo-support-note {
+      margin: 12px 0 0;
+      color: #111827;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .demo-support-note a {
+      color: #3b5493;
+      text-decoration: underline;
+    }
+
+    .demo-form {
+      padding-top: 62px;
+    }
+
+    .demo-form-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .demo-field label {
+      display: block;
+      margin-bottom: 6px;
+      color: #111827;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .demo-field input,
+    .demo-field select {
+      width: 100%;
+      height: 44px;
+      border: 1px solid rgba(17, 24, 39, 0.35);
+      border-radius: 6px;
+      padding: 0 14px;
+      background: #fff;
+      color: #111827;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .demo-field input::placeholder {
+      color: #6b7280;
+    }
+
+    .demo-field input:focus,
+    .demo-field select:focus {
+      border-color: #3b5493;
+      box-shadow: 0 0 0 3px rgba(59, 84, 147, 0.12);
+    }
+
+    .demo-submit {
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 6px;
+      padding: 16px 22px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .demo-success {
+      display: none;
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-radius: 8px;
+      background: #ecfdf3;
+      color: #166534;
+      font-weight: 600;
+      border: 1px solid #bbf7d0;
+    }
+
+    .demo-success.active {
+      display: block;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 1260px) {
       .main-nav {
@@ -809,7 +1002,8 @@
       .hero,
       .about-grid,
       .footer-grid,
-      .cta-row {
+      .cta-row,
+      .demo-modal-grid {
         grid-template-columns: 1fr;
       }
 
@@ -853,6 +1047,10 @@
 
       .cta-mark {
         display: none;
+      }
+
+      .demo-form {
+        padding-top: 0;
       }
     }
 
@@ -920,6 +1118,22 @@
       .about-card h3 {
         font-size: 38px;
       }
+
+      .demo-modal {
+        padding: 26px 20px 24px;
+      }
+
+      .demo-heading {
+        font-size: 40px;
+      }
+
+      .demo-subheading {
+        font-size: 22px;
+      }
+
+      .demo-benefit p {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
@@ -950,90 +1164,30 @@
               <div class="dropdown-col">
                 <div class="dropdown-title">Core Solutions</div>
                 <ul class="dropdown-list">
-                  <li>
-                    <a href="#services">
-                      Scheduling &amp; Workforce Management
-                      <small>Smart scheduling, staff coordination, and shift visibility.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#services">
-                      EVV &amp; Visit Verification
-                      <small>Accurate visit capture with real-time verification.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#services">
-                      Documentation &amp; Daily Notes
-                      <small>Structured notes, forms, and service documentation.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#services">
-                      Billing &amp; Payroll
-                      <small>Cleaner billing workflows and payroll accuracy.</small>
-                    </a>
-                  </li>
+                  <li><a href="#services">Scheduling &amp; Workforce Management<small>Smart scheduling, staff coordination, and shift visibility.</small></a></li>
+                  <li><a href="#services">EVV &amp; Visit Verification<small>Accurate visit capture with real-time verification.</small></a></li>
+                  <li><a href="#services">Documentation &amp; Daily Notes<small>Structured notes, forms, and service documentation.</small></a></li>
+                  <li><a href="#services">Billing &amp; Payroll<small>Cleaner billing workflows and payroll accuracy.</small></a></li>
                 </ul>
               </div>
 
               <div class="dropdown-col">
                 <div class="dropdown-title">Compliance &amp; Oversight</div>
                 <ul class="dropdown-list">
-                  <li>
-                    <a href="#services">
-                      Compliance Readiness
-                      <small>Stay organized and audit-ready across your operation.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#services">
-                      Incident &amp; Risk Tracking
-                      <small>Track events, issues, and follow-up actions clearly.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#services">
-                      Authorization &amp; Service Controls
-                      <small>Manage approved hours, services, and usage limits.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#services">
-                      Quality Assurance
-                      <small>Support consistency, accountability, and better outcomes.</small>
-                    </a>
-                  </li>
+                  <li><a href="#services">Compliance Readiness<small>Stay organized and audit-ready across your operation.</small></a></li>
+                  <li><a href="#services">Incident &amp; Risk Tracking<small>Track events, issues, and follow-up actions clearly.</small></a></li>
+                  <li><a href="#services">Authorization &amp; Service Controls<small>Manage approved hours, services, and usage limits.</small></a></li>
+                  <li><a href="#services">Quality Assurance<small>Support consistency, accountability, and better outcomes.</small></a></li>
                 </ul>
               </div>
 
               <div class="dropdown-col">
                 <div class="dropdown-title">Reporting &amp; Mobile Tools</div>
                 <ul class="dropdown-list">
-                  <li>
-                    <a href="#services">
-                      Reporting &amp; Dashboards
-                      <small>Insights that support smarter business decisions.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#services">
-                      Mobile App for Care Teams
-                      <small>Simple tools for field staff and care teams on the go.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#services">
-                      Real-Time Visibility
-                      <small>Monitor activity, progress, and service delivery in real time.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#services">
-                      Operational Analytics
-                      <small>Turn daily data into practical performance insights.</small>
-                    </a>
-                  </li>
+                  <li><a href="#services">Reporting &amp; Dashboards<small>Insights that support smarter business decisions.</small></a></li>
+                  <li><a href="#services">Mobile App for Care Teams<small>Simple tools for field staff and care teams on the go.</small></a></li>
+                  <li><a href="#services">Real-Time Visibility<small>Monitor activity, progress, and service delivery in real time.</small></a></li>
+                  <li><a href="#services">Operational Analytics<small>Turn daily data into practical performance insights.</small></a></li>
                 </ul>
               </div>
 
@@ -1041,12 +1195,9 @@
                 <div class="dropdown-card dark">
                   <span class="mini-kicker">Featured</span>
                   <h4>All-in-One Care Management</h4>
-                  <p>
-                    One connected platform for scheduling, EVV, documentation,
-                    billing, payroll, compliance, reporting, and mobile workflows.
-                  </p>
+                  <p>One connected platform for scheduling, EVV, documentation, billing, payroll, compliance, reporting, and mobile workflows.</p>
                   <div style="margin-top:16px;">
-                    <a class="btn btn-green" href="mailto:thetruecaresystem@gmail.com?subject=Request%20Your%20Demo">Request Demo</a>
+                    <button class="btn btn-green open-demo-modal" type="button">Request Demo</button>
                   </div>
                 </div>
               </div>
@@ -1061,60 +1212,20 @@
               <div class="dropdown-col">
                 <div class="dropdown-title">Platform Foundation</div>
                 <ul class="dropdown-list">
-                  <li>
-                    <a href="#services">
-                      Platform Overview
-                      <small>One connected system for operations, care workflows, and team coordination.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#services">
-                      Secure Cloud Access
-                      <small>Reliable access for admins, office teams, and field staff.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#services">
-                      Role-Based Permissions
-                      <small>Control visibility and actions across users and teams.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#services">
-                      Scalable System Design
-                      <small>Built to support growth across services, programs, and locations.</small>
-                    </a>
-                  </li>
+                  <li><a href="#services">Platform Overview<small>One connected system for operations, care workflows, and team coordination.</small></a></li>
+                  <li><a href="#services">Secure Cloud Access<small>Reliable access for admins, office teams, and field staff.</small></a></li>
+                  <li><a href="#services">Role-Based Permissions<small>Control visibility and actions across users and teams.</small></a></li>
+                  <li><a href="#services">Scalable System Design<small>Built to support growth across services, programs, and locations.</small></a></li>
                 </ul>
               </div>
 
               <div class="dropdown-col">
                 <div class="dropdown-title">Workflow &amp; Intelligence</div>
                 <ul class="dropdown-list">
-                  <li>
-                    <a href="#services">
-                      Automation &amp; Workflow Tools
-                      <small>Reduce repetitive work and improve process consistency.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#services">
-                      Real-Time Data Sync
-                      <small>Keep updates current across visits, records, and operations.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#services">
-                      Mobile-Ready Experience
-                      <small>Support field teams with fast, practical mobile workflows.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#services">
-                      Reporting Engine
-                      <small>Turn daily operational data into actionable insight.</small>
-                    </a>
-                  </li>
+                  <li><a href="#services">Automation &amp; Workflow Tools<small>Reduce repetitive work and improve process consistency.</small></a></li>
+                  <li><a href="#services">Real-Time Data Sync<small>Keep updates current across visits, records, and operations.</small></a></li>
+                  <li><a href="#services">Mobile-Ready Experience<small>Support field teams with fast, practical mobile workflows.</small></a></li>
+                  <li><a href="#services">Reporting Engine<small>Turn daily operational data into actionable insight.</small></a></li>
                 </ul>
               </div>
 
@@ -1122,12 +1233,9 @@
                 <div class="dropdown-card dark">
                   <span class="mini-kicker">Technology</span>
                   <h4>Technology That Supports Better Care</h4>
-                  <p>
-                    Practical, secure, and scalable tools designed for scheduling,
-                    EVV, documentation, billing, compliance, reporting, and mobile operations.
-                  </p>
+                  <p>Practical, secure, and scalable tools designed for scheduling, EVV, documentation, billing, compliance, reporting, and mobile operations.</p>
                   <div style="margin-top:16px;">
-                    <a class="btn btn-green" href="mailto:thetruecaresystem@gmail.com?subject=Request%20Your%20Demo">Explore Technology</a>
+                    <button class="btn btn-green open-demo-modal" type="button">Explore Technology</button>
                   </div>
                 </div>
               </div>
@@ -1142,60 +1250,20 @@
               <div class="dropdown-col">
                 <div class="dropdown-title">Knowledge &amp; Updates</div>
                 <ul class="dropdown-list">
-                  <li>
-                    <a href="#resources">
-                      Resource Library
-                      <small>Helpful materials, guides, and practical operational references.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#resources">
-                      Blog &amp; Insights
-                      <small>Articles on care operations, workflow, compliance, and growth.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#resources">
-                      State Info Centers
-                      <small>State-specific resources and future guidance hubs.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#resources">
-                      Product Updates
-                      <small>Highlights of new features and system improvements.</small>
-                    </a>
-                  </li>
+                  <li><a href="#resources">Resource Library<small>Helpful materials, guides, and practical operational references.</small></a></li>
+                  <li><a href="#resources">Blog &amp; Insights<small>Articles on care operations, workflow, compliance, and growth.</small></a></li>
+                  <li><a href="#resources">State Info Centers<small>State-specific resources and future guidance hubs.</small></a></li>
+                  <li><a href="#resources">Product Updates<small>Highlights of new features and system improvements.</small></a></li>
                 </ul>
               </div>
 
               <div class="dropdown-col">
                 <div class="dropdown-title">Education &amp; Support</div>
                 <ul class="dropdown-list">
-                  <li>
-                    <a href="#resources">
-                      Customer Stories
-                      <small>Real examples of how better systems support better care.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#resources">
-                      Guides &amp; Checklists
-                      <small>Practical tools to improve readiness and daily execution.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#resources">
-                      Events &amp; Webinars
-                      <small>Educational sessions, demos, and community conversations.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#resources">
-                      FAQs
-                      <small>Quick answers about the platform, services, and workflow.</small>
-                    </a>
-                  </li>
+                  <li><a href="#resources">Customer Stories<small>Real examples of how better systems support better care.</small></a></li>
+                  <li><a href="#resources">Guides &amp; Checklists<small>Practical tools to improve readiness and daily execution.</small></a></li>
+                  <li><a href="#resources">Events &amp; Webinars<small>Educational sessions, demos, and community conversations.</small></a></li>
+                  <li><a href="#resources">FAQs<small>Quick answers about the platform, services, and workflow.</small></a></li>
                 </ul>
               </div>
 
@@ -1203,12 +1271,9 @@
                 <div class="dropdown-card dark">
                   <span class="mini-kicker">Resources</span>
                   <h4>Resources That Support Better Decisions</h4>
-                  <p>
-                    Explore practical content, education, and insights designed to help
-                    providers improve operations, compliance, and care delivery.
-                  </p>
+                  <p>Explore practical content, education, and insights designed to help providers improve operations, compliance, and care delivery.</p>
                   <div style="margin-top:16px;">
-                    <a class="btn btn-green" href="mailto:thetruecaresystem@gmail.com?subject=Request%20Your%20Demo">Explore Resources</a>
+                    <button class="btn btn-green open-demo-modal" type="button">Explore Resources</button>
                   </div>
                 </div>
               </div>
@@ -1221,61 +1286,33 @@
           <div class="dropdown medium">
             <div class="dropdown-grid-3">
               <div class="dropdown-col">
-                <div class="dropdown-title">About True Care System</div>
+                <div class="dropdown-title">Who We Are</div>
                 <ul class="dropdown-list">
-                  <li>
-                    <a href="#about">
-                      About Us
-                      <small>Learn more about our mission, direction, and commitment.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#about">
-                      Our Approach
-                      <small>Professional systems designed around people and care delivery.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#about">
-                      Why We Built This
-                      <small>Created to support providers with better structure and clarity.</small>
-                    </a>
-                  </li>
+                  <li><a href="#about">About Us<small>Learn more about our mission, values, and direction.</small></a></li>
+                  <li><a href="#about">Our Vision<small>A clearer future for care operations and provider support.</small></a></li>
+                  <li><a href="#about">Why True Care System<small>Built to solve real operational challenges for providers.</small></a></li>
+                  <li><a href="#about">Leadership Perspective<small>Insight into the thinking behind our approach.</small></a></li>
                 </ul>
               </div>
 
               <div class="dropdown-col">
                 <div class="dropdown-title">Connect</div>
                 <ul class="dropdown-list">
-                  <li>
-                    <a href="#contact">
-                      Contact Us
-                      <small>Reach out for demos, partnerships, or general questions.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="mailto:thetruecaresystem@gmail.com?subject=Request%20Your%20Demo">
-                      Request Your Demo
-                      <small>See how our solutions can support your organization.</small>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#resources">
-                      News &amp; Updates
-                      <small>Follow future announcements and helpful updates.</small>
-                    </a>
-                  </li>
+                  <li><a href="#contact">Contact Us<small>Reach out for demos, partnerships, or general questions.</small></a></li>
+                  <li><a href="#" class="open-demo-modal">Request Your Demo<small>Schedule a guided walkthrough of the platform.</small></a></li>
+                  <li><a href="#resources">News &amp; Updates<small>Follow announcements, updates, and milestones.</small></a></li>
+                  <li><a href="#about">Careers / Opportunities<small>Future opportunities to grow with our mission.</small></a></li>
                 </ul>
               </div>
 
               <div class="dropdown-col">
                 <div class="dropdown-card dark">
                   <span class="mini-kicker">True Care System</span>
-                  <h4>Built for providers. Focused on people.</h4>
-                  <p>
-                    A modern care operations partner for organizations that want
-                    better workflow, stronger support, and sustainable growth.
-                  </p>
+                  <h4>Built for Providers. Focused on People.</h4>
+                  <p>True Care System helps organizations strengthen operations, improve visibility, and support better care delivery through practical, connected tools.</p>
+                  <div style="margin-top:16px;">
+                    <button class="btn btn-green open-demo-modal" type="button">Request Demo</button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1288,7 +1325,7 @@
       </nav>
 
       <div class="nav-right">
-        <a class="btn btn-orange" href="mailto:thetruecaresystem@gmail.com?subject=Request%20Your%20Demo">Request Your Demo</a>
+        <button class="btn btn-orange open-demo-modal" type="button">Request Your Demo</button>
       </div>
     </div>
   </header>
@@ -1458,7 +1495,7 @@
       </div>
 
       <div>
-        <a class="btn btn-green" href="mailto:thetruecaresystem@gmail.com?subject=Request%20Your%20Demo">Contact Us Today</a>
+        <button class="btn btn-green open-demo-modal" type="button">Contact Us Today</button>
       </div>
     </div>
   </section>
@@ -1506,5 +1543,166 @@
       </div>
     </div>
   </footer>
+
+  <!-- DEMO MODAL -->
+  <div class="demo-modal-overlay" id="demoModal">
+    <div class="demo-modal" role="dialog" aria-modal="true" aria-labelledby="demoModalTitle">
+      <button class="demo-close" id="demoClose" aria-label="Close demo form">×</button>
+
+      <div class="demo-modal-grid">
+        <div>
+          <h2 class="demo-heading" id="demoModalTitle">Ready to See True Care System in Action?</h2>
+          <p class="demo-subheading">Request a personalized demo today.</p>
+
+          <div class="demo-benefits">
+            <div class="demo-benefit">
+              <div class="demo-benefit-icon">👍</div>
+              <div>
+                <h4>Partner with a Modern Care Platform</h4>
+                <p>
+                  Our connected care management platform helps providers bring scheduling,
+                  EVV, documentation, billing, compliance, and reporting into one clear workflow.
+                </p>
+              </div>
+            </div>
+
+            <div class="demo-benefit">
+              <div class="demo-benefit-icon">▣</div>
+              <div>
+                <h4>Reduce Operational Costs</h4>
+                <p>
+                  Improve efficiency with smarter scheduling, streamlined documentation,
+                  and automation that reduces repetitive manual work across your organization.
+                </p>
+              </div>
+            </div>
+
+            <div class="demo-benefit">
+              <div class="demo-benefit-icon">♡</div>
+              <div>
+                <h4>Improve Care Outcomes</h4>
+                <p>
+                  Support better visibility, stronger compliance, and more consistent service
+                  delivery with real-time tools built for provider teams.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p class="demo-support-note">
+            If you’re looking to contact customer support, please email
+            <a href="mailto:thetruecaresystem@gmail.com">thetruecaresystem@gmail.com</a>.
+          </p>
+        </div>
+
+        <div class="demo-form">
+          <form id="demoRequestForm">
+            <div class="demo-form-grid">
+              <div class="demo-field">
+                <label for="firstName">First Name*</label>
+                <input id="firstName" name="firstName" type="text" placeholder="First Name" required />
+              </div>
+
+              <div class="demo-field">
+                <label for="lastName">Last Name*</label>
+                <input id="lastName" name="lastName" type="text" placeholder="Last Name" required />
+              </div>
+
+              <div class="demo-field">
+                <label for="emailAddress">Email Address*</label>
+                <input id="emailAddress" name="emailAddress" type="email" placeholder="Email Address" required />
+              </div>
+
+              <div class="demo-field">
+                <label for="phoneNumber">Phone Number*</label>
+                <input id="phoneNumber" name="phoneNumber" type="tel" placeholder="Phone Number" required />
+              </div>
+
+              <div class="demo-field">
+                <label for="companyName">Company*</label>
+                <input id="companyName" name="companyName" type="text" placeholder="Company" required />
+              </div>
+
+              <div class="demo-field">
+                <label for="roleType">I'm a...*</label>
+                <select id="roleType" name="roleType" required>
+                  <option value="">I'm a...</option>
+                  <option>Provider / Agency Owner</option>
+                  <option>Administrator</option>
+                  <option>Operations Manager</option>
+                  <option>Clinical / Compliance Leader</option>
+                  <option>Billing / Payroll Team</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="demo-field">
+                <label for="stateName">State*</label>
+                <select id="stateName" name="stateName" required>
+                  <option value="">State</option>
+                  <option>Pennsylvania</option>
+                  <option>New York</option>
+                  <option>New Jersey</option>
+                  <option>California</option>
+                  <option>Texas</option>
+                  <option>Florida</option>
+                  <option>Ohio</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <button class="btn btn-orange demo-submit" type="submit">Request Your Demo</button>
+              <div class="demo-success" id="demoSuccess">Thank you. Your demo request has been captured.</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const modal = document.getElementById("demoModal");
+      const closeBtn = document.getElementById("demoClose");
+      const openButtons = document.querySelectorAll(".open-demo-modal");
+      const form = document.getElementById("demoRequestForm");
+      const successBox = document.getElementById("demoSuccess");
+
+      function openModal(event) {
+        if (event) event.preventDefault();
+        modal.classList.add("active");
+        document.body.classList.add("modal-open");
+      }
+
+      function closeModal() {
+        modal.classList.remove("active");
+        document.body.classList.remove("modal-open");
+      }
+
+      openButtons.forEach((button) => {
+        button.addEventListener("click", openModal);
+      });
+
+      closeBtn.addEventListener("click", closeModal);
+
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && modal.classList.contains("active")) {
+          closeModal();
+        }
+      });
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        successBox.classList.add("active");
+        form.reset();
+      });
+    })();
+  </script>
 </body>
 </html>
