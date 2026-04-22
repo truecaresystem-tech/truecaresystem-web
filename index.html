@@ -1946,7 +1946,7 @@
       const body = document.body;
 
       function openModal(id, event) {
-        if (event) event.preventDefault();
+        if (event && event.type !== "submit") event.preventDefault();
         const modal = document.getElementById(id);
         if (!modal) return;
         modal.classList.add("active");
