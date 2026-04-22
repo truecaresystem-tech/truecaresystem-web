@@ -207,6 +207,9 @@
       font-weight: 800;
       transition: 0.2s ease;
       white-space: nowrap;
+      border: none;
+      background: transparent;
+      cursor: pointer;
     }
 
     .nav-link:hover,
@@ -799,8 +802,8 @@
       font-size: 14px;
     }
 
-    /* DEMO MODAL */
-    .demo-modal-overlay {
+    /* MODALS SHARED */
+    .modal-overlay {
       position: fixed;
       inset: 0;
       background: rgba(11, 24, 55, 0.56);
@@ -812,11 +815,11 @@
       z-index: 1000;
     }
 
-    .demo-modal-overlay.active {
+    .modal-overlay.active {
       display: flex;
     }
 
-    .demo-modal {
+    .modal-shell {
       position: relative;
       width: min(1340px, calc(100vw - 48px));
       max-height: calc(100vh - 48px);
@@ -827,7 +830,7 @@
       padding: 34px 38px 34px;
     }
 
-    .demo-close {
+    .modal-close {
       position: absolute;
       top: 10px;
       right: 12px;
@@ -842,10 +845,11 @@
       border-radius: 8px;
     }
 
-    .demo-close:hover {
+    .modal-close:hover {
       background: #f3f4f6;
     }
 
+    /* DEMO MODAL */
     .demo-modal-grid {
       display: grid;
       grid-template-columns: 1.22fr 0.9fr;
@@ -925,12 +929,12 @@
       padding-top: 62px;
     }
 
-    .demo-form-grid {
+    .form-grid {
       display: grid;
       gap: 14px;
     }
 
-    .demo-field label {
+    .form-field label {
       display: block;
       margin-bottom: 6px;
       color: #111827;
@@ -938,10 +942,10 @@
       font-weight: 500;
     }
 
-    .demo-field input,
-    .demo-field select {
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
       width: 100%;
-      height: 44px;
       border: 1px solid rgba(17, 24, 39, 0.35);
       border-radius: 6px;
       padding: 0 14px;
@@ -951,14 +955,43 @@
       outline: none;
     }
 
-    .demo-field input::placeholder {
+    .form-field input,
+    .form-field select {
+      height: 44px;
+    }
+
+    .form-field textarea {
+      min-height: 130px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      resize: vertical;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
       color: #6b7280;
     }
 
-    .demo-field input:focus,
-    .demo-field select:focus {
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
       border-color: #3b5493;
       box-shadow: 0 0 0 3px rgba(59, 84, 147, 0.12);
+    }
+
+    .form-success {
+      display: none;
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-radius: 8px;
+      background: #ecfdf3;
+      color: #166534;
+      font-weight: 600;
+      border: 1px solid #bbf7d0;
+    }
+
+    .form-success.active {
+      display: block;
     }
 
     .demo-submit {
@@ -970,19 +1003,134 @@
       font-weight: 700;
     }
 
-    .demo-success {
-      display: none;
-      margin-top: 16px;
-      padding: 12px 14px;
-      border-radius: 8px;
-      background: #ecfdf3;
-      color: #166534;
-      font-weight: 600;
-      border: 1px solid #bbf7d0;
+    /* CONTACT MODAL */
+    .contact-modal-shell {
+      width: min(1480px, calc(100vw - 48px));
+      padding: 30px 30px 28px;
     }
 
-    .demo-success.active {
+    .contact-title {
+      margin: 0 0 18px;
+      color: #3b5493;
+      font-size: clamp(42px, 4.5vw, 62px);
+      line-height: 1.02;
+      letter-spacing: -1.6px;
+      font-weight: 800;
+    }
+
+    .contact-modal-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.58fr;
+      gap: 26px;
+      align-items: start;
+    }
+
+    .contact-form-card,
+    .contact-side-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+      padding: 42px 42px 32px;
+    }
+
+    .contact-form-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px 20px;
+    }
+
+    .contact-form-layout .full {
+      grid-column: 1 / -1;
+    }
+
+    .contact-submit {
+      margin-top: 10px;
+      border-radius: 6px;
+      padding: 16px 26px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .contact-side-card {
+      min-height: 100%;
+      background: #f8fafc;
+    }
+
+    .contact-side-card h3 {
+      margin: 0 0 28px;
+      color: #3b5493;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    .contact-side-list {
+      display: grid;
+      gap: 28px;
+    }
+
+    .contact-side-item {
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .contact-side-icon {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      color: var(--orange);
+      font-size: 26px;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .contact-side-label {
       display: block;
+      margin-bottom: 4px;
+      color: #111827;
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .contact-side-link,
+    .contact-side-copy {
+      display: block;
+      color: #3b5493;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .contact-side-note {
+      margin: 6px 0 0;
+      color: #111827;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .contact-side-bottom {
+      margin-top: 34px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(59, 84, 147, 0.14), rgba(57, 197, 107, 0.1));
+      padding: 26px 22px;
+      text-align: center;
+    }
+
+    .contact-side-bottom img {
+      width: 86px;
+      margin: 0 auto 12px;
+      opacity: 0.9;
+    }
+
+    .contact-side-bottom p {
+      margin: 0;
+      color: #3b5493;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.5;
     }
 
     /* RESPONSIVE */
@@ -1003,7 +1151,8 @@
       .about-grid,
       .footer-grid,
       .cta-row,
-      .demo-modal-grid {
+      .demo-modal-grid,
+      .contact-modal-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1051,6 +1200,14 @@
 
       .demo-form {
         padding-top: 0;
+      }
+
+      .contact-form-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form-layout .full {
+        grid-column: auto;
       }
     }
 
@@ -1119,11 +1276,13 @@
         font-size: 38px;
       }
 
-      .demo-modal {
+      .modal-shell,
+      .contact-modal-shell {
         padding: 26px 20px 24px;
       }
 
-      .demo-heading {
+      .demo-heading,
+      .contact-title {
         font-size: 40px;
       }
 
@@ -1131,8 +1290,14 @@
         font-size: 22px;
       }
 
-      .demo-benefit p {
+      .demo-benefit p,
+      .contact-side-note {
         font-size: 16px;
+      }
+
+      .contact-form-card,
+      .contact-side-card {
+        padding: 24px 20px;
       }
     }
   </style>
@@ -1141,7 +1306,7 @@
   <header class="site-header">
     <div class="top-strip">
       <div class="container top-strip-inner">
-        <a href="#contact">Support</a>
+        <button class="nav-link open-contact-modal" type="button" style="padding:0; background:none;">Support</button>
         <a href="#contact">Login</a>
         <a href="#resources">State Info Centers ▼</a>
       </div>
@@ -1298,7 +1463,7 @@
               <div class="dropdown-col">
                 <div class="dropdown-title">Connect</div>
                 <ul class="dropdown-list">
-                  <li><a href="#contact">Contact Us<small>Reach out for demos, partnerships, or general questions.</small></a></li>
+                  <li><button class="nav-link open-contact-modal" type="button" style="padding:0;background:none;">Contact Us</button></li>
                   <li><a href="#" class="open-demo-modal">Request Your Demo<small>Schedule a guided walkthrough of the platform.</small></a></li>
                   <li><a href="#resources">News &amp; Updates<small>Follow announcements, updates, and milestones.</small></a></li>
                   <li><a href="#about">Careers / Opportunities<small>Future opportunities to grow with our mission.</small></a></li>
@@ -1320,7 +1485,7 @@
         </div>
 
         <div class="nav-item">
-          <a href="#contact" class="nav-link">Contact</a>
+          <button class="nav-link open-contact-modal" type="button">Contact</button>
         </div>
       </nav>
 
@@ -1351,7 +1516,7 @@
 
           <div class="hero-actions">
             <a class="btn btn-green" href="#services">Our Services</a>
-            <a class="btn btn-outline-light" href="mailto:thetruecaresystem@gmail.com">Contact Us</a>
+            <button class="btn btn-outline-light open-contact-modal" type="button">Contact Us</button>
           </div>
         </div>
 
@@ -1451,7 +1616,7 @@
             True Care System is dedicated to helping providers deliver better care
             through smarter systems, stronger support, and innovative solutions.
           </p>
-          <a class="btn btn-green" href="mailto:thetruecaresystem@gmail.com">Learn More About Us</a>
+          <button class="btn btn-green open-contact-modal" type="button">Learn More About Us</button>
         </div>
 
         <img src="/about-care.jpg" alt="Professional care conversation" class="about-image" />
@@ -1515,7 +1680,7 @@
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#about">Who We Serve</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><button class="nav-link open-contact-modal" type="button" style="padding:0;background:none;color:#cbd5e1;">Contact</button></li>
           </ul>
         </div>
 
@@ -1545,9 +1710,9 @@
   </footer>
 
   <!-- DEMO MODAL -->
-  <div class="demo-modal-overlay" id="demoModal">
-    <div class="demo-modal" role="dialog" aria-modal="true" aria-labelledby="demoModalTitle">
-      <button class="demo-close" id="demoClose" aria-label="Close demo form">×</button>
+  <div class="modal-overlay" id="demoModal">
+    <div class="modal-shell" role="dialog" aria-modal="true" aria-labelledby="demoModalTitle">
+      <button class="modal-close" data-close-modal="demoModal" aria-label="Close demo form">×</button>
 
       <div class="demo-modal-grid">
         <div>
@@ -1597,35 +1762,35 @@
 
         <div class="demo-form">
           <form id="demoRequestForm">
-            <div class="demo-form-grid">
-              <div class="demo-field">
-                <label for="firstName">First Name*</label>
-                <input id="firstName" name="firstName" type="text" placeholder="First Name" required />
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="demoFirstName">First Name*</label>
+                <input id="demoFirstName" name="firstName" type="text" placeholder="First Name" required />
               </div>
 
-              <div class="demo-field">
-                <label for="lastName">Last Name*</label>
-                <input id="lastName" name="lastName" type="text" placeholder="Last Name" required />
+              <div class="form-field">
+                <label for="demoLastName">Last Name*</label>
+                <input id="demoLastName" name="lastName" type="text" placeholder="Last Name" required />
               </div>
 
-              <div class="demo-field">
-                <label for="emailAddress">Email Address*</label>
-                <input id="emailAddress" name="emailAddress" type="email" placeholder="Email Address" required />
+              <div class="form-field">
+                <label for="demoEmailAddress">Email Address*</label>
+                <input id="demoEmailAddress" name="emailAddress" type="email" placeholder="Email Address" required />
               </div>
 
-              <div class="demo-field">
-                <label for="phoneNumber">Phone Number*</label>
-                <input id="phoneNumber" name="phoneNumber" type="tel" placeholder="Phone Number" required />
+              <div class="form-field">
+                <label for="demoPhoneNumber">Phone Number*</label>
+                <input id="demoPhoneNumber" name="phoneNumber" type="tel" placeholder="Phone Number" required />
               </div>
 
-              <div class="demo-field">
-                <label for="companyName">Company*</label>
-                <input id="companyName" name="companyName" type="text" placeholder="Company" required />
+              <div class="form-field">
+                <label for="demoCompanyName">Company*</label>
+                <input id="demoCompanyName" name="companyName" type="text" placeholder="Company" required />
               </div>
 
-              <div class="demo-field">
-                <label for="roleType">I'm a...*</label>
-                <select id="roleType" name="roleType" required>
+              <div class="form-field">
+                <label for="demoRoleType">I'm a...*</label>
+                <select id="demoRoleType" name="roleType" required>
                   <option value="">I'm a...</option>
                   <option>Provider / Agency Owner</option>
                   <option>Administrator</option>
@@ -1636,9 +1801,9 @@
                 </select>
               </div>
 
-              <div class="demo-field">
-                <label for="stateName">State*</label>
-                <select id="stateName" name="stateName" required>
+              <div class="form-field">
+                <label for="demoStateName">State*</label>
+                <select id="demoStateName" name="stateName" required>
                   <option value="">State</option>
                   <option>Pennsylvania</option>
                   <option>New York</option>
@@ -1652,7 +1817,7 @@
               </div>
 
               <button class="btn btn-orange demo-submit" type="submit">Request Your Demo</button>
-              <div class="demo-success" id="demoSuccess">Thank you. Your demo request has been captured.</div>
+              <div class="form-success" id="demoSuccess">Thank you. Your demo request has been captured.</div>
             </div>
           </form>
         </div>
@@ -1660,48 +1825,188 @@
     </div>
   </div>
 
+  <!-- CONTACT MODAL -->
+  <div class="modal-overlay" id="contactModal">
+    <div class="modal-shell contact-modal-shell" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+      <button class="modal-close" data-close-modal="contactModal" aria-label="Close contact form">×</button>
+
+      <h2 class="contact-title" id="contactModalTitle">Contact True Care System</h2>
+
+      <div class="contact-modal-grid">
+        <div class="contact-form-card">
+          <form id="contactRequestForm">
+            <div class="contact-form-layout">
+              <div class="form-field">
+                <input id="contactFirstName" name="firstName" type="text" placeholder="First Name*" required />
+              </div>
+
+              <div class="form-field">
+                <input id="contactLastName" name="lastName" type="text" placeholder="Last Name*" required />
+              </div>
+
+              <div class="form-field">
+                <input id="contactEmailAddress" name="emailAddress" type="email" placeholder="Email Address*" required />
+              </div>
+
+              <div class="form-field">
+                <input id="contactPhoneNumber" name="phoneNumber" type="tel" placeholder="Phone Number*" required />
+              </div>
+
+              <div class="form-field">
+                <input id="contactCompany" name="company" type="text" placeholder="Company*" required />
+              </div>
+
+              <div class="form-field">
+                <select id="contactState" name="state" required>
+                  <option value="">State*</option>
+                  <option>Pennsylvania</option>
+                  <option>New York</option>
+                  <option>New Jersey</option>
+                  <option>California</option>
+                  <option>Texas</option>
+                  <option>Florida</option>
+                  <option>Ohio</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="form-field full">
+                <select id="contactReason" name="reason" required>
+                  <option value="">Why are you contacting us today?*</option>
+                  <option>Request a Demo</option>
+                  <option>Sales Inquiry</option>
+                  <option>Partnership Opportunity</option>
+                  <option>Product Information</option>
+                  <option>Support Request</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="form-field full">
+                <textarea id="contactMessage" name="message" placeholder="Your Message"></textarea>
+              </div>
+
+              <div class="full">
+                <button class="btn btn-orange contact-submit" type="submit">Contact Us</button>
+                <div class="form-success" id="contactSuccess">Thank you. Your contact request has been captured.</div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="contact-side-card">
+          <h3>More Ways to Get in Touch</h3>
+
+          <div class="contact-side-list">
+            <div class="contact-side-item">
+              <div class="contact-side-icon">◔</div>
+              <div>
+                <span class="contact-side-label">Support</span>
+                <a class="contact-side-link" href="mailto:thetruecaresystem@gmail.com">thetruecaresystem@gmail.com</a>
+                <p class="contact-side-note">For assistance, platform questions, or general support, contact our team directly.</p>
+              </div>
+            </div>
+
+            <div class="contact-side-item">
+              <div class="contact-side-icon">◇</div>
+              <div>
+                <span class="contact-side-label">Sales</span>
+                <a class="contact-side-link" href="mailto:thetruecaresystem@gmail.com?subject=Sales%20Inquiry">thetruecaresystem@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-side-item">
+              <div class="contact-side-icon">▣</div>
+              <div>
+                <span class="contact-side-label">Website</span>
+                <a class="contact-side-link" href="https://www.truecaresystem.com/" target="_blank" rel="noreferrer">truecaresystem.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-side-bottom">
+            <img src="/logo.png" alt="True Care System logo" />
+            <p>Compassionate solutions. Better care.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
     (function () {
-      const modal = document.getElementById("demoModal");
-      const closeBtn = document.getElementById("demoClose");
-      const openButtons = document.querySelectorAll(".open-demo-modal");
-      const form = document.getElementById("demoRequestForm");
-      const successBox = document.getElementById("demoSuccess");
+      const body = document.body;
 
-      function openModal(event) {
+      function openModal(id, event) {
         if (event) event.preventDefault();
+        const modal = document.getElementById(id);
+        if (!modal) return;
         modal.classList.add("active");
-        document.body.classList.add("modal-open");
+        body.classList.add("modal-open");
       }
 
-      function closeModal() {
+      function closeModal(id) {
+        const modal = document.getElementById(id);
+        if (!modal) return;
         modal.classList.remove("active");
-        document.body.classList.remove("modal-open");
+        if (!document.querySelector(".modal-overlay.active")) {
+          body.classList.remove("modal-open");
+        }
       }
 
-      openButtons.forEach((button) => {
-        button.addEventListener("click", openModal);
+      document.querySelectorAll(".open-demo-modal").forEach((el) => {
+        el.addEventListener("click", (event) => openModal("demoModal", event));
       });
 
-      closeBtn.addEventListener("click", closeModal);
+      document.querySelectorAll(".open-contact-modal").forEach((el) => {
+        el.addEventListener("click", (event) => openModal("contactModal", event));
+      });
 
-      modal.addEventListener("click", function (event) {
-        if (event.target === modal) {
-          closeModal();
-        }
+      document.querySelectorAll("[data-close-modal]").forEach((btn) => {
+        btn.addEventListener("click", () => closeModal(btn.getAttribute("data-close-modal")));
+      });
+
+      document.querySelectorAll(".modal-overlay").forEach((overlay) => {
+        overlay.addEventListener("click", function (event) {
+          if (event.target === overlay) {
+            overlay.classList.remove("active");
+            if (!document.querySelector(".modal-overlay.active")) {
+              body.classList.remove("modal-open");
+            }
+          }
+        });
       });
 
       document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape" && modal.classList.contains("active")) {
-          closeModal();
+        if (event.key === "Escape") {
+          document.querySelectorAll(".modal-overlay.active").forEach((modal) => {
+            modal.classList.remove("active");
+          });
+          body.classList.remove("modal-open");
         }
       });
 
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        successBox.classList.add("active");
-        form.reset();
-      });
+      const demoForm = document.getElementById("demoRequestForm");
+      const demoSuccess = document.getElementById("demoSuccess");
+
+      if (demoForm) {
+        demoForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+          demoSuccess.classList.add("active");
+          demoForm.reset();
+        });
+      }
+
+      const contactForm = document.getElementById("contactRequestForm");
+      const contactSuccess = document.getElementById("contactSuccess");
+
+      if (contactForm) {
+        contactForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+          contactSuccess.classList.add("active");
+          contactForm.reset();
+        });
+      }
     })();
   </script>
 </body>
