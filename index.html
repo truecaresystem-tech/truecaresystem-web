@@ -117,19 +117,6 @@
       background: rgba(255,255,255,0.08);
     }
 
-    .btn-text {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: #21417a;
-      font-size: 15px;
-      font-weight: 800;
-    }
-
-    .btn-text:hover {
-      color: #102c60;
-    }
-
     /* HEADER */
     .site-header {
       position: sticky;
@@ -1251,7 +1238,7 @@
     }
 
     .ai-chat-log {
-      max-height: 210px;
+      max-height: 220px;
       overflow: auto;
       display: grid;
       gap: 10px;
@@ -1327,7 +1314,6 @@
       text-decoration: underline;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 1260px) {
       .main-nav {
         grid-template-columns: 1fr;
@@ -1415,7 +1401,7 @@
       }
 
       .top-strip-inner {
-        justify-content: center;
+        justify-content: flex-end;
         gap: 16px;
         flex-wrap: wrap;
         padding: 10px 0;
@@ -1507,8 +1493,6 @@
     <div class="top-strip">
       <div class="container top-strip-inner">
         <button class="nav-link open-contact-modal" type="button" style="padding:0; background:none;">Support</button>
-        <a href="#contact">Login</a>
-        <a href="#resources">State Info Centers ▼</a>
       </div>
     </div>
 
@@ -2251,6 +2235,8 @@
       const aiChatLog = document.getElementById("aiChatLog");
       const aiQuickButtons = document.querySelectorAll(".ai-quick");
 
+      let pendingLeadIntent = null;
+
       function appendBubble(text, type) {
         const bubble = document.createElement("div");
         bubble.className = `ai-bubble ${type}`;
@@ -2278,9 +2264,20 @@
         return keywords.some((k) => q.includes(k));
       }
 
-      function getBotReply(message) {
-        const q = normalizeText(message);
+      function isPositive(q) {
+        return hasAny(q, [
+          "yes", "yeah", "yep", "sure", "ok", "okay", "sounds good", "please do",
+          "book it", "book demo", "open demo", "demo please", "contact me", "open contact"
+        ]);
+      }
 
+      function isNegative(q) {
+        return hasAny(q, [
+          "no", "nope", "not now", "later", "maybe later", "not yet", "no thanks", "not interested"
+        ]);
+      }
+
+      function getTopicReply(q) {
         const topics = [
           {
             id: "billing",
@@ -2340,6 +2337,42 @@
         ];
 
         const matchedTopics = topics.filter((topic) => hasAny(q, topic.keywords));
+        return matchedTopics;
+      }
+
+      function getBotReply(message) {
+        const q = normalizeText(message);
+
+        if (pendingLeadIntent) {
+          if (isPositive(q)) {
+            const intent = pendingLeadIntent;
+            pendingLeadIntent = null;
+
+            if (intent === "demo") {
+              return {
+                type: "open-demo",
+                text: "Great. I’ll open the demo form for you now."
+              };
+            }
+
+            if (intent === "contact") {
+              return {
+                type: "open-contact",
+                text: "Great. I’ll open the contact form for you now."
+              };
+            }
+          }
+
+          if (isNegative(q)) {
+            pendingLeadIntent = null;
+            return {
+              type: "general",
+              text: "No problem. I’m here if you’d like to continue exploring services or ask another question."
+            };
+          }
+        }
+
+        const matchedTopics = getTopicReply(q);
 
         const asksDemo = hasAny(q, ["demo", "book a demo", "request a demo", "see a demo"]);
         const asksPricing = hasAny(q, ["price", "pricing", "cost", "costs", "how much"]);
@@ -2347,23 +2380,26 @@
         const saysHello = hasAny(q, ["hello", "hi", "hey"]);
 
         if (asksDemo && matchedTopics.length === 0) {
+          pendingLeadIntent = "demo";
           return {
-            type: "demo",
-            text: "I can help you request a demo. I’ll open the demo form for you."
+            type: "general",
+            text: "I can help with that. Would you like to request a demo so our team can learn more about your organization?"
           };
         }
 
         if (asksPricing && matchedTopics.length === 0) {
+          pendingLeadIntent = "demo";
           return {
-            type: "demo",
-            text: "For pricing and product fit, the best next step is a demo so our team can understand your organization and needs."
+            type: "general",
+            text: "Pricing usually depends on your organization’s needs and workflow. Would you like to request a demo so our team can guide you more accurately?"
           };
         }
 
         if (asksContact && matchedTopics.length === 0) {
+          pendingLeadIntent = "contact";
           return {
-            type: "contact",
-            text: "You can contact our team through the contact form, or email thetruecaresystem@gmail.com."
+            type: "general",
+            text: "I can help you reach our team. Would you like me to open the contact form for you?"
           };
         }
 
@@ -2405,9 +2441,9 @@
         setTimeout(() => {
           appendBubble(reply.text, "bot");
 
-          if (reply.type === "demo") {
+          if (reply.type === "open-demo") {
             setTimeout(() => openModal("demoModal"), 350);
-          } else if (reply.type === "contact") {
+          } else if (reply.type === "open-contact") {
             setTimeout(() => openModal("contactModal"), 350);
           } else if (
             ["billing", "evv", "scheduling", "documentation", "payroll", "compliance", "reporting", "mobile"].includes(reply.type)
@@ -2434,14 +2470,17 @@
         btn.addEventListener("click", function () {
           const action = btn.getAttribute("data-action");
           if (action === "demo") {
+            pendingLeadIntent = null;
             appendBubble("Request a Demo", "user");
             appendBubble("I’ll open the demo form for you now.", "bot");
             openModal("demoModal");
           } else if (action === "contact") {
+            pendingLeadIntent = null;
             appendBubble("Contact Us", "user");
             appendBubble("I’ll open the contact form for you now.", "bot");
             openModal("contactModal");
           } else if (action === "services") {
+            pendingLeadIntent = null;
             appendBubble("Our Services", "user");
             appendBubble("We support Scheduling, EVV, Documentation, Billing, Payroll, Compliance, Reporting, and Mobile Workflows.", "bot");
             scrollToServices();
