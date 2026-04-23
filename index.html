@@ -21,14 +21,10 @@
       --orange-dark: #c87723;
       --white: #ffffff;
       --soft-bg: #f5f7fb;
-      --soft-card: #ffffff;
       --text: #17233d;
       --muted: #5f6f8d;
       --line: rgba(15, 23, 42, 0.08);
       --shadow: 0 18px 42px rgba(7, 27, 70, 0.12);
-      --radius-xl: 26px;
-      --radius-lg: 20px;
-      --radius-md: 14px;
       --max: 1280px;
       --top-strip-h: 44px;
       --main-nav-h: 92px;
@@ -268,12 +264,6 @@
       transform: translateX(-50%) translateY(0);
     }
 
-    .dropdown-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px 24px;
-    }
-
     .dropdown-grid-3 {
       display: grid;
       grid-template-columns: 1.05fr 1.05fr 0.9fr;
@@ -315,15 +305,22 @@
       margin-top: 14px;
     }
 
-    .dropdown-list a {
+    .dropdown-list a,
+    .dropdown-list button {
       display: block;
       color: #22375d;
       font-size: 15px;
       font-weight: 700;
       line-height: 1.35;
+      background: transparent;
+      border: none;
+      padding: 0;
+      text-align: left;
+      cursor: pointer;
     }
 
-    .dropdown-list a small {
+    .dropdown-list a small,
+    .dropdown-list button small {
       display: block;
       margin-top: 4px;
       color: var(--muted);
@@ -332,7 +329,8 @@
       line-height: 1.55;
     }
 
-    .dropdown-list a:hover {
+    .dropdown-list a:hover,
+    .dropdown-list button:hover {
       color: #102c60;
     }
 
@@ -358,7 +356,7 @@
     }
 
     .dropdown-card.dark h4 {
-      color: #ffffff;
+      color: #fff;
     }
 
     .dropdown-card p {
@@ -782,7 +780,8 @@
 
     .footer p,
     .footer li,
-    .footer a {
+    .footer a,
+    .footer button {
       color: #cbd5e1;
       font-size: 15px;
       line-height: 1.8;
@@ -792,6 +791,25 @@
       list-style: none;
       padding: 0;
       margin: 0;
+    }
+
+    .footer-links button {
+      background: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .footer-contact-link {
+      color: #ffffff;
+      text-decoration: none;
+      transition: 0.2s ease;
+      word-break: break-word;
+    }
+
+    .footer-contact-link:hover {
+      color: #8ec5ff;
+      text-decoration: underline;
     }
 
     .copyright {
@@ -979,21 +997,6 @@
       box-shadow: 0 0 0 3px rgba(59, 84, 147, 0.12);
     }
 
-    .form-success {
-      display: none;
-      margin-top: 16px;
-      padding: 12px 14px;
-      border-radius: 8px;
-      background: #ecfdf3;
-      color: #166534;
-      font-weight: 600;
-      border: 1px solid #bbf7d0;
-    }
-
-    .form-success.active {
-      display: block;
-    }
-
     .demo-submit {
       width: 100%;
       margin-top: 10px;
@@ -1139,12 +1142,8 @@
       right: 22px;
       bottom: 18px;
       z-index: 999;
-      width: 330px;
+      width: 350px;
       max-width: calc(100vw - 24px);
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.22);
-      background: #fff;
     }
 
     .ai-widget.hidden-panel .ai-widget-panel {
@@ -1176,6 +1175,7 @@
       border: 1px solid rgba(15, 23, 42, 0.08);
       border-radius: 14px;
       overflow: hidden;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.22);
     }
 
     .ai-widget-header {
@@ -1192,7 +1192,7 @@
       font-size: 24px;
       color: #6b7280;
       line-height: 1.1;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .ai-widget-subtitle {
@@ -1251,7 +1251,7 @@
     }
 
     .ai-chat-log {
-      max-height: 168px;
+      max-height: 210px;
       overflow: auto;
       display: grid;
       gap: 10px;
@@ -1264,6 +1264,7 @@
       padding: 10px 12px;
       font-size: 14px;
       line-height: 1.55;
+      white-space: pre-wrap;
     }
 
     .ai-bubble.bot {
@@ -1662,8 +1663,8 @@
               <div class="dropdown-col">
                 <div class="dropdown-title">Connect</div>
                 <ul class="dropdown-list">
-                  <li><button class="nav-link open-contact-modal" type="button" style="padding:0;background:none;">Contact Us</button></li>
-                  <li><a href="#" class="open-demo-modal">Request Your Demo<small>Schedule a guided walkthrough of the platform.</small></a></li>
+                  <li><button class="open-contact-modal" type="button">Contact Us<small>Reach out for demos, partnerships, or general questions.</small></button></li>
+                  <li><button class="open-demo-modal" type="button">Request Your Demo<small>Schedule a guided walkthrough of the platform.</small></button></li>
                   <li><a href="#resources">News &amp; Updates<small>Follow announcements, updates, and milestones.</small></a></li>
                   <li><a href="#about">Careers / Opportunities<small>Future opportunities to grow with our mission.</small></a></li>
                 </ul>
@@ -1896,8 +1897,8 @@
         <div>
           <h4>Contact Us</h4>
           <ul class="footer-links">
-            <li>thetruecaresystem@gmail.com</li>
-            <li>truecaresystem.com</li>
+            <li><a class="footer-contact-link" href="mailto:thetruecaresystem@gmail.com">thetruecaresystem@gmail.com</a></li>
+            <li><a class="footer-contact-link" href="http://www.truecaresystem.com" target="_blank" rel="noreferrer">www.truecaresystem.com</a></li>
           </ul>
         </div>
       </div>
@@ -1960,7 +1961,12 @@
         </div>
 
         <div class="demo-form">
-          <form id="demoRequestForm">
+          <form id="demoRequestForm" action="https://formsubmit.co/thetruecaresystem@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="NEW DEMO REQUEST - TRUE CARE SYSTEM">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://truecaresystem.com/thank-you.html">
+
             <div class="form-grid">
               <div class="form-field">
                 <label for="demoFirstName">First Name*</label>
@@ -2016,7 +2022,6 @@
               </div>
 
               <button class="btn btn-orange demo-submit" type="submit">Request Your Demo</button>
-              <div class="form-success" id="demoSuccess">Thank you. Your demo request has been captured.</div>
             </div>
           </form>
         </div>
@@ -2033,7 +2038,12 @@
 
       <div class="contact-modal-grid">
         <div class="contact-form-card">
-          <form id="contactRequestForm">
+          <form id="contactRequestForm" action="https://formsubmit.co/thetruecaresystem@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="NEW CONTACT REQUEST - TRUE CARE SYSTEM">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://truecaresystem.com/thank-you.html">
+
             <div class="contact-form-layout">
               <div class="form-field">
                 <input id="contactFirstName" name="firstName" type="text" placeholder="First Name*" required />
@@ -2087,7 +2097,6 @@
 
               <div class="full">
                 <button class="btn btn-orange contact-submit" type="submit">Contact Us</button>
-                <div class="form-success" id="contactSuccess">Thank you. Your contact request has been captured.</div>
               </div>
             </div>
           </form>
@@ -2118,7 +2127,7 @@
               <div class="contact-side-icon">▣</div>
               <div>
                 <span class="contact-side-label">Website</span>
-                <a class="contact-side-link" href="https://www.truecaresystem.com/" target="_blank" rel="noreferrer">truecaresystem.com</a>
+                <a class="contact-side-link" href="http://www.truecaresystem.com" target="_blank" rel="noreferrer">www.truecaresystem.com</a>
               </div>
             </div>
           </div>
@@ -2139,7 +2148,7 @@
     <div class="ai-widget-panel">
       <div class="ai-widget-header">
         <div>
-          <h3 class="ai-widget-title">Lina</h3>
+          <h3 class="ai-widget-title">Selena</h3>
           <p class="ai-widget-subtitle">Virtual AI Assistant</p>
         </div>
         <button class="ai-widget-minimize" id="aiWidgetMinimize" type="button" aria-label="Minimize assistant">—</button>
@@ -2147,8 +2156,8 @@
 
       <div class="ai-widget-body">
         <p class="ai-assistant-message">
-          Welcome back! I'm Lina, your Virtual AI Assistant from True Care System.
-          Are there any questions you have about our services or how we can support your needs?
+          Welcome back! I'm Selena, your Virtual AI Assistant from True Care System.
+          Ask me about Scheduling, EVV, Documentation, Billing, Payroll, Compliance, Reporting, Mobile App, Demo, or Contact.
         </p>
 
         <div class="ai-quick-actions">
@@ -2159,17 +2168,17 @@
 
         <div class="ai-chat-log" id="aiChatLog">
           <div class="ai-bubble bot">
-            Ask me about scheduling, EVV, documentation, billing, compliance, reporting, mobile tools, or how to get started.
+            I can answer topic-specific questions.
+            Try asking:
+            • What does Billing do?
+            • Tell me about EVV
+            • How does Scheduling work?
+            • What can your Mobile App support?
           </div>
         </div>
 
         <div class="ai-input-row">
-          <input
-            class="ai-input"
-            id="aiInput"
-            type="text"
-            placeholder="Ask a question"
-          />
+          <input class="ai-input" id="aiInput" type="text" placeholder="Ask a question" />
           <button class="ai-send" id="aiSend" type="button" aria-label="Send message">➤</button>
         </div>
       </div>
@@ -2186,7 +2195,7 @@
       const body = document.body;
 
       function openModal(id, event) {
-        if (event) event.preventDefault();
+        if (event && event.type !== "submit") event.preventDefault();
         const modal = document.getElementById(id);
         if (!modal) return;
         modal.classList.add("active");
@@ -2234,28 +2243,6 @@
         }
       });
 
-      const demoForm = document.getElementById("demoRequestForm");
-      const demoSuccess = document.getElementById("demoSuccess");
-
-      if (demoForm) {
-        demoForm.addEventListener("submit", function (event) {
-          event.preventDefault();
-          demoSuccess.classList.add("active");
-          demoForm.reset();
-        });
-      }
-
-      const contactForm = document.getElementById("contactRequestForm");
-      const contactSuccess = document.getElementById("contactSuccess");
-
-      if (contactForm) {
-        contactForm.addEventListener("submit", function (event) {
-          event.preventDefault();
-          contactSuccess.classList.add("active");
-          contactForm.reset();
-        });
-      }
-
       /* AI WIDGET */
       const aiWidget = document.getElementById("aiWidget");
       const aiWidgetToggle = document.getElementById("aiWidgetToggle");
@@ -2273,40 +2260,124 @@
         aiChatLog.scrollTop = aiChatLog.scrollHeight;
       }
 
-      function getBotReply(message) {
-        const q = message.toLowerCase();
+      function scrollToServices() {
+        const section = document.getElementById("services");
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      }
 
-        if (q.includes("demo") || q.includes("pricing") || q.includes("price")) {
+      function getBotReply(message) {
+        const q = message.toLowerCase().trim();
+
+        if (q.includes("billing")) {
+          return {
+            type: "billing",
+            text: "Billing helps providers organize reimbursement workflows more clearly. True Care System supports cleaner billing processes, better operational visibility, and stronger alignment between documentation and financial workflows."
+          };
+        }
+
+        if (q.includes("evv") || q.includes("electronic visit verification") || q.includes("visit verification")) {
+          return {
+            type: "evv",
+            text: "EVV helps confirm that visits are recorded accurately and consistently. In True Care System, EVV supports real-time visit capture, better accountability, and stronger alignment between field activity and office oversight."
+          };
+        }
+
+        if (q.includes("scheduling") || q.includes("schedule") || q.includes("shift")) {
+          return {
+            type: "scheduling",
+            text: "Scheduling helps providers coordinate staff, shifts, and service coverage more efficiently. True Care System supports smarter workforce management, shift visibility, and cleaner day-to-day coordination."
+          };
+        }
+
+        if (q.includes("documentation") || q.includes("daily notes") || q.includes("notes")) {
+          return {
+            type: "documentation",
+            text: "Documentation in True Care System supports structured notes, cleaner recordkeeping, and more consistent service tracking. This helps providers improve accuracy, reduce friction, and strengthen operational readiness."
+          };
+        }
+
+        if (q.includes("payroll")) {
+          return {
+            type: "payroll",
+            text: "Payroll support helps organizations improve accuracy and reduce administrative friction. True Care System is designed to support cleaner payroll-related workflows alongside scheduling, billing, and workforce coordination."
+          };
+        }
+
+        if (q.includes("compliance") || q.includes("audit")) {
+          return {
+            type: "compliance",
+            text: "Compliance tools help providers stay organized, consistent, and audit-ready. True Care System supports stronger documentation practices, operational visibility, and readiness across daily workflows."
+          };
+        }
+
+        if (q.includes("reporting") || q.includes("dashboard") || q.includes("analytics")) {
+          return {
+            type: "reporting",
+            text: "Reporting gives leadership better visibility into operations, performance, and trends. True Care System supports dashboards, operational insights, and reporting tools that help teams make stronger decisions."
+          };
+        }
+
+        if (q.includes("mobile") || q.includes("app") || q.includes("phone")) {
+          return {
+            type: "mobile",
+            text: "Our Mobile App support is designed for field teams and care staff who need fast, practical workflows on the go. It helps connect day-to-day service activity with office visibility and operational consistency."
+          };
+        }
+
+        if (q.includes("technology") || q.includes("platform") || q.includes("system")) {
+          return {
+            type: "technology",
+            text: "True Care System is a connected care management platform built to support operations, workflow, EVV, documentation, billing, compliance, reporting, and mobile-ready experiences in one practical system."
+          };
+        }
+
+        if (q.includes("resource") || q.includes("resources") || q.includes("blog") || q.includes("guides") || q.includes("webinar")) {
+          return {
+            type: "resources",
+            text: "Our Resources area is designed to support better decisions through helpful materials, insights, guides, checklists, and future education content for providers and care organizations."
+          };
+        }
+
+        if (q.includes("company") || q.includes("about") || q.includes("vision") || q.includes("why true care")) {
+          return {
+            type: "company",
+            text: "True Care System is built for providers and focused on people. Our goal is to help organizations improve operations, strengthen visibility, and support better care delivery with practical connected tools."
+          };
+        }
+
+        if (q.includes("demo") || q.includes("pricing") || q.includes("price") || q.includes("cost")) {
           return {
             type: "demo",
-            text: "I can help you request a personalized demo. Click the demo option below and our team can follow up with you."
+            text: "I can help you request a personalized demo so our team can better understand your organization and walk you through the platform."
           };
         }
 
-        if (q.includes("contact") || q.includes("sales") || q.includes("support") || q.includes("email")) {
+        if (q.includes("contact") || q.includes("sales") || q.includes("support") || q.includes("email") || q.includes("phone")) {
           return {
             type: "contact",
-            text: "You can contact our team directly through the contact form, or email thetruecaresystem@gmail.com for support or sales questions."
+            text: "You can contact our team through the contact form, or email thetruecaresystem@gmail.com. You can also visit www.truecaresystem.com for more information."
           };
         }
 
-        if (q.includes("service") || q.includes("scheduling") || q.includes("evv") || q.includes("documentation") || q.includes("billing") || q.includes("payroll") || q.includes("compliance") || q.includes("reporting") || q.includes("mobile")) {
+        if (q.includes("service") || q.includes("what do you do")) {
           return {
             type: "services",
-            text: "True Care System supports scheduling, EVV, documentation, billing, payroll, compliance, reporting, and mobile workflows in one connected platform."
+            text: "True Care System supports Scheduling, EVV, Documentation, Billing, Payroll, Compliance, Reporting, and Mobile Workflows in one connected platform."
           };
         }
 
         if (q.includes("hello") || q.includes("hi")) {
           return {
             type: "general",
-            text: "Hello. I can help you explore services, request a demo, or contact our team."
+            text: "Hello. I’m Selena. I can help you explore services, request a demo, or contact our team."
           };
         }
 
         return {
           type: "general",
-          text: "I can help with services, demos, contact information, scheduling, EVV, documentation, billing, compliance, reporting, and mobile tools."
+          text: "I can help with Scheduling, EVV, Documentation, Billing, Payroll, Compliance, Reporting, Mobile App, Demo requests, Contact information, Technology, Resources, and Company information."
         };
       }
 
@@ -2323,10 +2394,18 @@
             setTimeout(() => openModal("demoModal"), 350);
           } else if (reply.type === "contact") {
             setTimeout(() => openModal("contactModal"), 350);
-          } else if (reply.type === "services") {
-            setTimeout(() => {
-              document.getElementById("services").scrollIntoView({ behavior: "smooth" });
-            }, 250);
+          } else if (
+            reply.type === "services" ||
+            reply.type === "billing" ||
+            reply.type === "evv" ||
+            reply.type === "scheduling" ||
+            reply.type === "documentation" ||
+            reply.type === "payroll" ||
+            reply.type === "compliance" ||
+            reply.type === "reporting" ||
+            reply.type === "mobile"
+          ) {
+            setTimeout(scrollToServices, 250);
           }
         }, 300);
       }
@@ -2357,8 +2436,8 @@
             openModal("contactModal");
           } else if (action === "services") {
             appendBubble("Our Services", "user");
-            appendBubble("Here are some of the areas we support: scheduling, EVV, documentation, billing, compliance, reporting, and mobile workflows.", "bot");
-            document.getElementById("services").scrollIntoView({ behavior: "smooth" });
+            appendBubble("We support Scheduling, EVV, Documentation, Billing, Payroll, Compliance, Reporting, and Mobile Workflows. I’ll take you to that section now.", "bot");
+            scrollToServices();
           }
         });
       });
