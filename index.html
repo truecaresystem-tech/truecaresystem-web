@@ -2157,7 +2157,7 @@
       <div class="ai-widget-body">
         <p class="ai-assistant-message">
           Welcome back! I'm Selena, your Virtual AI Assistant from True Care System.
-          Ask me about Scheduling, EVV, Documentation, Billing, Payroll, Compliance, Reporting, Mobile App, Demo, or Contact.
+          Ask me about one topic at a time, such as Billing, EVV, Scheduling, Documentation, Payroll, Compliance, Reporting, Mobile App, Demo, or Contact.
         </p>
 
         <div class="ai-quick-actions">
@@ -2168,7 +2168,7 @@
 
         <div class="ai-chat-log" id="aiChatLog">
           <div class="ai-bubble bot">
-            I can answer topic-specific questions.
+            I can answer one topic at a time.
             Try asking:
             • What does Billing do?
             • Tell me about EVV
@@ -2191,272 +2191,272 @@
   </div>
 
   <script>
-  (function () {
-    const body = document.body;
+    (function () {
+      const body = document.body;
 
-    function openModal(id, event) {
-      if (event && event.type !== "submit") event.preventDefault();
-      const modal = document.getElementById(id);
-      if (!modal) return;
-      modal.classList.add("active");
-      body.classList.add("modal-open");
-    }
-
-    function closeModal(id) {
-      const modal = document.getElementById(id);
-      if (!modal) return;
-      modal.classList.remove("active");
-      if (!document.querySelector(".modal-overlay.active")) {
-        body.classList.remove("modal-open");
+      function openModal(id, event) {
+        if (event && event.type !== "submit") event.preventDefault();
+        const modal = document.getElementById(id);
+        if (!modal) return;
+        modal.classList.add("active");
+        body.classList.add("modal-open");
       }
-    }
 
-    document.querySelectorAll(".open-demo-modal").forEach((el) => {
-      el.addEventListener("click", (event) => openModal("demoModal", event));
-    });
+      function closeModal(id) {
+        const modal = document.getElementById(id);
+        if (!modal) return;
+        modal.classList.remove("active");
+        if (!document.querySelector(".modal-overlay.active")) {
+          body.classList.remove("modal-open");
+        }
+      }
 
-    document.querySelectorAll(".open-contact-modal").forEach((el) => {
-      el.addEventListener("click", (event) => openModal("contactModal", event));
-    });
+      document.querySelectorAll(".open-demo-modal").forEach((el) => {
+        el.addEventListener("click", (event) => openModal("demoModal", event));
+      });
 
-    document.querySelectorAll("[data-close-modal]").forEach((btn) => {
-      btn.addEventListener("click", () => closeModal(btn.getAttribute("data-close-modal")));
-    });
+      document.querySelectorAll(".open-contact-modal").forEach((el) => {
+        el.addEventListener("click", (event) => openModal("contactModal", event));
+      });
 
-    document.querySelectorAll(".modal-overlay").forEach((overlay) => {
-      overlay.addEventListener("click", function (event) {
-        if (event.target === overlay) {
-          overlay.classList.remove("active");
-          if (!document.querySelector(".modal-overlay.active")) {
-            body.classList.remove("modal-open");
+      document.querySelectorAll("[data-close-modal]").forEach((btn) => {
+        btn.addEventListener("click", () => closeModal(btn.getAttribute("data-close-modal")));
+      });
+
+      document.querySelectorAll(".modal-overlay").forEach((overlay) => {
+        overlay.addEventListener("click", function (event) {
+          if (event.target === overlay) {
+            overlay.classList.remove("active");
+            if (!document.querySelector(".modal-overlay.active")) {
+              body.classList.remove("modal-open");
+            }
           }
-        }
-      });
-    });
-
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") {
-        document.querySelectorAll(".modal-overlay.active").forEach((modal) => {
-          modal.classList.remove("active");
         });
-        body.classList.remove("modal-open");
-      }
-    });
+      });
 
-    const aiWidget = document.getElementById("aiWidget");
-    const aiWidgetToggle = document.getElementById("aiWidgetToggle");
-    const aiWidgetMinimize = document.getElementById("aiWidgetMinimize");
-    const aiSend = document.getElementById("aiSend");
-    const aiInput = document.getElementById("aiInput");
-    const aiChatLog = document.getElementById("aiChatLog");
-    const aiQuickButtons = document.querySelectorAll(".ai-quick");
-
-    function appendBubble(text, type) {
-      const bubble = document.createElement("div");
-      bubble.className = `ai-bubble ${type}`;
-      bubble.textContent = text;
-      aiChatLog.appendChild(bubble);
-      aiChatLog.scrollTop = aiChatLog.scrollHeight;
-    }
-
-    function scrollToServices() {
-      const section = document.getElementById("services");
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-
-    function normalizeText(text) {
-      return text
-        .toLowerCase()
-        .replace(/[^\w\s/&-]/g, " ")
-        .replace(/\s+/g, " ")
-        .trim();
-    }
-
-    function hasAny(q, keywords) {
-      return keywords.some((k) => q.includes(k));
-    }
-
-    function getBotReply(message) {
-      const q = normalizeText(message);
-
-      const topics = [
-        {
-          id: "billing",
-          keywords: ["billing", "claim", "claims", "invoice", "invoicing", "reimbursement"],
-          text: "Billing focuses on cleaner reimbursement workflows, better visibility, and stronger alignment between service records and financial operations."
-        },
-        {
-          id: "evv",
-          keywords: ["evv", "electronic visit verification", "visit verification", "visit check in", "check in", "check out"],
-          text: "EVV helps verify visits accurately in real time, improving accountability and aligning field activity with office oversight."
-        },
-        {
-          id: "scheduling",
-          keywords: ["scheduling", "schedule", "shift", "staffing", "calendar"],
-          text: "Scheduling helps coordinate staff, shifts, and service coverage more efficiently, with clearer visibility into daily operations."
-        },
-        {
-          id: "documentation",
-          keywords: ["documentation", "daily note", "daily notes", "notes", "document", "recordkeeping", "records"],
-          text: "Documentation supports structured notes, cleaner records, and more consistent service tracking to reduce friction and improve accuracy."
-        },
-        {
-          id: "payroll",
-          keywords: ["payroll", "timesheet", "timesheets", "pay", "wages"],
-          text: "Payroll support helps improve pay-related accuracy and reduce administrative work by aligning operational data with workforce workflows."
-        },
-        {
-          id: "compliance",
-          keywords: ["compliance", "audit", "audits", "regulation", "regulations", "readiness"],
-          text: "Compliance tools help providers stay organized, consistent, and audit-ready through stronger documentation and operational oversight."
-        },
-        {
-          id: "reporting",
-          keywords: ["reporting", "reports", "dashboard", "dashboards", "analytics", "insights"],
-          text: "Reporting provides visibility into operations, trends, and performance so teams can make better day-to-day and leadership decisions."
-        },
-        {
-          id: "mobile",
-          keywords: ["mobile", "app", "phone", "tablet", "field staff"],
-          text: "The Mobile App is designed for field teams who need fast, practical workflows on the go while staying connected to office operations."
-        },
-        {
-          id: "technology",
-          keywords: ["technology", "platform", "system", "software"],
-          text: "Technology at True Care System is built to connect operations, workflow, EVV, documentation, billing, compliance, reporting, and mobile-ready tools in one platform."
-        },
-        {
-          id: "resources",
-          keywords: ["resources", "resource", "blog", "guides", "checklists", "webinars", "faq"],
-          text: "Resources include helpful materials, insights, guides, and future education content designed to support better provider decision-making."
-        },
-        {
-          id: "company",
-          keywords: ["company", "about", "vision", "mission", "who are you", "why true care"],
-          text: "True Care System is built for providers and focused on people, with practical tools designed to improve operations and support better care delivery."
-        }
-      ];
-
-      const matchedTopics = topics.filter((topic) => hasAny(q, topic.keywords));
-
-      const asksDemo = hasAny(q, ["demo", "book a demo", "request a demo", "see a demo"]);
-      const asksPricing = hasAny(q, ["price", "pricing", "cost", "costs", "how much"]);
-      const asksContact = hasAny(q, ["contact", "support", "sales", "email", "talk to someone", "reach out"]);
-      const saysHello = hasAny(q, ["hello", "hi", "hey"]);
-
-      if (asksDemo && matchedTopics.length === 0) {
-        return {
-          type: "demo",
-          text: "I can help you request a demo. I’ll open the demo form for you."
-        };
-      }
-
-      if (asksPricing && matchedTopics.length === 0) {
-        return {
-          type: "demo",
-          text: "For pricing and product fit, the best next step is a demo so our team can understand your organization and needs."
-        };
-      }
-
-      if (asksContact && matchedTopics.length === 0) {
-        return {
-          type: "contact",
-          text: "You can contact our team through the contact form, or email thetruecaresystem@gmail.com."
-        };
-      }
-
-      if (saysHello && matchedTopics.length === 0) {
-        return {
-          type: "general",
-          text: "Hello. Ask me about Billing, EVV, Scheduling, Documentation, Payroll, Compliance, Reporting, Mobile App, Demo, or Contact."
-        };
-      }
-
-      if (matchedTopics.length === 1) {
-        const topic = matchedTopics[0];
-        return {
-          type: topic.id,
-          text: topic.text
-        };
-      }
-
-      if (matchedTopics.length > 1) {
-        const names = matchedTopics.map((t) => t.id.charAt(0).toUpperCase() + t.id.slice(1));
-        return {
-          type: "general",
-          text: `Your question touches multiple areas: ${names.join(", ")}. Please ask one area at a time so I can answer more precisely.`
-        };
-      }
-
-      return {
-        type: "general",
-        text: "I’m not fully sure which area you mean. Please ask about one topic such as Billing, EVV, Scheduling, Documentation, Payroll, Compliance, Reporting, Mobile App, Demo, or Contact."
-      };
-    }
-
-    function handleAiMessage(message) {
-      if (!message.trim()) return;
-
-      appendBubble(message, "user");
-      const reply = getBotReply(message);
-
-      setTimeout(() => {
-        appendBubble(reply.text, "bot");
-
-        if (reply.type === "demo") {
-          setTimeout(() => openModal("demoModal"), 350);
-        } else if (reply.type === "contact") {
-          setTimeout(() => openModal("contactModal"), 350);
-        } else if (
-          ["billing", "evv", "scheduling", "documentation", "payroll", "compliance", "reporting", "mobile"].includes(reply.type)
-        ) {
-          setTimeout(scrollToServices, 250);
-        }
-      }, 260);
-    }
-
-    aiSend.addEventListener("click", function () {
-      const text = aiInput.value;
-      aiInput.value = "";
-      handleAiMessage(text);
-    });
-
-    aiInput.addEventListener("keydown", function (event) {
-      if (event.key === "Enter") {
-        event.preventDefault();
-        aiSend.click();
-      }
-    });
-
-    aiQuickButtons.forEach((btn) => {
-      btn.addEventListener("click", function () {
-        const action = btn.getAttribute("data-action");
-        if (action === "demo") {
-          appendBubble("Request a Demo", "user");
-          appendBubble("I’ll open the demo form for you now.", "bot");
-          openModal("demoModal");
-        } else if (action === "contact") {
-          appendBubble("Contact Us", "user");
-          appendBubble("I’ll open the contact form for you now.", "bot");
-          openModal("contactModal");
-        } else if (action === "services") {
-          appendBubble("Our Services", "user");
-          appendBubble("We support Scheduling, EVV, Documentation, Billing, Payroll, Compliance, Reporting, and Mobile Workflows.", "bot");
-          scrollToServices();
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          document.querySelectorAll(".modal-overlay.active").forEach((modal) => {
+            modal.classList.remove("active");
+          });
+          body.classList.remove("modal-open");
         }
       });
-    });
 
-    aiWidgetMinimize.addEventListener("click", function () {
-      aiWidget.classList.add("hidden-panel");
-    });
+      const aiWidget = document.getElementById("aiWidget");
+      const aiWidgetToggle = document.getElementById("aiWidgetToggle");
+      const aiWidgetMinimize = document.getElementById("aiWidgetMinimize");
+      const aiSend = document.getElementById("aiSend");
+      const aiInput = document.getElementById("aiInput");
+      const aiChatLog = document.getElementById("aiChatLog");
+      const aiQuickButtons = document.querySelectorAll(".ai-quick");
 
-    aiWidgetToggle.addEventListener("click", function () {
-      aiWidget.classList.remove("hidden-panel");
-    });
-  })();
-</script>
+      function appendBubble(text, type) {
+        const bubble = document.createElement("div");
+        bubble.className = `ai-bubble ${type}`;
+        bubble.textContent = text;
+        aiChatLog.appendChild(bubble);
+        aiChatLog.scrollTop = aiChatLog.scrollHeight;
+      }
+
+      function scrollToServices() {
+        const section = document.getElementById("services");
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      function normalizeText(text) {
+        return text
+          .toLowerCase()
+          .replace(/[^\w\s/&-]/g, " ")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+
+      function hasAny(q, keywords) {
+        return keywords.some((k) => q.includes(k));
+      }
+
+      function getBotReply(message) {
+        const q = normalizeText(message);
+
+        const topics = [
+          {
+            id: "billing",
+            keywords: ["billing", "claim", "claims", "invoice", "invoicing", "reimbursement"],
+            text: "Billing focuses on cleaner reimbursement workflows, better visibility, and stronger alignment between service records and financial operations."
+          },
+          {
+            id: "evv",
+            keywords: ["evv", "electronic visit verification", "visit verification", "visit check in", "check in", "check out"],
+            text: "EVV helps verify visits accurately in real time, improving accountability and aligning field activity with office oversight."
+          },
+          {
+            id: "scheduling",
+            keywords: ["scheduling", "schedule", "shift", "staffing", "calendar"],
+            text: "Scheduling helps coordinate staff, shifts, and service coverage more efficiently, with clearer visibility into daily operations."
+          },
+          {
+            id: "documentation",
+            keywords: ["documentation", "daily note", "daily notes", "notes", "document", "recordkeeping", "records"],
+            text: "Documentation supports structured notes, cleaner records, and more consistent service tracking to reduce friction and improve accuracy."
+          },
+          {
+            id: "payroll",
+            keywords: ["payroll", "timesheet", "timesheets", "pay", "wages"],
+            text: "Payroll support helps improve pay-related accuracy and reduce administrative work by aligning operational data with workforce workflows."
+          },
+          {
+            id: "compliance",
+            keywords: ["compliance", "audit", "audits", "regulation", "regulations", "readiness"],
+            text: "Compliance tools help providers stay organized, consistent, and audit-ready through stronger documentation and operational oversight."
+          },
+          {
+            id: "reporting",
+            keywords: ["reporting", "reports", "dashboard", "dashboards", "analytics", "insights"],
+            text: "Reporting provides visibility into operations, trends, and performance so teams can make better day-to-day and leadership decisions."
+          },
+          {
+            id: "mobile",
+            keywords: ["mobile", "app", "phone", "tablet", "field staff"],
+            text: "The Mobile App is designed for field teams who need fast, practical workflows on the go while staying connected to office operations."
+          },
+          {
+            id: "technology",
+            keywords: ["technology", "platform", "system", "software"],
+            text: "Technology at True Care System is built to connect operations, workflow, EVV, documentation, billing, compliance, reporting, and mobile-ready tools in one platform."
+          },
+          {
+            id: "resources",
+            keywords: ["resources", "resource", "blog", "guides", "checklists", "webinars", "faq"],
+            text: "Resources include helpful materials, insights, guides, and future education content designed to support better provider decision-making."
+          },
+          {
+            id: "company",
+            keywords: ["company", "about", "vision", "mission", "who are you", "why true care"],
+            text: "True Care System is built for providers and focused on people, with practical tools designed to improve operations and support better care delivery."
+          }
+        ];
+
+        const matchedTopics = topics.filter((topic) => hasAny(q, topic.keywords));
+
+        const asksDemo = hasAny(q, ["demo", "book a demo", "request a demo", "see a demo"]);
+        const asksPricing = hasAny(q, ["price", "pricing", "cost", "costs", "how much"]);
+        const asksContact = hasAny(q, ["contact", "support", "sales", "email", "talk to someone", "reach out"]);
+        const saysHello = hasAny(q, ["hello", "hi", "hey"]);
+
+        if (asksDemo && matchedTopics.length === 0) {
+          return {
+            type: "demo",
+            text: "I can help you request a demo. I’ll open the demo form for you."
+          };
+        }
+
+        if (asksPricing && matchedTopics.length === 0) {
+          return {
+            type: "demo",
+            text: "For pricing and product fit, the best next step is a demo so our team can understand your organization and needs."
+          };
+        }
+
+        if (asksContact && matchedTopics.length === 0) {
+          return {
+            type: "contact",
+            text: "You can contact our team through the contact form, or email thetruecaresystem@gmail.com."
+          };
+        }
+
+        if (saysHello && matchedTopics.length === 0) {
+          return {
+            type: "general",
+            text: "Hello. I’m Selena. Ask me about one topic such as Billing, EVV, Scheduling, Documentation, Payroll, Compliance, Reporting, Mobile App, Demo, or Contact."
+          };
+        }
+
+        if (matchedTopics.length === 1) {
+          const topic = matchedTopics[0];
+          return {
+            type: topic.id,
+            text: topic.text
+          };
+        }
+
+        if (matchedTopics.length > 1) {
+          const names = matchedTopics.map((t) => t.id.charAt(0).toUpperCase() + t.id.slice(1));
+          return {
+            type: "general",
+            text: `Your question touches multiple areas: ${names.join(", ")}. Please ask one area at a time so I can answer more precisely.`
+          };
+        }
+
+        return {
+          type: "general",
+          text: "I’m not fully sure which area you mean. Please ask about one topic such as Billing, EVV, Scheduling, Documentation, Payroll, Compliance, Reporting, Mobile App, Demo, or Contact."
+        };
+      }
+
+      function handleAiMessage(message) {
+        if (!message.trim()) return;
+
+        appendBubble(message, "user");
+        const reply = getBotReply(message);
+
+        setTimeout(() => {
+          appendBubble(reply.text, "bot");
+
+          if (reply.type === "demo") {
+            setTimeout(() => openModal("demoModal"), 350);
+          } else if (reply.type === "contact") {
+            setTimeout(() => openModal("contactModal"), 350);
+          } else if (
+            ["billing", "evv", "scheduling", "documentation", "payroll", "compliance", "reporting", "mobile"].includes(reply.type)
+          ) {
+            setTimeout(scrollToServices, 250);
+          }
+        }, 260);
+      }
+
+      aiSend.addEventListener("click", function () {
+        const text = aiInput.value;
+        aiInput.value = "";
+        handleAiMessage(text);
+      });
+
+      aiInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          aiSend.click();
+        }
+      });
+
+      aiQuickButtons.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const action = btn.getAttribute("data-action");
+          if (action === "demo") {
+            appendBubble("Request a Demo", "user");
+            appendBubble("I’ll open the demo form for you now.", "bot");
+            openModal("demoModal");
+          } else if (action === "contact") {
+            appendBubble("Contact Us", "user");
+            appendBubble("I’ll open the contact form for you now.", "bot");
+            openModal("contactModal");
+          } else if (action === "services") {
+            appendBubble("Our Services", "user");
+            appendBubble("We support Scheduling, EVV, Documentation, Billing, Payroll, Compliance, Reporting, and Mobile Workflows.", "bot");
+            scrollToServices();
+          }
+        });
+      });
+
+      aiWidgetMinimize.addEventListener("click", function () {
+        aiWidget.classList.add("hidden-panel");
+      });
+
+      aiWidgetToggle.addEventListener("click", function () {
+        aiWidget.classList.remove("hidden-panel");
+      });
+    })();
+  </script>
 </body>
 </html>
