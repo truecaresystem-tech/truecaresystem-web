@@ -1123,13 +1123,18 @@
 
     /* AI CHAT WIDGET */
     .ai-widget {
-      position: fixed;
-      right: 22px;
-      bottom: 18px;
-      z-index: 999;
-      width: 350px;
-      max-width: calc(100vw - 24px);
-    }
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 999;
+  width: 320px;
+  max-width: calc(100vw - 24px);
+}
+
+.ai-widget-panel {
+  max-height: calc(100vh - 40px);
+  overflow: hidden;
+}
 
     .ai-widget.hidden-panel .ai-widget-panel {
       display: none;
@@ -1236,7 +1241,7 @@
     }
 
     .ai-chat-log {
-      max-height: 220px;
+      max-height: 150px;
       overflow: auto;
       display: grid;
       gap: 10px;
@@ -1481,7 +1486,7 @@
       .ai-widget {
         right: 12px;
         bottom: 12px;
-        width: calc(100vw - 24px);
+        width: min(320px, calc(100vw - 24px));
       }
     }
   </style>
@@ -2161,7 +2166,7 @@
   </div>
 
   <!-- AI ASSISTANT -->
-  <div class="ai-widget" id="aiWidget">
+ <div class="ai-widget hidden-panel" id="aiWidget">
     <button class="ai-widget-toggle" id="aiWidgetToggle" type="button" aria-label="Open assistant">💬</button>
 
     <div class="ai-widget-panel">
@@ -2528,8 +2533,23 @@
       });
 
       aiWidgetToggle.addEventListener("click", function () {
-        aiWidget.classList.remove("hidden-panel");
-      });
+  aiWidget.classList.remove("hidden-panel");
+});
+
+// Auto open after 30s (only if user hasn't opened yet)
+let aiOpenedManually = false;
+
+aiWidgetToggle.addEventListener("click", function () {
+  aiOpenedManually = true;
+  aiWidget.classList.remove("hidden-panel");
+});
+
+setTimeout(function () {
+  if (!aiOpenedManually && aiWidget.classList.contains("hidden-panel")) {
+    aiWidget.classList.remove("hidden-panel");
+  }
+}, 30000);
+      
     })();
   </script>
 </body>
