@@ -127,9 +127,7 @@
     }
 
     .top-strip {
-      height: var(--top-strip-h);
-      border-bottom: 1px solid var(--line);
-      background: #fafbfd;
+      display: none;
     }
 
     .top-strip-inner {
@@ -1690,9 +1688,29 @@
         </div>
       </nav>
 
-      <div class="nav-right">
-        <button class="btn btn-orange open-demo-modal" type="button">Request Your Demo</button>
-      </div>
+      <div class="nav-right" style="flex-direction: column; align-items: center; gap: 10px;">
+  <div style="display:flex; align-items:center; justify-content:center; gap:28px;">
+    <button
+      class="nav-link open-contact-modal"
+      type="button"
+      style="padding:0; background:none; font-weight:800;"
+    >
+      Support
+    </button>
+
+    <a
+      class="nav-link"
+      href="https://app.truecaresystem.com/login"
+      style="padding:0; background:none; font-weight:800;"
+    >
+      Login
+    </a>
+  </div>
+
+  <button class="btn btn-orange open-demo-modal" type="button">
+    Request Your Demo
+  </button>
+</div>
     </div>
   </header>
 
