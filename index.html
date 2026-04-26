@@ -1492,8 +1492,12 @@
   <header class="site-header">
     <div class="top-strip">
       <div class="container top-strip-inner">
-        <button class="nav-link open-contact-modal" type="button" style="padding:0; background:none;">Support</button>
-      </div>
+        <div class="top-strip-inner">  <button class="nav-link open-contact-modal" type="button" style="padding:0; background:none;">    Support  </button>  <a    class="nav-link"    href="https://app.truecaresystem.com/login"    style="padding:0; background:none;"  >    Login  </a></div>
+Sau đó push website:
+cd C:\đường-dẫn-repo-truecaresystem-webgit add .git commit -m "Add login link to website header"git push
+Kết quả:
+www.truecaresystem.com → click Login → app.truecaresystem.com/login
+Bước kế tiếp mình sẽ chỉnh LoginForm.tsx để giao diện login giống HHA hơn.
     </div>
 
     <div class="container main-nav">
