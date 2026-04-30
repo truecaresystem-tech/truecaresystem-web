@@ -1,3 +1,4 @@
+<!-- C:\TruecareSystem\Website\index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,13 +31,8 @@
       --main-nav-h: 92px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -46,19 +42,9 @@
       line-height: 1.5;
     }
 
-    body.modal-open {
-      overflow: hidden;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    body.modal-open { overflow: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
 
     button,
     input,
@@ -85,6 +71,12 @@
       cursor: pointer;
       transition: 0.2s ease;
       white-space: nowrap;
+    }
+
+    .btn:disabled {
+      cursor: not-allowed;
+      opacity: 0.72;
+      transform: none;
     }
 
     .btn-green {
@@ -1039,6 +1031,38 @@
       font-weight: 700;
     }
 
+    .lead-status {
+      display: none;
+      margin-top: 14px;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 15px;
+      line-height: 1.45;
+      font-weight: 700;
+    }
+
+    .lead-status.show {
+      display: block;
+    }
+
+    .lead-status.sending {
+      background: #eef4ff;
+      color: #29457d;
+      border: 1px solid rgba(59, 84, 147, 0.16);
+    }
+
+    .lead-status.success {
+      background: #ecfdf3;
+      color: #157347;
+      border: 1px solid rgba(57, 197, 107, 0.25);
+    }
+
+    .lead-status.error {
+      background: #fff1f2;
+      color: #b42318;
+      border: 1px solid rgba(180, 35, 24, 0.18);
+    }
+
     .contact-side-card {
       min-height: 100%;
       background: #f8fafc;
@@ -1123,18 +1147,18 @@
 
     /* AI CHAT WIDGET */
     .ai-widget {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  z-index: 999;
-  width: 320px;
-  max-width: calc(100vw - 24px);
-}
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 999;
+      width: 320px;
+      max-width: calc(100vw - 24px);
+    }
 
-.ai-widget-panel {
-  max-height: calc(100vh - 40px);
-  overflow: hidden;
-}
+    .ai-widget-panel {
+      max-height: calc(100vh - 40px);
+      overflow: hidden;
+    }
 
     .ai-widget.hidden-panel .ai-widget-panel {
       display: none;
@@ -1495,26 +1519,23 @@
   <header class="site-header">
     <div class="top-strip">
       <div class="container top-strip-inner">
-        <!-- SUPPORT -->
-      <button 
-        class="nav-link open-contact-modal" 
-        type="button" 
-        style="padding:0; background:none;"
-      >
-        Support
-      </button>
+        <button 
+          class="nav-link open-contact-modal" 
+          type="button" 
+          style="padding:0; background:none;"
+        >
+          Support
+        </button>
 
-      <!-- LOGIN (NEW) -->
-      <a
-        class="nav-link"
-        href="https://app.truecaresystem.com/login"
-        style="padding:0; background:none; font-weight:700;"
-      >
-        Login
-      </a>
-
+        <a
+          class="nav-link"
+          href="https://app.truecaresystem.com/login"
+          style="padding:0; background:none; font-weight:700;"
+        >
+          Login
+        </a>
+      </div>
     </div>
-  </div>
 
     <div class="container main-nav">
       <div class="brand">
@@ -1694,28 +1715,28 @@
       </nav>
 
       <div class="nav-right" style="flex-direction: column; align-items: center; gap: 10px;">
-  <div style="display:flex; align-items:center; justify-content:center; gap:28px;">
-    <button
-      class="nav-link open-contact-modal"
-      type="button"
-      style="padding:0; background:none; font-weight:800;"
-    >
-      Support
-    </button>
+        <div style="display:flex; align-items:center; justify-content:center; gap:28px;">
+          <button
+            class="nav-link open-contact-modal"
+            type="button"
+            style="padding:0; background:none; font-weight:800;"
+          >
+            Support
+          </button>
 
-    <a
-      class="nav-link"
-      href="https://app.truecaresystem.com/login"
-      style="padding:0; background:none; font-weight:800;"
-    >
-      Login
-    </a>
-  </div>
+          <a
+            class="nav-link"
+            href="https://app.truecaresystem.com/login"
+            style="padding:0; background:none; font-weight:800;"
+          >
+            Login
+          </a>
+        </div>
 
-  <button class="btn btn-orange open-demo-modal" type="button">
-    Request Your Demo
-  </button>
-</div>
+        <button class="btn btn-orange open-demo-modal" type="button">
+          Request Your Demo
+        </button>
+      </div>
     </div>
   </header>
 
@@ -2062,12 +2083,7 @@
 
       <div class="contact-modal-grid">
         <div class="contact-form-card">
-          <form id="contactRequestForm" action="https://formsubmit.co/thetruecaresystem@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="NEW CONTACT REQUEST - TRUE CARE SYSTEM">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="https://truecaresystem.com/thank-you.html">
-
+          <form id="contactRequestForm" action="https://truecare-system.onrender.com/leads" method="POST">
             <div class="contact-form-layout">
               <div class="form-field">
                 <input id="contactFirstName" name="firstName" type="text" placeholder="First Name*" required />
@@ -2078,11 +2094,11 @@
               </div>
 
               <div class="form-field">
-                <input id="contactEmailAddress" name="emailAddress" type="email" placeholder="Email Address*" required />
+                <input id="contactEmailAddress" name="email" type="email" placeholder="Email Address*" required />
               </div>
 
               <div class="form-field">
-                <input id="contactPhoneNumber" name="phoneNumber" type="tel" placeholder="Phone Number*" required />
+                <input id="contactPhoneNumber" name="phone" type="tel" placeholder="Phone Number*" required />
               </div>
 
               <div class="form-field">
@@ -2120,7 +2136,8 @@
               </div>
 
               <div class="full">
-                <button class="btn btn-orange contact-submit" type="submit">Contact Us</button>
+                <button class="btn btn-orange contact-submit" id="contactSubmitButton" type="submit">Contact Us</button>
+                <div class="lead-status" id="contactStatus" role="status" aria-live="polite"></div>
               </div>
             </div>
           </form>
@@ -2166,7 +2183,7 @@
   </div>
 
   <!-- AI ASSISTANT -->
- <div class="ai-widget hidden-panel" id="aiWidget">
+  <div class="ai-widget hidden-panel" id="aiWidget">
     <button class="ai-widget-toggle" id="aiWidgetToggle" type="button" aria-label="Open assistant">💬</button>
 
     <div class="ai-widget-panel">
@@ -2235,12 +2252,31 @@
         }
       }
 
+      function setLeadStatus(type, message) {
+        const status = document.getElementById("contactStatus");
+        if (!status) return;
+
+        status.className = "lead-status show " + type;
+        status.textContent = message;
+      }
+
+      function clearLeadStatus() {
+        const status = document.getElementById("contactStatus");
+        if (!status) return;
+
+        status.className = "lead-status";
+        status.textContent = "";
+      }
+
       document.querySelectorAll(".open-demo-modal").forEach((el) => {
         el.addEventListener("click", (event) => openModal("demoModal", event));
       });
 
       document.querySelectorAll(".open-contact-modal").forEach((el) => {
-        el.addEventListener("click", (event) => openModal("contactModal", event));
+        el.addEventListener("click", (event) => {
+          clearLeadStatus();
+          openModal("contactModal", event);
+        });
       });
 
       document.querySelectorAll("[data-close-modal]").forEach((btn) => {
@@ -2266,6 +2302,95 @@
           body.classList.remove("modal-open");
         }
       });
+
+      const contactForm = document.getElementById("contactRequestForm");
+      const contactSubmitButton = document.getElementById("contactSubmitButton");
+
+      if (contactForm) {
+        contactForm.addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          const formData = new FormData(contactForm);
+
+          const payload = {
+            firstName: String(formData.get("firstName") || "").trim(),
+            lastName: String(formData.get("lastName") || "").trim(),
+            email: String(formData.get("email") || "").trim(),
+            phone: String(formData.get("phone") || "").trim(),
+            company: String(formData.get("company") || "").trim(),
+            state: String(formData.get("state") || "").trim(),
+            reason: String(formData.get("reason") || "").trim(),
+            message: String(formData.get("message") || "").trim(),
+            source: "True Care System Website Contact Modal"
+          };
+
+          if (
+            !payload.firstName ||
+            !payload.lastName ||
+            !payload.email ||
+            !payload.phone ||
+            !payload.company ||
+            !payload.state ||
+            !payload.reason
+          ) {
+            setLeadStatus("error", "Please complete all required fields before submitting.");
+            return;
+          }
+
+          try {
+            if (contactSubmitButton) {
+              contactSubmitButton.disabled = true;
+              contactSubmitButton.textContent = "Sending...";
+            }
+
+            setLeadStatus("sending", "Sending your request...");
+
+            const response = await fetch("https://truecare-system.onrender.com/leads", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              body: JSON.stringify(payload)
+            });
+
+            let result = null;
+            try {
+              result = await response.json();
+            } catch (jsonError) {
+              result = null;
+            }
+
+            if (!response.ok) {
+              const errorMessage =
+                result && result.message
+                  ? Array.isArray(result.message)
+                    ? result.message.join(" ")
+                    : String(result.message)
+                  : "We could not send your request at this time.";
+              throw new Error(errorMessage);
+            }
+
+            contactForm.reset();
+            setLeadStatus(
+              "success",
+              "Thank you. Your message has been sent successfully. Our team will contact you soon, and you should also receive a confirmation email."
+            );
+          } catch (error) {
+            setLeadStatus(
+              "error",
+              error && error.message
+                ? error.message
+                : "Something went wrong. Please try again or email thetruecaresystem@gmail.com directly."
+            );
+          } finally {
+            if (contactSubmitButton) {
+              contactSubmitButton.disabled = false;
+              contactSubmitButton.textContent = "Contact Us";
+            }
+          }
+        });
+      }
 
       const aiWidget = document.getElementById("aiWidget");
       const aiWidgetToggle = document.getElementById("aiWidgetToggle");
@@ -2533,23 +2658,21 @@
       });
 
       aiWidgetToggle.addEventListener("click", function () {
-  aiWidget.classList.remove("hidden-panel");
-});
+        aiWidget.classList.remove("hidden-panel");
+      });
 
-// Auto open after 30s (only if user hasn't opened yet)
-let aiOpenedManually = false;
+      let aiOpenedManually = false;
 
-aiWidgetToggle.addEventListener("click", function () {
-  aiOpenedManually = true;
-  aiWidget.classList.remove("hidden-panel");
-});
+      aiWidgetToggle.addEventListener("click", function () {
+        aiOpenedManually = true;
+        aiWidget.classList.remove("hidden-panel");
+      });
 
-setTimeout(function () {
-  if (!aiOpenedManually && aiWidget.classList.contains("hidden-panel")) {
-    aiWidget.classList.remove("hidden-panel");
-  }
-}, 30000);
-      
+      setTimeout(function () {
+        if (!aiOpenedManually && aiWidget.classList.contains("hidden-panel")) {
+          aiWidget.classList.remove("hidden-panel");
+        }
+      }, 30000);
     })();
   </script>
 </body>
