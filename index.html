@@ -360,7 +360,8 @@
     /* HERO */
     .hero-wrap {
       background:
-        linear-gradient(90deg, rgba(7,27,70,0.98) 0%, rgba(7,27,70,0.96) 48%, rgba(7,27,70,0.56) 100%),
+        radial-gradient(circle at 72% 34%, rgba(42, 149, 217, 0.16), transparent 34%),
+        linear-gradient(90deg, rgba(7,27,70,0.98) 0%, rgba(7,27,70,0.96) 54%, rgba(7,27,70,0.86) 100%),
         var(--navy);
       color: #fff;
       margin-top: -10px;
@@ -370,39 +371,47 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 1.04fr 0.96fr;
+      grid-template-columns: 0.95fr 1.05fr;
       gap: 34px;
       align-items: center;
-      min-height: 555px;
+      min-height: 610px;
       margin-top: -4px;
+      padding: 34px 0 76px;
     }
 
     .hero-left {
-      padding: 0 0 30px;
+      padding: 0;
+      min-width: 0;
+    }
+
+    .hero-text-block {
+      max-width: 720px;
     }
 
     .eyebrow {
       display: inline-block;
       color: #ffc857;
       text-transform: uppercase;
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: 1.8px;
-      margin-bottom: 8px;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
       text-shadow: 0 0 6px rgba(255, 200, 87, 0.35);
     }
 
     .hero-title {
-      margin: 0 0 14px;
-      line-height: 0.9;
-      font-weight: 800;
-      letter-spacing: -2px;
+      margin: 0 0 10px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -1.6px;
+      white-space: nowrap;
+      font-size: clamp(38px, 4.4vw, 60px);
     }
 
     .hero-title .line1,
     .hero-title .line2 {
-      display: block;
-      font-size: clamp(58px, 6.4vw, 92px);
+      display: inline;
+      font-size: inherit;
     }
 
     .hero-title .line2 {
@@ -410,27 +419,55 @@
     }
 
     .hero-subtitle {
-      margin: 0 0 18px;
-      max-width: 700px;
+      margin: 0;
+      max-width: 720px;
       color: #f3f7fb;
-      font-size: clamp(24px, 2.9vw, 40px);
-      line-height: 1.2;
+      font-size: clamp(18px, 1.7vw, 24px);
+      line-height: 1.24;
       font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .hero-rule {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, #24d3c8 0%, rgba(255,255,255,0.82) 14%, rgba(255,255,255,0.42) 100%);
+      margin: 26px 0 18px;
     }
 
     .hero-copy {
-      margin: 0 0 26px;
-      max-width: 740px;
-      color: #d8e3f3;
-      font-size: 19px;
-      line-height: 1.72;
+      margin: 0;
+      max-width: 700px;
+      color: #e6eef9;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .hero-mobile-rule {
+      width: 100%;
+      height: 1px;
+      background: rgba(255,255,255,0.72);
+      margin: 20px 0 22px;
+    }
+
+    .hero-mobile-banner {
+      width: 100%;
+      max-width: 720px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
+      overflow: hidden;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .hero-mobile-banner img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
     }
 
     .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 0;
+      display: none;
     }
 
     .hero-right {
@@ -442,7 +479,7 @@
 
     .hero-image {
       width: 100%;
-      max-width: 640px;
+      max-width: 650px;
       height: 500px;
       object-fit: cover;
       border-radius: 28px;
@@ -1363,8 +1400,28 @@
         grid-template-columns: 1fr;
       }
 
+      .hero {
+        min-height: auto;
+        padding: 42px 0 84px;
+      }
+
+      .hero-left,
+      .hero-text-block,
+      .hero-mobile-banner {
+        max-width: 100%;
+      }
+
+      .hero-title,
+      .hero-subtitle {
+        white-space: normal;
+      }
+
       .hero-right {
         justify-content: center;
+      }
+
+      .hero-image {
+        max-width: 760px;
       }
 
       .hero-badges,
@@ -1448,17 +1505,40 @@
         font-size: 15px;
       }
 
-      .hero-title .line1,
-      .hero-title .line2 {
-        font-size: clamp(48px, 15vw, 74px);
+      .hero {
+        gap: 26px;
+        padding: 34px 0 70px;
+      }
+
+      .eyebrow {
+        font-size: 13px;
+        letter-spacing: 2px;
+      }
+
+      .hero-title {
+        font-size: clamp(34px, 11vw, 52px);
+        white-space: normal;
       }
 
       .hero-subtitle {
-        font-size: 28px;
+        font-size: 20px;
+        white-space: normal;
       }
 
       .hero-copy {
-        font-size: 17px;
+        font-size: 16px;
+      }
+
+      .hero-rule {
+        margin: 20px 0 16px;
+      }
+
+      .hero-mobile-rule {
+        margin: 18px 0 18px;
+      }
+
+      .hero-mobile-banner {
+        border-radius: 14px;
       }
 
       .hero-image {
@@ -1746,24 +1826,29 @@
     <div class="container">
       <section class="hero">
         <div class="hero-left">
-          <span class="eyebrow">Care Management Solutions</span>
+          <div class="hero-text-block">
+            <span class="eyebrow">Care Management Solutions</span>
 
-          <h1 class="hero-title">
-            <span class="line1">TRUE CARE</span>
-            <span class="line2">SYSTEM</span>
-          </h1>
+            <h1 class="hero-title">
+              <span class="line1">TRUE CARE</span>
+              <span class="line2"> SYSTEM</span>
+            </h1>
 
-          <h2 class="hero-subtitle">Supporting Providers with Smarter Care Operations</h2>
+            <h2 class="hero-subtitle">Supporting Providers with Smarter Care Operations</h2>
 
-          <p class="hero-copy">
-            Practical solutions designed to support provider organizations with
-            better coordination, documentation, workflow, and day-to-day
-            operational efficiency.
-          </p>
+            <div class="hero-rule"></div>
 
-          <div class="hero-actions">
-            <a class="btn btn-green" href="#services">Our Services</a>
-            <button class="btn btn-outline-light open-contact-modal" type="button">Contact Us</button>
+            <p class="hero-copy">
+              Practical solutions designed to support provider organizations with
+              better coordination, documentation, workflow, and day-to-day
+              operational efficiency.
+            </p>
+
+            <div class="hero-mobile-rule"></div>
+
+            <div class="hero-mobile-banner" aria-label="True Care System Mobile app feature graphic">
+              <img src="/mobile-hero-banner.png" alt="True Care System Mobile app overview" />
+            </div>
           </div>
         </div>
 
