@@ -1,0 +1,616 @@
+<!-- services/documentation-daily-notes.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Documentation & Daily Notes | True Care System</title>
+
+<meta
+name="description"
+content="Daily notes, care documentation, signatures, service records, and review workflows connected to real provider operations."
+/>
+
+<style>
+
+:root{
+--navy:#071b46;
+--navy2:#0b255c;
+--blue:#2a95d9;
+--green:#20b486;
+--bg:#f5f8fc;
+--text:#102033;
+--muted:#607089;
+--border:#dbe5f2;
+--white:#fff;
+--radius:24px;
+--shadow:0 22px 60px rgba(7,27,70,.16);
+}
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.6;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+img{
+display:block;
+max-width:100%;
+}
+
+.container{
+width:min(1180px,calc(100% - 32px));
+margin:auto;
+}
+
+.topbar{
+background:var(--navy);
+padding:18px 0;
+border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.topbar-inner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.brand img{
+width:220px;
+}
+
+.top-link{
+color:white;
+font-size:14px;
+}
+
+.hero{
+
+background:
+radial-gradient(circle at 70% 25%,rgba(56,189,248,.25),transparent 30%),
+linear-gradient(
+135deg,
+var(--navy) 0%,
+var(--navy2) 60%,
+#113a75 100%
+);
+
+padding:90px 0;
+color:white;
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1fr .9fr;
+gap:50px;
+align-items:center;
+}
+
+.eyebrow{
+font-size:14px;
+font-weight:700;
+letter-spacing:1px;
+color:#9be7ff;
+margin-bottom:15px;
+}
+
+h1{
+font-size:clamp(44px,6vw,68px);
+line-height:1;
+margin:0 0 25px;
+}
+
+.hero p{
+font-size:19px;
+color:#d9e8ff;
+}
+
+.cta{
+display:flex;
+gap:15px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:14px 26px;
+border-radius:999px;
+font-weight:700;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+}
+
+.btn-primary{
+background:linear-gradient(135deg,var(--blue),var(--green));
+color:white;
+}
+
+.btn-secondary{
+border:1px solid rgba(255,255,255,.3);
+color:white;
+}
+
+.hero-card{
+padding:15px;
+border-radius:28px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.1);
+}
+
+.hero-card img{
+border-radius:18px;
+}
+
+section{
+padding:80px 0;
+}
+
+.section-head{
+max-width:760px;
+margin:auto auto 40px;
+text-align:center;
+}
+
+.section-head h2{
+font-size:42px;
+margin-bottom:10px;
+color:var(--navy);
+}
+
+.section-head p{
+color:var(--muted);
+font-size:18px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.card{
+background:white;
+padding:24px;
+border-radius:24px;
+border:1px solid var(--border);
+box-shadow:0 10px 30px rgba(7,27,70,.06);
+}
+
+.icon{
+width:45px;
+height:45px;
+border-radius:14px;
+display:grid;
+place-items:center;
+background:rgba(42,149,217,.1);
+font-size:22px;
+margin-bottom:14px;
+}
+
+.card h3{
+margin:0 0 10px;
+font-size:19px;
+color:var(--navy);
+}
+
+.card p{
+margin:0;
+color:var(--muted);
+}
+
+.workflow{
+background:white;
+}
+
+.block{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:35px;
+align-items:center;
+
+background:#f8fbff;
+padding:30px;
+margin-bottom:45px;
+
+border-radius:28px;
+border:1px solid var(--border);
+box-shadow:var(--shadow);
+}
+
+.block h3{
+font-size:30px;
+margin-top:0;
+margin-bottom:10px;
+}
+
+.block p{
+color:var(--muted);
+}
+
+.frame{
+background:var(--navy);
+padding:12px;
+border-radius:22px;
+}
+
+.frame img{
+border-radius:14px;
+}
+
+.list{
+padding:0;
+margin:20px 0 0;
+list-style:none;
+}
+
+.list li{
+margin-bottom:8px;
+}
+
+.list li::before{
+content:"✓ ";
+color:var(--green);
+font-weight:700;
+}
+
+.final{
+padding:80px 0;
+text-align:center;
+background:var(--navy);
+color:white;
+}
+
+.final h2{
+font-size:44px;
+margin-bottom:20px;
+}
+
+.final p{
+color:#d9e8ff;
+max-width:700px;
+margin:auto auto 30px;
+}
+
+footer{
+background:#041431;
+color:#b8c7dd;
+padding:24px;
+text-align:center;
+}
+
+@media(max-width:980px){
+
+.hero-grid,
+.block,
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+<div class="container topbar-inner">
+
+<a href="/" class="brand">
+<img src="/logo.png">
+</a>
+
+<a class="top-link" href="/">
+Back to Home
+</a>
+
+</div>
+
+</header>
+
+<main>
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div>
+
+<div class="eyebrow">
+CORE SOLUTIONS
+</div>
+
+<h1>
+Documentation & Daily Notes
+</h1>
+
+<p>
+
+Capture service records, daily notes, signatures,
+visit summaries, and documentation workflows
+connected to real provider operations.
+
+</p>
+
+<div class="cta">
+
+<a class="btn btn-primary" href="/#demo">
+Request Demo
+</a>
+
+<a class="btn btn-secondary" href="#workflow">
+Explore Workflow
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-card">
+
+<img
+src="/assets/screenshots/mobile/daily-notes/mobile-daily-note-form.png"
+alt="Daily note form"
+>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-head">
+
+<h2>
+Built around provider documentation workflows
+</h2>
+
+<p>
+
+Keep service notes, forms, summaries,
+signatures, and office review steps connected.
+
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<div class="icon">📝</div>
+
+<h3>
+Daily Note Forms
+</h3>
+
+<p>
+
+Capture structured daily service documentation.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">✍️</div>
+
+<h3>
+Signature Collection
+</h3>
+
+<p>
+
+Collect signatures directly from mobile workflows.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">📋</div>
+
+<h3>
+Visit Summaries
+</h3>
+
+<p>
+
+Create clear summaries for completed services.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">👁️</div>
+
+<h3>
+Supervisor Visibility
+</h3>
+
+<p>
+
+Allow office teams to review submitted notes.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">📱</div>
+
+<h3>
+Mobile Documentation
+</h3>
+
+<p>
+
+Give DSPs documentation tools directly on mobile.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">🛡️</div>
+
+<h3>
+Compliance Support
+</h3>
+
+<p>
+
+Maintain organized service documentation records.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="workflow" class="workflow">
+
+<div class="container">
+
+<div class="block">
+
+<div>
+
+<h3>
+Daily Note Form Workflow
+</h3>
+
+<p>
+
+DSPs can complete notes directly from scheduled visits.
+
+</p>
+
+<ul class="list">
+
+<li>Structured forms</li>
+<li>Service documentation</li>
+<li>Mobile access</li>
+
+</ul>
+
+</div>
+
+<div class="frame">
+
+<img
+src="/assets/screenshots/mobile/daily-notes/mobile-daily-note-form.png"
+>
+
+</div>
+
+</div>
+
+<div class="block">
+
+<div class="frame">
+
+<img
+src="/assets/screenshots/mobile/daily-notes/mobile-daily-note-signature.png"
+>
+
+</div>
+
+<div>
+
+<h3>
+Signature & Visit Summary
+</h3>
+
+<p>
+
+Capture signatures and complete service records.
+
+</p>
+
+<ul class="list">
+
+<li>Electronic signature</li>
+<li>Visit summaries</li>
+<li>Review workflow</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="final">
+
+<div class="container">
+
+<h2>
+
+Ready to simplify documentation?
+
+</h2>
+
+<p>
+
+See how True Care System helps providers manage
+daily notes, service records, signatures,
+and documentation workflows.
+
+</p>
+
+<a class="btn btn-primary" href="/#demo">
+
+Request Your Demo
+
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+© True Care System. All Rights Reserved.
+
+</footer>
+
+</body>
+</html>
