@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scheduling & Workforce Management | True Care System</title>
+  <meta
+    name="description"
+    content="Smart scheduling, DSP coordination, shift coverage workflows, EVV check-in/check-out, and real-time visit tracking for care providers."
+  />
+
+  <style>
+    :root {
+      --navy: #071b46;
+      --navy-2: #0b255c;
+      --blue: #2a95d9;
+      --cyan: #38bdf8;
+      --green: #20b486;
+      --bg: #f5f8fc;
+      --text: #102033;
+      --muted: #607089;
+      --border: #dbe5f2;
+      --white: #ffffff;
+      --shadow: 0 22px 60px rgba(7, 27, 70, 0.16);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--navy);
+      color: var(--white);
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      font-size: 20px;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 900;
+    }
+
+    .top-link {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 78% 24%, rgba(56, 189, 248, 0.22), transparent 32%),
+        linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 56%, #113a75 100%);
+      color: var(--white);
+      padding: 86px 0 90px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.95fr;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: #9be7ff;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1.02;
+      margin: 0 0 20px;
+      letter-spacing: -1.8px;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #d8e8ff;
+      max-width: 670px;
+      margin: 0 0 30px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 15px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      color: white;
+      box-shadow: 0 16px 34px rgba(42, 149, 217, 0.32);
+    }
+
+    .btn-secondary {
+      color: white;
+      border: 1px solid rgba(255,255,255,0.32);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 30px;
+      padding: 16px;
+      box-shadow: 0 28px 80px rgba(0,0,0,0.28);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card img {
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.16);
+    }
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .section-head.center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.12;
+      margin: 0 0 14px;
+      letter-spacing: -1px;
+      color: var(--navy);
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 12px 34px rgba(7, 27, 70, 0.07);
+    }
+
+    .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: rgba(42, 149, 217, 0.12);
+      color: var(--blue);
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .feature-card h3,
+    .benefit-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 19px;
+    }
+
+    .feature-card p,
+    .benefit-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .workflow {
+      background: white;
+    }
+
+    .screenshot-block {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: center;
+      margin-bottom: 46px;
+      background: #f8fbff;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .screenshot-block.reverse {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+
+    .screenshot-copy h3 {
+      font-size: 28px;
+      line-height: 1.15;
+      color: var(--navy);
+      margin: 0 0 12px;
+    }
+
+    .screenshot-copy p {
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 8px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .mini-list li {
+      color: #29415f;
+      font-size: 15px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .mini-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .screenshot-frame {
+      background: var(--navy);
+      border-radius: 24px;
+      padding: 12px;
+      box-shadow: 0 20px 50px rgba(7, 27, 70, 0.18);
+    }
+
+    .screenshot-frame img {
+      border-radius: 16px;
+      background: white;
+    }
+
+    .mobile-pair {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .mobile-pair .screenshot-frame {
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    .benefits {
+      background:
+        radial-gradient(circle at 15% 20%, rgba(32,180,134,0.14), transparent 30%),
+        linear-gradient(180deg, #eef6ff 0%, #f8fbff 100%);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .benefit-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+      min-height: 170px;
+      box-shadow: 0 10px 30px rgba(7, 27, 70, 0.06);
+    }
+
+    .final-cta {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 76px 0;
+    }
+
+    .final-cta h2 {
+      color: white;
+      max-width: 760px;
+      margin: 0 auto 16px;
+    }
+
+    .final-cta p {
+      color: #d8e8ff;
+      margin: 0 auto 26px;
+      max-width: 660px;
+      font-size: 18px;
+    }
+
+    footer {
+      background: #041431;
+      color: #b8c7dd;
+      padding: 24px 0;
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .screenshot-block,
+      .screenshot-block.reverse {
+        grid-template-columns: 1fr;
+      }
+
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero {
+        padding: 64px 0 70px;
+      }
+
+      section {
+        padding: 58px 0;
+      }
+
+      .features-grid,
+      .benefits-grid,
+      .mobile-pair {
+        grid-template-columns: 1fr;
+      }
+
+      .screenshot-block {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">TC</span>
+        <span>True Care System</span>
+      </a>
+      <a class="top-link" href="/">Back to Home</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Core Solutions</div>
+          <h1>Scheduling & Workforce Management</h1>
+          <p>
+            Smart scheduling, DSP coordination, shift visibility, coverage workflows,
+            and real-time visit tracking in one connected system.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="/#demo">Request Demo</a>
+            <a class="btn btn-secondary" href="#workflow">Explore Workflow</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img
+            src="/assets/screenshots/web/dashboard/web-dashboard-overview.png"
+            alt="True Care System web dashboard showing operational visibility"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head center">
+          <h2>Built for real provider operations</h2>
+          <p>
+            True Care System connects office teams, supervisors, and DSPs so scheduled
+            visits, mobile activity, documentation, and review workflows stay aligned.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="icon">📅</div>
+            <h3>Smart schedule planning</h3>
+            <p>Create and manage shifts with clearer visibility across individuals, DSPs, services, and visit status.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">👥</div>
+            <h3>DSP assignment and conflict visibility</h3>
+            <p>Help office teams identify assignments, availability issues, and potential schedule conflicts before they affect care.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">🔁</div>
+            <h3>Shift coverage and call-off workflow</h3>
+            <p>Support coverage coordination when a DSP cannot work a shift, helping reduce missed visits and last-minute confusion.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">📍</div>
+            <h3>EVV check-in/check-out connection</h3>
+            <p>Connect scheduled shifts with mobile check-in and check-out activity for stronger visit tracking.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">📱</div>
+            <h3>Mobile access for DSPs</h3>
+            <p>Give DSPs access to schedules, visit actions, daily notes, messages, and field workflows from their mobile device.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">📝</div>
+            <h3>Daily Note workflow connected to visits</h3>
+            <p>Keep documentation connected to scheduled services so visit records, notes, signatures, and review steps are easier to manage.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">✅</div>
+            <h3>Supervisor and office review visibility</h3>
+            <p>Provide supervisors and office staff with clearer visibility into submitted documentation and visit completion status.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="workflow" class="workflow">
+      <div class="container">
+        <div class="section-head">
+          <h2>One workflow from schedule to documentation</h2>
+          <p>
+            Scheduling is only the starting point. True Care System helps connect
+            staffing, mobile visit activity, and documentation into one operational flow.
+          </p>
+        </div>
+
+        <div class="screenshot-block">
+          <div class="screenshot-copy">
+            <h3>Web dashboard and scheduling visibility</h3>
+            <p>
+              Office teams need fast visibility into operational activity, upcoming work,
+              alerts, documentation status, and workforce coordination.
+            </p>
+            <ul class="mini-list">
+              <li>Provider-facing web visibility</li>
+              <li>Centralized operational overview</li>
+              <li>Connected scheduling and documentation workflow</li>
+            </ul>
+          </div>
+          <div class="screenshot-frame">
+            <img
+              src="/assets/screenshots/web/dashboard/web-dashboard-overview.png"
+              alt="Web dashboard overview for scheduling and provider operations"
+            />
+          </div>
+        </div>
+
+        <div class="screenshot-block reverse">
+          <div class="mobile-pair">
+            <div class="screenshot-frame">
+              <img
+                src="/assets/screenshots/mobile/checkin/mobile-check-in-screen.png"
+                alt="Mobile check-in screen for DSP visit tracking"
+              />
+            </div>
+            <div class="screenshot-frame">
+              <img
+                src="/assets/screenshots/mobile/checkin/mobile-check-out-screen.png"
+                alt="Mobile check-out screen for DSP visit tracking"
+              />
+            </div>
+          </div>
+          <div class="screenshot-copy">
+            <h3>Mobile check-in and check-out</h3>
+            <p>
+              DSPs can follow visit actions from the mobile app, helping connect scheduled
+              services with real-time visit activity in the field.
+            </p>
+            <ul class="mini-list">
+              <li>Mobile visit workflow for DSPs</li>
+              <li>Check-in and check-out connection</li>
+              <li>Supports EVV-ready operations</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="screenshot-block">
+          <div class="screenshot-copy">
+            <h3>Daily note form connected to care delivery</h3>
+            <p>
+              Daily documentation is part of the visit workflow, helping DSPs capture
+              required details while giving supervisors and office teams better review visibility.
+            </p>
+            <ul class="mini-list">
+              <li>Visit-based daily note workflow</li>
+              <li>Mobile documentation for field staff</li>
+              <li>Cleaner review process for office teams</li>
+            </ul>
+          </div>
+          <div class="screenshot-frame">
+            <img
+              src="/assets/screenshots/mobile/daily-notes/mobile-daily-note-form.png"
+              alt="Mobile daily note form connected to scheduled visits"
+            />
+          </div>
+        </div>
+
+        <div class="screenshot-block reverse">
+          <div class="screenshot-frame">
+            <img
+              src="/assets/screenshots/mobile/daily-notes/mobile-daily-note-signature.png"
+              alt="Mobile daily note signature and summary screen"
+            />
+          </div>
+          <div class="screenshot-copy">
+            <h3>Daily note signature and summary</h3>
+            <p>
+              Signature and summary screens help complete the visit record and strengthen
+              documentation accountability before office review.
+            </p>
+            <ul class="mini-list">
+              <li>Signature capture workflow</li>
+              <li>Visit summary before submission</li>
+              <li>Documentation support for compliance-ready operations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="container">
+        <div class="section-head center">
+          <h2>Operational benefits for providers</h2>
+          <p>
+            Designed to help care providers manage daily workforce coordination with more visibility,
+            better documentation, and fewer manual gaps.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <h3>Reduce missed shifts</h3>
+            <p>Improve visibility into scheduled work, call-offs, coverage needs, and visit activity.</p>
+          </div>
+
+          <div class="benefit-card">
+            <h3>Improve staff accountability</h3>
+            <p>Connect DSP schedules with mobile visit actions and documentation steps.</p>
+          </div>
+
+          <div class="benefit-card">
+            <h3>Strengthen documentation</h3>
+            <p>Keep daily notes, signatures, summaries, and review workflows connected to visits.</p>
+          </div>
+
+          <div class="benefit-card">
+            <h3>Support compliance-ready operations</h3>
+            <p>Organize scheduling, EVV activity, and care documentation in a more structured workflow.</p>
+          </div>
+
+          <div class="benefit-card">
+            <h3>Real-time office visibility</h3>
+            <p>Give supervisors and office teams clearer insight into field activity and documentation status.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container">
+        <h2>Ready to simplify scheduling and workforce coordination?</h2>
+        <p>
+          See how True Care System helps providers connect scheduling, DSP workflows,
+          EVV activity, and documentation in one system.
+        </p>
+        <a class="btn btn-primary" href="/#demo">Request Your Demo</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© True Care System. All rights reserved.</div>
+      <div>Scheduling • Workforce Management • EVV • Documentation</div>
+    </div>
+  </footer>
+</body>
+</html>
