@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>EVV & Visit Verification | True Care System</title>
+
   <meta
     name="description"
     content="EVV and visit verification tools for care providers, including mobile check-in, check-out, visit tracking, documentation connection, and office review visibility."
@@ -13,19 +15,20 @@
   <style>
     :root {
       --navy: #071b46;
-      --navy-2: #0b255c;
+      --navy2: #0b255c;
       --blue: #2a95d9;
       --green: #20b486;
+      --green2: #39c56b;
       --bg: #f5f8fc;
       --text: #102033;
       --muted: #607089;
       --border: #dbe5f2;
       --white: #ffffff;
       --shadow: 0 22px 60px rgba(7, 27, 70, 0.16);
-      --radius: 24px;
     }
 
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -36,13 +39,13 @@
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
     img {
-      max-width: 100%;
       display: block;
+      max-width: 100%;
     }
 
     .container {
@@ -51,79 +54,79 @@
     }
 
     .topbar {
-      background: var(--navy);
-      color: var(--white);
-      padding: 18px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.12);
+      background: #ffffff;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 50;
     }
 
     .topbar-inner {
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
+      gap: 18px;
     }
 
     .brand img {
-      width: 220px;
-      max-width: 100%;
+      width: 210px;
       height: auto;
       object-fit: contain;
     }
 
     .top-link {
+      color: var(--navy);
       font-size: 14px;
-      opacity: 0.9;
+      font-weight: 800;
     }
 
     .hero {
       background:
-        radial-gradient(circle at 78% 24%, rgba(56, 189, 248, 0.22), transparent 32%),
-        linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 56%, #113a75 100%);
-      color: var(--white);
-      padding: 86px 0 90px;
+        radial-gradient(circle at 78% 25%, rgba(56, 189, 248, 0.24), transparent 30%),
+        radial-gradient(circle at 18% 85%, rgba(32, 180, 134, 0.16), transparent 28%),
+        linear-gradient(135deg, var(--navy) 0%, var(--navy2) 58%, #123a77 100%);
+      color: white;
+      padding: 74px 0 56px;
       overflow: hidden;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 0.95fr;
-      gap: 46px;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 48px;
       align-items: center;
     }
 
     .eyebrow {
-      color: #9be7ff;
-      font-size: 14px;
-      font-weight: 700;
+      display: inline-block;
+      color: #8df5ff;
+      font-size: 13px;
+      font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 1.4px;
+      letter-spacing: 1.8px;
       margin-bottom: 14px;
     }
 
     h1 {
-      font-size: clamp(42px, 6vw, 68px);
-      line-height: 1.02;
+      font-size: clamp(44px, 6vw, 70px);
+      line-height: 0.98;
       margin: 0 0 20px;
       letter-spacing: -1.8px;
     }
 
-    .hero p {
+    .hero-copy {
+      margin: 0;
+      max-width: 680px;
       font-size: 19px;
-      color: #d8e8ff;
-      max-width: 670px;
-      margin: 0 0 30px;
+      color: #d9e8ff;
     }
 
     .cta-row {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
+      margin-top: 28px;
     }
 
     .btn {
@@ -131,257 +134,390 @@
       align-items: center;
       justify-content: center;
       min-height: 48px;
-      padding: 0 22px;
+      padding: 0 24px;
       border-radius: 999px;
-      font-weight: 800;
+      font-weight: 900;
       font-size: 15px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: 0.2s ease;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
+    .btn:hover { transform: translateY(-2px); }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--blue), var(--green));
+      background: linear-gradient(135deg, var(--blue), var(--green2));
       color: white;
       box-shadow: 0 16px 34px rgba(42, 149, 217, 0.32);
     }
 
     .btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.34);
       color: white;
-      border: 1px solid rgba(255,255,255,0.32);
-      background: rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 34px;
+      max-width: 720px;
+    }
+
+    .hero-point {
+      border-left: 1px solid rgba(255, 255, 255, 0.18);
+      padding-left: 14px;
+      color: #e7f4ff;
+      font-size: 13px;
+      line-height: 1.35;
+      font-weight: 800;
+    }
+
+    .hero-point span {
+      display: block;
+      color: #8df5ff;
+      font-size: 22px;
+      margin-bottom: 6px;
     }
 
     .hero-card {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.16);
       border-radius: 30px;
       padding: 16px;
-      box-shadow: 0 28px 80px rgba(0,0,0,0.28);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
       backdrop-filter: blur(10px);
-    }
-
-    .hero-card img {
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,0.16);
-    }
-
-    section {
-      padding: 78px 0;
-    }
-
-    .section-head {
-      max-width: 760px;
-      margin-bottom: 34px;
-    }
-
-    .section-head.center {
-      text-align: center;
+      max-width: 430px;
       margin-left: auto;
       margin-right: auto;
     }
 
-    h2 {
-      font-size: clamp(32px, 4vw, 46px);
+    .hero-card img {
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      width: 100%;
+    }
+
+    section {
+      padding: 58px 0;
+    }
+
+    .section-head {
+      max-width: 820px;
+      margin: 0 auto 36px;
+      text-align: center;
+    }
+
+    .section-head h2 {
+      font-size: clamp(30px, 4vw, 44px);
       line-height: 1.12;
-      margin: 0 0 14px;
-      letter-spacing: -1px;
       color: var(--navy);
+      margin: 0 0 12px;
+      letter-spacing: -0.8px;
     }
 
     .section-head p {
       margin: 0;
       color: var(--muted);
-      font-size: 18px;
+      font-size: 17px;
     }
 
-    .features-grid {
+    .importance {
+      background: white;
+    }
+
+    .importance-row {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
     }
 
-    .feature-card {
-      background: var(--white);
+    .importance-card {
+      background: #fbfdff;
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: 0 12px 34px rgba(7, 27, 70, 0.07);
+      border-radius: 22px;
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: 0 10px 26px rgba(7, 27, 70, 0.05);
     }
 
-    .icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      background: rgba(42, 149, 217, 0.12);
-      color: var(--blue);
+    .round-icon {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 14px;
+      border-radius: 999px;
       display: grid;
       place-items: center;
-      font-size: 22px;
-      margin-bottom: 14px;
+      background: linear-gradient(135deg, rgba(42, 149, 217, 0.12), rgba(32, 180, 134, 0.12));
+      color: var(--navy);
+      font-size: 25px;
     }
 
-    .feature-card h3,
+    .importance-card h3,
     .benefit-card h3 {
       margin: 0 0 8px;
       color: var(--navy);
-      font-size: 19px;
+      font-size: 16px;
+      line-height: 1.25;
     }
 
-    .feature-card p,
+    .importance-card p,
     .benefit-card p {
       margin: 0;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 14px;
+      line-height: 1.5;
     }
 
     .workflow {
-      background: white;
+      background: linear-gradient(180deg, #f7fbff 0%, #eef6ff 100%);
     }
 
-    .screenshot-block {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 34px;
-      align-items: center;
-      margin-bottom: 46px;
-      background: #f8fbff;
+    .workflow-panel {
+      background: white;
       border: 1px solid var(--border);
       border-radius: 30px;
-      padding: 28px;
+      padding: 34px;
       box-shadow: var(--shadow);
     }
 
-    .screenshot-block.reverse {
-      grid-template-columns: 1.1fr 0.9fr;
-    }
-
-    .screenshot-copy h3 {
-      font-size: 28px;
-      line-height: 1.15;
-      color: var(--navy);
-      margin: 0 0 12px;
-    }
-
-    .screenshot-copy p {
-      color: var(--muted);
-      margin: 0 0 16px;
-    }
-
-    .mini-list {
-      display: grid;
-      gap: 8px;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-    }
-
-    .mini-list li {
-      color: #29415f;
-      font-size: 15px;
-      display: flex;
-      gap: 10px;
-    }
-
-    .mini-list li::before {
-      content: "✓";
-      color: var(--green);
-      font-weight: 900;
-    }
-
-    .screenshot-frame {
-      background: var(--navy);
-      border-radius: 24px;
-      padding: 12px;
-      box-shadow: 0 20px 50px rgba(7, 27, 70, 0.18);
-    }
-
-    .screenshot-frame img {
-      border-radius: 16px;
-      background: white;
-    }
-
-    .mobile-pair {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .mobile-pair .screenshot-frame {
-      max-width: 280px;
-      margin: 0 auto;
-    }
-
-    .benefits {
-      background:
-        radial-gradient(circle at 15% 20%, rgba(32,180,134,0.14), transparent 30%),
-        linear-gradient(180deg, #eef6ff 0%, #f8fbff 100%);
-    }
-
-    .benefits-grid {
+    .steps {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 16px;
     }
 
+    .step {
+      text-align: center;
+      padding: 10px 8px;
+    }
+
+    .step-number {
+      width: 34px;
+      height: 34px;
+      margin: 0 auto 12px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      color: white;
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .step-icon {
+      width: 62px;
+      height: 62px;
+      margin: 0 auto 14px;
+      border-radius: 20px;
+      background: #f0f7ff;
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      font-size: 26px;
+      border: 1px solid var(--border);
+    }
+
+    .step h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .secure-note {
+      margin-top: 24px;
+      background: #eef6ff;
+      border: 1px solid #d7e9ff;
+      color: #29415f;
+      border-radius: 999px;
+      padding: 12px 18px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .tools {
+      background: white;
+      padding-top: 64px;
+      padding-bottom: 64px;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .tools-copy .label {
+      display: inline-block;
+      color: var(--green);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .tools-copy h2 {
+      margin: 0 0 16px;
+      color: var(--navy);
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.08;
+      letter-spacing: -0.8px;
+    }
+
+    .tools-copy p {
+      color: var(--muted);
+      font-size: 17px;
+      margin: 0 0 20px;
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 9px;
+    }
+
+    .check-list li {
+      color: #29415f;
+      font-size: 15px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .screen-showcase {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .mobile-strip {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .screen-frame {
+      background: var(--navy);
+      padding: 10px;
+      border-radius: 26px;
+      box-shadow: 0 18px 50px rgba(7, 27, 70, 0.2);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .screen-frame img {
+      border-radius: 18px;
+      width: 100%;
+    }
+
+    .web-frame {
+      margin-top: 14px;
+    }
+
+    .benefits {
+      background:
+        radial-gradient(circle at 12% 20%, rgba(32, 180, 134, 0.14), transparent 26%),
+        linear-gradient(180deg, #eef6ff 0%, #f8fbff 100%);
+      padding-top: 56px;
+      padding-bottom: 56px;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
     .benefit-card {
       background: white;
       border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 22px;
-      min-height: 170px;
-      box-shadow: 0 10px 30px rgba(7, 27, 70, 0.06);
+      border-radius: 20px;
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: 0 10px 28px rgba(7, 27, 70, 0.06);
     }
 
-    .final-cta {
+    .final {
       background: var(--navy);
       color: white;
-      text-align: center;
-      padding: 76px 0;
+      padding: 46px 0;
     }
 
-    .final-cta h2 {
-      color: white;
-      max-width: 760px;
-      margin: 0 auto 16px;
+    .final-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 24px;
+      align-items: center;
     }
 
-    .final-cta p {
-      color: #d8e8ff;
-      margin: 0 auto 26px;
-      max-width: 660px;
-      font-size: 18px;
+    .final-icon {
+      width: 74px;
+      height: 74px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.16);
+      display: grid;
+      place-items: center;
+      font-size: 32px;
+    }
+
+    .final h2 {
+      margin: 0 0 8px;
+      font-size: clamp(26px, 3vw, 36px);
+      line-height: 1.12;
+    }
+
+    .final p {
+      margin: 0;
+      color: #d9e8ff;
+      font-size: 16px;
     }
 
     footer {
       background: #041431;
       color: #b8c7dd;
-      padding: 24px 0;
+      padding: 22px;
+      text-align: center;
       font-size: 14px;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
     }
 
     @media (max-width: 980px) {
       .hero-grid,
-      .screenshot-block,
-      .screenshot-block.reverse {
+      .tools-grid,
+      .final-row {
         grid-template-columns: 1fr;
       }
 
-      .features-grid {
+      .hero-points,
+      .importance-row,
+      .steps,
+      .benefit-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .benefits-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .final-row {
+        text-align: center;
+      }
+
+      .final-icon {
+        margin: 0 auto;
       }
     }
 
@@ -396,21 +532,27 @@
       }
 
       .hero {
-        padding: 64px 0 70px;
+        padding: 56px 0 48px;
       }
 
       section {
-        padding: 58px 0;
+        padding: 46px 0;
       }
 
-      .features-grid,
-      .benefits-grid,
-      .mobile-pair {
+      .hero-points,
+      .importance-row,
+      .steps,
+      .benefit-grid,
+      .mobile-strip {
         grid-template-columns: 1fr;
       }
 
-      .screenshot-block {
-        padding: 18px;
+      .workflow-panel {
+        padding: 22px;
+      }
+
+      .secure-note {
+        border-radius: 18px;
       }
     }
   </style>
@@ -419,10 +561,11 @@
 <body>
   <header class="topbar">
     <div class="container topbar-inner">
-      <a class="brand" href="/">
+      <a href="/" class="brand">
         <img src="/logo.png" alt="True Care System" />
       </a>
-      <a class="top-link" href="/">Back to Home</a>
+
+      <a class="top-link" href="/">Back to Home →</a>
     </div>
   </header>
 
@@ -431,14 +574,36 @@
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">Core Solutions</div>
+
           <h1>EVV & Visit Verification</h1>
-          <p>
-            Mobile check-in, check-out, visit visibility, documentation connection,
-            and office review support for compliance-ready care operations.
+
+          <p class="hero-copy">
+            Verify visits with mobile check-in, check-out, location awareness,
+            visit status visibility, documentation connection, and office review support.
           </p>
+
           <div class="cta-row">
             <a class="btn btn-primary" href="/#demo">Request Demo</a>
             <a class="btn btn-secondary" href="#workflow">Explore Workflow</a>
+          </div>
+
+          <div class="hero-points">
+            <div class="hero-point">
+              <span>📍</span>
+              GPS-aware check-in
+            </div>
+            <div class="hero-point">
+              <span>✅</span>
+              Visit completion tracking
+            </div>
+            <div class="hero-point">
+              <span>📝</span>
+              Daily notes connected
+            </div>
+            <div class="hero-point">
+              <span>👁️</span>
+              Office review visibility
+            </div>
           </div>
         </div>
 
@@ -451,57 +616,46 @@
       </div>
     </section>
 
-    <section>
+    <section class="importance">
       <div class="container">
-        <div class="section-head center">
-          <h2>EVV tools connected to real provider workflows</h2>
+        <div class="section-head">
+          <h2>Why connected EVV matters</h2>
           <p>
-            True Care System helps providers connect scheduled shifts, mobile visit actions,
-            DSP documentation, and office review visibility in one organized workflow.
+            Visit verification is more than a check-in button. Providers need clear
+            evidence that the right service was delivered, at the right time, by the
+            right DSP, with documentation that is ready for review.
           </p>
         </div>
 
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="icon">📍</div>
-            <h3>Mobile check-in workflow</h3>
-            <p>Allow DSPs to start visits from the mobile app with a clear check-in process tied to scheduled work.</p>
+        <div class="importance-row">
+          <div class="importance-card">
+            <div class="round-icon">📍</div>
+            <h3>Verify Field Activity</h3>
+            <p>Connect scheduled visits with mobile check-in and check-out actions.</p>
           </div>
 
-          <div class="feature-card">
-            <div class="icon">✅</div>
-            <h3>Mobile check-out workflow</h3>
-            <p>Support visit completion through mobile check-out, helping office teams review completed services more clearly.</p>
+          <div class="importance-card">
+            <div class="round-icon">🕒</div>
+            <h3>Track Visit Status</h3>
+            <p>See what is scheduled, in progress, completed, or needing attention.</p>
           </div>
 
-          <div class="feature-card">
-            <div class="icon">🕒</div>
-            <h3>Real-time visit tracking</h3>
-            <p>Improve visibility into visit status so office teams can see what is scheduled, in progress, completed, or needing review.</p>
+          <div class="importance-card">
+            <div class="round-icon">👥</div>
+            <h3>Support DSPs</h3>
+            <p>Give staff a clear mobile workflow for daily visit responsibilities.</p>
           </div>
 
-          <div class="feature-card">
-            <div class="icon">📱</div>
-            <h3>DSP mobile access</h3>
-            <p>Give DSPs practical mobile tools for schedules, check-in, check-out, daily notes, signatures, and visit summaries.</p>
+          <div class="importance-card">
+            <div class="round-icon">📝</div>
+            <h3>Connect Notes</h3>
+            <p>Link visit activity with daily documentation, signatures, and summaries.</p>
           </div>
 
-          <div class="feature-card">
-            <div class="icon">📝</div>
-            <h3>Documentation connection</h3>
-            <p>Connect EVV activity with daily note documentation so visit records and care notes stay aligned.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="icon">🔎</div>
-            <h3>Office review visibility</h3>
-            <p>Help supervisors and office teams review visit activity, documentation, and exceptions with better operational clarity.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="icon">🛡️</div>
-            <h3>Compliance-ready workflow</h3>
-            <p>Support more organized visit verification and documentation processes for provider operational readiness.</p>
+          <div class="importance-card">
+            <div class="round-icon">🛡️</div>
+            <h3>Stay Review Ready</h3>
+            <p>Keep verification and documentation organized for oversight.</p>
           </div>
         </div>
       </div>
@@ -509,103 +663,103 @@
 
     <section id="workflow" class="workflow">
       <div class="container">
-        <div class="section-head">
-          <h2>From scheduled visit to verified service record</h2>
+        <div class="workflow-panel">
+          <div class="section-head">
+            <h2>One workflow from scheduled visit to verified record</h2>
+            <p>
+              True Care System connects EVV activity to scheduling, documentation,
+              and office review so each visit has a clear path from assigned work
+              to completed service record.
+            </p>
+          </div>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div class="step-icon">📅</div>
+              <h3>Visit Scheduled</h3>
+              <p>The visit is assigned to an individual, service, date, time, and DSP.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">2</div>
+              <div class="step-icon">📍</div>
+              <h3>DSP Checks In</h3>
+              <p>The DSP starts the visit from the mobile app with field activity captured.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">3</div>
+              <div class="step-icon">✅</div>
+              <h3>DSP Checks Out</h3>
+              <p>The visit is completed and service time is connected to the schedule.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">4</div>
+              <div class="step-icon">📝</div>
+              <h3>Documentation Added</h3>
+              <p>Daily notes, signatures, and visit summaries are attached to the record.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">5</div>
+              <div class="step-icon">👁️</div>
+              <h3>Office Reviews</h3>
+              <p>Supervisors review visit activity, exceptions, and documentation status.</p>
+            </div>
+          </div>
+
+          <div class="secure-note">
+            🔒 EVV activity, scheduling, documentation, and review visibility stay connected in one workflow.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tools">
+      <div class="container tools-grid">
+        <div class="tools-copy">
+          <span class="label">Visit verification tools</span>
+          <h2>Everything your team needs to verify visits with confidence</h2>
           <p>
-            EVV works best when it is connected to scheduling, mobile activity,
-            documentation, and office review. True Care System keeps those steps together.
+            EVV works best when it is not isolated. True Care System connects
+            visit verification with scheduling, mobile workflows, daily notes,
+            signatures, and office oversight.
           </p>
+
+          <ul class="check-list">
+            <li>Mobile check-in and check-out connected to scheduled shifts</li>
+            <li>GPS-aware visit workflow for field staff</li>
+            <li>Real-time visit status visibility for office teams</li>
+            <li>Daily notes and signatures connected to EVV activity</li>
+            <li>Supervisor review visibility for completed and exception visits</li>
+            <li>Organized records to support compliance-ready operations</li>
+          </ul>
         </div>
 
-        <div class="screenshot-block">
-          <div class="screenshot-copy">
-            <h3>Mobile check-in for DSPs</h3>
-            <p>
-              DSPs can begin visit activity from the mobile app, helping connect the
-              scheduled shift with real-time service delivery in the field.
-            </p>
-            <ul class="mini-list">
-              <li>Check-in connected to scheduled visits</li>
-              <li>Mobile-first workflow for field staff</li>
-              <li>Clearer visit status for office teams</li>
-            </ul>
-          </div>
-          <div class="screenshot-frame">
-            <img
-              src="/assets/screenshots/mobile/checkin/mobile-check-in-screen.png"
-              alt="Mobile check-in screen for EVV visit verification"
-            />
-          </div>
-        </div>
+        <div class="screen-showcase">
+          <div class="mobile-strip">
+            <div class="screen-frame">
+              <img
+                src="/assets/screenshots/mobile/checkin/mobile-check-in-screen.png"
+                alt="True Care System mobile check-in screen"
+              />
+            </div>
 
-        <div class="screenshot-block reverse">
-          <div class="screenshot-frame">
-            <img
-              src="/assets/screenshots/mobile/checkin/mobile-check-out-screen.png"
-              alt="Mobile check-out screen for EVV visit verification"
-            />
+            <div class="screen-frame">
+              <img
+                src="/assets/screenshots/mobile/checkin/mobile-check-out-screen.png"
+                alt="True Care System mobile check-out screen"
+              />
+            </div>
           </div>
-          <div class="screenshot-copy">
-            <h3>Mobile check-out and visit completion</h3>
-            <p>
-              Check-out helps complete the visit workflow and provides the office team
-              with better visibility into service completion and visit review needs.
-            </p>
-            <ul class="mini-list">
-              <li>Check-out connected to visit completion</li>
-              <li>Supports cleaner service records</li>
-              <li>Improves staff accountability</li>
-            </ul>
-          </div>
-        </div>
 
-        <div class="screenshot-block">
-          <div class="screenshot-copy">
-            <h3>Office dashboard visibility</h3>
-            <p>
-              Provider teams need a central view of daily activity, visit progress,
-              completed work, and items needing attention.
-            </p>
-            <ul class="mini-list">
-              <li>Central operational overview</li>
-              <li>Visit and documentation visibility</li>
-              <li>Better coordination between office and field teams</li>
-            </ul>
-          </div>
-          <div class="screenshot-frame">
+          <div class="screen-frame web-frame">
             <img
               src="/assets/screenshots/web/dashboard/web-dashboard-overview.png"
-              alt="Web dashboard overview for EVV and visit tracking"
+              alt="True Care System dashboard showing EVV and visit visibility"
             />
-          </div>
-        </div>
-
-        <div class="screenshot-block reverse">
-          <div class="mobile-pair">
-            <div class="screenshot-frame">
-              <img
-                src="/assets/screenshots/mobile/daily-notes/mobile-daily-note-form.png"
-                alt="Daily note form connected to verified visit workflow"
-              />
-            </div>
-            <div class="screenshot-frame">
-              <img
-                src="/assets/screenshots/mobile/daily-notes/mobile-daily-note-signature.png"
-                alt="Daily note signature connected to verified visit workflow"
-              />
-            </div>
-          </div>
-          <div class="screenshot-copy">
-            <h3>Documentation connected to EVV activity</h3>
-            <p>
-              After visit activity, DSPs can complete daily documentation and signature
-              steps so service records are easier to review and manage.
-            </p>
-            <ul class="mini-list">
-              <li>Daily notes connected to visits</li>
-              <li>Signature and summary workflow</li>
-              <li>Stronger documentation accountability</li>
-            </ul>
           </div>
         </div>
       </div>
@@ -613,60 +767,67 @@
 
     <section class="benefits">
       <div class="container">
-        <div class="section-head center">
-          <h2>Why providers need connected EVV</h2>
+        <div class="section-head">
+          <h2>Real benefits for your organization</h2>
           <p>
-            Visit verification is more effective when mobile activity, scheduling,
-            documentation, and review workflows are connected in one system.
+            Connected EVV helps providers reduce manual follow-up, improve accountability,
+            strengthen service records, and give office teams better visibility into field activity.
           </p>
         </div>
 
-        <div class="benefits-grid">
+        <div class="benefit-grid">
           <div class="benefit-card">
-            <h3>Improve visit accountability</h3>
-            <p>Connect field activity with scheduled services and office review visibility.</p>
+            <div class="round-icon">👁️</div>
+            <h3>Improve Accountability</h3>
+            <p>Connect field activity with assigned services and office review.</p>
           </div>
 
           <div class="benefit-card">
-            <h3>Reduce manual follow-up</h3>
-            <p>Give office teams clearer information about visit status and documentation needs.</p>
+            <div class="round-icon">⏱️</div>
+            <h3>Reduce Follow-Up</h3>
+            <p>Give office teams clearer visit details and documentation status.</p>
           </div>
 
           <div class="benefit-card">
-            <h3>Strengthen documentation</h3>
-            <p>Keep visit verification, notes, signatures, and summaries in one workflow.</p>
+            <div class="round-icon">📝</div>
+            <h3>Strengthen Records</h3>
+            <p>Keep verification, notes, signatures, and summaries in one workflow.</p>
           </div>
 
           <div class="benefit-card">
-            <h3>Support compliance readiness</h3>
-            <p>Organize visit activity and service records for cleaner review and oversight.</p>
+            <div class="round-icon">🛡️</div>
+            <h3>Support Compliance</h3>
+            <p>Organize visit activity and service records for cleaner oversight.</p>
           </div>
 
           <div class="benefit-card">
-            <h3>Increase real-time visibility</h3>
-            <p>Help supervisors and office teams monitor field activity with more confidence.</p>
+            <div class="round-icon">📊</div>
+            <h3>Real-Time Visibility</h3>
+            <p>Help supervisors monitor field activity with more confidence.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="final-cta">
-      <div class="container">
-        <h2>Ready to connect EVV with your daily care operations?</h2>
-        <p>
-          See how True Care System helps providers connect visit verification,
-          mobile workflows, documentation, and office review in one platform.
-        </p>
+    <section class="final">
+      <div class="container final-row">
+        <div class="final-icon">📍</div>
+
+        <div>
+          <h2>Ready to connect EVV with your daily care operations?</h2>
+          <p>
+            See how True Care System helps providers verify visits, support DSPs,
+            connect documentation, and improve office review visibility.
+          </p>
+        </div>
+
         <a class="btn btn-primary" href="/#demo">Request Your Demo</a>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-inner">
-      <div>© True Care System. All rights reserved.</div>
-      <div>EVV • Visit Verification • Mobile Check-In • Documentation</div>
-    </div>
+    © True Care System. All rights reserved.
   </footer>
 </body>
 </html>
