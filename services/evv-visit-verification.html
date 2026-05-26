@@ -9,7 +9,7 @@
 
   <meta
     name="description"
-    content="EVV and visit verification tools for care providers, including mobile check-in, check-out, visit tracking, documentation connection, and office review visibility."
+    content="EVV and visit verification tools for care providers, including mobile check-in, check-out, medication workflow visibility, documentation connection, and office review support."
   />
 
   <style>
@@ -38,15 +38,8 @@
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
 
     .container {
       width: min(1180px, calc(100% - 32px));
@@ -197,9 +190,7 @@
       width: 100%;
     }
 
-    section {
-      padding: 58px 0;
-    }
+    section { padding: 58px 0; }
 
     .section-head {
       max-width: 820px;
@@ -408,7 +399,7 @@
       gap: 18px;
     }
 
-    .mobile-strip {
+    .medication-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 14px;
@@ -427,8 +418,9 @@
       width: 100%;
     }
 
-    .web-frame {
-      margin-top: 14px;
+    .wide-frame {
+      max-width: 520px;
+      margin: 0 auto;
     }
 
     .benefits {
@@ -543,7 +535,7 @@
       .importance-row,
       .steps,
       .benefit-grid,
-      .mobile-strip {
+      .medication-grid {
         grid-template-columns: 1fr;
       }
 
@@ -597,8 +589,8 @@
               Visit completion tracking
             </div>
             <div class="hero-point">
-              <span>📝</span>
-              Daily notes connected
+              <span>💊</span>
+              Medication workflow support
             </div>
             <div class="hero-point">
               <span>👁️</span>
@@ -619,11 +611,11 @@
     <section class="importance">
       <div class="container">
         <div class="section-head">
-          <h2>Why connected EVV matters</h2>
+          <h2>Why connected visit verification matters</h2>
           <p>
-            Visit verification is more than a check-in button. Providers need clear
-            evidence that the right service was delivered, at the right time, by the
-            right DSP, with documentation that is ready for review.
+            EVV should not stand alone. Providers need visit verification connected
+            with field workflows, medication visibility, daily documentation, and office
+            review so each service record is easier to understand and manage.
           </p>
         </div>
 
@@ -641,9 +633,9 @@
           </div>
 
           <div class="importance-card">
-            <div class="round-icon">👥</div>
-            <h3>Support DSPs</h3>
-            <p>Give staff a clear mobile workflow for daily visit responsibilities.</p>
+            <div class="round-icon">💊</div>
+            <h3>Support Medication Tasks</h3>
+            <p>Help field staff follow medication-related workflows during visits.</p>
           </div>
 
           <div class="importance-card">
@@ -665,11 +657,11 @@
       <div class="container">
         <div class="workflow-panel">
           <div class="section-head">
-            <h2>One workflow from scheduled visit to verified record</h2>
+            <h2>One workflow from visit verification to care task review</h2>
             <p>
-              True Care System connects EVV activity to scheduling, documentation,
-              and office review so each visit has a clear path from assigned work
-              to completed service record.
+              True Care System connects EVV activity to scheduling, medication workflows,
+              documentation, and office review so providers can see both the visit and
+              the care tasks connected to that visit.
             </p>
           </div>
 
@@ -690,9 +682,9 @@
 
             <div class="step">
               <div class="step-number">3</div>
-              <div class="step-icon">✅</div>
-              <h3>DSP Checks Out</h3>
-              <p>The visit is completed and service time is connected to the schedule.</p>
+              <div class="step-icon">💊</div>
+              <h3>Medication Tasks</h3>
+              <p>Medication records, PRN items, orders, and MAR activity can be reviewed.</p>
             </div>
 
             <div class="step">
@@ -706,12 +698,12 @@
               <div class="step-number">5</div>
               <div class="step-icon">👁️</div>
               <h3>Office Reviews</h3>
-              <p>Supervisors review visit activity, exceptions, and documentation status.</p>
+              <p>Supervisors review visit activity, exceptions, medication items, and documentation.</p>
             </div>
           </div>
 
           <div class="secure-note">
-            🔒 EVV activity, scheduling, documentation, and review visibility stay connected in one workflow.
+            🔒 EVV activity, medication workflows, documentation, and review visibility stay connected in one operational flow.
           </div>
         </div>
       </div>
@@ -720,45 +712,59 @@
     <section class="tools">
       <div class="container tools-grid">
         <div class="tools-copy">
-          <span class="label">Visit verification tools</span>
-          <h2>Everything your team needs to verify visits with confidence</h2>
+          <span class="label">Connected field workflows</span>
+          <h2>Visit verification with medication workflow visibility</h2>
           <p>
-            EVV works best when it is not isolated. True Care System connects
-            visit verification with scheduling, mobile workflows, daily notes,
-            signatures, and office oversight.
+            Keep the EVV hero focused on check-in, then give providers a deeper view
+            of how field workflows can connect with medication records, MAR, PRN tasks,
+            orders, inventory, and review-ready documentation.
           </p>
 
           <ul class="check-list">
-            <li>Mobile check-in and check-out connected to scheduled shifts</li>
-            <li>GPS-aware visit workflow for field staff</li>
-            <li>Real-time visit status visibility for office teams</li>
-            <li>Daily notes and signatures connected to EVV activity</li>
-            <li>Supervisor review visibility for completed and exception visits</li>
-            <li>Organized records to support compliance-ready operations</li>
+            <li>Mobile visit verification connected to field staff workflows</li>
+            <li>Medication order and MAR visibility during care operations</li>
+            <li>PRN and vitals-related documentation support</li>
+            <li>Medication inventory and controlled item oversight</li>
+            <li>Daily notes and signatures connected to service activity</li>
+            <li>Office review visibility for visit and care-task documentation</li>
           </ul>
         </div>
 
         <div class="screen-showcase">
-          <div class="mobile-strip">
+          <div class="medication-grid">
             <div class="screen-frame">
               <img
-                src="/assets/screenshots/mobile/checkin/mobile-check-in-screen.png"
-                alt="True Care System mobile check-in screen"
+                src="/assets/screenshots/mobile/medication/medication-mobile-workflow.png"
+                alt="True Care System medication mobile workflow"
               />
             </div>
 
             <div class="screen-frame">
               <img
-                src="/assets/screenshots/mobile/checkin/mobile-check-out-screen.png"
-                alt="True Care System mobile check-out screen"
+                src="/assets/screenshots/mobile/medication/medication-mar-record.png"
+                alt="True Care System medication MAR record"
+              />
+            </div>
+
+            <div class="screen-frame">
+              <img
+                src="/assets/screenshots/mobile/medication/medication-orders-management.png"
+                alt="True Care System medication orders management"
+              />
+            </div>
+
+            <div class="screen-frame">
+              <img
+                src="/assets/screenshots/mobile/medication/medication-prn-vitals.png"
+                alt="True Care System medication PRN and vitals"
               />
             </div>
           </div>
 
-          <div class="screen-frame web-frame">
+          <div class="screen-frame wide-frame">
             <img
-              src="/assets/screenshots/web/dashboard/web-dashboard-overview.png"
-              alt="True Care System dashboard showing EVV and visit visibility"
+              src="/assets/screenshots/mobile/medication/medication-inventory-controlled.png"
+              alt="True Care System medication inventory controlled"
             />
           </div>
         </div>
@@ -789,9 +795,9 @@
           </div>
 
           <div class="benefit-card">
-            <div class="round-icon">📝</div>
-            <h3>Strengthen Records</h3>
-            <p>Keep verification, notes, signatures, and summaries in one workflow.</p>
+            <div class="round-icon">💊</div>
+            <h3>Support Medication Review</h3>
+            <p>Show medication workflows as part of broader care operations.</p>
           </div>
 
           <div class="benefit-card">
@@ -817,7 +823,7 @@
           <h2>Ready to connect EVV with your daily care operations?</h2>
           <p>
             See how True Care System helps providers verify visits, support DSPs,
-            connect documentation, and improve office review visibility.
+            connect medication workflows, documentation, and office review visibility.
           </p>
         </div>
 
