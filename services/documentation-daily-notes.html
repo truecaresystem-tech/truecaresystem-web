@@ -2,615 +2,835 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Documentation & Daily Notes | True Care System</title>
+  <title>Documentation & Daily Notes | True Care System</title>
 
-<meta
-name="description"
-content="Daily notes, care documentation, signatures, service records, and review workflows connected to real provider operations."
-/>
+  <meta
+    name="description"
+    content="Daily notes, care documentation, signatures, service records, and review workflows connected to real provider operations."
+  />
 
-<style>
+  <style>
+    :root {
+      --navy: #071b46;
+      --navy2: #0b255c;
+      --navy3: #102e68;
+      --blue: #2a95d9;
+      --cyan: #38bdf8;
+      --green: #20b486;
+      --green2: #39c56b;
+      --bg: #f5f8fc;
+      --text: #102033;
+      --muted: #607089;
+      --border: #dbe5f2;
+      --white: #ffffff;
+      --soft: #eef6ff;
+      --radius: 24px;
+      --shadow: 0 22px 60px rgba(7, 27, 70, 0.16);
+    }
 
-:root{
---navy:#071b46;
---navy2:#0b255c;
---blue:#2a95d9;
---green:#20b486;
---bg:#f5f8fc;
---text:#102033;
---muted:#607089;
---border:#dbe5f2;
---white:#fff;
---radius:24px;
---shadow:0 22px 60px rgba(7,27,70,.16);
-}
+    * {
+      box-sizing: border-box;
+    }
 
-*{
-box-sizing:border-box;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:var(--bg);
-color:var(--text);
-line-height:1.6;
-}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-a{
-text-decoration:none;
-color:inherit;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-img{
-display:block;
-max-width:100%;
-}
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-.container{
-width:min(1180px,calc(100% - 32px));
-margin:auto;
-}
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
 
-.topbar{
-background:var(--navy);
-padding:18px 0;
-border-bottom:1px solid rgba(255,255,255,.1);
-}
+    .topbar {
+      background: var(--white);
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
 
-.topbar-inner{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+    }
 
-.brand img{
-width:220px;
-}
+    .brand img {
+      width: 210px;
+      height: auto;
+      object-fit: contain;
+    }
 
-.top-link{
-color:white;
-font-size:14px;
-}
+    .top-link {
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 800;
+    }
 
-.hero{
+    .hero {
+      background:
+        radial-gradient(circle at 78% 25%, rgba(56, 189, 248, 0.24), transparent 30%),
+        radial-gradient(circle at 18% 85%, rgba(32, 180, 134, 0.16), transparent 28%),
+        linear-gradient(135deg, var(--navy) 0%, var(--navy2) 58%, #123a77 100%);
+      color: white;
+      padding: 74px 0 56px;
+      overflow: hidden;
+    }
 
-background:
-radial-gradient(circle at 70% 25%,rgba(56,189,248,.25),transparent 30%),
-linear-gradient(
-135deg,
-var(--navy) 0%,
-var(--navy2) 60%,
-#113a75 100%
-);
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 48px;
+      align-items: center;
+    }
 
-padding:90px 0;
-color:white;
-}
+    .eyebrow {
+      display: inline-block;
+      color: #8df5ff;
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      margin-bottom: 14px;
+    }
 
-.hero-grid{
-display:grid;
-grid-template-columns:1fr .9fr;
-gap:50px;
-align-items:center;
-}
+    h1 {
+      font-size: clamp(44px, 6vw, 70px);
+      line-height: 0.98;
+      margin: 0 0 20px;
+      letter-spacing: -1.8px;
+    }
 
-.eyebrow{
-font-size:14px;
-font-weight:700;
-letter-spacing:1px;
-color:#9be7ff;
-margin-bottom:15px;
-}
+    .hero-copy {
+      margin: 0;
+      max-width: 670px;
+      font-size: 19px;
+      color: #d9e8ff;
+    }
 
-h1{
-font-size:clamp(44px,6vw,68px);
-line-height:1;
-margin:0 0 25px;
-}
+    .cta {
+      display: flex;
+      gap: 14px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
 
-.hero p{
-font-size:19px;
-color:#d9e8ff;
-}
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 24px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 15px;
+      transition: 0.2s ease;
+    }
 
-.cta{
-display:flex;
-gap:15px;
-margin-top:30px;
-flex-wrap:wrap;
-}
+    .btn:hover {
+      transform: translateY(-2px);
+    }
 
-.btn{
-padding:14px 26px;
-border-radius:999px;
-font-weight:700;
-display:inline-flex;
-align-items:center;
-justify-content:center;
-}
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--green2));
+      color: white;
+      box-shadow: 0 16px 34px rgba(42, 149, 217, 0.32);
+    }
 
-.btn-primary{
-background:linear-gradient(135deg,var(--blue),var(--green));
-color:white;
-}
+    .btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      color: white;
+      background: rgba(255, 255, 255, 0.08);
+    }
 
-.btn-secondary{
-border:1px solid rgba(255,255,255,.3);
-color:white;
-}
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 34px;
+      max-width: 680px;
+    }
 
-.hero-card{
-padding:15px;
-border-radius:28px;
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,.1);
-}
+    .hero-point {
+      border-left: 1px solid rgba(255, 255, 255, 0.18);
+      padding-left: 14px;
+      color: #e7f4ff;
+      font-size: 13px;
+      line-height: 1.35;
+      font-weight: 800;
+    }
 
-.hero-card img{
-border-radius:18px;
-}
+    .hero-point span {
+      display: block;
+      color: #8df5ff;
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
 
-section{
-padding:80px 0;
-}
+    .hero-card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 30px;
+      padding: 16px;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(10px);
+    }
 
-.section-head{
-max-width:760px;
-margin:auto auto 40px;
-text-align:center;
-}
+    .hero-card img {
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      width: 100%;
+    }
 
-.section-head h2{
-font-size:42px;
-margin-bottom:10px;
-color:var(--navy);
-}
+    section {
+      padding: 58px 0;
+    }
 
-.section-head p{
-color:var(--muted);
-font-size:18px;
-}
+    .section-head {
+      max-width: 820px;
+      margin: 0 auto 36px;
+      text-align: center;
+    }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px;
-}
+    .section-head h2 {
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.12;
+      color: var(--navy);
+      margin: 0 0 12px;
+      letter-spacing: -0.8px;
+    }
 
-.card{
-background:white;
-padding:24px;
-border-radius:24px;
-border:1px solid var(--border);
-box-shadow:0 10px 30px rgba(7,27,70,.06);
-}
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
 
-.icon{
-width:45px;
-height:45px;
-border-radius:14px;
-display:grid;
-place-items:center;
-background:rgba(42,149,217,.1);
-font-size:22px;
-margin-bottom:14px;
-}
+    .importance {
+      background: var(--white);
+    }
 
-.card h3{
-margin:0 0 10px;
-font-size:19px;
-color:var(--navy);
-}
+    .importance-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      align-items: stretch;
+    }
 
-.card p{
-margin:0;
-color:var(--muted);
-}
+    .importance-card {
+      background: #fbfdff;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: 0 10px 26px rgba(7, 27, 70, 0.05);
+    }
 
-.workflow{
-background:white;
-}
+    .round-icon {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 14px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(42, 149, 217, 0.12), rgba(32, 180, 134, 0.12));
+      color: var(--navy);
+      font-size: 25px;
+    }
 
-.block{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:35px;
-align-items:center;
+    .importance-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 16px;
+      line-height: 1.25;
+    }
 
-background:#f8fbff;
-padding:30px;
-margin-bottom:45px;
+    .importance-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
 
-border-radius:28px;
-border:1px solid var(--border);
-box-shadow:var(--shadow);
-}
+    .workflow {
+      background: linear-gradient(180deg, #f7fbff 0%, #eef6ff 100%);
+    }
 
-.block h3{
-font-size:30px;
-margin-top:0;
-margin-bottom:10px;
-}
+    .workflow-panel {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
 
-.block p{
-color:var(--muted);
-}
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      position: relative;
+    }
 
-.frame{
-background:var(--navy);
-padding:12px;
-border-radius:22px;
-}
+    .step {
+      text-align: center;
+      position: relative;
+      padding: 10px 8px;
+    }
 
-.frame img{
-border-radius:14px;
-}
+    .step-number {
+      width: 34px;
+      height: 34px;
+      margin: 0 auto 12px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      color: white;
+      font-weight: 900;
+      font-size: 14px;
+    }
 
-.list{
-padding:0;
-margin:20px 0 0;
-list-style:none;
-}
+    .step-icon {
+      width: 62px;
+      height: 62px;
+      margin: 0 auto 14px;
+      border-radius: 20px;
+      background: #f0f7ff;
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      font-size: 26px;
+      border: 1px solid var(--border);
+    }
 
-.list li{
-margin-bottom:8px;
-}
+    .step h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 16px;
+      line-height: 1.25;
+    }
 
-.list li::before{
-content:"✓ ";
-color:var(--green);
-font-weight:700;
-}
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
 
-.final{
-padding:80px 0;
-text-align:center;
-background:var(--navy);
-color:white;
-}
+    .secure-note {
+      margin-top: 24px;
+      background: #eef6ff;
+      border: 1px solid #d7e9ff;
+      color: #29415f;
+      border-radius: 999px;
+      padding: 12px 18px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
 
-.final h2{
-font-size:44px;
-margin-bottom:20px;
-}
+    .tools {
+      background: white;
+      padding-top: 64px;
+      padding-bottom: 64px;
+    }
 
-.final p{
-color:#d9e8ff;
-max-width:700px;
-margin:auto auto 30px;
-}
+    .tools-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 42px;
+      align-items: center;
+    }
 
-footer{
-background:#041431;
-color:#b8c7dd;
-padding:24px;
-text-align:center;
-}
+    .tools-copy .label {
+      display: inline-block;
+      color: var(--green);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
 
-@media(max-width:980px){
+    .tools-copy h2 {
+      margin: 0 0 16px;
+      color: var(--navy);
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.08;
+      letter-spacing: -0.8px;
+    }
 
-.hero-grid,
-.block,
-.grid{
+    .tools-copy p {
+      color: var(--muted);
+      font-size: 17px;
+      margin: 0 0 20px;
+    }
 
-grid-template-columns:1fr;
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 9px;
+    }
 
-}
+    .check-list li {
+      color: #29415f;
+      font-size: 15px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
 
-}
+    .check-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+    }
 
-</style>
+    .phone-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: center;
+    }
 
+    .phone-frame {
+      background: var(--navy);
+      padding: 10px;
+      border-radius: 26px;
+      box-shadow: 0 18px 50px rgba(7, 27, 70, 0.2);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .phone-frame img {
+      border-radius: 18px;
+      width: 100%;
+    }
+
+    .benefits {
+      background:
+        radial-gradient(circle at 12% 20%, rgba(32, 180, 134, 0.14), transparent 26%),
+        linear-gradient(180deg, #eef6ff 0%, #f8fbff 100%);
+      padding-top: 56px;
+      padding-bottom: 56px;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .benefit-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: 0 10px 28px rgba(7, 27, 70, 0.06);
+    }
+
+    .benefit-card h3 {
+      color: var(--navy);
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    .benefit-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .final {
+      background: var(--navy);
+      color: white;
+      padding: 46px 0;
+    }
+
+    .final-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .final-icon {
+      width: 74px;
+      height: 74px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.16);
+      display: grid;
+      place-items: center;
+      font-size: 32px;
+    }
+
+    .final h2 {
+      margin: 0 0 8px;
+      font-size: clamp(26px, 3vw, 36px);
+      line-height: 1.12;
+    }
+
+    .final p {
+      margin: 0;
+      color: #d9e8ff;
+      font-size: 16px;
+    }
+
+    footer {
+      background: #041431;
+      color: #b8c7dd;
+      padding: 22px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .tools-grid,
+      .final-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-points,
+      .importance-row,
+      .steps,
+      .benefit-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .final-row {
+        text-align: center;
+      }
+
+      .final-icon {
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .brand img {
+        width: 180px;
+      }
+
+      .hero {
+        padding: 56px 0 48px;
+      }
+
+      section {
+        padding: 46px 0;
+      }
+
+      .hero-points,
+      .importance-row,
+      .steps,
+      .benefit-grid,
+      .phone-showcase {
+        grid-template-columns: 1fr;
+      }
+
+      .workflow-panel {
+        padding: 22px;
+      }
+
+      .secure-note {
+        border-radius: 18px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
-<header class="topbar">
-
-<div class="container topbar-inner">
-
-<a href="/" class="brand">
-<img src="/logo.png">
-</a>
-
-<a class="top-link" href="/">
-Back to Home
-</a>
-
-</div>
-
-</header>
-
-<main>
-
-<section class="hero">
-
-<div class="container hero-grid">
-
-<div>
-
-<div class="eyebrow">
-CORE SOLUTIONS
-</div>
-
-<h1>
-Documentation & Daily Notes
-</h1>
-
-<p>
-
-Capture service records, daily notes, signatures,
-visit summaries, and documentation workflows
-connected to real provider operations.
-
-</p>
-
-<div class="cta">
-
-<a class="btn btn-primary" href="/#demo">
-Request Demo
-</a>
-
-<a class="btn btn-secondary" href="#workflow">
-Explore Workflow
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-card">
-
-<img
-src="/assets/screenshots/mobile/daily-notes/mobile-daily-note-form.png"
-alt="Daily note form"
->
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<div class="section-head">
-
-<h2>
-Built around provider documentation workflows
-</h2>
-
-<p>
-
-Keep service notes, forms, summaries,
-signatures, and office review steps connected.
-
-</p>
-
-</div>
-
-<div class="grid">
-
-<div class="card">
-
-<div class="icon">📝</div>
-
-<h3>
-Daily Note Forms
-</h3>
-
-<p>
-
-Capture structured daily service documentation.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="icon">✍️</div>
-
-<h3>
-Signature Collection
-</h3>
-
-<p>
-
-Collect signatures directly from mobile workflows.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="icon">📋</div>
-
-<h3>
-Visit Summaries
-</h3>
-
-<p>
-
-Create clear summaries for completed services.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="icon">👁️</div>
-
-<h3>
-Supervisor Visibility
-</h3>
-
-<p>
-
-Allow office teams to review submitted notes.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="icon">📱</div>
-
-<h3>
-Mobile Documentation
-</h3>
-
-<p>
-
-Give DSPs documentation tools directly on mobile.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="icon">🛡️</div>
-
-<h3>
-Compliance Support
-</h3>
-
-<p>
-
-Maintain organized service documentation records.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="workflow" class="workflow">
-
-<div class="container">
-
-<div class="block">
-
-<div>
-
-<h3>
-Daily Note Form Workflow
-</h3>
-
-<p>
-
-DSPs can complete notes directly from scheduled visits.
-
-</p>
-
-<ul class="list">
-
-<li>Structured forms</li>
-<li>Service documentation</li>
-<li>Mobile access</li>
-
-</ul>
-
-</div>
-
-<div class="frame">
-
-<img
-src="/assets/screenshots/mobile/daily-notes/mobile-daily-note-form.png"
->
-
-</div>
-
-</div>
-
-<div class="block">
-
-<div class="frame">
-
-<img
-src="/assets/screenshots/mobile/daily-notes/mobile-daily-note-signature.png"
->
-
-</div>
-
-<div>
-
-<h3>
-Signature & Visit Summary
-</h3>
-
-<p>
-
-Capture signatures and complete service records.
-
-</p>
-
-<ul class="list">
-
-<li>Electronic signature</li>
-<li>Visit summaries</li>
-<li>Review workflow</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="final">
-
-<div class="container">
-
-<h2>
-
-Ready to simplify documentation?
-
-</h2>
-
-<p>
-
-See how True Care System helps providers manage
-daily notes, service records, signatures,
-and documentation workflows.
-
-</p>
-
-<a class="btn btn-primary" href="/#demo">
-
-Request Your Demo
-
-</a>
-
-</div>
-
-</section>
-
-</main>
-
-<footer>
-
-© True Care System. All Rights Reserved.
-
-</footer>
-
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="/" class="brand">
+        <img src="/logo.png" alt="True Care System" />
+      </a>
+
+      <a class="top-link" href="/">Back to Home →</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Core Solutions</div>
+
+          <h1>Documentation & Daily Notes</h1>
+
+          <p class="hero-copy">
+            Capture service records, daily notes, signatures, visit summaries,
+            and review-ready documentation connected to real provider operations.
+          </p>
+
+          <div class="cta">
+            <a class="btn btn-primary" href="/#demo">Request Demo</a>
+            <a class="btn btn-secondary" href="#workflow">Explore Workflow</a>
+          </div>
+
+          <div class="hero-points">
+            <div class="hero-point">
+              <span>📱</span>
+              Mobile first for DSPs
+            </div>
+            <div class="hero-point">
+              <span>🔗</span>
+              Connected to visits
+            </div>
+            <div class="hero-point">
+              <span>🛡️</span>
+              Compliance ready
+            </div>
+            <div class="hero-point">
+              <span>👁️</span>
+              Office review visibility
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img
+            src="/assets/screenshots/mobile/daily-notes/mobile-daily-note-form.png"
+            alt="True Care System mobile daily note form"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="importance">
+      <div class="container">
+        <div class="section-head">
+          <h2>Why documentation matters</h2>
+          <p>
+            Accurate and timely documentation protects the people you serve,
+            supports your staff, and keeps your organization prepared for audits,
+            reviews, billing questions, and care quality standards.
+          </p>
+        </div>
+
+        <div class="importance-row">
+          <div class="importance-card">
+            <div class="round-icon">🛡️</div>
+            <h3>Protect Quality of Care</h3>
+            <p>Complete notes help ensure the right care is documented every day.</p>
+          </div>
+
+          <div class="importance-card">
+            <div class="round-icon">👥</div>
+            <h3>Support Your Staff</h3>
+            <p>Clear mobile forms reduce confusion and make documentation easier.</p>
+          </div>
+
+          <div class="importance-card">
+            <div class="round-icon">📋</div>
+            <h3>Stay Review Ready</h3>
+            <p>Organized records help your team respond faster during reviews.</p>
+          </div>
+
+          <div class="importance-card">
+            <div class="round-icon">👁️</div>
+            <h3>Improve Visibility</h3>
+            <p>Supervisors can quickly see what is complete and what needs attention.</p>
+          </div>
+
+          <div class="importance-card">
+            <div class="round-icon">📈</div>
+            <h3>Drive Better Outcomes</h3>
+            <p>Better documentation gives leaders clearer insight into care delivery.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="workflow" class="workflow">
+      <div class="container">
+        <div class="workflow-panel">
+          <div class="section-head">
+            <h2>One workflow from visit to verified record</h2>
+            <p>
+              True Care System connects documentation to each scheduled visit so
+              nothing gets lost between the moment care is delivered and the moment
+              the record is reviewed.
+            </p>
+          </div>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div class="step-icon">📅</div>
+              <h3>Scheduled Visit</h3>
+              <p>The visit is assigned and visible in the DSP mobile app.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">2</div>
+              <div class="step-icon">📍</div>
+              <h3>Care Delivered</h3>
+              <p>The DSP provides care and captures key observations.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">3</div>
+              <div class="step-icon">📝</div>
+              <h3>Daily Note Completed</h3>
+              <p>Structured notes, forms, and updates are documented.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">4</div>
+              <div class="step-icon">✍️</div>
+              <h3>Signatures Collected</h3>
+              <p>Electronic signatures help complete the service record.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">5</div>
+              <div class="step-icon">✅</div>
+              <h3>Office Review</h3>
+              <p>Supervisors review, approve, and finalize documentation.</p>
+            </div>
+          </div>
+
+          <div class="secure-note">
+            🔒 Documentation is connected to visit activity, time-stamped, and organized for accountability.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tools">
+      <div class="container tools-grid">
+        <div class="tools-copy">
+          <span class="label">Powerful tools</span>
+          <h2>Everything your team needs to document with confidence</h2>
+          <p>
+            Give DSPs simple mobile tools and give your office team the visibility
+            they need — all in one connected system.
+          </p>
+
+          <ul class="check-list">
+            <li>Structured daily note forms and service documentation</li>
+            <li>Medication, behaviors, ADLs, goals, and progress tracking</li>
+            <li>Customizable templates to fit your programs</li>
+            <li>Electronic signatures and visit summaries</li>
+            <li>Draft, save, and mobile-friendly workflows</li>
+            <li>Supervisor review, approvals, and comments</li>
+          </ul>
+        </div>
+
+        <div class="phone-showcase">
+          <div class="phone-frame">
+            <img
+              src="/assets/screenshots/mobile/daily-notes/mobile-daily-note-signature.png"
+              alt="True Care System daily note signature and summary"
+            />
+          </div>
+
+          <div class="phone-frame">
+            <img
+              src="/assets/screenshots/mobile/daily-notes/mobile-daily-note-form.png"
+              alt="True Care System daily note form"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="container">
+        <div class="section-head">
+          <h2>Real benefits for your organization</h2>
+          <p>
+            Better documentation reduces follow-up work, improves accountability,
+            and helps providers maintain stronger operational control.
+          </p>
+        </div>
+
+        <div class="benefit-grid">
+          <div class="benefit-card">
+            <div class="round-icon">⏱️</div>
+            <h3>Save Time</h3>
+            <p>Faster documentation means more time for what matters most.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="round-icon">🛡️</div>
+            <h3>Reduce Risk</h3>
+            <p>Complete records help defend your care and your organization.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="round-icon">👥</div>
+            <h3>Empower Staff</h3>
+            <p>Mobile tools help DSPs complete notes in the field.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="round-icon">📊</div>
+            <h3>Stronger Oversight</h3>
+            <p>Know what is complete, open, and needing review.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="round-icon">💚</div>
+            <h3>Better Care</h3>
+            <p>Better documentation leads to better insight and outcomes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="container final-row">
+        <div class="final-icon">📅</div>
+
+        <div>
+          <h2>Ready to simplify documentation?</h2>
+          <p>
+            See how True Care System helps providers capture better documentation,
+            improve compliance, and deliver higher quality care.
+          </p>
+        </div>
+
+        <a class="btn btn-primary" href="/#demo">Request Your Demo</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © True Care System. All Rights Reserved.
+  </footer>
 </body>
 </html>
