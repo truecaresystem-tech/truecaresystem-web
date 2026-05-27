@@ -1,0 +1,961 @@
+<!-- services/billing-payroll.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Billing & Payroll | True Care System</title>
+
+  <meta
+    name="description"
+    content="Billing, claim workflow, EVV validation, Sandata submission, payments, billing settings, and payroll export tools for care providers."
+  />
+
+  <style>
+    :root {
+      --navy: #071b46;
+      --navy2: #0b255c;
+      --blue: #2a95d9;
+      --green: #20b486;
+      --bg: #f5f8fc;
+      --text: #102033;
+      --muted: #607089;
+      --border: #dbe5f2;
+      --white: #ffffff;
+      --shadow: 0 22px 60px rgba(7, 27, 70, 0.16);
+      --radius: 26px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: #ffffff;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .brand img {
+      width: 210px;
+      height: auto;
+    }
+
+    .top-link {
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 78% 24%, rgba(56, 189, 248, 0.24), transparent 30%),
+        radial-gradient(circle at 18% 82%, rgba(32, 180, 134, 0.16), transparent 28%),
+        linear-gradient(135deg, var(--navy) 0%, var(--navy2) 58%, #123a77 100%);
+      color: white;
+      padding: 82px 0 72px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: #8df5ff;
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 6vw, 70px);
+      line-height: 0.98;
+      margin: 0 0 20px;
+      letter-spacing: -1.8px;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #d9e8ff;
+      margin: 0 0 28px;
+      max-width: 700px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 24px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 15px;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      color: white;
+      box-shadow: 0 16px 34px rgba(42, 149, 217, 0.32);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.34);
+      color: white;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      max-width: 720px;
+    }
+
+    .hero-point {
+      border-left: 1px solid rgba(255,255,255,0.18);
+      padding-left: 14px;
+      color: #e7f4ff;
+      font-size: 13px;
+      line-height: 1.35;
+      font-weight: 800;
+    }
+
+    .hero-point span {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 30px;
+      padding: 16px;
+      box-shadow: 0 28px 80px rgba(0,0,0,0.28);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card img {
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: white;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-head {
+      max-width: 850px;
+      margin: 0 auto 38px;
+      text-align: center;
+    }
+
+    .section-head.left {
+      text-align: left;
+      margin-left: 0;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.1;
+      color: var(--navy);
+      margin: 0 0 14px;
+      letter-spacing: -0.9px;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .features {
+      background: white;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .feature-card,
+    .benefit-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 10px 28px rgba(7,27,70,0.06);
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: rgba(42,149,217,0.1);
+      display: grid;
+      place-items: center;
+      font-size: 23px;
+      margin-bottom: 14px;
+    }
+
+    .feature-card h3,
+    .benefit-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    .feature-card p,
+    .benefit-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .workflow {
+      background: linear-gradient(180deg, #f7fbff 0%, #eef6ff 100%);
+    }
+
+    .workflow-grid {
+      display: grid;
+      gap: 28px;
+    }
+
+    .showcase {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 0.42fr 0.58fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .showcase.reverse {
+      grid-template-columns: 0.58fr 0.42fr;
+    }
+
+    .showcase-copy .step {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--blue);
+      font-weight: 900;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 10px;
+    }
+
+    .showcase-copy h3 {
+      color: var(--navy);
+      font-size: 30px;
+      line-height: 1.12;
+      margin: 0 0 12px;
+    }
+
+    .showcase-copy p {
+      color: var(--muted);
+      margin: 0 0 16px;
+      font-size: 16px;
+    }
+
+    .mini-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .mini-list li {
+      display: flex;
+      gap: 10px;
+      color: #29415f;
+      font-size: 14px;
+    }
+
+    .mini-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .frame {
+      background: var(--navy);
+      border-radius: 24px;
+      padding: 10px;
+      box-shadow: 0 18px 50px rgba(7,27,70,0.18);
+    }
+
+    .frame img {
+      border-radius: 16px;
+      background: white;
+      width: 100%;
+    }
+
+    .compact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .compact-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: 0 16px 44px rgba(7,27,70,0.1);
+    }
+
+    .compact-card h3 {
+      color: var(--navy);
+      margin: 0 0 12px;
+      font-size: 24px;
+    }
+
+    .compact-card p {
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+
+    .payroll {
+      background: white;
+    }
+
+    .payroll-showcase {
+      background:
+        radial-gradient(circle at 88% 12%, rgba(32,180,134,0.12), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 0.42fr 0.58fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .benefits {
+      background:
+        radial-gradient(circle at 12% 20%, rgba(32,180,134,0.14), transparent 26%),
+        linear-gradient(180deg, #eef6ff 0%, #f8fbff 100%);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .final {
+      background: var(--navy);
+      color: white;
+      padding: 58px 0;
+    }
+
+    .final-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .final-icon {
+      width: 76px;
+      height: 76px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.16);
+      display: grid;
+      place-items: center;
+      font-size: 34px;
+    }
+
+    .final h2 {
+      color: white;
+      margin: 0 0 8px;
+      font-size: clamp(28px, 3vw, 40px);
+    }
+
+    .final p {
+      margin: 0;
+      color: #d9e8ff;
+    }
+
+    footer {
+      background: #041431;
+      color: #b8c7dd;
+      padding: 22px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .showcase,
+      .showcase.reverse,
+      .payroll-showcase,
+      .final-row {
+        grid-template-columns: 1fr;
+      }
+
+      .features-grid,
+      .benefits-grid,
+      .hero-points,
+      .compact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .final-row {
+        text-align: center;
+      }
+
+      .final-icon {
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .topbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .brand img {
+        width: 180px;
+      }
+
+      .hero {
+        padding: 58px 0;
+      }
+
+      section {
+        padding: 50px 0;
+      }
+
+      .features-grid,
+      .benefits-grid,
+      .hero-points,
+      .compact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .showcase,
+      .payroll-showcase {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="/" class="brand">
+        <img src="/logo.png" alt="True Care System" />
+      </a>
+      <a class="top-link" href="/">Back to Home →</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Core Solutions</div>
+          <h1>Billing & Payroll</h1>
+          <p>
+            Manage visit review, readiness checks, EVV validation, Sandata submission,
+            claim building, payments, billing configuration, and payroll export in one connected platform.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="/#demo">Request Demo</a>
+            <a class="btn btn-secondary" href="#workflow">Explore Workflow</a>
+          </div>
+
+          <div class="hero-points">
+            <div class="hero-point"><span>✅</span>Visit review before claims</div>
+            <div class="hero-point"><span>📍</span>EVV validation workflow</div>
+            <div class="hero-point"><span>💳</span>Claims, payments, and remittance</div>
+            <div class="hero-point"><span>🧾</span>Payroll export support</div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img
+            src="/assets/screenshots/web/evv/Billing-menu-overview.png"
+            alt="True Care System billing menu overview"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <div class="section-head">
+          <h2>A connected financial workflow for providers</h2>
+          <p>
+            Billing and payroll work best when visit activity, documentation, EVV validation,
+            claim preparation, payment tracking, and staff compensation are connected.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="icon">🔎</div>
+            <h3>Visit Review</h3>
+            <p>Review completed visits before claim creation and verify scheduled versus actual service details.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">👤</div>
+            <h3>Individual Readiness</h3>
+            <p>Confirm individual, payer, service, Medicaid, Medicare, and authorization information.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">👥</div>
+            <h3>DSP Readiness</h3>
+            <p>Validate DSP profile details before visits move through billing workflows.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">📍</div>
+            <h3>EVV Validation</h3>
+            <p>Check visit records for EVV readiness, missing data, and validation issues before submission.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">📤</div>
+            <h3>Sandata Submission</h3>
+            <p>Submit validated visits and monitor accepted or pending batches in a clear operational view.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">🔁</div>
+            <h3>Rejections & Resubmit</h3>
+            <p>Review issues, correct claim records, and resubmit with fewer manual follow-up steps.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">🧾</div>
+            <h3>Claim Builder</h3>
+            <p>Build claim batches from accepted visits with totals, units, service lines, and payer information.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">💵</div>
+            <h3>Payments & Payroll</h3>
+            <p>Track payment activity and support weekly payroll export from approved time and visit data.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="workflow" class="workflow">
+      <div class="container">
+        <div class="section-head">
+          <h2>From visit review to reimbursement</h2>
+          <p>
+            True Care System helps your team follow a structured billing path from completed visit records
+            to claim creation, submission, payment visibility, and payroll preparation.
+          </p>
+        </div>
+
+        <div class="workflow-grid">
+          <div class="showcase">
+            <div class="showcase-copy">
+              <div class="step">Step 1</div>
+              <h3>Visit Review</h3>
+              <p>
+                Review completed visits with scheduled time, actual time, units, DSP, individual,
+                service details, and billing readiness before creating a claim batch.
+              </p>
+              <ul class="mini-list">
+                <li>Completed visit table with filters</li>
+                <li>Reviewed, pending, and exception visibility</li>
+                <li>Pre-claim review before billing starts</li>
+              </ul>
+            </div>
+            <div class="frame">
+              <img
+                src="/assets/screenshots/web/evv/web-visit-review.png"
+                alt="Billing visit review dashboard"
+              />
+            </div>
+          </div>
+
+          <div class="showcase reverse">
+            <div class="frame">
+              <img
+                src="/assets/screenshots/web/evv/billing-individual-readiness.png"
+                alt="Individual readiness billing screen"
+              />
+            </div>
+            <div class="showcase-copy">
+              <div class="step">Step 2</div>
+              <h3>Individual Readiness</h3>
+              <p>
+                Validate individual and payer information before claims are created, helping reduce
+                avoidable billing delays and missing-information issues.
+              </p>
+              <ul class="mini-list">
+                <li>Medicaid, Medicare, payer, and service readiness</li>
+                <li>Authorization and eligibility visibility</li>
+                <li>Clear ready or not-ready status</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="showcase">
+            <div class="showcase-copy">
+              <div class="step">Step 3</div>
+              <h3>DSP Readiness</h3>
+              <p>
+                Confirm DSP profile readiness before billing, including active status, contact details,
+                role, education, and required profile information.
+              </p>
+              <ul class="mini-list">
+                <li>DSP readiness status</li>
+                <li>Missing item visibility</li>
+                <li>Supports cleaner claim preparation</li>
+              </ul>
+            </div>
+            <div class="frame">
+              <img
+                src="/assets/screenshots/web/evv/billing-dsp-readiness.png"
+                alt="DSP readiness billing screen"
+              />
+            </div>
+          </div>
+
+          <div class="showcase reverse">
+            <div class="frame">
+              <img
+                src="/assets/screenshots/web/evv/billing-evv-validation.png"
+                alt="EVV validation billing screen"
+              />
+            </div>
+            <div class="showcase-copy">
+              <div class="step">Step 4</div>
+              <h3>EVV Validation</h3>
+              <p>
+                Validate EVV records before submission. Your team can quickly see ready records,
+                exceptions, warnings, and records that require correction.
+              </p>
+              <ul class="mini-list">
+                <li>EVV status and validation results</li>
+                <li>Check-in, check-out, location, and duration review</li>
+                <li>Fewer avoidable claim problems downstream</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="showcase">
+            <div class="showcase-copy">
+              <div class="step">Step 5</div>
+              <h3>Sandata Submission</h3>
+              <p>
+                Submit validated visits to Sandata and monitor batch status. Accepted and pending
+                records are easy to understand for billing teams.
+              </p>
+              <ul class="mini-list">
+                <li>Ready to submit, submitted, accepted, and pending status</li>
+                <li>Batch-level tracking</li>
+                <li>Submission guide and response visibility</li>
+              </ul>
+            </div>
+            <div class="frame">
+              <img
+                src="/assets/screenshots/web/evv/billing-step5-sandata-submission.png"
+                alt="Sandata submission billing screen"
+              />
+            </div>
+          </div>
+
+          <div class="showcase reverse">
+            <div class="frame">
+              <img
+                src="/assets/screenshots/web/evv/billing-step6-rejections-resubmit.png"
+                alt="Rejections and resubmit billing screen"
+              />
+            </div>
+            <div class="showcase-copy">
+              <div class="step">Step 6</div>
+              <h3>Rejections & Resubmit</h3>
+              <p>
+                When a record needs attention, billing staff can review the issue, correct the record,
+                and resubmit without losing visibility into the process.
+              </p>
+              <ul class="mini-list">
+                <li>Needs review, corrected, and resubmitted views</li>
+                <li>Issue tracking by claim record</li>
+                <li>Clear next action for billing staff</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="showcase">
+            <div class="showcase-copy">
+              <div class="step">Step 7</div>
+              <h3>Claim Builder</h3>
+              <p>
+                Build claim batches from approved visits with service lines, units, payer data,
+                amount totals, and draft status before final submission.
+              </p>
+              <ul class="mini-list">
+                <li>Claim batch summary</li>
+                <li>Units and amount calculations</li>
+                <li>Submit, reopen, view, and void actions</li>
+              </ul>
+            </div>
+            <div class="frame">
+              <img
+                src="/assets/screenshots/web/evv/billing-step7-claim-builder.png"
+                alt="Claim builder billing screen"
+              />
+            </div>
+          </div>
+
+          <div class="showcase reverse">
+            <div class="frame">
+              <img
+                src="/assets/screenshots/web/evv/billing-step8-claim-tracking.png"
+                alt="Claim tracking billing screen"
+              />
+            </div>
+            <div class="showcase-copy">
+              <div class="step">Step 8</div>
+              <h3>Claim Tracking</h3>
+              <p>
+                Track claim status across submitted, pending, approved, paid, and processing states
+                so office teams can follow the payer lifecycle clearly.
+              </p>
+              <ul class="mini-list">
+                <li>Claim status lifecycle</li>
+                <li>Amount and payer visibility</li>
+                <li>Progress and claim trend overview</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="showcase">
+            <div class="showcase-copy">
+              <div class="step">Step 9</div>
+              <h3>Payments</h3>
+              <p>
+                Track received payments, adjustments, net received amounts, remittance activity,
+                payer summaries, and reconciliation progress in one place.
+              </p>
+              <ul class="mini-list">
+                <li>Payment trend and payer breakdown</li>
+                <li>Recent payment table</li>
+                <li>Remittance and reconciliation summary</li>
+              </ul>
+            </div>
+            <div class="frame">
+              <img
+                src="/assets/screenshots/web/evv/billing-step9-payments.png"
+                alt="Payments billing screen"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="payroll">
+      <div class="container">
+        <div class="section-head">
+          <h2>Payroll connected to approved care activity</h2>
+          <p>
+            Payroll tools help providers prepare weekly payroll from approved time, visit records,
+            overtime rules, staff rates, and export-ready reports.
+          </p>
+        </div>
+
+        <div class="payroll-showcase">
+          <div class="showcase-copy">
+            <div class="step">Payroll</div>
+            <h3>Weekly payroll run and export</h3>
+            <p>
+              Manage payroll periods, employee rates, weekly runs, export documents,
+              and payroll detail rows with a structured review process.
+            </p>
+            <ul class="mini-list">
+              <li>Weekly payroll period controls</li>
+              <li>Employee rates and payroll history tabs</li>
+              <li>DOC and PDF export workflow</li>
+              <li>Overtime and extras support</li>
+            </ul>
+          </div>
+
+          <div class="frame">
+            <img
+              src="/assets/screenshots/web/payroll/web-payroll-export.png"
+              alt="Payroll export dashboard"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>Billing settings in one place</h2>
+          <p>
+            Configure provider setup, billing rules, service rates, payers, and programs in a single
+            billing configuration center.
+          </p>
+        </div>
+
+        <div class="compact-grid">
+          <div class="compact-card">
+            <h3>Billing Configuration Center</h3>
+            <p>
+              Keep billing setup organized across provider configuration, rules, rates, and payer programs.
+            </p>
+            <ul class="mini-list">
+              <li>Provider Setup</li>
+              <li>Billing Rules</li>
+              <li>Service Rates</li>
+              <li>Payers & Programs</li>
+            </ul>
+          </div>
+
+          <div class="frame">
+            <img
+              src="/assets/screenshots/web/evv/billing-settings-overview.png"
+              alt="Billing settings overview"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="container">
+        <div class="section-head">
+          <h2>Why providers need connected billing and payroll</h2>
+          <p>
+            A connected workflow helps reduce manual rework, improve accuracy, and support financial visibility.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="icon">⚡</div>
+            <h3>Reduce manual work</h3>
+            <p>Bring visit review, validation, claim creation, and payroll export into one workflow.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="icon">🛡️</div>
+            <h3>Improve readiness</h3>
+            <p>Validate individuals, DSPs, EVV data, and payer setup before downstream billing steps.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="icon">📊</div>
+            <h3>Increase visibility</h3>
+            <p>Give office and billing teams a clearer view of status, payments, claims, and exceptions.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="icon">💵</div>
+            <h3>Support reimbursement</h3>
+            <p>Track claims, payments, adjustments, and reconciliation in a structured view.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="icon">🧾</div>
+            <h3>Payroll accuracy</h3>
+            <p>Support payroll preparation from approved visits, time data, rates, overtime, and exports.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="container final-row">
+        <div class="final-icon">💳</div>
+
+        <div>
+          <h2>Ready to connect billing and payroll operations?</h2>
+          <p>
+            See how True Care System helps providers move from visit review to claim submission,
+            payment visibility, and payroll export in one connected platform.
+          </p>
+        </div>
+
+        <a class="btn btn-primary" href="/#demo">Request Your Demo</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © True Care System. All rights reserved.
+  </footer>
+</body>
+</html>
