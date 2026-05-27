@@ -1,0 +1,863 @@
+<!-- services/mobile-app-care-teams.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Mobile App for Care Teams | True Care System</title>
+
+  <meta
+    name="description"
+    content="Mobile app tools for care teams, DSPs, and field staff. Manage schedules, visits, tasks, alerts, documentation, secure messaging, and real-time care workflows."
+  />
+
+  <style>
+    :root {
+      --navy: #071b46;
+      --navy2: #0b255c;
+      --blue: #2a95d9;
+      --green: #20b486;
+      --bg: #f5f8fc;
+      --text: #102033;
+      --muted: #607089;
+      --border: #dbe5f2;
+      --white: #ffffff;
+      --shadow: 0 24px 70px rgba(7, 27, 70, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: #ffffff;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand img {
+      width: 210px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .top-link {
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 14% 24%, rgba(32, 180, 134, 0.18), transparent 30%),
+        radial-gradient(circle at 84% 20%, rgba(42, 149, 217, 0.28), transparent 34%),
+        linear-gradient(135deg, var(--navy) 0%, var(--navy2) 62%, #123a77 100%);
+      color: white;
+      padding: 78px 0 74px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #8df5ff;
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 6vw, 72px);
+      line-height: 0.98;
+      margin: 0 0 20px;
+      letter-spacing: -1.9px;
+    }
+
+    .hero-copy {
+      margin: 0;
+      max-width: 720px;
+      font-size: 19px;
+      color: #d9e8ff;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 24px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 15px;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      color: white;
+      box-shadow: 0 16px 34px rgba(42, 149, 217, 0.32);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      color: white;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .pill {
+      border-radius: 999px;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #e7f4ff;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .hero-phone-card {
+      position: relative;
+      border-radius: 36px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 16px;
+      box-shadow: 0 34px 90px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-phone-card img {
+      border-radius: 26px;
+      width: 100%;
+      background: white;
+    }
+
+    .floating-card {
+      position: absolute;
+      left: -28px;
+      bottom: 32px;
+      width: 245px;
+      background: white;
+      color: var(--navy);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+      border: 1px solid rgba(219, 229, 242, 0.8);
+    }
+
+    .floating-card strong {
+      display: block;
+      font-size: 26px;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .floating-card span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-head {
+      max-width: 850px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.1;
+      color: var(--navy);
+      margin: 0 0 14px;
+      letter-spacing: -0.9px;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .app-benefits {
+      background: white;
+    }
+
+    .benefit-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .benefit-card {
+      background: #fbfdff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 10px 28px rgba(7, 27, 70, 0.06);
+    }
+
+    .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      background: rgba(42, 149, 217, 0.1);
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      margin-bottom: 14px;
+    }
+
+    .benefit-card h3 {
+      color: var(--navy);
+      margin: 0 0 8px;
+      font-size: 19px;
+      line-height: 1.25;
+    }
+
+    .benefit-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .split-showcase {
+      background:
+        radial-gradient(circle at 12% 20%, rgba(32, 180, 134, 0.1), transparent 26%),
+        linear-gradient(180deg, #eef6ff 0%, #f8fbff 100%);
+    }
+
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1.04fr 0.96fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .copy-block .label {
+      display: inline-block;
+      color: var(--green);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .copy-block h2 {
+      margin-bottom: 16px;
+    }
+
+    .copy-block p {
+      color: var(--muted);
+      font-size: 17px;
+      margin: 0 0 20px;
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .check-list li {
+      color: #29415f;
+      font-size: 15px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .image-frame {
+      background: var(--navy);
+      border-radius: 30px;
+      padding: 10px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .image-frame img {
+      width: 100%;
+      border-radius: 22px;
+      background: white;
+    }
+
+    .timeline-section {
+      background: white;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .timeline-step {
+      position: relative;
+      background: #fbfdff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px 18px;
+      text-align: center;
+      box-shadow: 0 10px 28px rgba(7, 27, 70, 0.05);
+    }
+
+    .timeline-step::after {
+      content: "→";
+      position: absolute;
+      right: -13px;
+      top: 42%;
+      color: var(--blue);
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .timeline-step:last-child::after {
+      content: "";
+    }
+
+    .step-icon {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 14px;
+      border-radius: 20px;
+      background: white;
+      border: 1px solid var(--border);
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+    }
+
+    .timeline-step h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 16px;
+    }
+
+    .timeline-step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .tools-section {
+      background: linear-gradient(180deg, #f8fbff 0%, #eef6ff 100%);
+    }
+
+    .tools-layout {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .tool-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: 0 10px 28px rgba(7, 27, 70, 0.06);
+    }
+
+    .tool-card h3 {
+      margin: 0 0 6px;
+      color: var(--navy);
+      font-size: 16px;
+    }
+
+    .tool-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .security-band {
+      background: white;
+    }
+
+    .security-panel {
+      background:
+        radial-gradient(circle at 12% 20%, rgba(32, 180, 134, 0.14), transparent 26%),
+        linear-gradient(135deg, var(--navy), #123a77);
+      border-radius: 34px;
+      padding: 38px;
+      color: white;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .security-panel h2 {
+      color: white;
+    }
+
+    .security-panel p {
+      color: #d9e8ff;
+      font-size: 17px;
+      margin: 0 0 18px;
+    }
+
+    .security-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .security-item {
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 16px;
+      font-weight: 800;
+      color: #e7f4ff;
+    }
+
+    .final {
+      background: var(--navy);
+      color: white;
+      padding: 56px 0;
+    }
+
+    .final-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .final-icon {
+      width: 74px;
+      height: 74px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      display: grid;
+      place-items: center;
+      font-size: 32px;
+    }
+
+    .final h2 {
+      margin: 0 0 8px;
+      color: white;
+      font-size: clamp(26px, 3vw, 36px);
+      line-height: 1.12;
+    }
+
+    .final p {
+      margin: 0;
+      color: #d9e8ff;
+      font-size: 16px;
+    }
+
+    footer {
+      background: #041431;
+      color: #b8c7dd;
+      padding: 22px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .split-grid,
+      .tools-layout,
+      .security-panel,
+      .final-row {
+        grid-template-columns: 1fr;
+      }
+
+      .benefit-row,
+      .timeline,
+      .security-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .timeline-step::after {
+        display: none;
+      }
+
+      .floating-card {
+        position: static;
+        width: auto;
+        margin-top: 14px;
+      }
+
+      .final-row {
+        text-align: center;
+      }
+
+      .final-icon {
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .brand img {
+        width: 180px;
+      }
+
+      .hero {
+        padding: 56px 0 48px;
+      }
+
+      section {
+        padding: 46px 0;
+      }
+
+      .benefit-row,
+      .timeline,
+      .tool-grid,
+      .security-list {
+        grid-template-columns: 1fr;
+      }
+
+      .security-panel {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="/" class="brand">
+        <img src="/logo.png" alt="True Care System" />
+      </a>
+
+      <a class="top-link" href="/">Back to Home →</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">📱 Reporting & Mobile Tools</div>
+
+          <h1>Mobile App for Care Teams</h1>
+
+          <p class="hero-copy">
+            Give DSPs, caregivers, supervisors, and care teams simple mobile tools
+            for schedules, visits, tasks, alerts, documentation, messages, and real-time updates.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/#demo">Request Demo</a>
+            <a class="btn btn-secondary" href="#workflow">Explore Mobile Workflow</a>
+          </div>
+
+          <div class="hero-pills">
+            <span class="pill">Daily schedules</span>
+            <span class="pill">Visit actions</span>
+            <span class="pill">Secure messages</span>
+            <span class="pill">Real-time alerts</span>
+            <span class="pill">Documentation on the go</span>
+          </div>
+        </div>
+
+        <div class="hero-phone-card">
+          <img
+            src="/assets/screenshots/web/mobile/mobile-care-team-dashboard.png"
+            alt="True Care System mobile care team dashboard"
+          />
+
+          <div class="floating-card">
+            <strong>5</strong>
+            <span>Visits ready for today with tasks, alerts, and schedule visibility.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="app-benefits">
+      <div class="container">
+        <div class="section-head">
+          <h2>Everything care teams need, right in their pocket</h2>
+          <p>
+            True Care System mobile tools help field teams stay connected with the office,
+            complete daily responsibilities, and keep care documentation moving without waiting
+            until the end of the day.
+          </p>
+        </div>
+
+        <div class="benefit-row">
+          <div class="benefit-card">
+            <div class="icon">📅</div>
+            <h3>Daily Schedule</h3>
+            <p>Care teams can see assigned visits, times, locations, and important visit details.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="icon">✅</div>
+            <h3>Tasks & To-Dos</h3>
+            <p>DSPs can track pending tasks, documentation items, reminders, and follow-up actions.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="icon">🔔</div>
+            <h3>Alerts & Updates</h3>
+            <p>Real-time alerts help staff respond to care plan updates, authorization issues, and changes.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="icon">💬</div>
+            <h3>Secure Messaging</h3>
+            <p>Support communication between field staff, supervisors, office teams, and care teams.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="split-showcase">
+      <div class="container split-grid">
+        <div class="image-frame">
+          <img
+            src="/assets/screenshots/web/mobile/mobile-care-team-workflow.png"
+            alt="True Care System mobile visit workflow"
+          />
+        </div>
+
+        <div class="copy-block">
+          <span class="label">Visit workflow</span>
+          <h2>Manage visits from anywhere</h2>
+          <p>
+            Care teams need quick access to visit details before they arrive, during the visit,
+            and after the service is completed. The mobile app keeps essential information close
+            to the person providing care.
+          </p>
+
+          <ul class="check-list">
+            <li>View visit time, location, service type, and assigned care team</li>
+            <li>Access individual details, service plan items, and important alerts</li>
+            <li>Start visits, add notes, upload documentation, and capture key actions</li>
+            <li>Review attachments, care plans, and required visit information</li>
+            <li>Support clearer communication between mobile staff and office teams</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="workflow" class="timeline-section">
+      <div class="container">
+        <div class="section-head">
+          <h2>A simple daily workflow for busy care teams</h2>
+          <p>
+            The mobile app is designed to support the real work that happens in the field:
+            reviewing schedules, completing visits, documenting care, communicating with the office,
+            and responding to alerts.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-step">
+            <div class="step-icon">📅</div>
+            <h3>Review Schedule</h3>
+            <p>Staff see today’s visits, times, locations, and key details.</p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-icon">📍</div>
+            <h3>Start Visit</h3>
+            <p>Care teams open the visit, confirm details, and begin service activity.</p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-icon">✅</div>
+            <h3>Complete Tasks</h3>
+            <p>Staff follow tasks, service plan items, reminders, and documentation needs.</p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-icon">📝</div>
+            <h3>Add Notes</h3>
+            <p>Notes, attachments, photos, and updates can be captured from the phone.</p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-icon">💬</div>
+            <h3>Stay Connected</h3>
+            <p>Messages and alerts keep the care team aligned with office support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tools-section">
+      <div class="container tools-layout">
+        <div class="copy-block">
+          <span class="label">Daily mobile tools</span>
+          <h2>Tools care teams use every day</h2>
+          <p>
+            The app supports the practical daily activities care teams need most:
+            tasks, visit progress, secure communication, alerts, documentation, and mobile productivity.
+          </p>
+
+          <div class="tool-grid">
+            <div class="tool-card">
+              <h3>Task Management</h3>
+              <p>Track due items, priority tasks, care plan reviews, and required follow-up.</p>
+            </div>
+
+            <div class="tool-card">
+              <h3>Visit Actions</h3>
+              <p>Follow visit progress, service steps, notes, and completion requirements.</p>
+            </div>
+
+            <div class="tool-card">
+              <h3>Secure Messages</h3>
+              <p>Communicate with office staff, supervisors, and care team groups.</p>
+            </div>
+
+            <div class="tool-card">
+              <h3>Smart Alerts</h3>
+              <p>Get notified about updates, changes, new tasks, and important reminders.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="image-frame">
+          <img
+            src="/assets/screenshots/web/mobile/mobile-care-team-tools.png"
+            alt="True Care System mobile tools for care teams"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="security-band">
+      <div class="container">
+        <div class="security-panel">
+          <div>
+            <h2>Built for field work, provider operations, and SaaS growth</h2>
+            <p>
+              True Care System is designed for multiple providers, field teams, office users,
+              and supervisors. The mobile app supports real-world care workflows while keeping
+              provider operations connected and organized.
+            </p>
+          </div>
+
+          <div class="security-list">
+            <div class="security-item">Secure access for care teams</div>
+            <div class="security-item">Mobile-first visit workflow</div>
+            <div class="security-item">Real-time sync and alerts</div>
+            <div class="security-item">Documentation on the go</div>
+            <div class="security-item">Provider-specific data separation</div>
+            <div class="security-item">Built for scalable care operations</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="container final-row">
+        <div class="final-icon">📱</div>
+
+        <div>
+          <h2>Ready to support care teams with a modern mobile app?</h2>
+          <p>
+            See how True Care System helps field staff stay connected, complete daily work,
+            manage visits, respond to alerts, and document care from anywhere.
+          </p>
+        </div>
+
+        <a class="btn btn-primary" href="/#demo">Request Demo</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © True Care System. All rights reserved.
+  </footer>
+</body>
+</html>
