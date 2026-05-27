@@ -1,0 +1,739 @@
+<!-- services/secure-cloud-access.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Secure Cloud Access | True Care System</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f6f9fd;
+color:#14264d;
+line-height:1.7;
+}
+
+.container{
+width:92%;
+max-width:1450px;
+margin:auto;
+}
+
+a{
+text-decoration:none;
+}
+
+.topbar{
+
+background:white;
+padding:22px 0;
+border-bottom:1px solid #e7edf7;
+
+}
+
+.top-inner{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+}
+
+.logo{
+
+height:80px;
+
+}
+
+.back{
+
+font-weight:700;
+font-size:18px;
+color:#0a2c68;
+
+}
+
+
+/* HERO */
+
+.hero{
+
+padding:100px 0 140px;
+
+background:
+linear-gradient(
+135deg,
+#071a46,
+#0d2f75
+);
+
+color:white;
+position:relative;
+
+overflow:hidden;
+
+}
+
+.hero-grid{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+align-items:center;
+
+}
+
+.hero h5{
+
+color:#7be6ff;
+font-size:14px;
+letter-spacing:3px;
+margin-bottom:20px;
+
+}
+
+.hero h1{
+
+font-size:75px;
+line-height:1;
+margin-bottom:30px;
+
+}
+
+.hero p{
+
+font-size:24px;
+opacity:.95;
+margin-bottom:40px;
+
+}
+
+.hero-btn{
+
+display:inline-block;
+padding:18px 40px;
+border-radius:50px;
+
+background:#66d39f;
+
+color:white;
+font-size:20px;
+font-weight:700;
+
+}
+
+.hero-image{
+
+width:100%;
+border-radius:30px;
+
+box-shadow:
+0 25px 55px rgba(0,0,0,.4);
+
+}
+
+
+/* FLOAT CARDS */
+
+.float{
+
+margin-top:-70px;
+position:relative;
+z-index:20;
+
+}
+
+.float-grid{
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+
+}
+
+.float-card{
+
+background:white;
+padding:30px;
+border-radius:25px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.08);
+
+text-align:center;
+
+}
+
+.float-card h2{
+
+color:#0d2f73;
+font-size:34px;
+margin-bottom:10px;
+
+}
+
+.float-card span{
+
+color:#777;
+
+}
+
+
+/* SECTIONS */
+
+.section{
+
+padding:100px 0;
+
+}
+
+.title{
+
+font-size:48px;
+margin-bottom:20px;
+
+}
+
+.desc{
+
+font-size:22px;
+color:#666;
+margin-bottom:60px;
+
+}
+
+
+/* ZIG ZAG */
+
+.block{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+margin-bottom:100px;
+
+}
+
+.block img{
+
+width:100%;
+border-radius:30px;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.1);
+
+}
+
+
+.points{
+
+display:grid;
+gap:20px;
+
+}
+
+.point{
+
+background:white;
+
+padding:25px;
+border-radius:20px;
+
+box-shadow:
+0 6px 18px rgba(0,0,0,.05);
+
+}
+
+
+/* BADGES */
+
+.badges{
+
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:25px;
+
+margin-top:70px;
+
+}
+
+.badge{
+
+background:white;
+
+padding:30px;
+border-radius:25px;
+
+text-align:center;
+
+box-shadow:
+0 6px 18px rgba(0,0,0,.05);
+
+}
+
+.badge h3{
+
+font-size:26px;
+color:#0a2d73;
+
+}
+
+
+/* CTA */
+
+.cta{
+
+margin-top:80px;
+
+padding:80px;
+
+border-radius:35px;
+
+background:
+linear-gradient(
+135deg,
+#08245c,
+#1f64c7
+);
+
+color:white;
+text-align:center;
+
+}
+
+.cta h2{
+
+font-size:46px;
+margin-bottom:20px;
+
+}
+
+.cta p{
+
+font-size:22px;
+margin-bottom:35px;
+
+}
+
+.btn{
+
+display:inline-block;
+
+padding:18px 45px;
+
+border-radius:50px;
+background:#66d39f;
+
+color:white;
+font-size:20px;
+font-weight:700;
+
+}
+
+
+.footer{
+
+padding:40px;
+text-align:center;
+color:#777;
+
+}
+
+
+@media(max-width:991px){
+
+.hero-grid,
+.float-grid,
+.block,
+.badges{
+
+grid-template-columns:1fr;
+
+}
+
+.hero h1{
+
+font-size:50px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="topbar">
+
+<div class="container top-inner">
+
+<img
+src="/Logo.png"
+class="logo"
+>
+
+<a
+href="/"
+class="back"
+>
+Back to Home →
+</a>
+
+</div>
+
+</div>
+
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div>
+
+<h5>
+
+SECURE CLOUD PLATFORM
+
+</h5>
+
+<h1>
+
+Access Securely.<br>
+Anywhere.
+
+</h1>
+
+<p>
+
+Enterprise-grade cloud access designed for providers,
+office teams, and caregivers with secure connectivity
+and real-time availability.
+
+</p>
+
+<a
+href="/#contact"
+class="hero-btn"
+>
+
+Request Demo
+
+</a>
+
+</div>
+
+<div>
+
+<img
+class="hero-image"
+src="/assets/screenshots/web/secure/secure-cloud-access-dashboard.png"
+>
+
+</div>
+
+</div>
+
+</section>
+
+
+<div class="float">
+
+<div class="container">
+
+<div class="float-grid">
+
+<div class="float-card">
+
+<h2>99.9%</h2>
+
+<span>System Uptime</span>
+
+</div>
+
+<div class="float-card">
+
+<h2>HIPAA</h2>
+
+<span>Compliance Ready</span>
+
+</div>
+
+<div class="float-card">
+
+<h2>256-bit</h2>
+
+<span>Encryption</span>
+
+</div>
+
+<div class="float-card">
+
+<h2>24/7</h2>
+
+<span>Monitoring</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="title">
+
+Security Built Into Every Layer
+
+</h2>
+
+<p class="desc">
+
+Security is not an add-on.
+It is built into the entire platform.
+
+</p>
+
+
+<div class="block">
+
+<div>
+
+<img
+src="/assets/screenshots/web/secure/secure-cloud-access-overview.png"
+>
+
+</div>
+
+<div class="points">
+
+<div class="point">
+
+<h3>
+
+Zero Trust Access
+
+</h3>
+
+<p>
+
+Only authorized users gain access.
+
+</p>
+
+</div>
+
+
+<div class="point">
+
+<h3>
+
+Advanced Encryption
+
+</h3>
+
+<p>
+
+Secure data at rest and in transit.
+
+</p>
+
+</div>
+
+
+<div class="point">
+
+<h3>
+
+Real-Time Monitoring
+
+</h3>
+
+<p>
+
+Monitor activity continuously.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="block">
+
+<div class="points">
+
+<div class="point">
+
+<h3>
+
+Work From Anywhere
+
+</h3>
+
+<p>
+
+Support office staff, remote teams,
+and field caregivers.
+
+</p>
+
+</div>
+
+
+<div class="point">
+
+<h3>
+
+Cloud Accessibility
+
+</h3>
+
+<p>
+
+Access data from any approved device.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div>
+
+<img
+src="/assets/screenshots/web/secure/secure-cloud-access-anywhere.png"
+>
+
+</div>
+
+</div>
+
+
+<div class="badges">
+
+<div class="badge">
+
+<h3>
+
+HIPAA
+
+</h3>
+
+</div>
+
+
+<div class="badge">
+
+<h3>
+
+SOC2
+
+</h3>
+
+</div>
+
+
+<div class="badge">
+
+<h3>
+
+GDPR
+
+</h3>
+
+</div>
+
+
+<div class="badge">
+
+<h3>
+
+256-bit
+
+</h3>
+
+</div>
+
+
+<div class="badge">
+
+<h3>
+
+MFA
+
+</h3>
+
+</div>
+
+
+</div>
+
+
+<div class="cta">
+
+<h2>
+
+Secure Access.<br>
+Better Care.
+
+</h2>
+
+<p>
+
+Protect your teams and healthcare operations
+with enterprise-grade cloud security.
+
+</p>
+
+<a
+href="/#contact"
+class="btn"
+>
+
+Request Your Demo
+
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<div class="footer">
+
+© 2026 TRUE CARE SYSTEM
+
+</div>
+
+
+</body>
+</html>
