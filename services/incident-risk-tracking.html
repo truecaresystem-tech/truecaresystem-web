@@ -1,0 +1,919 @@
+<!-- services/incident-risk-tracking.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Incident & Risk Tracking | True Care System</title>
+
+  <meta
+    name="description"
+    content="Incident and risk tracking software for care providers. Capture incidents, assess risk, manage follow-up actions, monitor trends, and improve safety outcomes."
+  />
+
+  <style>
+    :root {
+      --navy: #071b46;
+      --navy-2: #0b255c;
+      --blue: #2a95d9;
+      --green: #20b486;
+      --red: #ef4444;
+      --orange: #f59e0b;
+      --bg: #f5f8fc;
+      --text: #102033;
+      --muted: #607089;
+      --border: #dbe5f2;
+      --white: #ffffff;
+      --shadow: 0 22px 60px rgba(7, 27, 70, 0.16);
+      --radius: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: #ffffff;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand img {
+      width: 210px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .top-link {
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 78% 25%, rgba(56, 189, 248, 0.24), transparent 30%),
+        radial-gradient(circle at 18% 85%, rgba(32, 180, 134, 0.16), transparent 28%),
+        linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 58%, #123a77 100%);
+      color: white;
+      padding: 82px 0 72px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: #8df5ff;
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 6vw, 70px);
+      line-height: 0.98;
+      margin: 0 0 20px;
+      letter-spacing: -1.8px;
+    }
+
+    .hero-copy {
+      margin: 0;
+      max-width: 720px;
+      font-size: 19px;
+      color: #d9e8ff;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 24px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 15px;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      color: white;
+      box-shadow: 0 16px 34px rgba(42, 149, 217, 0.32);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      color: white;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 34px;
+      max-width: 720px;
+    }
+
+    .hero-point {
+      border-left: 1px solid rgba(255, 255, 255, 0.18);
+      padding-left: 14px;
+      color: #e7f4ff;
+      font-size: 13px;
+      line-height: 1.35;
+      font-weight: 800;
+    }
+
+    .hero-point span {
+      display: block;
+      color: #8df5ff;
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 30px;
+      padding: 16px;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card img {
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: white;
+      width: 100%;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-head {
+      max-width: 860px;
+      margin: 0 auto 38px;
+      text-align: center;
+    }
+
+    .section-head.left {
+      text-align: left;
+      margin-left: 0;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.1;
+      color: var(--navy);
+      margin: 0 0 14px;
+      letter-spacing: -0.9px;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .features {
+      background: white;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .feature-card,
+    .benefit-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 10px 28px rgba(7, 27, 70, 0.06);
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: rgba(42, 149, 217, 0.1);
+      display: grid;
+      place-items: center;
+      font-size: 23px;
+      margin-bottom: 14px;
+    }
+
+    .feature-card h3,
+    .benefit-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    .feature-card p,
+    .benefit-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .workflow {
+      background: linear-gradient(180deg, #f7fbff 0%, #eef6ff 100%);
+    }
+
+    .workflow-panel {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      text-align: center;
+      padding: 10px 8px;
+    }
+
+    .step-number {
+      width: 34px;
+      height: 34px;
+      margin: 0 auto 12px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      color: white;
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .step-icon {
+      width: 62px;
+      height: 62px;
+      margin: 0 auto 14px;
+      border-radius: 20px;
+      background: #f0f7ff;
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      font-size: 26px;
+      border: 1px solid var(--border);
+    }
+
+    .step h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .secure-note {
+      margin-top: 24px;
+      background: #eef6ff;
+      border: 1px solid #d7e9ff;
+      color: #29415f;
+      border-radius: 999px;
+      padding: 12px 18px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .showcase {
+      background: white;
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 0.88fr 1.12fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .showcase-copy .label {
+      display: inline-block;
+      color: var(--green);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .showcase-copy h2 {
+      margin: 0 0 16px;
+      color: var(--navy);
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.08;
+      letter-spacing: -0.8px;
+    }
+
+    .showcase-copy p {
+      color: var(--muted);
+      font-size: 17px;
+      margin: 0 0 20px;
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 9px;
+    }
+
+    .check-list li {
+      color: #29415f;
+      font-size: 15px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .screen-frame {
+      background: var(--navy);
+      padding: 10px;
+      border-radius: 26px;
+      box-shadow: 0 18px 50px rgba(7, 27, 70, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .screen-frame img {
+      border-radius: 18px;
+      width: 100%;
+      background: white;
+    }
+
+    .detail-section {
+      background:
+        radial-gradient(circle at 12% 20%, rgba(32, 180, 134, 0.12), transparent 26%),
+        linear-gradient(180deg, #eef6ff 0%, #f8fbff 100%);
+    }
+
+    .detail-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .detail-copy h3 {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-size: 32px;
+      line-height: 1.12;
+    }
+
+    .detail-copy p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .risk-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .risk-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 800;
+      font-size: 13px;
+      border: 1px solid var(--border);
+      background: #f8fbff;
+      color: #29415f;
+    }
+
+    .risk-tag.red {
+      color: #b42318;
+      background: #fff1f2;
+      border-color: #ffd3d8;
+    }
+
+    .risk-tag.orange {
+      color: #a15c07;
+      background: #fff8e6;
+      border-color: #ffe3a3;
+    }
+
+    .risk-tag.green {
+      color: #147a45;
+      background: #ecfdf3;
+      border-color: #c6f6d5;
+    }
+
+    .benefits {
+      background: white;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .final {
+      background: var(--navy);
+      color: white;
+      padding: 56px 0;
+    }
+
+    .final-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .final-icon {
+      width: 74px;
+      height: 74px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      display: grid;
+      place-items: center;
+      font-size: 32px;
+    }
+
+    .final h2 {
+      margin: 0 0 8px;
+      color: white;
+      font-size: clamp(26px, 3vw, 36px);
+      line-height: 1.12;
+    }
+
+    .final p {
+      margin: 0;
+      color: #d9e8ff;
+      font-size: 16px;
+    }
+
+    footer {
+      background: #041431;
+      color: #b8c7dd;
+      padding: 22px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .showcase-grid,
+      .detail-card,
+      .final-row {
+        grid-template-columns: 1fr;
+      }
+
+      .features-grid,
+      .steps,
+      .benefit-grid,
+      .hero-points {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .final-row {
+        text-align: center;
+      }
+
+      .final-icon {
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .brand img {
+        width: 180px;
+      }
+
+      .hero {
+        padding: 56px 0 48px;
+      }
+
+      section {
+        padding: 46px 0;
+      }
+
+      .features-grid,
+      .steps,
+      .benefit-grid,
+      .hero-points {
+        grid-template-columns: 1fr;
+      }
+
+      .workflow-panel,
+      .detail-card {
+        padding: 22px;
+      }
+
+      .secure-note {
+        border-radius: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="/" class="brand">
+        <img src="/logo.png" alt="True Care System" />
+      </a>
+
+      <a class="top-link" href="/">Back to Home →</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Compliance & Oversight</div>
+
+          <h1>Incident & Risk Tracking</h1>
+
+          <p class="hero-copy">
+            Capture incidents, assess risk levels, assign follow-up actions,
+            monitor open items, and support safer care operations with clear visibility.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="/#demo">Request Demo</a>
+            <a class="btn btn-secondary" href="#workflow">Explore Workflow</a>
+          </div>
+
+          <div class="hero-points">
+            <div class="hero-point">
+              <span>📝</span>
+              Incident capture
+            </div>
+            <div class="hero-point">
+              <span>⚠️</span>
+              Risk assessment
+            </div>
+            <div class="hero-point">
+              <span>✅</span>
+              Corrective actions
+            </div>
+            <div class="hero-point">
+              <span>📊</span>
+              Trend visibility
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img
+            src="/assets/screenshots/web/incident/incident-risk-tracking-overview.png"
+            alt="True Care System incident and risk tracking overview"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <div class="section-head">
+          <h2>Designed for safer, more accountable care operations</h2>
+          <p>
+            Incident management is not only about recording what happened. Providers need a structured
+            process to identify risks, document facts, assign follow-up, monitor resolution, and learn
+            from trends across the organization.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="icon">📝</div>
+            <h3>Centralized Incident Capture</h3>
+            <p>Document incidents in one organized place with key details, category, location, people involved, and notes.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">⚠️</div>
+            <h3>Risk Level Assessment</h3>
+            <p>Classify risk by severity, priority, potential impact, and follow-up urgency for better decision making.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">🔎</div>
+            <h3>Investigation Tracking</h3>
+            <p>Assign responsible team members, document findings, and track investigation progress from start to close.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">✅</div>
+            <h3>Corrective Action Follow-Up</h3>
+            <p>Create follow-up tasks, monitor due dates, and confirm actions are completed before closing the incident.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">🔔</div>
+            <h3>Alerts & Open Items</h3>
+            <p>Give supervisors clearer visibility into high-priority incidents, overdue tasks, and unresolved concerns.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">📊</div>
+            <h3>Trend Monitoring</h3>
+            <p>Analyze incidents by category, risk level, date range, location, individual, or service program.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">🛡️</div>
+            <h3>Compliance Documentation</h3>
+            <p>Maintain organized records for internal reviews, audits, quality assurance, and regulatory oversight.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">🤝</div>
+            <h3>Team Accountability</h3>
+            <p>Clarify responsibilities so office staff, supervisors, and leadership know what needs attention.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="workflow" class="workflow">
+      <div class="container">
+        <div class="workflow-panel">
+          <div class="section-head">
+            <h2>One workflow from incident report to resolution</h2>
+            <p>
+              True Care System helps providers move from initial incident capture to review,
+              investigation, corrective action, closure, and trend analysis.
+            </p>
+          </div>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div class="step-icon">📝</div>
+              <h3>Report</h3>
+              <p>Capture incident details quickly and accurately with structured documentation.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">2</div>
+              <div class="step-icon">⚠️</div>
+              <h3>Assess</h3>
+              <p>Evaluate risk level, impact, urgency, and people or programs affected.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">3</div>
+              <div class="step-icon">🔎</div>
+              <h3>Investigate</h3>
+              <p>Assign reviewers, document findings, and track investigation progress.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">4</div>
+              <div class="step-icon">✅</div>
+              <h3>Resolve</h3>
+              <p>Create corrective actions, monitor due dates, and confirm completion.</p>
+            </div>
+
+            <div class="step">
+              <div class="step-number">5</div>
+              <div class="step-icon">📊</div>
+              <h3>Review</h3>
+              <p>Analyze trends and use insights to improve safety and quality outcomes.</p>
+            </div>
+          </div>
+
+          <div class="secure-note">
+            🔒 Incident records, risk reviews, follow-up actions, and trend visibility stay connected in one workflow.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="showcase">
+      <div class="container showcase-grid">
+        <div class="showcase-copy">
+          <span class="label">Operational visibility</span>
+          <h2>See incident activity before it becomes a larger risk</h2>
+          <p>
+            A provider’s ability to respond quickly depends on visibility. True Care System helps
+            leadership and office teams see open incidents, high-priority items, unresolved actions,
+            and recurring trends across care operations.
+          </p>
+
+          <ul class="check-list">
+            <li>Incident dashboard with total, open, high-priority, and resolved counts</li>
+            <li>Risk-level breakdown for high, medium, and low incidents</li>
+            <li>Recent incident list with status and follow-up visibility</li>
+            <li>Trend monitoring to identify repeated patterns over time</li>
+            <li>Mobile-friendly visibility for field and office coordination</li>
+          </ul>
+        </div>
+
+        <div class="screen-frame">
+          <img
+            src="/assets/screenshots/web/incident/incident-risk-tracking-realtime.png"
+            alt="True Care System real-time incident and risk dashboard"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section">
+      <div class="container">
+        <div class="detail-card">
+          <div class="screen-frame">
+            <img
+              src="/assets/screenshots/web/incident/incident-risk-tracking-overview.png"
+              alt="True Care System incident risk tracking detail workflow"
+            />
+          </div>
+
+          <div class="detail-copy">
+            <h3>Track the full incident lifecycle</h3>
+            <p>
+              Incident follow-up requires more than a note. Your team needs to know what happened,
+              who reviewed it, what risks were identified, what actions were assigned, and whether
+              those actions were completed on time.
+            </p>
+
+            <ul class="check-list">
+              <li>Capture incident type, date, location, affected individuals, and description</li>
+              <li>Document risk assessment and potential impact</li>
+              <li>Assign investigation responsibilities and due dates</li>
+              <li>Track corrective action status until completion</li>
+              <li>Support reporting for internal quality and compliance review</li>
+            </ul>
+
+            <div class="risk-tags">
+              <span class="risk-tag red">High Risk</span>
+              <span class="risk-tag orange">Needs Review</span>
+              <span class="risk-tag green">Resolved</span>
+              <span class="risk-tag">Corrective Action</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="container">
+        <div class="section-head">
+          <h2>Why providers need connected incident and risk tracking</h2>
+          <p>
+            A structured incident workflow helps providers strengthen safety, accountability,
+            documentation, and quality improvement.
+          </p>
+        </div>
+
+        <div class="benefit-grid">
+          <div class="benefit-card">
+            <div class="icon">⚡</div>
+            <h3>Respond faster</h3>
+            <p>Identify urgent incidents and open follow-up items before they fall through the cracks.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="icon">🛡️</div>
+            <h3>Reduce risk</h3>
+            <p>Use risk levels, corrective actions, and trend analysis to prevent repeat issues.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="icon">📝</div>
+            <h3>Improve documentation</h3>
+            <p>Maintain clearer incident records for reviews, audits, investigations, and compliance.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="icon">👁️</div>
+            <h3>Increase visibility</h3>
+            <p>Give supervisors and office staff a clear view of incident status and assigned actions.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="icon">📈</div>
+            <h3>Improve outcomes</h3>
+            <p>Turn incident data into practical improvements for safety, training, and quality assurance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="container final-row">
+        <div class="final-icon">⚠️</div>
+
+        <div>
+          <h2>Ready to strengthen incident and risk management?</h2>
+          <p>
+            See how True Care System helps providers capture incidents, assess risk,
+            manage follow-up actions, and improve care safety with better visibility.
+          </p>
+        </div>
+
+        <a class="btn btn-primary" href="/#demo">Request Your Demo</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © True Care System. All rights reserved.
+  </footer>
+</body>
+</html>
