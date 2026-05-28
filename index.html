@@ -775,9 +775,9 @@
       padding: 36px 0 28px;
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+   .footer-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.9fr 0.9fr 0.9fr 1fr;
       gap: 28px;
       align-items: start;
     }
@@ -833,7 +833,82 @@
       color: #9fb0c8;
       font-size: 14px;
     }
+    .footer-download {
+      border-left: 1px solid rgba(255,255,255,0.08);
+      padding-left: 24px;
+    }
 
+    .footer-download h4 {
+      margin-bottom: 18px;
+    }
+
+    .store-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .store-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: 0.2s ease;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .store-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+    }
+
+    .store-btn img {
+      width: 180px;
+      height: auto;
+      display: block;
+    }
+
+    .footer-download-copy {
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.7;
+      text-align: center;
+      max-width: 180px;
+    }
+
+    @media (max-width: 1260px) {
+      .footer-download {
+        border-left: none;
+        padding-left: 0;
+      }
+
+      .store-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .footer-download {
+        margin-top: 10px;
+      }
+
+      .store-buttons {
+        flex-direction: column;
+      }
+
+      .store-btn img {
+        width: 170px;
+      }
+
+      .footer-download-copy {
+        text-align: left;
+      }
+    }
     /* MODALS SHARED */
     .modal-overlay {
       position: fixed;
@@ -1979,27 +2054,43 @@
     </div>
   </section>
 
-  <footer class="site-footer" id="resources">
+    <footer class="site-footer" id="resources">
     <div class="container footer">
       <div class="footer-grid">
+
         <div class="footer-brand">
           <img src="/logo.png" alt="True Care System" />
-          <p>Compassionate solutions. Better care.</p>
+
+          <p style="max-width:220px; text-align:center;">
+            Compassionate solutions.<br />
+            Better care.
+          </p>
         </div>
 
         <div>
           <h4>Quick Links</h4>
+
           <ul class="footer-links">
             <li><a href="#">Home</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#about">Who We Serve</a></li>
-            <li><button class="nav-link open-contact-modal" type="button" style="padding:0;background:none;color:#cbd5e1;">Contact</button></li>
+
+            <li>
+              <button
+                class="nav-link open-contact-modal"
+                type="button"
+                style="padding:0;background:none;color:#cbd5e1;"
+              >
+                Contact
+              </button>
+            </li>
           </ul>
         </div>
 
         <div>
           <h4>Services</h4>
+
           <ul class="footer-links">
             <li>Care Operations</li>
             <li>Documentation Support</li>
@@ -2011,11 +2102,67 @@
 
         <div>
           <h4>Contact Us</h4>
+
           <ul class="footer-links">
-            <li><a class="footer-contact-link" href="mailto:admin@truecaresystem.com">admin@truecaresystem.com</a></li>
-            <li><a class="footer-contact-link" href="http://www.truecaresystem.com" target="_blank" rel="noreferrer">www.truecaresystem.com</a></li>
+            <li>
+              <a
+                class="footer-contact-link"
+                href="mailto:admin@truecaresystem.com"
+              >
+                admin@truecaresystem.com
+              </a>
+            </li>
+
+            <li>
+              <a
+                class="footer-contact-link"
+                href="https://www.truecaresystem.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                www.truecaresystem.com
+              </a>
+            </li>
           </ul>
         </div>
+
+        <div class="footer-download">
+          <h4>Download Our Mobile App</h4>
+
+          <div class="store-buttons">
+
+            <a
+              class="store-btn"
+              href="https://apps.apple.com/app/true-care-system-mobile/id6770992739"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="/app-store-badge.png"
+                alt="Download on the App Store"
+              />
+            </a>
+
+            <a
+              class="store-btn"
+              href="https://play.google.com/store/apps/details?id=com.truecaresystem.mobile&pcampaignid=web_share"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="/google-play-badge.png"
+                alt="Get it on Google Play"
+              />
+            </a>
+
+          </div>
+
+          <div class="footer-download-copy">
+            Care on the go,<br />
+            anytime, anywhere.
+          </div>
+        </div>
+
       </div>
 
       <div class="copyright">
