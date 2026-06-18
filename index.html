@@ -2291,11 +2291,7 @@ font-size:14px;
         </div>
 
         <div class="demo-form">
-          <form id="demoRequestForm" action="https://formsubmit.co/admin@truecaresystem.com" method="POST">
-            <input type="hidden" name="_subject" value="NEW DEMO REQUEST - TRUE CARE SYSTEM">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="https://truecaresystem.com/thank-you.html">
+          <form id="demoRequestForm" action="https://truecare-system.onrender.com/leads/support-center" method="POST">
 
             <div class="form-grid">
               <div class="form-field">
@@ -2351,7 +2347,10 @@ font-size:14px;
                 </select>
               </div>
 
-              <button class="btn btn-orange demo-submit" type="submit">Request Your Demo</button>
+              <button class="btn btn-orange demo-submit" id="demoSubmitButton" type="submit">
+  Request Your Demo
+</button>
+<div class="lead-status" id="demoStatus" role="status" aria-live="polite"></div>
             </div>
           </form>
         </div>
@@ -2552,10 +2551,28 @@ font-size:14px;
         status.className = "lead-status";
         status.textContent = "";
       }
+function setDemoStatus(type, message) {
+  const status = document.getElementById("demoStatus");
+  if (!status) return;
 
-      document.querySelectorAll(".open-demo-modal").forEach((el) => {
-        el.addEventListener("click", (event) => openModal("demoModal", event));
-      });
+  status.className = "lead-status show " + type;
+  status.textContent = message;
+}
+
+function clearDemoStatus() {
+  const status = document.getElementById("demoStatus");
+  if (!status) return;
+
+  status.className = "lead-status";
+  status.textContent = "";
+}
+      
+document.querySelectorAll(".open-demo-modal").forEach((el) => {
+  el.addEventListener("click", (event) => {
+    clearDemoStatus();
+    openModal("demoModal", event);
+  });
+});
 
       document.querySelectorAll(".open-contact-modal").forEach((el) => {
         el.addEventListener("click", (event) => {
@@ -2590,7 +2607,96 @@ font-size:14px;
 
       const contactForm = document.getElementById("contactRequestForm");
       const contactSubmitButton = document.getElementById("contactSubmitButton");
+const demoForm = document.getElementById("demoRequestForm");
+const demoSubmitButton = document.getElementById("demoSubmitButton");
 
+if (demoForm) {
+  demoForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const formData = new FormData(demoForm);
+
+    const payload = {
+      firstName: String(formData.get("firstName") || "").trim(),
+      lastName: String(formData.get("lastName") || "").trim(),
+      email: String(formData.get("emailAddress") || "").trim(),
+      phone: String(formData.get("phoneNumber") || "").trim(),
+      company: String(formData.get("companyName") || "").trim(),
+      state: String(formData.get("stateName") || "").trim(),
+      reason: "Request a Demo",
+      message: String(formData.get("roleType") || "").trim(),
+      source: "True Care System Website Demo Modal"
+    };
+
+    if (
+      !payload.firstName ||
+      !payload.lastName ||
+      !payload.email ||
+      !payload.phone ||
+      !payload.company ||
+      !payload.state ||
+      !payload.message
+    ) {
+      setDemoStatus("error", "Please complete all required fields before submitting.");
+      return;
+    }
+
+    try {
+      if (demoSubmitButton) {
+        demoSubmitButton.disabled = true;
+        demoSubmitButton.textContent = "Sending...";
+      }
+
+      setDemoStatus("sending", "Sending your demo request...");
+
+      const response = await fetch("https://truecare-system.onrender.com/leads/support-center", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      let result = null;
+      try {
+        result = await response.json();
+      } catch (jsonError) {
+        result = null;
+      }
+
+      if (!response.ok) {
+        const errorMessage =
+          result && result.message
+            ? Array.isArray(result.message)
+              ? result.message.join(" ")
+              : String(result.message)
+            : "We could not send your demo request at this time.";
+        throw new Error(errorMessage);
+      }
+
+      demoForm.reset();
+      setDemoStatus(
+        "success",
+        "Thank you. Your demo request has been sent successfully. Our team will contact you soon, and you should also receive a confirmation email."
+      );
+    } catch (error) {
+      setDemoStatus(
+        "error",
+        error && error.message
+          ? error.message
+          : "Something went wrong. Please try again or email admin@truecaresystem.com directly."
+      );
+    } finally {
+      if (demoSubmitButton) {
+        demoSubmitButton.disabled = false;
+        demoSubmitButton.textContent = "Request Your Demo";
+      }
+    }
+  });
+}
+
+      
       if (contactForm) {
         contactForm.addEventListener("submit", async function (event) {
           event.preventDefault();
