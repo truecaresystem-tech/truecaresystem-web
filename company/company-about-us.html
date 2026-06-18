@@ -5,264 +5,178 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>About Us | True Care System</title>
+<link rel="icon" href="/logo.png" />
 
 <style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f7f9fc;color:#1b2d5a}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
 
-*{
-    box-sizing:border-box;
+.site-header{position:sticky;top:0;z-index:100;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.header-inner{max-width:1450px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px;padding:18px 40px}
+.logo img{width:210px}
+.nav{display:flex;align-items:center;gap:26px;font-weight:800;color:#29457d}
+.nav a{padding:14px 16px;border-radius:12px}
+.nav a:hover,.nav a.active{background:#eef2f8;color:#132f62}
+.header-actions{display:flex;align-items:center;gap:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:none;border-radius:14px;padding:11px 18px;font-size:14px;font-weight:800;cursor:pointer;white-space:nowrap}
+.btn-green{background:#61b15a;color:white}
+.btn-orange{background:#d98a3c;color:white}
+
+.hero{background:linear-gradient(135deg,#10225f,#18367f);color:white;text-align:center;padding:90px 20px}
+.hero h1{font-size:60px;margin-bottom:24px}
+.hero p{max-width:950px;margin:auto;font-size:22px;line-height:1.9;color:#e8eefb}
+
+.container{max-width:1450px;margin:auto;padding:90px 40px}
+.section{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;margin-bottom:120px}
+.section img{width:100%;border-radius:28px;box-shadow:0 15px 40px rgba(0,0,0,.15)}
+h2{font-size:44px;color:#10225f;margin-bottom:30px}
+.text{font-size:21px;line-height:1.9;color:#5f6d86}
+.highlight{background:white;border-radius:30px;padding:80px;box-shadow:0 10px 40px rgba(0,0,0,.08)}
+
+.footer{background:#10225f;color:white;text-align:center;padding:55px 20px}
+.footer h3{font-size:34px;margin-bottom:20px}
+.footer p{font-size:20px;color:#d7e1f5;line-height:1.8;max-width:980px;margin:auto}
+.footer-links{margin-top:28px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
+.footer-links a{color:#d7e1f5;font-weight:700}
+
+@media(max-width:1000px){
+.header-inner{flex-direction:column}
+.nav{flex-wrap:wrap;justify-content:center}
+.section{grid-template-columns:1fr}
+.hero h1{font-size:42px}
+h2{font-size:34px}
+.text{font-size:18px}
+.highlight{padding:40px}
 }
-
-body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f7f9fc;
-    color:#1b2d5a;
-}
-
-.hero{
-    background:linear-gradient(135deg,#10225f,#18367f);
-    color:white;
-    text-align:center;
-    padding:90px 20px;
-}
-
-.hero h1{
-    font-size:60px;
-    margin-bottom:24px;
-}
-
-.hero p{
-    max-width:950px;
-    margin:auto;
-    font-size:22px;
-    line-height:1.9;
-    color:#e8eefb;
-}
-
-.container{
-    max-width:1450px;
-    margin:auto;
-    padding:90px 40px;
-}
-
-.section{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:70px;
-    align-items:center;
-    margin-bottom:120px;
-}
-
-.section img{
-    width:100%;
-    border-radius:28px;
-    box-shadow:0 15px 40px rgba(0,0,0,.15);
-}
-
-h2{
-    font-size:44px;
-    color:#10225f;
-    margin-bottom:30px;
-}
-
-.text{
-    font-size:21px;
-    line-height:1.9;
-    color:#5f6d86;
-}
-
-.highlight{
-    background:white;
-    border-radius:30px;
-    padding:80px;
-    box-shadow:0 10px 40px rgba(0,0,0,.08);
-}
-
-.footer{
-    background:#10225f;
-    color:white;
-    text-align:center;
-    padding:50px 20px;
-}
-
-.footer h3{
-    font-size:34px;
-    margin-bottom:20px;
-}
-
-.footer p{
-    font-size:20px;
-    color:#d7e1f5;
-    line-height:1.8;
-}
-
-@media(max-width:900px){
-
-.section{
-    grid-template-columns:1fr;
-}
-
-.hero h1{
-    font-size:42px;
-}
-
-h2{
-    font-size:34px;
-}
-
-.text{
-    font-size:18px;
-}
-
-.highlight{
-    padding:40px;
-}
-
-}
-
 </style>
 </head>
+
 <body>
 
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="/index.html">
+      <img src="/logo.png" alt="True Care System">
+    </a>
+
+    <nav class="nav">
+      <a href="/index.html">Home</a>
+      <a href="/index.html#services">Services</a>
+      <a href="/technology/technology-saas-architecture.html">Technology</a>
+      <a class="active" href="/company/company-about-us.html">Company</a>
+      <a href="/privacy-policy.html">Privacy Policy</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-green" href="/documents/brochures/TrueCareSystem_Alternate_EVV_Technical_Solution_Overview.pdf" target="_blank">
+        Technical Overview
+      </a>
+      <a class="btn btn-orange" href="/index.html#contact">
+        Request Your Demo
+      </a>
+    </div>
+  </div>
+</header>
 
 <section class="hero">
-
-<h1>About True Care System</h1>
-
-<p>
-Built for Providers. Focused on People.
-True Care System delivers practical technology that helps providers
-strengthen operations, improve visibility, and support better care every day.
-</p>
-
+  <h1>About True Care System</h1>
+  <p>
+    Built for Providers. Focused on People.
+    True Care System delivers practical technology that helps providers
+    strengthen operations, improve visibility, and support better care every day.
+  </p>
 </section>
-
-
 
 <div class="container">
 
+  <div class="section highlight">
+    <div>
+      <h2>Team Collaboration</h2>
+      <div class="text">
+        True Care System was created with a simple mission:
+        to connect providers, office teams, supervisors, and caregivers
+        through one powerful platform.
+        <br><br>
+        Our approach combines operational efficiency with compassion,
+        helping organizations streamline communication, strengthen teamwork,
+        and deliver better services every day.
+        <br><br>
+        By bringing everyone together in one system,
+        providers gain greater visibility and a stronger foundation
+        for long-term growth.
+      </div>
+    </div>
 
-<div class="section highlight">
+    <div>
+      <img src="../assets/screenshots/web/company/true-care-about-us-team-collaboration.png" alt="Team Collaboration">
+    </div>
+  </div>
 
-<div>
+  <div class="section">
+    <div>
+      <img src="../assets/screenshots/web/company/true-care-about-us-provider-office-operations.png" alt="Provider Operations">
+    </div>
 
-<h2>Team Collaboration</h2>
+    <div>
+      <h2>Provider Office Operations</h2>
+      <div class="text">
+        Managing provider operations requires coordination,
+        accuracy, and visibility.
+        <br><br>
+        True Care System helps organizations simplify scheduling,
+        visit verification, billing workflows, reporting,
+        and compliance activities.
+        <br><br>
+        Our platform reduces administrative burden
+        and allows office teams to focus on what matters most:
+        supporting staff and delivering quality care.
+      </div>
+    </div>
+  </div>
 
-<div class="text">
+  <div class="section highlight">
+    <div>
+      <h2>Technology Supporting Caregivers</h2>
+      <div class="text">
+        Caregivers need reliable tools that are easy to use.
+        <br><br>
+        Our mobile platform provides real-time information,
+        visit verification, documentation support,
+        and better communication between the field and the office.
+        <br><br>
+        By equipping caregivers with practical technology,
+        True Care System helps organizations improve outcomes
+        and provide better experiences for individuals and families.
+      </div>
+    </div>
 
-True Care System was created with a simple mission:
-to connect providers, office teams, supervisors, and caregivers
-through one powerful platform.
-
-Our approach combines operational efficiency with compassion,
-helping organizations streamline communication, strengthen teamwork,
-and deliver better services every day.
-
-By bringing everyone together in one system,
-providers gain greater visibility and a stronger foundation
-for long-term growth.
-
-</div>
-
-</div>
-
-<div>
-
-<img
-src="../assets/screenshots/web/company/true-care-about-us-team-collaboration.png"
-alt="Team Collaboration">
-
-</div>
-
-</div>
-
-
-
-<div class="section">
-
-<div>
-
-<img
-src="../assets/screenshots/web/company/true-care-about-us-provider-office-operations.png"
-alt="Provider Operations">
-
-</div>
-
-<div>
-
-<h2>Provider Office Operations</h2>
-
-<div class="text">
-
-Managing provider operations requires coordination,
-accuracy, and visibility.
-
-True Care System helps organizations simplify scheduling,
-visit verification, billing workflows, reporting,
-and compliance activities.
-
-Our platform reduces administrative burden
-and allows office teams to focus on what matters most:
-supporting staff and delivering quality care.
-
-</div>
-
-</div>
+    <div>
+      <img src="../assets/screenshots/web/company/true-care-about-us-technology-supporting-caregivers.png" alt="Technology Supporting Caregivers">
+    </div>
+  </div>
 
 </div>
-
-
-
-<div class="section highlight">
-
-<div>
-
-<h2>Technology Supporting Caregivers</h2>
-
-<div class="text">
-
-Caregivers need reliable tools that are easy to use.
-
-Our mobile platform provides real-time information,
-visit verification, documentation support,
-and better communication between the field and the office.
-
-By equipping caregivers with practical technology,
-True Care System helps organizations improve outcomes
-and provide better experiences for individuals and families.
-
-</div>
-
-</div>
-
-<div>
-
-<img
-src="../assets/screenshots/web/company/true-care-about-us-technology-supporting-caregivers.png"
-alt="Technology Supporting Caregivers">
-
-</div>
-
-</div>
-
-
-</div>
-
 
 <section class="footer">
+  <h3>Better Systems. Better Care.</h3>
 
-<h3>Better Systems. Better Care.</h3>
+  <p>
+    True Care System is committed to helping providers strengthen operations,
+    empower caregivers, and improve care delivery through practical,
+    connected, and innovative solutions.
+  </p>
 
-<p>
-
-True Care System is committed to helping providers strengthen operations,
-empower caregivers, and improve care delivery through practical,
-connected, and innovative solutions.
-
-</p>
-
+  <div class="footer-links">
+    <a href="/index.html">Home</a>
+    <a href="/index.html#services">Services</a>
+    <a href="/technology/technology-saas-architecture.html">Technology</a>
+    <a href="/company/company-about-us.html">Company</a>
+    <a href="/privacy-policy.html">Privacy Policy</a>
+    <a href="mailto:admin@truecaresystem.com">Contact</a>
+  </div>
 </section>
-
 
 </body>
 </html>
