@@ -5,135 +5,86 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Our Vision | True Care System</title>
+<link rel="icon" href="/logo.png" />
 
 <style>
 *{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f7f9fc;color:#1b2d5a}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
 
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#f7f9fc;
-  color:#1b2d5a;
-}
+.site-header{position:sticky;top:0;z-index:100;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.header-inner{max-width:1450px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px;padding:18px 40px}
+.logo img{width:210px}
+.nav{display:flex;align-items:center;gap:26px;font-weight:800;color:#29457d}
+.nav a{padding:14px 16px;border-radius:12px}
+.nav a:hover,.nav a.active{background:#eef2f8;color:#132f62}
+.header-actions{display:flex;align-items:center;gap:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:none;border-radius:14px;padding:11px 18px;font-size:14px;font-weight:800;cursor:pointer;white-space:nowrap}
+.btn-green{background:#61b15a;color:white}
+.btn-orange{background:#d98a3c;color:white}
 
-.hero{
-  background:linear-gradient(135deg,#071b46,#0c2b63 60%,#0b6b73);
-  color:white;
-  text-align:center;
-  padding:90px 20px;
-}
+.hero{background:linear-gradient(135deg,#071b46,#0c2b63 60%,#0b6b73);color:white;text-align:center;padding:90px 20px}
+.hero h1{font-size:60px;margin:0 0 24px}
+.hero p{max-width:980px;margin:auto;font-size:22px;line-height:1.85;color:#e8eefb}
 
-.hero h1{
-  font-size:60px;
-  margin:0 0 24px;
-}
+.container{max-width:1450px;margin:auto;padding:90px 40px}
+.section{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;margin-bottom:120px}
+.section img{width:100%;border-radius:28px;box-shadow:0 15px 40px rgba(0,0,0,.15)}
+h2{font-size:44px;color:#10225f;margin:0 0 30px}
+.text{font-size:21px;line-height:1.9;color:#5f6d86}
+.highlight{background:white;border-radius:30px;padding:80px;box-shadow:0 10px 40px rgba(0,0,0,.08)}
 
-.hero p{
-  max-width:980px;
-  margin:auto;
-  font-size:22px;
-  line-height:1.85;
-  color:#e8eefb;
-}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:30px}
+.card{background:white;border-radius:24px;padding:34px;box-shadow:0 10px 32px rgba(0,0,0,.08)}
+.card h3{margin:0 0 14px;color:#10225f;font-size:26px}
+.card p{margin:0;color:#5f6d86;font-size:18px;line-height:1.7}
 
-.container{
-  max-width:1450px;
-  margin:auto;
-  padding:90px 40px;
-}
+.footer{background:#10225f;color:white;text-align:center;padding:55px 20px}
+.footer h3{font-size:34px;margin:0 0 20px}
+.footer p{font-size:20px;color:#d7e1f5;line-height:1.8;max-width:950px;margin:auto}
+.footer-links{margin-top:28px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
+.footer-links a{color:#d7e1f5;font-weight:700}
 
-.section{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:70px;
-  align-items:center;
-  margin-bottom:120px;
-}
-
-.section img{
-  width:100%;
-  border-radius:28px;
-  box-shadow:0 15px 40px rgba(0,0,0,.15);
-}
-
-h2{
-  font-size:44px;
-  color:#10225f;
-  margin:0 0 30px;
-}
-
-.text{
-  font-size:21px;
-  line-height:1.9;
-  color:#5f6d86;
-}
-
-.highlight{
-  background:white;
-  border-radius:30px;
-  padding:80px;
-  box-shadow:0 10px 40px rgba(0,0,0,.08);
-}
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:28px;
-  margin-top:30px;
-}
-
-.card{
-  background:white;
-  border-radius:24px;
-  padding:34px;
-  box-shadow:0 10px 32px rgba(0,0,0,.08);
-}
-
-.card h3{
-  margin:0 0 14px;
-  color:#10225f;
-  font-size:26px;
-}
-
-.card p{
-  margin:0;
-  color:#5f6d86;
-  font-size:18px;
-  line-height:1.7;
-}
-
-.footer{
-  background:#10225f;
-  color:white;
-  text-align:center;
-  padding:55px 20px;
-}
-
-.footer h3{
-  font-size:34px;
-  margin:0 0 20px;
-}
-
-.footer p{
-  font-size:20px;
-  color:#d7e1f5;
-  line-height:1.8;
-  max-width:950px;
-  margin:auto;
-}
-
-@media(max-width:900px){
-  .section{grid-template-columns:1fr}
-  .cards{grid-template-columns:1fr}
-  .hero h1{font-size:42px}
-  h2{font-size:34px}
-  .text{font-size:18px}
-  .highlight{padding:40px}
+@media(max-width:1000px){
+.header-inner{flex-direction:column}
+.nav{flex-wrap:wrap;justify-content:center}
+.section{grid-template-columns:1fr}
+.cards{grid-template-columns:1fr}
+.hero h1{font-size:42px}
+h2{font-size:34px}
+.text{font-size:18px}
+.highlight{padding:40px}
 }
 </style>
 </head>
 
 <body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="/index.html">
+      <img src="/logo.png" alt="True Care System">
+    </a>
+
+    <nav class="nav">
+      <a href="/index.html">Home</a>
+      <a href="/index.html#services">Services</a>
+      <a href="/technology/technology-saas-architecture.html">Technology</a>
+      <a class="active" href="/company/company-our-vision.html">Company</a>
+      <a href="/privacy-policy.html">Privacy Policy</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-green" href="/documents/brochures/TrueCareSystem_Alternate_EVV_Technical_Solution_Overview.pdf" target="_blank">
+        Technical Overview
+      </a>
+      <a class="btn btn-orange" href="/index.html#contact">
+        Request Your Demo
+      </a>
+    </div>
+  </div>
+</header>
 
 <section class="hero">
   <h1>Our Vision</h1>
@@ -159,17 +110,13 @@ h2{
     </div>
 
     <div>
-      <img
-        src="../assets/screenshots/web/company/true-care-our-vision-future-healthcare-ecosystem.png"
-        alt="True Care System future healthcare ecosystem vision">
+      <img src="../assets/screenshots/web/company/true-care-our-vision-future-healthcare-ecosystem.png" alt="True Care System future healthcare ecosystem vision">
     </div>
   </div>
 
   <div class="section">
     <div>
-      <img
-        src="../assets/screenshots/web/company/true-care-our-vision-innovation-and-growth.png"
-        alt="True Care System innovation and growth vision">
+      <img src="../assets/screenshots/web/company/true-care-our-vision-innovation-and-growth.png" alt="True Care System innovation and growth vision">
     </div>
 
     <div>
@@ -199,32 +146,24 @@ h2{
     </div>
 
     <div>
-      <img
-        src="../assets/screenshots/web/company/true-care-our-vision-strategic-roadmap.png"
-        alt="True Care System strategic roadmap vision">
+      <img src="../assets/screenshots/web/company/true-care-our-vision-strategic-roadmap.png" alt="True Care System strategic roadmap vision">
     </div>
   </div>
 
   <div class="cards">
     <div class="card">
       <h3>Smarter Technology</h3>
-      <p>
-        Reliable tools that simplify operations and help providers work with greater accuracy.
-      </p>
+      <p>Reliable tools that simplify operations and help providers work with greater accuracy.</p>
     </div>
 
     <div class="card">
       <h3>Empowered Caregivers</h3>
-      <p>
-        Mobile-ready workflows that support caregivers in the field with real-time information.
-      </p>
+      <p>Mobile-ready workflows that support caregivers in the field with real-time information.</p>
     </div>
 
     <div class="card">
       <h3>Better Outcomes</h3>
-      <p>
-        Stronger visibility, documentation, and coordination to support higher quality care.
-      </p>
+      <p>Stronger visibility, documentation, and coordination to support higher quality care.</p>
     </div>
   </div>
 
@@ -236,6 +175,15 @@ h2{
     True Care System is committed to building technology that strengthens providers,
     supports caregivers, and helps communities move toward a better future of care.
   </p>
+
+  <div class="footer-links">
+    <a href="/index.html">Home</a>
+    <a href="/index.html#services">Services</a>
+    <a href="/technology/technology-saas-architecture.html">Technology</a>
+    <a href="/company/company-about-us.html">Company</a>
+    <a href="/privacy-policy.html">Privacy Policy</a>
+    <a href="mailto:admin@truecaresystem.com">Contact</a>
+  </div>
 </section>
 
 </body>
