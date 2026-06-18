@@ -5,237 +5,414 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Why True Care System | True Care System</title>
+<link rel="icon" href="/logo.png">
 
 <style>
 *{box-sizing:border-box}
 
 body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#f7f9fc;
-  color:#1b2d5a;
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#f7f9fc;
+color:#1b2d5a;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+.site-header{
+position:sticky;
+top:0;
+z-index:100;
+background:#fff;
+box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
+
+.header-inner{
+max-width:1450px;
+margin:auto;
+padding:18px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:30px;
+}
+
+.logo img{
+width:210px;
+}
+
+.nav{
+display:flex;
+gap:24px;
+font-weight:800;
+color:#29457d;
+}
+
+.nav a{
+padding:14px 16px;
+border-radius:12px;
+}
+
+.nav a:hover,
+.nav a.active{
+background:#eef2f8;
+color:#132f62;
+}
+
+.header-actions{
+display:flex;
+gap:14px;
+}
+
+.btn{
+padding:11px 18px;
+border-radius:14px;
+font-size:14px;
+font-weight:800;
+color:white;
+white-space:nowrap;
+}
+
+.btn-green{
+background:#61b15a;
+}
+
+.btn-orange{
+background:#d98a3c;
 }
 
 .hero{
-  background:linear-gradient(135deg,#071b46,#0c2b63 60%,#0b6b73);
-  color:white;
-  text-align:center;
-  padding:90px 20px;
+background:linear-gradient(135deg,#071b46,#0c2b63 60%,#0b6b73);
+color:white;
+text-align:center;
+padding:90px 20px;
 }
 
 .hero h1{
-  font-size:60px;
-  margin:0 0 24px;
+font-size:60px;
+margin:0 0 24px;
 }
 
 .hero p{
-  max-width:980px;
-  margin:auto;
-  font-size:22px;
-  line-height:1.85;
-  color:#e8eefb;
+max-width:980px;
+margin:auto;
+font-size:22px;
+line-height:1.85;
+color:#e8eefb;
 }
 
 .container{
-  max-width:1450px;
-  margin:auto;
-  padding:90px 40px;
+max-width:1450px;
+margin:auto;
+padding:90px 40px;
 }
 
 .section{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:70px;
-  align-items:center;
-  margin-bottom:120px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+align-items:center;
+margin-bottom:120px;
 }
 
 .section img{
-  width:100%;
-  border-radius:28px;
-  box-shadow:0 15px 40px rgba(0,0,0,.15);
+width:100%;
+border-radius:28px;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
 }
 
 h2{
-  font-size:44px;
-  color:#10225f;
-  margin:0 0 30px;
+font-size:44px;
+color:#10225f;
+margin:0 0 30px;
 }
 
 .text{
-  font-size:21px;
-  line-height:1.9;
-  color:#5f6d86;
+font-size:21px;
+line-height:1.9;
+color:#5f6d86;
 }
 
 .highlight{
-  background:white;
-  border-radius:30px;
-  padding:80px;
-  box-shadow:0 10px 40px rgba(0,0,0,.08);
+background:white;
+border-radius:30px;
+padding:80px;
+box-shadow:0 10px 40px rgba(0,0,0,.08);
 }
 
 .cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:28px;
-  margin-top:30px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:28px;
+margin-top:30px;
 }
 
 .card{
-  background:white;
-  border-radius:24px;
-  padding:34px;
-  box-shadow:0 10px 32px rgba(0,0,0,.08);
+background:white;
+border-radius:24px;
+padding:34px;
+box-shadow:0 10px 32px rgba(0,0,0,.08);
 }
 
 .card h3{
-  margin:0 0 14px;
-  color:#10225f;
-  font-size:26px;
+margin:0 0 14px;
+color:#10225f;
+font-size:26px;
 }
 
 .card p{
-  margin:0;
-  color:#5f6d86;
-  font-size:18px;
-  line-height:1.7;
+margin:0;
+color:#5f6d86;
+font-size:18px;
+line-height:1.7;
 }
 
 .footer{
-  background:#10225f;
-  color:white;
-  text-align:center;
-  padding:55px 20px;
+background:#10225f;
+color:white;
+text-align:center;
+padding:55px 20px;
 }
 
 .footer h3{
-  font-size:34px;
-  margin:0 0 20px;
+font-size:34px;
+margin-bottom:20px;
 }
 
 .footer p{
-  font-size:20px;
-  color:#d7e1f5;
-  line-height:1.8;
-  max-width:950px;
-  margin:auto;
+font-size:20px;
+color:#d7e1f5;
+line-height:1.8;
+max-width:950px;
+margin:auto;
 }
 
-@media(max-width:900px){
-  .section{grid-template-columns:1fr}
-  .cards{grid-template-columns:1fr}
-  .hero h1{font-size:42px}
-  h2{font-size:34px}
-  .text{font-size:18px}
-  .highlight{padding:40px}
+.footer-links{
+margin-top:28px;
+display:flex;
+justify-content:center;
+gap:24px;
+flex-wrap:wrap;
+}
+
+.footer-links a{
+color:#d7e1f5;
+font-weight:700;
+}
+
+@media(max-width:1000px){
+
+.header-inner{
+flex-direction:column;
+}
+
+.nav{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.section{
+grid-template-columns:1fr;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+h2{
+font-size:34px;
+}
+
+.text{
+font-size:18px;
+}
+
+.highlight{
+padding:40px;
+}
+
 }
 </style>
 </head>
 
 <body>
 
+<header class="site-header">
+<div class="header-inner">
+
+<a class="logo" href="/index.html">
+<img src="/logo.png" alt="True Care System">
+</a>
+
+<nav class="nav">
+<a href="/index.html">Home</a>
+<a href="/index.html#services">Services</a>
+<a href="/technology/technology-saas-architecture.html">Technology</a>
+<a class="active" href="/company/company-why-true-care-system.html">Company</a>
+<a href="/privacy-policy.html">Privacy Policy</a>
+</nav>
+
+<div class="header-actions">
+<a class="btn btn-green"
+href="/documents/brochures/TrueCareSystem_Alternate_EVV_Technical_Solution_Overview.pdf"
+target="_blank">
+Technical Overview
+</a>
+
+<a class="btn btn-orange"
+href="/index.html#contact">
+Request Your Demo
+</a>
+</div>
+
+</div>
+</header>
+
 <section class="hero">
-  <h1>Why True Care System</h1>
-  <p>
-    Purpose-built for home and community care providers who want a simpler,
-    smarter, and more connected way to manage operations and deliver better care.
-  </p>
+<h1>Why True Care System</h1>
+
+<p>
+Purpose-built for home and community care providers who want a simpler,
+smarter, and more connected way to manage operations and deliver better care.
+</p>
 </section>
 
 <div class="container">
 
-  <div class="section highlight">
-    <div>
-      <h2>Built Specifically for Providers</h2>
-      <div class="text">
-        True Care System is designed around the real needs of provider organizations.
-        It supports the daily work of administrators, office teams, supervisors,
-        caregivers, billing teams, and leadership.
-        <br><br>
-        Instead of forcing providers to manage care operations across disconnected
-        tools, True Care System brings key workflows together in one practical,
-        easy-to-understand platform.
-      </div>
-    </div>
+<div class="section highlight">
 
-    <div>
-      <img
-        src="../assets/screenshots/web/company/true-care-why-provider-focused-platform.png"
-        alt="Why True Care System provider focused platform">
-    </div>
-  </div>
+<div>
+<h2>Built Specifically for Providers</h2>
 
-  <div class="section">
-    <div>
-      <img
-        src="../assets/screenshots/web/company/true-care-why-integrated-workflow-solutions.png"
-        alt="True Care System integrated workflow solutions">
-    </div>
+<div class="text">
+True Care System is designed around the real needs of provider organizations.
+It supports the daily work of administrators, office teams, supervisors,
+caregivers, billing teams, and leadership.
 
-    <div>
-      <h2>One Platform. Complete Visibility.</h2>
-      <div class="text">
-        Providers need accurate information across scheduling, EVV, documentation,
-        billing, reporting, compliance, and mobile workflows.
-        <br><br>
-        True Care System gives teams clearer visibility into daily operations,
-        helping reduce manual tracking, improve communication, and support better
-        decision-making across the organization.
-      </div>
-    </div>
-  </div>
+<br><br>
 
-  <div class="section highlight">
-    <div>
-      <h2>A Partner for Long-Term Growth</h2>
-      <div class="text">
-        True Care System is not just another software tool. It is a provider-focused
-        operating platform designed to support growth, accountability, and better care.
-        <br><br>
-        With practical workflows, secure access, mobile-ready tools, and scalable
-        architecture, providers can build a stronger foundation for today and the future.
-      </div>
-    </div>
+Instead of forcing providers to manage care operations across disconnected
+tools, True Care System brings key workflows together in one practical,
+easy-to-understand platform.
+</div>
+</div>
 
-    <div>
-      <img
-        src="../assets/screenshots/web/company/true-care-why-trusted-partnership-and-growth.png"
-        alt="True Care System trusted partnership and growth">
-    </div>
-  </div>
+<div>
+<img src="../assets/screenshots/web/company/true-care-why-provider-focused-platform.png">
+</div>
 
-  <div class="cards">
-    <div class="card">
-      <h3>Provider Focused</h3>
-      <p>
-        Built around the unique operational needs of home and community care providers.
-      </p>
-    </div>
+</div>
 
-    <div class="card">
-      <h3>Connected Workflows</h3>
-      <p>
-        Scheduling, EVV, documentation, billing, reporting, compliance, and mobile tools in one system.
-      </p>
-    </div>
+<div class="section">
 
-    <div class="card">
-      <h3>Better Care Outcomes</h3>
-      <p>
-        Stronger visibility, better communication, and practical tools that support daily care delivery.
-      </p>
-    </div>
-  </div>
+<div>
+<img src="../assets/screenshots/web/company/true-care-why-integrated-workflow-solutions.png">
+</div>
+
+<div>
+
+<h2>One Platform. Complete Visibility.</h2>
+
+<div class="text">
+
+Providers need accurate information across scheduling, EVV, documentation,
+billing, reporting, compliance, and mobile workflows.
+
+<br><br>
+
+True Care System gives teams clearer visibility into daily operations,
+helping reduce manual tracking, improve communication, and support better
+decision-making across the organization.
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section highlight">
+
+<div>
+
+<h2>A Partner for Long-Term Growth</h2>
+
+<div class="text">
+
+True Care System is not just another software tool. It is a provider-focused
+operating platform designed to support growth, accountability, and better care.
+
+<br><br>
+
+With practical workflows, secure access, mobile-ready tools, and scalable
+architecture, providers can build a stronger foundation for today and the future.
+
+</div>
+
+</div>
+
+<div>
+<img src="../assets/screenshots/web/company/true-care-why-trusted-partnership-and-growth.png">
+</div>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>Provider Focused</h3>
+<p>
+Built around the unique operational needs of home and community care providers.
+</p>
+</div>
+
+<div class="card">
+<h3>Connected Workflows</h3>
+<p>
+Scheduling, EVV, documentation, billing, reporting, compliance, and mobile tools in one system.
+</p>
+</div>
+
+<div class="card">
+<h3>Better Care Outcomes</h3>
+<p>
+Stronger visibility, better communication, and practical tools that support daily care delivery.
+</p>
+</div>
+
+</div>
 
 </div>
 
 <section class="footer">
-  <h3>Built for Providers. Focused on Care.</h3>
-  <p>
-    True Care System helps provider organizations save time, improve visibility,
-    strengthen compliance, and deliver better care through one connected platform.
-  </p>
+
+<h3>Built for Providers. Focused on Care.</h3>
+
+<p>
+True Care System helps provider organizations save time, improve visibility,
+strengthen compliance, and deliver better care through one connected platform.
+</p>
+
+<div class="footer-links">
+<a href="/index.html">Home</a>
+<a href="/index.html#services">Services</a>
+<a href="/technology/technology-saas-architecture.html">Technology</a>
+<a href="/company/company-about-us.html">Company</a>
+<a href="/privacy-policy.html">Privacy Policy</a>
+<a href="mailto:admin@truecaresystem.com">Contact</a>
+</div>
+
 </section>
 
 </body>
