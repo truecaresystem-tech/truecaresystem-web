@@ -1,35 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<urlset
-xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://www.truecaresystem.com/</loc>
-    <lastmod>2026-07-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+    <!-- ================= HOME ================= -->
 
-  <url>
-    <loc>https://www.truecaresystem.com/privacy-policy.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+    <url>
+        <loc>https://www.truecaresystem.com/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
 
-  <url>
-    <loc>https://www.truecaresystem.com/company/</loc>
-  </url>
+    <!-- ================= SERVICES ================= -->
 
-  <url>
-    <loc>https://www.truecaresystem.com/services/</loc>
-  </url>
+    <url>
+        <loc>https://www.truecaresystem.com/services/scheduling-workforce-management.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.95</priority>
+    </url>
 
-  <url>
-    <loc>https://www.truecaresystem.com/technology/</loc>
-  </url>
+    <url>
+        <loc>https://www.truecaresystem.com/services/evv-visit-verification.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.95</priority>
+    </url>
 
-  <url>
-    <loc>https://www.truecaresystem.com/documents/</loc>
-  </url>
+    <url>
+        <loc>https://www.truecaresystem.com/services/documentation-daily-notes.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.95</priority>
+    </url>
+
+    <url>
+        <loc>https://www.truecaresystem.com/services/billing-payroll.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.95</priority>
+    </url>
+
+    <url>
+        <loc>https://www.truecaresystem.com/services/compliance-readiness.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+
+    <url>
+        <loc>https://www.truecaresystem.com/services/incident-risk-tracking.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+
+    <url>
+        <loc>https://www.truecaresystem.com/services/authorization-service-controls.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+
+    <url>
+        <loc>https://www.truecaresystem.com/services/quality-assurance.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+
+    <url>
+        <loc>https://www.truecaresystem.com/services/reporting-dashboards.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+
+    <url>
+        <loc>https://www.truecaresystem.com/services/mobile-app-care-teams.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+
+    <url>
+        <loc>https://www.truecaresystem.com/services/real-time-visibility.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+
+    <url>
+        <loc>https://www.truecaresystem.com/services/operational-analytics.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+
+    <!-- ================= TECHNOLOGY ================= -->
+
+    <url>
+        <loc>https://www.truecaresystem.com/technology/technology-saas-architecture.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+
+    <url>
+        <loc>https://www.truecaresystem.com/technology/technology-end-to-end-evv-workflow.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+
+    <url>
+        <loc>https://www.truecaresystem.com/technology/technology-billing-workflow.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+
+    <url>
+        <loc>https://www.truecaresystem.com/technology/technology-sandata-technical-mapping.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+
+    <url>
+        <loc>https://www.truecaresystem.com/technology/technology-security-platform-readiness.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+
+    <!-- ================= COMPANY ================= -->
+
+    <url>
+        <loc>https://www.truecaresystem.com/company/company-about-us.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+
+    <url>
+        <loc>https://www.truecaresystem.com/company/company-our-vision.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+
+    <url>
+        <loc>https://www.truecaresystem.com/company/company-why-true-care-system.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+
+    <url>
+        <loc>https://www.truecaresystem.com/company/company-leadership-perspective.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+
+    <!-- ================= LEGAL ================= -->
+
+    <url>
+        <loc>https://www.truecaresystem.com/privacy-policy.html</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.50</priority>
+    </url>
+
+    <!-- ================= WEB APPLICATION ================= -->
+
+    <url>
+        <loc>https://app.truecaresystem.com/</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+
+    <!-- ================= PDF BROCHURE ================= -->
+
+    <url>
+        <loc>https://www.truecaresystem.com/documents/brochures/TrueCareSystem_Alternate_EVV_Technical_Solution_Overview.pdf</loc>
+        <lastmod>2026-07-13</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.60</priority>
+    </url>
 
 </urlset>
