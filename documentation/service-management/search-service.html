@@ -3,208 +3,1505 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Search Service documentation for True Care System">
-  <title>Search Service | True Care System Documentation</title>
+
+  <meta
+    name="description"
+    content="Instructions for searching, filtering, reviewing, editing, and deleting services in the True Care System Service Management module."
+  >
+
+  <title>Search Services | Service Management | True Care System Documentation</title>
+
   <link rel="stylesheet" href="/documentation/assets/documentation.css">
+
+  <style>
+    .service-fields-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .service-fields-table col:nth-child(1) {
+      width: 230px;
+    }
+
+    .service-fields-table col:nth-child(2) {
+      width: 210px;
+    }
+
+    .service-fields-table col:nth-child(3) {
+      width: auto;
+    }
+
+    .service-fields-table th,
+    .service-fields-table td {
+      padding: 11px 16px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .service-fields-table th {
+      background: #f8fafc;
+      font-weight: 700;
+    }
+
+    .service-fields-table td:first-child {
+      font-weight: 600;
+    }
+
+    .service-list-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .service-list-table col:nth-child(1) {
+      width: 110px;
+    }
+
+    .service-list-table col:nth-child(2) {
+      width: 300px;
+    }
+
+    .service-list-table col:nth-child(3) {
+      width: 190px;
+    }
+
+    .service-list-table col:nth-child(4) {
+      width: 120px;
+    }
+
+    .service-list-table col:nth-child(5) {
+      width: 110px;
+    }
+
+    .service-list-table col:nth-child(6) {
+      width: 180px;
+    }
+
+    .service-list-table th,
+    .service-list-table td {
+      padding: 11px 14px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .service-list-table th {
+      background: #f8fafc;
+      font-weight: 700;
+    }
+
+    .service-list-table td:nth-child(2) {
+      font-weight: 600;
+    }
+
+    .service-screenshot {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 24px auto 0;
+      border: 1px solid #d9e2ec;
+      border-radius: 10px;
+    }
+
+    .service-screenshot-caption {
+      margin-top: 10px;
+      text-align: center;
+      color: #64748b;
+    }
+
+    .doc-page-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 900px) {
+      .service-fields-table,
+      .service-list-table {
+        table-layout: auto;
+      }
+
+      .service-fields-table col,
+      .service-list-table col {
+        width: auto;
+      }
+
+      .doc-page-navigation {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
   <header class="doc-header">
+
     <a class="doc-brand" href="/documentation/">
-      <img src="/logo.png" alt="True Care System">
+
+      <img
+        src="/logo.png"
+        alt="True Care System"
+      >
+
       <span>
         <strong>True Care System</strong>
         <small>Documentation</small>
       </span>
+
     </a>
 
-    <button class="doc-mobile-menu" id="docMobileMenu"
-            aria-label="Open documentation menu">☰</button>
+    <button
+      class="doc-mobile-menu"
+      id="docMobileMenu"
+      type="button"
+      aria-label="Open documentation menu"
+      aria-controls="docSidebar"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
 
     <div class="doc-header-actions">
+
       <label class="doc-search">
-        <span>⌕</span>
-        <input id="docSearchInput" type="search"
-               placeholder="Search documentation..."
-               autocomplete="off">
+
+        <span aria-hidden="true">⌕</span>
+
+        <input
+          id="docSearchInput"
+          type="search"
+          placeholder="Search documentation..."
+          autocomplete="off"
+          aria-label="Search documentation"
+        >
+
       </label>
-      <a href="/" class="doc-back-link">Return to Website</a>
+
+      <a
+        href="/"
+        class="doc-back-link"
+      >
+        Return to Website
+      </a>
+
     </div>
+
   </header>
 
   <div class="doc-layout">
-    <aside class="doc-sidebar" id="docSidebar">
-      <div class="doc-sidebar-title">Documentation</div>
-      <nav>
-        <a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
-<a class="doc-nav-module active" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
-<a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
-<a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
-<a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
-<a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
-<a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
-<a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
-<a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
-<a class="doc-nav-module" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span>KPI</span></a>
-<a class="doc-nav-module" href="/documentation/time-keeping/"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
-<a class="doc-nav-module" href="/documentation/mobile-evv/"><span class="doc-nav-number">12</span><span>Mobile EVV</span></a>
-<a class="doc-nav-module" href="/documentation/visit-maintenance/"><span class="doc-nav-number">13</span><span>Visit Maintenance</span></a>
-<a class="doc-nav-module" href="/documentation/house-management/"><span class="doc-nav-number">14</span><span>House Management</span></a>
-<a class="doc-nav-module" href="/documentation/payroll/"><span class="doc-nav-number">15</span><span>Payroll</span></a>
-<a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
-<a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
-<a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
-<a class="doc-nav-module" href="/documentation/provider-administration/"><span class="doc-nav-number">19</span><span>Admin</span></a>
-<a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
-<a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
-<a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
-<a class="doc-nav-module" href="/documentation/qa-guide/"><span class="doc-nav-number">23</span><span>QA Guide</span></a>
-<a class="doc-nav-module" href="/documentation/test-catalog/"><span class="doc-nav-number">24</span><span>Test Catalog</span></a>
-<a class="doc-nav-module" href="/documentation/api-documentation/"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
-<a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
-<a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
-<a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
-<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>Frequently Asked Questions</span></a>
-<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
+
+    <aside
+      class="doc-sidebar"
+      id="docSidebar"
+    >
+
+      <div class="doc-sidebar-title">
+        Documentation
+      </div>
+
+      <nav aria-label="Documentation modules">
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/getting-started/"
+        >
+          <span class="doc-nav-number">01</span>
+          <span>Getting Started</span>
+        </a>
+
+        <a
+          class="doc-nav-module active"
+          href="/documentation/service-management/"
+          aria-current="page"
+        >
+          <span class="doc-nav-number">02</span>
+          <span>Services</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/individual-management/"
+        >
+          <span class="doc-nav-number">03</span>
+          <span>Individual</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/employee-management/"
+        >
+          <span class="doc-nav-number">04</span>
+          <span>Employees</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/scheduling/"
+        >
+          <span class="doc-nav-number">05</span>
+          <span>Schedule</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/medication-management/"
+        >
+          <span class="doc-nav-number">06</span>
+          <span>Medication</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/bss/"
+        >
+          <span class="doc-nav-number">07</span>
+          <span>BSS</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/authorization/"
+        >
+          <span class="doc-nav-number">08</span>
+          <span>Authorizations</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/reports/"
+        >
+          <span class="doc-nav-number">09</span>
+          <span>Reports</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/kpi/"
+        >
+          <span class="doc-nav-number">10</span>
+          <span>KPI</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/time-keeping/"
+        >
+          <span class="doc-nav-number">11</span>
+          <span>Time Keeping</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/mobile-evv/"
+        >
+          <span class="doc-nav-number">12</span>
+          <span>Mobile EVV</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/visit-maintenance/"
+        >
+          <span class="doc-nav-number">13</span>
+          <span>Visit Maintenance</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/house-management/"
+        >
+          <span class="doc-nav-number">14</span>
+          <span>House Management</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/payroll/"
+        >
+          <span class="doc-nav-number">15</span>
+          <span>Payroll</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/billing/"
+        >
+          <span class="doc-nav-number">16</span>
+          <span>Billing</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/hipaa-compliance/"
+        >
+          <span class="doc-nav-number">17</span>
+          <span>HIPAA</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/support/"
+        >
+          <span class="doc-nav-number">18</span>
+          <span>Support</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/provider-administration/"
+        >
+          <span class="doc-nav-number">19</span>
+          <span>Admin</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/security/"
+        >
+          <span class="doc-nav-number">20</span>
+          <span>Security</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/audit-logs/"
+        >
+          <span class="doc-nav-number">21</span>
+          <span>Audit Logs</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/developer-guide/"
+        >
+          <span class="doc-nav-number">22</span>
+          <span>Developer Guide</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/qa-guide/"
+        >
+          <span class="doc-nav-number">23</span>
+          <span>QA Guide</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/test-catalog/"
+        >
+          <span class="doc-nav-number">24</span>
+          <span>Test Catalog</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/api-documentation/"
+        >
+          <span class="doc-nav-number">25</span>
+          <span>API Documentation</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/ai-agents/"
+        >
+          <span class="doc-nav-number">26</span>
+          <span>AI Agents</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/company-playbook/"
+        >
+          <span class="doc-nav-number">27</span>
+          <span>Company Playbook</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/troubleshooting/"
+        >
+          <span class="doc-nav-number">28</span>
+          <span>Troubleshooting</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/faq/"
+        >
+          <span class="doc-nav-number">29</span>
+          <span>FAQ</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/release-notes/"
+        >
+          <span class="doc-nav-number">30</span>
+          <span>Release Notes</span>
+        </a>
+
       </nav>
+
     </aside>
 
     <main class="doc-main">
+
       <div class="doc-breadcrumb">
-        <a href="/documentation/">Documentation</a>
-        <span>›</span><a href='/documentation/service-management/'>Services</a>
-        <span>›</span><span>Search Service</span>
+
+        <a href="/documentation/">
+          Documentation
+        </a>
+
+        <span>›</span>
+
+        <a href="/documentation/service-management/">
+          Services
+        </a>
+
+        <span>›</span>
+
+        <span>Search Services</span>
+
       </div>
 
       <article class="doc-article">
+
         <header class="doc-article-header">
+
           <div>
-            <p class="doc-eyebrow">TRUE CARE SYSTEM DOCUMENTATION</p>
-            <h1>Search Service</h1>
+
+            <p class="doc-eyebrow">
+              SERVICE MANAGEMENT
+            </p>
+
+            <h1>Search Services</h1>
+
           </div>
 
           <dl class="doc-metadata">
-            <div><dt>Document ID</dt><dd>SER-DOC-003</dd></div>
-            <div><dt>Version</dt><dd>1.0</dd></div>
-            <div><dt>Status</dt><dd>Planned</dd></div>
-            <div><dt>Last Updated</dt><dd>Pending</dd></div>
+
+            <div>
+              <dt>Document ID</dt>
+              <dd>SER-DOC-003</dd>
+            </div>
+
+            <div>
+              <dt>Version</dt>
+              <dd>1.0</dd>
+            </div>
+
+            <div>
+              <dt>Status</dt>
+              <dd>Draft</dd>
+            </div>
+
+            <div>
+              <dt>Last Updated</dt>
+              <dd>07/23/2026</dd>
+            </div>
+
           </dl>
+
         </header>
 
-        
-    <div class="doc-notice doc-notice-info">
-      <strong>Documentation placeholder</strong>
-      <p>This page has been created and is ready for detailed content,
-         screenshots and review.</p>
-    </div>
+        <div class="doc-notice doc-notice-info">
 
-    <section class="doc-section">
-      <h2>Purpose</h2>
-      <p class="doc-pending">Detailed purpose will be added during module documentation.</p>
-    </section>
+          <strong>Purpose</strong>
 
-    <section class="doc-section">
-      <h2>Who Can Use This Feature</h2>
-      <p class="doc-pending">Roles and permissions will be documented after verification.</p>
-    </section>
+          <p>
+            The Search Services page allows authorized users to locate,
+            review, filter, edit, and manage services that may be used for
+            scheduling and billing throughout True Care System.
+          </p>
 
-    <section class="doc-section">
-      <h2>Navigation</h2>
-      <p class="doc-pending">The exact navigation path will be documented here.</p>
-    </section>
+          <p>
+            The page provides filters for service name, category, and status,
+            together with a service list showing each service's code, name,
+            category, current status, billable configuration, and available
+            actions.
+          </p>
 
-    <section class="doc-section">
-      <h2>Business Flow</h2>
-      <p class="doc-pending">The approved business workflow will be documented here.</p>
-    </section>
-
-    
-    <section class="doc-section">
-      <h2>Screenshot</h2>
-      <div class="doc-screenshot-placeholder">
-        <div class="doc-placeholder-icon">▧</div>
-        <div>
-          <strong>Screenshot Required</strong>
-          <p><b>Screenshot ID:</b> SER-003</p>
-          <p><b>Screen:</b> Search Service</p>
-          <p><b>File:</b> images/SER-003-search-service.jpg</p>
-          <p><b>Recommended capture:</b> Desktop, 100% browser zoom,
-             full page title, navigation, actions, filters and data area visible.</p>
-          <p><b>Privacy requirement:</b> Use demo or training data only.
-             Do not include real PHI, credentials, passwords, SSNs or Medicaid IDs.</p>
         </div>
-      </div>
-    </section>
-    
 
-    <section class="doc-section">
-      <h2>Interface Overview</h2>
-      <p class="doc-pending">Buttons, fields, filters, tabs and page regions will be explained here.</p>
-    </section>
+        <section class="doc-section">
 
-    <section class="doc-section">
-      <h2>Step-by-Step Instructions</h2>
-      <ol class="doc-steps">
-        <li><span>Step instructions pending.</span></li>
-        <li><span>Step instructions pending.</span></li>
-        <li><span>Step instructions pending.</span></li>
-      </ol>
-    </section>
+          <h2>Open Search Services</h2>
 
-    <section class="doc-section">
-      <h2>Permissions</h2>
-      <p class="doc-pending">Access requirements and permission rules will be documented here.</p>
-    </section>
+          <ol>
+            <li>
+              Sign in to True Care System.
+            </li>
 
-    <section class="doc-section">
-      <h2>Validation Rules</h2>
-      <p class="doc-pending">Required fields and business validation rules will be documented here.</p>
-    </section>
+            <li>
+              Open the <strong>Services</strong> menu from the main application
+              navigation.
+            </li>
 
-    <section class="doc-section">
-      <h2>Tips</h2>
-      <p class="doc-pending">Recommended usage tips will be documented here.</p>
-    </section>
+            <li>
+              Select <strong>Search Service</strong>.
+            </li>
+          </ol>
 
-    <section class="doc-section">
-      <h2>Warnings</h2>
-      <p class="doc-pending">Important operational and data safety warnings will be documented here.</p>
-    </section>
+          <p>
+            The Search Services page will open and display the service filters
+            and available service records.
+          </p>
 
-    <section class="doc-section">
-      <h2>HIPAA Considerations</h2>
-      <p class="doc-pending">PHI handling and minimum-necessary requirements will be documented here.</p>
-    </section>
+        </section>
 
-    <section class="doc-section">
-      <h2>Audit Log Behavior</h2>
-      <p class="doc-pending">Expected audit events and recorded details will be documented here.</p>
-    </section>
+        <section class="doc-section">
 
-    <section class="doc-section">
-      <h2>Troubleshooting</h2>
-      <p class="doc-pending">Known issues and recommended resolutions will be documented here.</p>
-    </section>
+          <h2>Search Services Page Overview</h2>
 
-    <section class="doc-section">
-      <h2>Frequently Asked Questions</h2>
-      <p class="doc-pending">Frequently asked questions will be documented here.</p>
-    </section>
+          <p>
+            The Search Services page contains a New Service action, three
+            search filters, and a service results table.
+          </p>
 
-    <section class="doc-section">
-      <h2>Related Documentation</h2>
-      <p><a href="/documentation/service-management/">Return to Services</a></p>
-    </section>
-    
+          <img
+            class="service-screenshot"
+            src="images/search-services.jpg"
+            alt="Search Services page in True Care System"
+          >
+
+          <p class="service-screenshot-caption">
+            <em>
+              Figure 1. Search Services page showing search filters, service
+              records, status, billable configuration, and record actions.
+            </em>
+          </p>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>New Service Action</h2>
+
+          <p>
+            The <strong>+ New Service</strong> button is displayed in the
+            upper-right area of the page.
+          </p>
+
+          <p>
+            Select this button to open the New Service page and create a new
+            standard or provider-specific service.
+          </p>
+
+          <div class="doc-notice doc-notice-info">
+
+            <strong>Before Creating a New Service</strong>
+
+            <p>
+              Search the existing service list first to avoid creating a
+              duplicate service with the same name, code, category, or
+              operational purpose.
+            </p>
+
+          </div>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Search Filters</h2>
+
+          <p>
+            Use the available filters to narrow the displayed service records.
+          </p>
+
+          <div style="overflow-x:auto;">
+
+            <table class="service-fields-table">
+
+              <colgroup>
+                <col>
+                <col>
+                <col>
+              </colgroup>
+
+              <thead>
+                <tr>
+                  <th>Filter</th>
+                  <th>Default Selection</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>Service Name</td>
+                  <td>All services</td>
+                  <td>
+                    Filters the results by a selected service name. Keep
+                    <strong>All services</strong> selected to display all
+                    available service names.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Category</td>
+                  <td>All categories</td>
+                  <td>
+                    Filters the service list by service category, such as
+                    Residential or Non-Residential, depending on the categories
+                    configured in the system.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Status</td>
+                  <td>All statuses</td>
+                  <td>
+                    Filters records according to their current status, such as
+                    Active, Pending, or Inactive.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Step 1 — Filter by Service Name</h2>
+
+          <ol>
+            <li>
+              Open the <strong>Service Name</strong> selection list.
+            </li>
+
+            <li>
+              Select the required service.
+            </li>
+
+            <li>
+              Review the updated service list.
+            </li>
+          </ol>
+
+          <p>
+            Select <strong>All services</strong> to remove the service-name
+            filter and display all available service records.
+          </p>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Step 2 — Filter by Category</h2>
+
+          <ol>
+            <li>
+              Open the <strong>Category</strong> selection list.
+            </li>
+
+            <li>
+              Select the required service category.
+            </li>
+
+            <li>
+              Review the matching services displayed in the results table.
+            </li>
+          </ol>
+
+          <p>
+            In the screenshot, the listed services are categorized as
+            <strong>Non-Residential</strong>.
+          </p>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Step 3 — Filter by Status</h2>
+
+          <ol>
+            <li>
+              Open the <strong>Status</strong> selection list.
+            </li>
+
+            <li>
+              Select the required status.
+            </li>
+
+            <li>
+              Review the filtered results.
+            </li>
+          </ol>
+
+          <p>
+            Status filters may be used to locate active services, pending
+            services, inactive services, or all services.
+          </p>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Using Multiple Filters</h2>
+
+          <p>
+            Filters may be used together to locate a more specific group of
+            services.
+          </p>
+
+          <p>For example:</p>
+
+          <ul>
+            <li>
+              Select a specific Service Name.
+            </li>
+
+            <li>
+              Select <strong>Non-Residential</strong> as the Category.
+            </li>
+
+            <li>
+              Select <strong>Active</strong> as the Status.
+            </li>
+          </ul>
+
+          <p>
+            The results table will display only records that meet the selected
+            filter conditions.
+          </p>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Service Results Table</h2>
+
+          <p>
+            The results table displays the services that match the current
+            filter selections.
+          </p>
+
+          <div style="overflow-x:auto;">
+
+            <table class="service-fields-table">
+
+              <colgroup>
+                <col>
+                <col>
+                <col>
+              </colgroup>
+
+              <thead>
+                <tr>
+                  <th>Column</th>
+                  <th>Example</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>Code</td>
+                  <td>W7060</td>
+                  <td>
+                    Displays the billing, procedure, or service code assigned
+                    to the service.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Service Name</td>
+                  <td>In-Home &amp; Community Support Services</td>
+                  <td>
+                    Displays the official name of the configured service.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Category</td>
+                  <td>Non-Residential</td>
+                  <td>
+                    Displays the category assigned to the service.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Status</td>
+                  <td>Active</td>
+                  <td>
+                    Displays the current operational status of the service.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Billable</td>
+                  <td>Yes</td>
+                  <td>
+                    Indicates whether the service is configured for claims,
+                    invoices, or billing workflows.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Actions</td>
+                  <td>Edit / Delete</td>
+                  <td>
+                    Provides the available service-management actions for the
+                    selected record.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Example Service Records</h2>
+
+          <p>
+            The screenshot shows the following service records:
+          </p>
+
+          <div style="overflow-x:auto;">
+
+            <table class="service-list-table">
+
+              <colgroup>
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+              </colgroup>
+
+              <thead>
+                <tr>
+                  <th>Code</th>
+                  <th>Service Name</th>
+                  <th>Category</th>
+                  <th>Status</th>
+                  <th>Billable</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>T2025</td>
+                  <td>Licensed Practical Nurse</td>
+                  <td>Non-Residential</td>
+                  <td>Active</td>
+                  <td>Yes</td>
+                  <td>Edit / Delete</td>
+                </tr>
+
+                <tr>
+                  <td>W101</td>
+                  <td>Non-Emergency (Transportation)</td>
+                  <td>Non-Residential</td>
+                  <td>Active</td>
+                  <td>Yes</td>
+                  <td>Edit / Delete</td>
+                </tr>
+
+                <tr>
+                  <td>W1726</td>
+                  <td>Companion Services</td>
+                  <td>Non-Residential</td>
+                  <td>Pending</td>
+                  <td>Yes</td>
+                  <td>Edit / Delete</td>
+                </tr>
+
+                <tr>
+                  <td>W7060</td>
+                  <td>In-Home &amp; Community Support Services</td>
+                  <td>Non-Residential</td>
+                  <td>Active</td>
+                  <td>Yes</td>
+                  <td>Edit / Delete</td>
+                </tr>
+
+                <tr>
+                  <td>W7095</td>
+                  <td>Behavioral Support</td>
+                  <td>Non-Residential</td>
+                  <td>Active</td>
+                  <td>Yes</td>
+                  <td>Edit / Delete</td>
+                </tr>
+
+                <tr>
+                  <td>W7282</td>
+                  <td>Chore Services</td>
+                  <td>Non-Residential</td>
+                  <td>Active</td>
+                  <td>Yes</td>
+                  <td>Edit / Delete</td>
+                </tr>
+
+                <tr>
+                  <td>W7283</td>
+                  <td>Homemake Services</td>
+                  <td>Non-Residential</td>
+                  <td>Active</td>
+                  <td>Yes</td>
+                  <td>Edit / Delete</td>
+                </tr>
+
+                <tr>
+                  <td>W8996</td>
+                  <td>Behavioral Support</td>
+                  <td>Non-Residential</td>
+                  <td>Active</td>
+                  <td>Yes</td>
+                  <td>Edit / Delete</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Edit a Service</h2>
+
+          <p>
+            Select <strong>Edit</strong> in the Actions column to open the
+            selected service record.
+          </p>
+
+          <p>
+            The service detail page may allow an authorized user to review or
+            update information such as:
+          </p>
+
+          <ul>
+            <li>Service name.</li>
+            <li>Billing or service code.</li>
+            <li>Category.</li>
+            <li>Status.</li>
+            <li>Billable configuration.</li>
+            <li>Ratio or zone level.</li>
+            <li>Service format and units.</li>
+            <li>Rate.</li>
+            <li>Description and internal notes.</li>
+          </ul>
+
+          <div class="doc-notice doc-notice-warning">
+
+            <strong>Review Before Editing</strong>
+
+            <p>
+              Changes to an existing service may affect scheduling,
+              authorizations, visits, billing, claims, payroll, reporting, and
+              historical records.
+            </p>
+
+          </div>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Delete a Service</h2>
+
+          <p>
+            Select <strong>Delete</strong> in the Actions column to request
+            permanent removal of the service.
+          </p>
+
+          <div class="doc-notice doc-notice-warning">
+
+            <strong>Permanent Deletion Restriction</strong>
+
+            <p>
+              A service may be permanently deleted only when it has not been
+              used by schedules, authorizations, visits, billing records, or
+              claims.
+            </p>
+
+          </div>
+
+          <p>
+            This restriction protects operational and historical data from
+            becoming incomplete or disconnected.
+          </p>
+
+          <p>
+            When a service has already been used, change its status to inactive
+            rather than deleting the record.
+          </p>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Before Deleting a Service</h2>
+
+          <ol>
+            <li>
+              Confirm that the correct service record is selected.
+            </li>
+
+            <li>
+              Verify that the service has not been used in schedules.
+            </li>
+
+            <li>
+              Verify that the service has not been connected to an
+              authorization.
+            </li>
+
+            <li>
+              Confirm that no visits reference the service.
+            </li>
+
+            <li>
+              Confirm that no billing records or claims reference the service.
+            </li>
+
+            <li>
+              Use an inactive status instead when historical records must be
+              preserved.
+            </li>
+          </ol>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Service Status</h2>
+
+          <div style="overflow-x:auto;">
+
+            <table class="service-fields-table">
+
+              <colgroup>
+                <col>
+                <col>
+                <col>
+              </colgroup>
+
+              <thead>
+                <tr>
+                  <th>Status</th>
+                  <th>Availability</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>Active</td>
+                  <td>Available</td>
+                  <td>
+                    The service is approved and available for applicable
+                    operational workflows.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Pending</td>
+                  <td>Limited or awaiting approval</td>
+                  <td>
+                    The service configuration may still require review,
+                    approval, or completion.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Inactive</td>
+                  <td>Not available for new use</td>
+                  <td>
+                    The service is retained for historical review but should
+                    not be selected for new operational activity.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Billable Status</h2>
+
+          <p>
+            The Billable column indicates whether the service is configured for
+            billing-related workflows.
+          </p>
+
+          <ul>
+            <li>
+              <strong>Yes</strong> — The service may be used for claims,
+              invoices, or related billing processing.
+            </li>
+
+            <li>
+              <strong>No</strong> — The service is not configured for billing.
+            </li>
+          </ul>
+
+          <p>
+            Billable status should be verified before assigning the service to
+            production scheduling or authorization workflows.
+          </p>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Recommended Service Review</h2>
+
+          <p>
+            Review service records regularly to maintain accurate and
+            controlled service configuration.
+          </p>
+
+          <ul>
+            <li>
+              Confirm that service names and codes remain accurate.
+            </li>
+
+            <li>
+              Review pending services requiring completion or approval.
+            </li>
+
+            <li>
+              Inactivate services that should no longer be used.
+            </li>
+
+            <li>
+              Confirm that billable settings match operational requirements.
+            </li>
+
+            <li>
+              Check for duplicate or similar services.
+            </li>
+
+            <li>
+              Review rates and unit configuration before production use.
+            </li>
+          </ul>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Security</h2>
+
+          <ul>
+            <li>
+              Only authorized users should create, edit, delete, activate, or
+              deactivate services.
+            </li>
+
+            <li>
+              Service-management permissions should be assigned according to
+              job responsibilities.
+            </li>
+
+            <li>
+              Deletion should be limited to users with an approved
+              administrative role.
+            </li>
+
+            <li>
+              Service access and modification activity may be recorded in
+              Audit Logs.
+            </li>
+          </ul>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>HIPAA Considerations</h2>
+
+          <ul>
+            <li>
+              Service records should not contain unnecessary individual PHI.
+            </li>
+
+            <li>
+              Access service configuration only when required for assigned job
+              responsibilities.
+            </li>
+
+            <li>
+              Preserve historical service relationships used in care delivery,
+              authorizations, visits, and billing.
+            </li>
+
+            <li>
+              Do not delete records when inactivation is required to maintain
+              an accurate audit history.
+            </li>
+          </ul>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Troubleshooting</h2>
+
+          <h3>A service does not appear in the list.</h3>
+
+          <ul>
+            <li>
+              Set Service Name to <strong>All services</strong>.
+            </li>
+
+            <li>
+              Set Category to <strong>All categories</strong>.
+            </li>
+
+            <li>
+              Set Status to <strong>All statuses</strong>.
+            </li>
+
+            <li>
+              Refresh the page.
+            </li>
+
+            <li>
+              Verify that the service was saved successfully.
+            </li>
+          </ul>
+
+          <h3>The list shows no matching services.</h3>
+
+          <ul>
+            <li>
+              Review the selected filters.
+            </li>
+
+            <li>
+              Remove one filter at a time.
+            </li>
+
+            <li>
+              Reset all filters to their default selections.
+            </li>
+          </ul>
+
+          <h3>The Delete action does not work.</h3>
+
+          <p>
+            The service may already be referenced by a schedule,
+            authorization, visit, billing record, or claim. Change the service
+            to inactive instead of deleting it.
+          </p>
+
+          <h3>The Edit action is unavailable.</h3>
+
+          <ul>
+            <li>
+              Verify that your account has service-management permissions.
+            </li>
+
+            <li>
+              Confirm that the correct user account is signed in.
+            </li>
+
+            <li>
+              Contact the Provider Administrator if access is required.
+            </li>
+          </ul>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>How do I display every service?</h3>
+
+          <p>
+            Select <strong>All services</strong>,
+            <strong>All categories</strong>, and
+            <strong>All statuses</strong>.
+          </p>
+
+          <h3>Can I use more than one filter?</h3>
+
+          <p>
+            Yes. Service Name, Category, and Status filters may be used
+            together.
+          </p>
+
+          <h3>How do I create a new service?</h3>
+
+          <p>
+            Select the <strong>+ New Service</strong> button in the upper-right
+            area of the Search Services page.
+          </p>
+
+          <h3>Can I edit an active service?</h3>
+
+          <p>
+            An authorized user may edit an active service, but changes should
+            be reviewed carefully because the service may already be used by
+            other modules.
+          </p>
+
+          <h3>Why can I not delete a service?</h3>
+
+          <p>
+            A service cannot be deleted after it has been used by schedules,
+            authorizations, visits, billing records, or claims.
+          </p>
+
+          <h3>Should an old service be deleted?</h3>
+
+          <p>
+            Normally, no. Change the service to inactive when historical
+            records must remain available.
+          </p>
+
+          <h3>What does Billable = Yes mean?</h3>
+
+          <p>
+            It means the service is configured for use in claims, invoices, or
+            related billing workflows.
+          </p>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Related Documentation</h2>
+
+          <ul>
+
+            <li>
+              <a href="/documentation/service-management/overview.html">
+                Service Management Overview
+              </a>
+            </li>
+
+            <li>
+              <a href="/documentation/service-management/new-service.html">
+                New Service
+              </a>
+            </li>
+
+            <li>
+              <a href="/documentation/service-management/service-details.html">
+                Service Details
+              </a>
+            </li>
+
+            <li>
+              <a href="/documentation/service-management/service-codes.html">
+                Service Codes
+              </a>
+            </li>
+
+            <li>
+              <a href="/documentation/service-management/service-rates.html">
+                Service Rates
+              </a>
+            </li>
+
+            <li>
+              <a href="/documentation/service-management/units-billing-rules.html">
+                Units and Billing Rules
+              </a>
+            </li>
+
+            <li>
+              <a href="/documentation/service-management/service-status.html">
+                Service Status
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+        <section class="doc-section">
+
+          <div class="doc-page-navigation">
+
+            <a
+              class="doc-button"
+              href="/documentation/service-management/new-service.html"
+            >
+              ← Back
+            </a>
+
+            <a
+              class="doc-button"
+              href="/documentation/service-management/"
+            >
+              🏠 Home
+            </a>
+
+            <a
+              class="doc-button"
+              href="/documentation/service-management/service-details.html"
+            >
+              Next →
+            </a>
+
+          </div>
+
+        </section>
+
       </article>
 
       <footer class="doc-page-footer">
-        <p>© 2026 True Care System. All rights reserved.</p>
-        <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
+
+        <p>
+          © 2026 True Care System. All rights reserved.
+        </p>
+
+        <p>
+          Documentation is maintained as part of the True Care System product
+          lifecycle.
+        </p>
+
       </footer>
+
     </main>
+
   </div>
 
-  <div class="doc-search-results" id="docSearchResults" hidden></div>
+  <div
+    class="doc-search-results"
+    id="docSearchResults"
+    hidden
+  ></div>
+
   <script src="/documentation/assets/documentation.js"></script>
+
 </body>
 </html>
