@@ -3,208 +3,1699 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Service Details documentation for True Care System">
-  <title>Service Details | True Care System Documentation</title>
+
+  <meta
+    name="description"
+    content="Service Details documentation for True Care System, including service identity, provider-specific configuration, service examples, codes, billing settings, status, and compliance considerations."
+  >
+
+  <title>Service Details | Service Management | True Care System Documentation</title>
+
   <link rel="stylesheet" href="/documentation/assets/documentation.css">
+
+  <style>
+    .service-details-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .service-details-table col:nth-child(1) {
+      width: 230px;
+    }
+
+    .service-details-table col:nth-child(2) {
+      width: 210px;
+    }
+
+    .service-details-table col:nth-child(3) {
+      width: auto;
+    }
+
+    .service-details-table th,
+    .service-details-table td {
+      padding: 11px 16px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .service-details-table th {
+      background: #f8fafc;
+      font-weight: 700;
+    }
+
+    .service-details-table td:first-child {
+      font-weight: 600;
+    }
+
+    .service-example-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .service-example-table col:nth-child(1) {
+      width: 110px;
+    }
+
+    .service-example-table col:nth-child(2) {
+      width: 330px;
+    }
+
+    .service-example-table col:nth-child(3) {
+      width: auto;
+    }
+
+    .service-example-table th,
+    .service-example-table td {
+      padding: 11px 16px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .service-example-table th {
+      background: #f8fafc;
+      font-weight: 700;
+    }
+
+    .service-example-table td:first-child {
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .doc-page-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 900px) {
+      .service-details-table,
+      .service-example-table {
+        table-layout: auto;
+      }
+
+      .service-details-table col,
+      .service-example-table col {
+        width: auto;
+      }
+
+      .service-example-table td:first-child {
+        white-space: normal;
+      }
+
+      .doc-page-navigation {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
   <header class="doc-header">
+
     <a class="doc-brand" href="/documentation/">
-      <img src="/logo.png" alt="True Care System">
+
+      <img
+        src="/logo.png"
+        alt="True Care System"
+      >
+
       <span>
         <strong>True Care System</strong>
         <small>Documentation</small>
       </span>
+
     </a>
 
-    <button class="doc-mobile-menu" id="docMobileMenu"
-            aria-label="Open documentation menu">☰</button>
+    <button
+      class="doc-mobile-menu"
+      id="docMobileMenu"
+      type="button"
+      aria-label="Open documentation menu"
+      aria-controls="docSidebar"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
 
     <div class="doc-header-actions">
+
       <label class="doc-search">
-        <span>⌕</span>
-        <input id="docSearchInput" type="search"
-               placeholder="Search documentation..."
-               autocomplete="off">
+
+        <span aria-hidden="true">⌕</span>
+
+        <input
+          id="docSearchInput"
+          type="search"
+          placeholder="Search documentation..."
+          autocomplete="off"
+          aria-label="Search documentation"
+        >
+
       </label>
-      <a href="/" class="doc-back-link">Return to Website</a>
+
+      <a
+        href="/"
+        class="doc-back-link"
+      >
+        Return to Website
+      </a>
+
     </div>
+
   </header>
 
   <div class="doc-layout">
-    <aside class="doc-sidebar" id="docSidebar">
-      <div class="doc-sidebar-title">Documentation</div>
-      <nav>
-        <a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
-<a class="doc-nav-module active" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
-<a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
-<a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
-<a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
-<a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
-<a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
-<a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
-<a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
-<a class="doc-nav-module" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span>KPI</span></a>
-<a class="doc-nav-module" href="/documentation/time-keeping/"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
-<a class="doc-nav-module" href="/documentation/mobile-evv/"><span class="doc-nav-number">12</span><span>Mobile EVV</span></a>
-<a class="doc-nav-module" href="/documentation/visit-maintenance/"><span class="doc-nav-number">13</span><span>Visit Maintenance</span></a>
-<a class="doc-nav-module" href="/documentation/house-management/"><span class="doc-nav-number">14</span><span>House Management</span></a>
-<a class="doc-nav-module" href="/documentation/payroll/"><span class="doc-nav-number">15</span><span>Payroll</span></a>
-<a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
-<a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
-<a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
-<a class="doc-nav-module" href="/documentation/provider-administration/"><span class="doc-nav-number">19</span><span>Admin</span></a>
-<a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
-<a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
-<a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
-<a class="doc-nav-module" href="/documentation/qa-guide/"><span class="doc-nav-number">23</span><span>QA Guide</span></a>
-<a class="doc-nav-module" href="/documentation/test-catalog/"><span class="doc-nav-number">24</span><span>Test Catalog</span></a>
-<a class="doc-nav-module" href="/documentation/api-documentation/"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
-<a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
-<a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
-<a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
-<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>Frequently Asked Questions</span></a>
-<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
+
+    <aside
+      class="doc-sidebar"
+      id="docSidebar"
+    >
+
+      <div class="doc-sidebar-title">
+        Documentation
+      </div>
+
+      <nav aria-label="Documentation modules">
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/getting-started/"
+        >
+          <span class="doc-nav-number">01</span>
+          <span>Getting Started</span>
+        </a>
+
+        <a
+          class="doc-nav-module active"
+          href="/documentation/service-management/"
+          aria-current="page"
+        >
+          <span class="doc-nav-number">02</span>
+          <span>Services</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/individual-management/"
+        >
+          <span class="doc-nav-number">03</span>
+          <span>Individual</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/employee-management/"
+        >
+          <span class="doc-nav-number">04</span>
+          <span>Employees</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/scheduling/"
+        >
+          <span class="doc-nav-number">05</span>
+          <span>Schedule</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/medication-management/"
+        >
+          <span class="doc-nav-number">06</span>
+          <span>Medication</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/bss/"
+        >
+          <span class="doc-nav-number">07</span>
+          <span>BSS</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/authorization/"
+        >
+          <span class="doc-nav-number">08</span>
+          <span>Authorizations</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/reports/"
+        >
+          <span class="doc-nav-number">09</span>
+          <span>Reports</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/kpi/"
+        >
+          <span class="doc-nav-number">10</span>
+          <span>KPI</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/time-keeping/"
+        >
+          <span class="doc-nav-number">11</span>
+          <span>Time Keeping</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/mobile-evv/"
+        >
+          <span class="doc-nav-number">12</span>
+          <span>Mobile EVV</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/visit-maintenance/"
+        >
+          <span class="doc-nav-number">13</span>
+          <span>Visit Maintenance</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/house-management/"
+        >
+          <span class="doc-nav-number">14</span>
+          <span>House Management</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/payroll/"
+        >
+          <span class="doc-nav-number">15</span>
+          <span>Payroll</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/billing/"
+        >
+          <span class="doc-nav-number">16</span>
+          <span>Billing</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/hipaa-compliance/"
+        >
+          <span class="doc-nav-number">17</span>
+          <span>HIPAA</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/support/"
+        >
+          <span class="doc-nav-number">18</span>
+          <span>Support</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/provider-administration/"
+        >
+          <span class="doc-nav-number">19</span>
+          <span>Admin</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/security/"
+        >
+          <span class="doc-nav-number">20</span>
+          <span>Security</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/audit-logs/"
+        >
+          <span class="doc-nav-number">21</span>
+          <span>Audit Logs</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/developer-guide/"
+        >
+          <span class="doc-nav-number">22</span>
+          <span>Developer Guide</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/qa-guide/"
+        >
+          <span class="doc-nav-number">23</span>
+          <span>QA Guide</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/test-catalog/"
+        >
+          <span class="doc-nav-number">24</span>
+          <span>Test Catalog</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/api-documentation/"
+        >
+          <span class="doc-nav-number">25</span>
+          <span>API Documentation</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/ai-agents/"
+        >
+          <span class="doc-nav-number">26</span>
+          <span>AI Agents</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/company-playbook/"
+        >
+          <span class="doc-nav-number">27</span>
+          <span>Company Playbook</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/troubleshooting/"
+        >
+          <span class="doc-nav-number">28</span>
+          <span>Troubleshooting</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/faq/"
+        >
+          <span class="doc-nav-number">29</span>
+          <span>FAQ</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/release-notes/"
+        >
+          <span class="doc-nav-number">30</span>
+          <span>Release Notes</span>
+        </a>
+
       </nav>
+
     </aside>
 
     <main class="doc-main">
+
       <div class="doc-breadcrumb">
-        <a href="/documentation/">Documentation</a>
-        <span>›</span><a href='/documentation/service-management/'>Services</a>
-        <span>›</span><span>Service Details</span>
+
+        <a href="/documentation/">
+          Documentation
+        </a>
+
+        <span>›</span>
+
+        <a href="/documentation/service-management/">
+          Services
+        </a>
+
+        <span>›</span>
+
+        <span>Service Details</span>
+
       </div>
 
       <article class="doc-article">
+
         <header class="doc-article-header">
+
           <div>
-            <p class="doc-eyebrow">TRUE CARE SYSTEM DOCUMENTATION</p>
+
+            <p class="doc-eyebrow">
+              SERVICE MANAGEMENT
+            </p>
+
             <h1>Service Details</h1>
+
           </div>
 
           <dl class="doc-metadata">
-            <div><dt>Document ID</dt><dd>SER-DOC-004</dd></div>
-            <div><dt>Version</dt><dd>1.0</dd></div>
-            <div><dt>Status</dt><dd>Planned</dd></div>
-            <div><dt>Last Updated</dt><dd>Pending</dd></div>
+
+            <div>
+              <dt>Document ID</dt>
+              <dd>SER-DOC-004</dd>
+            </div>
+
+            <div>
+              <dt>Version</dt>
+              <dd>1.0</dd>
+            </div>
+
+            <div>
+              <dt>Status</dt>
+              <dd>Draft</dd>
+            </div>
+
+            <div>
+              <dt>Last Updated</dt>
+              <dd>07/23/2026</dd>
+            </div>
+
           </dl>
+
         </header>
 
-        
-    <div class="doc-notice doc-notice-info">
-      <strong>Documentation placeholder</strong>
-      <p>This page has been created and is ready for detailed content,
-         screenshots and review.</p>
-    </div>
+        <div class="doc-notice doc-notice-info">
 
-    <section class="doc-section">
-      <h2>Purpose</h2>
-      <p class="doc-pending">Detailed purpose will be added during module documentation.</p>
-    </section>
+          <strong>Purpose</strong>
 
-    <section class="doc-section">
-      <h2>Who Can Use This Feature</h2>
-      <p class="doc-pending">Roles and permissions will be documented after verification.</p>
-    </section>
+          <p>
+            Service Details define the identity, operational configuration,
+            billing behavior, unit structure, rate, category, status, and
+            internal description of a service used by a Provider in True Care
+            System.
+          </p>
 
-    <section class="doc-section">
-      <h2>Navigation</h2>
-      <p class="doc-pending">The exact navigation path will be documented here.</p>
-    </section>
+          <p>
+            Each Provider may offer a different combination of services based
+            on its approved programs, enrolled service types, payer
+            requirements, contracts, licenses, locations, and applicable
+            government requirements.
+          </p>
 
-    <section class="doc-section">
-      <h2>Business Flow</h2>
-      <p class="doc-pending">The approved business workflow will be documented here.</p>
-    </section>
-
-    
-    <section class="doc-section">
-      <h2>Screenshot</h2>
-      <div class="doc-screenshot-placeholder">
-        <div class="doc-placeholder-icon">▧</div>
-        <div>
-          <strong>Screenshot Required</strong>
-          <p><b>Screenshot ID:</b> SER-004</p>
-          <p><b>Screen:</b> Service Details</p>
-          <p><b>File:</b> images/SER-004-service-details.jpg</p>
-          <p><b>Recommended capture:</b> Desktop, 100% browser zoom,
-             full page title, navigation, actions, filters and data area visible.</p>
-          <p><b>Privacy requirement:</b> Use demo or training data only.
-             Do not include real PHI, credentials, passwords, SSNs or Medicaid IDs.</p>
         </div>
-      </div>
-    </section>
-    
 
-    <section class="doc-section">
-      <h2>Interface Overview</h2>
-      <p class="doc-pending">Buttons, fields, filters, tabs and page regions will be explained here.</p>
-    </section>
+        <section class="doc-section">
 
-    <section class="doc-section">
-      <h2>Step-by-Step Instructions</h2>
-      <ol class="doc-steps">
-        <li><span>Step instructions pending.</span></li>
-        <li><span>Step instructions pending.</span></li>
-        <li><span>Step instructions pending.</span></li>
-      </ol>
-    </section>
+          <h2>Provider-Specific Service Configuration</h2>
 
-    <section class="doc-section">
-      <h2>Permissions</h2>
-      <p class="doc-pending">Access requirements and permission rules will be documented here.</p>
-    </section>
+          <p>
+            True Care System supports multiple Providers. The services
+            available to one Provider may be different from the services
+            available to another Provider.
+          </p>
 
-    <section class="doc-section">
-      <h2>Validation Rules</h2>
-      <p class="doc-pending">Required fields and business validation rules will be documented here.</p>
-    </section>
+          <p>
+            A Provider should configure only the services that it is authorized,
+            enrolled, contracted, licensed, or otherwise approved to deliver.
+            The Provider is responsible for confirming that each service is
+            configured according to the program and payer requirements that
+            apply to its organization.
+          </p>
 
-    <section class="doc-section">
-      <h2>Tips</h2>
-      <p class="doc-pending">Recommended usage tips will be documented here.</p>
-    </section>
+          <div class="doc-notice doc-notice-warning">
 
-    <section class="doc-section">
-      <h2>Warnings</h2>
-      <p class="doc-pending">Important operational and data safety warnings will be documented here.</p>
-    </section>
+            <strong>Important</strong>
 
-    <section class="doc-section">
-      <h2>HIPAA Considerations</h2>
-      <p class="doc-pending">PHI handling and minimum-necessary requirements will be documented here.</p>
-    </section>
+            <p>
+              A service name or internal abbreviation does not automatically
+              determine the official billing code. The Provider must enter the
+              correct procedure code, billing code, modifier, level code, unit,
+              and rate that correspond to the service under which the Provider
+              is registered or approved.
+            </p>
 
-    <section class="doc-section">
-      <h2>Audit Log Behavior</h2>
-      <p class="doc-pending">Expected audit events and recorded details will be documented here.</p>
-    </section>
+          </div>
 
-    <section class="doc-section">
-      <h2>Troubleshooting</h2>
-      <p class="doc-pending">Known issues and recommended resolutions will be documented here.</p>
-    </section>
+        </section>
 
-    <section class="doc-section">
-      <h2>Frequently Asked Questions</h2>
-      <p class="doc-pending">Frequently asked questions will be documented here.</p>
-    </section>
+        <section class="doc-section">
 
-    <section class="doc-section">
-      <h2>Related Documentation</h2>
-      <p><a href="/documentation/service-management/">Return to Services</a></p>
-    </section>
-    
+          <h2>Service Name and Service Code</h2>
+
+          <p>
+            A service record may contain two different types of codes:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Internal Service Identifier</strong> — An abbreviation
+              such as PCA, HCSS, LPN, BSS, or RESP used to identify the service
+              type within the system.
+            </li>
+
+            <li>
+              <strong>Official Billing or Procedure Code</strong> — The code
+              entered by the Provider according to the approved service,
+              payer, program, waiver, authorization, contract, or fee schedule.
+            </li>
+          </ul>
+
+          <p>
+            The internal identifier helps users recognize the service type.
+            It should not be treated as a universal government billing code.
+          </p>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Service Detail Components</h2>
+
+          <div style="overflow-x:auto;">
+
+            <table class="service-details-table">
+
+              <colgroup>
+                <col>
+                <col>
+                <col>
+              </colgroup>
+
+              <thead>
+                <tr>
+                  <th>Component</th>
+                  <th>Example</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>Service Type</td>
+                  <td>HCSS</td>
+                  <td>
+                    Identifies the general type of support or professional
+                    service.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Service Name</td>
+                  <td>
+                    In-Home &amp; Community Support Services
+                  </td>
+                  <td>
+                    Displays the full service name used by authorized users
+                    throughout the system.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Billing Code</td>
+                  <td>Provider-configured</td>
+                  <td>
+                    Stores the official code applicable to the service under the
+                    Provider's approved program or payer configuration.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Category</td>
+                  <td>Non-Residential</td>
+                  <td>
+                    Groups the service according to its operational or program
+                    classification.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Status</td>
+                  <td>Active</td>
+                  <td>
+                    Determines whether the service is available for new
+                    scheduling and operational use.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Billable</td>
+                  <td>Yes</td>
+                  <td>
+                    Indicates whether the service may participate in claims,
+                    invoices, or billing workflows.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Level Type</td>
+                  <td>Ratio or Zone</td>
+                  <td>
+                    Defines how the service level is structured.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Level</td>
+                  <td>1:1</td>
+                  <td>
+                    Identifies the selected staff-to-individual ratio or
+                    applicable zone.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Service Code per Level</td>
+                  <td>Provider-configured</td>
+                  <td>
+                    Stores the detailed code used for the selected service
+                    level.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Format</td>
+                  <td>Unit (15 min)</td>
+                  <td>
+                    Defines whether the service is measured by unit, hour,
+                    mileage, day, event, or another approved format.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Rate</td>
+                  <td>Provider-configured</td>
+                  <td>
+                    Stores the approved rate corresponding to the service,
+                    level, and unit format.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Description</td>
+                  <td>Service summary</td>
+                  <td>
+                    Explains the service purpose and the type of support
+                    delivered.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Internal Notes</td>
+                  <td>Administrative notes</td>
+                  <td>
+                    Stores optional operational information for authorized
+                    scheduling, billing, or administrative personnel.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Examples of Service Types</h2>
+
+          <p>
+            The following list contains examples of service types that a
+            Provider may configure. The actual services available depend on the
+            Provider's approvals, programs, payer enrollment, and applicable
+            government requirements.
+          </p>
+
+          <div style="overflow-x:auto;">
+
+            <table class="service-example-table">
+
+              <colgroup>
+                <col>
+                <col>
+                <col>
+              </colgroup>
+
+              <thead>
+                <tr>
+                  <th>Identifier</th>
+                  <th>Service Name</th>
+                  <th>Code Configuration Note</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>PCA</td>
+                  <td>Personal Care Assistant</td>
+                  <td>
+                    The Provider must enter the code applicable to the approved
+                    Personal Care Assistant service.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>NT</td>
+                  <td>Nursing / Nurse Triage</td>
+                  <td>
+                    The applicable nursing or triage code must be configured by
+                    the Provider.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>PBIS</td>
+                  <td>
+                    Positive Behavior Interventions and Supports
+                  </td>
+                  <td>
+                    The Provider must use the code associated with its approved
+                    behavior intervention service.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>BSS</td>
+                  <td>Behavior Support Services</td>
+                  <td>
+                    The code must correspond to the approved Behavioral Support
+                    Services configuration.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>PT</td>
+                  <td>Physical Therapy</td>
+                  <td>
+                    The Provider must configure the correct therapy code,
+                    modifier, and unit when applicable.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>CNA</td>
+                  <td>Certified Nursing Assistant</td>
+                  <td>
+                    The billing or service code depends on the approved CNA
+                    service arrangement.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>RESP</td>
+                  <td>Respite Services</td>
+                  <td>
+                    The Provider must select the code and unit structure for the
+                    approved respite service.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>SHC</td>
+                  <td>
+                    Shared Home Care / Shared Habilitation
+                  </td>
+                  <td>
+                    The code must match the Provider's authorized shared-care or
+                    shared-habilitation program.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>OT</td>
+                  <td>Occupational Therapy</td>
+                  <td>
+                    The Provider must configure the approved occupational
+                    therapy code and billing unit.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>SCM</td>
+                  <td>
+                    Service Coordination / Case Management
+                  </td>
+                  <td>
+                    The applicable coordination or case-management code must be
+                    entered by the Provider.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>COMP</td>
+                  <td>Companion Services</td>
+                  <td>
+                    The Provider must configure the correct Companion Services
+                    code for its approved program.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>LPN</td>
+                  <td>Licensed Practical Nurse</td>
+                  <td>
+                    The Provider must enter the approved LPN service code,
+                    modifier, unit, and rate.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>HCSS</td>
+                  <td>
+                    In-Home &amp; Community Support Services
+                  </td>
+                  <td>
+                    The applicable HCSS code may differ according to service
+                    level, ratio, program, or payer.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>SDP</td>
+                  <td>Structured Day Program</td>
+                  <td>
+                    The Provider must use the code approved for its Structured
+                    Day Program.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>OTA</td>
+                  <td>Occupational Therapy Assistant</td>
+                  <td>
+                    The Provider must configure the applicable assistant-level
+                    therapy code.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>MSW</td>
+                  <td>Master of Social Work Services</td>
+                  <td>
+                    The billing code depends on the approved social-work service
+                    and payer arrangement.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>APC</td>
+                  <td>Advanced Professional Care</td>
+                  <td>
+                    The Provider must configure the code corresponding to the
+                    approved professional-care service.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>CBSA</td>
+                  <td>
+                    Community-Based Supported Activities
+                  </td>
+                  <td>
+                    The Provider must enter the code used for its approved
+                    community-based activity service.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>PTA</td>
+                  <td>Physical Therapy Assistant</td>
+                  <td>
+                    The applicable assistant-level physical therapy code must be
+                    configured by the Provider.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>HMK</td>
+                  <td>Homemaker Services</td>
+                  <td>
+                    The Provider must use the code approved for Homemaker
+                    Services.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>CHORE</td>
+                  <td>Chore Services</td>
+                  <td>
+                    The Provider must enter the code applicable to the approved
+                    Chore Services program.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>ILST</td>
+                  <td>
+                    Independent Living Skills Training
+                  </td>
+                  <td>
+                    The applicable skills-training code, unit, and rate must be
+                    configured by the Provider.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>SPC</td>
+                  <td>
+                    Specialist / Professional Consultant
+                  </td>
+                  <td>
+                    The Provider must enter the code applicable to the approved
+                    specialist or consultant service.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>TRAN</td>
+                  <td>Non-Emergency Transportation</td>
+                  <td>
+                    The Provider must configure the approved transportation
+                    code, mileage, trip, zone, or other unit format.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>BSP</td>
+                  <td>Behavioral Support</td>
+                  <td>
+                    The Provider must enter the code corresponding to the
+                    approved Behavioral Support service.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>ST</td>
+                  <td>Speech Therapy</td>
+                  <td>
+                    The Provider must configure the applicable speech therapy
+                    code, modifier, and billing unit.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>SCI</td>
+                  <td>
+                    Specialized Community Integration
+                  </td>
+                  <td>
+                    The Provider must use the code approved for its Specialized
+                    Community Integration service.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>PC</td>
+                  <td>Personal Care</td>
+                  <td>
+                    The Provider must enter the Personal Care code that applies
+                    to its approved service.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>HHA</td>
+                  <td>Home Health Aide</td>
+                  <td>
+                    The Provider must configure the approved Home Health Aide
+                    code and unit.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>RT</td>
+                  <td>
+                    Respiratory Therapy / Rehabilitation Therapy
+                  </td>
+                  <td>
+                    The correct code depends on whether the service represents
+                    respiratory therapy or another approved rehabilitation
+                    service.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>CH</td>
+                  <td>Companion / Habilitation</td>
+                  <td>
+                    The Provider must configure the applicable companion or
+                    habilitation code.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>RN</td>
+                  <td>Registered Nurse</td>
+                  <td>
+                    The Provider must enter the approved RN service code,
+                    modifier, unit, and rate.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>PA</td>
+                  <td>
+                    Physician Assistant / Personal Assistant
+                  </td>
+                  <td>
+                    The Provider must clearly identify the intended service and
+                    configure the corresponding approved code.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>ESC</td>
+                  <td>Enhanced Support Companion</td>
+                  <td>
+                    The Provider must use the code approved for the Enhanced
+                    Support Companion service.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>NINS</td>
+                  <td>
+                    Non-Insurance / Non-Traditional Service
+                  </td>
+                  <td>
+                    The Provider must define the appropriate internal or
+                    contractual code and confirm whether the service is
+                    billable.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Services May Differ by Provider</h2>
+
+          <p>
+            The service examples above do not represent a mandatory service list
+            for every Provider.
+          </p>
+
+          <p>
+            Differences may occur because Providers may:
+          </p>
+
+          <ul>
+            <li>Participate in different programs or waivers.</li>
+            <li>Serve different populations.</li>
+            <li>Operate in different states or service areas.</li>
+            <li>Contract with different payers.</li>
+            <li>Hold different licenses or certifications.</li>
+            <li>Be approved for different service levels.</li>
+            <li>Use different procedure codes or modifiers.</li>
+            <li>Use different units, ratios, zones, or rates.</li>
+            <li>Provide residential, non-residential, clinical, or community services.</li>
+          </ul>
+
+          <p>
+            True Care System allows each Provider to configure its service
+            catalog while maintaining a standardized system structure.
+          </p>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Government and Payer Requirements</h2>
+
+          <p>
+            Services should be configured according to the official
+            requirements applicable to the Provider.
+          </p>
+
+          <p>
+            Depending on the Provider and program, required information may
+            include:
+          </p>
+
+          <ul>
+            <li>Official service or procedure code.</li>
+            <li>Program or waiver.</li>
+            <li>Payer identification.</li>
+            <li>Service modifier.</li>
+            <li>Provider qualification.</li>
+            <li>Service location.</li>
+            <li>Staff qualification.</li>
+            <li>Authorized unit type.</li>
+            <li>Approved rate.</li>
+            <li>EVV applicability.</li>
+            <li>Documentation requirements.</li>
+            <li>Authorization limits.</li>
+          </ul>
+
+          <div class="doc-notice doc-notice-warning">
+
+            <strong>Provider Responsibility</strong>
+
+            <p>
+              True Care System stores and processes the service configuration
+              entered by the Provider. The Provider remains responsible for
+              verifying that the selected service, code, rate, unit, modifier,
+              program, payer, and billing configuration are accurate and
+              authorized.
+            </p>
+
+          </div>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Example Service Configuration</h2>
+
+          <p>
+            The following example illustrates how a Provider might configure a
+            service. The values are examples only.
+          </p>
+
+          <div style="overflow-x:auto;">
+
+            <table class="service-details-table">
+
+              <colgroup>
+                <col>
+                <col>
+                <col>
+              </colgroup>
+
+              <thead>
+                <tr>
+                  <th>Field</th>
+                  <th>Example</th>
+                  <th>Configuration Requirement</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>Service Type</td>
+                  <td>HCSS</td>
+                  <td>
+                    Select the applicable service type.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Service Name</td>
+                  <td>
+                    In-Home &amp; Community Support Services
+                  </td>
+                  <td>
+                    Confirm the full service name.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Billing Code</td>
+                  <td>Provider-entered code</td>
+                  <td>
+                    Enter the code approved for the Provider's service.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Category</td>
+                  <td>Non-Residential</td>
+                  <td>
+                    Select the correct operational category.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Level Type</td>
+                  <td>Ratio</td>
+                  <td>
+                    Select Ratio or Zone as applicable.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Level</td>
+                  <td>1:1</td>
+                  <td>
+                    Select the approved service level.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Format</td>
+                  <td>Unit (15 min)</td>
+                  <td>
+                    Select the approved unit format.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Rate</td>
+                  <td>Provider-entered rate</td>
+                  <td>
+                    Enter the approved rate for the selected unit and level.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Billable</td>
+                  <td>Yes</td>
+                  <td>
+                    Enable only when the service is approved for billing.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Status</td>
+                  <td>Active</td>
+                  <td>
+                    Activate only after the configuration has been reviewed.
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Review Before Activation</h2>
+
+          <p>
+            Before changing a service to Active, confirm the following:
+          </p>
+
+          <ol>
+            <li>The Provider is authorized to deliver the service.</li>
+            <li>The Service Name is correct.</li>
+            <li>The Billing Code is correct.</li>
+            <li>The program and payer are correct.</li>
+            <li>The service category is correct.</li>
+            <li>The ratio or zone is correct.</li>
+            <li>The unit format is correct.</li>
+            <li>The rate is correct.</li>
+            <li>The billable setting is correct.</li>
+            <li>EVV requirements have been reviewed.</li>
+            <li>Authorization requirements have been reviewed.</li>
+            <li>Employee qualification requirements have been reviewed.</li>
+          </ol>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Service Use Across True Care System</h2>
+
+          <p>
+            After a service is configured, it may be referenced by multiple
+            modules.
+          </p>
+
+          <ul>
+            <li>Individual service records.</li>
+            <li>Authorizations.</li>
+            <li>Employee schedules.</li>
+            <li>Mobile EVV.</li>
+            <li>Visit Maintenance.</li>
+            <li>Behavioral Support documentation.</li>
+            <li>Billing review.</li>
+            <li>Sandata submission preparation.</li>
+            <li>Payroll calculations.</li>
+            <li>Reports and KPI analytics.</li>
+            <li>Audit and compliance review.</li>
+          </ul>
+
+          <p>
+            Because services are shared across multiple workflows, service
+            details should be reviewed carefully before they are changed.
+          </p>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Editing Service Details</h2>
+
+          <p>
+            Authorized users may open a service from the Search Services page
+            and update its configuration.
+          </p>
+
+          <p>
+            Common updates may include:
+          </p>
+
+          <ul>
+            <li>Correcting the service name.</li>
+            <li>Updating the category.</li>
+            <li>Updating the status.</li>
+            <li>Changing the billable setting.</li>
+            <li>Adding or updating a level.</li>
+            <li>Updating the service code.</li>
+            <li>Updating the unit format.</li>
+            <li>Updating the rate.</li>
+            <li>Updating the description or internal notes.</li>
+          </ul>
+
+          <div class="doc-notice doc-notice-warning">
+
+            <strong>Historical Data</strong>
+
+            <p>
+              Do not change an existing service in a way that causes historical
+              schedules, visits, authorizations, billing records, or claims to
+              become inaccurate. A new service configuration may be more
+              appropriate when the code, program, rate, or unit structure
+              changes materially.
+            </p>
+
+          </div>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Service Detail Best Practices</h2>
+
+          <ul>
+            <li>
+              Use a clear and recognizable service name.
+            </li>
+
+            <li>
+              Use standardized internal abbreviations.
+            </li>
+
+            <li>
+              Verify official codes before saving.
+            </li>
+
+            <li>
+              Document provider-specific information in Internal Notes.
+            </li>
+
+            <li>
+              Do not enter individual-specific PHI in a general service record.
+            </li>
+
+            <li>
+              Review rates and units before production use.
+            </li>
+
+            <li>
+              Inactivate old services instead of deleting records used
+              historically.
+            </li>
+
+            <li>
+              Avoid duplicate service records unless a different program, code,
+              rate, modifier, unit, or level requires separate configuration.
+            </li>
+          </ul>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Security</h2>
+
+          <ul>
+            <li>
+              Only authorized users should view or modify service configuration.
+            </li>
+
+            <li>
+              Service creation, editing, activation, inactivation, and deletion
+              permissions should follow assigned job responsibilities.
+            </li>
+
+            <li>
+              Changes to codes, rates, units, and billable settings should be
+              restricted to approved administrative personnel.
+            </li>
+
+            <li>
+              Service changes may be recorded in Audit Logs.
+            </li>
+          </ul>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>HIPAA Considerations</h2>
+
+          <ul>
+            <li>
+              General service records should not contain individual-specific
+              Protected Health Information.
+            </li>
+
+            <li>
+              Internal Notes should contain only information necessary for
+              service administration.
+            </li>
+
+            <li>
+              Access should follow the minimum necessary principle.
+            </li>
+
+            <li>
+              Service records connected to individuals, visits, and billing
+              must be protected from unauthorized access or modification.
+            </li>
+          </ul>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Troubleshooting</h2>
+
+          <h3>The correct service is not available.</h3>
+
+          <ul>
+            <li>Search the existing service list.</li>
+            <li>Confirm that the service is not inactive.</li>
+            <li>Review alternate service names or abbreviations.</li>
+            <li>Create a custom service only when appropriate.</li>
+            <li>Confirm that the Provider is authorized for the service.</li>
+          </ul>
+
+          <h3>The billing code is unknown.</h3>
+
+          <ul>
+            <li>Review the Provider's enrollment documentation.</li>
+            <li>Review the applicable payer or program requirements.</li>
+            <li>Review the approved authorization.</li>
+            <li>Confirm whether a modifier or level code is required.</li>
+            <li>Do not guess or reuse a code from an unrelated service.</li>
+          </ul>
+
+          <h3>Two services have the same name.</h3>
+
+          <p>
+            Review the program, payer, code, modifier, unit, level, rate, and
+            effective dates. Separate service records may be necessary when
+            these configuration elements are different.
+          </p>
+
+          <h3>A service should no longer be used.</h3>
+
+          <p>
+            Change the service status to Inactive. Do not delete a service that
+            has already been used by schedules, authorizations, visits, billing,
+            or claims.
+          </p>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>Does every Provider have the same services?</h3>
+
+          <p>
+            No. Each Provider may have a different service catalog based on its
+            approved programs, payer enrollment, licenses, contracts, service
+            area, and applicable requirements.
+          </p>
+
+          <h3>Is PCA an official billing code?</h3>
+
+          <p>
+            Not necessarily. PCA is an internal service identifier for Personal
+            Care Assistant. The Provider must enter the official code applicable
+            to its approved service.
+          </p>
+
+          <h3>Can two Providers use different codes for similar services?</h3>
+
+          <p>
+            Yes. Codes may differ according to the payer, program, waiver,
+            service level, modifier, location, or other applicable
+            configuration.
+          </p>
+
+          <h3>Can one service use multiple level codes?</h3>
+
+          <p>
+            Yes, when the Provider's approved configuration requires different
+            codes for different ratios, zones, levels, or service formats.
+          </p>
+
+          <h3>Should every service be billable?</h3>
+
+          <p>
+            No. Enable the billable setting only when the service is approved
+            for claims, invoices, or another billing workflow.
+          </p>
+
+          <h3>Can a Provider create a custom service?</h3>
+
+          <p>
+            Yes. A custom service may be created when the required service is
+            not available in the standard list. The Provider must still enter
+            accurate service, code, unit, rate, and status information.
+          </p>
+
+          <h3>What should happen when a service code changes?</h3>
+
+          <p>
+            Review whether the existing record should be updated or whether a
+            new service record should be created to preserve historical
+            accuracy.
+          </p>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Related Documentation</h2>
+
+          <ul>
+
+            <li>
+              <a href="/documentation/service-management/overview.html">
+                Service Management Overview
+              </a>
+            </li>
+
+            <li>
+              <a href="/documentation/service-management/new-service.html">
+                New Service
+              </a>
+            </li>
+
+            <li>
+              <a href="/documentation/service-management/search-service.html">
+                Search Services
+              </a>
+            </li>
+
+            <li>
+              <a href="/documentation/service-management/service-codes.html">
+                Service Codes
+              </a>
+            </li>
+
+            <li>
+              <a href="/documentation/service-management/service-rates.html">
+                Service Rates
+              </a>
+            </li>
+
+            <li>
+              <a href="/documentation/service-management/units-billing-rules.html">
+                Units and Billing Rules
+              </a>
+            </li>
+
+            <li>
+              <a href="/documentation/service-management/service-status.html">
+                Service Status
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+        <section class="doc-section">
+
+          <div class="doc-page-navigation">
+
+            <a
+              class="doc-button"
+              href="/documentation/service-management/search-service.html"
+            >
+              ← Back
+            </a>
+
+            <a
+              class="doc-button"
+              href="/documentation/service-management/"
+            >
+              🏠 Home
+            </a>
+
+            <a
+              class="doc-button"
+              href="/documentation/service-management/service-codes.html"
+            >
+              Next →
+            </a>
+
+          </div>
+
+        </section>
+
       </article>
 
       <footer class="doc-page-footer">
-        <p>© 2026 True Care System. All rights reserved.</p>
-        <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
+
+        <p>
+          © 2026 True Care System. All rights reserved.
+        </p>
+
+        <p>
+          Documentation is maintained as part of the True Care System product
+          lifecycle.
+        </p>
+
       </footer>
+
     </main>
+
   </div>
 
-  <div class="doc-search-results" id="docSearchResults" hidden></div>
+  <div
+    class="doc-search-results"
+    id="docSearchResults"
+    hidden
+  ></div>
+
   <script src="/documentation/assets/documentation.js"></script>
+
 </body>
 </html>
