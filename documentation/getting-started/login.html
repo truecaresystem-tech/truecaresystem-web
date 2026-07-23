@@ -2,27 +2,49 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login | True Care System Documentation</title>
 <link rel="stylesheet" href="/documentation/assets/documentation.css">
 </head>
 <body>
+
 <div class="doc-article">
+
+<div class="doc-breadcrumb">
+Getting Started / Login
+</div>
+
 <h1>Login</h1>
 
 <div class="doc-notice doc-notice-info">
 <strong>Purpose</strong>
-<p>The Login page is the secure entry point into the True Care System platform. Every authenticated session begins here.</p>
+<p>
+The Login page is the secure authentication gateway to the True Care System platform.
+All authorized users must successfully sign in before accessing protected information,
+role-based modules, and operational features.
+</p>
 </div>
 
+<table class="doc-table">
+<tr><th>Document ID</th><td>GET-DOC-003</td></tr>
+<tr><th>Module</th><td>Getting Started</td></tr>
+<tr><th>Audience</th><td>All Users</td></tr>
+<tr><th>Version</th><td>1.0</td></tr>
+<tr><th>Status</th><td>Draft</td></tr>
+<tr><th>Estimated Reading Time</th><td>3 Minutes</td></tr>
+</table>
+
 <h2>Prerequisites</h2>
+
 <ul>
-<li>Valid user account</li>
-<li>Assigned role and permissions</li>
-<li>Supported browser</li>
-<li>Internet connection</li>
+<li>Active True Care System account.</li>
+<li>User role assigned by Provider Administrator.</li>
+<li>Supported web browser.</li>
+<li>Internet connection.</li>
 </ul>
 
 <h2>Login Screen</h2>
+
 <p>The following screen is used by all authorized users.</p>
 
 <p style="text-align:center">
@@ -31,80 +53,167 @@ alt="True Care System Login"
 style="max-width:100%;border:1px solid #d9e2ec;border-radius:8px">
 </p>
 
+<p style="text-align:center"><em>Figure 1. True Care System Login Screen</em></p>
+
+<h2>Navigation</h2>
+
+<pre>
+Open Browser
+      ↓
+https://app.truecaresystem.com
+      ↓
+Enter Email / Username
+      ↓
+Enter Password
+      ↓
+Click Sign In
+      ↓
+Dashboard
+</pre>
+
 <h2>Login Fields</h2>
-<table border="1" cellspacing="0" cellpadding="8" width="100%">
+
+<table class="doc-table">
 <tr><th>Field</th><th>Description</th></tr>
 <tr><td>Email / Username</td><td>User account assigned by the organization.</td></tr>
-<tr><td>Password</td><td>Secure password associated with the account.</td></tr>
-<tr><td>Sign In</td><td>Authenticates the user and opens the assigned dashboard.</td></tr>
-<tr><td>Forgot Password</td><td>Starts the password reset process.</td></tr>
+<tr><td>Password</td><td>User password.</td></tr>
+<tr><td>Sign In</td><td>Authenticates the user and starts a secure session.</td></tr>
+<tr><td>Forgot Password</td><td>Opens the password recovery process.</td></tr>
 </table>
 
 <h2>Login Process</h2>
+
 <ol>
 <li>Open the Login page.</li>
-<li>Enter Email or Username.</li>
-<li>Enter Password.</li>
+<li>Enter your Email or Username.</li>
+<li>Enter your Password.</li>
 <li>Click <strong>Sign In</strong>.</li>
-<li>System authenticates credentials.</li>
-<li>User is redirected to the appropriate dashboard.</li>
+<li>The system validates your credentials.</li>
+<li>The appropriate dashboard is displayed.</li>
 </ol>
 
 <h2>Successful Login</h2>
+
 <ul>
-<li>Dashboard is displayed.</li>
-<li>Menus are loaded according to the assigned role.</li>
-<li>A secure session is created.</li>
-<li>The login event is recorded in Audit Logs.</li>
+<li>Dashboard loads successfully.</li>
+<li>Menus are displayed based on the assigned role.</li>
+<li>A secure authenticated session is established.</li>
+<li>Authentication activity is recorded.</li>
 </ul>
 
+<h2>Role-Based Access</h2>
+
+<p>
+Each user only has access to modules and functions granted by their assigned role.
+Examples include Provider Administrator, Supervisor, DSP, Nurse, Billing,
+Payroll, Office Staff, Compliance, and Support.
+</p>
+
 <h2>Security</h2>
+
 <ul>
-<li>HTTPS encrypted connection.</li>
-<li>Role-based access control.</li>
-<li>Session timeout protection.</li>
-<li>Future MFA support.</li>
+<li>HTTPS encrypted communication.</li>
+<li>Role-based authorization.</li>
+<li>Secure session management.</li>
+<li>Automatic session timeout.</li>
 <li>Failed login monitoring.</li>
+<li>Future Multi-Factor Authentication (MFA) support.</li>
 </ul>
 
 <h2>HIPAA Considerations</h2>
+
 <ul>
-<li>Never share credentials.</li>
-<li>Always log out when leaving the workstation.</li>
+<li>Never share your credentials.</li>
+<li>Always log out before leaving your workstation.</li>
 <li>Do not save passwords on shared computers.</li>
-<li>Protect PHI from unauthorized viewing.</li>
+<li>Protect all PHI from unauthorized access.</li>
+</ul>
+
+<h2>Audit Logging</h2>
+
+<p>The system may record authentication events including:</p>
+
+<ul>
+<li>User ID</li>
+<li>Date and Time</li>
+<li>IP Address</li>
+<li>Browser</li>
+<li>Device</li>
+<li>Login Result (Success / Failure)</li>
+</ul>
+
+<h2>Best Practices</h2>
+
+<ul>
+<li>Bookmark the official login page.</li>
+<li>Use a strong password.</li>
+<li>Lock your workstation when away.</li>
+<li>Never share accounts.</li>
+<li>Sign out after each session.</li>
 </ul>
 
 <h2>Common Errors</h2>
-<ul>
-<li>Invalid username or password.</li>
-<li>Account disabled.</li>
-<li>Session expired.</li>
-<li>No internet connection.</li>
-</ul>
+
+<table class="doc-table">
+<tr><th>Error</th><th>Description</th></tr>
+<tr><td>Invalid Username or Password</td><td>Incorrect credentials.</td></tr>
+<tr><td>Account Disabled</td><td>Your account has been disabled.</td></tr>
+<tr><td>Session Expired</td><td>Please sign in again.</td></tr>
+<tr><td>No Internet Connection</td><td>Unable to contact the server.</td></tr>
+</table>
 
 <h2>Troubleshooting</h2>
+
 <ul>
-<li>Verify Caps Lock.</li>
-<li>Confirm internet connectivity.</li>
-<li>Use Forgot Password if needed.</li>
-<li>Contact your Provider Administrator if access remains unavailable.</li>
+<li>Verify Email and Password.</li>
+<li>Check Caps Lock.</li>
+<li>Refresh the page.</li>
+<li>Verify internet connectivity.</li>
+<li>Use Forgot Password if necessary.</li>
+<li>Contact your Provider Administrator if the issue persists.</li>
+</ul>
+
+<h2>Related Documentation</h2>
+
+<ul>
+<li>Overview</li>
+<li>System Requirements</li>
+<li>First Time Login</li>
+<li>Forgot Password</li>
+<li>Dashboard</li>
+<li>Security</li>
+<li>HIPAA Compliance</li>
 </ul>
 
 <h2>FAQ</h2>
-<p><strong>Can I use the same account on multiple computers?</strong><br>
-Yes, provided your organization permits it and each session complies with security policies.</p>
 
-<p><strong>What happens after multiple failed login attempts?</strong><br>
-The organization may enforce security controls such as temporary lockout.</p>
+<p><strong>Can I sign in from multiple devices?</strong><br>
+Yes, if permitted by your organization.</p>
+
+<p><strong>Why don't I see all menus?</strong><br>
+Menus are displayed according to your assigned role.</p>
+
+<p><strong>Are login events recorded?</strong><br>
+Yes. Authentication events may be logged for security and HIPAA compliance.</p>
+
+<h2>Revision History</h2>
+
+<table class="doc-table">
+<tr><th>Version</th><th>Date</th><th>Description</th></tr>
+<tr><td>1.0</td><td>2026-07-22</td><td>Initial Enterprise Login Documentation.</td></tr>
+</table>
 
 <hr>
 
 <p>
-Previous: <a href="system-requirements.html">System Requirements</a> |
-Next: <a href="forgot-password.html">Forgot Password</a>
+Previous:
+<a href="system-requirements.html">System Requirements</a>
+|
+Next:
+<a href="first-time-login.html">First Time Login</a>
 </p>
 
 </div>
+
 </body>
 </html>
