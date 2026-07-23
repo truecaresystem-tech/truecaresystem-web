@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Detailed Profile and Contacts guide for creating an Individual in True Care System.">
+  <title>Profile &amp; Contacts | Individual Management | True Care System Documentation</title>
+  <link rel="stylesheet" href="/documentation/assets/documentation.css">
+
+  <style>
+    .profile-contacts-table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+    }
+
+    .profile-contacts-table col:first-child {
+      width: 230px;
+    }
+
+    .profile-contacts-table col:nth-child(3) {
+      width: 170px;
+    }
+
+    .profile-contacts-table th,
+    .profile-contacts-table td {
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .doc-article .doc-figure {
+      width: 100%;
+      margin: 20px 0 28px;
+      text-align: left;
+    }
+
+    .doc-article .doc-figure img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0;
+    }
+
+    .doc-article .doc-figure figcaption {
+      width: 100%;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .profile-page-navigation {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      align-items: center;
+      width: 100%;
+      margin-top: 32px;
+    }
+
+    .profile-page-navigation .doc-button:nth-child(1) {
+      justify-self: start;
+    }
+
+    .profile-page-navigation .doc-button:nth-child(2) {
+      justify-self: center;
+    }
+
+    .profile-page-navigation .doc-button:nth-child(3) {
+      justify-self: end;
+    }
+
+    @media (max-width: 800px) {
+      .profile-contacts-table {
+        table-layout: auto;
+      }
+
+      .profile-contacts-table col {
+        width: auto !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .profile-page-navigation {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-page-navigation .doc-button {
+        justify-self: stretch !important;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="doc-header">
+    <a class="doc-brand" href="/documentation/">
+      <img src="/logo.png" alt="True Care System">
+      <span><strong>True Care System</strong><small>Documentation</small></span>
+    </a>
+
+    <button
+      class="doc-mobile-menu"
+      id="docMobileMenu"
+      type="button"
+      aria-label="Open documentation menu"
+      aria-controls="docSidebar"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+    <div class="doc-header-actions">
+      <label class="doc-search">
+        <span aria-hidden="true">⌕</span>
+        <input
+          id="docSearchInput"
+          type="search"
+          placeholder="Search documentation..."
+          autocomplete="off"
+          aria-label="Search documentation"
+        >
+      </label>
+
+      <a href="/" class="doc-back-link">Return to Website</a>
+    </div>
+  </header>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="docSidebar">
+      <div class="doc-sidebar-title">Documentation</div>
+
+      <nav aria-label="Documentation modules">
+        <a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
+        <a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
+        <a class="doc-nav-module active" href="/documentation/individual-management/" aria-current="page"><span class="doc-nav-number">03</span><span>Individual</span></a>
+        <a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
+        <a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
+        <a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
+        <a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
+        <a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
+        <a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
+        <a class="doc-nav-module" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span>KPI</span></a>
+        <a class="doc-nav-module" href="/documentation/time-keeping/"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
+        <a class="doc-nav-module" href="/documentation/mobile-evv/"><span class="doc-nav-number">12</span><span>Mobile EVV</span></a>
+        <a class="doc-nav-module" href="/documentation/visit-maintenance/"><span class="doc-nav-number">13</span><span>Visit Maintenance</span></a>
+        <a class="doc-nav-module" href="/documentation/house-management/"><span class="doc-nav-number">14</span><span>House Management</span></a>
+        <a class="doc-nav-module" href="/documentation/payroll/"><span class="doc-nav-number">15</span><span>Payroll</span></a>
+        <a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
+        <a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
+        <a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
+        <a class="doc-nav-module" href="/documentation/provider-administration/"><span class="doc-nav-number">19</span><span>Admin</span></a>
+        <a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
+        <a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
+        <a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
+        <a class="doc-nav-module" href="/documentation/qa-guide/"><span class="doc-nav-number">23</span><span>QA Guide</span></a>
+        <a class="doc-nav-module" href="/documentation/test-catalog/"><span class="doc-nav-number">24</span><span>Test Catalog</span></a>
+        <a class="doc-nav-module" href="/documentation/api-documentation/"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
+        <a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
+        <a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
+        <a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
+        <a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>FAQ</span></a>
+        <a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
+      </nav>
+    </aside>
+
+    <main class="doc-main">
+      <div class="doc-breadcrumb">
+        <a href="/documentation/">Documentation</a>
+        <span>›</span>
+        <a href="/documentation/individual-management/">Individual</a>
+        <span>›</span>
+        <a href="/documentation/individual-management/new-individual.html">New Individual</a>
+        <span>›</span>
+        <span>Profile &amp; Contacts</span>
+      </div>
+
+      <article class="doc-article">
+        <header class="doc-article-header">
+          <div>
+            <p class="doc-eyebrow">INDIVIDUAL MANAGEMENT</p>
+            <h1>Profile &amp; Contacts</h1>
+          </div>
+
+          <dl class="doc-metadata">
+            <div><dt>Document ID</dt><dd>IND-DOC-003</dd></div>
+            <div><dt>Version</dt><dd>1.0</dd></div>
+            <div><dt>Status</dt><dd>Draft</dd></div>
+            <div><dt>Last Updated</dt><dd>07/23/2026</dd></div>
+          </dl>
+        </header>
+
+        <div class="doc-notice doc-notice-info">
+          <strong>Purpose</strong>
+          <p>
+            The Profile &amp; Contacts tab captures the Individual's core identity, enrollment,
+            contact, address, accepted service, and emergency contact information. This information
+            supports authorizations, scheduling, EVV, visits, billing, reporting, communication,
+            and emergency response workflows throughout True Care System.
+          </p>
+        </div>
+
+        <section class="doc-section">
+          <h2>Screen Overview</h2>
+
+          <figure class="doc-figure">
+            <img
+              src="/documentation/individual-management/images/new-individual-profile-contacts.jpg"
+              alt="New Individual Profile and Contacts tab"
+            >
+            <figcaption>
+              New Individual — Profile &amp; Contacts tab.
+            </figcaption>
+          </figure>
+
+          <p>
+            Profile &amp; Contacts is the first tab in the New Individual workflow. Complete the
+            required fields before creating the Individual. You may save progress as a draft and
+            return later when additional information is needed.
+          </p>
+        </section>
+
+        <section class="doc-section">
+          <h2>Page Actions</h2>
+
+          <table class="profile-contacts-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Action</th>
+                <th>Description</th>
+                <th>When to Use</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Back</strong></td>
+                <td>Returns to the previous Individual page.</td>
+                <td>Use when leaving the creation workflow.</td>
+              </tr>
+              <tr>
+                <td><strong>Restore Draft</strong></td>
+                <td>Restores information saved during an earlier draft session.</td>
+                <td>Use when continuing an incomplete Individual record.</td>
+              </tr>
+              <tr>
+                <td><strong>Save</strong></td>
+                <td>Saves the current draft without creating the final Individual record.</td>
+                <td>Use when required information is not yet complete.</td>
+              </tr>
+              <tr>
+                <td><strong>Create Individual</strong></td>
+                <td>Creates the Individual after required validation passes.</td>
+                <td>Use after reviewing all required tabs and fields.</td>
+              </tr>
+              <tr>
+                <td><strong>Clear this tab</strong></td>
+                <td>Clears values entered on the current tab.</td>
+                <td>Use carefully when restarting the tab.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="doc-section">
+          <h2>Profile</h2>
+
+          <table class="profile-contacts-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Description</th>
+                <th>Requirement</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>First Name</strong></td>
+                <td>Individual's legal first name.</td>
+                <td>Required</td>
+              </tr>
+              <tr>
+                <td><strong>Middle Name</strong></td>
+                <td>Individual's legal middle name, when applicable.</td>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <td><strong>Last Name</strong></td>
+                <td>Individual's legal last name.</td>
+                <td>Required</td>
+              </tr>
+              <tr>
+                <td><strong>Date of Birth</strong></td>
+                <td>Individual's date of birth in MM/DD/YYYY format.</td>
+                <td>Required</td>
+              </tr>
+              <tr>
+                <td><strong>Gender</strong></td>
+                <td>Gender value selected from the available system list.</td>
+                <td>Required</td>
+              </tr>
+              <tr>
+                <td><strong>Medicare Number</strong></td>
+                <td>Medicare identifier when the Individual has Medicare coverage.</td>
+                <td>Optional</td>
+              </tr>
+              <tr>
+                <td><strong>Medicaid ID</strong></td>
+                <td>Medicaid identifier used for payer, authorization, EVV, and billing workflows.</td>
+                <td>Required when applicable</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="doc-notice doc-notice-warning">
+            <strong>Identity Verification</strong>
+            <p>
+              Verify the legal name, date of birth, and Medicaid ID against approved enrollment
+              or payer records before creating the Individual.
+            </p>
+          </div>
+        </section>
+
+        <section class="doc-section">
+          <h2>Enrollment</h2>
+
+          <table class="profile-contacts-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Description</th>
+                <th>Requirement</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Branch</strong></td>
+                <td>Provider branch responsible for the Individual.</td>
+                <td>Required</td>
+              </tr>
+              <tr>
+                <td><strong>Location (Primary)</strong></td>
+                <td>Primary operational location associated with the selected branch.</td>
+                <td>Required</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            Select the Branch first. The Primary Location list may depend on the selected Branch.
+          </p>
+        </section>
+
+        <section class="doc-section">
+          <h2>Contacts</h2>
+
+          <table class="profile-contacts-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Description</th>
+                <th>Guidance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Primary Phone</strong></td>
+                <td>Main phone number for contacting the Individual.</td>
+                <td>Use the most reliable current number.</td>
+              </tr>
+              <tr>
+                <td><strong>Secondary Phone</strong></td>
+                <td>Alternative phone number.</td>
+                <td>Optional.</td>
+              </tr>
+              <tr>
+                <td><strong>Email</strong></td>
+                <td>Individual's email address when available.</td>
+                <td>Enter a valid email format.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="doc-section">
+          <h2>Primary Address</h2>
+
+          <table class="profile-contacts-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Description</th>
+                <th>Guidance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Address Line 1</strong></td><td>Primary street address.</td><td>Enter the complete street number and street name.</td></tr>
+              <tr><td><strong>Address Line 2</strong></td><td>Apartment, suite, unit, or secondary address detail.</td><td>Optional.</td></tr>
+              <tr><td><strong>City</strong></td><td>City of residence.</td><td>Use the official mailing city.</td></tr>
+              <tr><td><strong>County</strong></td><td>County of residence.</td><td>Important for service area and reporting.</td></tr>
+              <tr><td><strong>State</strong></td><td>State abbreviation.</td><td>Defaults to PA when configured by the Provider.</td></tr>
+              <tr><td><strong>ZIP</strong></td><td>Postal ZIP code.</td><td>Verify the ZIP matches the address.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="doc-section">
+          <h2>Accepted Services</h2>
+
+          <p>
+            Accepted Services identifies the types of services the Individual may receive from the
+            Provider. The available list is based on the Provider's configured services.
+          </p>
+
+          <p>
+            Examples shown on the screen may include PCA, NT, PBIS, BSS, PT, CNA, RESP, SHC, OT,
+            SCM, COMP, LPN, HCSS, SDP, OTA, MSW, APC, CBSA, PTA, HSL, ILST, SPC, ST, SCI, PC, HHA,
+            RT, HMK, CH, RN, PA, ESC, and NINS.
+          </p>
+
+          <div class="doc-notice doc-notice-warning">
+            <strong>Service Selection</strong>
+            <p>
+              Select only services that the Provider is authorized to deliver and that may apply
+              to the Individual. Final authorization, payer approval, and scheduling rules are
+              managed in their respective modules.
+            </p>
+          </div>
+        </section>
+
+        <section class="doc-section">
+          <h2>Emergency Contact 1</h2>
+
+          <table class="profile-contacts-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Description</th>
+                <th>Guidance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Name</strong></td><td>Emergency contact's full name.</td><td>Use the current legal or preferred contact name.</td></tr>
+              <tr><td><strong>Relationship</strong></td><td>Relationship to the Individual.</td><td>Examples: parent, sibling, guardian, spouse, representative.</td></tr>
+              <tr><td><strong>Primary Phone</strong></td><td>Main emergency contact number.</td><td>Verify the number is current.</td></tr>
+              <tr><td><strong>Secondary Phone</strong></td><td>Alternative contact number.</td><td>Optional.</td></tr>
+              <tr><td><strong>Notes</strong></td><td>Additional emergency contact instructions.</td><td>Do not enter unnecessary sensitive information.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="doc-section">
+          <h2>Validation Checklist</h2>
+
+          <ul>
+            <li>First Name and Last Name match the legal or payer record.</li>
+            <li>Date of Birth is complete and accurate.</li>
+            <li>Gender is selected.</li>
+            <li>Branch and Primary Location are selected.</li>
+            <li>Medicaid ID is verified when Medicaid services apply.</li>
+            <li>Phone numbers and email use valid formats.</li>
+            <li>Address information is complete enough for service delivery and reporting.</li>
+            <li>Accepted Services reflect the Individual's expected service relationship.</li>
+            <li>Emergency contact information is current.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Best Practices</h2>
+
+          <ul>
+            <li>Use the Individual's legal name as shown on official records.</li>
+            <li>Do not create duplicate Individual records.</li>
+            <li>Search existing Individuals before creating a new record.</li>
+            <li>Verify Medicaid and Medicare identifiers before saving.</li>
+            <li>Keep phone, address, and emergency contact information current.</li>
+            <li>Use Save when information is incomplete instead of entering placeholder data.</li>
+            <li>Review the record before selecting Create Individual.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Security and HIPAA</h2>
+
+          <p>
+            Profile &amp; Contacts contains protected health information and personally identifiable
+            information, including name, date of birth, address, phone number, email, Medicare number,
+            Medicaid ID, service information, and emergency contacts.
+          </p>
+
+          <ul>
+            <li>Access only Individuals required for assigned job duties.</li>
+            <li>Follow role-based access and the minimum necessary principle.</li>
+            <li>Do not share Individual information through unapproved channels.</li>
+            <li>Verify the correct Individual before viewing or editing information.</li>
+            <li>Changes and access should be recorded through Audit Logs where applicable.</li>
+            <li>Do not use real Individual information in training screenshots unless properly authorized and protected.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Troubleshooting</h2>
+
+          <h3>Create Individual does not complete.</h3>
+          <p>
+            Review required fields, validation messages, and all six setup tabs. Confirm that
+            mandatory profile and enrollment values are complete.
+          </p>
+
+          <h3>The Primary Location list is empty.</h3>
+          <p>
+            Select a Branch first. If no locations appear, confirm that the Provider has active
+            locations configured for that Branch.
+          </p>
+
+          <h3>The Medicaid ID is rejected or already exists.</h3>
+          <p>
+            Verify the identifier and search for an existing Individual before creating a duplicate.
+          </p>
+
+          <h3>A service is missing from Accepted Services.</h3>
+          <p>
+            Confirm that the service is configured and Active in Service Management for the current Provider.
+          </p>
+
+          <h3>Draft information is missing.</h3>
+          <p>
+            Select Restore Draft and confirm that the draft was saved in the same browser and user session
+            supported by the system.
+          </p>
+        </section>
+
+        <section class="doc-section">
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>Can I save the Individual before all information is complete?</h3>
+          <p>Yes. Use Save to preserve the current draft and continue later.</p>
+
+          <h3>Can I edit Profile &amp; Contacts after creating the Individual?</h3>
+          <p>
+            Yes. Locate the Individual through Search Individual, open View/Edit, and update the
+            appropriate Individual Detail area.
+          </p>
+
+          <h3>Is Medicaid ID always required?</h3>
+          <p>
+            It is required when applicable to Medicaid enrollment, authorization, EVV, or billing.
+            Provider and payer requirements determine when it must be completed.
+          </p>
+
+          <h3>Can I change the Branch later?</h3>
+          <p>
+            Authorized users may update the Branch, but they should review related locations,
+            schedules, authorizations, visits, and operational assignments before changing it.
+          </p>
+
+          <h3>What should I do if I find a duplicate Individual?</h3>
+          <p>
+            Do not create another record. Contact an authorized administrator or support user to
+            review the duplicate and determine the approved correction process.
+          </p>
+        </section>
+
+        <section class="doc-section">
+          <h2>Related Documentation</h2>
+
+          <ul>
+            <li><a href="/documentation/individual-management/index.html">Individual Overview</a></li>
+            <li><a href="/documentation/individual-management/new-individual.html">New Individual</a></li>
+            <li><a href="/documentation/individual-management/coverage-billing.html">Coverage &amp; Billing</a></li>
+            <li><a href="/documentation/individual-management/clinical-medication.html">Clinical &amp; Medication</a></li>
+            <li><a href="/documentation/individual-management/preparedness-equipment.html">Preparedness &amp; Equipment</a></li>
+            <li><a href="/documentation/individual-management/preferences-directives.html">Preferences &amp; Directives</a></li>
+            <li><a href="/documentation/individual-management/isp-bsp.html">ISP &amp; BSP</a></li>
+            <li><a href="/documentation/individual-management/search-individual.html">Search Individual</a></li>
+            <li><a href="/documentation/individual-management/individual-detail.html">Individual Detail</a></li>
+          </ul>
+        </section>
+
+        <div class="doc-page-navigation profile-page-navigation">
+          <a class="doc-button" href="/documentation/individual-management/new-individual.html">← Back</a>
+          <a class="doc-button" href="/documentation/individual-management/index.html">🏠 Home</a>
+          <a class="doc-button" href="/documentation/individual-management/coverage-billing.html">Next →</a>
+        </div>
+      </article>
+
+      <footer class="doc-page-footer">
+        <p>© 2026 True Care System. All rights reserved.</p>
+        <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
+      </footer>
+    </main>
+  </div>
+
+  <div class="doc-search-results" id="docSearchResults" hidden></div>
+  <script src="/documentation/assets/documentation.js"></script>
+</body>
+</html>
