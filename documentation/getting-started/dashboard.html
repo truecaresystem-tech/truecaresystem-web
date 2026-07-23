@@ -5,6 +5,82 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dashboard | True Care System Documentation</title>
 <link rel="stylesheet" href="/documentation/assets/documentation.css">
+
+<style>
+.dashboard-areas-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.dashboard-areas-table col:nth-child(1) {
+    width: 260px;
+}
+
+.dashboard-areas-table col:nth-child(2) {
+    width: auto;
+}
+
+.dashboard-areas-table th,
+.dashboard-areas-table td {
+    padding: 10px 16px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.dashboard-areas-table th {
+    background: #f8fafc;
+    font-weight: 700;
+}
+
+.dashboard-areas-table td:first-child {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.doc-page-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.doc-button {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #0b5cab;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.doc-button:hover {
+    background: #084b8a;
+}
+
+@media (max-width: 800px) {
+    .dashboard-areas-table {
+        table-layout: auto;
+    }
+
+    .dashboard-areas-table col:nth-child(1),
+    .dashboard-areas-table col:nth-child(2) {
+        width: auto;
+    }
+
+    .dashboard-areas-table td:first-child {
+        white-space: normal;
+    }
+
+    .doc-page-navigation {
+        flex-wrap: wrap;
+    }
+}
+</style>
 </head>
 <body>
 
@@ -54,12 +130,21 @@ style="max-width:100%;border:1px solid #d9e2ec;border-radius:8px">
 
 <h2>Main Areas</h2>
 
-<table class="doc-table">
+<table class="dashboard-areas-table">
 
+<colgroup>
+<col>
+<col>
+</colgroup>
+
+<thead>
 <tr>
 <th>Area</th>
 <th>Description</th>
 </tr>
+</thead>
+
+<tbody>
 
 <tr>
 <td>Top Navigation</td>
@@ -81,6 +166,7 @@ style="max-width:100%;border:1px solid #d9e2ec;border-radius:8px">
 <td>Displays the logged-in user's information and account options.</td>
 </tr>
 
+</tbody>
 </table>
 
 <hr>
@@ -172,10 +258,14 @@ Your assigned role may not have permission to access those modules.
 
 <hr>
 
-<div style="display:flex;justify-content:space-between;align-items:center;margin-top:40px;">
+<div class="doc-page-navigation">
 
 <a class="doc-button" href="forgot-password.html">
 ← Back
+</a>
+
+<a class="doc-button" href="index.html">
+🏠 Home
 </a>
 
 <a class="doc-button" href="system-navigation.html">
