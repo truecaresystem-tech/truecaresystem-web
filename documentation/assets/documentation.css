@@ -53,11 +53,14 @@ a:hover {
   gap: 28px;
   padding: 14px 32px;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.99) 0%,
-    rgba(244, 249, 255, 0.99) 55%,
-    rgba(235, 247, 250, 0.99) 100%);
-  border-bottom: 1px solid #cfdbe9;
-  box-shadow: 0 6px 22px rgba(7, 28, 63, 0.09);
+    linear-gradient(
+      135deg,
+      #241f5f 0%,
+      #2f2a78 46%,
+      #3d348b 100%
+    );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 8px 28px rgba(19, 17, 67, 0.34);
   backdrop-filter: blur(14px);
 }
 
@@ -66,7 +69,7 @@ a:hover {
   align-items: center;
   gap: 16px;
   min-width: 300px;
-  color: var(--navy);
+  color: var(--white);
 }
 
 .doc-brand:hover {
@@ -78,6 +81,10 @@ a:hover {
   height: 66px;
   object-fit: contain;
   flex: 0 0 auto;
+  padding: 4px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 4px 14px rgba(7, 15, 42, 0.22);
 }
 
 .doc-brand span {
@@ -88,18 +95,18 @@ a:hover {
 }
 
 .doc-brand strong {
-  color: var(--navy);
-  font-size: 21px;
+  color: var(--white);
+  font-size: 22px;
   font-weight: 800;
   letter-spacing: -0.01em;
 }
 
 .doc-brand small {
   margin-top: 5px;
-  color: var(--teal);
+  color: #8ff1e4;
   font-size: 13px;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
@@ -116,15 +123,24 @@ a:hover {
   align-items: center;
   width: min(520px, 48vw);
   height: 48px;
-  padding: 0 14px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--surface);
+  padding: 0 15px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.doc-search:focus-within {
+  border-color: rgba(255, 255, 255, 0.52);
+  background: rgba(255, 255, 255, 0.19);
+  box-shadow:
+    0 0 0 3px rgba(143, 241, 228, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .doc-search span {
   margin-right: 8px;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.88);
   font-size: 20px;
 }
 
@@ -133,7 +149,12 @@ a:hover {
   border: 0;
   outline: 0;
   background: transparent;
+  color: var(--white);
   font: inherit;
+}
+
+.doc-search input::placeholder {
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .doc-back-link {
@@ -142,15 +163,17 @@ a:hover {
   justify-content: center;
   min-height: 46px;
   padding: 0 18px;
-  border-radius: 9px;
-  background: var(--navy);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  background: var(--green);
   color: var(--white);
   font-weight: 700;
+  box-shadow: 0 6px 18px rgba(20, 91, 61, 0.28);
 }
 
 .doc-back-link:hover {
   text-decoration: none;
-  background: var(--navy-2);
+  background: #2da85e;
 }
 
 .doc-layout {
@@ -529,6 +552,7 @@ h3 {
   }
 
   .doc-header {
+    gap: 12px;
     padding: 10px 15px;
   }
 
@@ -543,6 +567,7 @@ h3 {
   .doc-brand img {
     width: 50px;
     height: 50px;
+    padding: 3px;
   }
 
   .doc-back-link {
@@ -551,6 +576,7 @@ h3 {
 
   .doc-search {
     width: 100%;
+    height: 44px;
   }
 
   .doc-mobile-menu {
@@ -559,9 +585,10 @@ h3 {
     justify-content: center;
     width: 42px;
     height: 42px;
-    border: 1px solid var(--border);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 8px;
-    background: var(--white);
+    background: rgba(255, 255, 255, 0.14);
+    color: var(--white);
     font-size: 22px;
   }
 
@@ -587,6 +614,7 @@ h3 {
   }
 
   .doc-search-results {
+    top: calc(var(--header-height) - 2px);
     right: 20px;
     left: 20px;
     width: auto;
