@@ -44,28 +44,47 @@ jobs:
               },
               {
                   "number": "02",
-                  "slug": "provider-administration",
-                  "title": "Provider Administration",
-                  "prefix": "PRO",
+                  "slug": "service-management",
+                  "title": "Services",
+                  "prefix": "SER",
                   "pages": [
                       ("overview", "Overview"),
-                      ("provider-dashboard", "Provider Dashboard"),
-                      ("provider-profile", "Provider Profile"),
-                      ("organization", "Organization"),
-                      ("users", "User Management"),
-                      ("roles", "Role Management"),
-                      ("permissions", "Permission Management"),
-                      ("provider-settings", "Provider Settings"),
-                      ("sandata-settings", "Sandata Settings"),
-                      ("security-settings", "Security Settings"),
-                      ("audit-review", "Audit Review"),
+                      ("new-service", "New Service"),
+                      ("search-service", "Search Service"),
+                      ("service-details", "Service Details"),
+                      ("service-codes", "Service Codes"),
+                      ("service-rates", "Service Rates"),
+                      ("units-billing-rules", "Units and Billing Rules"),
+                      ("service-status", "Service Status"),
                       ("faq", "FAQ"),
                   ],
               },
               {
                   "number": "03",
+                  "slug": "individual-management",
+                  "title": "Individual",
+                  "prefix": "IND",
+                  "pages": [
+                      ("overview", "Overview"),
+                      ("new-individual", "New Individual"),
+                      ("search-individual", "Search Individual"),
+                      ("individual-detail", "Individual Detail"),
+                      ("edit-individual", "Edit Individual"),
+                      ("demographics", "Demographics"),
+                      ("contacts", "Contacts"),
+                      ("medical-information", "Medical Information"),
+                      ("documents", "Individual Documents"),
+                      ("service-information", "Service Information"),
+                      ("status-management", "Individual Status"),
+                      ("deactivate-individual", "Deactivate Individual"),
+                      ("troubleshooting", "Troubleshooting"),
+                      ("faq", "FAQ"),
+                  ],
+              },
+              {
+                  "number": "04",
                   "slug": "employee-management",
-                  "title": "Employee Management",
+                  "title": "Employees",
                   "prefix": "EMP",
                   "pages": [
                       ("overview", "Overview"),
@@ -87,65 +106,9 @@ jobs:
                   ],
               },
               {
-                  "number": "04",
-                  "slug": "individual-management",
-                  "title": "Individual Management",
-                  "prefix": "IND",
-                  "pages": [
-                      ("overview", "Overview"),
-                      ("individual-list", "Individual List"),
-                      ("create-individual", "Create Individual"),
-                      ("individual-details", "Individual Details"),
-                      ("edit-individual", "Edit Individual"),
-                      ("demographics", "Demographics"),
-                      ("contacts", "Contacts"),
-                      ("medical-information", "Medical Information"),
-                      ("documents", "Individual Documents"),
-                      ("service-information", "Service Information"),
-                      ("status-management", "Individual Status"),
-                      ("deactivate-individual", "Deactivate Individual"),
-                      ("troubleshooting", "Troubleshooting"),
-                      ("faq", "FAQ"),
-                  ],
-              },
-              {
                   "number": "05",
-                  "slug": "service-management",
-                  "title": "Service Management",
-                  "prefix": "SER",
-                  "pages": [
-                      ("overview", "Overview"),
-                      ("service-list", "Service List"),
-                      ("create-service", "Create Service"),
-                      ("edit-service", "Edit Service"),
-                      ("service-codes", "Service Codes"),
-                      ("rates", "Service Rates"),
-                      ("units", "Units and Billing Rules"),
-                      ("status-management", "Service Status"),
-                      ("faq", "FAQ"),
-                  ],
-              },
-              {
-                  "number": "06",
-                  "slug": "authorization",
-                  "title": "Authorization",
-                  "prefix": "AUT",
-                  "pages": [
-                      ("overview", "Overview"),
-                      ("authorization-list", "Authorization List"),
-                      ("create-authorization", "Create Authorization"),
-                      ("edit-authorization", "Edit Authorization"),
-                      ("service-limits", "Service Limits"),
-                      ("unit-tracking", "Unit Tracking"),
-                      ("expiration", "Expiration Management"),
-                      ("warnings", "Authorization Warnings"),
-                      ("faq", "FAQ"),
-                  ],
-              },
-              {
-                  "number": "07",
                   "slug": "scheduling",
-                  "title": "Scheduling",
+                  "title": "Schedule",
                   "prefix": "SCH",
                   "pages": [
                       ("overview", "Overview"),
@@ -163,7 +126,122 @@ jobs:
                   ],
               },
               {
+                  "number": "06",
+                  "slug": "medication-management",
+                  "title": "Medication",
+                  "prefix": "MED",
+                  "pages": [
+                      ("overview", "Overview"),
+                      ("orders", "Orders"),
+                      ("mar", "MAR"),
+                      ("treatment-record", "Treatment Record"),
+                      ("prn-vitals", "PRN & Vitals"),
+                      ("inventory-controlled", "Inventory & Controlled"),
+                      ("incidents-reports", "Incidents & Reports"),
+                      ("faq", "FAQ"),
+                  ],
+              },
+              {
+                  "number": "07",
+                  "slug": "bss",
+                  "title": "BSS",
+                  "prefix": "BSS",
+                  "pages": [
+                      ("overview", "Overview"),
+                      ("dashboard", "Dashboard"),
+                      ("individual-cases", "Individual Cases"),
+                      ("case-detail", "Case Detail"),
+                      ("daily-services", "Daily Services"),
+                      ("daily-log", "Daily Log"),
+                      ("supervisor-review", "Supervisor Review"),
+                      ("billing-review", "Billing Review"),
+                      ("faq", "FAQ"),
+                  ],
+              },
+              {
                   "number": "08",
+                  "slug": "authorization",
+                  "title": "Authorizations",
+                  "prefix": "AUT",
+                  "pages": [
+                      ("overview", "Overview"),
+                      ("authorization-list", "Authorization List"),
+                      ("create-authorization", "Create Authorization"),
+                      ("edit-authorization", "Edit Authorization"),
+                      ("service-limits", "Service Limits"),
+                      ("unit-tracking", "Unit Tracking"),
+                      ("expiration", "Expiration Management"),
+                      ("warnings", "Authorization Warnings"),
+                      ("faq", "FAQ"),
+                  ],
+              },
+              {
+                  "number": "09",
+                  "slug": "reports",
+                  "title": "Reports",
+                  "prefix": "REP",
+                  "pages": [
+                      ("overview", "Overview"),
+                      ("reports-center", "Reports Center"),
+                      ("daily-notes", "Daily Notes"),
+                      ("health-incident", "Health & Incident"),
+                      ("awake-report", "Awake Report"),
+                      ("call-off-requests", "Call Off Requests"),
+                      ("operational-reports", "Operational Reports"),
+                      ("employee-reports", "Employee Reports"),
+                      ("individual-reports", "Individual Reports"),
+                      ("scheduling-reports", "Scheduling Reports"),
+                      ("visit-reports", "Visit Reports"),
+                      ("billing-reports", "Billing Reports"),
+                      ("payroll-reports", "Payroll Reports"),
+                      ("exporting", "Exporting Reports"),
+                      ("printing", "Printing Reports"),
+                      ("faq", "FAQ"),
+                  ],
+              },
+              {
+                  "number": "10",
+                  "slug": "kpi",
+                  "title": "KPI",
+                  "prefix": "KPI",
+                  "pages": [
+                      ("overview", "Overview"),
+                      ("bsc-scorecard", "BSC Scorecard"),
+                      ("strategy-map", "Strategy Map"),
+                      ("goals-targets", "Goals & Targets"),
+                      ("kpi-ranking", "KPI Ranking"),
+                      ("performance-trends", "Performance Trends"),
+                      ("organization-kpi", "Organization KPI"),
+                      ("department-kpi", "Department KPI"),
+                      ("manager-kpi", "Manager KPI"),
+                      ("employee-kpi", "Employee KPI"),
+                      ("monthly-reports", "Monthly Reports"),
+                      ("quarterly-reports", "Quarterly Reports"),
+                      ("annual-reports", "Annual Reports"),
+                      ("scorecard-reports", "Scorecard Reports"),
+                      ("performance-reports", "Performance Reports"),
+                      ("pdf-export", "PDF Export"),
+                      ("excel-export", "Excel Export"),
+                      ("faq", "FAQ"),
+                  ],
+              },
+              {
+                  "number": "11",
+                  "slug": "time-keeping",
+                  "title": "Time Keeping",
+                  "prefix": "TIM",
+                  "pages": [
+                      ("overview", "Overview"),
+                      ("dashboard", "Dashboard"),
+                      ("time-entries", "Time Entries"),
+                      ("review-approval", "Review & Approval"),
+                      ("exceptions", "Exceptions"),
+                      ("reports", "Reports"),
+                      ("faq", "FAQ"),
+                  ],
+              },
+              {
+                  "number": "12",
                   "slug": "mobile-evv",
                   "title": "Mobile EVV",
                   "prefix": "EVV",
@@ -183,7 +261,7 @@ jobs:
                   ],
               },
               {
-                  "number": "09",
+                  "number": "13",
                   "slug": "visit-maintenance",
                   "title": "Visit Maintenance",
                   "prefix": "VIS",
@@ -203,17 +281,57 @@ jobs:
                   ],
               },
               {
-                  "number": "10",
+                  "number": "14",
+                  "slug": "house-management",
+                  "title": "House Management",
+                  "prefix": "HOU",
+                  "pages": [
+                      ("overview", "Overview"),
+                      ("dashboard", "Dashboard"),
+                      ("houses", "Houses"),
+                      ("residents", "Residents"),
+                      ("staff-assignments", "Staff Assignments"),
+                      ("tasks", "Tasks"),
+                      ("inspections", "Inspections"),
+                      ("reports", "Reports"),
+                      ("faq", "FAQ"),
+                  ],
+              },
+              {
+                  "number": "15",
+                  "slug": "payroll",
+                  "title": "Payroll",
+                  "prefix": "PAY",
+                  "pages": [
+                      ("overview", "Overview"),
+                      ("employee-rates", "Employee Rates"),
+                      ("payroll-processing", "Payroll Processing"),
+                      ("payroll-history", "Payroll History"),
+                      ("tax-reports", "Tax Reports"),
+                      ("direct-deposit", "Direct Deposit"),
+                      ("payroll-settings", "Payroll Settings"),
+                      ("fixed-weekly-hours", "Fixed Weekly Hours"),
+                      ("time-review", "Time Review"),
+                      ("payroll-adjustments", "Payroll Adjustments"),
+                      ("print-payroll", "Print Payroll"),
+                      ("faq", "FAQ"),
+                  ],
+              },
+              {
+                  "number": "16",
                   "slug": "billing",
                   "title": "Billing",
                   "prefix": "BIL",
                   "pages": [
                       ("overview", "Overview"),
-                      ("individual-readiness", "Individual Readiness"),
-                      ("dsp-readiness", "DSP Readiness"),
-                      ("visit-review", "Visit Review"),
+                      ("dashboard", "Dashboard"),
+                      ("individual-readiness", "Step 1 · Individual Readiness"),
+                      ("dsp-readiness", "Step 2 · DSP Readiness"),
+                      ("visit-review", "Step 3 · Visit Review"),
+                      ("sandata-submission", "Step 4 · Sandata Submission"),
+                      ("provider-setup", "Provider Setup"),
+                      ("service-rates", "Service Rates"),
                       ("claim-batches", "Claim Batches"),
-                      ("sandata-submission", "Sandata Submission"),
                       ("submission-history", "Submission History"),
                       ("billing-errors", "Billing Errors"),
                       ("billing-reports", "Billing Reports"),
@@ -221,43 +339,72 @@ jobs:
                   ],
               },
               {
-                  "number": "11",
-                  "slug": "payroll",
-                  "title": "Payroll",
-                  "prefix": "PAY",
+                  "number": "17",
+                  "slug": "hipaa-compliance",
+                  "title": "HIPAA",
+                  "prefix": "HIP",
                   "pages": [
                       ("overview", "Overview"),
-                      ("employee-rates", "Employee Rates"),
-                      ("fixed-weekly-hours", "Fixed Weekly Hours"),
-                      ("time-review", "Time Review"),
-                      ("generate-payroll", "Generate Payroll"),
-                      ("payroll-adjustments", "Payroll Adjustments"),
-                      ("payroll-reports", "Payroll Reports"),
-                      ("print-payroll", "Print Payroll"),
+                      ("dashboard", "Dashboard"),
+                      ("audit-logs", "Audit Logs"),
+                      ("phi-access", "PHI Access"),
+                      ("login-history", "Login History"),
+                      ("support-sessions", "Support Sessions"),
+                      ("security-events", "Security Events"),
+                      ("export-history", "Export History"),
+                      ("incidents", "Incidents"),
+                      ("reports", "Reports"),
+                      ("settings", "Settings"),
+                      ("privacy-rule", "Privacy Rule"),
+                      ("security-rule", "Security Rule"),
+                      ("breach-notification", "Breach Notification"),
+                      ("minimum-necessary", "Minimum Necessary"),
+                      ("administrative-safeguards", "Administrative Safeguards"),
+                      ("physical-safeguards", "Physical Safeguards"),
+                      ("technical-safeguards", "Technical Safeguards"),
+                      ("risk-management", "Risk Management"),
+                      ("incident-response", "Incident Response"),
                       ("faq", "FAQ"),
                   ],
               },
               {
-                  "number": "12",
-                  "slug": "reports",
-                  "title": "Reports",
-                  "prefix": "REP",
+                  "number": "18",
+                  "slug": "support",
+                  "title": "Support",
+                  "prefix": "SUP",
                   "pages": [
                       ("overview", "Overview"),
-                      ("operational-reports", "Operational Reports"),
-                      ("employee-reports", "Employee Reports"),
-                      ("individual-reports", "Individual Reports"),
-                      ("scheduling-reports", "Scheduling Reports"),
-                      ("visit-reports", "Visit Reports"),
-                      ("billing-reports", "Billing Reports"),
-                      ("payroll-reports", "Payroll Reports"),
-                      ("exporting", "Exporting Reports"),
-                      ("printing", "Printing Reports"),
+                      ("dashboard", "Dashboard"),
+                      ("create-ticket", "Create Ticket"),
+                      ("my-tickets", "My Tickets"),
+                      ("all-provider-tickets", "All Provider Tickets"),
                       ("faq", "FAQ"),
                   ],
               },
               {
-                  "number": "13",
+                  "number": "19",
+                  "slug": "provider-administration",
+                  "title": "Admin",
+                  "prefix": "ADM",
+                  "pages": [
+                      ("overview", "Overview"),
+                      ("users", "Users"),
+                      ("roles", "Roles"),
+                      ("department-management", "Department Management"),
+                      ("announcements", "Announcements"),
+                      ("branches-locations", "Branches / Locations"),
+                      ("change-password", "Change Password"),
+                      ("provider-profile", "Provider Profile"),
+                      ("permissions", "Permission Management"),
+                      ("provider-settings", "Provider Settings"),
+                      ("sandata-settings", "Sandata Settings"),
+                      ("security-settings", "Security Settings"),
+                      ("audit-review", "Audit Review"),
+                      ("faq", "FAQ"),
+                  ],
+              },
+              {
+                  "number": "20",
                   "slug": "security",
                   "title": "Security",
                   "prefix": "SEC",
@@ -275,27 +422,7 @@ jobs:
                   ],
               },
               {
-                  "number": "14",
-                  "slug": "hipaa-compliance",
-                  "title": "HIPAA Compliance",
-                  "prefix": "HIP",
-                  "pages": [
-                      ("overview", "Overview"),
-                      ("privacy-rule", "Privacy Rule"),
-                      ("security-rule", "Security Rule"),
-                      ("breach-notification", "Breach Notification"),
-                      ("minimum-necessary", "Minimum Necessary"),
-                      ("phi-access", "PHI Access"),
-                      ("administrative-safeguards", "Administrative Safeguards"),
-                      ("physical-safeguards", "Physical Safeguards"),
-                      ("technical-safeguards", "Technical Safeguards"),
-                      ("risk-management", "Risk Management"),
-                      ("incident-response", "Incident Response"),
-                      ("faq", "FAQ"),
-                  ],
-              },
-              {
-                  "number": "15",
+                  "number": "21",
                   "slug": "audit-logs",
                   "title": "Audit Logs",
                   "prefix": "AUD",
@@ -314,7 +441,7 @@ jobs:
                   ],
               },
               {
-                  "number": "16",
+                  "number": "22",
                   "slug": "developer-guide",
                   "title": "Developer Guide",
                   "prefix": "DEV",
@@ -336,7 +463,7 @@ jobs:
                   ],
               },
               {
-                  "number": "17",
+                  "number": "23",
                   "slug": "qa-guide",
                   "title": "QA Guide",
                   "prefix": "QA",
@@ -356,26 +483,36 @@ jobs:
                   ],
               },
               {
-                  "number": "18",
+                  "number": "24",
                   "slug": "test-catalog",
                   "title": "Test Catalog",
                   "prefix": "TST",
                   "pages": [
                       ("overview", "Overview"),
-                      ("employee-tests", "Employee Test Cases"),
+                      ("service-tests", "Service Test Cases"),
                       ("individual-tests", "Individual Test Cases"),
+                      ("employee-tests", "Employee Test Cases"),
                       ("scheduling-tests", "Scheduling Test Cases"),
+                      ("medication-tests", "Medication Test Cases"),
+                      ("bss-tests", "BSS Test Cases"),
+                      ("authorization-tests", "Authorization Test Cases"),
+                      ("reports-tests", "Reports Test Cases"),
+                      ("kpi-tests", "KPI Test Cases"),
+                      ("time-keeping-tests", "Time Keeping Test Cases"),
                       ("mobile-tests", "Mobile EVV Test Cases"),
                       ("visit-tests", "Visit Test Cases"),
+                      ("house-management-tests", "House Management Test Cases"),
                       ("billing-tests", "Billing Test Cases"),
                       ("payroll-tests", "Payroll Test Cases"),
+                      ("support-tests", "Support Test Cases"),
+                      ("admin-tests", "Admin Test Cases"),
                       ("security-tests", "Security Test Cases"),
                       ("hipaa-tests", "HIPAA Test Cases"),
                       ("audit-tests", "Audit Test Cases"),
                   ],
               },
               {
-                  "number": "19",
+                  "number": "25",
                   "slug": "api-documentation",
                   "title": "API Documentation",
                   "prefix": "API",
@@ -388,15 +525,24 @@ jobs:
                       ("service-api", "Service API"),
                       ("authorization-api", "Authorization API"),
                       ("scheduling-api", "Scheduling API"),
+                      ("medication-api", "Medication API"),
+                      ("bss-api", "BSS API"),
+                      ("reports-api", "Reports API"),
+                      ("kpi-api", "KPI API"),
+                      ("time-keeping-api", "Time Keeping API"),
+                      ("mobile-api", "Mobile EVV API"),
                       ("visit-api", "Visit API"),
+                      ("house-management-api", "House Management API"),
                       ("billing-api", "Billing API"),
                       ("payroll-api", "Payroll API"),
+                      ("support-api", "Support API"),
+                      ("admin-api", "Admin API"),
                       ("sandata-api", "Sandata API"),
                       ("errors", "API Errors"),
                   ],
               },
               {
-                  "number": "20",
+                  "number": "26",
                   "slug": "ai-agents",
                   "title": "AI Agents",
                   "prefix": "AI",
@@ -414,7 +560,7 @@ jobs:
                   ],
               },
               {
-                  "number": "21",
+                  "number": "27",
                   "slug": "company-playbook",
                   "title": "Company Playbook",
                   "prefix": "PLY",
@@ -433,7 +579,7 @@ jobs:
                   ],
               },
               {
-                  "number": "22",
+                  "number": "28",
                   "slug": "troubleshooting",
                   "title": "Troubleshooting",
                   "prefix": "TRB",
@@ -442,6 +588,10 @@ jobs:
                       ("login-issues", "Login Issues"),
                       ("permission-issues", "Permission Issues"),
                       ("data-display-issues", "Data Display Issues"),
+                      ("medication-issues", "Medication Issues"),
+                      ("bss-issues", "BSS Issues"),
+                      ("kpi-issues", "KPI Issues"),
+                      ("time-keeping-issues", "Time Keeping Issues"),
                       ("mobile-issues", "Mobile Issues"),
                       ("scheduling-issues", "Scheduling Issues"),
                       ("visit-issues", "Visit Issues"),
@@ -451,16 +601,21 @@ jobs:
                   ],
               },
               {
-                  "number": "23",
+                  "number": "29",
                   "slug": "faq",
                   "title": "Frequently Asked Questions",
                   "prefix": "FAQ",
                   "pages": [
                       ("overview", "Overview"),
                       ("account", "Account FAQ"),
+                      ("services", "Services FAQ"),
                       ("employees", "Employee FAQ"),
                       ("individuals", "Individual FAQ"),
                       ("scheduling", "Scheduling FAQ"),
+                      ("medication", "Medication FAQ"),
+                      ("bss", "BSS FAQ"),
+                      ("kpi", "KPI FAQ"),
+                      ("time-keeping", "Time Keeping FAQ"),
                       ("mobile", "Mobile EVV FAQ"),
                       ("billing", "Billing FAQ"),
                       ("payroll", "Payroll FAQ"),
@@ -469,7 +624,7 @@ jobs:
                   ],
               },
               {
-                  "number": "24",
+                  "number": "30",
                   "slug": "release-notes",
                   "title": "Release Notes",
                   "prefix": "REL",
@@ -482,11 +637,16 @@ jobs:
                   ],
               },
           ]
+          def write_generated(path: Path, content: str):
+              path.parent.mkdir(parents=True, exist_ok=True)
+              action = "UPDATE" if path.exists() else "CREATE"
+              path.write_text(content, encoding="utf-8")
+              print(f"{action}: {path}")
 
           def write_if_missing(path: Path, content: str):
               path.parent.mkdir(parents=True, exist_ok=True)
               if path.exists():
-                  print(f"SKIP existing: {path}")
+                  print(f"PRESERVE existing: {path}")
                   return
               path.write_text(content, encoding="utf-8")
               print(f"CREATE: {path}")
@@ -585,7 +745,7 @@ jobs:
 
           def screenshot_placeholder(prefix, number, slug, title):
               screenshot_id = f"{prefix}-{number:03d}"
-              filename = f"{screenshot_id}-{slug}.png"
+              filename = f"{screenshot_id}-{slug}.jpg"
               return f"""
               <section class="doc-section">
                 <h2>Screenshot</h2>
@@ -1405,8 +1565,8 @@ jobs:
               ),
           )
 
-          write_if_missing(ASSETS / "documentation.css", css.strip() + "\n")
-          write_if_missing(ASSETS / "documentation.js", js.strip() + "\n")
+          write_generated(ASSETS / "documentation.css", css.strip() + "\n")
+          write_generated(ASSETS / "documentation.js", js.strip() + "\n")
 
           home_cards = "\n".join(
               f"""
@@ -1443,7 +1603,7 @@ jobs:
           </section>
           """
 
-          write_if_missing(
+          write_generated(
               ROOT / "index.html",
               page_template(
                   "True Care System Documentation",
@@ -1467,7 +1627,7 @@ jobs:
 
           Naming format:
 
-          `{module["prefix"]}-001-description.png`
+          `{module["prefix"]}-001-description.jpg`
 
           Requirements:
 
@@ -1512,7 +1672,7 @@ jobs:
               </section>
               """
 
-              write_if_missing(
+              write_generated(
                   module_dir / "index.html",
                   page_template(
                       module["title"],
@@ -1529,7 +1689,7 @@ jobs:
                   body = standard_page_body(
                       module, page_slug, page_title, index
                   )
-                  write_if_missing(
+                  write_generated(
                       module_dir / f"{page_slug}.html",
                       page_template(
                           page_title,
@@ -1570,5 +1730,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add documentation
-          git commit -m "Create True Care System documentation portal"
+          git commit -m "Align documentation portal with complete product navigation"
           git push
