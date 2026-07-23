@@ -1,123 +1,112 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
-const modules=[
+    const modules = [
+        ["01", "Getting Started", "/documentation/getting-started/index.html", "getting-started"],
+        ["02", "Services", "/documentation/service-management/index.html", "service-management"],
+        ["03", "Individual", "/documentation/individual/index.html", "individual"],
+        ["04", "Employees", "/documentation/employees/index.html", "employees"],
+        ["05", "Schedule", "/documentation/schedule/index.html", "schedule"],
+        ["06", "Medication", "/documentation/medication/index.html", "medication"],
+        ["07", "BSS", "/documentation/bss/index.html", "bss"],
+        ["08", "Authorizations", "/documentation/authorizations/index.html", "authorizations"],
+        ["09", "Reports", "/documentation/reports/index.html", "reports"],
+        ["10", "KPI", "/documentation/kpi/index.html", "kpi"],
+        ["11", "Time Keeping", "/documentation/time-keeping/index.html", "time-keeping"],
+        ["12", "Mobile EVV", "/documentation/mobile-evv/index.html", "mobile-evv"],
+        ["13", "Visit Maintenance", "/documentation/visit-maintenance/index.html", "visit-maintenance"],
+        ["14", "House Management", "/documentation/house-management/index.html", "house-management"],
+        ["15", "Payroll", "/documentation/payroll/index.html", "payroll"],
+        ["16", "Billing", "/documentation/billing/index.html", "billing"],
+        ["17", "HIPAA", "/documentation/hipaa/index.html", "hipaa"],
+        ["18", "Support", "/documentation/support/index.html", "support"],
+        ["19", "Admin", "/documentation/admin/index.html", "admin"],
+        ["20", "Security", "/documentation/security/index.html", "security"],
+        ["21", "Audit Logs", "/documentation/audit-logs/index.html", "audit-logs"],
+        ["22", "Developer Guide", "/documentation/developer-guide/index.html", "developer-guide"],
+        ["23", "QA Guide", "/documentation/qa-guide/index.html", "qa-guide"],
+        ["24", "Test Catalog", "/documentation/test-catalog/index.html", "test-catalog"],
+        ["25", "API Documentation", "/documentation/api/index.html", "api"],
+        ["26", "AI Agents", "/documentation/ai-agents/index.html", "ai-agents"]
+    ];
 
-["01","Getting Started","/documentation/getting-started/index.html","getting-started"],
+    const article = document.querySelector(".doc-article");
 
-["02","Services","/documentation/service-management/index.html","service-management"],
+    if (!article) {
+        return;
+    }
 
-["03","Individual","/documentation/individual/index.html","individual"],
+    /*
+     * Prevent duplicate sidebar creation if the script is loaded twice.
+     */
+    if (document.querySelector(".docs-layout")) {
+        return;
+    }
 
-["04","Employees","/documentation/employees/index.html","employees"],
+    const currentModule =
+        document.body.getAttribute("data-doc-module") || "";
 
-["05","Schedule","/documentation/schedule/index.html","schedule"],
+    let menuHtml = "";
 
-["06","Medication","/documentation/medication/index.html","medication"],
+    modules.forEach(function (moduleItem) {
 
-["07","BSS","/documentation/bss/index.html","bss"],
+        const number = moduleItem[0];
+        const label = moduleItem[1];
+        const href = moduleItem[2];
+        const moduleKey = moduleItem[3];
 
-["08","Authorizations","/documentation/authorizations/index.html","authorizations"],
+        const activeClass =
+            currentModule === moduleKey ? "active" : "";
 
-["09","Reports","/documentation/reports/index.html","reports"],
+        menuHtml += `
+            <a href="${href}" class="${activeClass}">
+                <span class="no">${number}</span>
+                <span>${label}</span>
+            </a>
+        `;
+    });
 
-["10","KPI","/documentation/kpi/index.html","kpi"],
+    const layout = document.createElement("div");
 
-["11","Time Keeping","/documentation/time-keeping/index.html","time-keeping"],
+    layout.className = "docs-layout";
 
-["12","Mobile EVV","/documentation/mobile-evv/index.html","mobile-evv"],
+    layout.innerHTML = `
+        <aside class="docs-sidebar">
 
-["13","Visit Maintenance","/documentation/visit-maintenance/index.html","visit-maintenance"],
+            <div class="docs-logo">
 
-["14","House Management","/documentation/house-management/index.html","house-management"],
+                <a
+                    href="/documentation/index.html"
+                    aria-label="True Care System Documentation Home"
+                >
+                    <img
+                        src="/assets/logo/logo.png"
+                        alt="True Care System"
+                    >
+                </a>
 
-["15","Payroll","/documentation/payroll/index.html","payroll"],
+            </div>
 
-["16","Billing","/documentation/billing/index.html","billing"],
+            <div class="docs-title">
+                Documentation
+            </div>
 
-["17","HIPAA","/documentation/hipaa/index.html","hipaa"],
+            <nav
+                class="docs-nav"
+                aria-label="Documentation navigation"
+            >
+                ${menuHtml}
+            </nav>
 
-["18","Support","/documentation/support/index.html","support"],
+        </aside>
 
-["19","Admin","/documentation/admin/index.html","admin"],
+        <main class="docs-content"></main>
+    `;
 
-["20","Security","/documentation/security/index.html","security"],
+    article.parentNode.insertBefore(layout, article);
 
-["21","Audit Logs","/documentation/audit-logs/index.html","audit-logs"],
+    const contentContainer =
+        layout.querySelector(".docs-content");
 
-["22","Developer Guide","/documentation/developer-guide/index.html","developer-guide"],
-
-["23","QA Guide","/documentation/qa-guide/index.html","qa-guide"],
-
-["24","Test Catalog","/documentation/test-catalog/index.html","test-catalog"],
-
-["25","API Documentation","/documentation/api/index.html","api"],
-
-["26","AI Agents","/documentation/ai-agents/index.html","ai-agents"]
-
-];
-
-const article=document.querySelector(".doc-article");
-
-if(!article) return;
-
-const module=document.body.dataset.docModule;
-
-let menu="";
-
-modules.forEach(m=>{
-
-menu+=`
-
-<a href="${m[1]}" class="${module===m[3]?"active":""}">
-
-<span class="no">${m[0]}</span>
-
-<span>${m[1]}</span>
-
-</a>
-
-`;
-
-});
-
-const layout=document.createElement("div");
-
-layout.className="docs-layout";
-
-layout.innerHTML=`
-
-<aside class="docs-sidebar">
-
-<div class="docs-logo">
-
-<a href="/documentation/index.html">
-
-<img src="/assets/logo/logo.png">
-
-</a>
-
-</div>
-
-<div class="docs-title">
-
-Documentation
-
-</div>
-
-<nav class="docs-nav">
-
-${menu}
-
-</nav>
-
-</aside>
-
-<div class="docs-content"></div>
-
-`;
-
-article.parentNode.insertBefore(layout,article);
-
-layout.querySelector(".docs-content").appendChild(article);
+    contentContainer.appendChild(article);
 
 });
