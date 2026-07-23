@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Detailed New Employee guide for True Care System, including demographics, employment information, address, emergency contact, work preferences, notification preferences, mobile access, validation, security, troubleshooting, and FAQ.">
+  <title>New Employee | Employee Management | True Care System Documentation</title>
+  <link rel="stylesheet" href="/documentation/assets/documentation.css">
+
+  <style>
+    .employee-detail-table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+    }
+
+    .employee-detail-table col:first-child {
+      width: 240px;
+    }
+
+    .employee-detail-table col:nth-child(3) {
+      width: 200px;
+    }
+
+    .employee-detail-table th,
+    .employee-detail-table td {
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .doc-article .doc-figure {
+      width: 100%;
+      margin: 20px 0 28px;
+      text-align: left;
+    }
+
+    .doc-article .doc-figure img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0;
+    }
+
+    .doc-article .doc-figure figcaption {
+      width: 100%;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .new-employee-navigation {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      align-items: center;
+      width: 100%;
+      margin-top: 32px;
+    }
+
+    .new-employee-navigation .doc-button:nth-child(1) {
+      justify-self: start;
+    }
+
+    .new-employee-navigation .doc-button:nth-child(2) {
+      justify-self: center;
+    }
+
+    .new-employee-navigation .doc-button:nth-child(3) {
+      justify-self: end;
+    }
+
+    @media (max-width: 800px) {
+      .employee-detail-table {
+        table-layout: auto;
+      }
+
+      .employee-detail-table col {
+        width: auto !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .new-employee-navigation {
+        grid-template-columns: 1fr;
+      }
+
+      .new-employee-navigation .doc-button {
+        justify-self: stretch !important;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="doc-header">
+    <a class="doc-brand" href="/documentation/">
+      <img src="/logo.png" alt="True Care System">
+      <span><strong>True Care System</strong><small>Documentation</small></span>
+    </a>
+
+    <button
+      class="doc-mobile-menu"
+      id="docMobileMenu"
+      type="button"
+      aria-label="Open documentation menu"
+      aria-controls="docSidebar"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+    <div class="doc-header-actions">
+      <label class="doc-search">
+        <span aria-hidden="true">⌕</span>
+        <input
+          id="docSearchInput"
+          type="search"
+          placeholder="Search documentation..."
+          autocomplete="off"
+          aria-label="Search documentation"
+        >
+      </label>
+
+      <a href="/" class="doc-back-link">Return to Website</a>
+    </div>
+  </header>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="docSidebar">
+      <div class="doc-sidebar-title">Documentation</div>
+
+      <nav aria-label="Documentation modules">
+        <a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
+        <a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
+        <a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
+        <a class="doc-nav-module active" href="/documentation/employee-management/" aria-current="page"><span class="doc-nav-number">04</span><span>Employees</span></a>
+        <a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
+        <a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
+        <a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
+        <a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
+        <a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
+        <a class="doc-nav-module" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span>KPI</span></a>
+        <a class="doc-nav-module" href="/documentation/time-keeping/"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
+        <a class="doc-nav-module" href="/documentation/mobile-evv/"><span class="doc-nav-number">12</span><span>Mobile EVV</span></a>
+        <a class="doc-nav-module" href="/documentation/visit-maintenance/"><span class="doc-nav-number">13</span><span>Visit Maintenance</span></a>
+        <a class="doc-nav-module" href="/documentation/house-management/"><span class="doc-nav-number">14</span><span>House Management</span></a>
+        <a class="doc-nav-module" href="/documentation/payroll/"><span class="doc-nav-number">15</span><span>Payroll</span></a>
+        <a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
+        <a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
+        <a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
+        <a class="doc-nav-module" href="/documentation/provider-administration/"><span class="doc-nav-number">19</span><span>Admin</span></a>
+        <a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
+        <a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
+        <a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
+        <a class="doc-nav-module" href="/documentation/qa-guide/"><span class="doc-nav-number">23</span><span>QA Guide</span></a>
+        <a class="doc-nav-module" href="/documentation/test-catalog/"><span class="doc-nav-number">24</span><span>Test Catalog</span></a>
+        <a class="doc-nav-module" href="/documentation/api-documentation/"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
+        <a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
+        <a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
+        <a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
+        <a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>FAQ</span></a>
+        <a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
+      </nav>
+    </aside>
+
+    <main class="doc-main">
+      <div class="doc-breadcrumb">
+        <a href="/documentation/">Documentation</a>
+        <span>›</span>
+        <a href="/documentation/employee-management/">Employees</a>
+        <span>›</span>
+        <span>New Employee</span>
+      </div>
+
+      <article class="doc-article">
+        <header class="doc-article-header">
+          <div>
+            <p class="doc-eyebrow">EMPLOYEE MANAGEMENT</p>
+            <h1>New Employee</h1>
+          </div>
+
+          <dl class="doc-metadata">
+            <div><dt>Document ID</dt><dd>EMP-DOC-002</dd></div>
+            <div><dt>Version</dt><dd>1.0</dd></div>
+            <div><dt>Status</dt><dd>Draft</dd></div>
+            <div><dt>Last Updated</dt><dd>07/23/2026</dd></div>
+          </dl>
+        </header>
+
+        <div class="doc-notice doc-notice-info">
+          <strong>Purpose</strong>
+          <p>
+            The New Employee page is used to create a complete employee profile in True Care System.
+            It captures personal information, employment details, branch and work location, address,
+            emergency contact information, work preferences, notification settings, and mobile application access.
+          </p>
+        </div>
+
+        <section class="doc-section">
+          <h2>Screen Overview</h2>
+
+          <figure class="doc-figure">
+            <img
+              src="/documentation/employee-management/images/new-employee.jpg"
+              alt="New Employee screen showing demographics, employment info, address, emergency contact, work preferences, notification preferences, and mobile user access"
+            >
+            <figcaption>
+              New Employee screen with all employee setup sections and Save Employee controls.
+            </figcaption>
+          </figure>
+
+          <p>
+            The New Employee page is a single-page workflow. Complete each section from top to bottom,
+            review required fields, and select <strong>Save Employee</strong> when the record is ready.
+          </p>
+        </section>
+
+        <section class="doc-section">
+          <h2>Page Actions</h2>
+
+          <table class="employee-detail-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Action</th>
+                <th>Description</th>
+                <th>When to Use</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Cancel</strong></td>
+                <td>Leaves the New Employee page without completing the record.</td>
+                <td>Use when the employee should not be created.</td>
+              </tr>
+              <tr>
+                <td><strong>Save Employee</strong></td>
+                <td>Validates the form and creates the employee record.</td>
+                <td>Use after required information has been reviewed.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="doc-notice doc-notice-warning">
+            <strong>Search First</strong>
+            <p>
+              Before creating a new employee, use Search Employee to confirm that the person does
+              not already have an employee record.
+            </p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="demographics">
+          <h2>Demographics</h2>
+
+          <p>
+            Demographics records the employee's basic personal and contact information.
+          </p>
+
+          <table class="employee-detail-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Description</th>
+                <th>Guidance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>First Name</strong></td>
+                <td>Employee's legal first name.</td>
+                <td>Use the name shown on approved employment documents.</td>
+              </tr>
+              <tr>
+                <td><strong>Middle Name</strong></td>
+                <td>Employee's middle name or initial.</td>
+                <td>Optional unless required by Provider policy.</td>
+              </tr>
+              <tr>
+                <td><strong>Last Name</strong></td>
+                <td>Employee's legal last name.</td>
+                <td>Verify spelling before saving.</td>
+              </tr>
+              <tr>
+                <td><strong>Date of Birth</strong></td>
+                <td>Employee's date of birth.</td>
+                <td>Use MM/DD/YYYY.</td>
+              </tr>
+              <tr>
+                <td><strong>Gender</strong></td>
+                <td>Employee's gender selection.</td>
+                <td>Select the applicable value from the list.</td>
+              </tr>
+              <tr>
+                <td><strong>Phone</strong></td>
+                <td>Primary employee phone number.</td>
+                <td>Use a current number that can receive authorized communication.</td>
+              </tr>
+              <tr>
+                <td><strong>Email</strong></td>
+                <td>Primary employee email address.</td>
+                <td>Verify the address carefully because it may be used for notifications or access.</td>
+              </tr>
+              <tr>
+                <td><strong>Education / Qualification</strong></td>
+                <td>Highest education level or relevant qualification.</td>
+                <td>Select the most accurate available option.</td>
+              </tr>
+              <tr>
+                <td><strong>SSN (9 digits)</strong></td>
+                <td>Employee Social Security Number.</td>
+                <td>Enter only when authorized and required. Protect this value as highly sensitive information.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="doc-section" id="employment-info">
+          <h2>Employment Info</h2>
+
+          <p>
+            Employment Info defines the employee's role, status, dates, branch, work location,
+            employment type, and supervisor.
+          </p>
+
+          <table class="employee-detail-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Description</th>
+                <th>Guidance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Employee ID</strong></td>
+                <td>True Care System employee identifier.</td>
+                <td>The screen indicates that this value is generated automatically when saving.</td>
+              </tr>
+              <tr>
+                <td><strong>Role / Position</strong></td>
+                <td>Employee's assigned system and operational role.</td>
+                <td>Select the role that matches approved job responsibilities.</td>
+              </tr>
+              <tr>
+                <td><strong>Status</strong></td>
+                <td>Current employment status.</td>
+                <td>The default shown is Active. Change only when appropriate.</td>
+              </tr>
+              <tr>
+                <td><strong>Hire Date</strong></td>
+                <td>Date employment began.</td>
+                <td>Use MM/DD/YYYY.</td>
+              </tr>
+              <tr>
+                <td><strong>Termination Date</strong></td>
+                <td>Date employment ended.</td>
+                <td>Leave blank for an active employee unless otherwise required.</td>
+              </tr>
+              <tr>
+                <td><strong>Employment Type</strong></td>
+                <td>Full-time, part-time, temporary, contractor, or other configured type.</td>
+                <td>Select the correct employment arrangement.</td>
+              </tr>
+              <tr>
+                <td><strong>Branch</strong></td>
+                <td>Provider branch associated with the employee.</td>
+                <td>Select the employee's approved branch.</td>
+              </tr>
+              <tr>
+                <td><strong>Primary Work Location</strong></td>
+                <td>Main work location within the selected branch.</td>
+                <td>Select the Branch first, then choose the correct location.</td>
+              </tr>
+              <tr>
+                <td><strong>Supervisor</strong></td>
+                <td>Name of the employee's direct supervisor.</td>
+                <td>Enter the current approved supervisor.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="doc-notice doc-notice-info">
+            <strong>Branch Dependency</strong>
+            <p>
+              Primary Work Location may remain unavailable until a Branch is selected.
+            </p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="address">
+          <h2>Address</h2>
+
+          <p>
+            Address records the employee's home mailing or residential address.
+          </p>
+
+          <table class="employee-detail-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Description</th>
+                <th>Guidance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Address Line 1</strong></td>
+                <td>Street address, PO Box, or primary address information.</td>
+                <td>Enter the main address line.</td>
+              </tr>
+              <tr>
+                <td><strong>Address Line 2</strong></td>
+                <td>Apartment, unit, building, or additional address information.</td>
+                <td>Optional.</td>
+              </tr>
+              <tr>
+                <td><strong>City</strong></td>
+                <td>City or municipality.</td>
+                <td>Use the current city.</td>
+              </tr>
+              <tr>
+                <td><strong>State</strong></td>
+                <td>State abbreviation.</td>
+                <td>The screenshot shows PA.</td>
+              </tr>
+              <tr>
+                <td><strong>ZIP Code</strong></td>
+                <td>Postal ZIP code.</td>
+                <td>Verify the ZIP code before saving.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="doc-section" id="emergency-contact">
+          <h2>Emergency Contact</h2>
+
+          <p>
+            Emergency Contact identifies the person the Provider should contact when an emergency
+            involves the employee.
+          </p>
+
+          <table class="employee-detail-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Description</th>
+                <th>Guidance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Name</strong></td>
+                <td>Full name of the emergency contact.</td>
+                <td>Confirm with the employee.</td>
+              </tr>
+              <tr>
+                <td><strong>Relationship</strong></td>
+                <td>Relationship to the employee.</td>
+                <td>Example: spouse, sibling, parent, or friend.</td>
+              </tr>
+              <tr>
+                <td><strong>Phone</strong></td>
+                <td>Primary emergency contact phone number.</td>
+                <td>Use a current reachable number.</td>
+              </tr>
+              <tr>
+                <td><strong>Email</strong></td>
+                <td>Emergency contact email address.</td>
+                <td>Optional unless required.</td>
+              </tr>
+              <tr>
+                <td><strong>Preferred Language</strong></td>
+                <td>Preferred communication language of the emergency contact.</td>
+                <td>Select the appropriate language when known.</td>
+              </tr>
+              <tr>
+                <td><strong>Address</strong></td>
+                <td>Emergency contact's address.</td>
+                <td>Enter only when required by Provider policy.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="doc-section" id="work-preferences">
+          <h2>Work Preferences</h2>
+
+          <p>
+            Work Preferences records scheduling and availability information that can support
+            staffing decisions.
+          </p>
+
+          <table class="employee-detail-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Description</th>
+                <th>Guidance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Preferred Shift</strong></td>
+                <td>Employee's preferred work shift.</td>
+                <td>Select the closest configured option or No specific preference.</td>
+              </tr>
+              <tr>
+                <td><strong>Max Weekly Hours</strong></td>
+                <td>Maximum preferred or approved weekly hours.</td>
+                <td>Enter a realistic value such as 40.</td>
+              </tr>
+              <tr>
+                <td><strong>Can Work Weekends</strong></td>
+                <td>Indicates weekend availability.</td>
+                <td>Select only when confirmed.</td>
+              </tr>
+              <tr>
+                <td><strong>Can Work Holidays</strong></td>
+                <td>Indicates holiday availability.</td>
+                <td>Select only when confirmed.</td>
+              </tr>
+              <tr>
+                <td><strong>Additional Notes</strong></td>
+                <td>Other work preferences or staffing restrictions.</td>
+                <td>Use objective, necessary, and current information.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="doc-notice doc-notice-warning">
+            <strong>Preference vs. Availability</strong>
+            <p>
+              Work preferences support staffing but do not guarantee a specific schedule.
+              Final assignments depend on authorization, employee qualifications, service needs,
+              branch operations, and supervisor approval.
+            </p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="notification-preferences">
+          <h2>Notification Preferences</h2>
+
+          <p>
+            Notification Preferences controls how the employee receives system updates and which
+            topics are included.
+          </p>
+
+          <h3>Channels</h3>
+          <ul>
+            <li>Email notifications</li>
+            <li>SMS / Text messages</li>
+            <li>In-app notifications</li>
+          </ul>
+
+          <h3>Topics</h3>
+          <ul>
+            <li>Schedule changes</li>
+            <li>Payroll and timesheet updates</li>
+            <li>Policy and compliance updates</li>
+          </ul>
+
+          <p>
+            Review these selections with the employee and verify that the related phone number and
+            email address are accurate.
+          </p>
+        </section>
+
+        <section class="doc-section" id="mobile-user">
+          <h2>Mobile User</h2>
+
+          <p>
+            The Mobile User checkbox controls whether the employee should have access to the
+            True Care System mobile application.
+          </p>
+
+          <h3>Enable Mobile User When</h3>
+          <ul>
+            <li>The employee performs mobile EVV check-in or check-out.</li>
+            <li>The employee needs mobile schedule access.</li>
+            <li>The employee needs approved mobile documentation features.</li>
+            <li>The employee has completed required onboarding and security steps.</li>
+          </ul>
+
+          <h3>Do Not Enable Mobile User When</h3>
+          <ul>
+            <li>The employee does not require the mobile application.</li>
+            <li>The employee record is incomplete or inactive.</li>
+            <li>Mobile access has not been approved.</li>
+            <li>The employee should not access Individual or visit information from a mobile device.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Role and Access Considerations</h2>
+
+          <p>
+            Role / Position and Mobile User settings may affect what the employee can access.
+            Assign only the role and access required for approved job duties.
+          </p>
+
+          <ul>
+            <li>Use the least-privilege principle.</li>
+            <li>Do not assign Provider Admin access to routine staff.</li>
+            <li>Verify branch and location scope.</li>
+            <li>Review access when duties change.</li>
+            <li>Disable or update access promptly when employment ends.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Recommended Workflow</h2>
+
+          <ol>
+            <li>Search for the employee to prevent duplicates.</li>
+            <li>Open New Employee.</li>
+            <li>Complete Demographics.</li>
+            <li>Complete Employment Info.</li>
+            <li>Select Branch and Primary Work Location.</li>
+            <li>Complete Address and Emergency Contact.</li>
+            <li>Review Work Preferences.</li>
+            <li>Review Notification Preferences.</li>
+            <li>Enable Mobile User only when required.</li>
+            <li>Review the entire page.</li>
+            <li>Select Save Employee.</li>
+            <li>Return to Search Employee and confirm the new record.</li>
+          </ol>
+        </section>
+
+        <section class="doc-section">
+          <h2>Validation Checklist</h2>
+
+          <ul>
+            <li>The employee does not already exist.</li>
+            <li>Legal first and last names are correct.</li>
+            <li>Date of birth is accurate.</li>
+            <li>Phone and email are valid.</li>
+            <li>Education or qualification is selected when required.</li>
+            <li>SSN is entered only when authorized and verified.</li>
+            <li>Role / Position is correct.</li>
+            <li>Status and Employment Type are correct.</li>
+            <li>Hire Date is accurate.</li>
+            <li>Termination Date is blank for an active employee unless applicable.</li>
+            <li>Branch and Primary Work Location are correct.</li>
+            <li>Supervisor information is current.</li>
+            <li>Address and emergency contact information are reviewed.</li>
+            <li>Work and notification preferences are confirmed.</li>
+            <li>Mobile User access is appropriate.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Best Practices</h2>
+
+          <ul>
+            <li>Search before creating a new employee.</li>
+            <li>Use verified employment and identity records.</li>
+            <li>Assign the correct role from the beginning.</li>
+            <li>Keep branch and work location accurate.</li>
+            <li>Review phone and email before enabling notifications.</li>
+            <li>Protect SSN and other sensitive employee information.</li>
+            <li>Use objective wording in Additional Notes.</li>
+            <li>Enable mobile access only when operationally necessary.</li>
+            <li>Update status and access promptly when employment changes.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Security and HIPAA</h2>
+
+          <p>
+            New Employee contains sensitive personal and employment information, including SSN,
+            date of birth, contact information, address, emergency contacts, employment status,
+            role, work location, and access settings.
+          </p>
+
+          <ul>
+            <li>Access this page only for authorized HR or administrative work.</li>
+            <li>Apply role-based access and least privilege.</li>
+            <li>Do not expose SSN or employee data in screenshots or unapproved messages.</li>
+            <li>Verify the correct Provider and Branch before saving.</li>
+            <li>Do not use placeholder personal information.</li>
+            <li>Review mobile and system access carefully.</li>
+            <li>Record access and changes through Audit Logs where applicable.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Troubleshooting</h2>
+
+          <h3>Save Employee does not complete.</h3>
+          <p>
+            Review required fields and any validation messages. Confirm phone, email, date, and SSN formats.
+          </p>
+
+          <h3>Primary Work Location is unavailable.</h3>
+          <p>
+            Select the Branch first. Then choose an available Primary Work Location.
+          </p>
+
+          <h3>The correct Role / Position is missing.</h3>
+          <p>
+            Contact an authorized administrator to review role configuration. Do not select an incorrect role.
+          </p>
+
+          <h3>The employee already exists.</h3>
+          <p>
+            Cancel the new record and use Search Employee to open the existing employee.
+          </p>
+
+          <h3>Mobile access does not work after saving.</h3>
+          <p>
+            Confirm that Mobile User is enabled, the employee is Active, contact information is correct,
+            and the required account onboarding process has been completed.
+          </p>
+
+          <h3>The employee ID is blank before saving.</h3>
+          <p>
+            This is expected when the field is configured to auto-generate during Save Employee.
+          </p>
+        </section>
+
+        <section class="doc-section">
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>Can Employee ID be entered manually?</h3>
+          <p>
+            The screen indicates that Employee ID is generated automatically when saving.
+          </p>
+
+          <h3>Should a termination date be entered for an active employee?</h3>
+          <p>
+            Normally, no. Enter a termination date only when applicable and approved.
+          </p>
+
+          <h3>Can more than one Branch be assigned?</h3>
+          <p>
+            The New Employee screen shows one primary Branch. Additional assignment workflows,
+            when supported, should follow Provider policy.
+          </p>
+
+          <h3>Does Mobile User automatically assign permissions?</h3>
+          <p>
+            No. Mobile User enables mobile access eligibility, while role and permission settings
+            control available functions.
+          </p>
+
+          <h3>Is SSN required?</h3>
+          <p>
+            Enter it only when required by Provider workflow and authorized for collection.
+          </p>
+
+          <h3>Can notification preferences be changed later?</h3>
+          <p>
+            Yes. Open the employee through Search Employee and update the approved settings.
+          </p>
+        </section>
+
+        <section class="doc-section">
+          <h2>Related Documentation</h2>
+
+          <ul>
+            <li><a href="/documentation/employee-management/index.html">Employee Overview</a></li>
+            <li><a href="/documentation/employee-management/search-employee.html">Search Employee</a></li>
+            <li><a href="/documentation/scheduling/">Schedule</a></li>
+            <li><a href="/documentation/time-keeping/">Time Keeping</a></li>
+            <li><a href="/documentation/mobile-evv/">Mobile EVV</a></li>
+            <li><a href="/documentation/payroll/">Payroll</a></li>
+            <li><a href="/documentation/security/">Security</a></li>
+            <li><a href="/documentation/audit-logs/">Audit Logs</a></li>
+          </ul>
+        </section>
+
+        <div class="doc-page-navigation new-employee-navigation">
+          <a class="doc-button" href="/documentation/employee-management/index.html">← Back</a>
+          <a class="doc-button" href="/documentation/employee-management/index.html">🏠 Home</a>
+          <a class="doc-button" href="/documentation/employee-management/search-employee.html">Next →</a>
+        </div>
+      </article>
+
+      <footer class="doc-page-footer">
+        <p>© 2026 True Care System. All rights reserved.</p>
+        <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
+      </footer>
+    </main>
+  </div>
+
+  <div class="doc-search-results" id="docSearchResults" hidden></div>
+  <script src="/documentation/assets/documentation.js"></script>
+</body>
+</html>
