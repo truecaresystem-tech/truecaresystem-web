@@ -3,156 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Service Management Overview | True Care System Documentation</title>
+
 <link rel="stylesheet" href="/documentation/assets/documentation.css">
-<style>
-.service-overview-image{display:block;width:100%;max-width:1180px;height:auto;margin:24px auto 10px;border:1px solid #d9e2ec;border-radius:10px;box-shadow:0 8px 24px rgba(15,44,89,.08)}
-.figure-caption{margin:8px 0 28px;text-align:center;color:#52606d;font-size:.95rem}
-.service-functions-table{width:100%;table-layout:fixed;border-collapse:collapse;margin-top:18px}
-.service-functions-table th,.service-functions-table td{border:1px solid #d9e2ec;padding:12px 14px;vertical-align:top;text-align:left}
-.service-functions-table th{background:#f4f8fc;color:#123b73}
-.service-functions-table th:nth-child(1),.service-functions-table td:nth-child(1){width:260px}
-.service-standard-list li{margin-bottom:10px}
-</style>
+<link rel="stylesheet" href="/documentation/assets/documentation-sidebar.css">
 </head>
-<body>
+
+<body data-doc-module="service-management">
+
 <div class="doc-article">
+
 <h1>Service Management – Overview</h1>
 
 <div class="doc-notice doc-notice-info">
 <strong>Purpose</strong>
+
 <p>
-The Service Management module establishes the standardized service structure used throughout the True Care System. Each service defines how care is configured, scheduled, authorized, delivered, verified, documented, billed, reported, and reviewed across the organization.
+The Service Management module establishes the standardized service structure
+used throughout the True Care System. Each service defines how care is configured,
+scheduled, authorized, delivered, verified, documented, billed, reported, and
+reviewed across the organization.
 </p>
+
 <p>
-A properly configured service supports consistent operations and helps providers align service delivery with approved programs, payer requirements, procedure codes, authorization limits, Electronic Visit Verification (EVV), billing rules, payroll, reporting, and applicable privacy and compliance obligations.
+A properly configured service supports consistent operations and helps providers
+align service delivery with approved programs, payer requirements, procedure codes,
+authorization limits, Electronic Visit Verification (EVV), billing rules, payroll,
+reporting, and applicable privacy and compliance obligations.
 </p>
 </div>
 
 <h2>Service as the Operational Foundation</h2>
+
 <p>
-Services are not isolated records. They provide the operational foundation that connects multiple True Care System modules and workflows.
+Services are not isolated records. They provide the operational foundation that
+connects multiple True Care System modules and workflows.
 </p>
-<img class="service-overview-image" src="images/overview1.jpg" alt="Service as the foundation of True Care System">
-<p class="figure-caption"><em>Figure 1. A configured service connects the primary operational modules of the True Care System.</em></p>
 
-<h2>Primary Objectives</h2>
-<ul>
-<li>Maintain a consistent catalog of services delivered by the organization.</li>
-<li>Define service names, descriptions, units, procedure codes, rates, payer programs, and operational status.</li>
-<li>Connect services with Individuals, Employees, schedules, visits, authorizations, billing, payroll, and reporting.</li>
-<li>Support accurate documentation of services delivered to each Individual.</li>
-<li>Support EVV validation and visit verification when EVV requirements apply.</li>
-<li>Help prevent scheduling or billing activities that conflict with service configuration or authorization limits.</li>
-<li>Maintain reliable service data for operational oversight, audits, and compliance reviews.</li>
-</ul>
+<p style="text-align:center">
+<img
+src="images/overview1.jpg"
+alt="Service as the foundation of True Care System"
+style="max-width:100%;border:1px solid #d9e2ec;border-radius:10px">
+</p>
 
-<hr>
-<h2>Functions Supported Across the System</h2>
-<table class="service-functions-table">
-<thead><tr><th>Module or Function</th><th>Relationship to Service Management</th></tr></thead>
-<tbody>
-<tr><td><strong>Services</strong></td><td>Creates and maintains the organization's service catalog, including service names, descriptions, codes, units, rates, payer configuration, and active status.</td></tr>
-<tr><td><strong>Individual</strong></td><td>Identifies the approved services associated with an Individual's care, program, authorization, and service plan.</td></tr>
-<tr><td><strong>Employees</strong></td><td>Supports assignment of qualified employees to services based on organizational requirements, staff roles, training, and responsibilities.</td></tr>
-<tr><td><strong>Schedule</strong></td><td>Uses the selected service when creating and managing scheduled care visits.</td></tr>
-<tr><td><strong>Medication</strong></td><td>Supports medication-related documentation when medication assistance or administration is part of the authorized service workflow.</td></tr>
-<tr><td><strong>BSS</strong></td><td>Connects Behavioral Support Services documentation, daily records, supervision, and service units to the applicable service.</td></tr>
-<tr><td><strong>Authorizations</strong></td><td>Links services to approved payer authorizations, date ranges, units, limits, and procedure requirements.</td></tr>
-<tr><td><strong>Reports</strong></td><td>Provides service-based operational, utilization, authorization, billing, and compliance reporting.</td></tr>
-<tr><td><strong>KPI</strong></td><td>Uses service data to measure operational performance, utilization, documentation quality, and organizational outcomes.</td></tr>
-<tr><td><strong>Time Keeping</strong></td><td>Associates worked time and attendance information with scheduled or completed service activity when applicable.</td></tr>
-<tr><td><strong>Visited Maintenance</strong></td><td>Supports review and correction of visit records, check-in and check-out data, service units, and EVV-related information.</td></tr>
-<tr><td><strong>House Management</strong></td><td>Supports services delivered within residential settings, including house, room, staffing, and operational management.</td></tr>
-<tr><td><strong>Payroll</strong></td><td>Uses approved service time, employee rates, and payroll rules to support accurate payroll calculations.</td></tr>
-<tr><td><strong>Billing</strong></td><td>Uses validated service, procedure, authorization, payer, unit, and visit data to support billing preparation and reimbursement workflows.</td></tr>
-<tr><td><strong>HIPAA</strong></td><td>Supports privacy oversight, access control, audit history, incident review, and compliance monitoring for service-related records containing PHI.</td></tr>
-<tr><td><strong>Support</strong></td><td>Allows users to report service configuration, workflow, documentation, or system access issues to authorized support personnel.</td></tr>
-<tr><td><strong>Admin</strong></td><td>Controls service-related configuration, user access, roles, permissions, provider settings, and administrative governance.</td></tr>
-</tbody>
-</table>
+<p style="text-align:center">
+<em>Figure 1. A configured service connects the primary operational modules of the True Care System.</em>
+</p>
 
-<hr>
 <h2>Complete Service Lifecycle</h2>
+
 <p>
-A service moves through a controlled lifecycle from initial configuration to care delivery, verification, billing, payroll, reporting, and compliance review. Accurate setup at the beginning helps reduce downstream scheduling, authorization, EVV, billing, and reporting errors.
+A service moves through a controlled lifecycle from initial configuration to care
+delivery, verification, billing, payroll, reporting, and compliance review.
 </p>
-<img class="service-overview-image" src="images/overview2.jpg" alt="Complete service lifecycle in True Care System">
-<p class="figure-caption"><em>Figure 2. The service lifecycle from configuration through compliance and reporting.</em></p>
 
-<h2>Typical Service Workflow</h2>
-<ol>
-<li>Create the service record.</li>
-<li>Enter the service name, description, type, and status.</li>
-<li>Configure the procedure code, units, and rate structure.</li>
-<li>Associate the applicable payer and program.</li>
-<li>Link the service to authorization requirements and limits.</li>
-<li>Use the service when scheduling approved visits.</li>
-<li>Document service delivery and EVV information.</li>
-<li>Review visit details, units, and exceptions.</li>
-<li>Validate service data for billing and payroll.</li>
-<li>Use reports and KPI data for oversight and compliance review.</li>
-</ol>
-
-<hr>
-<h2>Standards and Compliance</h2>
-<p>
-True Care System is designed to support provider workflows in a manner consistent with applicable federal and state requirements. Service records may contain or connect to Protected Health Information (PHI), and access should therefore be limited to authorized workforce members according to their job responsibilities.
+<p style="text-align:center">
+<img
+src="images/overview2.jpg"
+alt="Complete service lifecycle in True Care System"
+style="max-width:100%;border:1px solid #d9e2ec;border-radius:10px">
 </p>
-<ul class="service-standard-list">
-<li><strong>Protection of PHI:</strong> Service-related health information must be protected from unauthorized access, use, modification, or disclosure.</li>
-<li><strong>Minimum Necessary:</strong> Users should access only the information reasonably necessary to perform their assigned responsibilities.</li>
-<li><strong>Role-Based Access:</strong> Service configuration and service-related records are displayed according to assigned roles and permissions.</li>
-<li><strong>Permitted Uses:</strong> PHI may be used for authorized treatment, payment, healthcare operations, and other permitted or required purposes.</li>
-<li><strong>Documentation:</strong> Organizations should maintain accurate service policies, procedures, records, and supporting documentation.</li>
-<li><strong>Audit Readiness:</strong> Important service access and changes should remain traceable to support internal review, compliance investigations, and regulatory oversight.</li>
-<li><strong>Provider Responsibility:</strong> Each provider remains responsible for configuring and using services according to its approved programs, payer contracts, organizational policies, and applicable laws.</li>
-</ul>
+
+<p style="text-align:center">
+<em>Figure 2. The service lifecycle from configuration through compliance and reporting.</em>
+</p>
 
 <hr>
-<h2>Before Creating a Service</h2>
-<ul>
-<li>Approved service name and description.</li>
-<li>Procedure code and payer program.</li>
-<li>Service unit and rate structure.</li>
-<li>Authorization requirements and limits.</li>
-<li>EVV applicability.</li>
-<li>Billing and payroll requirements.</li>
-<li>Required staff qualifications or roles.</li>
-<li>Effective date and operational status.</li>
-</ul>
 
-<hr>
-<h2>Important Considerations</h2>
-<ul>
-<li>Use clear and consistent service names.</li>
-<li>Avoid creating duplicate services for the same program and procedure code.</li>
-<li>Do not change a service configuration without reviewing downstream impacts.</li>
-<li>Review authorization, scheduling, EVV, billing, and payroll dependencies before deactivating a service.</li>
-<li>Restrict service configuration access to authorized administrative users.</li>
-<li>Document the business reason for significant service configuration changes.</li>
-</ul>
-
-<hr>
-<h2>Troubleshooting</h2>
-<ul>
-<li>Confirm that the service is active.</li>
-<li>Verify the procedure code, payer, and program configuration.</li>
-<li>Check whether the service is linked to an active authorization.</li>
-<li>Verify that the service date falls within the authorization period.</li>
-<li>Confirm the selected employee is permitted to deliver the service.</li>
-<li>Review visit, EVV, billing, or payroll validation messages.</li>
-<li>Contact your Provider Administrator if the service is unavailable or incorrectly configured.</li>
-</ul>
-
-<hr>
-<h2>FAQ</h2>
-<p><strong>Why is Service Management important?</strong><br>Service Management provides the standardized data used by scheduling, authorizations, visits, EVV, billing, payroll, reporting, and compliance workflows.</p>
-<p><strong>Can a service be used without a procedure code?</strong><br>This depends on the organization's workflow. Services used for payer billing or EVV should be configured with the appropriate procedure and program information.</p>
-<p><strong>What happens when a service is changed?</strong><br>Changes may affect schedules, authorizations, visit documentation, billing, payroll, and reports. Review all related workflows before saving significant changes.</p>
-<p><strong>Who should manage services?</strong><br>Only authorized users with appropriate administrative or service-management permissions should create, edit, activate, or deactivate services.</p>
-
-<hr>
 <div style="display:flex;justify-content:space-between;align-items:center;margin-top:40px;">
 <a class="doc-button" href="../getting-started/support.html">← Back</a>
 <a class="doc-button" href="index.html">🏠 Home</a>
@@ -160,5 +79,7 @@ True Care System is designed to support provider workflows in a manner consisten
 </div>
 
 </div>
+
+<script src="/documentation/assets/documentation-sidebar.js"></script>
 </body>
 </html>
