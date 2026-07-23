@@ -6,6 +6,44 @@
   <meta name="description" content="Service Status documentation for True Care System, including Active and Inactive service behavior, operational impact, security, and troubleshooting.">
   <title>Service Status | Service Management | True Care System Documentation</title>
   <link rel="stylesheet" href="/documentation/assets/documentation.css">
+
+  <style>
+    .service-status-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .service-status-table col:first-child {
+      width: 140px;
+    }
+
+    .service-status-table th,
+    .service-status-table td {
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .service-status-table th:first-child,
+    .service-status-table td:first-child {
+      padding-left: 0;
+    }
+
+    .service-status-table th:nth-child(2),
+    .service-status-table td:nth-child(2) {
+      padding-left: 0;
+    }
+
+    @media (max-width: 700px) {
+      .service-status-table {
+        table-layout: auto;
+      }
+
+      .service-status-table col:first-child {
+        width: 110px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="doc-header">
@@ -85,11 +123,30 @@
 
         <section class="doc-section">
           <h2>Available Status</h2>
-          <table>
-            <thead><tr><th>Status</th><th>Description</th></tr></thead>
+
+          <table class="service-status-table">
+            <colgroup>
+              <col>
+              <col>
+            </colgroup>
+
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+
             <tbody>
-              <tr><td><strong>Active</strong></td><td>Available for authorizations, scheduling, visits, EVV, billing, payroll, and reporting.</td></tr>
-              <tr><td><strong>Inactive</strong></td><td>Not available for new operational activity. Historical records remain available.</td></tr>
+              <tr>
+                <td><strong>Active</strong></td>
+                <td>Available for authorizations, scheduling, visits, EVV, billing, payroll, and reporting.</td>
+              </tr>
+
+              <tr>
+                <td><strong>Inactive</strong></td>
+                <td>Not available for new operational activity. Historical records remain available.</td>
+              </tr>
             </tbody>
           </table>
         </section>
