@@ -1,210 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="System Navigation documentation for True Care System">
-  <title>System Navigation | True Care System Documentation</title>
-  <link rel="stylesheet" href="/documentation/assets/documentation.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System Navigation | True Care System Documentation</title>
+<link rel="stylesheet" href="/documentation/assets/documentation.css">
 </head>
 <body>
-  <header class="doc-header">
-    <a class="doc-brand" href="/documentation/">
-      <img src="/logo.png" alt="True Care System">
-      <span>
-        <strong>True Care System</strong>
-        <small>Documentation</small>
-      </span>
-    </a>
 
-    <button class="doc-mobile-menu" id="docMobileMenu"
-            aria-label="Open documentation menu">☰</button>
+<div class="doc-article">
 
-    <div class="doc-header-actions">
-      <label class="doc-search">
-        <span>⌕</span>
-        <input id="docSearchInput" type="search"
-               placeholder="Search documentation..."
-               autocomplete="off">
-      </label>
-      <a href="/" class="doc-back-link">Return to Website</a>
-    </div>
-  </header>
+<h1>System Navigation</h1>
 
-  <div class="doc-layout">
-    <aside class="doc-sidebar" id="docSidebar">
-      <div class="doc-sidebar-title">Documentation</div>
-      <nav>
-        <a class="doc-nav-module active" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
-<a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
-<a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
-<a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
-<a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
-<a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
-<a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
-<a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
-<a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
-<a class="doc-nav-module" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span>KPI</span></a>
-<a class="doc-nav-module" href="/documentation/time-keeping/"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
-<a class="doc-nav-module" href="/documentation/mobile-evv/"><span class="doc-nav-number">12</span><span>Mobile EVV</span></a>
-<a class="doc-nav-module" href="/documentation/visit-maintenance/"><span class="doc-nav-number">13</span><span>Visit Maintenance</span></a>
-<a class="doc-nav-module" href="/documentation/house-management/"><span class="doc-nav-number">14</span><span>House Management</span></a>
-<a class="doc-nav-module" href="/documentation/payroll/"><span class="doc-nav-number">15</span><span>Payroll</span></a>
-<a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
-<a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
-<a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
-<a class="doc-nav-module" href="/documentation/provider-administration/"><span class="doc-nav-number">19</span><span>Admin</span></a>
-<a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
-<a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
-<a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
-<a class="doc-nav-module" href="/documentation/qa-guide/"><span class="doc-nav-number">23</span><span>QA Guide</span></a>
-<a class="doc-nav-module" href="/documentation/test-catalog/"><span class="doc-nav-number">24</span><span>Test Catalog</span></a>
-<a class="doc-nav-module" href="/documentation/api-documentation/"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
-<a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
-<a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
-<a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
-<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>Frequently Asked Questions</span></a>
-<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
-      </nav>
-    </aside>
+<div class="doc-notice doc-notice-info">
+<strong>Purpose</strong>
+<p>
+The System Navigation menu provides quick access to every module within the True Care System.
+Available menu items are displayed according to the authenticated user's assigned role and permissions.
+</p>
+</div>
 
-    <main class="doc-main">
-      <div class="doc-breadcrumb">
-        <a href="/documentation/">Documentation</a>
-        <span>›</span><a href='/documentation/getting-started/'>Getting Started</a>
-        <span>›</span><span>System Navigation</span>
-      </div>
+<h2>Navigation Overview</h2>
 
-      <article class="doc-article">
-        <header class="doc-article-header">
-          <div>
-            <p class="doc-eyebrow">TRUE CARE SYSTEM DOCUMENTATION</p>
-            <h1>System Navigation</h1>
-          </div>
+<p>
+After signing in, the main navigation menu is displayed on the left side of the application.
+Use this menu to quickly access the modules required for your daily work.
+</p>
 
-          <dl class="doc-metadata">
-            <div><dt>Document ID</dt><dd>GET-DOC-006</dd></div>
-            <div><dt>Version</dt><dd>1.0</dd></div>
-            <div><dt>Status</dt><dd>Planned</dd></div>
-            <div><dt>Last Updated</dt><dd>Pending</dd></div>
-          </dl>
-        </header>
+<p style="text-align:center">
+<img
+src="images/System-Navigation.jpg"
+alt="System Navigation"
+style="max-width:100%;border:1px solid #d9e2ec;border-radius:8px">
+</p>
 
-        
-    <div class="doc-notice doc-notice-info">
-      <strong>Documentation placeholder</strong>
-      <p>This page has been created and is ready for detailed content,
-         screenshots and review.</p>
-    </div>
+<p style="text-align:center">
+<em>Figure 1. True Care System Main Navigation Menu</em>
+</p>
 
-    <section class="doc-section">
-      <h2>Purpose</h2>
-      <p class="doc-pending">Detailed purpose will be added during module documentation.</p>
-    </section>
+<hr>
 
-    <section class="doc-section">
-      <h2>Who Can Use This Feature</h2>
-      <p class="doc-pending">Roles and permissions will be documented after verification.</p>
-    </section>
+<h2>Navigation Modules</h2>
 
-    <section class="doc-section">
-      <h2>Navigation</h2>
-      <p class="doc-pending">The exact navigation path will be documented here.</p>
-    </section>
+<table class="doc-table">
 
-    <section class="doc-section">
-      <h2>Business Flow</h2>
-      <p class="doc-pending">The approved business workflow will be documented here.</p>
-    </section>
+<tr>
+<th>Module</th>
+<th>Description</th>
+</tr>
 
-    
-    <section class="doc-section">
-      <h2>Screenshot</h2>
-      <div class="doc-screenshot-placeholder">
-        <div class="doc-placeholder-icon">▧</div>
-        <div>
-          <strong>Screenshot Required</strong>
-          <p><b>Screenshot ID:</b> GET-006</p>
-          <p><b>Screen:</b> System Navigation</p>
-          <p><b>File:</b> images/GET-006-navigation.jpg</p>
-          <p><b>Recommended capture:</b> Desktop, 100% browser zoom,
-             full page title, navigation, actions, filters and data area visible.</p>
-          <p><b>Privacy requirement:</b> Use demo or training data only.
-             Do not include real PHI, credentials, passwords, SSNs or Medicaid IDs.</p>
-        </div>
-      </div>
-    </section>
-    
+<tr>
+<td>Dashboard</td>
+<td>Main landing page after login.</td>
+</tr>
 
-    <section class="doc-section">
-      <h2>Interface Overview</h2>
-      <p class="doc-pending">Buttons, fields, filters, tabs and page regions will be explained here.</p>
-    </section>
+<tr>
+<td>Individuals</td>
+<td>Manage individuals receiving services.</td>
+</tr>
 
-    <section class="doc-section">
-      <h2>Step-by-Step Instructions</h2>
-      <ol class="doc-steps">
-        <li><span>Step instructions pending.</span></li>
-        <li><span>Step instructions pending.</span></li>
-        <li><span>Step instructions pending.</span></li>
-      </ol>
-    </section>
+<tr>
+<td>Employees</td>
+<td>Manage employee records.</td>
+</tr>
 
-    <section class="doc-section">
-      <h2>Permissions</h2>
-      <p class="doc-pending">Access requirements and permission rules will be documented here.</p>
-    </section>
+<tr>
+<td>Schedule</td>
+<td>Create and manage staff schedules.</td>
+</tr>
 
-    <section class="doc-section">
-      <h2>Validation Rules</h2>
-      <p class="doc-pending">Required fields and business validation rules will be documented here.</p>
-    </section>
+<tr>
+<td>Medication</td>
+<td>Medication administration records (MAR).</td>
+</tr>
 
-    <section class="doc-section">
-      <h2>Tips</h2>
-      <p class="doc-pending">Recommended usage tips will be documented here.</p>
-    </section>
+<tr>
+<td>BSS</td>
+<td>Behavior Support Services.</td>
+</tr>
 
-    <section class="doc-section">
-      <h2>Warnings</h2>
-      <p class="doc-pending">Important operational and data safety warnings will be documented here.</p>
-    </section>
+<tr>
+<td>Authorizations</td>
+<td>Manage service authorizations.</td>
+</tr>
 
-    <section class="doc-section">
-      <h2>HIPAA Considerations</h2>
-      <p class="doc-pending">PHI handling and minimum-necessary requirements will be documented here.</p>
-    </section>
+<tr>
+<td>Reports</td>
+<td>Generate operational and compliance reports.</td>
+</tr>
 
-    <section class="doc-section">
-      <h2>Audit Log Behavior</h2>
-      <p class="doc-pending">Expected audit events and recorded details will be documented here.</p>
-    </section>
+<tr>
+<td>Time Keeping</td>
+<td>Employee attendance and time tracking.</td>
+</tr>
 
-    <section class="doc-section">
-      <h2>Troubleshooting</h2>
-      <p class="doc-pending">Known issues and recommended resolutions will be documented here.</p>
-    </section>
+<tr>
+<td>Billing</td>
+<td>Billing, EVV, Claims and Sandata Integration.</td>
+</tr>
 
-    <section class="doc-section">
-      <h2>Frequently Asked Questions</h2>
-      <p class="doc-pending">Frequently asked questions will be documented here.</p>
-    </section>
+<tr>
+<td>Payroll</td>
+<td>Payroll processing.</td>
+</tr>
 
-    <section class="doc-section">
-      <h2>Related Documentation</h2>
-      <p><a href="/documentation/getting-started/">Return to Getting Started</a></p>
-    </section>
-    
-      </article>
+<tr>
+<td>Administration</td>
+<td>Provider setup, users, roles, permissions and system configuration.</td>
+</tr>
 
-      <footer class="doc-page-footer">
-        <p>© 2026 True Care System. All rights reserved.</p>
-        <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
-      </footer>
-    </main>
-  </div>
+</table>
 
-  <div class="doc-search-results" id="docSearchResults" hidden></div>
-  <script src="/documentation/assets/documentation.js"></script>
+<hr>
+
+<h2>Role-Based Navigation</h2>
+
+<p>
+Each user only sees the modules that are authorized for their assigned role.
+Navigation is automatically controlled by the system's role-based security model.
+</p>
+
+<ul>
+<li>Provider Administrator</li>
+<li>Supervisor</li>
+<li>Office Staff</li>
+<li>DSP</li>
+<li>Nurse</li>
+<li>Billing</li>
+<li>Payroll</li>
+<li>Compliance</li>
+<li>Support</li>
+<li>Super Administrator</li>
+</ul>
+
+<hr>
+
+<h2>Navigation Tips</h2>
+
+<ul>
+<li>Click any menu item to open its module.</li>
+<li>The current page is automatically highlighted.</li>
+<li>Unavailable modules are hidden based on permissions.</li>
+<li>Always sign out after completing your work.</li>
+</ul>
+
+<hr>
+
+<h2>Security</h2>
+
+<ul>
+<li>Role-based navigation.</li>
+<li>Protected modules require authentication.</li>
+<li>User permissions are validated automatically.</li>
+<li>Unauthorized pages cannot be accessed.</li>
+</ul>
+
+<hr>
+
+<h2>HIPAA Considerations</h2>
+
+<ul>
+<li>Access only the information required for your job.</li>
+<li>Protect Protected Health Information (PHI).</li>
+<li>Do not leave the application open when unattended.</li>
+</ul>
+
+<hr>
+
+<h2>Troubleshooting</h2>
+
+<ul>
+<li>Refresh the browser if menu changes do not appear.</li>
+<li>Verify your assigned role.</li>
+<li>Contact your Provider Administrator if expected modules are missing.</li>
+</ul>
+
+<hr>
+
+<h2>FAQ</h2>
+
+<p>
+<strong>Why don't I see all menu items?</strong><br>
+The navigation menu is customized according to your assigned role and permissions.
+</p>
+
+<p>
+<strong>Can I rearrange the menu?</strong><br>
+No. The navigation structure is managed by your organization.
+</p>
+
+<p>
+<strong>Why can't I open a module?</strong><br>
+Your account may not have permission to access that module.
+</p>
+
+<hr>
+
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:40px;">
+
+<a class="doc-button" href="dashboard.html">
+← Back
+</a>
+
+<a class="doc-button" href="index.html">
+🏠 Home
+</a>
+
+<a class="doc-button" href="../individual/index.html">
+Next →
+</a>
+
+</div>
+
+</div>
+
 </body>
 </html>
