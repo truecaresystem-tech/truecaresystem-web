@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Detailed Search Employee guide for True Care System, including employee search, branch and status filters, result columns, duplicate prevention, View/Edit workflow, security, troubleshooting, and FAQ.">
+  <title>Search Employee | Employee Management | True Care System Documentation</title>
+  <link rel="stylesheet" href="/documentation/assets/documentation.css">
+
+  <style>
+    .employee-search-table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+    }
+
+    .employee-search-table col:first-child {
+      width: 220px;
+    }
+
+    .employee-search-table col:nth-child(3) {
+      width: 190px;
+    }
+
+    .employee-search-table th,
+    .employee-search-table td {
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .doc-article .doc-figure {
+      width: 100%;
+      margin: 20px 0 28px;
+      text-align: left;
+    }
+
+    .doc-article .doc-figure img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0;
+    }
+
+    .doc-article .doc-figure figcaption {
+      width: 100%;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .search-employee-navigation {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      align-items: center;
+      width: 100%;
+      margin-top: 32px;
+    }
+
+    .search-employee-navigation .doc-button:nth-child(1) {
+      justify-self: start;
+    }
+
+    .search-employee-navigation .doc-button:nth-child(2) {
+      justify-self: center;
+    }
+
+    .search-employee-navigation .doc-button:nth-child(3) {
+      justify-self: end;
+    }
+
+    @media (max-width: 800px) {
+      .employee-search-table {
+        table-layout: auto;
+      }
+
+      .employee-search-table col {
+        width: auto !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .search-employee-navigation {
+        grid-template-columns: 1fr;
+      }
+
+      .search-employee-navigation .doc-button {
+        justify-self: stretch !important;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="doc-header">
+    <a class="doc-brand" href="/documentation/">
+      <img src="/logo.png" alt="True Care System">
+      <span><strong>True Care System</strong><small>Documentation</small></span>
+    </a>
+
+    <button
+      class="doc-mobile-menu"
+      id="docMobileMenu"
+      type="button"
+      aria-label="Open documentation menu"
+      aria-controls="docSidebar"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+    <div class="doc-header-actions">
+      <label class="doc-search">
+        <span aria-hidden="true">⌕</span>
+        <input
+          id="docSearchInput"
+          type="search"
+          placeholder="Search documentation..."
+          autocomplete="off"
+          aria-label="Search documentation"
+        >
+      </label>
+
+      <a href="/" class="doc-back-link">Return to Website</a>
+    </div>
+  </header>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="docSidebar">
+      <div class="doc-sidebar-title">Documentation</div>
+
+      <nav aria-label="Documentation modules">
+        <a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
+        <a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
+        <a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
+        <a class="doc-nav-module active" href="/documentation/employee-management/" aria-current="page"><span class="doc-nav-number">04</span><span>Employees</span></a>
+        <a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
+        <a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
+        <a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
+        <a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
+        <a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
+        <a class="doc-nav-module" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span>KPI</span></a>
+        <a class="doc-nav-module" href="/documentation/time-keeping/"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
+        <a class="doc-nav-module" href="/documentation/mobile-evv/"><span class="doc-nav-number">12</span><span>Mobile EVV</span></a>
+        <a class="doc-nav-module" href="/documentation/visit-maintenance/"><span class="doc-nav-number">13</span><span>Visit Maintenance</span></a>
+        <a class="doc-nav-module" href="/documentation/house-management/"><span class="doc-nav-number">14</span><span>House Management</span></a>
+        <a class="doc-nav-module" href="/documentation/payroll/"><span class="doc-nav-number">15</span><span>Payroll</span></a>
+        <a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
+        <a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
+        <a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
+        <a class="doc-nav-module" href="/documentation/provider-administration/"><span class="doc-nav-number">19</span><span>Admin</span></a>
+        <a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
+        <a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
+        <a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
+        <a class="doc-nav-module" href="/documentation/qa-guide/"><span class="doc-nav-number">23</span><span>QA Guide</span></a>
+        <a class="doc-nav-module" href="/documentation/test-catalog/"><span class="doc-nav-number">24</span><span>Test Catalog</span></a>
+        <a class="doc-nav-module" href="/documentation/api-documentation/"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
+        <a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
+        <a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
+        <a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
+        <a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>FAQ</span></a>
+        <a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
+      </nav>
+    </aside>
+
+    <main class="doc-main">
+      <div class="doc-breadcrumb">
+        <a href="/documentation/">Documentation</a>
+        <span>›</span>
+        <a href="/documentation/employee-management/">Employees</a>
+        <span>›</span>
+        <span>Search Employee</span>
+      </div>
+
+      <article class="doc-article">
+        <header class="doc-article-header">
+          <div>
+            <p class="doc-eyebrow">EMPLOYEE MANAGEMENT</p>
+            <h1>Search Employee</h1>
+          </div>
+
+          <dl class="doc-metadata">
+            <div><dt>Document ID</dt><dd>EMP-DOC-003</dd></div>
+            <div><dt>Version</dt><dd>1.0</dd></div>
+            <div><dt>Status</dt><dd>Draft</dd></div>
+            <div><dt>Last Updated</dt><dd>07/23/2026</dd></div>
+          </dl>
+        </header>
+
+        <div class="doc-notice doc-notice-info">
+          <strong>Purpose</strong>
+          <p>
+            Search Employee is the primary page for locating existing employee records.
+            Users can search by name, employee ID, or email, filter by branch and status,
+            review employee summary information, open a record through View / Edit,
+            or begin creating a new employee.
+          </p>
+        </div>
+
+        <section class="doc-section">
+          <h2>Screen Overview</h2>
+
+          <figure class="doc-figure">
+            <img
+              src="/documentation/employee-management/images/search-employee.jpg"
+              alt="Search Employee screen with search, branch, status filters, result table, and View Edit actions"
+            >
+            <figcaption>
+              Search Employee screen with keyword search, Branch and Status filters, employee results, and View / Edit actions.
+            </figcaption>
+          </figure>
+
+          <p>
+            The page contains a search and filter area at the top and a results table below it.
+            The displayed employee count helps users confirm how many records match the current criteria.
+          </p>
+        </section>
+
+        <section class="doc-section">
+          <h2>Page Actions</h2>
+
+          <table class="employee-search-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Action</th>
+                <th>Description</th>
+                <th>When to Use</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>+ New Employee</strong></td>
+                <td>Opens the New Employee page.</td>
+                <td>Use only after confirming that the employee does not already exist.</td>
+              </tr>
+              <tr>
+                <td><strong>Search Field</strong></td>
+                <td>Filters employees by name, employee ID, or email.</td>
+                <td>Use the most specific known identifier.</td>
+              </tr>
+              <tr>
+                <td><strong>Branch</strong></td>
+                <td>Limits results to one Branch or displays all Branches.</td>
+                <td>Use to narrow employees by organizational location.</td>
+              </tr>
+              <tr>
+                <td><strong>Status</strong></td>
+                <td>Limits results by employment status.</td>
+                <td>Use Active for routine operations or another status for historical review.</td>
+              </tr>
+              <tr>
+                <td><strong>View / Edit</strong></td>
+                <td>Opens the selected employee record.</td>
+                <td>Use after verifying the correct employee row.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="doc-section">
+          <h2>Keyword Search</h2>
+
+          <p>
+            The Search field accepts a name, employee ID, or email address. Search results update
+            according to the entered keyword and selected filters.
+          </p>
+
+          <table class="employee-search-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Search Type</th>
+                <th>Example</th>
+                <th>Guidance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Employee Name</strong></td>
+                <td>Jennifer Chau</td>
+                <td>Use a full or partial first or last name.</td>
+              </tr>
+              <tr>
+                <td><strong>Employee ID</strong></td>
+                <td>EMP-0004</td>
+                <td>Best choice when the exact system identifier is known.</td>
+              </tr>
+              <tr>
+                <td><strong>Email</strong></td>
+                <td>employee@example.com</td>
+                <td>Useful when employees have similar names.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Search Tips</h3>
+          <ul>
+            <li>Start with Employee ID when available.</li>
+            <li>Use the last name when the full name is uncertain.</li>
+            <li>Use email to distinguish employees with similar names.</li>
+            <li>Check Branch and Status filters when an expected record is missing.</li>
+            <li>Review at least two identifying details before selecting View / Edit.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Branch Filter</h2>
+
+          <p>
+            The Branch filter limits results to employees assigned to a selected Provider branch.
+            The screenshot shows <strong>All Branches</strong>.
+          </p>
+
+          <table class="employee-search-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Selection</th>
+                <th>Description</th>
+                <th>Typical Use</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>All Branches</strong></td>
+                <td>Displays employees from every Branch available to the current user.</td>
+                <td>Use for a Provider-wide employee search.</td>
+              </tr>
+              <tr>
+                <td><strong>Specific Branch</strong></td>
+                <td>Displays only employees associated with the selected Branch.</td>
+                <td>Use for branch staffing or administrative review.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="doc-notice doc-notice-info">
+            <strong>Permission Scope</strong>
+            <p>
+              Available Branches and employee records may depend on the user's Provider assignment,
+              role, permissions, and authorized operational scope.
+            </p>
+          </div>
+        </section>
+
+        <section class="doc-section">
+          <h2>Status Filter</h2>
+
+          <p>
+            The Status filter limits the result list to employees with the selected employment status.
+            The screenshot shows <strong>Active</strong>.
+          </p>
+
+          <table class="employee-search-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Description</th>
+                <th>Typical Use</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Active</strong></td>
+                <td>Employee is currently active for operational use.</td>
+                <td>Routine scheduling, mobile, payroll, and staffing workflows.</td>
+              </tr>
+              <tr>
+                <td><strong>Inactive</strong></td>
+                <td>Employee is not active for new operational assignments.</td>
+                <td>Historical or administrative review.</td>
+              </tr>
+              <tr>
+                <td><strong>Pending</strong></td>
+                <td>Employee onboarding or approval is incomplete when this status is configured.</td>
+                <td>Review incomplete setup records.</td>
+              </tr>
+              <tr>
+                <td><strong>Terminated</strong></td>
+                <td>Employment has ended when this status is configured.</td>
+                <td>Historical, payroll, or compliance review.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            Use the exact status values configured in the system. Available options may vary by Provider configuration.
+          </p>
+        </section>
+
+        <section class="doc-section">
+          <h2>Employee Count</h2>
+
+          <p>
+            The page displays a result summary such as <strong>Showing 11 of 11 employees</strong>.
+            This helps users confirm the number of records currently displayed.
+          </p>
+
+          <ul>
+            <li>A low count may indicate a narrow Branch or Status filter.</li>
+            <li>A count of zero may indicate an incorrect keyword or excluded status.</li>
+            <li>A high count may require a more specific search term.</li>
+            <li>The count reflects the user's permitted Provider and Branch scope.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Search Results Table</h2>
+
+          <table class="employee-search-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Column</th>
+                <th>Description</th>
+                <th>Review Guidance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Photo</strong></td>
+                <td>Employee profile image or initials when a photo is unavailable.</td>
+                <td>Use as a secondary visual reference only.</td>
+              </tr>
+              <tr>
+                <td><strong>Employee ID</strong></td>
+                <td>True Care System employee identifier.</td>
+                <td>Use to distinguish employees with similar names.</td>
+              </tr>
+              <tr>
+                <td><strong>Name</strong></td>
+                <td>Employee's full name.</td>
+                <td>Verify spelling before opening.</td>
+              </tr>
+              <tr>
+                <td><strong>Role</strong></td>
+                <td>Employee's assigned role or position.</td>
+                <td>Confirm the role matches the expected employee.</td>
+              </tr>
+              <tr>
+                <td><strong>Branch</strong></td>
+                <td>Employee's assigned Branch.</td>
+                <td>Verify organizational location.</td>
+              </tr>
+              <tr>
+                <td><strong>Status</strong></td>
+                <td>Current employee status.</td>
+                <td>Confirm that the employee is eligible for current operational use.</td>
+              </tr>
+              <tr>
+                <td><strong>Hire Date</strong></td>
+                <td>Date employment began.</td>
+                <td>Useful as an additional identity and employment check.</td>
+              </tr>
+              <tr>
+                <td><strong>Phone</strong></td>
+                <td>Primary employee phone number.</td>
+                <td>Use only for authorized business communication.</td>
+              </tr>
+              <tr>
+                <td><strong>Email</strong></td>
+                <td>Primary employee email address.</td>
+                <td>Verify before sending notifications or access instructions.</td>
+              </tr>
+              <tr>
+                <td><strong>Actions</strong></td>
+                <td>Contains the View / Edit action.</td>
+                <td>Open only after confirming the correct employee.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="doc-section">
+          <h2>View / Edit Workflow</h2>
+
+          <ol>
+            <li>Enter a search term when needed.</li>
+            <li>Select the correct Branch.</li>
+            <li>Select the correct Status.</li>
+            <li>Review the displayed employee count.</li>
+            <li>Locate the correct employee row.</li>
+            <li>Verify Employee ID, name, role, Branch, and email.</li>
+            <li>Select View / Edit.</li>
+            <li>Review or update the employee record according to authorization.</li>
+          </ol>
+
+          <div class="doc-notice doc-notice-warning">
+            <strong>Verify Before Editing</strong>
+            <p>
+              Do not rely only on the employee photo or name. Confirm Employee ID and another identifying
+              detail before opening or changing the record.
+            </p>
+          </div>
+        </section>
+
+        <section class="doc-section">
+          <h2>Duplicate Prevention</h2>
+
+          <p>
+            Always search before selecting <strong>+ New Employee</strong>. Duplicate employee records
+            may create access, scheduling, payroll, mobile EVV, notification, and reporting problems.
+          </p>
+
+          <h3>Recommended Duplicate Check</h3>
+          <ol>
+            <li>Search by Employee ID when available.</li>
+            <li>Search by full or partial name.</li>
+            <li>Search by email address.</li>
+            <li>Review all relevant Branches.</li>
+            <li>Review Active, Pending, Inactive, or Terminated statuses when configured.</li>
+            <li>Compare role, Branch, phone, email, and hire date.</li>
+            <li>Create a new employee only after confirming no existing record matches.</li>
+          </ol>
+
+          <div class="doc-notice doc-notice-warning">
+            <strong>Possible Duplicate</strong>
+            <p>
+              When a possible duplicate is found, do not create another employee. Contact an authorized
+              administrator or support user for review.
+            </p>
+          </div>
+        </section>
+
+        <section class="doc-section">
+          <h2>Creating a New Employee</h2>
+
+          <p>
+            Select <strong>+ New Employee</strong> only after completing the duplicate check.
+          </p>
+
+          <ul>
+            <li>Enter verified demographic information.</li>
+            <li>Assign the correct role, status, employment type, Branch, and work location.</li>
+            <li>Complete address and emergency contact details.</li>
+            <li>Review work and notification preferences.</li>
+            <li>Enable Mobile User only when approved and required.</li>
+            <li>Select Save Employee and return to Search Employee to verify the record.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Role, Branch, and Status Review</h2>
+
+          <p>
+            Search Employee provides a fast way to confirm whether employees are assigned to the
+            correct role, Branch, and employment status.
+          </p>
+
+          <ul>
+            <li>Review employees with unexpected roles.</li>
+            <li>Review records with missing Branch values.</li>
+            <li>Confirm Active employees are still employed and authorized.</li>
+            <li>Confirm terminated or inactive employees are not used for new scheduling.</li>
+            <li>Review Provider Admin and other privileged roles carefully.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Validation Checklist</h2>
+
+          <ul>
+            <li>The correct Provider context is active.</li>
+            <li>The search keyword is accurate.</li>
+            <li>The correct Branch filter is selected.</li>
+            <li>The correct Status filter is selected.</li>
+            <li>The employee count is reviewed.</li>
+            <li>Employee ID matches the intended employee.</li>
+            <li>Name, role, Branch, phone, and email are reviewed.</li>
+            <li>The correct row is selected before View / Edit.</li>
+            <li>A duplicate search is completed before creating a new employee.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Best Practices</h2>
+
+          <ul>
+            <li>Use Employee ID whenever available.</li>
+            <li>Use Branch and Status filters to narrow results.</li>
+            <li>Verify at least two identifying details before opening a record.</li>
+            <li>Do not rely only on the employee photo.</li>
+            <li>Review privileged roles regularly.</li>
+            <li>Keep employee Status and Branch assignments current.</li>
+            <li>Do not create duplicate employee records.</li>
+            <li>Do not open employee records without an approved business purpose.</li>
+            <li>Report missing or inconsistent employee information to an authorized administrator.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Security and Privacy</h2>
+
+          <p>
+            Search Employee displays personally identifiable and employment information, including
+            employee names, photos, roles, Branches, status, hire dates, phone numbers, and email addresses.
+          </p>
+
+          <ul>
+            <li>Search only for employees required for assigned duties.</li>
+            <li>Apply role-based access and least privilege.</li>
+            <li>Do not browse employee records out of curiosity.</li>
+            <li>Do not share employee screenshots through unapproved channels.</li>
+            <li>Protect phone, email, employment, and access-related information.</li>
+            <li>Verify the correct employee before opening or editing.</li>
+            <li>Access and changes should be recorded through Audit Logs where applicable.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Troubleshooting</h2>
+
+          <h3>The employee does not appear.</h3>
+          <p>
+            Check the spelling, remove unnecessary search text, select All Branches, and review
+            another Status when appropriate.
+          </p>
+
+          <h3>The search returns too many employees.</h3>
+          <p>
+            Enter a more specific name, Employee ID, or email and select the correct Branch.
+          </p>
+
+          <h3>The expected inactive employee is missing.</h3>
+          <p>
+            Change the Status filter from Active to Inactive or another applicable status.
+          </p>
+
+          <h3>View / Edit does not open.</h3>
+          <p>
+            Confirm that the user has permission to access the selected employee and that the session is active.
+          </p>
+
+          <h3>The Branch column is blank.</h3>
+          <p>
+            Open the employee record and review Branch and Primary Work Location assignments.
+          </p>
+
+          <h3>A possible duplicate is found.</h3>
+          <p>
+            Do not create another employee. Contact an authorized administrator or support user.
+          </p>
+        </section>
+
+        <section class="doc-section">
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>Can I search without entering a keyword?</h3>
+          <p>
+            Yes. The page may display employees based on the selected Branch and Status filters.
+          </p>
+
+          <h3>Can I search by phone number?</h3>
+          <p>
+            The screen specifically identifies name, employee ID, and email as search fields.
+            Phone numbers are shown in results but may not be searchable.
+          </p>
+
+          <h3>Why does an employee show a dash for Branch or Phone?</h3>
+          <p>
+            The value may be missing or not assigned. Open View / Edit and review the employee record.
+          </p>
+
+          <h3>Does View / Edit allow changing the employee?</h3>
+          <p>
+            Yes, when the user's role and permissions allow employee maintenance.
+          </p>
+
+          <h3>Should inactive employees be deleted?</h3>
+          <p>
+            Normally, no. Preserve employment, payroll, scheduling, visit, and audit history according to policy.
+          </p>
+
+          <h3>Can a terminated employee be reactivated?</h3>
+          <p>
+            Only authorized users should change employment status after HR and administrative review.
+          </p>
+        </section>
+
+        <section class="doc-section">
+          <h2>Related Documentation</h2>
+
+          <ul>
+            <li><a href="/documentation/employee-management/index.html">Employee Overview</a></li>
+            <li><a href="/documentation/employee-management/new-employee.html">New Employee</a></li>
+            <li><a href="/documentation/scheduling/">Schedule</a></li>
+            <li><a href="/documentation/time-keeping/">Time Keeping</a></li>
+            <li><a href="/documentation/mobile-evv/">Mobile EVV</a></li>
+            <li><a href="/documentation/payroll/">Payroll</a></li>
+            <li><a href="/documentation/security/">Security</a></li>
+            <li><a href="/documentation/audit-logs/">Audit Logs</a></li>
+          </ul>
+        </section>
+
+        <div class="doc-page-navigation search-employee-navigation">
+          <a class="doc-button" href="/documentation/employee-management/new-employee.html">← Back</a>
+          <a class="doc-button" href="/documentation/employee-management/index.html">🏠 Home</a>
+          <a class="doc-button" href="/documentation/scheduling/index.html">Next →</a>
+        </div>
+      </article>
+
+      <footer class="doc-page-footer">
+        <p>© 2026 True Care System. All rights reserved.</p>
+        <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
+      </footer>
+    </main>
+  </div>
+
+  <div class="doc-search-results" id="docSearchResults" hidden></div>
+  <script src="/documentation/assets/documentation.js"></script>
+</body>
+</html>
