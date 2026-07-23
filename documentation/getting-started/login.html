@@ -14,103 +14,154 @@
 
 <div class="doc-notice doc-notice-info">
 <strong>Purpose</strong>
-<p>The Login page is the secure entry point into the True Care System platform. First-time users must change their temporary password after their initial sign in.</p>
+<p>
+The Login page is the secure entry point into the True Care System platform.
+All users must authenticate before accessing any system resources.
+For first-time users, the system requires a password change immediately after signing in with the temporary password provided in the Welcome Email.
+</p>
 </div>
 
 <h2>Prerequisites</h2>
+
 <ul>
-<li>Valid user account.</li>
+<li>Valid True Care System user account.</li>
 <li>Assigned role and permissions.</li>
-<li>Supported browser.</li>
+<li>Supported web browser.</li>
 <li>Internet connection.</li>
 </ul>
 
-<h2>Step 1 - Sign In</h2>
+<hr>
 
-<p>Open the True Care System Login page and sign in using your Email and Password. If this is your first login, use the temporary password provided in your welcome email.</p>
+<h2>Step 1 — Sign In</h2>
+
+<p>
+Open the True Care System Login page and sign in using your Email and Password.
+If this is your first login, enter the temporary password provided in your Welcome Email.
+</p>
 
 <p style="text-align:center">
-<img src="images/GET-001-login-page.jpg"
-alt="Login Screen"
+<img
+src="images/GET-001-login-page.jpg"
+alt="True Care System Login"
 style="max-width:100%;border:1px solid #d9e2ec;border-radius:8px">
 </p>
 
+<p style="text-align:center"><em>Figure 1. Login Screen</em></p>
+
 <ol>
+<li>Open the Login page.</li>
 <li>Enter your Email.</li>
 <li>Enter your Password or Temporary Password.</li>
 <li>Click <strong>Sign In</strong>.</li>
 </ol>
 
-<h2>Step 2 - Change Password (First Login Only)</h2>
+<hr>
 
-<p>If you sign in using a temporary password, the system automatically requires you to create a new password before accessing the Dashboard.</p>
+<h2>Step 2 — Change Password (First Login Only)</h2>
+
+<p>
+When signing in with a temporary password for the first time,
+the system automatically redirects you to the Change Password screen.
+This step is required before accessing the Dashboard.
+</p>
 
 <p style="text-align:center">
-<img src="images/change-password.jpg"
+<img
+src="images/change-password.jpg"
 alt="Change Password"
 style="max-width:100%;border:1px solid #d9e2ec;border-radius:8px">
 </p>
 
+<p style="text-align:center"><em>Figure 2. First-Time Password Change</em></p>
+
 <ol>
-<li>Enter your Current Password (temporary password).</li>
-<li>Enter a New Password.</li>
+<li>Enter your Current Password (Temporary Password).</li>
+<li>Create a New Password.</li>
 <li>Confirm the New Password.</li>
-<li>Click <strong>Save Changes</strong>.</li>
-<li>The system redirects you to the Dashboard.</li>
+<li>Click <strong> Changes Password </strong>.</li>
+<li>The system saves the new password.</li>
+<li>You are redirected to the Dashboard.</li>
 </ol>
+
+<hr>
 
 <h2>Successful Login</h2>
 
 <ul>
-<li>Dashboard is displayed.</li>
+<li>The appropriate Dashboard is displayed.</li>
 <li>Menus are loaded according to the assigned role.</li>
-<li>A secure session is created.</li>
-<li>The login event is recorded in Audit Logs.</li>
+<li>A secure authenticated session is established.</li>
+<li>The login activity is recorded in the Audit Log.</li>
 </ul>
+
+<hr>
 
 <h2>Security</h2>
 
 <ul>
-<li>HTTPS encrypted connection.</li>
+<li>HTTPS encrypted communication.</li>
 <li>Role-based access control.</li>
-<li>Session timeout protection.</li>
+<li>Secure session management.</li>
+<li>Automatic session timeout.</li>
 <li>Failed login monitoring.</li>
 </ul>
+
+<hr>
 
 <h2>HIPAA Considerations</h2>
 
 <ul>
-<li>Never share your credentials.</li>
-<li>Always log out before leaving your workstation.</li>
-<li>Protect PHI from unauthorized viewing.</li>
+<li>Never share your username or password.</li>
+<li>Always sign out before leaving your workstation.</li>
+<li>Do not save passwords on public or shared computers.</li>
+<li>Protect Protected Health Information (PHI) from unauthorized access.</li>
 </ul>
+
+<hr>
 
 <h2>Troubleshooting</h2>
 
 <ul>
 <li>Verify your Email and Password.</li>
-<li>Check Caps Lock.</li>
-<li>Use Forgot Password if you cannot remember your password.</li>
-<li>Contact your Provider Administrator if access remains unavailable.</li>
+<li>Check whether Caps Lock is enabled.</li>
+<li>Confirm your internet connection.</li>
+<li>Use <strong>Forgot Password</strong> if you cannot remember your password.</li>
+<li>Contact your Provider Administrator if you are unable to access the system.</li>
 </ul>
-
-<h2>FAQ</h2>
-
-<p><strong>Why am I asked to change my password?</strong><br>
-For security reasons, every new user must replace the temporary password during their first login.</p>
-
-<p><strong>Can I continue without changing my password?</strong><br>
-No. Password change is required before accessing the system.</p>
 
 <hr>
 
+<h2>FAQ</h2>
+
 <p>
-Previous:
-<a href="system-requirements.html">System Requirements</a>
-|
-Next:
-<a href="forgot-password.html">Forgot Password</a>
+<strong>Why am I required to change my password?</strong><br>
+Every newly created account receives a temporary password.
+For security purposes, the password must be changed during the first login.
 </p>
+
+<p>
+<strong>Can I skip the password change?</strong><br>
+No. A new password is required before you can access the Dashboard.
+</p>
+
+<p>
+<strong>What happens after I change my password?</strong><br>
+The new password becomes active immediately, and you will be redirected to the Dashboard.
+</p>
+
+<hr>
+
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:40px;">
+
+<a class="doc-button" href="system-requirements.html">
+← Back
+</a>
+
+<a class="doc-button" href="forgot-password.html">
+Next →
+</a>
+
+</div>
 
 </div>
 
