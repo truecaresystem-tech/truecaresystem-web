@@ -3,30 +3,143 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Employees documentation for True Care System">
-  <title>Employees | True Care System Documentation</title>
+  <meta name="description" content="Employee Management overview for True Care System, including New Employee and Search Employee workflows.">
+  <title>Employee Management | True Care System Documentation</title>
   <link rel="stylesheet" href="/documentation/assets/documentation.css">
+
+  <style>
+    .employee-menu-table,
+    .employee-sections-table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+    }
+
+    .employee-menu-table col:first-child {
+      width: 220px;
+    }
+
+    .employee-menu-table col:nth-child(3) {
+      width: 150px;
+    }
+
+    .employee-sections-table col:first-child {
+      width: 240px;
+    }
+
+    .employee-sections-table col:nth-child(3) {
+      width: 150px;
+    }
+
+    .employee-menu-table th,
+    .employee-menu-table td,
+    .employee-sections-table th,
+    .employee-sections-table td {
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .employee-menu-table td:last-child,
+    .employee-sections-table td:last-child {
+      white-space: nowrap;
+    }
+
+    .doc-article .doc-figure {
+      width: 100%;
+      margin: 20px 0 28px;
+      text-align: left;
+    }
+
+    .doc-article .doc-figure img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0;
+    }
+
+    .doc-article .doc-figure figcaption {
+      width: 100%;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .employee-page-navigation {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      align-items: center;
+      width: 100%;
+      margin-top: 32px;
+    }
+
+    .employee-page-navigation .doc-button:nth-child(1) {
+      justify-self: start;
+    }
+
+    .employee-page-navigation .doc-button:nth-child(2) {
+      justify-self: center;
+    }
+
+    .employee-page-navigation .doc-button:nth-child(3) {
+      justify-self: end;
+    }
+
+    @media (max-width: 800px) {
+      .employee-menu-table,
+      .employee-sections-table {
+        table-layout: auto;
+      }
+
+      .employee-menu-table col,
+      .employee-sections-table col {
+        width: auto !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .employee-page-navigation {
+        grid-template-columns: 1fr;
+      }
+
+      .employee-page-navigation .doc-button {
+        justify-self: stretch !important;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <header class="doc-header">
     <a class="doc-brand" href="/documentation/">
       <img src="/logo.png" alt="True Care System">
-      <span>
-        <strong>True Care System</strong>
-        <small>Documentation</small>
-      </span>
+      <span><strong>True Care System</strong><small>Documentation</small></span>
     </a>
 
-    <button class="doc-mobile-menu" id="docMobileMenu"
-            aria-label="Open documentation menu">☰</button>
+    <button
+      class="doc-mobile-menu"
+      id="docMobileMenu"
+      type="button"
+      aria-label="Open documentation menu"
+      aria-controls="docSidebar"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
 
     <div class="doc-header-actions">
       <label class="doc-search">
-        <span>⌕</span>
-        <input id="docSearchInput" type="search"
-               placeholder="Search documentation..."
-               autocomplete="off">
+        <span aria-hidden="true">⌕</span>
+        <input
+          id="docSearchInput"
+          type="search"
+          placeholder="Search documentation..."
+          autocomplete="off"
+          aria-label="Search documentation"
+        >
       </label>
+
       <a href="/" class="doc-back-link">Return to Website</a>
     </div>
   </header>
@@ -34,103 +147,325 @@
   <div class="doc-layout">
     <aside class="doc-sidebar" id="docSidebar">
       <div class="doc-sidebar-title">Documentation</div>
-      <nav>
+
+      <nav aria-label="Documentation modules">
         <a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
-<a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
-<a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
-<a class="doc-nav-module active" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
-<a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
-<a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
-<a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
-<a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
-<a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
-<a class="doc-nav-module" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span>KPI</span></a>
-<a class="doc-nav-module" href="/documentation/time-keeping/"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
-<a class="doc-nav-module" href="/documentation/mobile-evv/"><span class="doc-nav-number">12</span><span>Mobile EVV</span></a>
-<a class="doc-nav-module" href="/documentation/visit-maintenance/"><span class="doc-nav-number">13</span><span>Visit Maintenance</span></a>
-<a class="doc-nav-module" href="/documentation/house-management/"><span class="doc-nav-number">14</span><span>House Management</span></a>
-<a class="doc-nav-module" href="/documentation/payroll/"><span class="doc-nav-number">15</span><span>Payroll</span></a>
-<a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
-<a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
-<a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
-<a class="doc-nav-module" href="/documentation/provider-administration/"><span class="doc-nav-number">19</span><span>Admin</span></a>
-<a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
-<a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
-<a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
-<a class="doc-nav-module" href="/documentation/qa-guide/"><span class="doc-nav-number">23</span><span>QA Guide</span></a>
-<a class="doc-nav-module" href="/documentation/test-catalog/"><span class="doc-nav-number">24</span><span>Test Catalog</span></a>
-<a class="doc-nav-module" href="/documentation/api-documentation/"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
-<a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
-<a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
-<a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
-<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>Frequently Asked Questions</span></a>
-<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
+        <a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
+        <a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
+        <a class="doc-nav-module active" href="/documentation/employee-management/" aria-current="page"><span class="doc-nav-number">04</span><span>Employees</span></a>
+        <a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
+        <a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
+        <a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
+        <a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
+        <a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
+        <a class="doc-nav-module" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span>KPI</span></a>
+        <a class="doc-nav-module" href="/documentation/time-keeping/"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
+        <a class="doc-nav-module" href="/documentation/mobile-evv/"><span class="doc-nav-number">12</span><span>Mobile EVV</span></a>
+        <a class="doc-nav-module" href="/documentation/visit-maintenance/"><span class="doc-nav-number">13</span><span>Visit Maintenance</span></a>
+        <a class="doc-nav-module" href="/documentation/house-management/"><span class="doc-nav-number">14</span><span>House Management</span></a>
+        <a class="doc-nav-module" href="/documentation/payroll/"><span class="doc-nav-number">15</span><span>Payroll</span></a>
+        <a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
+        <a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
+        <a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
+        <a class="doc-nav-module" href="/documentation/provider-administration/"><span class="doc-nav-number">19</span><span>Admin</span></a>
+        <a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
+        <a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
+        <a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
+        <a class="doc-nav-module" href="/documentation/qa-guide/"><span class="doc-nav-number">23</span><span>QA Guide</span></a>
+        <a class="doc-nav-module" href="/documentation/test-catalog/"><span class="doc-nav-number">24</span><span>Test Catalog</span></a>
+        <a class="doc-nav-module" href="/documentation/api-documentation/"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
+        <a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
+        <a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
+        <a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
+        <a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>FAQ</span></a>
+        <a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
       </nav>
     </aside>
 
     <main class="doc-main">
       <div class="doc-breadcrumb">
         <a href="/documentation/">Documentation</a>
-        <span>›</span><a href='/documentation/employee-management/'>Employees</a>
-        <span>›</span><span>Employees</span>
+        <span>›</span>
+        <span>Employees</span>
       </div>
 
       <article class="doc-article">
         <header class="doc-article-header">
           <div>
-            <p class="doc-eyebrow">TRUE CARE SYSTEM DOCUMENTATION</p>
+            <p class="doc-eyebrow">EMPLOYEE MANAGEMENT</p>
             <h1>Employees</h1>
           </div>
 
           <dl class="doc-metadata">
-            <div><dt>Document ID</dt><dd>EMP-DOC-000</dd></div>
+            <div><dt>Document ID</dt><dd>EMP-DOC-001</dd></div>
             <div><dt>Version</dt><dd>1.0</dd></div>
-            <div><dt>Status</dt><dd>Structure Created</dd></div>
-            <div><dt>Last Updated</dt><dd>Pending</dd></div>
+            <div><dt>Status</dt><dd>Draft</dd></div>
+            <div><dt>Last Updated</dt><dd>07/23/2026</dd></div>
           </dl>
         </header>
 
-        
-    <div class="doc-notice doc-notice-info">
-      <strong>Module documentation structure created</strong>
-      <p>Each page below contains the standard enterprise template and
-         a named screenshot placeholder.</p>
-    </div>
+        <div class="doc-notice doc-notice-info">
+          <strong>Purpose</strong>
+          <p>
+            The Employees module is used to create, search, review, and maintain employee records.
+            It supports demographics, employment information, branch assignment, contact details,
+            work preferences, notification preferences, mobile access, and ongoing staff management.
+          </p>
+        </div>
 
-    <section class="doc-section">
-      <h2>Purpose</h2>
-      <p>This section will contain the approved documentation for
-         Employees.</p>
-    </section>
+        <section class="doc-section">
+          <h2>Employee Menu</h2>
 
-    <section class="doc-section">
-      <h2>Documentation Pages</h2>
-      <ul class="doc-page-list">
-        <li><a href="/documentation/employee-management/overview.html">Overview</a></li>
-<li><a href="/documentation/employee-management/employee-list.html">Employee List</a></li>
-<li><a href="/documentation/employee-management/create-employee.html">Create Employee</a></li>
-<li><a href="/documentation/employee-management/employee-details.html">Employee Details</a></li>
-<li><a href="/documentation/employee-management/edit-employee.html">Edit Employee</a></li>
-<li><a href="/documentation/employee-management/employment-information.html">Employment Information</a></li>
-<li><a href="/documentation/employee-management/contact-information.html">Contact Information</a></li>
-<li><a href="/documentation/employee-management/documents.html">Employee Documents</a></li>
-<li><a href="/documentation/employee-management/training.html">Training</a></li>
-<li><a href="/documentation/employee-management/credentials.html">Credentials</a></li>
-<li><a href="/documentation/employee-management/availability.html">Availability</a></li>
-<li><a href="/documentation/employee-management/payroll-settings.html">Payroll Settings</a></li>
-<li><a href="/documentation/employee-management/status-management.html">Employee Status</a></li>
-<li><a href="/documentation/employee-management/deactivate-employee.html">Deactivate Employee</a></li>
-<li><a href="/documentation/employee-management/troubleshooting.html">Troubleshooting</a></li>
-<li><a href="/documentation/employee-management/faq.html">FAQ</a></li>
-      </ul>
-    </section>
+          <p>
+            The Employees menu contains two primary options. These are the main entry points for
+            creating or locating employee records.
+          </p>
 
-    <section class="doc-section">
-      <h2>Screenshot Library</h2>
-      <p>Images for this module are stored in
-         <code>documentation/employee-management/images/</code>.</p>
-    </section>
-    
+          <figure class="doc-figure">
+            <img
+              src="/documentation/employee-management/images/employee-menu.jpg"
+              alt="Employees menu showing New Employee and Search Employee"
+            >
+            <figcaption>
+              Employees menu with New Employee and Search Employee.
+            </figcaption>
+          </figure>
+
+          <table class="employee-menu-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Menu</th>
+                <th>Purpose</th>
+                <th>Documentation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>New Employee</strong></td>
+                <td>Create a new employee record and assign employment-related information.</td>
+                <td><a href="/documentation/employee-management/new-employee.html">Open guide</a></td>
+              </tr>
+              <tr>
+                <td><strong>Search Employee</strong></td>
+                <td>Find existing employees by name, employee ID, email, branch, or status.</td>
+                <td><a href="/documentation/employee-management/search-employee.html">Open guide</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="doc-section">
+          <h2>New Employee</h2>
+
+          <p>
+            New Employee is used to create a complete employee profile. The screen is organized
+            into practical sections instead of multiple tabs.
+          </p>
+
+          <figure class="doc-figure">
+            <img
+              src="/documentation/employee-management/images/new-employee.jpg"
+              alt="New Employee screen with demographics, employment, address, emergency contact, work preferences, notifications, and mobile access"
+            >
+            <figcaption>
+              New Employee screen with employee setup sections and Save Employee controls.
+            </figcaption>
+          </figure>
+
+          <h3>New Employee Sections</h3>
+
+          <table class="employee-sections-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Section</th>
+                <th>What Users Enter or Review</th>
+                <th>Documentation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Demographics</strong></td>
+                <td>
+                  First name, middle name, last name, date of birth, gender, phone, email,
+                  education or qualification, and SSN information.
+                </td>
+                <td><a href="/documentation/employee-management/new-employee.html#demographics">Open guide</a></td>
+              </tr>
+
+              <tr>
+                <td><strong>Employment Info</strong></td>
+                <td>
+                  Employee ID, role or position, status, hire date, termination date,
+                  employment type, branch, primary work location, and supervisor.
+                </td>
+                <td><a href="/documentation/employee-management/new-employee.html#employment-info">Open guide</a></td>
+              </tr>
+
+              <tr>
+                <td><strong>Address</strong></td>
+                <td>
+                  Home address, city, state, and ZIP code.
+                </td>
+                <td><a href="/documentation/employee-management/new-employee.html#address">Open guide</a></td>
+              </tr>
+
+              <tr>
+                <td><strong>Emergency Contact</strong></td>
+                <td>
+                  Emergency contact name, relationship, phone, email, preferred language, and address.
+                </td>
+                <td><a href="/documentation/employee-management/new-employee.html#emergency-contact">Open guide</a></td>
+              </tr>
+
+              <tr>
+                <td><strong>Work Preferences</strong></td>
+                <td>
+                  Preferred shift, maximum weekly hours, weekend or holiday availability,
+                  and additional staffing notes.
+                </td>
+                <td><a href="/documentation/employee-management/new-employee.html#work-preferences">Open guide</a></td>
+              </tr>
+
+              <tr>
+                <td><strong>Notification Preferences</strong></td>
+                <td>
+                  Email, SMS, in-app notification channels and topics such as schedule,
+                  payroll, timesheet, policy, and compliance updates.
+                </td>
+                <td><a href="/documentation/employee-management/new-employee.html#notification-preferences">Open guide</a></td>
+              </tr>
+
+              <tr>
+                <td><strong>Mobile User</strong></td>
+                <td>
+                  Controls whether the employee may access the True Care System mobile application.
+                </td>
+                <td><a href="/documentation/employee-management/new-employee.html#mobile-user">Open guide</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="doc-section">
+          <h2>Search Employee</h2>
+
+          <p>
+            Search Employee is the primary page for locating and opening an existing employee record.
+          </p>
+
+          <figure class="doc-figure">
+            <img
+              src="/documentation/employee-management/images/search-employee.jpg"
+              alt="Search Employee screen with keyword, branch, status filters, employee results, and View Edit actions"
+            >
+            <figcaption>
+              Search Employee screen with keyword, branch, and status filters.
+            </figcaption>
+          </figure>
+
+          <h3>Available Search Functions</h3>
+
+          <ul>
+            <li>Search by employee name, employee ID, or email.</li>
+            <li>Filter by Branch.</li>
+            <li>Filter by employee Status.</li>
+            <li>Review the number of matching employees.</li>
+            <li>Review employee photo, ID, name, role, branch, status, hire date, phone, and email.</li>
+            <li>Select <strong>View / Edit</strong> to open the employee record.</li>
+            <li>Select <strong>+ New Employee</strong> to create a new employee.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Recommended Workflow</h2>
+
+          <ol>
+            <li>Search existing employees before creating a new record.</li>
+            <li>Use Search Employee to confirm the employee does not already exist.</li>
+            <li>Select + New Employee.</li>
+            <li>Complete demographics and employment information.</li>
+            <li>Select the correct branch and primary work location.</li>
+            <li>Complete address and emergency contact information.</li>
+            <li>Review work and notification preferences.</li>
+            <li>Enable Mobile User only when mobile access is required.</li>
+            <li>Select Save Employee.</li>
+            <li>Return to Search Employee to verify the new record.</li>
+          </ol>
+        </section>
+
+        <section class="doc-section">
+          <h2>Validation Checklist</h2>
+
+          <ul>
+            <li>The employee does not already exist.</li>
+            <li>Legal name and date of birth are accurate.</li>
+            <li>Phone and email use valid formats.</li>
+            <li>Role or Position is selected correctly.</li>
+            <li>Employment Status and Employment Type are correct.</li>
+            <li>Hire Date is accurate.</li>
+            <li>Branch and Primary Work Location are selected.</li>
+            <li>Supervisor information is correct when applicable.</li>
+            <li>Emergency contact information is current.</li>
+            <li>Work and notification preferences are reviewed.</li>
+            <li>Mobile User access is enabled only when appropriate.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Best Practices</h2>
+
+          <ul>
+            <li>Search before creating a new employee to prevent duplicates.</li>
+            <li>Use the employee's legal name and verified employment information.</li>
+            <li>Assign the correct role, branch, and work location.</li>
+            <li>Keep phone, email, and emergency contact information current.</li>
+            <li>Review termination dates and status changes carefully.</li>
+            <li>Limit mobile access to employees who need the mobile application.</li>
+            <li>Review notification preferences with the employee.</li>
+            <li>Do not enter placeholder SSN, email, or phone information.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Security and HIPAA</h2>
+
+          <p>
+            Employee records may contain personally identifiable information, employment details,
+            contact information, SSN data, emergency contacts, work assignments, and access settings.
+          </p>
+
+          <ul>
+            <li>Access employee records only for authorized business purposes.</li>
+            <li>Apply role-based access and the minimum necessary principle.</li>
+            <li>Protect SSN and other sensitive employment information.</li>
+            <li>Do not share employee screenshots through unapproved channels.</li>
+            <li>Verify the correct employee before editing the record.</li>
+            <li>Access and changes should be recorded through Audit Logs where applicable.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Related Documentation</h2>
+
+          <ul>
+            <li><a href="/documentation/employee-management/new-employee.html">New Employee</a></li>
+            <li><a href="/documentation/employee-management/search-employee.html">Search Employee</a></li>
+            <li><a href="/documentation/scheduling/">Schedule</a></li>
+            <li><a href="/documentation/time-keeping/">Time Keeping</a></li>
+            <li><a href="/documentation/mobile-evv/">Mobile EVV</a></li>
+            <li><a href="/documentation/payroll/">Payroll</a></li>
+            <li><a href="/documentation/security/">Security</a></li>
+            <li><a href="/documentation/audit-logs/">Audit Logs</a></li>
+          </ul>
+        </section>
+
+        <div class="doc-page-navigation employee-page-navigation">
+          <a class="doc-button" href="/documentation/individual-management/faq.html">← Back</a>
+          <a class="doc-button" href="/documentation/employee-management/index.html">🏠 Home</a>
+          <a class="doc-button" href="/documentation/employee-management/new-employee.html">Next →</a>
+        </div>
       </article>
 
       <footer class="doc-page-footer">
