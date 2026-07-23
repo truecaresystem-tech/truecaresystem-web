@@ -1,179 +1,663 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login | True Care System Documentation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="/documentation/assets/documentation.css">
-<link rel="stylesheet" href="/documentation/assets/documentation-sidebar.css">
+  <meta
+    name="description"
+    content="Instructions for signing in to True Care System and completing the required password change during the first login."
+  >
 
+  <title>Login | Getting Started | True Care System Documentation</title>
+
+  <link rel="stylesheet" href="/documentation/assets/documentation.css">
 </head>
 
-<body data-doc-module="getting-started">
+<body>
 
-<div class="doc-article">
+  <header class="doc-header">
 
-<h1>Login</h1>
+    <a class="doc-brand" href="/documentation/">
+      <img src="/logo.png" alt="True Care System">
 
-<div class="doc-notice doc-notice-info">
-<strong>Purpose</strong>
-<p>
-The Login page is the secure entry point into the True Care System platform.
-All users must authenticate before accessing any system resources.
-For first-time users, the system requires a password change immediately after signing in with the temporary password provided in the Welcome Email.
-</p>
-</div>
+      <span>
+        <strong>True Care System</strong>
+        <small>Documentation</small>
+      </span>
+    </a>
 
-<h2>Prerequisites</h2>
+    <button
+      class="doc-mobile-menu"
+      id="docMobileMenu"
+      aria-label="Open documentation menu"
+    >
+      ☰
+    </button>
 
-<ul>
-<li>Valid True Care System user account.</li>
-<li>Assigned role and permissions.</li>
-<li>Supported web browser.</li>
-<li>Internet connection.</li>
-</ul>
+    <div class="doc-header-actions">
 
-<hr>
+      <label class="doc-search">
+        <span>⌕</span>
 
-<h2>Step 1 — Sign In</h2>
+        <input
+          id="docSearchInput"
+          type="search"
+          placeholder="Search documentation..."
+          autocomplete="off"
+        >
+      </label>
 
-<p>
-Open the True Care System Login page and sign in using your Email and Password.
-If this is your first login, enter the temporary password provided in your Welcome Email.
-</p>
+      <a href="/" class="doc-back-link">
+        Return to Website
+      </a>
 
-<p style="text-align:center">
-<img
-src="images/GET-001-login-page.jpg"
-alt="True Care System Login"
-style="max-width:100%;border:1px solid #d9e2ec;border-radius:8px">
-</p>
+    </div>
 
-<p style="text-align:center"><em>Figure 1. Login Screen</em></p>
+  </header>
 
-<ol>
-<li>Open the Login page.</li>
-<li>Enter your Email.</li>
-<li>Enter your Password or Temporary Password.</li>
-<li>Click <strong>Sign In</strong>.</li>
-</ol>
+  <div class="doc-layout">
 
-<hr>
+    <aside class="doc-sidebar" id="docSidebar">
 
-<h2>Step 2 — Change Password (First Login Only)</h2>
+      <div class="doc-sidebar-title">
+        Documentation
+      </div>
 
-<p>
-When signing in with a temporary password for the first time,
-the system automatically redirects you to the Change Password screen.
-This step is required before accessing the Dashboard.
-</p>
+      <nav>
 
-<p style="text-align:center">
-<img
-src="images/change-password.jpg"
-alt="Change Password"
-style="max-width:100%;border:1px solid #d9e2ec;border-radius:8px">
-</p>
+        <a
+          class="doc-nav-module active"
+          href="/documentation/getting-started/"
+        >
+          <span class="doc-nav-number">01</span>
+          <span>Getting Started</span>
+        </a>
 
-<p style="text-align:center"><em>Figure 2. First-Time Password Change</em></p>
+        <a
+          class="doc-nav-module"
+          href="/documentation/service-management/"
+        >
+          <span class="doc-nav-number">02</span>
+          <span>Services</span>
+        </a>
 
-<ol>
-<li>Enter your Current Password (Temporary Password).</li>
-<li>Create a New Password.</li>
-<li>Confirm the New Password.</li>
-<li>Click <strong> Changes Password </strong>.</li>
-<li>The system saves the new password.</li>
-<li>You are redirected to the Dashboard.</li>
-</ol>
+        <a
+          class="doc-nav-module"
+          href="/documentation/individual-management/"
+        >
+          <span class="doc-nav-number">03</span>
+          <span>Individual</span>
+        </a>
 
-<hr>
+        <a
+          class="doc-nav-module"
+          href="/documentation/employee-management/"
+        >
+          <span class="doc-nav-number">04</span>
+          <span>Employees</span>
+        </a>
 
-<h2>Successful Login</h2>
+        <a
+          class="doc-nav-module"
+          href="/documentation/scheduling/"
+        >
+          <span class="doc-nav-number">05</span>
+          <span>Schedule</span>
+        </a>
 
-<ul>
-<li>The appropriate Dashboard is displayed.</li>
-<li>Menus are loaded according to the assigned role.</li>
-<li>A secure authenticated session is established.</li>
-<li>The login activity is recorded in the Audit Log.</li>
-</ul>
+        <a
+          class="doc-nav-module"
+          href="/documentation/medication-management/"
+        >
+          <span class="doc-nav-number">06</span>
+          <span>Medication</span>
+        </a>
 
-<hr>
+        <a
+          class="doc-nav-module"
+          href="/documentation/bss/"
+        >
+          <span class="doc-nav-number">07</span>
+          <span>BSS</span>
+        </a>
 
-<h2>Security</h2>
+        <a
+          class="doc-nav-module"
+          href="/documentation/authorization/"
+        >
+          <span class="doc-nav-number">08</span>
+          <span>Authorizations</span>
+        </a>
 
-<ul>
-<li>HTTPS encrypted communication.</li>
-<li>Role-based access control.</li>
-<li>Secure session management.</li>
-<li>Automatic session timeout.</li>
-<li>Failed login monitoring.</li>
-</ul>
+        <a
+          class="doc-nav-module"
+          href="/documentation/reports/"
+        >
+          <span class="doc-nav-number">09</span>
+          <span>Reports</span>
+        </a>
 
-<hr>
+        <a
+          class="doc-nav-module"
+          href="/documentation/kpi/"
+        >
+          <span class="doc-nav-number">10</span>
+          <span>KPI</span>
+        </a>
 
-<h2>HIPAA Considerations</h2>
+        <a
+          class="doc-nav-module"
+          href="/documentation/time-keeping/"
+        >
+          <span class="doc-nav-number">11</span>
+          <span>Time Keeping</span>
+        </a>
 
-<ul>
-<li>Never share your username or password.</li>
-<li>Always sign out before leaving your workstation.</li>
-<li>Do not save passwords on public or shared computers.</li>
-<li>Protect Protected Health Information (PHI) from unauthorized access.</li>
-</ul>
+        <a
+          class="doc-nav-module"
+          href="/documentation/mobile-evv/"
+        >
+          <span class="doc-nav-number">12</span>
+          <span>Mobile EVV</span>
+        </a>
 
-<hr>
+        <a
+          class="doc-nav-module"
+          href="/documentation/visit-maintenance/"
+        >
+          <span class="doc-nav-number">13</span>
+          <span>Visit Maintenance</span>
+        </a>
 
-<h2>Troubleshooting</h2>
+        <a
+          class="doc-nav-module"
+          href="/documentation/house-management/"
+        >
+          <span class="doc-nav-number">14</span>
+          <span>House Management</span>
+        </a>
 
-<ul>
-<li>Verify your Email and Password.</li>
-<li>Check whether Caps Lock is enabled.</li>
-<li>Confirm your internet connection.</li>
-<li>Use <strong>Forgot Password</strong> if you cannot remember your password.</li>
-<li>Contact your Provider Administrator if you are unable to access the system.</li>
-</ul>
+        <a
+          class="doc-nav-module"
+          href="/documentation/payroll/"
+        >
+          <span class="doc-nav-number">15</span>
+          <span>Payroll</span>
+        </a>
 
-<hr>
+        <a
+          class="doc-nav-module"
+          href="/documentation/billing/"
+        >
+          <span class="doc-nav-number">16</span>
+          <span>Billing</span>
+        </a>
 
-<h2>FAQ</h2>
+        <a
+          class="doc-nav-module"
+          href="/documentation/hipaa-compliance/"
+        >
+          <span class="doc-nav-number">17</span>
+          <span>HIPAA</span>
+        </a>
 
-<p>
-<strong>Why am I required to change my password?</strong><br>
-Every newly created account receives a temporary password.
-For security purposes, the password must be changed during the first login.
-</p>
+        <a
+          class="doc-nav-module"
+          href="/documentation/support/"
+        >
+          <span class="doc-nav-number">18</span>
+          <span>Support</span>
+        </a>
 
-<p>
-<strong>Can I skip the password change?</strong><br>
-No. A new password is required before you can access the Dashboard.
-</p>
+        <a
+          class="doc-nav-module"
+          href="/documentation/provider-administration/"
+        >
+          <span class="doc-nav-number">19</span>
+          <span>Admin</span>
+        </a>
 
-<p>
-<strong>What happens after I change my password?</strong><br>
-The new password becomes active immediately, and you will be redirected to the Dashboard.
-</p>
+        <a
+          class="doc-nav-module"
+          href="/documentation/security/"
+        >
+          <span class="doc-nav-number">20</span>
+          <span>Security</span>
+        </a>
 
-<hr>
+        <a
+          class="doc-nav-module"
+          href="/documentation/audit-logs/"
+        >
+          <span class="doc-nav-number">21</span>
+          <span>Audit Logs</span>
+        </a>
 
-<div style="display:flex;justify-content:space-between;align-items:center;margin-top:40px;">
+        <a
+          class="doc-nav-module"
+          href="/documentation/developer-guide/"
+        >
+          <span class="doc-nav-number">22</span>
+          <span>Developer Guide</span>
+        </a>
 
-<a class="doc-button" href="system-requirements.html">
-← Back
-</a>
+        <a
+          class="doc-nav-module"
+          href="/documentation/qa-guide/"
+        >
+          <span class="doc-nav-number">23</span>
+          <span>QA Guide</span>
+        </a>
 
-<a class="doc-button" href="index.html">
-🏠 Home
-</a>
+        <a
+          class="doc-nav-module"
+          href="/documentation/test-catalog/"
+        >
+          <span class="doc-nav-number">24</span>
+          <span>Test Catalog</span>
+        </a>
 
-<a class="doc-button" href="forgot-password.html">
-Next →
-</a>
+        <a
+          class="doc-nav-module"
+          href="/documentation/api-documentation/"
+        >
+          <span class="doc-nav-number">25</span>
+          <span>API Documentation</span>
+        </a>
 
-</div>
+        <a
+          class="doc-nav-module"
+          href="/documentation/ai-agents/"
+        >
+          <span class="doc-nav-number">26</span>
+          <span>AI Agents</span>
+        </a>
 
-</div>
+        <a
+          class="doc-nav-module"
+          href="/documentation/company-playbook/"
+        >
+          <span class="doc-nav-number">27</span>
+          <span>Company Playbook</span>
+        </a>
 
-<script src="/documentation/assets/documentation-sidebar.js"></script>
+        <a
+          class="doc-nav-module"
+          href="/documentation/troubleshooting/"
+        >
+          <span class="doc-nav-number">28</span>
+          <span>Troubleshooting</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/faq/"
+        >
+          <span class="doc-nav-number">29</span>
+          <span>FAQ</span>
+        </a>
+
+        <a
+          class="doc-nav-module"
+          href="/documentation/release-notes/"
+        >
+          <span class="doc-nav-number">30</span>
+          <span>Release Notes</span>
+        </a>
+
+      </nav>
+
+    </aside>
+
+    <main class="doc-main">
+
+      <div class="doc-breadcrumb">
+
+        <a href="/documentation/">
+          Documentation
+        </a>
+
+        <span>›</span>
+
+        <a href="/documentation/getting-started/">
+          Getting Started
+        </a>
+
+        <span>›</span>
+
+        <span>Login</span>
+
+      </div>
+
+      <article class="doc-article">
+
+        <header class="doc-article-header">
+
+          <div>
+            <p class="doc-eyebrow">
+              GETTING STARTED
+            </p>
+
+            <h1>Login</h1>
+          </div>
+
+          <dl class="doc-metadata">
+
+            <div>
+              <dt>Document ID</dt>
+              <dd>GET-DOC-003</dd>
+            </div>
+
+            <div>
+              <dt>Version</dt>
+              <dd>1.0</dd>
+            </div>
+
+            <div>
+              <dt>Status</dt>
+              <dd>Draft</dd>
+            </div>
+
+            <div>
+              <dt>Last Updated</dt>
+              <dd>07/23/2026</dd>
+            </div>
+
+          </dl>
+
+        </header>
+
+        <div class="doc-notice doc-notice-info">
+
+          <strong>Purpose</strong>
+
+          <p>
+            The Login page is the secure entry point into the True Care System
+            platform. All users must authenticate before accessing any system
+            resources. For first-time users, the system requires a password
+            change immediately after signing in with the temporary password
+            provided in the Welcome Email.
+          </p>
+
+        </div>
+
+        <section class="doc-section">
+
+          <h2>Prerequisites</h2>
+
+          <ul>
+            <li>Valid True Care System user account.</li>
+            <li>Assigned role and permissions.</li>
+            <li>Supported web browser.</li>
+            <li>Internet connection.</li>
+          </ul>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Step 1 — Sign In</h2>
+
+          <p>
+            Open the True Care System Login page and sign in using your Email
+            and Password. If this is your first login, enter the temporary
+            password provided in your Welcome Email.
+          </p>
+
+          <p style="text-align:center">
+
+            <img
+              src="images/GET-001-login-page.jpg"
+              alt="True Care System Login"
+              style="
+                max-width:100%;
+                border:1px solid #d9e2ec;
+                border-radius:8px;
+              "
+            >
+
+          </p>
+
+          <p style="text-align:center">
+            <em>Figure 1. Login Screen</em>
+          </p>
+
+          <ol>
+            <li>Open the Login page.</li>
+            <li>Enter your Email.</li>
+            <li>Enter your Password or Temporary Password.</li>
+            <li>Click <strong>Sign In</strong>.</li>
+          </ol>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Step 2 — Change Password (First Login Only)</h2>
+
+          <p>
+            When signing in with a temporary password for the first time,
+            the system automatically redirects you to the Change Password
+            screen. This step is required before accessing the Dashboard.
+          </p>
+
+          <p style="text-align:center">
+
+            <img
+              src="images/change-password.jpg"
+              alt="Change Password"
+              style="
+                max-width:100%;
+                border:1px solid #d9e2ec;
+                border-radius:8px;
+              "
+            >
+
+          </p>
+
+          <p style="text-align:center">
+            <em>Figure 2. First-Time Password Change</em>
+          </p>
+
+          <ol>
+            <li>Enter your Current Password (Temporary Password).</li>
+            <li>Create a New Password.</li>
+            <li>Confirm the New Password.</li>
+            <li>Click <strong>Change Password</strong>.</li>
+            <li>The system saves the new password.</li>
+            <li>You are redirected to the Dashboard.</li>
+          </ol>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Successful Login</h2>
+
+          <ul>
+            <li>The appropriate Dashboard is displayed.</li>
+            <li>Menus are loaded according to the assigned role.</li>
+            <li>A secure authenticated session is established.</li>
+            <li>The login activity is recorded in the Audit Log.</li>
+          </ul>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Security</h2>
+
+          <ul>
+            <li>HTTPS encrypted communication.</li>
+            <li>Role-based access control.</li>
+            <li>Secure session management.</li>
+            <li>Automatic session timeout.</li>
+            <li>Failed login monitoring.</li>
+          </ul>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>HIPAA Considerations</h2>
+
+          <ul>
+            <li>Never share your username or password.</li>
+            <li>Always sign out before leaving your workstation.</li>
+            <li>Do not save passwords on public or shared computers.</li>
+            <li>
+              Protect Protected Health Information (PHI) from unauthorized access.
+            </li>
+          </ul>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Troubleshooting</h2>
+
+          <ul>
+            <li>Verify your Email and Password.</li>
+            <li>Check whether Caps Lock is enabled.</li>
+            <li>Confirm your internet connection.</li>
+            <li>
+              Use <strong>Forgot Password</strong> if you cannot remember your password.
+            </li>
+            <li>
+              Contact your Provider Administrator if you are unable to access the system.
+            </li>
+          </ul>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>Why am I required to change my password?</h3>
+
+          <p>
+            Every newly created account receives a temporary password.
+            For security purposes, the password must be changed during
+            the first login.
+          </p>
+
+          <h3>Can I skip the password change?</h3>
+
+          <p>
+            No. A new password is required before you can access the Dashboard.
+          </p>
+
+          <h3>What happens after I change my password?</h3>
+
+          <p>
+            The new password becomes active immediately, and you will be
+            redirected to the Dashboard.
+          </p>
+
+        </section>
+
+        <section class="doc-section">
+
+          <h2>Related Documentation</h2>
+
+          <ul>
+            <li>
+              <a href="/documentation/getting-started/system-requirements.html">
+                System Requirements
+              </a>
+            </li>
+
+            <li>
+              <a href="/documentation/getting-started/forgot-password.html">
+                Forgot Password
+              </a>
+            </li>
+
+            <li>
+              <a href="/documentation/getting-started/dashboard.html">
+                Dashboard
+              </a>
+            </li>
+
+            <li>
+              <a href="/documentation/security/">
+                Security
+              </a>
+            </li>
+
+            <li>
+              <a href="/documentation/hipaa-compliance/">
+                HIPAA
+              </a>
+            </li>
+          </ul>
+
+        </section>
+
+        <section class="doc-section">
+
+          <div
+            style="
+              display:flex;
+              justify-content:space-between;
+              align-items:center;
+              gap:20px;
+              flex-wrap:wrap;
+            "
+          >
+
+            <a
+              class="doc-button"
+              href="/documentation/getting-started/system-requirements.html"
+            >
+              ← Back
+            </a>
+
+            <a
+              class="doc-button"
+              href="/documentation/getting-started/"
+            >
+              🏠 Home
+            </a>
+
+            <a
+              class="doc-button"
+              href="/documentation/getting-started/forgot-password.html"
+            >
+              Next →
+            </a>
+
+          </div>
+
+        </section>
+
+      </article>
+
+      <footer class="doc-page-footer">
+
+        <p>
+          © 2026 True Care System. All rights reserved.
+        </p>
+
+        <p>
+          Documentation is maintained as part of the True Care System product lifecycle.
+        </p>
+
+      </footer>
+
+    </main>
+
+  </div>
+
+  <div
+    class="doc-search-results"
+    id="docSearchResults"
+    hidden
+  ></div>
+
+  <script src="/documentation/assets/documentation.js"></script>
 
 </body>
 </html>
