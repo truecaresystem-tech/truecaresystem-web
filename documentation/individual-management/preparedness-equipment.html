@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Detailed Preparedness and Equipment guide for creating an Individual in True Care System.">
+  <title>Preparedness &amp; Equipment | Individual Management | True Care System Documentation</title>
+  <link rel="stylesheet" href="/documentation/assets/documentation.css">
+
+  <style>
+    .preparedness-table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+    }
+
+    .preparedness-table col:first-child {
+      width: 230px;
+    }
+
+    .preparedness-table col:nth-child(3) {
+      width: 190px;
+    }
+
+    .preparedness-table th,
+    .preparedness-table td {
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .doc-article .doc-figure {
+      width: 100%;
+      margin: 20px 0 28px;
+      text-align: left;
+    }
+
+    .doc-article .doc-figure img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0;
+    }
+
+    .doc-article .doc-figure figcaption {
+      width: 100%;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .preparedness-page-navigation {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      align-items: center;
+      width: 100%;
+      margin-top: 32px;
+    }
+
+    .preparedness-page-navigation .doc-button:nth-child(1) {
+      justify-self: start;
+    }
+
+    .preparedness-page-navigation .doc-button:nth-child(2) {
+      justify-self: center;
+    }
+
+    .preparedness-page-navigation .doc-button:nth-child(3) {
+      justify-self: end;
+    }
+
+    @media (max-width: 800px) {
+      .preparedness-table {
+        table-layout: auto;
+      }
+
+      .preparedness-table col {
+        width: auto !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .preparedness-page-navigation {
+        grid-template-columns: 1fr;
+      }
+
+      .preparedness-page-navigation .doc-button {
+        justify-self: stretch !important;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="doc-header">
+    <a class="doc-brand" href="/documentation/">
+      <img src="/logo.png" alt="True Care System">
+      <span><strong>True Care System</strong><small>Documentation</small></span>
+    </a>
+
+    <button
+      class="doc-mobile-menu"
+      id="docMobileMenu"
+      type="button"
+      aria-label="Open documentation menu"
+      aria-controls="docSidebar"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+    <div class="doc-header-actions">
+      <label class="doc-search">
+        <span aria-hidden="true">⌕</span>
+        <input
+          id="docSearchInput"
+          type="search"
+          placeholder="Search documentation..."
+          autocomplete="off"
+          aria-label="Search documentation"
+        >
+      </label>
+
+      <a href="/" class="doc-back-link">Return to Website</a>
+    </div>
+  </header>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="docSidebar">
+      <div class="doc-sidebar-title">Documentation</div>
+
+      <nav aria-label="Documentation modules">
+        <a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
+        <a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
+        <a class="doc-nav-module active" href="/documentation/individual-management/" aria-current="page"><span class="doc-nav-number">03</span><span>Individual</span></a>
+        <a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
+        <a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
+        <a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
+        <a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
+        <a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
+        <a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
+        <a class="doc-nav-module" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span>KPI</span></a>
+        <a class="doc-nav-module" href="/documentation/time-keeping/"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
+        <a class="doc-nav-module" href="/documentation/mobile-evv/"><span class="doc-nav-number">12</span><span>Mobile EVV</span></a>
+        <a class="doc-nav-module" href="/documentation/visit-maintenance/"><span class="doc-nav-number">13</span><span>Visit Maintenance</span></a>
+        <a class="doc-nav-module" href="/documentation/house-management/"><span class="doc-nav-number">14</span><span>House Management</span></a>
+        <a class="doc-nav-module" href="/documentation/payroll/"><span class="doc-nav-number">15</span><span>Payroll</span></a>
+        <a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
+        <a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
+        <a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
+        <a class="doc-nav-module" href="/documentation/provider-administration/"><span class="doc-nav-number">19</span><span>Admin</span></a>
+        <a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
+        <a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
+        <a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
+        <a class="doc-nav-module" href="/documentation/qa-guide/"><span class="doc-nav-number">23</span><span>QA Guide</span></a>
+        <a class="doc-nav-module" href="/documentation/test-catalog/"><span class="doc-nav-number">24</span><span>Test Catalog</span></a>
+        <a class="doc-nav-module" href="/documentation/api-documentation/"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
+        <a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
+        <a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
+        <a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
+        <a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>FAQ</span></a>
+        <a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
+      </nav>
+    </aside>
+
+    <main class="doc-main">
+      <div class="doc-breadcrumb">
+        <a href="/documentation/">Documentation</a>
+        <span>›</span>
+        <a href="/documentation/individual-management/">Individual</a>
+        <span>›</span>
+        <a href="/documentation/individual-management/new-individual.html">New Individual</a>
+        <span>›</span>
+        <span>Preparedness &amp; Equipment</span>
+      </div>
+
+      <article class="doc-article">
+        <header class="doc-article-header">
+          <div>
+            <p class="doc-eyebrow">INDIVIDUAL MANAGEMENT</p>
+            <h1>Preparedness &amp; Equipment</h1>
+          </div>
+
+          <dl class="doc-metadata">
+            <div><dt>Document ID</dt><dd>IND-DOC-006</dd></div>
+            <div><dt>Version</dt><dd>1.0</dd></div>
+            <div><dt>Status</dt><dd>Draft</dd></div>
+            <div><dt>Last Updated</dt><dd>07/23/2026</dd></div>
+          </dl>
+        </header>
+
+        <div class="doc-notice doc-notice-info">
+          <strong>Purpose</strong>
+          <p>
+            The Preparedness &amp; Equipment tab records the Individual's priority level,
+            mobility status, medical equipment, assistive devices, and other dependencies.
+            This information supports emergency preparedness, continuity of care, evacuation
+            planning, caregiver matching, scheduling, service delivery, and safety planning.
+          </p>
+        </div>
+
+        <section class="doc-section">
+          <h2>Screen Overview</h2>
+
+          <figure class="doc-figure">
+            <img
+              src="/documentation/individual-management/images/new-individual-preparedness-equipment.jpg"
+              alt="New Individual Preparedness and Equipment tab"
+            >
+            <figcaption>
+              New Individual — Preparedness &amp; Equipment tab.
+            </figcaption>
+          </figure>
+
+          <p>
+            Preparedness &amp; Equipment is the fourth tab in the New Individual workflow.
+            Complete this tab using current information from the Individual, guardian,
+            clinical records, service plan, nursing documentation, or other approved sources.
+          </p>
+        </section>
+
+        <section class="doc-section">
+          <h2>Page Actions</h2>
+
+          <table class="preparedness-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Action</th>
+                <th>Description</th>
+                <th>When to Use</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Back</strong></td>
+                <td>Returns to the previous Individual page.</td>
+                <td>Use when leaving the creation workflow.</td>
+              </tr>
+              <tr>
+                <td><strong>Restore Draft</strong></td>
+                <td>Restores previously saved draft information.</td>
+                <td>Use when continuing an incomplete record.</td>
+              </tr>
+              <tr>
+                <td><strong>Save</strong></td>
+                <td>Saves current progress without creating the final Individual.</td>
+                <td>Use when preparedness information is incomplete.</td>
+              </tr>
+              <tr>
+                <td><strong>Create Individual</strong></td>
+                <td>Creates the Individual after required validation passes.</td>
+                <td>Use after all required tabs have been reviewed.</td>
+              </tr>
+              <tr>
+                <td><strong>Clear this tab</strong></td>
+                <td>Clears values entered on the current tab.</td>
+                <td>Use carefully when restarting this section.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="doc-section">
+          <h2>Preparedness</h2>
+
+          <p>
+            The Preparedness section identifies the Individual's current priority level and
+            mobility status. These values help staff understand the level of assistance that
+            may be required during routine services or emergency situations.
+          </p>
+
+          <table class="preparedness-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Description</th>
+                <th>Guidance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Priority Code</strong></td>
+                <td>Indicates the relative level of urgency or assistance needed during an emergency or service disruption.</td>
+                <td>Select the value approved by Provider policy or the Individual's preparedness plan.</td>
+              </tr>
+              <tr>
+                <td><strong>Mobility Status</strong></td>
+                <td>Describes how independently the Individual can move, transfer, or evacuate.</td>
+                <td>Select the status that reflects current functional ability.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="doc-section">
+          <h2>Priority Code</h2>
+
+          <p>
+            The screenshot shows a Priority Code selection with <strong>Low</strong> selected.
+            Additional values may be available according to the Provider's configuration.
+          </p>
+
+          <table class="preparedness-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Example Priority</th>
+                <th>General Meaning</th>
+                <th>Operational Consideration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Low</strong></td>
+                <td>The Individual is generally stable and may require limited assistance during an emergency.</td>
+                <td>Continue routine preparedness planning and keep contact information current.</td>
+              </tr>
+              <tr>
+                <td><strong>Medium</strong></td>
+                <td>The Individual may require additional support, supervision, or coordination.</td>
+                <td>Confirm transportation, staffing, and backup support.</td>
+              </tr>
+              <tr>
+                <td><strong>High</strong></td>
+                <td>The Individual may depend on equipment, staff, medication, or frequent support.</td>
+                <td>Maintain a detailed continuity and emergency response plan.</td>
+              </tr>
+              <tr>
+                <td><strong>Critical</strong></td>
+                <td>The Individual may face immediate health or safety risk if services, equipment, or power are interrupted.</td>
+                <td>Use the highest level of emergency planning, backup resources, and escalation.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="doc-notice doc-notice-warning">
+            <strong>Provider-Specific Values</strong>
+            <p>
+              The exact meaning of each Priority Code must follow the Provider's approved emergency
+              preparedness policy. Do not assign a higher or lower priority without supporting information.
+            </p>
+          </div>
+        </section>
+
+        <section class="doc-section">
+          <h2>Mobility Status</h2>
+
+          <p>
+            Mobility Status identifies how the Individual moves and the type of assistance that
+            may be required. The screenshot shows <strong>Independent</strong> as the selected value.
+          </p>
+
+          <table class="preparedness-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Example Status</th>
+                <th>Description</th>
+                <th>Planning Consideration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Independent</strong></td>
+                <td>The Individual can generally move and transfer without physical assistance.</td>
+                <td>Confirm whether verbal prompts or supervision are still required.</td>
+              </tr>
+              <tr>
+                <td><strong>Cane / Walker</strong></td>
+                <td>The Individual uses a mobility aid for walking.</td>
+                <td>Ensure the aid is available during transport and evacuation.</td>
+              </tr>
+              <tr>
+                <td><strong>Wheelchair</strong></td>
+                <td>The Individual uses a manual or powered wheelchair.</td>
+                <td>Plan for accessible transportation, ramps, transfers, and charging when applicable.</td>
+              </tr>
+              <tr>
+                <td><strong>Bed Bound</strong></td>
+                <td>The Individual cannot independently leave the bed or transfer.</td>
+                <td>Require specialized evacuation and transport planning.</td>
+              </tr>
+              <tr>
+                <td><strong>Other</strong></td>
+                <td>The Individual has another mobility condition not represented by the available choices.</td>
+                <td>Describe the condition clearly in approved notes or related plans.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="doc-section">
+          <h2>Equipment / Dependencies</h2>
+
+          <p>
+            Select every device or dependency currently used by the Individual. These selections
+            help staff identify safety needs, required caregiver competencies, transport needs,
+            backup planning, and potential risks during emergencies or power interruptions.
+          </p>
+
+          <table class="preparedness-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Equipment</th>
+                <th>Purpose</th>
+                <th>Planning Consideration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Oxygen</strong></td>
+                <td>Provides supplemental oxygen.</td>
+                <td>Confirm flow requirements, tank supply, backup source, storage, and fire safety.</td>
+              </tr>
+              <tr>
+                <td><strong>IV Pump</strong></td>
+                <td>Controls intravenous fluid or medication delivery.</td>
+                <td>Confirm trained staff, power needs, battery backup, and emergency instructions.</td>
+              </tr>
+              <tr>
+                <td><strong>Nebulizer</strong></td>
+                <td>Delivers respiratory medication as a mist.</td>
+                <td>Confirm medication availability, electrical needs, cleaning, and backup access.</td>
+              </tr>
+              <tr>
+                <td><strong>CPAP</strong></td>
+                <td>Provides positive airway pressure during sleep.</td>
+                <td>Plan for electricity, battery backup, supplies, and alternate arrangements during outages.</td>
+              </tr>
+              <tr>
+                <td><strong>Syringe Pump</strong></td>
+                <td>Delivers controlled medication or fluid through a syringe.</td>
+                <td>Confirm trained support, battery status, supplies, and escalation instructions.</td>
+              </tr>
+              <tr>
+                <td><strong>Wheelchair</strong></td>
+                <td>Supports mobility and positioning.</td>
+                <td>Document type, transport requirements, charging needs, and transfer assistance.</td>
+              </tr>
+              <tr>
+                <td><strong>Ventilator</strong></td>
+                <td>Supports or controls breathing.</td>
+                <td>Requires critical backup power, backup equipment, trained staff, and emergency escalation.</td>
+              </tr>
+              <tr>
+                <td><strong>Feeding Tube</strong></td>
+                <td>Provides nutrition, hydration, or medication through a tube.</td>
+                <td>Confirm feeding schedule, supplies, positioning, trained staff, and emergency instructions.</td>
+              </tr>
+              <tr>
+                <td><strong>Hospital Bed</strong></td>
+                <td>Provides positioning, safety, or care support.</td>
+                <td>Confirm electrical needs, manual controls, transfer space, and emergency access.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="doc-section">
+          <h2>Other Equipment or Dependencies</h2>
+
+          <p>
+            Use the <strong>Other (please specify)</strong> field when the Individual uses equipment
+            or has a dependency not represented by the available checkboxes.
+          </p>
+
+          <h3>Recommended Details</h3>
+          <ul>
+            <li>Name and type of equipment.</li>
+            <li>Whether it is used continuously, routinely, or only as needed.</li>
+            <li>Power, battery, charging, oxygen, or supply requirements.</li>
+            <li>Transfer, positioning, monitoring, or caregiver assistance needs.</li>
+            <li>Backup equipment or alternate procedure.</li>
+            <li>Important storage, transport, or safety instructions.</li>
+          </ul>
+
+          <div class="doc-notice doc-notice-info">
+            <strong>Example</strong>
+            <p>
+              “Power wheelchair used daily; charger kept in bedroom; requires accessible van;
+              manual backup chair available in front closet.”
+            </p>
+          </div>
+        </section>
+
+        <section class="doc-section">
+          <h2>Operational Impact</h2>
+
+          <table class="preparedness-table">
+            <colgroup><col><col><col></colgroup>
+            <thead>
+              <tr>
+                <th>Workflow</th>
+                <th>How the Information May Be Used</th>
+                <th>Review Needed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Scheduling</strong></td>
+                <td>Helps identify staffing, travel time, visit duration, accessibility, and equipment considerations.</td>
+                <td>Confirm the assigned DSP can safely support the Individual.</td>
+              </tr>
+              <tr>
+                <td><strong>Caregiver Matching</strong></td>
+                <td>Supports matching with employees who have the required skills, training, or physical capability.</td>
+                <td>Review competency requirements before assignment.</td>
+              </tr>
+              <tr>
+                <td><strong>Visit Documentation</strong></td>
+                <td>Provides context for equipment checks, assistance, safety observations, and service notes.</td>
+                <td>Document only information relevant to the visit.</td>
+              </tr>
+              <tr>
+                <td><strong>Transportation</strong></td>
+                <td>Identifies accessible vehicle, securement, oxygen, wheelchair, or equipment transport needs.</td>
+                <td>Confirm vehicle and driver readiness.</td>
+              </tr>
+              <tr>
+                <td><strong>Emergency Response</strong></td>
+                <td>Supports prioritization, evacuation, backup equipment, and continuity planning.</td>
+                <td>Keep emergency plans current and accessible to authorized staff.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="doc-section">
+          <h2>Emergency Preparedness and Continuity</h2>
+
+          <p>
+            Preparedness information should support the Provider's emergency plan for weather events,
+            fires, utility failures, transportation disruptions, staffing shortages, and other incidents.
+          </p>
+
+          <ul>
+            <li>Identify whether the Individual depends on electricity or battery-powered equipment.</li>
+            <li>Confirm backup batteries, generators, tanks, supplies, or alternate devices.</li>
+            <li>Document accessible transportation and evacuation requirements.</li>
+            <li>Identify trained backup staff or responsible contacts.</li>
+            <li>Maintain emergency medication, nutrition, and equipment supplies when required.</li>
+            <li>Confirm where equipment manuals and emergency instructions are stored.</li>
+            <li>Review plans after a major health, mobility, equipment, or location change.</li>
+          </ul>
+
+          <div class="doc-notice doc-notice-warning">
+            <strong>Life-Sustaining Equipment</strong>
+            <p>
+              Ventilators, oxygen systems, feeding equipment, pumps, and other critical dependencies
+              require detailed contingency planning. The checkbox alone is not a complete emergency plan.
+            </p>
+          </div>
+        </section>
+
+        <section class="doc-section">
+          <h2>Validation Checklist</h2>
+
+          <ul>
+            <li>Priority Code reflects the current approved preparedness level.</li>
+            <li>Mobility Status reflects the Individual's current functional ability.</li>
+            <li>Every active device or dependency is selected.</li>
+            <li>Oxygen, ventilator, pump, and power dependencies are accurately identified.</li>
+            <li>Other equipment is clearly described.</li>
+            <li>Backup equipment or alternate procedures are known when required.</li>
+            <li>Transportation and evacuation requirements are reviewed.</li>
+            <li>Staff competency needs are identified.</li>
+            <li>Information matches current clinical and service planning documentation.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Best Practices</h2>
+
+          <ul>
+            <li>Review preparedness information during intake and at regular intervals.</li>
+            <li>Update the record immediately after a mobility or equipment change.</li>
+            <li>Do not select equipment that is no longer in use.</li>
+            <li>Confirm equipment needs directly with approved clinical or planning records.</li>
+            <li>Keep descriptions specific and operationally useful.</li>
+            <li>Coordinate updates with nursing, clinical, scheduling, and emergency planning staff.</li>
+            <li>Confirm backup power and supplies for critical equipment.</li>
+            <li>Use this tab together with ISP, BSP, health and safety, and emergency plan documentation.</li>
+            <li>Review caregiver competency before assigning staff to equipment-dependent Individuals.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Security and HIPAA</h2>
+
+          <p>
+            Preparedness &amp; Equipment contains protected health information related to mobility,
+            medical devices, respiratory support, nutrition, and emergency needs.
+          </p>
+
+          <ul>
+            <li>Access only Individuals required for assigned job duties.</li>
+            <li>Apply role-based access and the minimum necessary principle.</li>
+            <li>Do not share equipment dependencies through unapproved channels.</li>
+            <li>Verify the correct Individual before viewing or editing information.</li>
+            <li>Use approved secure methods for emergency and clinical communication.</li>
+            <li>Record access and changes through Audit Logs where applicable.</li>
+            <li>Do not place unnecessary diagnostic details in the Other field.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Troubleshooting</h2>
+
+          <h3>The correct mobility status is not available.</h3>
+          <p>
+            Select the closest approved value and document additional information in the appropriate
+            plan or notes area. Contact an administrator when the configured list requires review.
+          </p>
+
+          <h3>A required device is not listed.</h3>
+          <p>
+            Use the Other field to describe the device and its operational requirements.
+          </p>
+
+          <h3>The Individual no longer uses selected equipment.</h3>
+          <p>
+            Clear the outdated selection and verify that related plans, staff instructions,
+            and emergency documentation are also updated.
+          </p>
+
+          <h3>The Priority Code changed.</h3>
+          <p>
+            Update the value only after confirming the change through the approved preparedness
+            or clinical review process.
+          </p>
+
+          <h3>The Individual now uses oxygen or a ventilator.</h3>
+          <p>
+            Update the equipment selection immediately and review emergency power, supplies,
+            staffing competency, transportation, and escalation plans.
+          </p>
+
+          <h3>The equipment information is incomplete.</h3>
+          <p>
+            Save the Individual as a draft and complete the tab after receiving approved records
+            or confirmation from authorized staff.
+          </p>
+        </section>
+
+        <section class="doc-section">
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>Does selecting equipment automatically create an emergency plan?</h3>
+          <p>
+            No. The selection identifies the dependency. A complete emergency and continuity plan
+            must be maintained through the Provider's approved planning process.
+          </p>
+
+          <h3>Should a wheelchair be selected if it is used only outside the home?</h3>
+          <p>
+            Yes, when it is part of the Individual's current mobility support. Add clarification
+            in the appropriate notes or plan when needed.
+          </p>
+
+          <h3>Can more than one device be selected?</h3>
+          <p>
+            Yes. Select every device or dependency currently used by the Individual.
+          </p>
+
+          <h3>Who may change the Priority Code?</h3>
+          <p>
+            Only authorized users should change it, based on approved Provider policy and current
+            preparedness or clinical information.
+          </p>
+
+          <h3>Should backup equipment be entered?</h3>
+          <p>
+            Document important backup equipment or alternate procedures in Other or the related
+            emergency plan when operationally relevant.
+          </p>
+
+          <h3>Does Mobility Status replace a clinical assessment?</h3>
+          <p>
+            No. It is a summary field used for operations and planning. Formal assessments remain
+            in approved clinical documentation.
+          </p>
+        </section>
+
+        <section class="doc-section">
+          <h2>Related Documentation</h2>
+
+          <ul>
+            <li><a href="/documentation/individual-management/index.html">Individual Overview</a></li>
+            <li><a href="/documentation/individual-management/new-individual.html">New Individual</a></li>
+            <li><a href="/documentation/individual-management/profile-contacts.html">Profile &amp; Contacts</a></li>
+            <li><a href="/documentation/individual-management/coverage-billing.html">Coverage &amp; Billing</a></li>
+            <li><a href="/documentation/individual-management/clinical-medication.html">Clinical &amp; Medication</a></li>
+            <li><a href="/documentation/individual-management/preferences-directives.html">Preferences &amp; Directives</a></li>
+            <li><a href="/documentation/individual-management/isp-bsp.html">ISP &amp; BSP</a></li>
+            <li><a href="/documentation/hipaa-compliance/">HIPAA</a></li>
+            <li><a href="/documentation/scheduling/">Schedule</a></li>
+          </ul>
+        </section>
+
+        <div class="doc-page-navigation preparedness-page-navigation">
+          <a class="doc-button" href="/documentation/individual-management/clinical-medication.html">← Back</a>
+          <a class="doc-button" href="/documentation/individual-management/index.html">🏠 Home</a>
+          <a class="doc-button" href="/documentation/individual-management/preferences-directives.html">Next →</a>
+        </div>
+      </article>
+
+      <footer class="doc-page-footer">
+        <p>© 2026 True Care System. All rights reserved.</p>
+        <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
+      </footer>
+    </main>
+  </div>
+
+  <div class="doc-search-results" id="docSearchResults" hidden></div>
+  <script src="/documentation/assets/documentation.js"></script>
+</body>
+</html>
