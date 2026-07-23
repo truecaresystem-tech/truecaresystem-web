@@ -1,210 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Overview documentation for True Care System">
-  <title>Overview | True Care System Documentation</title>
-  <link rel="stylesheet" href="/documentation/assets/documentation.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service Management Overview | True Care System Documentation</title>
+<link rel="stylesheet" href="/documentation/assets/documentation.css">
+<style>
+.service-overview-image{display:block;width:100%;max-width:1180px;height:auto;margin:24px auto 10px;border:1px solid #d9e2ec;border-radius:10px;box-shadow:0 8px 24px rgba(15,44,89,.08)}
+.figure-caption{margin:8px 0 28px;text-align:center;color:#52606d;font-size:.95rem}
+.service-functions-table{width:100%;table-layout:fixed;border-collapse:collapse;margin-top:18px}
+.service-functions-table th,.service-functions-table td{border:1px solid #d9e2ec;padding:12px 14px;vertical-align:top;text-align:left}
+.service-functions-table th{background:#f4f8fc;color:#123b73}
+.service-functions-table th:nth-child(1),.service-functions-table td:nth-child(1){width:260px}
+.service-standard-list li{margin-bottom:10px}
+</style>
 </head>
 <body>
-  <header class="doc-header">
-    <a class="doc-brand" href="/documentation/">
-      <img src="/logo.png" alt="True Care System">
-      <span>
-        <strong>True Care System</strong>
-        <small>Documentation</small>
-      </span>
-    </a>
+<div class="doc-article">
+<h1>Service Management – Overview</h1>
 
-    <button class="doc-mobile-menu" id="docMobileMenu"
-            aria-label="Open documentation menu">☰</button>
+<div class="doc-notice doc-notice-info">
+<strong>Purpose</strong>
+<p>
+The Service Management module establishes the standardized service structure used throughout the True Care System. Each service defines how care is configured, scheduled, authorized, delivered, verified, documented, billed, reported, and reviewed across the organization.
+</p>
+<p>
+A properly configured service supports consistent operations and helps providers align service delivery with approved programs, payer requirements, procedure codes, authorization limits, Electronic Visit Verification (EVV), billing rules, payroll, reporting, and applicable privacy and compliance obligations.
+</p>
+</div>
 
-    <div class="doc-header-actions">
-      <label class="doc-search">
-        <span>⌕</span>
-        <input id="docSearchInput" type="search"
-               placeholder="Search documentation..."
-               autocomplete="off">
-      </label>
-      <a href="/" class="doc-back-link">Return to Website</a>
-    </div>
-  </header>
+<h2>Service as the Operational Foundation</h2>
+<p>
+Services are not isolated records. They provide the operational foundation that connects multiple True Care System modules and workflows.
+</p>
+<img class="service-overview-image" src="images/overview1.jpg" alt="Service as the foundation of True Care System">
+<p class="figure-caption"><em>Figure 1. A configured service connects the primary operational modules of the True Care System.</em></p>
 
-  <div class="doc-layout">
-    <aside class="doc-sidebar" id="docSidebar">
-      <div class="doc-sidebar-title">Documentation</div>
-      <nav>
-        <a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
-<a class="doc-nav-module active" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
-<a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
-<a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
-<a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
-<a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
-<a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
-<a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
-<a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
-<a class="doc-nav-module" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span>KPI</span></a>
-<a class="doc-nav-module" href="/documentation/time-keeping/"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
-<a class="doc-nav-module" href="/documentation/mobile-evv/"><span class="doc-nav-number">12</span><span>Mobile EVV</span></a>
-<a class="doc-nav-module" href="/documentation/visit-maintenance/"><span class="doc-nav-number">13</span><span>Visit Maintenance</span></a>
-<a class="doc-nav-module" href="/documentation/house-management/"><span class="doc-nav-number">14</span><span>House Management</span></a>
-<a class="doc-nav-module" href="/documentation/payroll/"><span class="doc-nav-number">15</span><span>Payroll</span></a>
-<a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
-<a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
-<a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
-<a class="doc-nav-module" href="/documentation/provider-administration/"><span class="doc-nav-number">19</span><span>Admin</span></a>
-<a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
-<a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
-<a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
-<a class="doc-nav-module" href="/documentation/qa-guide/"><span class="doc-nav-number">23</span><span>QA Guide</span></a>
-<a class="doc-nav-module" href="/documentation/test-catalog/"><span class="doc-nav-number">24</span><span>Test Catalog</span></a>
-<a class="doc-nav-module" href="/documentation/api-documentation/"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
-<a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
-<a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
-<a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
-<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>Frequently Asked Questions</span></a>
-<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
-      </nav>
-    </aside>
+<h2>Primary Objectives</h2>
+<ul>
+<li>Maintain a consistent catalog of services delivered by the organization.</li>
+<li>Define service names, descriptions, units, procedure codes, rates, payer programs, and operational status.</li>
+<li>Connect services with Individuals, Employees, schedules, visits, authorizations, billing, payroll, and reporting.</li>
+<li>Support accurate documentation of services delivered to each Individual.</li>
+<li>Support EVV validation and visit verification when EVV requirements apply.</li>
+<li>Help prevent scheduling or billing activities that conflict with service configuration or authorization limits.</li>
+<li>Maintain reliable service data for operational oversight, audits, and compliance reviews.</li>
+</ul>
 
-    <main class="doc-main">
-      <div class="doc-breadcrumb">
-        <a href="/documentation/">Documentation</a>
-        <span>›</span><a href='/documentation/service-management/'>Services</a>
-        <span>›</span><span>Overview</span>
-      </div>
+<hr>
+<h2>Functions Supported Across the System</h2>
+<table class="service-functions-table">
+<thead><tr><th>Module or Function</th><th>Relationship to Service Management</th></tr></thead>
+<tbody>
+<tr><td><strong>Services</strong></td><td>Creates and maintains the organization's service catalog, including service names, descriptions, codes, units, rates, payer configuration, and active status.</td></tr>
+<tr><td><strong>Individual</strong></td><td>Identifies the approved services associated with an Individual's care, program, authorization, and service plan.</td></tr>
+<tr><td><strong>Employees</strong></td><td>Supports assignment of qualified employees to services based on organizational requirements, staff roles, training, and responsibilities.</td></tr>
+<tr><td><strong>Schedule</strong></td><td>Uses the selected service when creating and managing scheduled care visits.</td></tr>
+<tr><td><strong>Medication</strong></td><td>Supports medication-related documentation when medication assistance or administration is part of the authorized service workflow.</td></tr>
+<tr><td><strong>BSS</strong></td><td>Connects Behavioral Support Services documentation, daily records, supervision, and service units to the applicable service.</td></tr>
+<tr><td><strong>Authorizations</strong></td><td>Links services to approved payer authorizations, date ranges, units, limits, and procedure requirements.</td></tr>
+<tr><td><strong>Reports</strong></td><td>Provides service-based operational, utilization, authorization, billing, and compliance reporting.</td></tr>
+<tr><td><strong>KPI</strong></td><td>Uses service data to measure operational performance, utilization, documentation quality, and organizational outcomes.</td></tr>
+<tr><td><strong>Time Keeping</strong></td><td>Associates worked time and attendance information with scheduled or completed service activity when applicable.</td></tr>
+<tr><td><strong>Visited Maintenance</strong></td><td>Supports review and correction of visit records, check-in and check-out data, service units, and EVV-related information.</td></tr>
+<tr><td><strong>House Management</strong></td><td>Supports services delivered within residential settings, including house, room, staffing, and operational management.</td></tr>
+<tr><td><strong>Payroll</strong></td><td>Uses approved service time, employee rates, and payroll rules to support accurate payroll calculations.</td></tr>
+<tr><td><strong>Billing</strong></td><td>Uses validated service, procedure, authorization, payer, unit, and visit data to support billing preparation and reimbursement workflows.</td></tr>
+<tr><td><strong>HIPAA</strong></td><td>Supports privacy oversight, access control, audit history, incident review, and compliance monitoring for service-related records containing PHI.</td></tr>
+<tr><td><strong>Support</strong></td><td>Allows users to report service configuration, workflow, documentation, or system access issues to authorized support personnel.</td></tr>
+<tr><td><strong>Admin</strong></td><td>Controls service-related configuration, user access, roles, permissions, provider settings, and administrative governance.</td></tr>
+</tbody>
+</table>
 
-      <article class="doc-article">
-        <header class="doc-article-header">
-          <div>
-            <p class="doc-eyebrow">TRUE CARE SYSTEM DOCUMENTATION</p>
-            <h1>Overview</h1>
-          </div>
+<hr>
+<h2>Complete Service Lifecycle</h2>
+<p>
+A service moves through a controlled lifecycle from initial configuration to care delivery, verification, billing, payroll, reporting, and compliance review. Accurate setup at the beginning helps reduce downstream scheduling, authorization, EVV, billing, and reporting errors.
+</p>
+<img class="service-overview-image" src="images/overview2.jpg" alt="Complete service lifecycle in True Care System">
+<p class="figure-caption"><em>Figure 2. The service lifecycle from configuration through compliance and reporting.</em></p>
 
-          <dl class="doc-metadata">
-            <div><dt>Document ID</dt><dd>SER-DOC-001</dd></div>
-            <div><dt>Version</dt><dd>1.0</dd></div>
-            <div><dt>Status</dt><dd>Planned</dd></div>
-            <div><dt>Last Updated</dt><dd>Pending</dd></div>
-          </dl>
-        </header>
+<h2>Typical Service Workflow</h2>
+<ol>
+<li>Create the service record.</li>
+<li>Enter the service name, description, type, and status.</li>
+<li>Configure the procedure code, units, and rate structure.</li>
+<li>Associate the applicable payer and program.</li>
+<li>Link the service to authorization requirements and limits.</li>
+<li>Use the service when scheduling approved visits.</li>
+<li>Document service delivery and EVV information.</li>
+<li>Review visit details, units, and exceptions.</li>
+<li>Validate service data for billing and payroll.</li>
+<li>Use reports and KPI data for oversight and compliance review.</li>
+</ol>
 
-        
-    <div class="doc-notice doc-notice-info">
-      <strong>Documentation placeholder</strong>
-      <p>This page has been created and is ready for detailed content,
-         screenshots and review.</p>
-    </div>
+<hr>
+<h2>Standards and Compliance</h2>
+<p>
+True Care System is designed to support provider workflows in a manner consistent with applicable federal and state requirements. Service records may contain or connect to Protected Health Information (PHI), and access should therefore be limited to authorized workforce members according to their job responsibilities.
+</p>
+<ul class="service-standard-list">
+<li><strong>Protection of PHI:</strong> Service-related health information must be protected from unauthorized access, use, modification, or disclosure.</li>
+<li><strong>Minimum Necessary:</strong> Users should access only the information reasonably necessary to perform their assigned responsibilities.</li>
+<li><strong>Role-Based Access:</strong> Service configuration and service-related records are displayed according to assigned roles and permissions.</li>
+<li><strong>Permitted Uses:</strong> PHI may be used for authorized treatment, payment, healthcare operations, and other permitted or required purposes.</li>
+<li><strong>Documentation:</strong> Organizations should maintain accurate service policies, procedures, records, and supporting documentation.</li>
+<li><strong>Audit Readiness:</strong> Important service access and changes should remain traceable to support internal review, compliance investigations, and regulatory oversight.</li>
+<li><strong>Provider Responsibility:</strong> Each provider remains responsible for configuring and using services according to its approved programs, payer contracts, organizational policies, and applicable laws.</li>
+</ul>
 
-    <section class="doc-section">
-      <h2>Purpose</h2>
-      <p class="doc-pending">Detailed purpose will be added during module documentation.</p>
-    </section>
+<hr>
+<h2>Before Creating a Service</h2>
+<ul>
+<li>Approved service name and description.</li>
+<li>Procedure code and payer program.</li>
+<li>Service unit and rate structure.</li>
+<li>Authorization requirements and limits.</li>
+<li>EVV applicability.</li>
+<li>Billing and payroll requirements.</li>
+<li>Required staff qualifications or roles.</li>
+<li>Effective date and operational status.</li>
+</ul>
 
-    <section class="doc-section">
-      <h2>Who Can Use This Feature</h2>
-      <p class="doc-pending">Roles and permissions will be documented after verification.</p>
-    </section>
+<hr>
+<h2>Important Considerations</h2>
+<ul>
+<li>Use clear and consistent service names.</li>
+<li>Avoid creating duplicate services for the same program and procedure code.</li>
+<li>Do not change a service configuration without reviewing downstream impacts.</li>
+<li>Review authorization, scheduling, EVV, billing, and payroll dependencies before deactivating a service.</li>
+<li>Restrict service configuration access to authorized administrative users.</li>
+<li>Document the business reason for significant service configuration changes.</li>
+</ul>
 
-    <section class="doc-section">
-      <h2>Navigation</h2>
-      <p class="doc-pending">The exact navigation path will be documented here.</p>
-    </section>
+<hr>
+<h2>Troubleshooting</h2>
+<ul>
+<li>Confirm that the service is active.</li>
+<li>Verify the procedure code, payer, and program configuration.</li>
+<li>Check whether the service is linked to an active authorization.</li>
+<li>Verify that the service date falls within the authorization period.</li>
+<li>Confirm the selected employee is permitted to deliver the service.</li>
+<li>Review visit, EVV, billing, or payroll validation messages.</li>
+<li>Contact your Provider Administrator if the service is unavailable or incorrectly configured.</li>
+</ul>
 
-    <section class="doc-section">
-      <h2>Business Flow</h2>
-      <p class="doc-pending">The approved business workflow will be documented here.</p>
-    </section>
+<hr>
+<h2>FAQ</h2>
+<p><strong>Why is Service Management important?</strong><br>Service Management provides the standardized data used by scheduling, authorizations, visits, EVV, billing, payroll, reporting, and compliance workflows.</p>
+<p><strong>Can a service be used without a procedure code?</strong><br>This depends on the organization's workflow. Services used for payer billing or EVV should be configured with the appropriate procedure and program information.</p>
+<p><strong>What happens when a service is changed?</strong><br>Changes may affect schedules, authorizations, visit documentation, billing, payroll, and reports. Review all related workflows before saving significant changes.</p>
+<p><strong>Who should manage services?</strong><br>Only authorized users with appropriate administrative or service-management permissions should create, edit, activate, or deactivate services.</p>
 
-    
-    <section class="doc-section">
-      <h2>Screenshot</h2>
-      <div class="doc-screenshot-placeholder">
-        <div class="doc-placeholder-icon">▧</div>
-        <div>
-          <strong>Screenshot Required</strong>
-          <p><b>Screenshot ID:</b> SER-001</p>
-          <p><b>Screen:</b> Overview</p>
-          <p><b>File:</b> images/SER-001-overview.jpg</p>
-          <p><b>Recommended capture:</b> Desktop, 100% browser zoom,
-             full page title, navigation, actions, filters and data area visible.</p>
-          <p><b>Privacy requirement:</b> Use demo or training data only.
-             Do not include real PHI, credentials, passwords, SSNs or Medicaid IDs.</p>
-        </div>
-      </div>
-    </section>
-    
+<hr>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:40px;">
+<a class="doc-button" href="../getting-started/support.html">← Back</a>
+<a class="doc-button" href="index.html">🏠 Home</a>
+<a class="doc-button" href="service-list.html">Next →</a>
+</div>
 
-    <section class="doc-section">
-      <h2>Interface Overview</h2>
-      <p class="doc-pending">Buttons, fields, filters, tabs and page regions will be explained here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Step-by-Step Instructions</h2>
-      <ol class="doc-steps">
-        <li><span>Step instructions pending.</span></li>
-        <li><span>Step instructions pending.</span></li>
-        <li><span>Step instructions pending.</span></li>
-      </ol>
-    </section>
-
-    <section class="doc-section">
-      <h2>Permissions</h2>
-      <p class="doc-pending">Access requirements and permission rules will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Validation Rules</h2>
-      <p class="doc-pending">Required fields and business validation rules will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Tips</h2>
-      <p class="doc-pending">Recommended usage tips will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Warnings</h2>
-      <p class="doc-pending">Important operational and data safety warnings will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>HIPAA Considerations</h2>
-      <p class="doc-pending">PHI handling and minimum-necessary requirements will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Audit Log Behavior</h2>
-      <p class="doc-pending">Expected audit events and recorded details will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Troubleshooting</h2>
-      <p class="doc-pending">Known issues and recommended resolutions will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Frequently Asked Questions</h2>
-      <p class="doc-pending">Frequently asked questions will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Related Documentation</h2>
-      <p><a href="/documentation/service-management/">Return to Services</a></p>
-    </section>
-    
-      </article>
-
-      <footer class="doc-page-footer">
-        <p>© 2026 True Care System. All rights reserved.</p>
-        <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
-      </footer>
-    </main>
-  </div>
-
-  <div class="doc-search-results" id="docSearchResults" hidden></div>
-  <script src="/documentation/assets/documentation.js"></script>
+</div>
 </body>
 </html>
