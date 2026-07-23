@@ -1,0 +1,130 @@
+:root{
+    --sidebar-width:280px;
+}
+
+body{
+    margin:0;
+}
+
+.docs-layout{
+    display:flex;
+    min-height:100vh;
+}
+
+.docs-sidebar{
+
+    width:var(--sidebar-width);
+
+    background:#f7f9fc;
+
+    border-right:1px solid #dfe7ef;
+
+    position:sticky;
+    top:0;
+
+    height:100vh;
+
+    overflow-y:auto;
+
+    flex-shrink:0;
+}
+
+.docs-logo{
+
+    padding:20px;
+
+    background:white;
+
+    border-bottom:1px solid #dfe7ef;
+}
+
+.docs-logo img{
+
+    width:180px;
+
+    display:block;
+}
+
+.docs-title{
+
+    padding:18px 20px 10px;
+
+    font-size:11px;
+
+    color:#8b95a7;
+
+    text-transform:uppercase;
+
+    letter-spacing:.12em;
+
+    font-weight:700;
+}
+
+.docs-nav{
+
+    padding:0 10px 30px;
+}
+
+.docs-nav a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 12px;
+
+    margin-bottom:3px;
+
+    border-radius:8px;
+
+    text-decoration:none;
+
+    color:#172b4d;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    transition:.2s;
+}
+
+.docs-nav a:hover{
+
+    background:#eef5ff;
+}
+
+.docs-nav a.active{
+
+    background:#dcecff;
+
+    color:#0d5fd4;
+}
+
+.docs-nav .no{
+
+    width:26px;
+
+    font-size:10px;
+
+    color:#7d8798;
+
+    font-weight:bold;
+}
+
+.docs-content{
+
+    flex:1;
+
+    padding:40px 60px;
+
+    overflow-x:hidden;
+}
+
+.docs-content .doc-article{
+
+    max-width:1100px;
+
+    margin:auto;
+}
