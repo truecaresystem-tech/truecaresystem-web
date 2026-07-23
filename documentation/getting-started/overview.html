@@ -3,10 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Overview documentation for True Care System">
-  <title>Overview | True Care System Documentation</title>
+  <meta
+    name="description"
+    content="Overview of True Care System, its core modules, user roles, security responsibilities, and recommended learning path."
+  >
+  <title>Overview | Getting Started | True Care System Documentation</title>
   <link rel="stylesheet" href="/documentation/assets/documentation.css">
 </head>
+
 <body>
   <header class="doc-header">
     <a class="doc-brand" href="/documentation/">
@@ -17,16 +21,25 @@
       </span>
     </a>
 
-    <button class="doc-mobile-menu" id="docMobileMenu"
-            aria-label="Open documentation menu">☰</button>
+    <button
+      class="doc-mobile-menu"
+      id="docMobileMenu"
+      aria-label="Open documentation menu"
+    >
+      ☰
+    </button>
 
     <div class="doc-header-actions">
       <label class="doc-search">
         <span>⌕</span>
-        <input id="docSearchInput" type="search"
-               placeholder="Search documentation..."
-               autocomplete="off">
+        <input
+          id="docSearchInput"
+          type="search"
+          placeholder="Search documentation..."
+          autocomplete="off"
+        >
       </label>
+
       <a href="/" class="doc-back-link">Return to Website</a>
     </div>
   </header>
@@ -34,177 +47,695 @@
   <div class="doc-layout">
     <aside class="doc-sidebar" id="docSidebar">
       <div class="doc-sidebar-title">Documentation</div>
+
       <nav>
-        <a class="doc-nav-module active" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
-<a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
-<a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
-<a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
-<a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
-<a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
-<a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
-<a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
-<a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
-<a class="doc-nav-module" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span>KPI</span></a>
-<a class="doc-nav-module" href="/documentation/time-keeping/"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
-<a class="doc-nav-module" href="/documentation/mobile-evv/"><span class="doc-nav-number">12</span><span>Mobile EVV</span></a>
-<a class="doc-nav-module" href="/documentation/visit-maintenance/"><span class="doc-nav-number">13</span><span>Visit Maintenance</span></a>
-<a class="doc-nav-module" href="/documentation/house-management/"><span class="doc-nav-number">14</span><span>House Management</span></a>
-<a class="doc-nav-module" href="/documentation/payroll/"><span class="doc-nav-number">15</span><span>Payroll</span></a>
-<a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
-<a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
-<a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
-<a class="doc-nav-module" href="/documentation/provider-administration/"><span class="doc-nav-number">19</span><span>Admin</span></a>
-<a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
-<a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
-<a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
-<a class="doc-nav-module" href="/documentation/qa-guide/"><span class="doc-nav-number">23</span><span>QA Guide</span></a>
-<a class="doc-nav-module" href="/documentation/test-catalog/"><span class="doc-nav-number">24</span><span>Test Catalog</span></a>
-<a class="doc-nav-module" href="/documentation/api-documentation/"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
-<a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
-<a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
-<a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
-<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>Frequently Asked Questions</span></a>
-<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
+        <a class="doc-nav-module active" href="/documentation/getting-started/">
+          <span class="doc-nav-number">01</span>
+          <span>Getting Started</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/service-management/">
+          <span class="doc-nav-number">02</span>
+          <span>Services</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/individual-management/">
+          <span class="doc-nav-number">03</span>
+          <span>Individual</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/employee-management/">
+          <span class="doc-nav-number">04</span>
+          <span>Employees</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/scheduling/">
+          <span class="doc-nav-number">05</span>
+          <span>Schedule</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/medication-management/">
+          <span class="doc-nav-number">06</span>
+          <span>Medication</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/bss/">
+          <span class="doc-nav-number">07</span>
+          <span>BSS</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/authorization/">
+          <span class="doc-nav-number">08</span>
+          <span>Authorizations</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/reports/">
+          <span class="doc-nav-number">09</span>
+          <span>Reports</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/kpi/">
+          <span class="doc-nav-number">10</span>
+          <span>KPI</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/time-keeping/">
+          <span class="doc-nav-number">11</span>
+          <span>Time Keeping</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/mobile-evv/">
+          <span class="doc-nav-number">12</span>
+          <span>Mobile EVV</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/visit-maintenance/">
+          <span class="doc-nav-number">13</span>
+          <span>Visit Maintenance</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/house-management/">
+          <span class="doc-nav-number">14</span>
+          <span>House Management</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/payroll/">
+          <span class="doc-nav-number">15</span>
+          <span>Payroll</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/billing/">
+          <span class="doc-nav-number">16</span>
+          <span>Billing</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/hipaa-compliance/">
+          <span class="doc-nav-number">17</span>
+          <span>HIPAA</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/support/">
+          <span class="doc-nav-number">18</span>
+          <span>Support</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/provider-administration/">
+          <span class="doc-nav-number">19</span>
+          <span>Admin</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/security/">
+          <span class="doc-nav-number">20</span>
+          <span>Security</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/audit-logs/">
+          <span class="doc-nav-number">21</span>
+          <span>Audit Logs</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/developer-guide/">
+          <span class="doc-nav-number">22</span>
+          <span>Developer Guide</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/qa-guide/">
+          <span class="doc-nav-number">23</span>
+          <span>QA Guide</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/test-catalog/">
+          <span class="doc-nav-number">24</span>
+          <span>Test Catalog</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/api-documentation/">
+          <span class="doc-nav-number">25</span>
+          <span>API Documentation</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/ai-agents/">
+          <span class="doc-nav-number">26</span>
+          <span>AI Agents</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/company-playbook/">
+          <span class="doc-nav-number">27</span>
+          <span>Company Playbook</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/troubleshooting/">
+          <span class="doc-nav-number">28</span>
+          <span>Troubleshooting</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/faq/">
+          <span class="doc-nav-number">29</span>
+          <span>FAQ</span>
+        </a>
+
+        <a class="doc-nav-module" href="/documentation/release-notes/">
+          <span class="doc-nav-number">30</span>
+          <span>Release Notes</span>
+        </a>
       </nav>
     </aside>
 
     <main class="doc-main">
       <div class="doc-breadcrumb">
         <a href="/documentation/">Documentation</a>
-        <span>›</span><a href='/documentation/getting-started/'>Getting Started</a>
-        <span>›</span><span>Overview</span>
+        <span>›</span>
+        <a href="/documentation/getting-started/">Getting Started</a>
+        <span>›</span>
+        <span>Overview</span>
       </div>
 
       <article class="doc-article">
         <header class="doc-article-header">
           <div>
-            <p class="doc-eyebrow">TRUE CARE SYSTEM DOCUMENTATION</p>
+            <p class="doc-eyebrow">GETTING STARTED</p>
             <h1>Overview</h1>
           </div>
 
           <dl class="doc-metadata">
-            <div><dt>Document ID</dt><dd>GET-DOC-001</dd></div>
-            <div><dt>Version</dt><dd>1.0</dd></div>
-            <div><dt>Status</dt><dd>Planned</dd></div>
-            <div><dt>Last Updated</dt><dd>Pending</dd></div>
+            <div>
+              <dt>Document ID</dt>
+              <dd>GET-DOC-001</dd>
+            </div>
+            <div>
+              <dt>Version</dt>
+              <dd>1.0</dd>
+            </div>
+            <div>
+              <dt>Status</dt>
+              <dd>Draft</dd>
+            </div>
+            <div>
+              <dt>Last Updated</dt>
+              <dd>07/22/2026</dd>
+            </div>
           </dl>
         </header>
 
-        
-    <div class="doc-notice doc-notice-info">
-      <strong>Documentation placeholder</strong>
-      <p>This page has been created and is ready for detailed content,
-         screenshots and review.</p>
-    </div>
-
-    <section class="doc-section">
-      <h2>Purpose</h2>
-      <p class="doc-pending">Detailed purpose will be added during module documentation.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Who Can Use This Feature</h2>
-      <p class="doc-pending">Roles and permissions will be documented after verification.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Navigation</h2>
-      <p class="doc-pending">The exact navigation path will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Business Flow</h2>
-      <p class="doc-pending">The approved business workflow will be documented here.</p>
-    </section>
-
-    
-    <section class="doc-section">
-      <h2>Screenshot</h2>
-      <div class="doc-screenshot-placeholder">
-        <div class="doc-placeholder-icon">▧</div>
-        <div>
-          <strong>Screenshot Required</strong>
-          <p><b>Screenshot ID:</b> GET-001</p>
-          <p><b>Screen:</b> Overview</p>
-          <p><b>File:</b> images/GET-001-overview.jpg</p>
-          <p><b>Recommended capture:</b> Desktop, 100% browser zoom,
-             full page title, navigation, actions, filters and data area visible.</p>
-          <p><b>Privacy requirement:</b> Use demo or training data only.
-             Do not include real PHI, credentials, passwords, SSNs or Medicaid IDs.</p>
+        <div class="doc-notice doc-notice-info">
+          <strong>Audience</strong>
+          <p>
+            This page is intended for new True Care System users, Provider
+            Administrators, office staff, supervisors, DSPs, nurses, billing
+            staff, payroll staff, compliance staff, trainers, developers, and QA
+            personnel.
+          </p>
         </div>
-      </div>
-    </section>
-    
 
-    <section class="doc-section">
-      <h2>Interface Overview</h2>
-      <p class="doc-pending">Buttons, fields, filters, tabs and page regions will be explained here.</p>
-    </section>
+        <section class="doc-section">
+          <h2>Welcome to True Care System</h2>
 
-    <section class="doc-section">
-      <h2>Step-by-Step Instructions</h2>
-      <ol class="doc-steps">
-        <li><span>Step instructions pending.</span></li>
-        <li><span>Step instructions pending.</span></li>
-        <li><span>Step instructions pending.</span></li>
-      </ol>
-    </section>
+          <p>
+            True Care System is an enterprise care management platform designed
+            for organizations that provide home care, intellectual and
+            developmental disability services, residential support,
+            community-based services, and other person-centered programs.
+          </p>
 
-    <section class="doc-section">
-      <h2>Permissions</h2>
-      <p class="doc-pending">Access requirements and permission rules will be documented here.</p>
-    </section>
+          <p>
+            The platform brings workforce management, individual records,
+            scheduling, medication, behavioral support, authorizations,
+            reporting, KPI management, time keeping, EVV, visit maintenance,
+            house management, payroll, billing, HIPAA, support, and provider
+            administration into one coordinated system.
+          </p>
+        </section>
 
-    <section class="doc-section">
-      <h2>Validation Rules</h2>
-      <p class="doc-pending">Required fields and business validation rules will be documented here.</p>
-    </section>
+        <section class="doc-section">
+          <h2>Purpose</h2>
 
-    <section class="doc-section">
-      <h2>Tips</h2>
-      <p class="doc-pending">Recommended usage tips will be documented here.</p>
-    </section>
+          <p>
+            The Getting Started guide introduces the system and explains the
+            information users need before beginning daily work.
+          </p>
 
-    <section class="doc-section">
-      <h2>Warnings</h2>
-      <p class="doc-pending">Important operational and data safety warnings will be documented here.</p>
-    </section>
+          <p>After completing this section, users should be able to:</p>
 
-    <section class="doc-section">
-      <h2>HIPAA Considerations</h2>
-      <p class="doc-pending">PHI handling and minimum-necessary requirements will be documented here.</p>
-    </section>
+          <ul>
+            <li>Access True Care System securely.</li>
+            <li>Understand the main platform structure.</li>
+            <li>Recognize the purpose of each major module.</li>
+            <li>Understand that access depends on assigned roles and permissions.</li>
+            <li>Follow basic security and HIPAA responsibilities.</li>
+            <li>Continue to the documentation relevant to their job duties.</li>
+          </ul>
+        </section>
 
-    <section class="doc-section">
-      <h2>Audit Log Behavior</h2>
-      <p class="doc-pending">Expected audit events and recorded details will be documented here.</p>
-    </section>
+        <section class="doc-section">
+          <h2>True Care System Login Page</h2>
 
-    <section class="doc-section">
-      <h2>Troubleshooting</h2>
-      <p class="doc-pending">Known issues and recommended resolutions will be documented here.</p>
-    </section>
+          <p>
+            The login page is the secure entry point for authorized users.
+            Users must enter their individually assigned credentials before
+            accessing protected system functions or information.
+          </p>
 
-    <section class="doc-section">
-      <h2>Frequently Asked Questions</h2>
-      <p class="doc-pending">Frequently asked questions will be documented here.</p>
-    </section>
+          <figure style="margin: 24px 0 0;">
+            <img
+              src="images/GET-001-login-page.jpg"
+              alt="True Care System login page"
+              style="
+                display:block;
+                width:100%;
+                height:auto;
+                border:1px solid #dce3ec;
+                border-radius:12px;
+                box-shadow:0 10px 28px rgba(7, 28, 63, 0.10);
+              "
+            >
+            <figcaption
+              style="
+                margin-top:10px;
+                color:#637083;
+                font-size:14px;
+                text-align:center;
+              "
+            >
+              Figure GET-001 — True Care System Login Page
+            </figcaption>
+          </figure>
+        </section>
 
-    <section class="doc-section">
-      <h2>Related Documentation</h2>
-      <p><a href="/documentation/getting-started/">Return to Getting Started</a></p>
-    </section>
-    
+        <section class="doc-section">
+          <h2>Who Should Use This Documentation</h2>
+
+          <ul>
+            <li>
+              <strong>Provider Administrators</strong> manage users, roles,
+              departments, branches, provider settings, and organization-level
+              configuration.
+            </li>
+            <li>
+              <strong>Office Staff</strong> maintain operational records,
+              schedules, employees, individuals, visits, and supporting data.
+            </li>
+            <li>
+              <strong>Supervisors</strong> review service delivery, documentation,
+              scheduling, employee activity, and exceptions.
+            </li>
+            <li>
+              <strong>DSPs and Nurses</strong> use assigned operational and care
+              workflows based on their permissions.
+            </li>
+            <li>
+              <strong>Billing and Payroll Staff</strong> review readiness,
+              visits, rates, submissions, work time, and payment processing.
+            </li>
+            <li>
+              <strong>Compliance and Security Staff</strong> review HIPAA,
+              access, audit logs, incidents, and security events.
+            </li>
+            <li>
+              <strong>Developers and QA Staff</strong> use technical,
+              API, testing, and release documentation.
+            </li>
+          </ul>
+
+          <p>
+            Users may see different menus, pages, fields, and actions depending
+            on their role, provider assignment, permissions, and system
+            configuration.
+          </p>
+        </section>
+
+        <section class="doc-section">
+          <h2>Core Product Modules</h2>
+
+          <div class="doc-module-grid">
+            <a class="doc-module-card" href="/documentation/service-management/">
+              <small>02</small>
+              <strong>Services</strong>
+              <p>Create, search, review, and maintain provider service definitions.</p>
+            </a>
+
+            <a class="doc-module-card" href="/documentation/individual-management/">
+              <small>03</small>
+              <strong>Individual</strong>
+              <p>Maintain individual records, details, documents, contacts, and services.</p>
+            </a>
+
+            <a class="doc-module-card" href="/documentation/employee-management/">
+              <small>04</small>
+              <strong>Employees</strong>
+              <p>Manage workforce profiles, employment details, credentials, and availability.</p>
+            </a>
+
+            <a class="doc-module-card" href="/documentation/scheduling/">
+              <small>05</small>
+              <strong>Schedule</strong>
+              <p>Create shifts, assign staff, manage recurring schedules, and resolve conflicts.</p>
+            </a>
+
+            <a class="doc-module-card" href="/documentation/medication-management/">
+              <small>06</small>
+              <strong>Medication</strong>
+              <p>Manage orders, MAR, treatment records, PRN, vitals, inventory, and incidents.</p>
+            </a>
+
+            <a class="doc-module-card" href="/documentation/bss/">
+              <small>07</small>
+              <strong>BSS</strong>
+              <p>Manage behavioral support cases, case details, and daily services.</p>
+            </a>
+
+            <a class="doc-module-card" href="/documentation/authorization/">
+              <small>08</small>
+              <strong>Authorizations</strong>
+              <p>Manage service approvals, authorized limits, units, and expiration.</p>
+            </a>
+
+            <a class="doc-module-card" href="/documentation/reports/">
+              <small>09</small>
+              <strong>Reports</strong>
+              <p>Access reports center, daily notes, health and incident reports, and call-off requests.</p>
+            </a>
+
+            <a class="doc-module-card" href="/documentation/kpi/">
+              <small>10</small>
+              <strong>KPI</strong>
+              <p>Manage scorecards, goals, rankings, performance trends, and KPI reports.</p>
+            </a>
+
+            <a class="doc-module-card" href="/documentation/time-keeping/">
+              <small>11</small>
+              <strong>Time Keeping</strong>
+              <p>Review work time, entries, approvals, exceptions, and reports.</p>
+            </a>
+
+            <a class="doc-module-card" href="/documentation/mobile-evv/">
+              <small>12</small>
+              <strong>Mobile EVV</strong>
+              <p>Support mobile visit assignments, check-in, check-out, GPS, and documentation.</p>
+            </a>
+
+            <a class="doc-module-card" href="/documentation/visit-maintenance/">
+              <small>13</small>
+              <strong>Visit Maintenance</strong>
+              <p>Review visit details, call logs, corrections, exceptions, merge, and deletion.</p>
+            </a>
+
+            <a class="doc-module-card" href="/documentation/house-management/">
+              <small>14</small>
+              <strong>House Management</strong>
+              <p>Manage residential houses, residents, staff assignments, tasks, and inspections.</p>
+            </a>
+
+            <a class="doc-module-card" href="/documentation/payroll/">
+              <small>15</small>
+              <strong>Payroll</strong>
+              <p>Manage employee rates, payroll processing, history, tax reports, and settings.</p>
+            </a>
+
+            <a class="doc-module-card" href="/documentation/billing/">
+              <small>16</small>
+              <strong>Billing</strong>
+              <p>Manage readiness, visit review, Sandata submissions, settings, and billing errors.</p>
+            </a>
+
+            <a class="doc-module-card" href="/documentation/hipaa-compliance/">
+              <small>17</small>
+              <strong>HIPAA</strong>
+              <p>Review audit activity, PHI access, login history, incidents, reports, and settings.</p>
+            </a>
+
+            <a class="doc-module-card" href="/documentation/support/">
+              <small>18</small>
+              <strong>Support</strong>
+              <p>Create and review support tickets and provider support activity.</p>
+            </a>
+
+            <a class="doc-module-card" href="/documentation/provider-administration/">
+              <small>19</small>
+              <strong>Admin</strong>
+              <p>Manage users, roles, departments, announcements, branches, passwords, and provider profile.</p>
+            </a>
+          </div>
+        </section>
+
+        <section class="doc-section">
+          <h2>How Access Is Controlled</h2>
+
+          <p>
+            True Care System uses role-based access control. A user's visible
+            menus and available actions are determined by assigned roles,
+            permissions, provider membership, and account status.
+          </p>
+
+          <p>Typical roles include:</p>
+
+          <ul>
+            <li>Provider Administrator</li>
+            <li>Supervisor</li>
+            <li>Office</li>
+            <li>DSP</li>
+            <li>Nurse</li>
+            <li>Behavioral</li>
+            <li>Billing</li>
+            <li>Payroll</li>
+            <li>HR</li>
+            <li>Compliance</li>
+            <li>Facility</li>
+            <li>IT</li>
+            <li>Read Only</li>
+          </ul>
+
+          <div class="doc-notice doc-notice-info">
+            <strong>Important</strong>
+            <p>
+              The presence of a menu does not automatically grant permission to
+              every page or action within that menu.
+            </p>
+          </div>
+        </section>
+
+        <section class="doc-section">
+          <h2>Recommended Learning Path</h2>
+
+          <ol class="doc-steps">
+            <li>
+              <span>
+                Review <strong>System Requirements</strong> before using the web
+                or mobile platform.
+              </span>
+            </li>
+            <li>
+              <span>
+                Review <strong>Login</strong> and <strong>Forgot Password</strong>
+                to understand account access and recovery.
+              </span>
+            </li>
+            <li>
+              <span>
+                Review <strong>Dashboard</strong> and
+                <strong>System Navigation</strong>.
+              </span>
+            </li>
+            <li>
+              <span>
+                Review <strong>User Profile</strong> and
+                <strong>Getting Support</strong>.
+              </span>
+            </li>
+            <li>
+              <span>
+                Continue to the module documentation that matches the user's
+                assigned responsibilities.
+              </span>
+            </li>
+          </ol>
+        </section>
+
+        <section class="doc-section">
+          <h2>Before You Begin</h2>
+
+          <p>Confirm the following before accessing production information:</p>
+
+          <ul>
+            <li>Your organization has an active True Care System account.</li>
+            <li>Your user account was created by an authorized administrator.</li>
+            <li>Your assigned role matches your job responsibilities.</li>
+            <li>You received the correct login address.</li>
+            <li>You are using a supported browser and secure internet connection.</li>
+            <li>You understand your organization's privacy and security policies.</li>
+            <li>You know how to contact an administrator or Support.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Security and HIPAA Responsibilities</h2>
+
+          <p>
+            True Care System may contain Protected Health Information and other
+            confidential organizational information. Every user is responsible
+            for protecting information available through the account.
+          </p>
+
+          <ul>
+            <li>Use only the account assigned to you.</li>
+            <li>Keep passwords and verification codes confidential.</li>
+            <li>Access only information needed for assigned work.</li>
+            <li>Lock or sign out of unattended devices.</li>
+            <li>Avoid displaying PHI where unauthorized persons can view it.</li>
+            <li>Report suspected unauthorized access or disclosure promptly.</li>
+          </ul>
+
+          <div class="doc-notice doc-notice-info">
+            <strong>Minimum Necessary</strong>
+            <p>
+              Access only the minimum information required to complete the
+              assigned task.
+            </p>
+          </div>
+        </section>
+
+        <section class="doc-section">
+          <h2>Audit Logging</h2>
+
+          <p>
+            True Care System uses audit logging to support accountability,
+            compliance review, security monitoring, and investigation.
+          </p>
+
+          <p>Depending on the feature and system configuration, records may include:</p>
+
+          <ul>
+            <li>Successful and failed login attempts.</li>
+            <li>Logout and session expiration.</li>
+            <li>Password and account security activity.</li>
+            <li>Access to protected records.</li>
+            <li>Creation, update, deletion, and status changes.</li>
+            <li>Support impersonation activity.</li>
+            <li>Billing, payroll, and administrative actions.</li>
+            <li>Exports and other high-risk operations.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Best Practices</h2>
+
+          <ul>
+            <li>Use a supported, current browser.</li>
+            <li>Do not share accounts or credentials.</li>
+            <li>Review system messages before continuing.</li>
+            <li>Verify information before selecting Save, Submit, Delete, or Approve.</li>
+            <li>Keep employee and individual information accurate.</li>
+            <li>Use organization-approved devices and networks.</li>
+            <li>Sign out when work is complete.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>Do all users see the same menus?</h3>
+          <p>
+            No. Visible menus and available actions depend on the user's role,
+            permissions, provider assignment, and system configuration.
+          </p>
+
+          <h3>Can multiple employees share one account?</h3>
+          <p>
+            No. Each user must have an individually assigned account so access
+            and activity can be secured and audited.
+          </p>
+
+          <h3>What should I do if a required menu is missing?</h3>
+          <p>
+            Contact an authorized Provider Administrator. The account may not
+            have the required role or permission.
+          </p>
+
+          <h3>Should screenshots contain real individual information?</h3>
+          <p>
+            No. Documentation screenshots must use demo or training data and
+            must not expose real PHI, credentials, Social Security numbers,
+            full Medicaid IDs, or private notes.
+          </p>
+        </section>
+
+        <section class="doc-section">
+          <h2>Related Documentation</h2>
+
+          <ul>
+            <li>
+              <a href="/documentation/getting-started/system-requirements.html">
+                System Requirements
+              </a>
+            </li>
+            <li>
+              <a href="/documentation/getting-started/login.html">
+                Login
+              </a>
+            </li>
+            <li>
+              <a href="/documentation/getting-started/forgot-password.html">
+                Forgot Password
+              </a>
+            </li>
+            <li>
+              <a href="/documentation/getting-started/dashboard.html">
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a href="/documentation/getting-started/navigation.html">
+                System Navigation
+              </a>
+            </li>
+            <li>
+              <a href="/documentation/getting-started/user-profile.html">
+                User Profile
+              </a>
+            </li>
+            <li>
+              <a href="/documentation/getting-started/support.html">
+                Getting Support
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <div
+            style="
+              display:flex;
+              justify-content:space-between;
+              gap:20px;
+              flex-wrap:wrap;
+            "
+          >
+            <a href="/documentation/getting-started/">
+              ← Getting Started
+            </a>
+
+            <a href="/documentation/getting-started/system-requirements.html">
+              Next: System Requirements →
+            </a>
+          </div>
+        </section>
       </article>
 
       <footer class="doc-page-footer">
         <p>© 2026 True Care System. All rights reserved.</p>
-        <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
+        <p>
+          Documentation is maintained as part of the True Care System product
+          lifecycle.
+        </p>
       </footer>
     </main>
   </div>
 
-  <div class="doc-search-results" id="docSearchResults" hidden></div>
+  <div
+    class="doc-search-results"
+    id="docSearchResults"
+    hidden
+  ></div>
+
   <script src="/documentation/assets/documentation.js"></script>
 </body>
 </html>
