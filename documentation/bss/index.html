@@ -1,47 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="BSS documentation for True Care System">
-  <title>BSS | True Care System Documentation</title>
-  <link rel="stylesheet" href="/documentation/assets/documentation.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Behavior Support Services documentation overview for True Care System.">
+<title>BSS | True Care System Documentation</title>
+<link rel="stylesheet" href="/documentation/assets/documentation.css">
+<style>
+.bss-table{width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0;margin-top:16px}
+.bss-table col:first-child{width:260px} .bss-table col:nth-child(3){width:160px}
+.bss-table th,.bss-table td{padding:13px 18px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+.bss-table th{background:var(--surface);color:var(--navy);font-weight:800}
+.bss-table td:first-child{padding-right:28px} .bss-table th:nth-child(2),.bss-table td:nth-child(2){padding-left:28px}
+.bss-table td:last-child{white-space:nowrap}
+.doc-figure{width:100%;margin:20px 0 28px} .doc-figure img{display:block;width:100%;height:auto;border-radius:12px}
+.doc-figure figcaption{margin-top:10px;text-align:center;color:var(--muted);font-size:14px}
+.bss-policy{border:1px solid #d7c7ff;background:#f5f1ff} .bss-policy strong{color:#3d348b}
+.bss-clinical{border:1px solid #f3d48a;background:#fff9e8} .bss-clinical strong{color:#8a5a00}
+.bss-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:22px}
+.bss-card{padding:20px;border:1px solid var(--border);border-radius:14px;background:var(--white);box-shadow:0 8px 24px rgba(7,28,63,.06)}
+.bss-card img{display:block;width:100%;height:auto;border-radius:10px} .bss-card h3{margin:16px 0 8px}
+.bss-card p{margin:0;color:var(--muted)} .bss-card a{display:inline-flex;margin-top:12px;font-weight:700}
+.bss-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:18px}
+.bss-flow article{padding:18px;border:1px solid var(--border);border-radius:13px;background:linear-gradient(145deg,#f7f9fc,#fff)}
+.bss-flow span{display:inline-flex;margin-bottom:10px;color:var(--teal);font-size:12px;font-weight:800;letter-spacing:.1em}
+.bss-flow strong{display:block;color:var(--navy)} .bss-flow p{margin:7px 0 0;color:var(--muted)}
+.bss-nav{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;align-items:center;width:100%;margin-top:32px}
+.bss-nav .doc-button:nth-child(1){justify-self:start} .bss-nav .doc-button:nth-child(2){justify-self:center}
+.bss-nav .doc-button:nth-child(3){justify-self:end}
+@media(max-width:900px){.bss-grid{grid-template-columns:1fr}.bss-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:800px){.bss-table{table-layout:auto}.bss-table col{width:auto!important}.bss-table th,.bss-table td{padding:10px 12px}}
+@media(max-width:600px){.bss-flow{grid-template-columns:1fr}.bss-nav{grid-template-columns:1fr}.bss-nav .doc-button{justify-self:stretch!important;text-align:center}}
+</style>
 </head>
 <body>
-  <header class="doc-header">
-    <a class="doc-brand" href="/documentation/">
-      <img src="/logo.png" alt="True Care System">
-      <span>
-        <strong>True Care System</strong>
-        <small>Documentation</small>
-      </span>
-    </a>
-
-    <button class="doc-mobile-menu" id="docMobileMenu"
-            aria-label="Open documentation menu">☰</button>
-
-    <div class="doc-header-actions">
-      <label class="doc-search">
-        <span>⌕</span>
-        <input id="docSearchInput" type="search"
-               placeholder="Search documentation..."
-               autocomplete="off">
-      </label>
-      <a href="/" class="doc-back-link">Return to Website</a>
-    </div>
-  </header>
-
-  <div class="doc-layout">
-    <aside class="doc-sidebar" id="docSidebar">
-      <div class="doc-sidebar-title">Documentation</div>
-      <nav>
-        <a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
+<header class="doc-header">
+<a class="doc-brand" href="/documentation/"><img src="/logo.png" alt="True Care System"><span><strong>True Care System</strong><small>Documentation</small></span></a>
+<button class="doc-mobile-menu" id="docMobileMenu" type="button" aria-label="Open documentation menu" aria-controls="docSidebar" aria-expanded="false">☰</button>
+<div class="doc-header-actions"><label class="doc-search"><span aria-hidden="true">⌕</span><input id="docSearchInput" type="search" placeholder="Search documentation..." autocomplete="off" aria-label="Search documentation"></label><a href="/" class="doc-back-link">Return to Website</a></div>
+</header>
+<div class="doc-layout">
+<aside class="doc-sidebar" id="docSidebar"><div class="doc-sidebar-title">Documentation</div><nav aria-label="Documentation modules"><a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
 <a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
 <a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
 <a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
 <a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
 <a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
-<a class="doc-nav-module active" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
+<a class="doc-nav-module active" href="/documentation/bss/" aria-current="page"><span class="doc-nav-number">07</span><span>BSS</span></a>
 <a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
 <a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
 <a class="doc-nav-module" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span>KPI</span></a>
@@ -63,77 +68,141 @@
 <a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
 <a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
 <a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
-<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>Frequently Asked Questions</span></a>
-<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
-      </nav>
-    </aside>
+<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>FAQ</span></a>
+<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a></nav></aside>
+<main class="doc-main">
+<div class="doc-breadcrumb"><a href="/documentation/">Documentation</a><span>›</span><span>BSS</span></div>
+<article class="doc-article">
+<header class="doc-article-header">
+<div><p class="doc-eyebrow">BEHAVIOR SUPPORT SERVICES</p><h1>BSS</h1></div>
+<dl class="doc-metadata"><div><dt>Document ID</dt><dd>BSS-DOC-001</dd></div><div><dt>Version</dt><dd>1.0</dd></div><div><dt>Status</dt><dd>Draft</dd></div><div><dt>Last Updated</dt><dd>07/24/2026</dd></div></dl>
+</header>
 
-    <main class="doc-main">
-      <div class="doc-breadcrumb">
-        <a href="/documentation/">Documentation</a>
-        <span>›</span><a href='/documentation/bss/'>BSS</a>
-        <span>›</span><span>BSS</span>
-      </div>
+<div class="doc-notice doc-notice-info"><strong>Purpose</strong><p>The BSS module supports case management, assessments, documentation, daily service records, supervisor review, billing readiness, functional behavior assessment, and monthly progress reporting.</p></div>
 
-      <article class="doc-article">
-        <header class="doc-article-header">
-          <div>
-            <p class="doc-eyebrow">TRUE CARE SYSTEM DOCUMENTATION</p>
-            <h1>BSS</h1>
-          </div>
+<div class="doc-notice bss-policy"><strong>HIPAA, Clinical Governance, and Proprietary Training Notice</strong><p>BSS records may contain highly sensitive behavioral, clinical, family, safety, assessment, incident, and service information. Access must follow the Provider's HIPAA policies, role-based access controls, minimum necessary standard, and applicable professional requirements.</p><p>To protect Individuals, Provider-specific clinical procedures, and the proprietary workflow of True Care System, selected advanced BSS functions are intentionally not described in full within this public documentation.</p><p>Official Provider customers receive direct role-based training for licensed or otherwise qualified BSS professionals, supervisors, BCBA personnel, and other staff formally authorized by the Provider.</p></div>
 
-          <dl class="doc-metadata">
-            <div><dt>Document ID</dt><dd>BSS-DOC-000</dd></div>
-            <div><dt>Version</dt><dd>1.0</dd></div>
-            <div><dt>Status</dt><dd>Structure Created</dd></div>
-            <div><dt>Last Updated</dt><dd>Pending</dd></div>
-          </dl>
-        </header>
+<div class="doc-notice bss-clinical"><strong>Professional Responsibility</strong><p>True Care System supports documentation and operational workflows. Behavioral assessment, clinical interpretation, treatment recommendations, crisis planning, supervision, and approval must be completed only by personnel working within their authorized role, credentials, and Provider policies.</p></div>
 
-        
-    <div class="doc-notice doc-notice-info">
-      <strong>Module documentation structure created</strong>
-      <p>Each page below contains the standard enterprise template and
-         a named screenshot placeholder.</p>
-    </div>
+<section class="doc-section">
+<h2>BSS Menu</h2>
+<p>The BSS menu contains four primary workspaces for oversight, Individual case management, case-detail documentation, and daily service operations.</p>
+<figure class="doc-figure"><img src="/documentation/bss/images/bss-menu.jpg" alt="BSS menu"><figcaption>BSS menu with Dashboard, Individual Cases, Case Detail, and Daily Services.</figcaption></figure>
+<table class="bss-table"><colgroup><col><col><col></colgroup><thead><tr><th>Menu</th><th>Purpose</th><th>Documentation</th></tr></thead><tbody>
+<tr><td><strong>Dashboard</strong></td><td>Review active cases, daily-service activity, supervisor review, approved units, billing readiness, workload, and recent activity.</td><td><a href="/documentation/bss/dashboard.html">Open guide</a></td></tr>
+<tr><td><strong>Individual Cases</strong></td><td>Manage the list of Individuals receiving BSS services and track case number, level, dates, and status.</td><td><a href="/documentation/bss/individual-cases.html">Open guide</a></td></tr>
+<tr><td><strong>Case Detail</strong></td><td>Open the complete BSS case chart, including profile, documents, face sheet, assessments, FBA, and monthly progress information.</td><td><a href="/documentation/bss/case-detail.html">Open guide</a></td></tr>
+<tr><td><strong>Daily Services</strong></td><td>Record billable and non-billable BSS activities, submit logs, complete supervisor review, and prepare approved units for billing.</td><td><a href="/documentation/bss/daily-services.html">Open guide</a></td></tr>
+</tbody></table>
+</section>
 
-    <section class="doc-section">
-      <h2>Purpose</h2>
-      <p>This section will contain the approved documentation for
-         BSS.</p>
-    </section>
+<section class="doc-section">
+<h2>BSS Workspaces</h2>
+<div class="bss-grid">
+<article class="bss-card"><img src="/documentation/bss/images/bss-dashboard.jpg" alt="BSS Dashboard"><h3>Dashboard</h3><p>Displays active cases, review queues, approved logs, billable units, estimated amounts, workload, and recent activity.</p><a href="/documentation/bss/dashboard.html">Open Dashboard guide →</a></article>
+<article class="bss-card"><img src="/documentation/bss/images/bss-individual-case.jpg" alt="BSS Individual Cases"><h3>Individual Cases</h3><p>Maintains the Provider's BSS caseload separately from the general Individual list.</p><a href="/documentation/bss/individual-cases.html">Open Individual Cases guide →</a></article>
+<article class="bss-card"><img src="/documentation/bss/images/bss-case-detail.jpg" alt="BSS Case Detail"><h3>Case Detail</h3><p>Provides the central case chart for profile, documents, assessments, FBA, and monthly progress reporting.</p><a href="/documentation/bss/case-detail.html">Open Case Detail guide →</a></article>
+<article class="bss-card"><img src="/documentation/bss/images/bss-daily-services.jpg" alt="BSS Daily Services"><h3>Daily Services</h3><p>Supports service logs, signatures, supervisor review, approval, locking, and billing readiness.</p><a href="/documentation/bss/daily-services.html">Open Daily Services guide →</a></article>
+</div>
+</section>
 
-    <section class="doc-section">
-      <h2>Documentation Pages</h2>
-      <ul class="doc-page-list">
-        <li><a href="/documentation/bss/overview.html">Overview</a></li>
-<li><a href="/documentation/bss/dashboard.html">Dashboard</a></li>
-<li><a href="/documentation/bss/individual-cases.html">Individual Cases</a></li>
-<li><a href="/documentation/bss/case-detail.html">Case Detail</a></li>
-<li><a href="/documentation/bss/daily-services.html">Daily Services</a></li>
-<li><a href="/documentation/bss/daily-log.html">Daily Log</a></li>
-<li><a href="/documentation/bss/supervisor-review.html">Supervisor Review</a></li>
-<li><a href="/documentation/bss/billing-review.html">Billing Review</a></li>
-<li><a href="/documentation/bss/faq.html">FAQ</a></li>
-      </ul>
-    </section>
+<section class="doc-section">
+<h2>Case Detail Navigation</h2>
+<p>Case Detail contains specialized BSS areas for maintaining the complete behavioral support record.</p>
+<table class="bss-table"><colgroup><col><col><col></colgroup><thead><tr><th>Case Detail Area</th><th>General Purpose</th><th>Documentation</th></tr></thead><tbody>
+<tr><td><strong>Case Overview</strong></td><td>Displays the case summary, progress, review dates, assigned team, alerts, and shortcuts.</td><td><a href="/documentation/bss/case-overview.html">Open guide</a></td></tr>
+<tr><td><strong>Profile</strong></td><td>Maintains demographics, contacts, guardian, supports, service information, and case assignment.</td><td><a href="/documentation/bss/profile.html">Open guide</a></td></tr>
+<tr><td><strong>Face Sheet</strong></td><td>Provides a printable reference containing key Individual, guardian, ISP, program, safety, and emergency information.</td><td><a href="/documentation/bss/face-sheet.html">Open guide</a></td></tr>
+<tr><td><strong>Documents</strong></td><td>Tracks paperwork, HIPAA and privacy records, releases, referrals, assessments, plans, and scanned files.</td><td><a href="/documentation/bss/documents.html">Open guide</a></td></tr>
+<tr><td><strong>Problem Behavior Inventory</strong></td><td>Defines target behaviors, operational definitions, severity, risk, priority, and status.</td><td><a href="/documentation/bss/problem-behavior-inventory.html">Open guide</a></td></tr>
+<tr><td><strong>Motivation Assessment Scale</strong></td><td>Supports MAS scoring for attention, escape, tangible, and automatic behavior functions.</td><td><a href="/documentation/bss/motivation-assessment-scale.html">Open guide</a></td></tr>
+<tr><td><strong>FAST Assessment</strong></td><td>Supports FAST screening for likely maintaining variables of challenging behavior.</td><td><a href="/documentation/bss/fast-assessment.html">Open guide</a></td></tr>
+<tr><td><strong>Functional Behavior Assessment</strong></td><td>Combines target behaviors, MAS, FAST, observation, ABC data, hypothesis, function summary, and recommendations.</td><td><a href="/documentation/bss/functional-behavior-assessment.html">Open guide</a></td></tr>
+<tr><td><strong>Monthly Progress Report</strong></td><td>Records goals, behavior trends, incidents, BSP implementation, training, participation, data summary, and recommendations.</td><td><a href="/documentation/bss/monthly-progress-report.html">Open guide</a></td></tr>
+</tbody></table>
+</section>
 
-    <section class="doc-section">
-      <h2>Screenshot Library</h2>
-      <p>Images for this module are stored in
-         <code>documentation/bss/images/</code>.</p>
-    </section>
-    
-      </article>
+<section class="doc-section">
+<h2>Selected Case Detail Screens</h2>
+<div class="bss-grid">
+<article class="bss-card"><img src="/documentation/bss/images/bss-case-overview.jpg" alt="Case Overview"><h3>Case Overview</h3><p>One-page command center for the selected BSS case.</p><a href="/documentation/bss/case-overview.html">Open guide →</a></article>
+<article class="bss-card"><img src="/documentation/bss/images/bss-face-sheet.jpg" alt="Face Sheet"><h3>Face Sheet</h3><p>Printable reference for authorized planning, supervision, and emergency support.</p><a href="/documentation/bss/face-sheet.html">Open guide →</a></article>
+<article class="bss-card"><img src="/documentation/bss/images/bss-problem-behavior-inventory.jpg" alt="Problem Behavior Inventory"><h3>Problem Behavior Inventory</h3><p>Defines target behaviors and operational risk information used by later assessments.</p><a href="/documentation/bss/problem-behavior-inventory.html">Open guide →</a></article>
+<article class="bss-card"><img src="/documentation/bss/images/bss-monthly-progress-report.jpg" alt="Monthly Progress Report"><h3>Monthly Progress Report</h3><p>Summarizes goals, behavior trends, incidents, training, and recommendations.</p><a href="/documentation/bss/monthly-progress-report.html">Open guide →</a></article>
+</div>
+</section>
 
-      <footer class="doc-page-footer">
-        <p>© 2026 True Care System. All rights reserved.</p>
-        <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
-      </footer>
-    </main>
-  </div>
+<section class="doc-section">
+<h2>General BSS Workflow</h2>
+<div class="bss-flow">
+<article><span>STEP 01</span><strong>Create the BSS Case</strong><p>Add the approved Individual to the Provider's BSS caseload.</p></article>
+<article><span>STEP 02</span><strong>Complete the Case Record</strong><p>Review profile, face sheet, required documents, and case assignment.</p></article>
+<article><span>STEP 03</span><strong>Complete Assessments</strong><p>Document target behaviors and authorized assessment information.</p></article>
+<article><span>STEP 04</span><strong>Track Services and Progress</strong><p>Record daily services, supervisor review, billing readiness, and monthly progress.</p></article>
+</div>
+</section>
 
-  <div class="doc-search-results" id="docSearchResults" hidden></div>
-  <script src="/documentation/assets/documentation.js"></script>
+<section class="doc-section">
+<h2>Restricted Clinical and Operational Detail</h2>
+<p>The public documentation does not publish the complete decision process for behavioral assessment interpretation, behavior-function determination, clinical hypothesis, crisis response, restrictive intervention review, supervision standards, billing validation, correction workflows, or Provider-specific escalation procedures.</p>
+<p>These workflows are reserved for direct implementation and training sessions with official Provider customers and their authorized BSS professionals.</p>
+</section>
+
+<section class="doc-section">
+<h2>Direct Provider Training Scope</h2>
+<ul>
+<li>BSS case setup, assignment, level, status, and review cycle</li>
+<li>Profile, face sheet, and required document completion</li>
+<li>Problem behavior definitions, severity, risk, and priority</li>
+<li>MAS and FAST administration and documentation</li>
+<li>Functional Behavior Assessment workflow</li>
+<li>ABC data, observation, hypothesis, and function summary</li>
+<li>BSP implementation and fidelity review</li>
+<li>Daily billable and non-billable service documentation</li>
+<li>Supervisor review, corrections, approval, and locking</li>
+<li>Billing readiness and approved-unit workflows</li>
+<li>Monthly progress reporting and recommendation review</li>
+<li>HIPAA, access control, audit logs, and secure document handling</li>
+</ul>
+</section>
+
+<section class="doc-section">
+<h2>Security and HIPAA</h2>
+<ul>
+<li>Access BSS records only for an approved clinical or operational purpose.</li>
+<li>Verify the correct Provider, Individual, and BSS case before viewing or entering information.</li>
+<li>Use the minimum necessary information for the assigned task.</li>
+<li>Do not share behavioral, clinical, incident, assessment, or document screenshots through unapproved channels.</li>
+<li>Restrict assessment interpretation and clinical recommendations to properly authorized personnel.</li>
+<li>Protect uploaded documents, signatures, family information, safety alerts, and case notes.</li>
+<li>Record access, changes, approvals, deletions, exports, and administrative actions through Audit Logs where applicable.</li>
+</ul>
+</section>
+
+<section class="doc-section">
+<h2>Related Documentation</h2>
+<ul>
+<li><a href="/documentation/individual-management/">Individual</a></li>
+<li><a href="/documentation/employee-management/">Employees</a></li>
+<li><a href="/documentation/authorization/">Authorizations</a></li>
+<li><a href="/documentation/scheduling/">Schedule</a></li>
+<li><a href="/documentation/billing/">Billing</a></li>
+<li><a href="/documentation/hipaa-compliance/">HIPAA</a></li>
+<li><a href="/documentation/security/">Security</a></li>
+<li><a href="/documentation/audit-logs/">Audit Logs</a></li>
+</ul>
+</section>
+
+<div class="doc-page-navigation bss-nav">
+<a class="doc-button" href="/documentation/medication-management/incidents-reports.html">← Back</a>
+<a class="doc-button" href="/documentation/bss/index.html">🏠 Home</a>
+<a class="doc-button" href="/documentation/bss/dashboard.html">Next →</a>
+</div>
+</article>
+<footer class="doc-page-footer"><p>© 2026 True Care System. All rights reserved.</p><p>Documentation is maintained as part of the True Care System product lifecycle.</p></footer>
+</main>
+</div>
+<div class="doc-search-results" id="docSearchResults" hidden></div>
+<script src="/documentation/assets/documentation.js"></script>
 </body>
 </html>
