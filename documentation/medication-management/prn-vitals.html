@@ -3,29 +3,134 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="PRN &amp; Vitals documentation for True Care System">
-  <title>PRN &amp; Vitals | True Care System Documentation</title>
+  <meta name="description" content="PRN & Vitals documentation for True Care System Medication Management.">
+  <title>PRN & Vitals | Medication | True Care System Documentation</title>
   <link rel="stylesheet" href="/documentation/assets/documentation.css">
+  <style>
+    
+.medication-policy-notice {
+  border: 1px solid #d7c7ff;
+  background: #f5f1ff;
+}
+.medication-policy-notice strong { color: #3d348b; }
+
+.doc-article .doc-figure {
+  width: 100%;
+  margin: 20px 0 28px;
+}
+.doc-article .doc-figure img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.doc-article .doc-figure figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.med-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.med-table col:first-child { width: 250px; }
+.med-table th,
+.med-table td {
+  padding: 12px 18px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+.med-table th {
+  background: var(--surface);
+  color: var(--navy);
+  font-weight: 800;
+}
+.med-table td:first-child { padding-right: 28px; }
+.med-table th:nth-child(2),
+.med-table td:nth-child(2) { padding-left: 28px; }
+.med-table tbody tr:last-child td { border-bottom: 0; }
+
+.med-page-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  margin-top: 32px;
+}
+.med-page-nav .doc-button:nth-child(1) { justify-self: start; }
+.med-page-nav .doc-button:nth-child(2) { justify-self: center; }
+.med-page-nav .doc-button:nth-child(3) { justify-self: end; }
+
+@media (max-width: 760px) {
+  .med-table { table-layout: auto; }
+  .med-table col { width: auto !important; }
+  .med-table th, .med-table td { padding: 10px 12px; }
+  .med-table td:first-child,
+  .med-table th:nth-child(2),
+  .med-table td:nth-child(2) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+@media (max-width: 600px) {
+  .med-page-nav { grid-template-columns: 1fr; }
+  .med-page-nav .doc-button {
+    justify-self: stretch !important;
+    text-align: center;
+  }
+}
+
+    
+.prn-flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.prn-flow article {
+  position: relative;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: 0 8px 24px rgba(7, 28, 63, 0.06);
+}
+.prn-flow span {
+  display: inline-flex;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #e8f1fc;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.prn-flow h3 { margin: 14px 0 8px; }
+.prn-flow p { margin: 0; color: var(--muted); }
+@media (max-width: 800px) {
+  .prn-flow { grid-template-columns: 1fr; }
+}
+
+  </style>
 </head>
 <body>
   <header class="doc-header">
     <a class="doc-brand" href="/documentation/">
       <img src="/logo.png" alt="True Care System">
-      <span>
-        <strong>True Care System</strong>
-        <small>Documentation</small>
-      </span>
+      <span><strong>True Care System</strong><small>Documentation</small></span>
     </a>
-
-    <button class="doc-mobile-menu" id="docMobileMenu"
-            aria-label="Open documentation menu">☰</button>
-
+    <button class="doc-mobile-menu" id="docMobileMenu" type="button"
+      aria-label="Open documentation menu" aria-controls="docSidebar" aria-expanded="false">☰</button>
     <div class="doc-header-actions">
       <label class="doc-search">
-        <span>⌕</span>
-        <input id="docSearchInput" type="search"
-               placeholder="Search documentation..."
-               autocomplete="off">
+        <span aria-hidden="true">⌕</span>
+        <input id="docSearchInput" type="search" placeholder="Search documentation..."
+          autocomplete="off" aria-label="Search documentation">
       </label>
       <a href="/" class="doc-back-link">Return to Website</a>
     </div>
@@ -34,13 +139,13 @@
   <div class="doc-layout">
     <aside class="doc-sidebar" id="docSidebar">
       <div class="doc-sidebar-title">Documentation</div>
-      <nav>
+      <nav aria-label="Documentation modules">
         <a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
 <a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
 <a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
 <a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
 <a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
-<a class="doc-nav-module active" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
+<a class="doc-nav-module active" href="/documentation/medication-management/" aria-current="page"><span class="doc-nav-number">06</span><span>Medication</span></a>
 <a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
 <a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
 <a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
@@ -63,138 +168,110 @@
 <a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
 <a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
 <a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
-<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>Frequently Asked Questions</span></a>
+<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>FAQ</span></a>
 <a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
       </nav>
     </aside>
 
     <main class="doc-main">
       <div class="doc-breadcrumb">
-        <a href="/documentation/">Documentation</a>
-        <span>›</span><a href='/documentation/medication-management/'>Medication</a>
-        <span>›</span><span>PRN &amp; Vitals</span>
+        <a href="/documentation/">Documentation</a><span>›</span>
+        <a href="/documentation/medication-management/">Medication</a><span>›</span>
+        <span>PRN & Vitals</span>
       </div>
 
       <article class="doc-article">
         <header class="doc-article-header">
           <div>
-            <p class="doc-eyebrow">TRUE CARE SYSTEM DOCUMENTATION</p>
-            <h1>PRN &amp; Vitals</h1>
+            <p class="doc-eyebrow">MEDICATION MANAGEMENT</p>
+            <h1>PRN & Vitals</h1>
           </div>
-
           <dl class="doc-metadata">
             <div><dt>Document ID</dt><dd>MED-DOC-005</dd></div>
             <div><dt>Version</dt><dd>1.0</dd></div>
-            <div><dt>Status</dt><dd>Planned</dd></div>
-            <div><dt>Last Updated</dt><dd>Pending</dd></div>
+            <div><dt>Status</dt><dd>Draft</dd></div>
+            <div><dt>Last Updated</dt><dd>07/23/2026</dd></div>
           </dl>
         </header>
 
         
-    <div class="doc-notice doc-notice-info">
-      <strong>Documentation placeholder</strong>
-      <p>This page has been created and is ready for detailed content,
-         screenshots and review.</p>
-    </div>
+<div class="doc-notice doc-notice-info">
+  <strong>Purpose</strong>
+  <p>PRN &amp; Vitals supports documentation of as-needed medication administration, response, notes, and vital signs.</p>
+</div>
 
-    <section class="doc-section">
-      <h2>Purpose</h2>
-      <p class="doc-pending">Detailed purpose will be added during module documentation.</p>
-    </section>
+<div class="doc-notice medication-policy-notice">
+  <strong>HIPAA, Clinical Governance, and Proprietary Training Notice</strong>
+  <p>
+    Medication information contains highly sensitive protected health information and must be handled
+    under the Provider's HIPAA policies, role-based access rules, minimum necessary standard, and
+    applicable clinical requirements.
+  </p>
+  <p>
+    To protect medication safety procedures and the proprietary workflow of True Care System,
+    selected advanced functions are intentionally not published in full. Official Provider customers
+    receive direct, role-based training from the True Care System team for licensed nurses and other
+    personnel who are formally authorized by the Provider to manage or administer medications.
+  </p>
+</div>
 
-    <section class="doc-section">
-      <h2>Who Can Use This Feature</h2>
-      <p class="doc-pending">Roles and permissions will be documented after verification.</p>
-    </section>
 
-    <section class="doc-section">
-      <h2>Navigation</h2>
-      <p class="doc-pending">The exact navigation path will be documented here.</p>
-    </section>
+<section class="doc-section">
+  <h2>PRN Workspace</h2>
+  <figure class="doc-figure">
+    <img src="/documentation/medication-management/images/prn-vitals.jpg" alt="PRN and Vitals workspace">
+    <figcaption>PRN Administration entry form and saved PRN Log.</figcaption>
+  </figure>
+</section>
 
-    <section class="doc-section">
-      <h2>Business Flow</h2>
-      <p class="doc-pending">The approved business workflow will be documented here.</p>
-    </section>
+<section class="doc-section">
+  <h2>PRN Documentation Flow</h2>
+  <div class="prn-flow">
+    <article>
+      <span>Before</span>
+      <h3>Assess and Verify</h3>
+      <p>Verify the active PRN order, reason, dose, route, timing, and required pre-administration assessment.</p>
+    </article>
+    <article>
+      <span>During</span>
+      <h3>Administer and Record</h3>
+      <p>Record date, time, medication, dose, route, reason, and necessary notes.</p>
+    </article>
+    <article>
+      <span>After</span>
+      <h3>Evaluate Response</h3>
+      <p>Document effectiveness, result, response, vital signs when required, and any follow-up.</p>
+    </article>
+  </div>
+</section>
 
-    
-    <section class="doc-section">
-      <h2>Screenshot</h2>
-      <div class="doc-screenshot-placeholder">
-        <div class="doc-placeholder-icon">▧</div>
-        <div>
-          <strong>Screenshot Required</strong>
-          <p><b>Screenshot ID:</b> MED-005</p>
-          <p><b>Screen:</b> PRN &amp; Vitals</p>
-          <p><b>File:</b> images/MED-005-prn-vitals.jpg</p>
-          <p><b>Recommended capture:</b> Desktop, 100% browser zoom,
-             full page title, navigation, actions, filters and data area visible.</p>
-          <p><b>Privacy requirement:</b> Use demo or training data only.
-             Do not include real PHI, credentials, passwords, SSNs or Medicaid IDs.</p>
+<section class="doc-section">
+  <h2>PRN Fields</h2>
+  <table class="med-table">
+    <colgroup><col><col></colgroup>
+    <thead><tr><th>Field</th><th>General Purpose</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Date and Time</strong></td><td>Records when the PRN medication was administered.</td></tr>
+      <tr><td><strong>Medication</strong></td><td>Identifies the medication from the active order.</td></tr>
+      <tr><td><strong>Dose and Route</strong></td><td>Records the administered quantity and method.</td></tr>
+      <tr><td><strong>Reason</strong></td><td>Documents the symptom or approved indication.</td></tr>
+      <tr><td><strong>Result / Response</strong></td><td>Documents effectiveness and observed outcome.</td></tr>
+      <tr><td><strong>Notes</strong></td><td>Stores objective supporting information.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="doc-section">
+  <h2>Direct Training Scope</h2>
+  <p>Direct training covers PRN decision criteria, assessment requirements, repeat-dose controls, effectiveness review, vital-sign thresholds, escalation, physician notification, and emergency response.</p>
+</section>
+
+
+        <div class="doc-page-navigation med-page-nav">
+          <a class="doc-button" href="/documentation/medication-management/treatment-record.html">← Back</a>
+          <a class="doc-button" href="/documentation/medication-management/index.html">🏠 Home</a>
+          <a class="doc-button" href="/documentation/medication-management/inventory-controlled.html">Next →</a>
         </div>
-      </div>
-    </section>
-    
-
-    <section class="doc-section">
-      <h2>Interface Overview</h2>
-      <p class="doc-pending">Buttons, fields, filters, tabs and page regions will be explained here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Step-by-Step Instructions</h2>
-      <ol class="doc-steps">
-        <li><span>Step instructions pending.</span></li>
-        <li><span>Step instructions pending.</span></li>
-        <li><span>Step instructions pending.</span></li>
-      </ol>
-    </section>
-
-    <section class="doc-section">
-      <h2>Permissions</h2>
-      <p class="doc-pending">Access requirements and permission rules will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Validation Rules</h2>
-      <p class="doc-pending">Required fields and business validation rules will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Tips</h2>
-      <p class="doc-pending">Recommended usage tips will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Warnings</h2>
-      <p class="doc-pending">Important operational and data safety warnings will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>HIPAA Considerations</h2>
-      <p class="doc-pending">PHI handling and minimum-necessary requirements will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Audit Log Behavior</h2>
-      <p class="doc-pending">Expected audit events and recorded details will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Troubleshooting</h2>
-      <p class="doc-pending">Known issues and recommended resolutions will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Frequently Asked Questions</h2>
-      <p class="doc-pending">Frequently asked questions will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Related Documentation</h2>
-      <p><a href="/documentation/medication-management/">Return to Medication</a></p>
-    </section>
-    
       </article>
 
       <footer class="doc-page-footer">
