@@ -13,6 +13,94 @@
 .page-nav .doc-button:nth-child(1){justify-self:start}.page-nav .doc-button:nth-child(2){justify-self:center}.page-nav .doc-button:nth-child(3){justify-self:end}
 @media(max-width:600px){.page-nav{grid-template-columns:1fr}.page-nav .doc-button{justify-self:stretch!important;text-align:center}}
 .timeline{display:grid;gap:14px}.timeline div{position:relative;padding:18px 18px 18px 64px;border:1px solid var(--border);border-radius:12px;background:var(--surface)}.timeline span{position:absolute;left:18px;top:18px;display:flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:50%;background:var(--blue);color:white;font-weight:800}.timeline p{margin:5px 0 0}
+
+.schedule-detail-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 14px;
+}
+
+.schedule-detail-table col:first-child {
+  width: 260px;
+}
+
+.schedule-detail-table th,
+.schedule-detail-table td {
+  padding: 12px 18px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+
+.schedule-detail-table th {
+  color: var(--navy);
+  font-weight: 800;
+  background: var(--surface);
+}
+
+.schedule-detail-table th:first-child {
+  border-top-left-radius: 10px;
+}
+
+.schedule-detail-table th:last-child {
+  border-top-right-radius: 10px;
+}
+
+.schedule-detail-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.schedule-detail-table td:first-child {
+  padding-right: 28px;
+}
+
+.schedule-detail-table td:nth-child(2),
+.schedule-detail-table th:nth-child(2) {
+  padding-left: 28px;
+}
+
+.page-nav .doc-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--white);
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.page-nav .doc-button:hover {
+  background: var(--surface);
+  text-decoration: none;
+}
+
+@media (max-width: 760px) {
+  .schedule-detail-table {
+    table-layout: auto;
+  }
+
+  .schedule-detail-table col {
+    width: auto !important;
+  }
+
+  .schedule-detail-table th,
+  .schedule-detail-table td {
+    padding: 10px 12px;
+  }
+
+  .schedule-detail-table td:first-child,
+  .schedule-detail-table td:nth-child(2),
+  .schedule-detail-table th:nth-child(2) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -73,7 +161,7 @@ active customers.</p></div>
 <div><span>5</span><strong>Validate Shifts</strong><p>Review service, DSP, address, units, and status.</p></div>
 <div><span>6</span><strong>Review Conflicts</strong><p>Use Weekly Detail and Summary &amp; Conflicts.</p></div>
 </div></section>
-<section class="doc-section"><h2>Visible Functions</h2><table><thead><tr><th>Function</th><th>General Use</th></tr></thead><tbody>
+<section class="doc-section"><h2>Visible Functions</h2><table class="schedule-detail-table"><colgroup><col><col></colgroup><thead><tr><th>Function</th><th>General Use</th></tr></thead><tbody>
 <tr><td><strong>Individual Selector</strong></td><td>Opens the schedule for the correct Individual.</td></tr>
 <tr><td><strong>Master Schedule</strong></td><td>Stores recurring service events.</td></tr>
 <tr><td><strong>Generate</strong></td><td>Creates weekly shifts from the saved template.</td></tr>
