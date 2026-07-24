@@ -3,43 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Schedule documentation for True Care System">
-  <title>Schedule | True Care System Documentation</title>
+  <meta name="description" content="Schedule Management overview for True Care System, including Master Schedule, Weekly Schedule, Monthly Calendar, event and shift workflows, and Provider training guidance.">
+  <title>Schedule Management | True Care System Documentation</title>
   <link rel="stylesheet" href="/documentation/assets/documentation.css">
+  <style>
+    .schedule-overview-table,.schedule-functions-table{width:100%;table-layout:fixed;border-collapse:collapse}
+    .schedule-overview-table col:first-child{width:250px}
+    .schedule-overview-table col:nth-child(3){width:160px}
+    .schedule-functions-table col:first-child{width:240px}
+    .schedule-overview-table th,.schedule-overview-table td,.schedule-functions-table th,.schedule-functions-table td{text-align:left;vertical-align:top}
+    .schedule-overview-table td:last-child{white-space:nowrap}
+    .doc-article .doc-figure{width:100%;margin:20px 0 28px;text-align:left}
+    .doc-article .doc-figure img{display:block;width:100%;max-width:100%;height:auto;margin:0}
+    .doc-article .doc-figure figcaption{width:100%;margin-top:10px;text-align:center}
+    .schedule-image-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:20px}
+    .schedule-image-grid figure{margin:0;padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--surface)}
+    .schedule-image-grid img{display:block;width:100%;height:auto;border-radius:8px}
+    .schedule-image-grid figcaption{margin-top:10px;color:var(--muted);text-align:center;font-size:14px}
+    .schedule-training-notice{border:1px solid #d5c8ff;background:#f4f0ff}
+    .schedule-training-notice strong{color:#3d348b}
+    .schedule-page-navigation{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;align-items:center;width:100%;margin-top:32px}
+    .schedule-page-navigation .doc-button:nth-child(1){justify-self:start}
+    .schedule-page-navigation .doc-button:nth-child(2){justify-self:center}
+    .schedule-page-navigation .doc-button:nth-child(3){justify-self:end}
+    @media(max-width:900px){.schedule-image-grid{grid-template-columns:1fr}}
+    @media(max-width:800px){.schedule-overview-table,.schedule-functions-table{table-layout:auto}.schedule-overview-table col,.schedule-functions-table col{width:auto!important}}
+    @media(max-width:600px){.schedule-page-navigation{grid-template-columns:1fr}.schedule-page-navigation .doc-button{justify-self:stretch!important;text-align:center}}
+  </style>
 </head>
 <body>
-  <header class="doc-header">
-    <a class="doc-brand" href="/documentation/">
-      <img src="/logo.png" alt="True Care System">
-      <span>
-        <strong>True Care System</strong>
-        <small>Documentation</small>
-      </span>
-    </a>
+<header class="doc-header">
+  <a class="doc-brand" href="/documentation/"><img src="/logo.png" alt="True Care System"><span><strong>True Care System</strong><small>Documentation</small></span></a>
+  <button class="doc-mobile-menu" id="docMobileMenu" type="button" aria-label="Open documentation menu" aria-controls="docSidebar" aria-expanded="false">☰</button>
+  <div class="doc-header-actions">
+    <label class="doc-search"><span aria-hidden="true">⌕</span><input id="docSearchInput" type="search" placeholder="Search documentation..." autocomplete="off" aria-label="Search documentation"></label>
+    <a href="/" class="doc-back-link">Return to Website</a>
+  </div>
+</header>
 
-    <button class="doc-mobile-menu" id="docMobileMenu"
-            aria-label="Open documentation menu">☰</button>
-
-    <div class="doc-header-actions">
-      <label class="doc-search">
-        <span>⌕</span>
-        <input id="docSearchInput" type="search"
-               placeholder="Search documentation..."
-               autocomplete="off">
-      </label>
-      <a href="/" class="doc-back-link">Return to Website</a>
-    </div>
-  </header>
-
-  <div class="doc-layout">
-    <aside class="doc-sidebar" id="docSidebar">
-      <div class="doc-sidebar-title">Documentation</div>
-      <nav>
-        <a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
+<div class="doc-layout">
+<aside class="doc-sidebar" id="docSidebar">
+<div class="doc-sidebar-title">Documentation</div>
+<nav aria-label="Documentation modules">
+<a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
 <a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
 <a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
 <a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
-<a class="doc-nav-module active" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
+<a class="doc-nav-module active" href="/documentation/scheduling/" aria-current="page"><span class="doc-nav-number">05</span><span>Schedule</span></a>
 <a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
 <a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
 <a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
@@ -63,80 +73,220 @@
 <a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
 <a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
 <a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
-<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>Frequently Asked Questions</span></a>
+<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>FAQ</span></a>
 <a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
-      </nav>
-    </aside>
+</nav>
+</aside>
 
-    <main class="doc-main">
-      <div class="doc-breadcrumb">
-        <a href="/documentation/">Documentation</a>
-        <span>›</span><a href='/documentation/scheduling/'>Schedule</a>
-        <span>›</span><span>Schedule</span>
-      </div>
+<main class="doc-main">
+<div class="doc-breadcrumb"><a href="/documentation/">Documentation</a><span>›</span><span>Schedule</span></div>
+<article class="doc-article">
+<header class="doc-article-header">
+  <div><p class="doc-eyebrow">SCHEDULE MANAGEMENT</p><h1>Schedule</h1></div>
+  <dl class="doc-metadata">
+    <div><dt>Document ID</dt><dd>SCH-DOC-001</dd></div>
+    <div><dt>Version</dt><dd>1.0</dd></div>
+    <div><dt>Status</dt><dd>Draft</dd></div>
+    <div><dt>Last Updated</dt><dd>07/23/2026</dd></div>
+  </dl>
+</header>
 
-      <article class="doc-article">
-        <header class="doc-article-header">
-          <div>
-            <p class="doc-eyebrow">TRUE CARE SYSTEM DOCUMENTATION</p>
-            <h1>Schedule</h1>
-          </div>
+<div class="doc-notice doc-notice-info">
+<strong>Purpose</strong>
+<p>The Schedule module is used to build recurring Master Schedules, generate weekly shifts, review monthly scheduling activity, assign DSPs, manage service times and addresses, and coordinate service delivery for Individuals.</p>
+</div>
 
-          <dl class="doc-metadata">
-            <div><dt>Document ID</dt><dd>SCH-DOC-000</dd></div>
-            <div><dt>Version</dt><dd>1.0</dd></div>
-            <div><dt>Status</dt><dd>Structure Created</dd></div>
-            <div><dt>Last Updated</dt><dd>Pending</dd></div>
-          </dl>
-        </header>
+<div class="doc-notice schedule-training-notice">
+<strong>Provider Training and Proprietary Workflow Notice</strong>
+<p>This public guide explains the general purpose and visible structure of the Schedule module. To protect the proprietary workflow and operational methods of True Care System, certain advanced scheduling procedures are intentionally not documented in full. Specialized workflows involving check-in, check-out, call-off handling, backup plan shifts, awake monitoring, conflict resolution, schedule recovery, and other advanced operational controls are provided through direct training after a Provider becomes an active True Care System customer.</p>
+</div>
 
-        
-    <div class="doc-notice doc-notice-info">
-      <strong>Module documentation structure created</strong>
-      <p>Each page below contains the standard enterprise template and
-         a named screenshot placeholder.</p>
-    </div>
+<section class="doc-section">
+<h2>Schedule Workspaces</h2>
+<p>Schedule is organized around a recurring Master Schedule, generated Weekly Schedule, Monthly Calendar Overview, and event or shift maintenance controls.</p>
+<table class="schedule-overview-table">
+<colgroup><col><col><col></colgroup>
+<thead><tr><th>Workspace</th><th>Purpose</th><th>Documentation</th></tr></thead>
+<tbody>
+<tr><td><strong>Master &amp; Weekly Schedule</strong></td><td>Create recurring weekly templates, generate shifts, review units, DSP assignments, and weekly status.</td><td><a href="/documentation/scheduling/master-weekly-schedule.html">Open guide</a></td></tr>
+<tr><td><strong>Monthly Calendar</strong></td><td>Review scheduled shifts by month, date, service, DSP, and status.</td><td><a href="/documentation/scheduling/monthly-calendar.html">Open guide</a></td></tr>
+<tr><td><strong>Master Events</strong></td><td>Add or edit recurring service events used by the Master Schedule.</td><td><a href="/documentation/scheduling/master-events.html">Open guide</a></td></tr>
+<tr><td><strong>Weekly Shifts</strong></td><td>Add or edit generated and one-time shifts within a selected week.</td><td><a href="/documentation/scheduling/weekly-shifts.html">Open guide</a></td></tr>
+</tbody>
+</table>
+</section>
 
-    <section class="doc-section">
-      <h2>Purpose</h2>
-      <p>This section will contain the approved documentation for
-         Schedule.</p>
-    </section>
+<section class="doc-section">
+<h2>Master Schedule and Weekly Schedule</h2>
+<p>The main scheduling workspace displays Individual information, addresses, a Sunday-through-Saturday Master Schedule, and the generated Weekly Schedule for the selected week.</p>
+<figure class="doc-figure">
+<img src="/documentation/scheduling/images/schedule-master-and-weekly.jpg" alt="Schedule page showing Individual information, Master Schedule, and Weekly Schedule">
+<figcaption>Master Schedule and generated Weekly Schedule for the selected Individual.</figcaption>
+</figure>
+<h3>Main Functions</h3>
+<table class="schedule-functions-table">
+<colgroup><col><col></colgroup>
+<thead><tr><th>Function</th><th>General Purpose</th></tr></thead>
+<tbody>
+<tr><td><strong>Individual Selector</strong></td><td>Select the Individual whose recurring and weekly schedules will be reviewed.</td></tr>
+<tr><td><strong>Individual Summary</strong></td><td>Displays name, Individual ID, template information, and effective dates.</td></tr>
+<tr><td><strong>Primary and Secondary Address</strong></td><td>Provides approved service-location references for scheduling.</td></tr>
+<tr><td><strong>Master Schedule</strong></td><td>Stores recurring service events for Sunday through Saturday.</td></tr>
+<tr><td><strong>Save Master Schedule</strong></td><td>Saves changes made to recurring events.</td></tr>
+<tr><td><strong>Generate</strong></td><td>Creates weekly shifts from the saved Master Schedule.</td></tr>
+<tr><td><strong>Weekly Detail</strong></td><td>Displays generated shifts, scheduled units, actual units, and visit status.</td></tr>
+<tr><td><strong>Summary &amp; Conflicts</strong></td><td>Supports review of totals, overlaps, and scheduling conflicts.</td></tr>
+<tr><td><strong>Payroll &amp; ISP</strong></td><td>Supports comparison of staffing, payroll, authorization, and ISP-related units.</td></tr>
+</tbody>
+</table>
+</section>
 
-    <section class="doc-section">
-      <h2>Documentation Pages</h2>
-      <ul class="doc-page-list">
-        <li><a href="/documentation/scheduling/overview.html">Overview</a></li>
-<li><a href="/documentation/scheduling/calendar.html">Scheduling Calendar</a></li>
-<li><a href="/documentation/scheduling/create-shift.html">Create Shift</a></li>
-<li><a href="/documentation/scheduling/edit-shift.html">Edit Shift</a></li>
-<li><a href="/documentation/scheduling/assign-employee.html">Assign Employee</a></li>
-<li><a href="/documentation/scheduling/recurring-schedule.html">Recurring Schedule</a></li>
-<li><a href="/documentation/scheduling/open-shifts.html">Open Shifts</a></li>
-<li><a href="/documentation/scheduling/conflicts.html">Schedule Conflicts</a></li>
-<li><a href="/documentation/scheduling/publish-schedule.html">Publish Schedule</a></li>
-<li><a href="/documentation/scheduling/notifications.html">Schedule Notifications</a></li>
-<li><a href="/documentation/scheduling/print-schedule.html">Print Schedule</a></li>
-<li><a href="/documentation/scheduling/faq.html">FAQ</a></li>
-      </ul>
-    </section>
+<section class="doc-section">
+<h2>Monthly Calendar Overview</h2>
+<p>The Monthly Calendar provides a month-level view of scheduled shifts and allows users to review the number of shifts, assigned DSP, service time, and current status for each date.</p>
+<figure class="doc-figure">
+<img src="/documentation/scheduling/images/schedule-monthly-calendar.jpg" alt="Monthly Schedule Calendar showing shifts by date and assigned DSP">
+<figcaption>Monthly Calendar Overview with scheduled shifts and status indicators.</figcaption>
+</figure>
+<h3>Calendar Status Indicators</h3>
+<ul><li>Not Started</li><li>In Progress</li><li>Completed</li><li>Cancelled</li><li>Backup</li><li>Not Completed</li></ul>
+</section>
 
-    <section class="doc-section">
-      <h2>Screenshot Library</h2>
-      <p>Images for this module are stored in
-         <code>documentation/scheduling/images/</code>.</p>
-    </section>
-    
-      </article>
+<section class="doc-section">
+<h2>Master Events and Weekly Shifts</h2>
+<p>Master Events define recurring service patterns. Weekly Shifts represent generated or manually added service assignments for a specific date.</p>
+<div class="schedule-image-grid">
+<figure><img src="/documentation/scheduling/images/add-event.jpg" alt="Add Master Schedule event"><figcaption>Add a recurring Master Schedule event.</figcaption></figure>
+<figure><img src="/documentation/scheduling/images/edit-event.jpg" alt="Edit Master Schedule event"><figcaption>Edit an existing Master Schedule event.</figcaption></figure>
+<figure><img src="/documentation/scheduling/images/add-shift.jpg" alt="Create new weekly shift"><figcaption>Create a new weekly shift.</figcaption></figure>
+<figure><img src="/documentation/scheduling/images/edit-shift.jpg" alt="Edit weekly shift"><figcaption>Edit an existing weekly shift.</figcaption></figure>
+</div>
+</section>
 
-      <footer class="doc-page-footer">
-        <p>© 2026 True Care System. All rights reserved.</p>
-        <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
-      </footer>
-    </main>
-  </div>
+<section class="doc-section">
+<h2>Information Used in Scheduling</h2>
+<table class="schedule-functions-table">
+<colgroup><col><col></colgroup>
+<thead><tr><th>Information</th><th>How It Supports Scheduling</th></tr></thead>
+<tbody>
+<tr><td><strong>Individual</strong></td><td>Identifies the person receiving the scheduled service.</td></tr>
+<tr><td><strong>Service</strong></td><td>Determines the approved service code and service type.</td></tr>
+<tr><td><strong>DSP</strong></td><td>Identifies the assigned employee when applicable.</td></tr>
+<tr><td><strong>Service Address</strong></td><td>Identifies the approved location where service is expected.</td></tr>
+<tr><td><strong>Start and End Time</strong></td><td>Defines the scheduled service period.</td></tr>
+<tr><td><strong>Status</strong></td><td>Shows whether the shift is not started, active, completed, cancelled, or another configured status.</td></tr>
+<tr><td><strong>Notes</strong></td><td>Stores necessary operational information about the event or shift.</td></tr>
+</tbody>
+</table>
+</section>
 
-  <div class="doc-search-results" id="docSearchResults" hidden></div>
-  <script src="/documentation/assets/documentation.js"></script>
+<section class="doc-section">
+<h2>Awake Monitoring and Backup Plan Shifts</h2>
+<p>The Schedule module includes controls for identifying awake monitoring requirements and backup plan shifts. These options support operational tracking, staffing continuity, and service risk management.</p>
+<div class="doc-notice schedule-training-notice">
+<strong>Advanced Workflow Training Required</strong>
+<p>The complete decision process for awake monitoring, call-off response, DSP replacement, backup plan activation, schedule recovery, and related compliance actions is proprietary. Active Provider customers receive direct role-based training for these workflows.</p>
+</div>
+</section>
+
+<section class="doc-section">
+<h2>General Scheduling Workflow</h2>
+<ol>
+<li>Select the correct Individual.</li>
+<li>Review Individual and service-location information.</li>
+<li>Review current authorizations, ISP units, and approved service dates.</li>
+<li>Create or update recurring Master Schedule events.</li>
+<li>Save the Master Schedule.</li>
+<li>Select the required week.</li>
+<li>Generate weekly shifts.</li>
+<li>Review assigned DSPs, service times, service addresses, and planned units.</li>
+<li>Review Summary &amp; Conflicts.</li>
+<li>Review the Monthly Calendar when a broader scheduling view is needed.</li>
+</ol>
+</section>
+
+<section class="doc-section">
+<h2>Validation Checklist</h2>
+<ul>
+<li>The correct Individual is selected.</li>
+<li>The correct service is used.</li>
+<li>The service is supported by an active authorization when required.</li>
+<li>The correct DSP is assigned when applicable.</li>
+<li>The service address is correct.</li>
+<li>Start and end times are accurate.</li>
+<li>The Master Schedule is saved before Generate is selected.</li>
+<li>The correct week is selected.</li>
+<li>Generated shifts are reviewed for overlaps and conflicts.</li>
+<li>Scheduled units are compared with authorization and ISP limits.</li>
+<li>Backup or awake-monitoring indicators are used only when operationally appropriate.</li>
+</ul>
+</section>
+
+<section class="doc-section">
+<h2>Best Practices</h2>
+<ul>
+<li>Review authorization and ISP information before scheduling.</li>
+<li>Use Master Schedule for stable recurring service patterns.</li>
+<li>Use one-time weekly shifts only when appropriate.</li>
+<li>Verify the selected Individual before making changes.</li>
+<li>Confirm DSP availability and qualifications.</li>
+<li>Review conflicts before finalizing the schedule.</li>
+<li>Keep notes objective, necessary, and operationally relevant.</li>
+<li>Preserve historical scheduling and visit records.</li>
+<li>Use advanced scheduling controls only after Provider training.</li>
+</ul>
+</section>
+
+<section class="doc-section">
+<h2>Security and HIPAA</h2>
+<p>Schedule information may expose Individual names, addresses, service types, DSP assignments, visit times, operational notes, and other protected information.</p>
+<ul>
+<li>Access schedules only for assigned operational duties.</li>
+<li>Apply role-based access and the minimum necessary principle.</li>
+<li>Do not share screenshots containing Individual or employee information through unapproved channels.</li>
+<li>Verify the Provider and Individual before changing a schedule.</li>
+<li>Do not place unnecessary clinical information in Notes.</li>
+<li>Record schedule changes through Audit Logs where applicable.</li>
+</ul>
+</section>
+
+<section class="doc-section">
+<h2>Documentation Scope</h2>
+<p>Public documentation is intentionally limited to the general structure, field purpose, and standard user flow of the Schedule module. Certain advanced procedures are reserved for direct Provider onboarding and operational training.</p>
+<p>This same documentation approach may be used in other True Care System modules when a complete public explanation could expose proprietary workflows, internal controls, specialized compliance procedures, or competitive operational methods.</p>
+</section>
+
+<section class="doc-section">
+<h2>Related Documentation</h2>
+<ul>
+<li><a href="/documentation/scheduling/master-weekly-schedule.html">Master &amp; Weekly Schedule</a></li>
+<li><a href="/documentation/scheduling/monthly-calendar.html">Monthly Calendar</a></li>
+<li><a href="/documentation/scheduling/master-events.html">Master Events</a></li>
+<li><a href="/documentation/scheduling/weekly-shifts.html">Weekly Shifts</a></li>
+<li><a href="/documentation/individual-management/individual-detail.html">Individual Detail</a></li>
+<li><a href="/documentation/authorization/">Authorizations</a></li>
+<li><a href="/documentation/mobile-evv/">Mobile EVV</a></li>
+<li><a href="/documentation/visit-maintenance/">Visit Maintenance</a></li>
+<li><a href="/documentation/time-keeping/">Time Keeping</a></li>
+<li><a href="/documentation/payroll/">Payroll</a></li>
+</ul>
+</section>
+
+<div class="doc-page-navigation schedule-page-navigation">
+<a class="doc-button" href="/documentation/employee-management/search-employee.html">← Back</a>
+<a class="doc-button" href="/documentation/scheduling/index.html">🏠 Home</a>
+<a class="doc-button" href="/documentation/scheduling/master-weekly-schedule.html">Next →</a>
+</div>
+</article>
+
+<footer class="doc-page-footer">
+<p>© 2026 True Care System. All rights reserved.</p>
+<p>Documentation is maintained as part of the True Care System product lifecycle.</p>
+</footer>
+</main>
+</div>
+
+<div class="doc-search-results" id="docSearchResults" hidden></div>
+<script src="/documentation/assets/documentation.js"></script>
 </body>
 </html>
