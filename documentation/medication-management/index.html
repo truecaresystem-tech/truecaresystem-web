@@ -3,44 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Medication documentation for True Care System">
-  <title>Medication | True Care System Documentation</title>
+  <meta name="description" content="Medication Management overview for True Care System, including Orders, MAR, Treatment Record, PRN & Vitals, Inventory & Controlled, and Incidents & Reports.">
+  <title>Medication Management | True Care System Documentation</title>
   <link rel="stylesheet" href="/documentation/assets/documentation.css">
+  <style>
+    .medication-menu-table,.medication-functions-table{width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0;margin-top:16px}
+    .medication-menu-table col:first-child{width:230px}.medication-menu-table col:nth-child(3){width:160px}.medication-functions-table col:first-child{width:250px}
+    .medication-menu-table th,.medication-menu-table td,.medication-functions-table th,.medication-functions-table td{padding:12px 18px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+    .medication-menu-table th,.medication-functions-table th{color:var(--navy);font-weight:800;background:var(--surface)}
+    .medication-menu-table th:first-child,.medication-functions-table th:first-child{border-top-left-radius:10px}.medication-menu-table th:last-child,.medication-functions-table th:last-child{border-top-right-radius:10px}
+    .medication-menu-table td:first-child,.medication-functions-table td:first-child{padding-right:28px}.medication-menu-table td:nth-child(2),.medication-menu-table th:nth-child(2),.medication-functions-table td:nth-child(2),.medication-functions-table th:nth-child(2){padding-left:28px}
+    .medication-menu-table tbody tr:last-child td,.medication-functions-table tbody tr:last-child td{border-bottom:0}.medication-menu-table td:last-child{white-space:nowrap}
+    .doc-article .doc-figure{width:100%;margin:20px 0 28px;text-align:left}.doc-article .doc-figure img{display:block;width:100%;max-width:100%;height:auto;margin:0;border-radius:10px}.doc-article .doc-figure figcaption{width:100%;margin-top:10px;color:var(--muted);text-align:center;font-size:14px}
+    .medication-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:20px}.medication-card{padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--white);box-shadow:0 8px 24px rgba(7,28,63,.06)}.medication-card img{display:block;width:100%;height:auto;border-radius:9px}.medication-card h3{margin:16px 0 8px}.medication-card p{margin:0;color:var(--muted)}.medication-card a{display:inline-flex;margin-top:12px;font-weight:700}
+    .medication-training-notice{border:1px solid #d9c7ff;background:#f5f0ff}.medication-training-notice strong{color:#3d348b}.medication-safety-notice{border:1px solid #f3d48a;background:#fff9e8}.medication-safety-notice strong{color:#8a5a00}
+    .medication-page-navigation{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;align-items:center;width:100%;margin-top:32px}.medication-page-navigation .doc-button:nth-child(1){justify-self:start}.medication-page-navigation .doc-button:nth-child(2){justify-self:center}.medication-page-navigation .doc-button:nth-child(3){justify-self:end}
+    @media(max-width:900px){.medication-card-grid{grid-template-columns:1fr}}
+    @media(max-width:800px){.medication-menu-table,.medication-functions-table{table-layout:auto}.medication-menu-table col,.medication-functions-table col{width:auto!important}.medication-menu-table th,.medication-menu-table td,.medication-functions-table th,.medication-functions-table td{padding:10px 12px}.medication-menu-table td:first-child,.medication-menu-table td:nth-child(2),.medication-menu-table th:nth-child(2),.medication-functions-table td:first-child,.medication-functions-table td:nth-child(2),.medication-functions-table th:nth-child(2){padding-left:12px;padding-right:12px}}
+    @media(max-width:600px){.medication-page-navigation{grid-template-columns:1fr}.medication-page-navigation .doc-button{justify-self:stretch!important;text-align:center}}
+  </style>
 </head>
 <body>
-  <header class="doc-header">
-    <a class="doc-brand" href="/documentation/">
-      <img src="/logo.png" alt="True Care System">
-      <span>
-        <strong>True Care System</strong>
-        <small>Documentation</small>
-      </span>
-    </a>
-
-    <button class="doc-mobile-menu" id="docMobileMenu"
-            aria-label="Open documentation menu">☰</button>
-
-    <div class="doc-header-actions">
-      <label class="doc-search">
-        <span>⌕</span>
-        <input id="docSearchInput" type="search"
-               placeholder="Search documentation..."
-               autocomplete="off">
-      </label>
-      <a href="/" class="doc-back-link">Return to Website</a>
-    </div>
-  </header>
-
-  <div class="doc-layout">
-    <aside class="doc-sidebar" id="docSidebar">
-      <div class="doc-sidebar-title">Documentation</div>
-      <nav>
-        <a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
+<header class="doc-header">
+  <a class="doc-brand" href="/documentation/"><img src="/logo.png" alt="True Care System"><span><strong>True Care System</strong><small>Documentation</small></span></a>
+  <button class="doc-mobile-menu" id="docMobileMenu" type="button" aria-label="Open documentation menu" aria-controls="docSidebar" aria-expanded="false">☰</button>
+  <div class="doc-header-actions"><label class="doc-search"><span aria-hidden="true">⌕</span><input id="docSearchInput" type="search" placeholder="Search documentation..." autocomplete="off" aria-label="Search documentation"></label><a href="/" class="doc-back-link">Return to Website</a></div>
+</header>
+<div class="doc-layout">
+<aside class="doc-sidebar" id="docSidebar"><div class="doc-sidebar-title">Documentation</div><nav aria-label="Documentation modules">
+<a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
 <a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
 <a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
 <a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
 <a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
-<a class="doc-nav-module active" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
+<a class="doc-nav-module active" href="/documentation/medication-management/" aria-current="page"><span class="doc-nav-number">06</span><span>Medication</span></a>
 <a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
 <a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
 <a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
@@ -63,76 +59,43 @@
 <a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
 <a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
 <a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
-<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>Frequently Asked Questions</span></a>
+<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>FAQ</span></a>
 <a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
-      </nav>
-    </aside>
-
-    <main class="doc-main">
-      <div class="doc-breadcrumb">
-        <a href="/documentation/">Documentation</a>
-        <span>›</span><a href='/documentation/medication-management/'>Medication</a>
-        <span>›</span><span>Medication</span>
-      </div>
-
-      <article class="doc-article">
-        <header class="doc-article-header">
-          <div>
-            <p class="doc-eyebrow">TRUE CARE SYSTEM DOCUMENTATION</p>
-            <h1>Medication</h1>
-          </div>
-
-          <dl class="doc-metadata">
-            <div><dt>Document ID</dt><dd>MED-DOC-000</dd></div>
-            <div><dt>Version</dt><dd>1.0</dd></div>
-            <div><dt>Status</dt><dd>Structure Created</dd></div>
-            <div><dt>Last Updated</dt><dd>Pending</dd></div>
-          </dl>
-        </header>
-
-        
-    <div class="doc-notice doc-notice-info">
-      <strong>Module documentation structure created</strong>
-      <p>Each page below contains the standard enterprise template and
-         a named screenshot placeholder.</p>
-    </div>
-
-    <section class="doc-section">
-      <h2>Purpose</h2>
-      <p>This section will contain the approved documentation for
-         Medication.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Documentation Pages</h2>
-      <ul class="doc-page-list">
-        <li><a href="/documentation/medication-management/overview.html">Overview</a></li>
-<li><a href="/documentation/medication-management/orders.html">Orders</a></li>
-<li><a href="/documentation/medication-management/mar.html">MAR</a></li>
-<li><a href="/documentation/medication-management/treatment-record.html">Treatment Record</a></li>
-<li><a href="/documentation/medication-management/prn-vitals.html">PRN &amp; Vitals</a></li>
-<li><a href="/documentation/medication-management/inventory-controlled.html">Inventory &amp; Controlled</a></li>
-<li><a href="/documentation/medication-management/incidents-reports.html">Incidents &amp; Reports</a></li>
-<li><a href="/documentation/medication-management/faq.html">FAQ</a></li>
-      </ul>
-    </section>
-
-    <section class="doc-section">
-      <h2>Screenshot Library</h2>
-      <p>Images for this module are stored in
-         <code>documentation/medication-management/images/</code>.</p>
-    </section>
-    
-      </article>
-
-      <footer class="doc-page-footer">
-        <p>© 2026 True Care System. All rights reserved.</p>
-        <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
-      </footer>
-    </main>
-  </div>
-
-  <div class="doc-search-results" id="docSearchResults" hidden></div>
-  <script src="/documentation/assets/documentation.js"></script>
+</nav></aside>
+<main class="doc-main">
+<div class="doc-breadcrumb"><a href="/documentation/">Documentation</a><span>›</span><span>Medication</span></div>
+<article class="doc-article">
+<header class="doc-article-header"><div><p class="doc-eyebrow">MEDICATION MANAGEMENT</p><h1>Medication</h1></div><dl class="doc-metadata"><div><dt>Document ID</dt><dd>MED-DOC-001</dd></div><div><dt>Version</dt><dd>1.0</dd></div><div><dt>Status</dt><dd>Draft</dd></div><div><dt>Last Updated</dt><dd>07/23/2026</dd></div></dl></header>
+<div class="doc-notice doc-notice-info"><strong>Purpose</strong><p>The Medication module supports physician orders, Medication Administration Records, treatment documentation, PRN administration, vital signs, inventory tracking, controlled-substance oversight, and medication-related incident reporting.</p></div>
+<div class="doc-notice medication-training-notice"><strong>HIPAA, Clinical Safety, and Direct Provider Training Notice</strong><p>Medication management is one of the most sensitive clinical and HIPAA-related areas within True Care System. To protect Individual health information, medication safety, Provider-specific clinical procedures, and proprietary compliance workflows, some advanced functions are intentionally not described in full within this public guide.</p><p>When a Provider becomes an official True Care System customer, the True Care System team will provide direct, role-based training to the Provider's licensed nurses and other personnel formally authorized and qualified to administer or manage medications under the Provider's policies and applicable requirements.</p></div>
+<div class="doc-notice medication-safety-notice"><strong>Clinical Responsibility</strong><p>True Care System supports documentation and operational workflows. Medication orders, administration, assessment, delegation, monitoring, and follow-up must be completed only by personnel authorized under the Provider's policies, professional scope, physician orders, and applicable laws and regulations.</p></div>
+<section class="doc-section"><h2>Medication Menu</h2><p>The Medication menu contains six primary workspaces. These pages follow the visible menu structure currently available in True Care System.</p><figure class="doc-figure"><img src="/documentation/medication-management/images/menu-medication.jpg" alt="Medication menu"><figcaption>Medication menu with the six primary medication-management workspaces.</figcaption></figure>
+<table class="medication-menu-table"><colgroup><col><col><col></colgroup><thead><tr><th>Menu</th><th>Purpose</th><th>Documentation</th></tr></thead><tbody>
+<tr><td><strong>Orders</strong></td><td>Create and maintain scheduled and PRN physician medication orders.</td><td><a href="/documentation/medication-management/orders.html">Open guide</a></td></tr>
+<tr><td><strong>MAR</strong></td><td>Review monthly medication administration records and administration status.</td><td><a href="/documentation/medication-management/mar.html">Open guide</a></td></tr>
+<tr><td><strong>Treatment Record</strong></td><td>Maintain monthly treatment documentation and nursing summary information.</td><td><a href="/documentation/medication-management/treatment-record.html">Open guide</a></td></tr>
+<tr><td><strong>PRN &amp; Vitals</strong></td><td>Record PRN administrations, responses, notes, and vital-sign information.</td><td><a href="/documentation/medication-management/prn-vitals.html">Open guide</a></td></tr>
+<tr><td><strong>Inventory &amp; Controlled</strong></td><td>Track medication inventory, receipts, dispensing, waste, adjustments, and controlled items.</td><td><a href="/documentation/medication-management/inventory-controlled.html">Open guide</a></td></tr>
+<tr><td><strong>Incidents &amp; Reports</strong></td><td>Record medication-related incidents, actions taken, notifications, follow-up, and reports.</td><td><a href="/documentation/medication-management/incidents-reports.html">Open guide</a></td></tr>
+</tbody></table></section>
+<section class="doc-section"><h2>Orders</h2><p>Orders is the master medication profile for an Individual. It displays medication, route, order type, schedule, instructions, start and end dates, status, prescriber, pharmacy, dose information, and related clinical notes.</p><figure class="doc-figure"><img src="/documentation/medication-management/images/medication-order-screen.jpg" alt="Medication Orders"><figcaption>Medication Orders page with order list, filters, and master data snapshot.</figcaption></figure><h3>Add Order</h3><p>The Add Order form supports medication identity, form, strength, route, dose, schedule, frequency, status, administration times, PRN reason, directions, special instructions, prescription information, prescriber, pharmacy, and clinical notes.</p><figure class="doc-figure"><img src="/documentation/medication-management/images/add-order.jpg" alt="Add medication order"><figcaption>Add Order form for creating a scheduled or PRN medication order.</figcaption></figure><p>Detailed order validation, clinical review, authorization, correction, discontinuation, and medication-change procedures are included in direct Provider training.</p></section>
+<section class="doc-section"><h2>MAR</h2><p>The Medication Administration Record provides a monthly view of scheduled medication doses and saved administration outcomes for the selected Individual.</p><figure class="doc-figure"><img src="/documentation/medication-management/images/mar.jpg" alt="Monthly MAR"><figcaption>Monthly MAR with medication rows, scheduled administration times, and status indicators.</figcaption></figure><h3>Common MAR Status Indicators</h3><ul><li>Given</li><li>Missed</li><li>Refused</li><li>Held</li><li>Late</li><li>Error</li><li>Scheduled</li></ul><p>The complete administration decision process, late or missed dose response, medication refusal handling, error escalation, correction procedures, and clinical follow-up are reserved for authorized Provider training.</p></section>
+<section class="doc-section"><h2>Treatment Record</h2><p>Treatment Record supports monthly treatment tracking and a Nursing Monthly Summary. The screen includes service or treatment categories, daily treatment cells, Individual demographic information, diagnosis, allergies, plan-of-care review, nursing comments, and signature information.</p><figure class="doc-figure"><img src="/documentation/medication-management/images/treatment-record.jpg" alt="Treatment Record"><figcaption>Monthly Treatment Record and Nursing Monthly Summary.</figcaption></figure></section>
+<section class="doc-section"><h2>PRN &amp; Vitals</h2><p>PRN &amp; Vitals supports documentation of as-needed medication administration, dose, route, reason, result or response, notes, and related vital signs.</p><figure class="doc-figure"><img src="/documentation/medication-management/images/prn-vitals.jpg" alt="PRN and Vitals"><figcaption>PRN Administration entry form and saved PRN Log.</figcaption></figure><p>PRN assessment, effectiveness review, repeat-dose restrictions, notification thresholds, vital-sign interpretation, and escalation procedures are covered through direct clinical training.</p></section>
+<section class="doc-section"><h2>Inventory &amp; Controlled</h2><p>Inventory &amp; Controlled tracks the current quantity on hand and supports medication transactions such as receive, dispense, waste, and adjust.</p><figure class="doc-figure"><img src="/documentation/medication-management/images/inventory-controlled.jpg" alt="Medication Inventory"><figcaption>On-hand inventory, medication transactions, and recent transaction history.</figcaption></figure>
+<table class="medication-functions-table"><colgroup><col><col></colgroup><thead><tr><th>Transaction Type</th><th>General Purpose</th></tr></thead><tbody><tr><td><strong>Receive</strong></td><td>Adds medication received from a pharmacy or approved source.</td></tr><tr><td><strong>Dispense</strong></td><td>Records medication removed from inventory for administration or authorized use.</td></tr><tr><td><strong>Waste</strong></td><td>Records medication destroyed or discarded under approved procedures.</td></tr><tr><td><strong>Adjust</strong></td><td>Corrects inventory after approved reconciliation or investigation.</td></tr></tbody></table><p>Controlled-substance counting, witnessing, discrepancy response, waste procedures, reconciliation, investigation, and audit requirements are not published in full and require direct Provider training.</p></section>
+<section class="doc-section"><h2>Incidents &amp; Reports</h2><p>Incidents &amp; Reports supports medication-related incident documentation, severity, medication name, description, immediate action, reported-by information, notification, follow-up, and monthly reporting.</p><figure class="doc-figure"><img src="/documentation/medication-management/images/incidents-reports.jpg" alt="Medication Incidents"><figcaption>Medication Incident entry form and monthly Incident Log.</figcaption></figure><p>Formal investigation, clinical escalation, physician or family notification, corrective action, quality review, and regulatory reporting procedures are included in direct Provider training and must follow the Provider's approved policies.</p></section>
+<section class="doc-section"><h2>Medication Documentation Overview</h2><div class="medication-card-grid"><article class="medication-card"><img src="/documentation/medication-management/images/medication-order-screen.jpg" alt="Medication Orders"><h3>Medication Orders</h3><p>Maintain the master medication profile and physician-order information.</p><a href="/documentation/medication-management/orders.html">Open Orders guide →</a></article><article class="medication-card"><img src="/documentation/medication-management/images/mar.jpg" alt="MAR"><h3>MAR</h3><p>Review scheduled administration and saved medication outcomes by month.</p><a href="/documentation/medication-management/mar.html">Open MAR guide →</a></article><article class="medication-card"><img src="/documentation/medication-management/images/prn-vitals.jpg" alt="PRN and Vitals"><h3>PRN &amp; Vitals</h3><p>Document as-needed administration, response, notes, and vital signs.</p><a href="/documentation/medication-management/prn-vitals.html">Open PRN &amp; Vitals guide →</a></article><article class="medication-card"><img src="/documentation/medication-management/images/inventory-controlled.jpg" alt="Inventory"><h3>Inventory &amp; Controlled</h3><p>Track on-hand medication and authorized inventory transactions.</p><a href="/documentation/medication-management/inventory-controlled.html">Open Inventory guide →</a></article></div></section>
+<section class="doc-section"><h2>General Medication Workflow</h2><ol><li>Select the correct Individual.</li><li>Review active physician medication orders.</li><li>Confirm medication identity, route, dose, schedule, and order status.</li><li>Review MAR or treatment documentation for the selected month.</li><li>Record medication administration only when authorized and appropriate.</li><li>Record PRN reason and response when applicable.</li><li>Update medication inventory through the appropriate transaction type.</li><li>Document medication incidents and immediate actions when required.</li><li>Complete follow-up, notification, and reporting under Provider policy.</li></ol></section>
+<section class="doc-section"><h2>Validation Checklist</h2><ul><li>The correct Provider and Individual are selected.</li><li>The medication matches the active physician order.</li><li>The medication name, strength, form, route, and dose are correct.</li><li>The scheduled or PRN order type is correct.</li><li>Administration time and status are accurate.</li><li>PRN reason and response are complete when required.</li><li>Inventory quantity and transaction type are accurate.</li><li>Medication incidents are documented promptly and objectively.</li><li>Required notifications and follow-up are completed.</li><li>Only authorized staff perform medication-management actions.</li></ul></section>
+<section class="doc-section"><h2>Security and HIPAA</h2><p>Medication records contain highly sensitive protected health information and require strict role-based access, minimum necessary use, and auditability.</p><ul><li>Access medication records only for an approved care or operational purpose.</li><li>Do not share medication screenshots through unapproved channels.</li><li>Verify the Individual before reviewing or entering medication information.</li><li>Do not document information unrelated to the medication or clinical event.</li><li>Protect prescriber, pharmacy, diagnosis, allergy, and treatment information.</li><li>Record access, changes, deletions, and administrative actions through Audit Logs where applicable.</li><li>Follow the Provider's medication-administration and incident-reporting policies.</li></ul></section>
+<section class="doc-section"><h2>Direct Provider Training Scope</h2><p>Official Provider customers receive direct training for specialized medication workflows, including:</p><ul><li>Medication order review and lifecycle management</li><li>Scheduled and PRN order configuration</li><li>MAR administration and exception handling</li><li>Missed, refused, held, late, and error workflows</li><li>PRN assessment, response, and effectiveness documentation</li><li>Vital-sign documentation and escalation</li><li>Treatment Record and Nursing Monthly Summary completion</li><li>Inventory receipt, dispense, waste, and adjustment</li><li>Controlled-substance reconciliation and witnessing</li><li>Medication incident response, notification, and reporting</li><li>HIPAA, access control, audit-log, and documentation requirements</li></ul></section>
+<section class="doc-section"><h2>Related Documentation</h2><ul><li><a href="/documentation/medication-management/orders.html">Orders</a></li><li><a href="/documentation/medication-management/mar.html">MAR</a></li><li><a href="/documentation/medication-management/treatment-record.html">Treatment Record</a></li><li><a href="/documentation/medication-management/prn-vitals.html">PRN &amp; Vitals</a></li><li><a href="/documentation/medication-management/inventory-controlled.html">Inventory &amp; Controlled</a></li><li><a href="/documentation/medication-management/incidents-reports.html">Incidents &amp; Reports</a></li><li><a href="/documentation/individual-management/individual-detail.html">Individual Detail</a></li><li><a href="/documentation/hipaa-compliance/">HIPAA</a></li><li><a href="/documentation/security/">Security</a></li><li><a href="/documentation/audit-logs/">Audit Logs</a></li></ul></section>
+<div class="doc-page-navigation medication-page-navigation"><a class="doc-button" href="/documentation/scheduling/weekly-shifts.html">← Back</a><a class="doc-button" href="/documentation/medication-management/index.html">🏠 Home</a><a class="doc-button" href="/documentation/medication-management/orders.html">Next →</a></div>
+</article>
+<footer class="doc-page-footer"><p>© 2026 True Care System. All rights reserved.</p><p>Documentation is maintained as part of the True Care System product lifecycle.</p></footer>
+</main></div>
+<div class="doc-search-results" id="docSearchResults" hidden></div>
+<script src="/documentation/assets/documentation.js"></script>
 </body>
 </html>
