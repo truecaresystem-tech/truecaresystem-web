@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="BSC Scorecard documentation for True Care System">
-  <title>BSC Scorecard | True Care System Documentation</title>
-  <link rel="stylesheet" href="/documentation/assets/documentation.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Review Provider-level strategic performance across the four Balanced Scorecard perspectives.">
+<title>BSC Scorecard | True Care System Documentation</title>
+<link rel="stylesheet" href="/documentation/assets/documentation.css">
 </head>
 <body>
-  <header class="doc-header">
-    <a class="doc-brand" href="/documentation/">
-      <img src="/logo.png" alt="True Care System">
-      <span>
-        <strong>True Care System</strong>
-        <small>Documentation</small>
-      </span>
-    </a>
 
-    <button class="doc-mobile-menu" id="docMobileMenu"
-            aria-label="Open documentation menu">☰</button>
+<header class="doc-header">
+  <a class="doc-brand" href="/documentation/">
+    <img src="/logo.png" alt="True Care System">
+    <span><strong>True Care System</strong><small>Documentation</small></span>
+  </a>
+  <button class="doc-mobile-menu" id="docMobileMenu" type="button"
+          aria-label="Open documentation menu" aria-controls="docSidebar"
+          aria-expanded="false">☰</button>
+  <div class="doc-header-actions">
+    <label class="doc-search">
+      <span aria-hidden="true">⌕</span>
+      <input id="docSearchInput" type="search"
+             placeholder="Search documentation..."
+             autocomplete="off"
+             aria-label="Search documentation">
+    </label>
+    <a href="/" class="doc-back-link">Return to Website</a>
+  </div>
+</header>
 
-    <div class="doc-header-actions">
-      <label class="doc-search">
-        <span>⌕</span>
-        <input id="docSearchInput" type="search"
-               placeholder="Search documentation..."
-               autocomplete="off">
-      </label>
-      <a href="/" class="doc-back-link">Return to Website</a>
-    </div>
-  </header>
-
-  <div class="doc-layout">
-    <aside class="doc-sidebar" id="docSidebar">
-      <div class="doc-sidebar-title">Documentation</div>
-      <nav>
-        <a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
+<div class="doc-layout">
+<aside class="doc-sidebar" id="docSidebar">
+  <div class="doc-sidebar-title">Documentation</div>
+  <nav aria-label="Documentation modules">
+    
+<a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
 <a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
 <a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
 <a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
@@ -44,7 +43,7 @@
 <a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
 <a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
 <a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
-<a class="doc-nav-module active" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span>KPI</span></a>
+<a class="doc-nav-module active" href="/documentation/kpi/" aria-current="page"><span class="doc-nav-number">10</span><span>KPI</span></a>
 <a class="doc-nav-module" href="/documentation/time-keeping/"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
 <a class="doc-nav-module" href="/documentation/mobile-evv/"><span class="doc-nav-number">12</span><span>Mobile EVV</span></a>
 <a class="doc-nav-module" href="/documentation/visit-maintenance/"><span class="doc-nav-number">13</span><span>Visit Maintenance</span></a>
@@ -63,148 +62,74 @@
 <a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
 <a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
 <a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
-<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>Frequently Asked Questions</span></a>
+<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>FAQ</span></a>
 <a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
-      </nav>
-    </aside>
 
-    <main class="doc-main">
-      <div class="doc-breadcrumb">
-        <a href="/documentation/">Documentation</a>
-        <span>›</span><a href='/documentation/kpi/'>KPI</a>
-        <span>›</span><span>BSC Scorecard</span>
-      </div>
+  </nav>
+</aside>
 
-      <article class="doc-article">
-        <header class="doc-article-header">
-          <div>
-            <p class="doc-eyebrow">TRUE CARE SYSTEM DOCUMENTATION</p>
-            <h1>BSC Scorecard</h1>
-          </div>
 
-          <dl class="doc-metadata">
-            <div><dt>Document ID</dt><dd>KPI-DOC-002</dd></div>
-            <div><dt>Version</dt><dd>1.0</dd></div>
-            <div><dt>Status</dt><dd>Planned</dd></div>
-            <div><dt>Last Updated</dt><dd>Pending</dd></div>
-          </dl>
-        </header>
-
-        
-    <div class="doc-notice doc-notice-info">
-      <strong>Documentation placeholder</strong>
-      <p>This page has been created and is ready for detailed content,
-         screenshots and review.</p>
-    </div>
-
-    <section class="doc-section">
-      <h2>Purpose</h2>
-      <p class="doc-pending">Detailed purpose will be added during module documentation.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Who Can Use This Feature</h2>
-      <p class="doc-pending">Roles and permissions will be documented after verification.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Navigation</h2>
-      <p class="doc-pending">The exact navigation path will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Business Flow</h2>
-      <p class="doc-pending">The approved business workflow will be documented here.</p>
-    </section>
-
-    
-    <section class="doc-section">
-      <h2>Screenshot</h2>
-      <div class="doc-screenshot-placeholder">
-        <div class="doc-placeholder-icon">▧</div>
-        <div>
-          <strong>Screenshot Required</strong>
-          <p><b>Screenshot ID:</b> KPI-002</p>
-          <p><b>Screen:</b> BSC Scorecard</p>
-          <p><b>File:</b> images/KPI-002-bsc-scorecard.jpg</p>
-          <p><b>Recommended capture:</b> Desktop, 100% browser zoom,
-             full page title, navigation, actions, filters and data area visible.</p>
-          <p><b>Privacy requirement:</b> Use demo or training data only.
-             Do not include real PHI, credentials, passwords, SSNs or Medicaid IDs.</p>
-        </div>
-      </div>
-    </section>
-    
-
-    <section class="doc-section">
-      <h2>Interface Overview</h2>
-      <p class="doc-pending">Buttons, fields, filters, tabs and page regions will be explained here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Step-by-Step Instructions</h2>
-      <ol class="doc-steps">
-        <li><span>Step instructions pending.</span></li>
-        <li><span>Step instructions pending.</span></li>
-        <li><span>Step instructions pending.</span></li>
-      </ol>
-    </section>
-
-    <section class="doc-section">
-      <h2>Permissions</h2>
-      <p class="doc-pending">Access requirements and permission rules will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Validation Rules</h2>
-      <p class="doc-pending">Required fields and business validation rules will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Tips</h2>
-      <p class="doc-pending">Recommended usage tips will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Warnings</h2>
-      <p class="doc-pending">Important operational and data safety warnings will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>HIPAA Considerations</h2>
-      <p class="doc-pending">PHI handling and minimum-necessary requirements will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Audit Log Behavior</h2>
-      <p class="doc-pending">Expected audit events and recorded details will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Troubleshooting</h2>
-      <p class="doc-pending">Known issues and recommended resolutions will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Frequently Asked Questions</h2>
-      <p class="doc-pending">Frequently asked questions will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Related Documentation</h2>
-      <p><a href="/documentation/kpi/">Return to KPI</a></p>
-    </section>
-    
-      </article>
-
-      <footer class="doc-page-footer">
-        <p>© 2026 True Care System. All rights reserved.</p>
-        <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
-      </footer>
-    </main>
+<main class="doc-main">
+<div class="doc-breadcrumb">
+  <a href="/documentation/">Documentation</a><span>›</span>
+  <a href="/documentation/kpi/">KPI</a><span>›</span>
+  <span>BSC Scorecard</span>
+</div>
+<article class="doc-article">
+<header class="doc-article-header">
+  <div>
+    <p class="doc-eyebrow">KPI • SCORECARDS</p>
+    <h1>BSC Scorecard</h1>
+    <p>Review Provider-level strategic performance across the four Balanced Scorecard perspectives.</p>
   </div>
+  
+<dl class="doc-metadata">
+  <div><dt>Document ID</dt><dd>KPI-DOC-002</dd></div>
+  <div><dt>Version</dt><dd>1.0</dd></div>
+  <div><dt>Status</dt><dd>Draft</dd></div>
+  <div><dt>Last Updated</dt><dd>07/25/2026</dd></div>
+</dl>
 
-  <div class="doc-search-results" id="docSearchResults" hidden></div>
-  <script src="/documentation/assets/documentation.js"></script>
+</header>
+
+<div class="doc-notice kpi-note">
+  <strong>Performance governance and proprietary workflow notice</strong>
+  <p>KPI scorecards may combine operational, staffing, billing, compliance, and service-quality information. Screenshots in this public guide use demonstration or masked data. True Care System does not publicly disclose every formula, weighting rule, approval control, data-source mapping, or governance workflow. Advanced configuration and implementation procedures are provided directly to authorized Provider customers during training.</p>
+</div>
+
+
+<section class="doc-section"><h2>Purpose</h2><p>The BSC Scorecard summarizes overall Provider performance and organizes KPI results into Financial, Customer, Internal Process, and Learning &amp; Growth perspectives. It also displays strategic objectives, department rankings, and score trends.</p>
+<figure class="kpi-figure">
+  <img src="/documentation/kpi/images/bsc-scorecard.jpg" alt="Provider-level BSC Scorecard with perspective results, highlights, objectives, department ranking, and trend.">
+  <figcaption>Provider-level BSC Scorecard with perspective results, highlights, objectives, department ranking, and trend.</figcaption>
+</figure>
+</section>
+<section class="doc-section"><h2>Scorecard Components</h2><div class="kpi-grid">
+<div class="kpi-card"><small>OVERALL SCORE</small><h3>Provider performance</h3><p>Displays the current score, period, Provider, and historical comparison.</p></div>
+<div class="kpi-card"><small>FOUR PERSPECTIVES</small><h3>Balanced measurement</h3><p>Separates strategic performance into Financial, Customer, Internal Process, and Learning &amp; Growth.</p></div>
+<div class="kpi-card"><small>HIGHLIGHTS</small><h3>Key measures</h3><p>Shows selected KPI values and associated performance scores.</p></div>
+<div class="kpi-card"><small>OBJECTIVES</small><h3>Strategic progress</h3><p>Tracks progress toward Provider-level strategic goals.</p></div>
+<div class="kpi-card"><small>DEPARTMENT RANKING</small><h3>Comparative view</h3><p>Ranks departments using the approved KPI framework.</p></div>
+<div class="kpi-card"><small>TREND</small><h3>Historical movement</h3><p>Shows how the overall BSC score changes across reporting periods.</p></div>
+</div></section>
+<section class="doc-section"><h2>Review Guidance</h2><p>Leadership should review the overall score together with the perspective scores. A strong overall score may still contain an at-risk objective or KPI that requires corrective action.</p></section>
+
+<div class="doc-page-navigation">
+  <a class="doc-button" href="index.html">← Back</a>
+  <a class="doc-button" href="index.html">🏠 Home</a>
+  <a class="doc-button" href="strategy-map.html">Next →</a>
+</div>
+</article>
+<footer class="doc-page-footer">
+  <p>© 2026 True Care System. All rights reserved.</p>
+  <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
+</footer>
+</main>
+
+</div>
+
+<div class="doc-search-results" id="docSearchResults" hidden></div>
+<script src="/documentation/assets/documentation.js"></script>
 </body>
 </html>
+

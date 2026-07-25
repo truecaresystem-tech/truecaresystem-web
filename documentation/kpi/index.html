@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="KPI documentation for True Care System">
-  <title>KPI | True Care System Documentation</title>
-  <link rel="stylesheet" href="/documentation/assets/documentation.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Balanced Scorecard, strategic planning, performance measurement, and KPI governance for True Care System Providers.">
+<title>KPI | True Care System Documentation</title>
+<link rel="stylesheet" href="/documentation/assets/documentation.css">
 </head>
 <body>
-  <header class="doc-header">
-    <a class="doc-brand" href="/documentation/">
-      <img src="/logo.png" alt="True Care System">
-      <span>
-        <strong>True Care System</strong>
-        <small>Documentation</small>
-      </span>
-    </a>
 
-    <button class="doc-mobile-menu" id="docMobileMenu"
-            aria-label="Open documentation menu">☰</button>
+<header class="doc-header">
+  <a class="doc-brand" href="/documentation/">
+    <img src="/logo.png" alt="True Care System">
+    <span><strong>True Care System</strong><small>Documentation</small></span>
+  </a>
+  <button class="doc-mobile-menu" id="docMobileMenu" type="button"
+          aria-label="Open documentation menu" aria-controls="docSidebar"
+          aria-expanded="false">☰</button>
+  <div class="doc-header-actions">
+    <label class="doc-search">
+      <span aria-hidden="true">⌕</span>
+      <input id="docSearchInput" type="search"
+             placeholder="Search documentation..."
+             autocomplete="off"
+             aria-label="Search documentation">
+    </label>
+    <a href="/" class="doc-back-link">Return to Website</a>
+  </div>
+</header>
 
-    <div class="doc-header-actions">
-      <label class="doc-search">
-        <span>⌕</span>
-        <input id="docSearchInput" type="search"
-               placeholder="Search documentation..."
-               autocomplete="off">
-      </label>
-      <a href="/" class="doc-back-link">Return to Website</a>
-    </div>
-  </header>
-
-  <div class="doc-layout">
-    <aside class="doc-sidebar" id="docSidebar">
-      <div class="doc-sidebar-title">Documentation</div>
-      <nav>
-        <a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
+<div class="doc-layout">
+<aside class="doc-sidebar" id="docSidebar">
+  <div class="doc-sidebar-title">Documentation</div>
+  <nav aria-label="Documentation modules">
+    
+<a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
 <a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
 <a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
 <a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
@@ -44,7 +43,7 @@
 <a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
 <a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
 <a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
-<a class="doc-nav-module active" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span>KPI</span></a>
+<a class="doc-nav-module active" href="/documentation/kpi/" aria-current="page"><span class="doc-nav-number">10</span><span>KPI</span></a>
 <a class="doc-nav-module" href="/documentation/time-keeping/"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
 <a class="doc-nav-module" href="/documentation/mobile-evv/"><span class="doc-nav-number">12</span><span>Mobile EVV</span></a>
 <a class="doc-nav-module" href="/documentation/visit-maintenance/"><span class="doc-nav-number">13</span><span>Visit Maintenance</span></a>
@@ -63,86 +62,113 @@
 <a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
 <a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
 <a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
-<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>Frequently Asked Questions</span></a>
+<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>FAQ</span></a>
 <a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
-      </nav>
-    </aside>
 
-    <main class="doc-main">
-      <div class="doc-breadcrumb">
-        <a href="/documentation/">Documentation</a>
-        <span>›</span><a href='/documentation/kpi/'>KPI</a>
-        <span>›</span><span>KPI</span>
-      </div>
+  </nav>
+</aside>
 
-      <article class="doc-article">
-        <header class="doc-article-header">
-          <div>
-            <p class="doc-eyebrow">TRUE CARE SYSTEM DOCUMENTATION</p>
-            <h1>KPI</h1>
-          </div>
 
-          <dl class="doc-metadata">
-            <div><dt>Document ID</dt><dd>KPI-DOC-000</dd></div>
-            <div><dt>Version</dt><dd>1.0</dd></div>
-            <div><dt>Status</dt><dd>Structure Created</dd></div>
-            <div><dt>Last Updated</dt><dd>Pending</dd></div>
-          </dl>
-        </header>
-
-        
-    <div class="doc-notice doc-notice-info">
-      <strong>Module documentation structure created</strong>
-      <p>Each page below contains the standard enterprise template and
-         a named screenshot placeholder.</p>
-    </div>
-
-    <section class="doc-section">
-      <h2>Purpose</h2>
-      <p>This section will contain the approved documentation for
-         KPI.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Documentation Pages</h2>
-      <ul class="doc-page-list">
-        <li><a href="/documentation/kpi/overview.html">Overview</a></li>
-<li><a href="/documentation/kpi/bsc-scorecard.html">BSC Scorecard</a></li>
-<li><a href="/documentation/kpi/strategy-map.html">Strategy Map</a></li>
-<li><a href="/documentation/kpi/goals-targets.html">Goals &amp; Targets</a></li>
-<li><a href="/documentation/kpi/kpi-ranking.html">KPI Ranking</a></li>
-<li><a href="/documentation/kpi/performance-trends.html">Performance Trends</a></li>
-<li><a href="/documentation/kpi/organization-kpi.html">Organization KPI</a></li>
-<li><a href="/documentation/kpi/department-kpi.html">Department KPI</a></li>
-<li><a href="/documentation/kpi/manager-kpi.html">Manager KPI</a></li>
-<li><a href="/documentation/kpi/employee-kpi.html">Employee KPI</a></li>
-<li><a href="/documentation/kpi/monthly-reports.html">Monthly Reports</a></li>
-<li><a href="/documentation/kpi/quarterly-reports.html">Quarterly Reports</a></li>
-<li><a href="/documentation/kpi/annual-reports.html">Annual Reports</a></li>
-<li><a href="/documentation/kpi/scorecard-reports.html">Scorecard Reports</a></li>
-<li><a href="/documentation/kpi/performance-reports.html">Performance Reports</a></li>
-<li><a href="/documentation/kpi/pdf-export.html">PDF Export</a></li>
-<li><a href="/documentation/kpi/excel-export.html">Excel Export</a></li>
-<li><a href="/documentation/kpi/faq.html">FAQ</a></li>
-      </ul>
-    </section>
-
-    <section class="doc-section">
-      <h2>Screenshot Library</h2>
-      <p>Images for this module are stored in
-         <code>documentation/kpi/images/</code>.</p>
-    </section>
-    
-      </article>
-
-      <footer class="doc-page-footer">
-        <p>© 2026 True Care System. All rights reserved.</p>
-        <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
-      </footer>
-    </main>
+<main class="doc-main">
+<div class="doc-breadcrumb">
+  <a href="/documentation/">Documentation</a><span>›</span>
+  <a href="/documentation/kpi/">KPI</a><span>›</span>
+  <span>KPI</span>
+</div>
+<article class="doc-article">
+<header class="doc-article-header">
+  <div>
+    <p class="doc-eyebrow">KPI • SCORECARDS</p>
+    <h1>KPI</h1>
+    <p>Balanced Scorecard, strategic planning, performance measurement, and KPI governance for True Care System Providers.</p>
   </div>
+  
+<dl class="doc-metadata">
+  <div><dt>Document ID</dt><dd>KPI-DOC-001</dd></div>
+  <div><dt>Version</dt><dd>1.0</dd></div>
+  <div><dt>Status</dt><dd>Draft</dd></div>
+  <div><dt>Last Updated</dt><dd>07/25/2026</dd></div>
+</dl>
 
-  <div class="doc-search-results" id="docSearchResults" hidden></div>
-  <script src="/documentation/assets/documentation.js"></script>
+</header>
+
+<div class="doc-notice kpi-note">
+  <strong>Performance governance and proprietary workflow notice</strong>
+  <p>KPI scorecards may combine operational, staffing, billing, compliance, and service-quality information. Screenshots in this public guide use demonstration or masked data. True Care System does not publicly disclose every formula, weighting rule, approval control, data-source mapping, or governance workflow. Advanced configuration and implementation procedures are provided directly to authorized Provider customers during training.</p>
+</div>
+
+
+<section class="doc-section">
+  <h2>KPI Management Overview</h2>
+  <p>The KPI menu provides Balanced Scorecard views, strategic planning tools, rankings, trends, and scorecards for the organization, departments, managers, and employees. These workspaces support performance measurement across Financial, Customer, Internal Process, and Learning &amp; Growth perspectives.</p>
+  
+<figure class="kpi-figure">
+  <img src="/documentation/kpi/images/menu-kpi.jpg" alt="KPI menu showing Scorecards, organizational scorecards, and report categories.">
+  <figcaption>KPI menu showing Scorecards, organizational scorecards, and report categories.</figcaption>
+</figure>
+
+</section>
+
+<section class="doc-section">
+  <h2>Scorecards and Performance Workspaces</h2>
+  <table class="kpi-table">
+    <colgroup><col><col><col></colgroup>
+    <thead><tr><th>Workspace</th><th>General Purpose</th><th>Documentation</th></tr></thead>
+    <tbody>
+      <tr><td><strong>BSC Scorecard</strong></td><td>Review the Provider-level Balanced Scorecard, perspective scores, strategic objectives, department ranking, and twelve-month trend.</td><td><a href="bsc-scorecard.html">Open guide</a></td></tr>
+      <tr><td><strong>Strategy Map</strong></td><td>Connect mission, vision, strategic priorities, Balanced Scorecard perspectives, and cause-and-effect relationships.</td><td><a href="strategy-map.html">Open guide</a></td></tr>
+      <tr><td><strong>Goals &amp; Targets</strong></td><td>Define measurable strategic goals, target values, accountable owners, progress, quarterly roadmap, and governance checks.</td><td><a href="goals-and-targets.html">Open guide</a></td></tr>
+      <tr><td><strong>KPI Ranking</strong></td><td>Compare perspectives, departments, employees, strengths, movement, and at-risk KPI areas.</td><td><a href="kpi-ranking.html">Open guide</a></td></tr>
+      <tr><td><strong>Performance Trends</strong></td><td>Review twelve-month performance movement, perspective trends, monthly scores, and early-warning indicators.</td><td><a href="performance-trends.html">Open guide</a></td></tr>
+      <tr><td><strong>Organization KPI</strong></td><td>Maintain and approve the organization-wide scorecard with weighted perspectives, KPI owners, targets, actuals, and status.</td><td><a href="organization-kpi.html">Open guide</a></td></tr>
+      <tr><td><strong>Department KPI</strong></td><td>Maintain department performance scorecards and assign KPI ownership to departments and employees.</td><td><a href="department-kpi.html">Open guide</a></td></tr>
+      <tr><td><strong>Manager KPI</strong></td><td>Evaluate manager performance across the approved Balanced Scorecard structure and workflow.</td><td><a href="manager-kpi.html">Open guide</a></td></tr>
+      <tr><td><strong>Employee KPI</strong></td><td>Evaluate individual employee performance, targets, achievement, workflow status, and final weighted score.</td><td><a href="employee-kpi.html">Open guide</a></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="doc-section">
+  <h2>Report Options Shown in the KPI Menu</h2>
+  <p>The KPI menu also displays report options. These entries are listed here for product awareness only and do not link to separate public documentation pages in this phase.</p>
+  <div class="kpi-report-list">
+    <div class="kpi-report-item"><strong>Monthly Reports</strong></div>
+    <div class="kpi-report-item"><strong>Quarterly Reports</strong></div>
+    <div class="kpi-report-item"><strong>Annual Reports</strong></div>
+    <div class="kpi-report-item"><strong>Scorecard Reports</strong></div>
+    <div class="kpi-report-item"><strong>Performance Reports</strong></div>
+    <div class="kpi-report-item"><strong>PDF Export</strong></div>
+    <div class="kpi-report-item"><strong>Excel Export</strong></div>
+  </div>
+</section>
+
+<section class="doc-section">
+  <h2>Recommended Review Sequence</h2>
+  <ol class="doc-steps">
+    <li><div><strong>Review the Strategy Map.</strong><br>Confirm that mission, vision, priorities, and Balanced Scorecard perspectives are aligned.</div></li>
+    <li><div><strong>Review Goals &amp; Targets.</strong><br>Confirm measurable goals, accountable owners, targets, and status.</div></li>
+    <li><div><strong>Review the BSC Scorecard.</strong><br>Assess the Provider-level score and perspective results.</div></li>
+    <li><div><strong>Drill down through scorecards.</strong><br>Review Organization, Department, Manager, and Employee KPI results.</div></li>
+    <li><div><strong>Use Rankings and Trends.</strong><br>Identify strengths, declining measures, and KPIs that require leadership attention.</div></li>
+  </ol>
+</section>
+
+<div class="doc-page-navigation">
+  <a class="doc-button" href="../reports/index.html">← Back</a>
+  <a class="doc-button" href="index.html">🏠 Home</a>
+  <a class="doc-button" href="bsc-scorecard.html">Next →</a>
+</div>
+</article>
+<footer class="doc-page-footer">
+  <p>© 2026 True Care System. All rights reserved.</p>
+  <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
+</footer>
+</main>
+
+</div>
+
+<div class="doc-search-results" id="docSearchResults" hidden></div>
+<script src="/documentation/assets/documentation.js"></script>
 </body>
 </html>
+
