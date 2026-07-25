@@ -1,0 +1,349 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="New Authorization documentation for True Care System Authorization Management.">
+      <title>New Authorization | True Care System Documentation</title>
+      <link rel="stylesheet" href="/documentation/assets/documentation.css">
+      <style>
+        .doc-figure {
+          width: 100%;
+          margin: 22px 0 28px;
+        }
+        .doc-figure img {
+          display: block;
+          width: 100%;
+          height: auto;
+          border: 1px solid var(--border);
+          border-radius: 14px;
+          box-shadow: 0 12px 30px rgba(7,28,63,.08);
+        }
+        .doc-figure figcaption {
+          margin-top: 11px;
+          text-align: center;
+          color: var(--muted);
+          font-size: 14px;
+        }
+        .doc-table {
+          width: 100%;
+          table-layout: fixed;
+          border-collapse: separate;
+          border-spacing: 0;
+          margin-top: 18px;
+        }
+        .doc-table th,
+        .doc-table td {
+          padding: 14px 16px;
+          text-align: left;
+          vertical-align: top;
+          border-bottom: 1px solid var(--border);
+        }
+        .doc-table th {
+          background: var(--surface);
+          color: var(--navy);
+          font-weight: 800;
+        }
+        .doc-table td:first-child {
+          font-weight: 700;
+          color: var(--navy);
+        }
+        .doc-page-navigation {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 20px;
+          align-items: center;
+          width: 100%;
+          margin-top: 32px;
+        }
+        .doc-page-navigation .doc-button:nth-child(1) { justify-self: start; }
+        .doc-page-navigation .doc-button:nth-child(2) { justify-self: center; }
+        .doc-page-navigation .doc-button:nth-child(3) { justify-self: end; }
+        .policy-note {
+          border: 1px solid #d7c8ff;
+          background: #f5f1ff;
+        }
+        .policy-note strong { color: #49349a; }
+        .hipaa-note {
+          border: 1px solid #b9d9fa;
+          background: #edf6ff;
+        }
+        .hipaa-note strong { color: #0d4f8f; }
+
+.wizard {
+  display:grid;
+  gap:14px;
+}
+.wizard article {
+  display:grid;
+  grid-template-columns:44px 1fr;
+  gap:14px;
+  padding:18px;
+  border:1px solid var(--border);
+  border-radius:13px;
+  background:linear-gradient(145deg,#ffffff,#f8fbff);
+}
+.wizard span {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),#6948df);
+  color:white;
+  font-weight:800;
+}
+.wizard strong { color:var(--navy); font-size:18px; }
+.wizard p { margin:6px 0 0; color:var(--muted); }
+.limit-layout {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+}
+.limit-layout article {
+  padding:20px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:var(--surface);
+}
+.limit-layout h3 { margin-top:0; }
+.limit-layout p:last-child { margin-bottom:0; }
+.check-list { padding-left:22px; }
+@media(max-width:820px){.limit-layout{grid-template-columns:1fr;}}
+
+        @media (max-width: 760px) {
+          .doc-table { table-layout: auto; }
+          .doc-page-navigation { grid-template-columns: 1fr; }
+          .doc-page-navigation .doc-button { justify-self: stretch !important; text-align:center; }
+        }
+      </style>
+    </head>
+    <body>
+      <header class="doc-header">
+        <a class="doc-brand" href="/documentation/">
+          <img src="/logo.png" alt="True Care System">
+          <span><strong>True Care System</strong><small>Documentation</small></span>
+        </a>
+        <button class="doc-mobile-menu" id="docMobileMenu" type="button"
+                aria-label="Open documentation menu" aria-controls="docSidebar"
+                aria-expanded="false">☰</button>
+        <div class="doc-header-actions">
+          <label class="doc-search">
+            <span aria-hidden="true">⌕</span>
+            <input id="docSearchInput" type="search" placeholder="Search documentation..."
+                   autocomplete="off" aria-label="Search documentation">
+          </label>
+          <a href="/" class="doc-back-link">Return to Website</a>
+        </div>
+      </header>
+
+      <div class="doc-layout">
+        <aside class="doc-sidebar" id="docSidebar">
+          <div class="doc-sidebar-title">Documentation</div>
+          <nav aria-label="Documentation modules">
+
+<a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
+<a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
+<a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
+<a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
+<a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
+<a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
+<a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
+<a class="doc-nav-module active" href="/documentation/authorization/" aria-current="page"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
+<a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
+<a class="doc-nav-module" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span>KPI</span></a>
+<a class="doc-nav-module" href="/documentation/time-keeping/"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
+<a class="doc-nav-module" href="/documentation/mobile-evv/"><span class="doc-nav-number">12</span><span>Mobile EVV</span></a>
+<a class="doc-nav-module" href="/documentation/visit-maintenance/"><span class="doc-nav-number">13</span><span>Visit Maintenance</span></a>
+<a class="doc-nav-module" href="/documentation/house-management/"><span class="doc-nav-number">14</span><span>House Management</span></a>
+<a class="doc-nav-module" href="/documentation/payroll/"><span class="doc-nav-number">15</span><span>Payroll</span></a>
+<a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
+<a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
+<a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
+<a class="doc-nav-module" href="/documentation/provider-administration/"><span class="doc-nav-number">19</span><span>Admin</span></a>
+<a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
+<a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
+<a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
+<a class="doc-nav-module" href="/documentation/qa-guide/"><span class="doc-nav-number">23</span><span>QA Guide</span></a>
+<a class="doc-nav-module" href="/documentation/test-catalog/"><span class="doc-nav-number">24</span><span>Test Catalog</span></a>
+<a class="doc-nav-module" href="/documentation/api-documentation/"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
+<a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
+<a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
+<a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
+<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>FAQ</span></a>
+<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
+
+  </nav>
+        </aside>
+
+        <main class="doc-main">
+          <div class="doc-breadcrumb">
+            <a href="/documentation/">Documentation</a>
+            <span>›</span>
+            <a href="/documentation/authorization/">Authorizations</a>
+            <span>›</span>
+            <span>New Authorization</span>
+          </div>
+
+          <article class="doc-article">
+            <header class="doc-article-header">
+              <div>
+                <p class="doc-eyebrow">AUTHORIZATION MANAGEMENT</p>
+                <h1>New Authorization</h1>
+              </div>
+              <dl class="doc-metadata">
+                <div><dt>Document ID</dt><dd>AUTH-DOC-004</dd></div>
+                <div><dt>Version</dt><dd>1.0</dd></div>
+                <div><dt>Status</dt><dd>Draft</dd></div>
+                <div><dt>Last Updated</dt><dd>07/25/2026</dd></div>
+              </dl>
+            </header>
+
+
+<div class="doc-notice doc-notice-info">
+  <strong>Purpose</strong>
+  <p>
+    New Authorization is used to establish a payer-approved service record for an Individual.
+    The workflow combines the Individual profile snapshot, authorization identity, one or more
+    service lines, effective dates, maximum approved amount, historical usage, and a utilization preview.
+  </p>
+</div>
+
+<section class="doc-section">
+  <h2>New Authorization Screen</h2>
+  <figure class="doc-figure">
+    <img src="/documentation/authorization/images/new-authorizations.jpg"
+         alt="New Authorization form with Individual profile, authorization details, service lines, limits, and utilization preview">
+    <figcaption>
+      Complete New Authorization workflow from Individual selection through utilization preview.
+    </figcaption>
+  </figure>
+</section>
+
+<section class="doc-section">
+  <h2>Creation Workflow</h2>
+  <div class="wizard">
+    <article><span>1</span><div><strong>Select Individual</strong><p>Search and select the correct Individual, then review the profile, contact, branch, location, accepted services, and payer snapshot.</p></div></article>
+    <article><span>2</span><div><strong>Enter Authorization Identity</strong><p>Enter payer, authorization number, status, source, effective dates, and comments.</p></div></article>
+    <article><span>3</span><div><strong>Add Service Lines</strong><p>Select the approved service, event code, format, program, and modifiers. Multiple service lines may be supported.</p></div></article>
+    <article><span>4</span><div><strong>Define Limits</strong><p>Enter the maximum authorized quantity and any configured interval-based limitations.</p></div></article>
+    <article><span>5</span><div><strong>Enter Historical Usage</strong><p>When implementation requires a cutover, enter the snapshot-through date and approved historical used or missed values.</p></div></article>
+    <article><span>6</span><div><strong>Review and Save</strong><p>Validate the utilization preview, then save, save and add another, or save a draft when available.</p></div></article>
+  </div>
+</section>
+
+<section class="doc-section">
+  <h2>Individual Profile Section</h2>
+  <table class="doc-table">
+    <colgroup><col style="width:230px"><col></colgroup>
+    <thead><tr><th>Field</th><th>Function</th></tr></thead>
+    <tbody>
+      <tr><td>Individual Search</td><td>Searches by supported Individual identifiers such as name, code, or city.</td></tr>
+      <tr><td>Basic Info</td><td>Displays name, Individual code, Medicaid or MA number, date of birth, and gender.</td></tr>
+      <tr><td>Contact</td><td>Displays phone, email, and address information for verification.</td></tr>
+      <tr><td>Program Snapshot</td><td>Displays branch, location, accepted services, and authorization payer context.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="doc-section">
+  <h2>Authorization Details</h2>
+  <table class="doc-table">
+    <colgroup><col style="width:230px"><col></colgroup>
+    <thead><tr><th>Field</th><th>Detailed Use</th></tr></thead>
+    <tbody>
+      <tr><td>Payer</td><td>Selects the funding source responsible for the authorization.</td></tr>
+      <tr><td>Authorization Number</td><td>Stores the payer-issued identifier. Verify the exact value before saving.</td></tr>
+      <tr><td>Status</td><td>Defines the current lifecycle state, such as Pending or Active.</td></tr>
+      <tr><td>Source</td><td>Identifies whether the record was entered manually or originated from another configured source.</td></tr>
+      <tr><td>Service</td><td>Selects the Provider-configured service and billing code.</td></tr>
+      <tr><td>Event Code</td><td>Stores an applicable event or program code when required.</td></tr>
+      <tr><td>Format</td><td>Defines the authorization measurement format, such as units.</td></tr>
+      <tr><td>Program</td><td>Associates the service line with the applicable payer program.</td></tr>
+      <tr><td>Modifiers</td><td>Stores optional service modifiers when required by the payer or service setup.</td></tr>
+      <tr><td>Start / End Date</td><td>Defines the authorization’s effective service period.</td></tr>
+      <tr><td>Voided</td><td>Marks the record as voided when permitted by policy. Do not use this as a substitute for correcting the wrong record.</td></tr>
+      <tr><td>Comments</td><td>Stores approved operational context that does not belong in another field.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="doc-section">
+  <h2>Authorization Limitation and Utilization Preview</h2>
+  <div class="limit-layout">
+    <article>
+      <h3>Authorization Limitation</h3>
+      <p><strong>Maximum Authorized</strong> defines the approved service quantity.</p>
+      <p><strong>Interval-Based Limits</strong> may restrict usage by an additional configured period.</p>
+    </article>
+    <article>
+      <h3>Historical Usage Snapshot</h3>
+      <p><strong>Snapshot Through Date</strong> identifies the historical cutover point.</p>
+      <p><strong>Manual Used / Missed</strong> stores approved pre-system totals.</p>
+    </article>
+    <article>
+      <h3>Utilization Preview</h3>
+      <p>Reviews authorized, manual used, manual missed, auto used, auto missed, remaining, and current utilization percentage before saving.</p>
+    </article>
+  </div>
+</section>
+
+<section class="doc-section">
+  <h2>Save Controls</h2>
+  <table class="doc-table">
+    <colgroup><col style="width:230px"><col></colgroup>
+    <thead><tr><th>Control</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td>Cancel</td><td>Closes the workflow without creating the authorization. Unsaved changes may be lost.</td></tr>
+      <tr><td>Save Draft</td><td>Saves incomplete work when draft behavior is enabled.</td></tr>
+      <tr><td>Save & Add New</td><td>Saves the current authorization and opens a new blank workflow.</td></tr>
+      <tr><td>Save Authorization</td><td>Validates and creates the authorization record.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="doc-section">
+  <h2>Validation Checklist</h2>
+  <ul class="check-list">
+    <li>Correct Provider and Individual selected.</li>
+    <li>Payer and authorization number match the official payer document.</li>
+    <li>Service, program, format, event code, and modifiers are correct.</li>
+    <li>Start and end dates match the approved authorization period.</li>
+    <li>Maximum authorized amount is entered in the correct measurement format.</li>
+    <li>Historical usage is entered only from an approved source.</li>
+    <li>Utilization preview is reviewed before saving.</li>
+  </ul>
+</section>
+
+<section class="doc-section">
+  <h2>HIPAA and Proprietary Workflow</h2>
+  <div class="doc-notice hipaa-note">
+    <strong>Protected Authorization Data</strong>
+    <p>This workflow may expose PHI, payer identifiers, Medicaid or Medicare information, service needs, and financial data. Staff must verify the correct Individual and use only approved channels for supporting documents and exports.</p>
+  </div>
+  <div class="doc-notice policy-note">
+    <strong>Advanced Training for Provider Customers</strong>
+    <p>Detailed service-line validation, historical cutover rules, automatic usage calculation, missed-service logic, schedule and visit matching, and billing safeguards are intentionally not published in full. These proprietary functions are trained directly to authorized staff of official True Care System Provider customers.</p>
+  </div>
+</section>
+
+
+            <div class="doc-page-navigation">
+              <a class="doc-button" href="/documentation/authorization/utilization.html">← Back</a>
+              <a class="doc-button" href="/documentation/authorization/index.html">🏠 Home</a>
+              <a class="doc-button" href="/documentation/reports/">Next →</a>
+            </div>
+          </article>
+
+          <footer class="doc-page-footer">
+            <p>© 2026 True Care System. All rights reserved.</p>
+            <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
+          </footer>
+        </main>
+      </div>
+
+      <div class="doc-search-results" id="docSearchResults" hidden></div>
+      <script src="/documentation/assets/documentation.js"></script>
+    </body>
+    </html>

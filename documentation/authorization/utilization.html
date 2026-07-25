@@ -1,0 +1,337 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Authorization Utilization documentation for True Care System Authorization Management.">
+      <title>Authorization Utilization | True Care System Documentation</title>
+      <link rel="stylesheet" href="/documentation/assets/documentation.css">
+      <style>
+        .doc-figure {
+          width: 100%;
+          margin: 22px 0 28px;
+        }
+        .doc-figure img {
+          display: block;
+          width: 100%;
+          height: auto;
+          border: 1px solid var(--border);
+          border-radius: 14px;
+          box-shadow: 0 12px 30px rgba(7,28,63,.08);
+        }
+        .doc-figure figcaption {
+          margin-top: 11px;
+          text-align: center;
+          color: var(--muted);
+          font-size: 14px;
+        }
+        .doc-table {
+          width: 100%;
+          table-layout: fixed;
+          border-collapse: separate;
+          border-spacing: 0;
+          margin-top: 18px;
+        }
+        .doc-table th,
+        .doc-table td {
+          padding: 14px 16px;
+          text-align: left;
+          vertical-align: top;
+          border-bottom: 1px solid var(--border);
+        }
+        .doc-table th {
+          background: var(--surface);
+          color: var(--navy);
+          font-weight: 800;
+        }
+        .doc-table td:first-child {
+          font-weight: 700;
+          color: var(--navy);
+        }
+        .doc-page-navigation {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 20px;
+          align-items: center;
+          width: 100%;
+          margin-top: 32px;
+        }
+        .doc-page-navigation .doc-button:nth-child(1) { justify-self: start; }
+        .doc-page-navigation .doc-button:nth-child(2) { justify-self: center; }
+        .doc-page-navigation .doc-button:nth-child(3) { justify-self: end; }
+        .policy-note {
+          border: 1px solid #d7c8ff;
+          background: #f5f1ff;
+        }
+        .policy-note strong { color: #49349a; }
+        .hipaa-note {
+          border: 1px solid #b9d9fa;
+          background: #edf6ff;
+        }
+        .hipaa-note strong { color: #0d4f8f; }
+
+.hero-band {
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:16px;
+  align-items:stretch;
+  padding:22px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#edf6ff,#f5f1ff);
+  border:1px solid #d9e2f2;
+}
+.hero-band h2 { margin-bottom:8px; }
+.hero-band p { margin:0; }
+.hero-metric {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:18px;
+  border-radius:12px;
+  background:white;
+  border:1px solid var(--border);
+}
+.hero-metric strong { color:var(--navy); font-size:20px; }
+.hero-metric span { color:var(--muted); font-size:14px; }
+.metric-grid {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+}
+.metric-grid article {
+  padding:18px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:white;
+}
+.metric-grid span {
+  color:var(--teal);
+  font-weight:800;
+}
+.metric-grid h3 { margin:8px 0 5px; }
+.metric-grid p { margin:0; color:var(--muted); font-size:14px; }
+.usage-timeline {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:0;
+  border:1px solid var(--border);
+  border-radius:14px;
+  overflow:hidden;
+}
+.usage-timeline article {
+  padding:20px;
+  border-right:1px solid var(--border);
+}
+.usage-timeline article:last-child { border-right:0; }
+.usage-timeline strong { color:var(--navy); }
+.usage-timeline p { margin:7px 0 0; color:var(--muted); }
+.check-list { padding-left:22px; }
+@media(max-width:900px){
+  .hero-band{grid-template-columns:1fr;}
+  .metric-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .usage-timeline{grid-template-columns:1fr;}
+  .usage-timeline article{border-right:0;border-bottom:1px solid var(--border);}
+}
+@media(max-width:600px){.metric-grid{grid-template-columns:1fr;}}
+
+        @media (max-width: 760px) {
+          .doc-table { table-layout: auto; }
+          .doc-page-navigation { grid-template-columns: 1fr; }
+          .doc-page-navigation .doc-button { justify-self: stretch !important; text-align:center; }
+        }
+      </style>
+    </head>
+    <body>
+      <header class="doc-header">
+        <a class="doc-brand" href="/documentation/">
+          <img src="/logo.png" alt="True Care System">
+          <span><strong>True Care System</strong><small>Documentation</small></span>
+        </a>
+        <button class="doc-mobile-menu" id="docMobileMenu" type="button"
+                aria-label="Open documentation menu" aria-controls="docSidebar"
+                aria-expanded="false">☰</button>
+        <div class="doc-header-actions">
+          <label class="doc-search">
+            <span aria-hidden="true">⌕</span>
+            <input id="docSearchInput" type="search" placeholder="Search documentation..."
+                   autocomplete="off" aria-label="Search documentation">
+          </label>
+          <a href="/" class="doc-back-link">Return to Website</a>
+        </div>
+      </header>
+
+      <div class="doc-layout">
+        <aside class="doc-sidebar" id="docSidebar">
+          <div class="doc-sidebar-title">Documentation</div>
+          <nav aria-label="Documentation modules">
+
+<a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
+<a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
+<a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
+<a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
+<a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
+<a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
+<a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
+<a class="doc-nav-module active" href="/documentation/authorization/" aria-current="page"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
+<a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
+<a class="doc-nav-module" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span>KPI</span></a>
+<a class="doc-nav-module" href="/documentation/time-keeping/"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
+<a class="doc-nav-module" href="/documentation/mobile-evv/"><span class="doc-nav-number">12</span><span>Mobile EVV</span></a>
+<a class="doc-nav-module" href="/documentation/visit-maintenance/"><span class="doc-nav-number">13</span><span>Visit Maintenance</span></a>
+<a class="doc-nav-module" href="/documentation/house-management/"><span class="doc-nav-number">14</span><span>House Management</span></a>
+<a class="doc-nav-module" href="/documentation/payroll/"><span class="doc-nav-number">15</span><span>Payroll</span></a>
+<a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
+<a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
+<a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
+<a class="doc-nav-module" href="/documentation/provider-administration/"><span class="doc-nav-number">19</span><span>Admin</span></a>
+<a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
+<a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
+<a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
+<a class="doc-nav-module" href="/documentation/qa-guide/"><span class="doc-nav-number">23</span><span>QA Guide</span></a>
+<a class="doc-nav-module" href="/documentation/test-catalog/"><span class="doc-nav-number">24</span><span>Test Catalog</span></a>
+<a class="doc-nav-module" href="/documentation/api-documentation/"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
+<a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
+<a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
+<a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
+<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>FAQ</span></a>
+<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
+
+  </nav>
+        </aside>
+
+        <main class="doc-main">
+          <div class="doc-breadcrumb">
+            <a href="/documentation/">Documentation</a>
+            <span>›</span>
+            <a href="/documentation/authorization/">Authorizations</a>
+            <span>›</span>
+            <span>Utilization</span>
+          </div>
+
+          <article class="doc-article">
+            <header class="doc-article-header">
+              <div>
+                <p class="doc-eyebrow">AUTHORIZATION MANAGEMENT</p>
+                <h1>Authorization Utilization</h1>
+              </div>
+              <dl class="doc-metadata">
+                <div><dt>Document ID</dt><dd>AUTH-DOC-003</dd></div>
+                <div><dt>Version</dt><dd>1.0</dd></div>
+                <div><dt>Status</dt><dd>Draft</dd></div>
+                <div><dt>Last Updated</dt><dd>07/25/2026</dd></div>
+              </dl>
+            </header>
+
+
+<div class="doc-notice doc-notice-info">
+  <strong>Purpose</strong>
+  <p>
+    Utilization provides a live summary of authorized, used, missed, remaining, and utilization
+    percentage values by Individual and service. It helps Provider staff identify capacity,
+    overuse risk, underutilization, expiring authorizations, and records requiring follow-up.
+  </p>
+</div>
+
+<section class="doc-section">
+  <div class="hero-band">
+    <div>
+      <p class="doc-eyebrow">LIVE AUTHORIZATION DATA</p>
+      <h2>Utilization Monitoring</h2>
+      <p>Review authorization consumption without opening each record individually.</p>
+    </div>
+    <div class="hero-metric"><strong>Authorized</strong><span>Approved service capacity</span></div>
+    <div class="hero-metric"><strong>Remaining</strong><span>Available service balance</span></div>
+  </div>
+
+  <figure class="doc-figure">
+    <img src="/documentation/authorization/images/authorizations-utilization.jpg"
+         alt="Authorization utilization table with authorized, used, missed, remaining, and utilization percentage">
+    <figcaption>
+      Live utilization summary grouped by Individual and service.
+    </figcaption>
+  </figure>
+</section>
+
+<section class="doc-section">
+  <h2>Utilization Columns</h2>
+  <div class="metric-grid">
+    <article><span>01</span><h3>Individual</h3><p>Identifies the person whose authorization usage is being reviewed.</p></article>
+    <article><span>02</span><h3>Service</h3><p>Shows the Provider service and billing code connected to the authorization.</p></article>
+    <article><span>03</span><h3>Payer</h3><p>Identifies the payer or funding source responsible for the approved service.</p></article>
+    <article><span>04</span><h3>Authorized</h3><p>Displays the total approved quantity for the authorization period.</p></article>
+    <article><span>05</span><h3>Used</h3><p>Displays qualifying service quantity already consumed.</p></article>
+    <article><span>06</span><h3>Missed</h3><p>Displays missed authorized service quantity when the configured workflow supports it.</p></article>
+    <article><span>07</span><h3>Remaining</h3><p>Shows available units after used and missed values are applied.</p></article>
+    <article><span>08</span><h3>Utilization</h3><p>Shows the percentage of approved capacity already consumed.</p></article>
+  </div>
+</section>
+
+<section class="doc-section">
+  <h2>How to Interpret Utilization</h2>
+  <table class="doc-table">
+    <colgroup><col style="width:220px"><col></colgroup>
+    <thead><tr><th>Situation</th><th>Recommended Review</th></tr></thead>
+    <tbody>
+      <tr><td>Low Utilization</td><td>Confirm whether services have started, whether schedules are accurate, and whether missed or delayed service requires follow-up.</td></tr>
+      <tr><td>Moderate Utilization</td><td>Compare the current percentage with the remaining authorization period and expected service frequency.</td></tr>
+      <tr><td>High Utilization</td><td>Review remaining capacity, planned schedules, pending visits, and billing activity before additional services are delivered.</td></tr>
+      <tr><td>Zero Remaining</td><td>Do not assume further service is billable. Review the payer authorization, service dates, amendments, and Provider policy.</td></tr>
+      <tr><td>Unexpected Used Value</td><td>Compare schedule, visit, correction, and billing records and escalate discrepancies to authorized staff.</td></tr>
+      <tr><td>Unexpected Missed Value</td><td>Review call-off, canceled shift, incomplete visit, and configured missed-service rules.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="doc-section">
+  <h2>Operational Uses</h2>
+  <div class="usage-timeline">
+    <article><strong>Scheduling</strong><p>Confirms that planned services remain within approved capacity.</p></article>
+    <article><strong>Visit Review</strong><p>Supports reconciliation of completed, canceled, missed, or corrected service activity.</p></article>
+    <article><strong>Billing</strong><p>Helps prevent billing above the payer-approved limit.</p></article>
+    <article><strong>Management</strong><p>Supports forecasting, renewal preparation, and identification of service-delivery gaps.</p></article>
+  </div>
+</section>
+
+<section class="doc-section">
+  <h2>Review Checklist</h2>
+  <ul class="check-list">
+    <li>Confirm the Individual and service are correct.</li>
+    <li>Confirm the payer and authorization period.</li>
+    <li>Compare used values with completed visits and approved corrections.</li>
+    <li>Review missed values only under the Provider’s approved workflow.</li>
+    <li>Estimate whether remaining capacity supports the planned service schedule.</li>
+    <li>Escalate unexpected values before billing or service expansion.</li>
+  </ul>
+</section>
+
+<section class="doc-section">
+  <h2>HIPAA and Proprietary Workflow</h2>
+  <div class="doc-notice hipaa-note">
+    <strong>Minimum Necessary Access</strong>
+    <p>Utilization information reveals service participation, payer coverage, and treatment-related activity. Only authorized staff should access or export this information for approved treatment, payment, or health-care-operations purposes.</p>
+  </div>
+  <div class="doc-notice policy-note">
+    <strong>Direct Training Required</strong>
+    <p>The public guide does not disclose the complete auto-calculation rules, schedule and visit matching, missed-unit logic, correction precedence, cutover behavior, or billing safeguards. These True Care System workflows are trained directly to official Provider customers.</p>
+  </div>
+</section>
+
+
+            <div class="doc-page-navigation">
+              <a class="doc-button" href="/documentation/authorization/authorizations.html">← Back</a>
+              <a class="doc-button" href="/documentation/authorization/index.html">🏠 Home</a>
+              <a class="doc-button" href="/documentation/authorization/new-authorization.html">Next →</a>
+            </div>
+          </article>
+
+          <footer class="doc-page-footer">
+            <p>© 2026 True Care System. All rights reserved.</p>
+            <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
+          </footer>
+        </main>
+      </div>
+
+      <div class="doc-search-results" id="docSearchResults" hidden></div>
+      <script src="/documentation/assets/documentation.js"></script>
+    </body>
+    </html>
