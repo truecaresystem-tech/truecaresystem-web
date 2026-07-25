@@ -1,48 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Authorizations documentation for True Care System">
-  <title>Authorizations | True Care System Documentation</title>
-  <link rel="stylesheet" href="/documentation/assets/documentation.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Authorization Management documentation overview for True Care System, including authorization records, utilization monitoring, and new authorization setup.">
+<title>Authorizations | True Care System Documentation</title>
+<link rel="stylesheet" href="/documentation/assets/documentation.css">
+<style>
+.auth-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 18px;
+}
+.auth-table col:first-child { width: 230px; }
+.auth-table col:nth-child(3) { width: 155px; }
+.auth-table th,
+.auth-table td {
+  padding: 15px 18px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+.auth-table th {
+  background: var(--surface);
+  color: var(--navy);
+  font-weight: 800;
+}
+.auth-table td:nth-child(2) { padding-left: 28px; }
+.auth-table td:last-child { white-space: nowrap; }
+
+.doc-figure {
+  width: 100%;
+  margin: 22px 0 30px;
+}
+.doc-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(7,28,63,.08);
+}
+.doc-figure figcaption {
+  margin-top: 11px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.auth-policy {
+  border: 1px solid #d8c9ff;
+  background: #f5f1ff;
+}
+.auth-policy strong { color: #49349a; }
+
+.auth-hipaa {
+  border: 1px solid #b9d9fa;
+  background: #edf6ff;
+}
+.auth-hipaa strong { color: #0d4f8f; }
+
+.auth-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+.auth-card {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: 0 8px 24px rgba(7,28,63,.06);
+}
+.auth-card small {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--teal);
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+.auth-card h3 { margin: 0 0 8px; }
+.auth-card p { margin: 0; color: var(--muted); }
+
+.auth-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+.auth-flow article {
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: linear-gradient(145deg,#f8fbff,#ffffff);
+}
+.auth-flow span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: white;
+  font-weight: 800;
+}
+.auth-flow strong {
+  display: block;
+  color: var(--navy);
+}
+.auth-flow p {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.doc-page-navigation {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  margin-top: 32px;
+}
+.doc-page-navigation .doc-button:nth-child(1) { justify-self: start; }
+.doc-page-navigation .doc-button:nth-child(2) { justify-self: center; }
+.doc-page-navigation .doc-button:nth-child(3) { justify-self: end; }
+
+@media (max-width: 900px) {
+  .auth-grid { grid-template-columns: 1fr; }
+  .auth-flow { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 700px) {
+  .auth-table { table-layout: auto; }
+  .auth-table col { width: auto !important; }
+  .auth-flow { grid-template-columns: 1fr; }
+  .doc-page-navigation { grid-template-columns: 1fr; }
+  .doc-page-navigation .doc-button { justify-self: stretch !important; text-align: center; }
+}
+</style>
 </head>
 <body>
-  <header class="doc-header">
-    <a class="doc-brand" href="/documentation/">
-      <img src="/logo.png" alt="True Care System">
-      <span>
-        <strong>True Care System</strong>
-        <small>Documentation</small>
-      </span>
-    </a>
+<header class="doc-header">
+  <a class="doc-brand" href="/documentation/">
+    <img src="/logo.png" alt="True Care System">
+    <span><strong>True Care System</strong><small>Documentation</small></span>
+  </a>
+  <button class="doc-mobile-menu" id="docMobileMenu" type="button"
+          aria-label="Open documentation menu" aria-controls="docSidebar"
+          aria-expanded="false">☰</button>
+  <div class="doc-header-actions">
+    <label class="doc-search">
+      <span aria-hidden="true">⌕</span>
+      <input id="docSearchInput" type="search"
+             placeholder="Search documentation..."
+             autocomplete="off"
+             aria-label="Search documentation">
+    </label>
+    <a href="/" class="doc-back-link">Return to Website</a>
+  </div>
+</header>
 
-    <button class="doc-mobile-menu" id="docMobileMenu"
-            aria-label="Open documentation menu">☰</button>
-
-    <div class="doc-header-actions">
-      <label class="doc-search">
-        <span>⌕</span>
-        <input id="docSearchInput" type="search"
-               placeholder="Search documentation..."
-               autocomplete="off">
-      </label>
-      <a href="/" class="doc-back-link">Return to Website</a>
-    </div>
-  </header>
-
-  <div class="doc-layout">
-    <aside class="doc-sidebar" id="docSidebar">
-      <div class="doc-sidebar-title">Documentation</div>
-      <nav>
-        <a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
+<div class="doc-layout">
+<aside class="doc-sidebar" id="docSidebar">
+  <div class="doc-sidebar-title">Documentation</div>
+  <nav aria-label="Documentation modules">
+    
+<a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
 <a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
 <a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
 <a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
 <a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
 <a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
 <a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
-<a class="doc-nav-module active" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
+<a class="doc-nav-module active" href="/documentation/authorization/" aria-current="page"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
 <a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
 <a class="doc-nav-module" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span>KPI</span></a>
 <a class="doc-nav-module" href="/documentation/time-keeping/"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
@@ -63,77 +198,272 @@
 <a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
 <a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
 <a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
-<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>Frequently Asked Questions</span></a>
+<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>FAQ</span></a>
 <a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
-      </nav>
-    </aside>
 
-    <main class="doc-main">
-      <div class="doc-breadcrumb">
-        <a href="/documentation/">Documentation</a>
-        <span>›</span><a href='/documentation/authorization/'>Authorizations</a>
-        <span>›</span><span>Authorizations</span>
-      </div>
+  </nav>
+</aside>
 
-      <article class="doc-article">
-        <header class="doc-article-header">
-          <div>
-            <p class="doc-eyebrow">TRUE CARE SYSTEM DOCUMENTATION</p>
-            <h1>Authorizations</h1>
-          </div>
+<main class="doc-main">
+<div class="doc-breadcrumb">
+  <a href="/documentation/">Documentation</a>
+  <span>›</span>
+  <span>Authorizations</span>
+</div>
 
-          <dl class="doc-metadata">
-            <div><dt>Document ID</dt><dd>AUT-DOC-000</dd></div>
-            <div><dt>Version</dt><dd>1.0</dd></div>
-            <div><dt>Status</dt><dd>Structure Created</dd></div>
-            <div><dt>Last Updated</dt><dd>Pending</dd></div>
-          </dl>
-        </header>
-
-        
-    <div class="doc-notice doc-notice-info">
-      <strong>Module documentation structure created</strong>
-      <p>Each page below contains the standard enterprise template and
-         a named screenshot placeholder.</p>
-    </div>
-
-    <section class="doc-section">
-      <h2>Purpose</h2>
-      <p>This section will contain the approved documentation for
-         Authorizations.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Documentation Pages</h2>
-      <ul class="doc-page-list">
-        <li><a href="/documentation/authorization/overview.html">Overview</a></li>
-<li><a href="/documentation/authorization/authorization-list.html">Authorization List</a></li>
-<li><a href="/documentation/authorization/create-authorization.html">Create Authorization</a></li>
-<li><a href="/documentation/authorization/edit-authorization.html">Edit Authorization</a></li>
-<li><a href="/documentation/authorization/service-limits.html">Service Limits</a></li>
-<li><a href="/documentation/authorization/unit-tracking.html">Unit Tracking</a></li>
-<li><a href="/documentation/authorization/expiration.html">Expiration Management</a></li>
-<li><a href="/documentation/authorization/warnings.html">Authorization Warnings</a></li>
-<li><a href="/documentation/authorization/faq.html">FAQ</a></li>
-      </ul>
-    </section>
-
-    <section class="doc-section">
-      <h2>Screenshot Library</h2>
-      <p>Images for this module are stored in
-         <code>documentation/authorization/images/</code>.</p>
-    </section>
-    
-      </article>
-
-      <footer class="doc-page-footer">
-        <p>© 2026 True Care System. All rights reserved.</p>
-        <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
-      </footer>
-    </main>
+<article class="doc-article">
+<header class="doc-article-header">
+  <div>
+    <p class="doc-eyebrow">AUTHORIZATION MANAGEMENT</p>
+    <h1>Authorizations</h1>
   </div>
+  <dl class="doc-metadata">
+    <div><dt>Document ID</dt><dd>AUTH-DOC-001</dd></div>
+    <div><dt>Version</dt><dd>1.0</dd></div>
+    <div><dt>Status</dt><dd>Draft</dd></div>
+    <div><dt>Last Updated</dt><dd>07/25/2026</dd></div>
+  </dl>
+</header>
 
-  <div class="doc-search-results" id="docSearchResults" hidden></div>
-  <script src="/documentation/assets/documentation.js"></script>
+<div class="doc-notice doc-notice-info">
+  <strong>Purpose</strong>
+  <p>
+    The Authorizations module is used to create, review, monitor, and maintain payer-approved
+    service authorization records. It connects each Individual, payer, program, service,
+    approved unit limit, authorization period, and utilization status to the Provider’s
+    scheduling and billing workflow.
+  </p>
+</div>
+
+<section class="doc-section">
+  <h2>Authorization Workspace</h2>
+  <p>
+    The main authorization workspace provides access to authorization records,
+    live utilization totals, filtering, exports, billing navigation, and creation
+    of new authorization records.
+  </p>
+
+  <figure class="doc-figure">
+    <img src="/documentation/authorization/images/authorizations.jpg"
+         alt="Authorization records screen with filters, totals, service information, usage, and actions">
+    <figcaption>
+      Authorization records with date filters, payer and service filters, authorized units,
+      used units, missed units, remaining units, status, and record actions.
+    </figcaption>
+  </figure>
+
+  <table class="auth-table">
+    <colgroup><col><col><col></colgroup>
+    <thead>
+      <tr>
+        <th>Workspace</th>
+        <th>General Purpose</th>
+        <th>Documentation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Authorization Records</strong></td>
+        <td>
+          Review authorization numbers, Individuals, payers, programs, services,
+          effective dates, approved limits, usage, remaining balances, source,
+          status, and available actions.
+        </td>
+        <td><a href="/documentation/authorization/authorizations.html">Open guide</a></td>
+      </tr>
+      <tr>
+        <td><strong>Utilization</strong></td>
+        <td>
+          Review live authorization usage by Individual and service, including
+          authorized, used, missed, remaining, and utilization percentage values.
+        </td>
+        <td><a href="/documentation/authorization/utilization.html">Open guide</a></td>
+      </tr>
+      <tr>
+        <td><strong>New Authorization</strong></td>
+        <td>
+          Create a payer authorization, assign service lines, define dates and limits,
+          and establish the historical usage snapshot used before system auto-calculation.
+        </td>
+        <td><a href="/documentation/authorization/new-authorization.html">Open guide</a></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="doc-section">
+  <h2>Utilization Monitoring</h2>
+  <p>
+    Utilization helps Provider staff compare approved service limits against actual
+    service activity. The screen is designed to support early identification of
+    overuse risk, underutilization, expiring authorizations, and remaining service capacity.
+  </p>
+
+  <figure class="doc-figure">
+    <img src="/documentation/authorization/images/authorizations-utilization.jpg"
+         alt="Authorization utilization screen showing authorized, used, missed, remaining, and utilization percentage">
+    <figcaption>
+      Live utilization summary organized by Individual, service, payer, authorized units,
+      used units, missed units, remaining units, and utilization percentage.
+    </figcaption>
+  </figure>
+
+  <div class="auth-grid">
+    <article class="auth-card">
+      <small>APPROVED CAPACITY</small>
+      <h3>Authorized</h3>
+      <p>The payer-approved maximum service quantity for the authorization period.</p>
+    </article>
+    <article class="auth-card">
+      <small>SERVICE ACTIVITY</small>
+      <h3>Used and Missed</h3>
+      <p>Used values represent completed service activity; missed values support tracking of authorized service that was not delivered when applicable.</p>
+    </article>
+    <article class="auth-card">
+      <small>OPERATIONAL CONTROL</small>
+      <h3>Remaining and Utilization</h3>
+      <p>Remaining units and utilization percentage help staff monitor service capacity and prevent overuse.</p>
+    </article>
+  </div>
+</section>
+
+<section class="doc-section">
+  <h2>New Authorization</h2>
+  <p>
+    New Authorization combines the Individual profile snapshot, payer information,
+    authorization number, status, source, one or more service lines, authorization dates,
+    maximum approved amount, historical usage, and current utilization preview.
+  </p>
+
+  <figure class="doc-figure">
+    <img src="/documentation/authorization/images/new-authorizations.jpg"
+         alt="New Authorization screen with Individual profile, payer, service lines, dates, limits, historical usage, and utilization preview">
+    <figcaption>
+      New Authorization workflow with Individual selection, service lines,
+      authorization limitation, historical usage snapshot, and utilization preview.
+    </figcaption>
+  </figure>
+
+  <div class="auth-flow">
+    <article>
+      <span>1</span>
+      <strong>Select the Individual</strong>
+      <p>Confirm the correct Individual profile, Provider location, accepted services, and payer context.</p>
+    </article>
+    <article>
+      <span>2</span>
+      <strong>Enter Authorization Details</strong>
+      <p>Enter payer, authorization number, status, source, dates, and comments.</p>
+    </article>
+    <article>
+      <span>3</span>
+      <strong>Configure Service Lines</strong>
+      <p>Select the approved service, event code, format, program, and modifiers where applicable.</p>
+    </article>
+    <article>
+      <span>4</span>
+      <strong>Define Limits and Usage</strong>
+      <p>Enter the approved limit and any historical usage snapshot required before automatic calculation begins.</p>
+    </article>
+  </div>
+</section>
+
+<section class="doc-section">
+  <h2>Authorization Data Relationships</h2>
+  <p>
+    Authorization records may support several connected True Care System workflows.
+    The exact behavior depends on the Provider’s payer configuration, service setup,
+    scheduling workflow, billing rules, and implementation settings.
+  </p>
+  <ul>
+    <li><strong>Individual:</strong> Identifies the person receiving the authorized service.</li>
+    <li><strong>Payer and Program:</strong> Identifies the funding source and applicable program.</li>
+    <li><strong>Service:</strong> Connects the authorization to the Provider-configured service and billing code.</li>
+    <li><strong>Schedule and Visits:</strong> May contribute to automatic usage and missed-unit calculations.</li>
+    <li><strong>Billing:</strong> Uses authorization eligibility, dates, service, and remaining capacity during billing review.</li>
+    <li><strong>Reports and Audit Logs:</strong> Support operational review, traceability, and compliance monitoring.</li>
+  </ul>
+</section>
+
+<section class="doc-section">
+  <h2>HIPAA and Confidentiality</h2>
+  <div class="doc-notice auth-hipaa">
+    <strong>Protected Information</strong>
+    <p>
+      Authorization records may contain protected health information, payer identifiers,
+      Medicaid or Medicare information, service needs, utilization history, and financial
+      information. Access must be limited to authorized staff with a legitimate treatment,
+      payment, or health-care-operations purpose.
+    </p>
+  </div>
+  <ul>
+    <li>Use role-based access and the minimum necessary principle.</li>
+    <li>Verify the correct Provider and Individual before viewing or changing an authorization.</li>
+    <li>Do not share authorization screenshots or exported files through unapproved channels.</li>
+    <li>Review access and changes through HIPAA and audit history where applicable.</li>
+    <li>Use exports only for approved operational, payer, billing, compliance, or audit purposes.</li>
+  </ul>
+</section>
+
+<section class="doc-section">
+  <h2>Protected Operational Detail and Provider Training</h2>
+  <div class="doc-notice auth-policy">
+    <strong>True Care System Proprietary Workflow</strong>
+    <p>
+      This public documentation presents the general authorization workflow only.
+      To protect HIPAA-sensitive processes and the proprietary design of True Care System,
+      some advanced rules are intentionally not published here. These may include
+      automatic utilization logic, historical cutover handling, service-line validation,
+      schedule and visit reconciliation, missed-unit calculation, overuse prevention,
+      billing safeguards, exception handling, and payer-specific implementation controls.
+    </p>
+  </div>
+  <p>
+    Provider customers receive direct implementation training from the True Care System team.
+    Training is provided to authorized administrative, authorization, billing, compliance,
+    clinical, and operational personnel after the Provider becomes an official customer.
+  </p>
+</section>
+
+<section class="doc-section">
+  <h2>Recommended Workflow</h2>
+  <ol class="doc-steps">
+    <li><div><strong>Confirm the Provider and Individual.</strong><br>Verify that the authorization belongs to the correct tenant and person.</div></li>
+    <li><div><strong>Review the payer authorization.</strong><br>Confirm the authorization number, payer, program, service, dates, status, and source.</div></li>
+    <li><div><strong>Validate service limits.</strong><br>Confirm authorized units and any historical used or missed values.</div></li>
+    <li><div><strong>Monitor utilization.</strong><br>Review used, missed, remaining, utilization percentage, and expiration risk.</div></li>
+    <li><div><strong>Coordinate with scheduling and billing.</strong><br>Resolve discrepancies before services are scheduled or claims are prepared.</div></li>
+  </ol>
+</section>
+
+<section class="doc-section">
+  <h2>Related Documentation</h2>
+  <ul>
+    <li><a href="/documentation/individual-management/">Individual Management</a></li>
+    <li><a href="/documentation/service-management/">Service Management</a></li>
+    <li><a href="/documentation/scheduling/">Schedule</a></li>
+    <li><a href="/documentation/visit-maintenance/">Visit Maintenance</a></li>
+    <li><a href="/documentation/billing/">Billing</a></li>
+    <li><a href="/documentation/hipaa-compliance/">HIPAA</a></li>
+    <li><a href="/documentation/audit-logs/">Audit Logs</a></li>
+  </ul>
+</section>
+
+<div class="doc-page-navigation">
+  <a class="doc-button" href="/documentation/bss/monthly-progress-report.html">← Back</a>
+  <a class="doc-button" href="/documentation/authorization/index.html">🏠 Home</a>
+  <a class="doc-button" href="/documentation/authorization/authorizations.html">Next →</a>
+</div>
+</article>
+
+<footer class="doc-page-footer">
+  <p>© 2026 True Care System. All rights reserved.</p>
+  <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
+</footer>
+</main>
+</div>
+
+<div class="doc-search-results" id="docSearchResults" hidden></div>
+<script src="/documentation/assets/documentation.js"></script>
 </body>
 </html>
