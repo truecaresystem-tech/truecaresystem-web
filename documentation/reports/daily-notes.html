@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reports Center | True Care System Documentation</title>
-  <meta name="description" content="True Care System Reports Center documentation covering Daily Notes, Health & Incident, Awake Report, and Call Off Requests.">
+  <title>Daily Notes | True Care System Documentation</title>
+  <meta name="description" content="Detailed True Care System Daily Notes report documentation.">
   <link rel="stylesheet" href="/documentation/assets/documentation.css">
 </head>
 <body>
+
 <header class="doc-header">
   <a class="doc-brand" href="/documentation/index.html" aria-label="True Care System Documentation Home">
     <img src="/documentation/assets/true-care-logo.png" alt="True Care System">
@@ -64,99 +65,102 @@
       <a href="/documentation/reports/index.html">Reports</a><span>/</span>
       <span>Daily Notes</span>
     </div>
-
     <article class="doc-article">
       <header class="doc-article-header">
         <div>
           <p class="doc-eyebrow">REPORTS • SERVICE DOCUMENTATION</p>
           <h1>Daily Notes</h1>
-          <p>Review Daily Notes submitted from Mobile EVV and open available service-note outputs.</p>
+          <p>Review Daily Notes submitted from Mobile EVV, compare scheduled and actual service activity, and open generated DOC or PDF service-note reports.</p>
         </div>
         <dl class="doc-metadata">
           <div><dt>Document ID</dt><dd>REP-DOC-002</dd></div>
-          <div><dt>Version</dt><dd>1.0</dd></div>
+          <div><dt>Version</dt><dd>1.1</dd></div>
           <div><dt>Status</dt><dd>Draft</dd></div>
           <div><dt>Last Updated</dt><dd>07/25/2026</dd></div>
         </dl>
       </header>
+      
+      <div class="doc-notice doc-notice-info" style="margin-top:24px;">
+        <strong>HIPAA and demo-data notice</strong>
+        <p>Reports shown in this guide may contain Protected Health Information (PHI). True Care System intentionally masks or removes real names, identifiers, contact information, signatures, and other sensitive values from screenshots. Any information that remains visible may be demonstration data created only for training and documentation.</p>
+      </div>
+
 
       <section class="doc-section">
         <h2>Purpose</h2>
-        
-          <p>The Daily Notes report displays service documentation submitted by DSP staff through the True Care System Mobile EVV workflow. Authorized office and supervisory users can review the service date, Individual, staff member, service, scheduled time, actual visit time, mileage, cancellation status, and available report outputs.</p>
-          <p>This workspace is used to locate completed Daily Notes, compare scheduled and actual service information, and open the generated service documentation for operational or compliance review.</p>
-        
+        <p>The Daily Notes report is the operational review page for service notes submitted from the True Care System Mobile EVV workflow. It allows authorized office, supervisory, compliance, and billing users to locate completed notes and compare the scheduled visit with the actual service activity.</p>
+        <p>The report is also the entry point for opening the generated service-note output in DOC or PDF format.</p>
       </section>
 
       <section class="doc-section">
-        <h2>Workspace</h2>
+        <h2>Daily Notes Report Workspace</h2>
+        
         <figure style="margin:24px 0 0">
-          <img src="/documentation/reports/images/daily-notes.jpg" alt="True Care System Daily Notes Report" style="display:block;width:100%;height:auto;border:1px solid var(--border);border-radius:12px">
-          <figcaption style="margin-top:10px;color:var(--muted);text-align:center">True Care System Daily Notes Report.</figcaption>
+          <img src="/documentation/reports/images/daily-notes-report.jpg" alt="Daily Notes report list" style="display:block;width:100%;height:auto;border:1px solid var(--border);border-radius:12px">
+          <figcaption style="margin-top:10px;color:var(--muted);text-align:center">Daily Notes report list with filters, visit timing, mileage, cancellation status, and DOC/PDF links.</figcaption>
         </figure>
+    
       </section>
 
-      
-        <section class="doc-section">
-          <h2>Search and Filter Controls</h2>
-          <div class="doc-module-grid">
-            <div class="doc-module-card"><small>DSP</small><strong>Staff filter</strong><p>Limit results to Daily Notes submitted by a selected DSP or staff member.</p></div>
-            <div class="doc-module-card"><small>INDIVIDUAL</small><strong>Individual filter</strong><p>Display records associated with the selected Individual.</p></div>
-            <div class="doc-module-card"><small>DATE RANGE</small><strong>From and To dates</strong><p>Restrict the results to the required service period before applying the filter.</p></div>
-          </div>
-        </section>
-
-        <section class="doc-section">
-          <h2>Daily Notes Results</h2>
-          <div style="overflow-x:auto;">
-            <table style="width:100%;border-collapse:collapse;table-layout:fixed;">
-              <colgroup><col style="width:150px"><col style="width:180px"><col style="width:180px"><col><col style="width:160px"><col style="width:160px"><col style="width:100px"><col style="width:110px"><col style="width:120px"></colgroup>
-              <thead><tr style="background:var(--surface);">
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Date</th>
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Individual</th>
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Staff</th>
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Service</th>
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Schedule</th>
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Visit</th>
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Mileage</th>
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Cancelled</th>
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Report</th>
-              </tr></thead>
-              <tbody><tr>
-                <td style="padding:13px;vertical-align:top">Service date</td>
-                <td style="padding:13px;vertical-align:top">Individual receiving services</td>
-                <td style="padding:13px;vertical-align:top">Submitting DSP</td>
-                <td style="padding:13px;vertical-align:top">Service name, level, and code</td>
-                <td style="padding:13px;vertical-align:top">Scheduled start and end</td>
-                <td style="padding:13px;vertical-align:top">Actual visit start and end</td>
-                <td style="padding:13px;vertical-align:top">Recorded miles</td>
-                <td style="padding:13px;vertical-align:top">Yes or No</td>
-                <td style="padding:13px;vertical-align:top">DOC / PDF</td>
-              </tr></tbody>
-            </table>
-          </div>
-        </section>
-
-        <section class="doc-section">
-          <h2>Service Note Output</h2>
-          <p>The available DOC and PDF links open the generated Service Note for the selected visit. Depending on the service workflow, the report may contain Provider information, the Individual and staff member, scheduled and actual time, mileage, units, outcome documentation, service location, supports provided, meal information, and required signatures.</p>
-          <p>Users should verify that the report matches the intended visit and reporting period before printing, downloading, or sharing it through an approved channel.</p>
-        </section>
-        
-      
       <section class="doc-section">
-        <h2>HIPAA, Privacy, and Proprietary Workflow Notice</h2>
-        <div class="doc-notice doc-notice-info">
-          <strong>Restricted information</strong>
-          <p>This report may contain Protected Health Information, confidential employment information, operational records, signatures, investigation details, or other sensitive data. Access, printing, and export are limited to authorized users with an appropriate role and business purpose.</p>
+        <h2>Search and Filter Controls</h2>
+        <div class="doc-module-grid">
+          <div class="doc-module-card"><small>DSP (STAFF)</small><strong>Staff filter</strong><p>Limits the results to notes submitted by the selected DSP or staff member.</p></div>
+          <div class="doc-module-card"><small>INDIVIDUAL</small><strong>Individual filter</strong><p>Displays only Daily Notes associated with the selected Individual.</p></div>
+          <div class="doc-module-card"><small>FROM / TO DATE</small><strong>Date range</strong><p>Restricts the report to the selected service period before Apply Filter is used.</p></div>
         </div>
-        <p>True Care System does not publish every internal decision rule, escalation method, audit correlation, compliance control, or proprietary operational process in this public guide. Advanced workflow instruction is provided directly to authorized personnel of Providers that are official True Care System customers.</p>
       </section>
 
+      <section class="doc-section">
+        <h2>Result Columns</h2>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;table-layout:fixed;">
+            <colgroup><col style="width:150px"><col style="width:190px"><col style="width:170px"><col><col style="width:160px"><col style="width:160px"><col style="width:100px"><col style="width:110px"><col style="width:120px"></colgroup>
+            <thead><tr style="background:var(--surface)">
+              <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Column</th>
+              <th colspan="8" style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Meaning</th>
+            </tr></thead>
+            <tbody>
+              <tr><td style="padding:13px;vertical-align:top"><strong>Date</strong></td><td colspan="8" style="padding:13px;vertical-align:top">Service date associated with the submitted Daily Note.</td></tr>
+              <tr><td style="padding:13px;vertical-align:top"><strong>Individual</strong></td><td colspan="8" style="padding:13px;vertical-align:top">Individual who received the service.</td></tr>
+              <tr><td style="padding:13px;vertical-align:top"><strong>Staff</strong></td><td colspan="8" style="padding:13px;vertical-align:top">DSP or staff member who completed the note.</td></tr>
+              <tr><td style="padding:13px;vertical-align:top"><strong>Service</strong></td><td colspan="8" style="padding:13px;vertical-align:top">Service name, service level, and service code.</td></tr>
+              <tr><td style="padding:13px;vertical-align:top"><strong>Schedule</strong></td><td colspan="8" style="padding:13px;vertical-align:top">Scheduled start and end time.</td></tr>
+              <tr><td style="padding:13px;vertical-align:top"><strong>Visit</strong></td><td colspan="8" style="padding:13px;vertical-align:top">Actual visit start and end time from the EVV record.</td></tr>
+              <tr><td style="padding:13px;vertical-align:top"><strong>Mileage</strong></td><td colspan="8" style="padding:13px;vertical-align:top">Mileage recorded for the service when applicable.</td></tr>
+              <tr><td style="padding:13px;vertical-align:top"><strong>Cancelled?</strong></td><td colspan="8" style="padding:13px;vertical-align:top">Indicates whether the scheduled service was cancelled.</td></tr>
+              <tr><td style="padding:13px;vertical-align:top"><strong>Report</strong></td><td colspan="8" style="padding:13px;vertical-align:top">Opens the available DOC or PDF output for the selected Daily Note.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
       <section class="doc-section">
-        <h2>Security and Best Practices</h2>
-        <p>Verify the selected Provider, Individual, staff member, date range, and report record before printing or exporting. Store generated files only in approved locations, do not share sensitive information through unapproved channels, and follow the Provider's retention and destruction requirements.</p>
+        <h2>Printed Service Note</h2>
+        <p>The generated report may include Provider information, the Individual and DSP, service date, scheduled and actual visit time, mileage, units, cancellation information, outcome documentation, service location, supports provided, community participation, meals, and required signatures.</p>
+        
+        <figure style="margin:24px 0 0">
+          <img src="/documentation/reports/images/daily-notes-report-print.jpg" alt="Printed Daily Notes service report" style="display:block;width:100%;height:auto;border:1px solid var(--border);border-radius:12px">
+          <figcaption style="margin-top:10px;color:var(--muted);text-align:center">Generated service-note preview showing Provider header, service details, outcomes, supports, meals, and signatures.</figcaption>
+        </figure>
+    
+      </section>
+
+      <section class="doc-section">
+        <h2>Review Checklist</h2>
+        <ol class="doc-steps">
+          <li><div><strong>Confirm the correct record.</strong><br>Verify the Individual, staff member, service date, and service code.</div></li>
+          <li><div><strong>Compare Schedule and Visit.</strong><br>Review differences between scheduled time and actual EVV time.</div></li>
+          <li><div><strong>Review documentation completeness.</strong><br>Confirm outcomes, supports, notes, mileage, meals, and signatures where required.</div></li>
+          <li><div><strong>Open the correct output.</strong><br>Use DOC or PDF only after confirming the report belongs to the intended visit.</div></li>
+        </ol>
+      </section>
+
+      
+      <section class="doc-section">
+        <h2>HIPAA, Security, and Proprietary Workflow</h2>
+        <p>Access to report data must follow the Provider's role-based access, minimum-necessary, privacy, retention, and disclosure procedures. Users should verify the Provider, Individual, employee, date range, and record before printing, exporting, or sharing any report.</p>
+        <p>True Care System does not publicly disclose every audit correlation, escalation rule, investigation control, exception-handling process, or proprietary workflow. Advanced operating procedures are provided during direct training for authorized personnel of Providers that are official True Care System customers.</p>
       </section>
 
       <div class="doc-page-navigation" style="display:flex;justify-content:space-between;gap:16px;padding:30px 0">
@@ -165,14 +169,11 @@
         <a class="doc-button" href="health-incident.html">Next →</a>
       </div>
     </article>
-
-    <footer class="doc-page-footer">
-      <p>© 2026 True Care System. All rights reserved.</p>
-      <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
-    </footer>
+    <footer class="doc-page-footer"><p>© 2026 True Care System. All rights reserved.</p><p>Documentation is maintained as part of the True Care System product lifecycle.</p></footer>
 
   </main>
 </div>
 <script src="/documentation/assets/documentation.js"></script>
 </body>
 </html>
+

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reports Center | True Care System Documentation</title>
-  <meta name="description" content="True Care System Reports Center documentation covering Daily Notes, Health & Incident, Awake Report, and Call Off Requests.">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call Off Requests | True Care System Documentation</title>
+  <meta name="description" content="Detailed DSP Call Off Requests report documentation.">
   <link rel="stylesheet" href="/documentation/assets/documentation.css">
 </head>
 <body>
+
 <header class="doc-header">
   <a class="doc-brand" href="/documentation/index.html" aria-label="True Care System Documentation Home">
     <img src="/documentation/assets/true-care-logo.png" alt="True Care System">
@@ -59,116 +59,84 @@
   </aside>
   <main class="doc-main">
 
-    <div class="doc-breadcrumb">
-      <a href="/documentation/index.html">Documentation</a><span>/</span>
-      <a href="/documentation/reports/index.html">Reports</a><span>/</span>
-      <span>Call Off Requests</span>
-    </div>
-
+    <div class="doc-breadcrumb"><a href="/documentation/index.html">Documentation</a><span>/</span><a href="/documentation/reports/index.html">Reports</a><span>/</span><span>Call Off Requests</span></div>
     <article class="doc-article">
       <header class="doc-article-header">
-        <div>
-          <p class="doc-eyebrow">REPORTS • STAFFING REQUESTS</p>
-          <h1>Call Off Requests</h1>
-          <p>Review DSP call-off submissions, PTO information, dates, reasons, and approval status.</p>
-        </div>
-        <dl class="doc-metadata">
-          <div><dt>Document ID</dt><dd>REP-DOC-005</dd></div>
-          <div><dt>Version</dt><dd>1.0</dd></div>
-          <div><dt>Status</dt><dd>Draft</dd></div>
-          <div><dt>Last Updated</dt><dd>07/25/2026</dd></div>
-        </dl>
+        <div><p class="doc-eyebrow">REPORTS • STAFFING REQUESTS</p><h1>Call Off Requests</h1><p>Review DSP call-off submissions, PTO selections, dates, reasons, approval status, and staffing follow-up needs.</p></div>
+        <dl class="doc-metadata"><div><dt>Document ID</dt><dd>REP-DOC-005</dd></div><div><dt>Version</dt><dd>1.1</dd></div><div><dt>Status</dt><dd>Draft</dd></div><div><dt>Last Updated</dt><dd>07/25/2026</dd></div></dl>
       </header>
+      
+      <div class="doc-notice doc-notice-info" style="margin-top:24px;">
+        <strong>HIPAA and demo-data notice</strong>
+        <p>Reports shown in this guide may contain Protected Health Information (PHI). True Care System intentionally masks or removes real names, identifiers, contact information, signatures, and other sensitive values from screenshots. Any information that remains visible may be demonstration data created only for training and documentation.</p>
+      </div>
+
 
       <section class="doc-section">
         <h2>Purpose</h2>
-        
-          <p>The Call Off Requests report displays DSP call-off and time-off submissions available to authorized office and supervisory users. The report supports staffing follow-up by showing the DSP, whether PTO was requested, PTO type, start and end dates, the submitted reason, and the current request status.</p>
-          <p>This page is used to locate pending requests, review prior decisions, and identify requests that may require schedule or coverage follow-up.</p>
-        
+        <p>The Call Off Requests report displays DSP call-off and time-off submissions available to authorized office and supervisory users. It supports staffing review by showing the requesting DSP, PTO selection, PTO type, start and end dates, submitted reason, and current approval status.</p>
       </section>
 
       <section class="doc-section">
-        <h2>Workspace</h2>
+        <h2>Call Off Requests Workspace</h2>
+        
         <figure style="margin:24px 0 0">
-          <img src="/documentation/reports/images/call-off-requests.jpg" alt="True Care System Call Off Requests" style="display:block;width:100%;height:auto;border:1px solid var(--border);border-radius:12px">
-          <figcaption style="margin-top:10px;color:var(--muted);text-align:center">True Care System Call Off Requests.</figcaption>
+          <img src="/documentation/reports/images/call-off-requests-report.jpg" alt="Call Off Requests report" style="display:block;width:100%;height:auto;border:1px solid var(--border);border-radius:12px">
+          <figcaption style="margin-top:10px;color:var(--muted);text-align:center">DSP Call Off Requests report with name filter, status filter, dates, reasons, PTO information, and request status.</figcaption>
         </figure>
+    
       </section>
 
-      
-        <section class="doc-section">
-          <h2>Search Controls</h2>
-          <div class="doc-module-grid">
-            <div class="doc-module-card"><small>DSP NAME</small><strong>Find staff requests</strong><p>Search the list using the DSP or staff member's name.</p></div>
-            <div class="doc-module-card"><small>STATUS</small><strong>Filter request state</strong><p>Display all requests or limit the list to the available status selection.</p></div>
-            <div class="doc-module-card"><small>REFRESH</small><strong>Reload current data</strong><p>Refresh the report after changes or when reviewing newly submitted requests.</p></div>
-          </div>
-        </section>
-
-        <section class="doc-section">
-          <h2>Request Information</h2>
-          <div style="overflow-x:auto;">
-            <table style="width:100%;border-collapse:collapse;table-layout:fixed;">
-              <colgroup><col style="width:180px"><col style="width:100px"><col style="width:150px"><col style="width:130px"><col style="width:130px"><col><col style="width:140px"></colgroup>
-              <thead><tr style="background:var(--surface)">
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">DSP</th>
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">PTO?</th>
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">PTO Type</th>
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Start</th>
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">End</th>
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Reason</th>
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Status</th>
-              </tr></thead>
-              <tbody><tr>
-                <td style="padding:13px;vertical-align:top">Requesting DSP</td>
-                <td style="padding:13px;vertical-align:top">Yes or No</td>
-                <td style="padding:13px;vertical-align:top">Vacation or available type</td>
-                <td style="padding:13px;vertical-align:top">Beginning date</td>
-                <td style="padding:13px;vertical-align:top">Ending date</td>
-                <td style="padding:13px;vertical-align:top">Submitted explanation</td>
-                <td style="padding:13px;vertical-align:top">Pending, Approved, Rejected, or Cancelled</td>
-              </tr></tbody>
-            </table>
-          </div>
-        </section>
-
-        <section class="doc-section">
-          <h2>Operational Use</h2>
-          <p>A Call Off Request does not by itself confirm that all affected shifts have been reassigned. Office or supervisory staff should review the corresponding schedule, determine whether coverage is required, follow the Provider's approval process, and complete any separate staffing actions required by agency policy.</p>
-          <p>Reasons may contain private employment or health-related information and should only be viewed by personnel with a legitimate staffing, supervisory, payroll, HR, or compliance purpose.</p>
-        </section>
-        
-      
       <section class="doc-section">
-        <h2>HIPAA, Privacy, and Proprietary Workflow Notice</h2>
-        <div class="doc-notice doc-notice-info">
-          <strong>Restricted information</strong>
-          <p>This report may contain Protected Health Information, confidential employment information, operational records, signatures, investigation details, or other sensitive data. Access, printing, and export are limited to authorized users with an appropriate role and business purpose.</p>
+        <h2>Search and Result Fields</h2>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;table-layout:fixed;">
+            <colgroup><col style="width:190px"><col></colgroup>
+            <thead><tr style="background:var(--surface)"><th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Field</th><th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">General Use</th></tr></thead>
+            <tbody>
+              <tr><td style="padding:13px;vertical-align:top"><strong>DSP name</strong></td><td style="padding:13px;vertical-align:top">Searches requests by DSP or staff name.</td></tr>
+              <tr><td style="padding:13px;vertical-align:top"><strong>Status filter</strong></td><td style="padding:13px;vertical-align:top">Displays all requests or limits results to the selected request status.</td></tr>
+              <tr><td style="padding:13px;vertical-align:top"><strong>PTO?</strong></td><td style="padding:13px;vertical-align:top">Shows whether the DSP requested PTO for the absence.</td></tr>
+              <tr><td style="padding:13px;vertical-align:top"><strong>PTO Type</strong></td><td style="padding:13px;vertical-align:top">Displays the selected PTO category when applicable.</td></tr>
+              <tr><td style="padding:13px;vertical-align:top"><strong>Start / End</strong></td><td style="padding:13px;vertical-align:top">Shows the beginning and ending dates of the request.</td></tr>
+              <tr><td style="padding:13px;vertical-align:top"><strong>Reason</strong></td><td style="padding:13px;vertical-align:top">Displays the staff member's submitted explanation.</td></tr>
+              <tr><td style="padding:13px;vertical-align:top"><strong>Status</strong></td><td style="padding:13px;vertical-align:top">Shows Pending, Approved, Rejected, or Cancelled.</td></tr>
+            </tbody>
+          </table>
         </div>
-        <p>True Care System does not publish every internal decision rule, escalation method, audit correlation, compliance control, or proprietary operational process in this public guide. Advanced workflow instruction is provided directly to authorized personnel of Providers that are official True Care System customers.</p>
       </section>
 
+      <section class="doc-section">
+        <h2>Operational Follow-up</h2>
+        <p>A Call Off Request does not by itself confirm that every affected shift has been reassigned. Office or supervisory users should review the corresponding schedule, determine whether coverage is required, follow the Provider's approval process, and complete any separate backup-plan or staffing actions required by policy.</p>
+        <div class="doc-module-grid">
+          <div class="doc-module-card"><small>PENDING</small><strong>Needs review</strong><p>Request has not yet received a final decision.</p></div>
+          <div class="doc-module-card"><small>APPROVED / REJECTED</small><strong>Decision recorded</strong><p>The request has been accepted or denied according to Provider policy.</p></div>
+          <div class="doc-module-card"><small>CANCELLED</small><strong>Request withdrawn</strong><p>The request is no longer active but remains visible for history.</p></div>
+        </div>
+      </section>
 
       <section class="doc-section">
-        <h2>Security and Best Practices</h2>
-        <p>Verify the selected Provider, Individual, staff member, date range, and report record before printing or exporting. Store generated files only in approved locations, do not share sensitive information through unapproved channels, and follow the Provider's retention and destruction requirements.</p>
+        <h2>Privacy Considerations</h2>
+        <p>Call-off reasons may include private employment, family, court, counseling, or health-related information. Access should be limited to personnel with a legitimate staffing, supervisory, HR, payroll, or compliance purpose.</p>
+      </section>
+
+      
+      <section class="doc-section">
+        <h2>HIPAA, Security, and Proprietary Workflow</h2>
+        <p>Access to report data must follow the Provider's role-based access, minimum-necessary, privacy, retention, and disclosure procedures. Users should verify the Provider, Individual, employee, date range, and record before printing, exporting, or sharing any report.</p>
+        <p>True Care System does not publicly disclose every audit correlation, escalation rule, investigation control, exception-handling process, or proprietary workflow. Advanced operating procedures are provided during direct training for authorized personnel of Providers that are official True Care System customers.</p>
       </section>
 
       <div class="doc-page-navigation" style="display:flex;justify-content:space-between;gap:16px;padding:30px 0">
-        <a class="doc-button" href="awake-report.html">← Back</a>
-        <a class="doc-button" href="index.html">🏠 Home</a>
-        <a class="doc-button" href="../kpi/index.html">Next →</a>
+        <a class="doc-button" href="awake-report.html">← Back</a><a class="doc-button" href="index.html">🏠 Home</a><a class="doc-button" href="../kpi/index.html">Next →</a>
       </div>
     </article>
-
-    <footer class="doc-page-footer">
-      <p>© 2026 True Care System. All rights reserved.</p>
-      <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
-    </footer>
+    <footer class="doc-page-footer"><p>© 2026 True Care System. All rights reserved.</p><p>Documentation is maintained as part of the True Care System product lifecycle.</p></footer>
 
   </main>
 </div>
 <script src="/documentation/assets/documentation.js"></script>
 </body>
 </html>
+

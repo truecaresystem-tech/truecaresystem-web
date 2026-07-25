@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reports Center | True Care System Documentation</title>
-  <meta name="description" content="True Care System Reports Center documentation covering Daily Notes, Health & Incident, Awake Report, and Call Off Requests.">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awake Report | True Care System Documentation</title>
+  <meta name="description" content="Detailed Awake Monitoring report documentation.">
   <link rel="stylesheet" href="/documentation/assets/documentation.css">
 </head>
 <body>
+
 <header class="doc-header">
   <a class="doc-brand" href="/documentation/index.html" aria-label="True Care System Documentation Home">
     <img src="/documentation/assets/true-care-logo.png" alt="True Care System">
@@ -59,121 +59,90 @@
   </aside>
   <main class="doc-main">
 
-    <div class="doc-breadcrumb">
-      <a href="/documentation/index.html">Documentation</a><span>/</span>
-      <a href="/documentation/reports/index.html">Reports</a><span>/</span>
-      <span>Awake Report</span>
-    </div>
-
+    <div class="doc-breadcrumb"><a href="/documentation/index.html">Documentation</a><span>/</span><a href="/documentation/reports/index.html">Reports</a><span>/</span><span>Awake Report</span></div>
     <article class="doc-article">
       <header class="doc-article-header">
-        <div>
-          <p class="doc-eyebrow">REPORTS • AWAKE MONITORING</p>
-          <h1>Awake Report</h1>
-          <p>Audit Awake Monitoring activity, reminders, confirmations, visit timing, and final status.</p>
-        </div>
-        <dl class="doc-metadata">
-          <div><dt>Document ID</dt><dd>REP-DOC-004</dd></div>
-          <div><dt>Version</dt><dd>1.0</dd></div>
-          <div><dt>Status</dt><dd>Draft</dd></div>
-          <div><dt>Last Updated</dt><dd>07/25/2026</dd></div>
-        </dl>
+        <div><p class="doc-eyebrow">REPORTS • AWAKE MONITORING</p><h1>Awake Report</h1><p>Audit awake-required visits, reminder events, DSP confirmations, visit timing, event history, and final compliance status.</p></div>
+        <dl class="doc-metadata"><div><dt>Document ID</dt><dd>REP-DOC-004</dd></div><div><dt>Version</dt><dd>1.1</dd></div><div><dt>Status</dt><dd>Draft</dd></div><div><dt>Last Updated</dt><dd>07/25/2026</dd></div></dl>
       </header>
+      
+      <div class="doc-notice doc-notice-info" style="margin-top:24px;">
+        <strong>HIPAA and demo-data notice</strong>
+        <p>Reports shown in this guide may contain Protected Health Information (PHI). True Care System intentionally masks or removes real names, identifiers, contact information, signatures, and other sensitive values from screenshots. Any information that remains visible may be demonstration data created only for training and documentation.</p>
+      </div>
+
 
       <section class="doc-section">
         <h2>Purpose</h2>
-        
-          <p>The Awake Report provides an audit view of shifts marked for Awake Monitoring. It allows authorized users to review the scheduled service period, actual visit timing, reminder activity, DSP awake confirmations, event history, and final Passed or Failed status.</p>
-          <p>The report supports operational follow-up for overnight or awake-required services and provides a printable timeline based on recorded system events.</p>
-        
+        <p>The Awake Report provides an audit view of visits that require Awake Monitoring. It supports review of the assigned DSP, Individual, service, scheduled time, actual visit time, reminder count, confirmation count, and final Passed or Failed status.</p>
       </section>
 
       <section class="doc-section">
-        <h2>Workspace</h2>
+        <h2>Awake Report List</h2>
+        
         <figure style="margin:24px 0 0">
-          <img src="/documentation/reports/images/awake-report.jpg" alt="True Care System Awake Report" style="display:block;width:100%;height:auto;border:1px solid var(--border);border-radius:12px">
-          <figcaption style="margin-top:10px;color:var(--muted);text-align:center">True Care System Awake Report.</figcaption>
+          <img src="/documentation/reports/images/awake-report.jpg" alt="Awake Report list" style="display:block;width:100%;height:auto;border:1px solid var(--border);border-radius:12px">
+          <figcaption style="margin-top:10px;color:var(--muted);text-align:center">Awake Monitoring report list with filters, reminder counts, confirmation counts, final status, and View action.</figcaption>
         </figure>
+    
       </section>
 
-      
-        <section class="doc-section">
-          <h2>Report Filters</h2>
-          <div class="doc-module-grid">
-            <div class="doc-module-card"><small>DSP</small><strong>Staff selection</strong><p>Filter monitoring activity by the assigned DSP or staff member.</p></div>
-            <div class="doc-module-card"><small>INDIVIDUAL</small><strong>Individual selection</strong><p>Limit results to awake-required visits for a selected Individual.</p></div>
-            <div class="doc-module-card"><small>DATE &amp; STATUS</small><strong>Reporting period</strong><p>Use the From date, To date, and status controls to narrow the audit list.</p></div>
-          </div>
-        </section>
-
-        <section class="doc-section">
-          <h2>Awake Report List</h2>
-          <div style="overflow-x:auto;">
-            <table style="width:100%;border-collapse:collapse;table-layout:fixed;">
-              <thead><tr style="background:var(--surface)">
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Date</th>
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Individual</th>
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Staff</th>
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Service</th>
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Schedule</th>
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Visit</th>
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Reminders</th>
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Confirms</th>
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Status</th>
-                <th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Actions</th>
-              </tr></thead>
-              <tbody><tr>
-                <td style="padding:13px;vertical-align:top">Shift date</td>
-                <td style="padding:13px;vertical-align:top">Individual</td>
-                <td style="padding:13px;vertical-align:top">Assigned staff</td>
-                <td style="padding:13px;vertical-align:top">Service and code</td>
-                <td style="padding:13px;vertical-align:top">Scheduled time</td>
-                <td style="padding:13px;vertical-align:top">Actual visit time</td>
-                <td style="padding:13px;vertical-align:top">Reminder count</td>
-                <td style="padding:13px;vertical-align:top">Confirmation count</td>
-                <td style="padding:13px;vertical-align:top">Passed / Failed</td>
-                <td style="padding:13px;vertical-align:top">View</td>
-              </tr></tbody>
-            </table>
-          </div>
-        </section>
-
-        <section class="doc-section">
-          <h2>Report Detail and Timeline</h2>
-          <p>The detail page identifies the Individual, DSP, service, shift date, scheduled period, actual visit period, reminder and confirmation totals, final status, auto-checkout information when available, and the saved Awake Monitoring event timeline.</p>
-          <p>Timeline entries may identify when monitoring started, when the DSP confirmed awake, and whether the visit ended through manual or automatic checkout. Users should interpret the report together with the underlying visit record and applicable Provider policy.</p>
-        </section>
-        
-      
       <section class="doc-section">
-        <h2>HIPAA, Privacy, and Proprietary Workflow Notice</h2>
-        <div class="doc-notice doc-notice-info">
-          <strong>Restricted information</strong>
-          <p>This report may contain Protected Health Information, confidential employment information, operational records, signatures, investigation details, or other sensitive data. Access, printing, and export are limited to authorized users with an appropriate role and business purpose.</p>
+        <h2>Filters and Result Fields</h2>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;table-layout:fixed;">
+            <colgroup><col style="width:190px"><col></colgroup>
+            <thead><tr style="background:var(--surface)"><th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">Field</th><th style="padding:13px;text-align:left;border-bottom:1px solid var(--border)">General Use</th></tr></thead>
+            <tbody>
+              <tr><td style="padding:13px;vertical-align:top"><strong>DSP / Individual</strong></td><td style="padding:13px;vertical-align:top">Limits results to the selected staff member or Individual.</td></tr>
+              <tr><td style="padding:13px;vertical-align:top"><strong>From / To date</strong></td><td style="padding:13px;vertical-align:top">Defines the Awake Monitoring review period.</td></tr>
+              <tr><td style="padding:13px;vertical-align:top"><strong>Status</strong></td><td style="padding:13px;vertical-align:top">Limits results by final monitoring status.</td></tr>
+              <tr><td style="padding:13px;vertical-align:top"><strong>Schedule / Visit</strong></td><td style="padding:13px;vertical-align:top">Compares the scheduled shift with the actual recorded visit.</td></tr>
+              <tr><td style="padding:13px;vertical-align:top"><strong>Reminders / Confirms</strong></td><td style="padding:13px;vertical-align:top">Shows how many reminder and awake-confirmation events were recorded.</td></tr>
+              <tr><td style="padding:13px;vertical-align:top"><strong>Passed / Failed</strong></td><td style="padding:13px;vertical-align:top">Shows the final monitoring result produced by the workflow.</td></tr>
+            </tbody>
+          </table>
         </div>
-        <p>True Care System does not publish every internal decision rule, escalation method, audit correlation, compliance control, or proprietary operational process in this public guide. Advanced workflow instruction is provided directly to authorized personnel of Providers that are official True Care System customers.</p>
       </section>
 
+      <section class="doc-section">
+        <h2>Awake Report Detail and Print View</h2>
+        <p>The detailed report identifies the Individual, DSP, service, shift date, scheduled period, actual visit period, reminders, confirmations, final status, auto-checkout information when applicable, and the saved Awake Monitoring timeline.</p>
+        <p>The timeline may show events such as monitoring started, DSP confirmed awake, manual checkout, or automatic checkout. The report should be interpreted together with the visit record and the Provider's awake-shift policy.</p>
+        
+        <figure style="margin:24px 0 0">
+          <img src="/documentation/reports/images/awake-report-print.jpg" alt="Awake Report print detail" style="display:block;width:100%;height:auto;border:1px solid var(--border);border-radius:12px">
+          <figcaption style="margin-top:10px;color:var(--muted);text-align:center">Printable Awake Report with Provider header, visit summary, final status, auto-checkout information, and event timeline.</figcaption>
+        </figure>
+    
+      </section>
 
       <section class="doc-section">
-        <h2>Security and Best Practices</h2>
-        <p>Verify the selected Provider, Individual, staff member, date range, and report record before printing or exporting. Store generated files only in approved locations, do not share sensitive information through unapproved channels, and follow the Provider's retention and destruction requirements.</p>
+        <h2>Review Checklist</h2>
+        <ol class="doc-steps">
+          <li><div><strong>Confirm awake-required service.</strong><br>Verify that the visit was correctly identified as requiring Awake Monitoring.</div></li>
+          <li><div><strong>Compare scheduled and actual time.</strong><br>Review the start and end of the scheduled shift and recorded visit.</div></li>
+          <li><div><strong>Review monitoring events.</strong><br>Confirm reminders, DSP confirmations, checkout activity, and timeline sequence.</div></li>
+          <li><div><strong>Review final status.</strong><br>Investigate failed or incomplete activity according to Provider policy.</div></li>
+        </ol>
+      </section>
+
+      
+      <section class="doc-section">
+        <h2>HIPAA, Security, and Proprietary Workflow</h2>
+        <p>Access to report data must follow the Provider's role-based access, minimum-necessary, privacy, retention, and disclosure procedures. Users should verify the Provider, Individual, employee, date range, and record before printing, exporting, or sharing any report.</p>
+        <p>True Care System does not publicly disclose every audit correlation, escalation rule, investigation control, exception-handling process, or proprietary workflow. Advanced operating procedures are provided during direct training for authorized personnel of Providers that are official True Care System customers.</p>
       </section>
 
       <div class="doc-page-navigation" style="display:flex;justify-content:space-between;gap:16px;padding:30px 0">
-        <a class="doc-button" href="health-incident.html">← Back</a>
-        <a class="doc-button" href="index.html">🏠 Home</a>
-        <a class="doc-button" href="call-off-requests.html">Next →</a>
+        <a class="doc-button" href="health-incident.html">← Back</a><a class="doc-button" href="index.html">🏠 Home</a><a class="doc-button" href="call-off-requests.html">Next →</a>
       </div>
     </article>
-
-    <footer class="doc-page-footer">
-      <p>© 2026 True Care System. All rights reserved.</p>
-      <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
-    </footer>
+    <footer class="doc-page-footer"><p>© 2026 True Care System. All rights reserved.</p><p>Documentation is maintained as part of the True Care System product lifecycle.</p></footer>
 
   </main>
 </div>
 <script src="/documentation/assets/documentation.js"></script>
 </body>
 </html>
+

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reports Center | True Care System Documentation</title>
-  <meta name="description" content="True Care System Reports Center documentation covering Daily Notes, Health & Incident, Awake Report, and Call Off Requests.">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health & Incident | True Care System Documentation</title>
+  <meta name="description" content="Detailed Health and Incident workflow documentation.">
   <link rel="stylesheet" href="/documentation/assets/documentation.css">
 </head>
 <body>
+
 <header class="doc-header">
   <a class="doc-brand" href="/documentation/index.html" aria-label="True Care System Documentation Home">
     <img src="/documentation/assets/true-care-logo.png" alt="True Care System">
@@ -59,100 +59,111 @@
   </aside>
   <main class="doc-main">
 
-    <div class="doc-breadcrumb">
-      <a href="/documentation/index.html">Documentation</a><span>/</span>
-      <a href="/documentation/reports/index.html">Reports</a><span>/</span>
-      <span>Health & Incident</span>
-    </div>
-
+    <div class="doc-breadcrumb"><a href="/documentation/index.html">Documentation</a><span>/</span><a href="/documentation/reports/index.html">Reports</a><span>/</span><span>Health &amp; Incident</span></div>
     <article class="doc-article">
       <header class="doc-article-header">
-        <div>
-          <p class="doc-eyebrow">REPORTS • INCIDENT MANAGEMENT</p>
-          <h1>Health & Incident</h1>
-          <p>Review Health & Incident reports, investigations, evidence, audit history, and case closure.</p>
-        </div>
-        <dl class="doc-metadata">
-          <div><dt>Document ID</dt><dd>REP-DOC-003</dd></div>
-          <div><dt>Version</dt><dd>1.0</dd></div>
-          <div><dt>Status</dt><dd>Draft</dd></div>
-          <div><dt>Last Updated</dt><dd>07/25/2026</dd></div>
-        </dl>
+        <div><p class="doc-eyebrow">REPORTS • INCIDENT MANAGEMENT</p><h1>Health &amp; Incident</h1><p>Review submitted incidents, complete supervisor review, assign a Certified Investigator, document findings, upload evidence, and close the case.</p></div>
+        <dl class="doc-metadata"><div><dt>Document ID</dt><dd>REP-DOC-003</dd></div><div><dt>Version</dt><dd>1.1</dd></div><div><dt>Status</dt><dd>Draft</dd></div><div><dt>Last Updated</dt><dd>07/25/2026</dd></div></dl>
       </header>
+      
+      <div class="doc-notice doc-notice-info" style="margin-top:24px;">
+        <strong>HIPAA and demo-data notice</strong>
+        <p>Reports shown in this guide may contain Protected Health Information (PHI). True Care System intentionally masks or removes real names, identifiers, contact information, signatures, and other sensitive values from screenshots. Any information that remains visible may be demonstration data created only for training and documentation.</p>
+      </div>
+
 
       <section class="doc-section">
         <h2>Purpose</h2>
-        
-          <p>The Health &amp; Incident workspace supports the controlled review of incident reports submitted by DSP staff. Authorized users can review the original report, complete the supervisor's initial review, assign a Certified Investigator, document investigation findings, upload evidence, review the audit trail, and record the final administrative decision.</p>
-          <p>The workflow is designed to preserve the original submitted information while adding supervisory, investigative, compliance, and closure documentation.</p>
-        
+        <p>The Health &amp; Incident workflow preserves the original DSP report while supporting supervisory review, Certified Investigator assignment, investigation findings, supporting evidence, timeline history, administrative closure, and printable case documentation.</p>
       </section>
 
       <section class="doc-section">
-        <h2>Workspace</h2>
+        <h2>1. Supervisor Initial Review and CI Assignment</h2>
+        <p>The supervisor reviews the DSP report, related EVV record, timeline, available documentation, Individual information, and immediate health or safety needs. The supervisor records the decision, actions taken, and current status before determining whether the case may be closed or requires a Certified Investigator.</p>
+        
         <figure style="margin:24px 0 0">
-          <img src="/documentation/reports/images/health-incident.jpg" alt="True Care System Health and Incident Report" style="display:block;width:100%;height:auto;border:1px solid var(--border);border-radius:12px">
-          <figcaption style="margin-top:10px;color:var(--muted);text-align:center">True Care System Health and Incident Report.</figcaption>
+          <img src="/documentation/reports/images/supervisor-initial-review-and-ci-assignment.jpg" alt="Supervisor initial review and Certified Investigator assignment" style="display:block;width:100%;height:auto;border:1px solid var(--border);border-radius:12px">
+          <figcaption style="margin-top:10px;color:var(--muted);text-align:center">Supervisor review, actions taken, status control, and Certified Investigator assignment information.</figcaption>
         </figure>
+    
       </section>
 
-      
-        <section class="doc-section">
-          <h2>Case Review Workflow</h2>
-          <ol class="doc-steps">
-            <li><div><strong>Review the original report.</strong><br>Confirm the Individual, DSP, report date, incident type, location, description, witnesses, and supporting notes.</div></li>
-            <li><div><strong>Complete Supervisor Initial Review.</strong><br>Record the decision, actions taken, and the current case status.</div></li>
-            <li><div><strong>Assign a Certified Investigator when required.</strong><br>Save the investigator's name, email, phone, and assignment history.</div></li>
-            <li><div><strong>Document the investigation.</strong><br>Enter findings, root cause, witness notes, corrective actions, recommendations, investigator identity, and completion time.</div></li>
-            <li><div><strong>Complete final administrative closure.</strong><br>Record the final decision, final summary, and whether the DSP may view the case outcome.</div></li>
-          </ol>
-        </section>
-
-        <section class="doc-section">
-          <h2>Investigation and Evidence</h2>
-          <p>The investigation area may include evidence reviewed, persons interviewed, injury assessment, notification history, regulatory reporting determination, abuse or neglect screening, law-enforcement involvement, medical treatment, overall risk, case outcome, follow-up dates, supervisor approval, and QA or Compliance review.</p>
-          <p>Attachments are categorized and uploaded as supporting evidence. The timeline records major case actions such as review saved, attachment uploaded, investigator assigned, investigation submitted, and case closed.</p>
-        </section>
-
-        <section class="doc-section">
-          <h2>Case Status and Final Decision</h2>
-          <div class="doc-module-grid">
-            <div class="doc-module-card"><small>REVIEW</small><strong>Supervisor decision</strong><p>Documents the initial determination and immediate actions taken.</p></div>
-            <div class="doc-module-card"><small>INVESTIGATION</small><strong>CI findings</strong><p>Records evidence, root cause, corrective actions, and recommendations.</p></div>
-            <div class="doc-module-card"><small>CLOSURE</small><strong>Administrator decision</strong><p>Confirms the case outcome and official close-case summary.</p></div>
-          </div>
-        </section>
+      <section class="doc-section">
+        <h2>2. Certified Investigator Review</h2>
+        <p>The CI Investigation area supports formal documentation of the investigation. It includes investigation findings, root cause, witness notes, corrective actions, recommendations, the investigator's identity, investigation date, and current case status.</p>
+        <p>The investigation may consider evidence reviewed, persons interviewed, injury assessment, notification history, regulatory reporting requirements, abuse or neglect screening, law-enforcement involvement, medical treatment, risk level, case outcome, follow-up due dates, supervisor approval, QA or Compliance review, and HIPAA audit information.</p>
         
-      
-      <section class="doc-section">
-        <h2>HIPAA, Privacy, and Proprietary Workflow Notice</h2>
-        <div class="doc-notice doc-notice-info">
-          <strong>Restricted information</strong>
-          <p>This report may contain Protected Health Information, confidential employment information, operational records, signatures, investigation details, or other sensitive data. Access, printing, and export are limited to authorized users with an appropriate role and business purpose.</p>
-        </div>
-        <p>True Care System does not publish every internal decision rule, escalation method, audit correlation, compliance control, or proprietary operational process in this public guide. Advanced workflow instruction is provided directly to authorized personnel of Providers that are official True Care System customers.</p>
+        <figure style="margin:24px 0 0">
+          <img src="/documentation/reports/images/ci-investigation.jpg" alt="Certified Investigator investigation workspace" style="display:block;width:100%;height:auto;border:1px solid var(--border);border-radius:12px">
+          <figcaption style="margin-top:10px;color:var(--muted);text-align:center">Certified Investigator findings, root cause, witness notes, corrective actions, recommendation, attachments, and audit trail.</figcaption>
+        </figure>
+    
       </section>
 
+      <section class="doc-section">
+        <h2>3. Attachments and Audit Trail</h2>
+        <div class="doc-module-grid">
+          <div class="doc-module-card"><small>ATTACHMENTS</small><strong>Evidence upload</strong><p>Stores supporting files with category, description, file name, path, uploader, and upload date.</p></div>
+          <div class="doc-module-card"><small>TIMELINE</small><strong>Case history</strong><p>Records major actions such as review saved, attachment uploaded, CI assigned, and investigation submitted.</p></div>
+          <div class="doc-module-card"><small>ACCOUNTABILITY</small><strong>Actor details</strong><p>Preserves the user, role, date, and action associated with the case workflow.</p></div>
+        </div>
+      </section>
 
       <section class="doc-section">
-        <h2>Security and Best Practices</h2>
-        <p>Verify the selected Provider, Individual, staff member, date range, and report record before printing or exporting. Store generated files only in approved locations, do not share sensitive information through unapproved channels, and follow the Provider's retention and destruction requirements.</p>
+        <h2>4. Final Decision of Administrator</h2>
+        <p>After the investigation is complete, the administrator records the final decision and final summary, determines whether the DSP may view the outcome, and closes the case when all required review and approval steps are complete.</p>
+        
+        <figure style="margin:24px 0 0">
+          <img src="/documentation/reports/images/final-decision-of-administrator.jpg" alt="Final decision of administrator" style="display:block;width:100%;height:auto;border:1px solid var(--border);border-radius:12px">
+          <figcaption style="margin-top:10px;color:var(--muted);text-align:center">Administrator final decision, final summary, DSP outcome visibility, and Close Case control.</figcaption>
+        </figure>
+    
+      </section>
+
+      <section class="doc-section">
+        <h2>5. Printed Health &amp; Incident Report</h2>
+        <p>The printable report consolidates the original incident, selected incident type, date, time, location, description, reporter, witnesses, notes, supervisor decision, actions taken, CI findings, corrective actions, recommendation, administrator decision, closure information, and approval history.</p>
+        
+        <figure style="margin:24px 0 0">
+          <img src="/documentation/reports/images/report-print-page1.jpg" alt="Health and Incident report print page 1" style="display:block;width:100%;height:auto;border:1px solid var(--border);border-radius:12px">
+          <figcaption style="margin-top:10px;color:var(--muted);text-align:center">Printable report page containing Provider header, case status, Individual, DSP, shift, incident type, date, time, location, description, reporter, and witnesses.</figcaption>
+        </figure>
+    
+        
+        <figure style="margin:24px 0 0">
+          <img src="/documentation/reports/images/report-print-page2.jpg" alt="Health and Incident report print page 2" style="display:block;width:100%;height:auto;border:1px solid var(--border);border-radius:12px">
+          <figcaption style="margin-top:10px;color:var(--muted);text-align:center">Printable report page containing supervisor decision, actions taken, CI investigation, corrective actions, recommendations, final decision, closure information, and signatures.</figcaption>
+        </figure>
+    
+      </section>
+
+      <section class="doc-section">
+        <h2>Case Workflow Summary</h2>
+        <ol class="doc-steps">
+          <li><div><strong>Review original submission.</strong><br>Confirm incident details and immediate health or safety action.</div></li>
+          <li><div><strong>Save supervisor determination.</strong><br>Document decision, actions, and status.</div></li>
+          <li><div><strong>Assign CI when required.</strong><br>Preserve assignment information and date.</div></li>
+          <li><div><strong>Complete investigation.</strong><br>Document evidence, findings, root cause, corrective action, and recommendation.</div></li>
+          <li><div><strong>Complete administrative closure.</strong><br>Record final decision, summary, approvals, and case visibility.</div></li>
+        </ol>
+      </section>
+
+      
+      <section class="doc-section">
+        <h2>HIPAA, Security, and Proprietary Workflow</h2>
+        <p>Access to report data must follow the Provider's role-based access, minimum-necessary, privacy, retention, and disclosure procedures. Users should verify the Provider, Individual, employee, date range, and record before printing, exporting, or sharing any report.</p>
+        <p>True Care System does not publicly disclose every audit correlation, escalation rule, investigation control, exception-handling process, or proprietary workflow. Advanced operating procedures are provided during direct training for authorized personnel of Providers that are official True Care System customers.</p>
       </section>
 
       <div class="doc-page-navigation" style="display:flex;justify-content:space-between;gap:16px;padding:30px 0">
-        <a class="doc-button" href="daily-notes.html">← Back</a>
-        <a class="doc-button" href="index.html">🏠 Home</a>
-        <a class="doc-button" href="awake-report.html">Next →</a>
+        <a class="doc-button" href="daily-notes.html">← Back</a><a class="doc-button" href="index.html">🏠 Home</a><a class="doc-button" href="awake-report.html">Next →</a>
       </div>
     </article>
-
-    <footer class="doc-page-footer">
-      <p>© 2026 True Care System. All rights reserved.</p>
-      <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
-    </footer>
+    <footer class="doc-page-footer"><p>© 2026 True Care System. All rights reserved.</p><p>Documentation is maintained as part of the True Care System product lifecycle.</p></footer>
 
   </main>
 </div>
 <script src="/documentation/assets/documentation.js"></script>
 </body>
 </html>
+
