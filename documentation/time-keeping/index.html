@@ -1,137 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Time Keeping documentation for True Care System">
-  <title>Time Keeping | True Care System Documentation</title>
-  <link rel="stylesheet" href="/documentation/assets/documentation.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Office employee attendance, GPS check-in and check-out, weekly approval, and payroll-ready timekeeping in True Care System.">
+<title>Time Keeping | True Care System Documentation</title>
+<link rel="stylesheet" href="/documentation/assets/documentation.css">
+
+<style>
+.time-figure{
+  width:100%;
+  max-width:100%;
+  margin:24px 0 0;
+  overflow:hidden;
+}
+.time-figure img{
+  display:block;
+  width:100%;
+  max-width:100%;
+  height:auto;
+  object-fit:contain;
+  object-position:left top;
+  border:1px solid var(--border);
+  border-radius:14px;
+  box-shadow:0 12px 30px rgba(7,28,63,.08);
+}
+.time-figure figcaption{
+  margin-top:10px;
+  color:var(--muted);
+  font-size:14px;
+  text-align:left;
+}
+.time-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+  margin-top:20px;
+}
+.time-card{
+  min-width:0;
+  padding:20px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:var(--white);
+  box-shadow:0 8px 24px rgba(7,28,63,.05);
+}
+.time-card small{
+  display:block;
+  margin-bottom:8px;
+  color:var(--teal);
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.time-card h3{
+  margin:0 0 8px;
+}
+.time-card p{
+  margin:0;
+  color:var(--muted);
+}
+.time-table{
+  width:100%;
+  table-layout:fixed;
+  border-collapse:collapse;
+  margin-top:18px;
+}
+.time-table th,
+.time-table td{
+  padding:15px 18px;
+  text-align:left !important;
+  vertical-align:top;
+  border-bottom:1px solid var(--border);
+  overflow-wrap:anywhere;
+}
+.time-table th{
+  background:var(--surface);
+  color:var(--navy);
+  font-weight:800;
+}
+.time-table col:first-child{width:27%;}
+.time-table col:last-child{width:73%;}
+.time-note{
+  border:1px solid #d8c9ff;
+  background:#f5f1ff;
+}
+.time-note strong{color:#49349a;}
+.time-flow{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+  margin-top:20px;
+}
+.time-flow-step{
+  min-width:0;
+  padding:18px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:var(--surface);
+}
+.time-flow-step b{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:30px;
+  height:30px;
+  margin-bottom:10px;
+  border-radius:50%;
+  background:var(--blue);
+  color:#fff;
+}
+.doc-page-navigation{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  align-items:center;
+  gap:20px;
+  width:100%;
+  margin-top:34px;
+  padding:22px 0 4px;
+  border-top:1px solid var(--border);
+}
+.doc-page-navigation .doc-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:118px;
+  min-height:44px;
+  padding:10px 18px;
+  border:1px solid var(--border);
+  border-radius:9px;
+  background:var(--white);
+  color:var(--blue);
+  font-weight:750;
+  white-space:nowrap;
+}
+.doc-page-navigation .doc-button:hover{
+  background:var(--surface);
+  text-decoration:none;
+}
+.doc-page-navigation .doc-button:nth-child(1){justify-self:start;}
+.doc-page-navigation .doc-button:nth-child(2){justify-self:center;}
+.doc-page-navigation .doc-button:nth-child(3){justify-self:end;}
+html,body,.doc-layout,.doc-main{max-width:100%;overflow-x:hidden;}
+
+@media(max-width:950px){
+  .time-grid{grid-template-columns:1fr;}
+  .time-flow{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:700px){
+  .time-flow{grid-template-columns:1fr;}
+  .time-table{display:block;overflow-x:auto;table-layout:auto;}
+  .time-table th,.time-table td{min-width:180px;}
+  .doc-page-navigation{grid-template-columns:1fr;}
+  .doc-page-navigation .doc-button{
+    width:100%;
+    justify-self:stretch !important;
+  }
+}
+</style>
 </head>
+
 <body>
-  <header class="doc-header">
-    <a class="doc-brand" href="/documentation/">
-      <img src="/logo.png" alt="True Care System">
-      <span>
-        <strong>True Care System</strong>
-        <small>Documentation</small>
-      </span>
-    </a>
+<header class="doc-header">
+  <a class="doc-brand" href="/documentation/">
+    <img src="/logo.png" alt="True Care System">
+    <span><strong>True Care System</strong><small>Documentation</small></span>
+  </a>
 
-    <button class="doc-mobile-menu" id="docMobileMenu"
-            aria-label="Open documentation menu">☰</button>
+  <button class="doc-mobile-menu" id="docMobileMenu" type="button"
+          aria-label="Open documentation menu" aria-controls="docSidebar"
+          aria-expanded="false">☰</button>
 
-    <div class="doc-header-actions">
-      <label class="doc-search">
-        <span>⌕</span>
-        <input id="docSearchInput" type="search"
-               placeholder="Search documentation..."
-               autocomplete="off">
-      </label>
-      <a href="/" class="doc-back-link">Return to Website</a>
-    </div>
-  </header>
+  <div class="doc-header-actions">
+    <label class="doc-search">
+      <span aria-hidden="true">⌕</span>
+      <input id="docSearchInput" type="search"
+             placeholder="Search documentation..."
+             autocomplete="off"
+             aria-label="Search documentation">
+    </label>
+    <a href="/" class="doc-back-link">Return to Website</a>
+  </div>
+</header>
 
-  <div class="doc-layout">
-    <aside class="doc-sidebar" id="docSidebar">
-      <div class="doc-sidebar-title">Documentation</div>
-      <nav>
-        <a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
-<a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
-<a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
-<a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
-<a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
-<a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
-<a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
-<a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
-<a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
-<a class="doc-nav-module" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span>KPI</span></a>
-<a class="doc-nav-module active" href="/documentation/time-keeping/"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
-<a class="doc-nav-module" href="/documentation/mobile-evv/"><span class="doc-nav-number">12</span><span>Mobile EVV</span></a>
-<a class="doc-nav-module" href="/documentation/visit-maintenance/"><span class="doc-nav-number">13</span><span>Visit Maintenance</span></a>
-<a class="doc-nav-module" href="/documentation/house-management/"><span class="doc-nav-number">14</span><span>House Management</span></a>
-<a class="doc-nav-module" href="/documentation/payroll/"><span class="doc-nav-number">15</span><span>Payroll</span></a>
-<a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
-<a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
-<a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
-<a class="doc-nav-module" href="/documentation/provider-administration/"><span class="doc-nav-number">19</span><span>Admin</span></a>
-<a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
-<a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
-<a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
-<a class="doc-nav-module" href="/documentation/qa-guide/"><span class="doc-nav-number">23</span><span>QA Guide</span></a>
-<a class="doc-nav-module" href="/documentation/test-catalog/"><span class="doc-nav-number">24</span><span>Test Catalog</span></a>
-<a class="doc-nav-module" href="/documentation/api-documentation/"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
-<a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
-<a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
-<a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
-<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>Frequently Asked Questions</span></a>
-<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
-      </nav>
-    </aside>
+<div class="doc-layout">
+<aside class="doc-sidebar" id="docSidebar">
+  <div class="doc-sidebar-title">Documentation</div>
+  <nav aria-label="Documentation modules">
+    <a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
+    <a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
+    <a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
+    <a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
+    <a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
+    <a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
+    <a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
+    <a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
+    <a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
+    <a class="doc-nav-module" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span>KPI</span></a>
+    <a class="doc-nav-module active" href="/documentation/time-keeping/" aria-current="page"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
+    <a class="doc-nav-module" href="/documentation/mobile-evv/"><span class="doc-nav-number">12</span><span>Mobile EVV</span></a>
+    <a class="doc-nav-module" href="/documentation/visit-maintenance/"><span class="doc-nav-number">13</span><span>Visit Maintenance</span></a>
+    <a class="doc-nav-module" href="/documentation/house-management/"><span class="doc-nav-number">14</span><span>House Management</span></a>
+    <a class="doc-nav-module" href="/documentation/payroll/"><span class="doc-nav-number">15</span><span>Payroll</span></a>
+    <a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
+    <a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
+    <a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
+    <a class="doc-nav-module" href="/documentation/provider-administration/"><span class="doc-nav-number">19</span><span>Admin</span></a>
+    <a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
+    <a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
+    <a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
+    <a class="doc-nav-module" href="/documentation/qa-guide/"><span class="doc-nav-number">23</span><span>QA Guide</span></a>
+    <a class="doc-nav-module" href="/documentation/test-catalog/"><span class="doc-nav-number">24</span><span>Test Catalog</span></a>
+    <a class="doc-nav-module" href="/documentation/api-documentation/"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
+    <a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
+    <a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
+    <a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
+    <a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>FAQ</span></a>
+    <a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
+  </nav>
+</aside>
 
-    <main class="doc-main">
-      <div class="doc-breadcrumb">
-        <a href="/documentation/">Documentation</a>
-        <span>›</span><a href='/documentation/time-keeping/'>Time Keeping</a>
-        <span>›</span><span>Time Keeping</span>
-      </div>
+<main class="doc-main">
+<div class="doc-breadcrumb">
+  <a href="/documentation/">Documentation</a><span>›</span>
+  <span>Time Keeping</span>
+</div>
 
-      <article class="doc-article">
-        <header class="doc-article-header">
-          <div>
-            <p class="doc-eyebrow">TRUE CARE SYSTEM DOCUMENTATION</p>
-            <h1>Time Keeping</h1>
-          </div>
-
-          <dl class="doc-metadata">
-            <div><dt>Document ID</dt><dd>TIM-DOC-000</dd></div>
-            <div><dt>Version</dt><dd>1.0</dd></div>
-            <div><dt>Status</dt><dd>Structure Created</dd></div>
-            <div><dt>Last Updated</dt><dd>Pending</dd></div>
-          </dl>
-        </header>
-
-        
-    <div class="doc-notice doc-notice-info">
-      <strong>Module documentation structure created</strong>
-      <p>Each page below contains the standard enterprise template and
-         a named screenshot placeholder.</p>
-    </div>
-
-    <section class="doc-section">
-      <h2>Purpose</h2>
-      <p>This section will contain the approved documentation for
-         Time Keeping.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Documentation Pages</h2>
-      <ul class="doc-page-list">
-        <li><a href="/documentation/time-keeping/overview.html">Overview</a></li>
-<li><a href="/documentation/time-keeping/dashboard.html">Dashboard</a></li>
-<li><a href="/documentation/time-keeping/time-entries.html">Time Entries</a></li>
-<li><a href="/documentation/time-keeping/review-approval.html">Review &amp; Approval</a></li>
-<li><a href="/documentation/time-keeping/exceptions.html">Exceptions</a></li>
-<li><a href="/documentation/time-keeping/reports.html">Reports</a></li>
-<li><a href="/documentation/time-keeping/faq.html">FAQ</a></li>
-      </ul>
-    </section>
-
-    <section class="doc-section">
-      <h2>Screenshot Library</h2>
-      <p>Images for this module are stored in
-         <code>documentation/time-keeping/images/</code>.</p>
-    </section>
-    
-      </article>
-
-      <footer class="doc-page-footer">
-        <p>© 2026 True Care System. All rights reserved.</p>
-        <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
-      </footer>
-    </main>
+<article class="doc-article">
+<header class="doc-article-header">
+  <div>
+    <p class="doc-eyebrow">WORKFORCE • OFFICE ATTENDANCE</p>
+    <h1>Time Keeping</h1>
+    <p>GPS-supported office attendance, weekly approval, payroll-ready totals, and duplicate-hour prevention for employees who perform more than one role.</p>
   </div>
 
-  <div class="doc-search-results" id="docSearchResults" hidden></div>
-  <script src="/documentation/assets/documentation.js"></script>
+  <dl class="doc-metadata">
+    <div><dt>Document ID</dt><dd>TIME-DOC-001</dd></div>
+    <div><dt>Version</dt><dd>1.0</dd></div>
+    <div><dt>Status</dt><dd>Draft</dd></div>
+    <div><dt>Last Updated</dt><dd>07/25/2026</dd></div>
+  </dl>
+</header>
+
+<div class="doc-notice time-note">
+  <strong>Office attendance only</strong>
+  <p>Time Keeping is designed for employees working in office-based positions such as Provider Administration, HR, Payroll, Billing, Compliance, Scheduling, Nursing Administration, Supervisory, and other authorized office roles. It is not used as the normal attendance method for DSP community-service shifts, because DSP service time is recorded through the Schedule, Mobile EVV, and visit workflows.</p>
+</div>
+
+<section class="doc-section">
+  <h2>Purpose</h2>
+  <p>The Time Keeping workspace provides a controlled method for office employees to check in and check out, capture GPS evidence, review weekly attendance, and submit time for administrative approval. The approved weekly total can then be used by Payroll as the official office-hours source.</p>
+  <p>The module helps the Provider distinguish office labor from direct-service labor, apply the correct position rate, monitor weekly hours, and prevent the same period of time from being counted twice across different job assignments.</p>
+
+  <figure class="time-figure">
+    <img src="/documentation/time-keeping/images/time-keeping.jpg" alt="True Care System Time Keeping workspace showing employee profile, GPS attendance, weekly totals, attendance records, and approval controls.">
+    <figcaption>Time Keeping workspace for office attendance, GPS check-in and check-out, weekly totals, attendance history, and Admin or HR approval.</figcaption>
+  </figure>
+</section>
+
+<section class="doc-section">
+  <h2>Who Uses This Module</h2>
+  <div class="time-grid">
+    <div class="time-card">
+      <small>Office Employee</small>
+      <h3>Records office work time</h3>
+      <p>Uses Check In and Check Out while performing an authorized office position.</p>
+    </div>
+    <div class="time-card">
+      <small>Admin / HR</small>
+      <h3>Reviews and approves</h3>
+      <p>Reviews weekly totals, flags, adjustments, and approval status before payroll processing.</p>
+    </div>
+    <div class="time-card">
+      <small>Payroll</small>
+      <h3>Uses approved totals</h3>
+      <p>Uses the final approved hours as the office-time basis for wage calculation and overtime review.</p>
+    </div>
+  </div>
+</section>
+
+<section class="doc-section">
+  <h2>Office Role and DSP Role Separation</h2>
+  <p>An employee may hold both an office position and a DSP position. True Care System separates these responsibilities so each period of work is assigned to the correct job role and rate.</p>
+
+  <table class="time-table">
+    <colgroup><col><col></colgroup>
+    <thead>
+      <tr><th>Work Situation</th><th>System Handling</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Office work</strong></td>
+        <td>The employee uses Time Keeping. The hours are assigned to the employee's authorized office position and office pay rate.</td>
+      </tr>
+      <tr>
+        <td><strong>DSP direct-service work</strong></td>
+        <td>The employee uses the Schedule and Mobile EVV workflow. The time is connected to the Individual, service, visit, authorization, and DSP assignment.</td>
+      </tr>
+      <tr>
+        <td><strong>Employee works both roles</strong></td>
+        <td>The system separates office attendance from DSP visit time and assigns each period to the correct position instead of combining both roles into one undifferentiated time record.</td>
+      </tr>
+      <tr>
+        <td><strong>Potential time overlap</strong></td>
+        <td>The system can identify or prevent overlapping periods so the same minutes are not duplicated between office attendance and DSP service time.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="doc-section">
+  <h2>Core Functions</h2>
+  <table class="time-table">
+    <colgroup><col><col></colgroup>
+    <thead>
+      <tr><th>Function</th><th>General Purpose</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Employee Profile</strong></td><td>Auto-fills the authorized employee's staff ID, name, position, email, phone, and address information.</td></tr>
+      <tr><td><strong>Week Selection</strong></td><td>Displays attendance for the selected Sunday-to-Saturday workweek.</td></tr>
+      <tr><td><strong>Check In</strong></td><td>Starts an office attendance record and captures the time, user identity, source, and GPS information.</td></tr>
+      <tr><td><strong>Check Out</strong></td><td>Ends the active office attendance record and calculates the worked duration.</td></tr>
+      <tr><td><strong>GPS Evidence</strong></td><td>Stores the last captured latitude, longitude, and accuracy to support attendance verification.</td></tr>
+      <tr><td><strong>Attendance Records</strong></td><td>Displays check-in, check-out, total duration, GPS, source, and any flags for the selected week.</td></tr>
+      <tr><td><strong>Weekly Total</strong></td><td>Calculates the employee's office hours for the selected week before approval.</td></tr>
+      <tr><td><strong>Weekly Approval</strong></td><td>Allows authorized Admin or HR users to review, adjust when permitted, approve, and lock the weekly total.</td></tr>
+      <tr><td><strong>Payroll Handoff</strong></td><td>Provides Payroll with the approved total rather than an unreviewed raw attendance calculation.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="doc-section">
+  <h2>Standard Workflow</h2>
+  <div class="time-flow">
+    <div class="time-flow-step"><b>1</b><br><strong>Employee checks in</strong><p>Time and GPS are captured for the office role.</p></div>
+    <div class="time-flow-step"><b>2</b><br><strong>Employee checks out</strong><p>The attendance period is closed and calculated.</p></div>
+    <div class="time-flow-step"><b>3</b><br><strong>Admin or HR reviews</strong><p>Weekly totals, overlaps, flags, and authorized adjustments are reviewed.</p></div>
+    <div class="time-flow-step"><b>4</b><br><strong>Payroll uses approval</strong><p>The approved total becomes the office-hours basis for payroll.</p></div>
+  </div>
+</section>
+
+<section class="doc-section">
+  <h2>Duplicate-Hour Prevention</h2>
+  <p>When an office employee also performs DSP work, the system must not pay the same minutes twice under two positions. Office attendance and DSP visit time are therefore treated as separate sources. The system compares the recorded periods, preserves the correct role assignment, and supports review of any overlapping or conflicting time.</p>
+  <p>This separation protects the employee by helping ensure that all legitimate work is credited under the correct position and rate. It also protects the Provider by reducing duplicate payroll, unsupported direct-service time, and inaccurate overtime calculations.</p>
+</section>
+
+<section class="doc-section">
+  <h2>Rates and Weekly Overtime</h2>
+  <p>Each approved period should remain connected to the position under which the employee performed the work. Office hours can use the office-position rate, while DSP service hours can use the applicable DSP or service-related employment rate.</p>
+  <p>Payroll may combine eligible hours across positions when determining total weekly hours and overtime obligations, while still preserving the separate rate and work-role history. The final payroll calculation should follow the Provider's approved compensation rules and applicable federal, state, payer, and employment requirements.</p>
+</section>
+
+<section class="doc-section">
+  <h2>Important Controls</h2>
+  <ul>
+    <li>GPS is required for office check-in and check-out when enabled by Provider policy.</li>
+    <li>An employee should not remain checked into the office role while actively providing DSP services.</li>
+    <li>Approved weeks may require Admin or HR authorization before they can be unlocked or changed.</li>
+    <li>Manual adjustments should include an authorized reason and remain available for audit review.</li>
+    <li>Payroll should use approved totals rather than incomplete or open attendance records.</li>
+  </ul>
+</section>
+
+<section class="doc-section">
+  <h2>Security and Audit</h2>
+  <p>Access to Time Keeping should be role-based. Employee actions, approval actions, changes, GPS evidence, timestamps, and the identity of the approving user should be retained as part of the attendance and payroll audit trail.</p>
+  <p>Employee contact and location information should only be accessed by authorized users for legitimate workforce, payroll, compliance, or operational purposes.</p>
+</section>
+
+<section class="doc-section">
+  <h2>Best Practices</h2>
+  <ul>
+    <li>Check in only when office work begins and check out when office work ends.</li>
+    <li>Use the DSP Mobile EVV workflow for direct-service shifts instead of Time Keeping.</li>
+    <li>Resolve open check-ins, overlaps, and attendance flags before weekly approval.</li>
+    <li>Confirm the employee's assigned position and rate before payroll is finalized.</li>
+    <li>Document every approved adjustment with a clear operational reason.</li>
+  </ul>
+</section>
+
+<div class="doc-page-navigation">
+  <a class="doc-button" href="../kpi/index.html">← Back</a>
+  <a class="doc-button" href="index.html">🏠 Home</a>
+  <a class="doc-button" href="../mobile-evv/index.html">Next →</a>
+</div>
+</article>
+
+<footer class="doc-page-footer">
+  <p>© 2026 True Care System. All rights reserved.</p>
+  <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
+</footer>
+</main>
+</div>
+
+<div class="doc-search-results" id="docSearchResults" hidden></div>
+<script src="/documentation/assets/documentation.js"></script>
 </body>
 </html>
