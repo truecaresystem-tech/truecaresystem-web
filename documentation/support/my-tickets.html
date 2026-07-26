@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="My Tickets documentation for True Care System">
-  <title>My Tickets | True Care System Documentation</title>
-  <link rel="stylesheet" href="/documentation/assets/documentation.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Tickets | True Care System Documentation</title>
+<link rel="stylesheet" href="/documentation/assets/documentation.css">
+
+<style>
+.doc-article img{display:block;max-width:100%;height:auto}
+.doc-image-frame{margin:22px 0 10px;padding:14px;border:1px solid var(--border);border-radius:14px;background:var(--surface);overflow:hidden}
+.doc-image-frame img{width:100%;max-width:100%;height:auto;object-fit:contain;border-radius:9px}
+.doc-image-caption{margin:10px 0 0;color:var(--muted);font-size:13px;text-align:center}
+.doc-callout{margin:24px 0;padding:18px 20px;border:1px solid #93d5df;border-radius:12px;background:#eefbfd}
+.doc-callout.privacy{border-color:#9f8bea;background:#f5f0ff}
+.doc-callout.security{border-color:#7ccfb3;background:#effcf7}
+.doc-callout.warning{border-color:#e7c66c;background:#fff9e7}
+.doc-table{width:100%;border-collapse:collapse;table-layout:fixed}
+.doc-table th,.doc-table td{padding:13px 15px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+.doc-table th{background:var(--surface);color:var(--navy);font-weight:800}
+.doc-table col:first-child{width:28%}
+.doc-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:18px 0}
+.doc-info-card{padding:18px;border:1px solid var(--border);border-radius:12px;background:var(--white)}
+.doc-info-card strong{display:block;margin-bottom:8px;color:var(--navy);font-size:16px}
+.doc-info-card p{margin:0;color:var(--muted)}
+.doc-page-navigation{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;padding:28px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.doc-page-navigation .doc-button:nth-child(2){justify-self:center}
+.doc-page-navigation .doc-button:last-child{justify-self:end}
+.doc-button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border:1px solid var(--border);border-radius:9px;background:var(--white);color:var(--navy);font-weight:700}
+.doc-list-tight li{margin-bottom:8px}
+@media(max-width:900px){.doc-card-grid{grid-template-columns:1fr}.doc-table{table-layout:auto}}
+</style>
+
 </head>
 <body>
-  <header class="doc-header">
-    <a class="doc-brand" href="/documentation/">
-      <img src="/logo.png" alt="True Care System">
-      <span>
-        <strong>True Care System</strong>
-        <small>Documentation</small>
-      </span>
-    </a>
-
-    <button class="doc-mobile-menu" id="docMobileMenu"
-            aria-label="Open documentation menu">☰</button>
-
-    <div class="doc-header-actions">
-      <label class="doc-search">
-        <span>⌕</span>
-        <input id="docSearchInput" type="search"
-               placeholder="Search documentation..."
-               autocomplete="off">
-      </label>
-      <a href="/" class="doc-back-link">Return to Website</a>
-    </div>
-  </header>
-
-  <div class="doc-layout">
-    <aside class="doc-sidebar" id="docSidebar">
-      <div class="doc-sidebar-title">Documentation</div>
-      <nav>
-        <a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
+<header class="doc-header">
+<a class="doc-brand" href="/documentation/"><img src="/logo.png" alt="True Care System"><span><strong>True Care System</strong><small>Documentation</small></span></a>
+<button class="doc-mobile-menu" id="docMobileMenu" type="button">☰</button>
+<div class="doc-header-actions">
+<label class="doc-search"><span>⌕</span><input id="docSearchInput" type="search" placeholder="Search documentation..."></label>
+<a class="doc-back-link" href="https://www.truecaresystem.com">Return to Website</a>
+</div>
+</header>
+<div class="doc-layout">
+<aside class="doc-sidebar" id="docSidebar"><p class="doc-sidebar-title">Documentation</p><nav><a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
 <a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
 <a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
 <a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
@@ -53,158 +60,68 @@
 <a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
 <a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
 <a class="doc-nav-module active" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
-<a class="doc-nav-module" href="/documentation/provider-administration/"><span class="doc-nav-number">19</span><span>Admin</span></a>
+<a class="doc-nav-module" href="/documentation/admin/"><span class="doc-nav-number">19</span><span>Admin</span></a>
 <a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
 <a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
 <a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
 <a class="doc-nav-module" href="/documentation/qa-guide/"><span class="doc-nav-number">23</span><span>QA Guide</span></a>
 <a class="doc-nav-module" href="/documentation/test-catalog/"><span class="doc-nav-number">24</span><span>Test Catalog</span></a>
-<a class="doc-nav-module" href="/documentation/api-documentation/"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
+<a class="doc-nav-module" href="/documentation/api/"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
 <a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
 <a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
 <a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
-<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>Frequently Asked Questions</span></a>
-<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
-      </nav>
-    </aside>
+<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>FAQ</span></a>
+<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a></nav></aside>
+<main class="doc-main">
+<nav class="doc-breadcrumb"><a href="/documentation/">Documentation</a><span>›</span><a href="/documentation/support/">Support</a><span>›</span><span>My Tickets</span></nav>
+<article class="doc-article">
+<header class="doc-article-header">
+<div><p class="doc-eyebrow">SUPPORT • REQUESTER TRACKING</p><h1>My Tickets</h1><p>View and track support tickets created by the signed-in user.</p></div>
+<dl class="doc-metadata">
+<div><dt>Document ID</dt><dd>SUP-DOC-004</dd></div>
+<div><dt>Version</dt><dd>1.0</dd></div>
+<div><dt>Status</dt><dd>Draft</dd></div>
+<div><dt>Last Updated</dt><dd>07/26/2026</dd></div>
+</dl>
+</header>
+<div class="doc-callout privacy"><strong>HIPAA and protected support information notice</strong><p>Support tickets may contain PHI, screenshots, operational records, user identities, device details, IP addresses, and troubleshooting evidence. Public screenshots in this guide use redacted or demonstration information. Users must not place passwords, full Social Security numbers, complete payment-card information, or unrelated PHI in a ticket.</p></div>
+<div class="doc-callout security"><strong>Audited Provider Support workflow</strong><p>True Care System assigns every ticket a unique Provider-scoped ticket number, preserves ticket conversations and attachments, records support-access approval and expiration, and logs each authorized support or impersonation session. The audit trail is designed to show who requested access, who approved it, when access began and ended, which Provider was entered, and what actions were performed during the support session.</p></div>
 
-    <main class="doc-main">
-      <div class="doc-breadcrumb">
-        <a href="/documentation/">Documentation</a>
-        <span>›</span><a href='/documentation/support/'>Support</a>
-        <span>›</span><span>My Tickets</span>
-      </div>
+<section class="doc-section"><h2>Purpose</h2><p>My Tickets displays support requests created by the signed-in user. It is the personal tracking workspace for reviewing status, priority, assignment, messages, updates, and the current support-access state.</p><figure class="doc-image-frame"><img src="images/support-my-ticket.jpg" alt="My Tickets"><figcaption class="doc-image-caption">My Tickets showing the signed-in user&#x27;s Provider-scoped ticket history, status, assignment, messages, and updates.</figcaption></figure></section>
+<section class="doc-section"><h2>Header Actions</h2><table class="doc-table"><colgroup><col><col></colgroup><thead><tr><th>Action</th><th>Function</th></tr></thead><tbody>
+<tr><td><strong>Dashboard</strong></td><td>Returns to the Support Dashboard.</td></tr>
+<tr><td><strong>+ Create Ticket</strong></td><td>Starts a new support request.</td></tr>
+</tbody></table></section>
+<section class="doc-section"><h2>Filters</h2><table class="doc-table"><colgroup><col><col></colgroup><thead><tr><th>Filter</th><th>Function</th></tr></thead><tbody>
+<tr><td><strong>Status</strong></td><td>Filters Open, In Progress, Waiting for Provider, Approved for Access, Resolved, Closed, or another configured state.</td></tr>
+<tr><td><strong>Priority</strong></td><td>Filters Low, Medium, High, or Urgent tickets.</td></tr>
+<tr><td><strong>Category</strong></td><td>Limits results to the selected support category.</td></tr>
+<tr><td><strong>From / To</strong></td><td>Selects the date range.</td></tr>
+<tr><td><strong>Search</strong></td><td>Searches ticket number or subject.</td></tr>
+<tr><td><strong>Apply Filters</strong></td><td>Runs the selected filter set.</td></tr>
+<tr><td><strong>Clear</strong></td><td>Clears filter values.</td></tr>
+<tr><td><strong>Refresh</strong></td><td>Reloads the current user's tickets.</td></tr>
+</tbody></table></section>
+<section class="doc-section"><h2>Tickets Created by Me</h2><table class="doc-table"><colgroup><col><col></colgroup><thead><tr><th>Column</th><th>Function</th></tr></thead><tbody>
+<tr><td><strong>Ticket Number</strong></td><td>Unique system-generated support identifier.</td></tr>
+<tr><td><strong>Subject</strong></td><td>Summary of the reported issue.</td></tr>
+<tr><td><strong>Category</strong></td><td>Support classification.</td></tr>
+<tr><td><strong>Priority</strong></td><td>Operational impact level.</td></tr>
+<tr><td><strong>Status</strong></td><td>Current workflow state.</td></tr>
+<tr><td><strong>Assigned To</strong></td><td>Platform Support owner or unassigned status.</td></tr>
+<tr><td><strong>Messages</strong></td><td>Number of ticket-conversation messages.</td></tr>
+<tr><td><strong>Updated</strong></td><td>Most recent ticket activity time.</td></tr>
+<tr><td><strong>View</strong></td><td>Opens the ticket conversation, attachments, access status, and detailed history.</td></tr>
+</tbody></table></section>
+<section class="doc-section"><h2>Provider User Responsibilities</h2><p>The requester should monitor Waiting for Provider tickets, respond within the ticket, confirm whether the issue is resolved, and revoke or allow temporary support access only as needed. Ticket messages should stay focused on the reported issue and avoid unrelated PHI.</p></section>
 
-      <article class="doc-article">
-        <header class="doc-article-header">
-          <div>
-            <p class="doc-eyebrow">TRUE CARE SYSTEM DOCUMENTATION</p>
-            <h1>My Tickets</h1>
-          </div>
-
-          <dl class="doc-metadata">
-            <div><dt>Document ID</dt><dd>SUP-DOC-004</dd></div>
-            <div><dt>Version</dt><dd>1.0</dd></div>
-            <div><dt>Status</dt><dd>Planned</dd></div>
-            <div><dt>Last Updated</dt><dd>Pending</dd></div>
-          </dl>
-        </header>
-
-        
-    <div class="doc-notice doc-notice-info">
-      <strong>Documentation placeholder</strong>
-      <p>This page has been created and is ready for detailed content,
-         screenshots and review.</p>
-    </div>
-
-    <section class="doc-section">
-      <h2>Purpose</h2>
-      <p class="doc-pending">Detailed purpose will be added during module documentation.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Who Can Use This Feature</h2>
-      <p class="doc-pending">Roles and permissions will be documented after verification.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Navigation</h2>
-      <p class="doc-pending">The exact navigation path will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Business Flow</h2>
-      <p class="doc-pending">The approved business workflow will be documented here.</p>
-    </section>
-
-    
-    <section class="doc-section">
-      <h2>Screenshot</h2>
-      <div class="doc-screenshot-placeholder">
-        <div class="doc-placeholder-icon">▧</div>
-        <div>
-          <strong>Screenshot Required</strong>
-          <p><b>Screenshot ID:</b> SUP-004</p>
-          <p><b>Screen:</b> My Tickets</p>
-          <p><b>File:</b> images/SUP-004-my-tickets.jpg</p>
-          <p><b>Recommended capture:</b> Desktop, 100% browser zoom,
-             full page title, navigation, actions, filters and data area visible.</p>
-          <p><b>Privacy requirement:</b> Use demo or training data only.
-             Do not include real PHI, credentials, passwords, SSNs or Medicaid IDs.</p>
-        </div>
-      </div>
-    </section>
-    
-
-    <section class="doc-section">
-      <h2>Interface Overview</h2>
-      <p class="doc-pending">Buttons, fields, filters, tabs and page regions will be explained here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Step-by-Step Instructions</h2>
-      <ol class="doc-steps">
-        <li><span>Step instructions pending.</span></li>
-        <li><span>Step instructions pending.</span></li>
-        <li><span>Step instructions pending.</span></li>
-      </ol>
-    </section>
-
-    <section class="doc-section">
-      <h2>Permissions</h2>
-      <p class="doc-pending">Access requirements and permission rules will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Validation Rules</h2>
-      <p class="doc-pending">Required fields and business validation rules will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Tips</h2>
-      <p class="doc-pending">Recommended usage tips will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Warnings</h2>
-      <p class="doc-pending">Important operational and data safety warnings will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>HIPAA Considerations</h2>
-      <p class="doc-pending">PHI handling and minimum-necessary requirements will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Audit Log Behavior</h2>
-      <p class="doc-pending">Expected audit events and recorded details will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Troubleshooting</h2>
-      <p class="doc-pending">Known issues and recommended resolutions will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Frequently Asked Questions</h2>
-      <p class="doc-pending">Frequently asked questions will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Related Documentation</h2>
-      <p><a href="/documentation/support/">Return to Support</a></p>
-    </section>
-    
-      </article>
-
-      <footer class="doc-page-footer">
-        <p>© 2026 True Care System. All rights reserved.</p>
-        <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
-      </footer>
-    </main>
-  </div>
-
-  <div class="doc-search-results" id="docSearchResults" hidden></div>
-  <script src="/documentation/assets/documentation.js"></script>
-</body>
-</html>
+<div class="doc-page-navigation">
+<a class="doc-button" href="create-ticket.html">← Back</a>
+<a class="doc-button" href="/documentation/support/">🏠 Home</a>
+<a class="doc-button" href="all-provider-tickets.html">Next →</a>
+</div>
+</article>
+<footer class="doc-page-footer"><p>© 2026 True Care System. All rights reserved.</p><p>Documentation is maintained as part of the True Care System product lifecycle.</p></footer>
+</main></div>
+<script src="/documentation/assets/documentation.js"></script>
+</body></html>
