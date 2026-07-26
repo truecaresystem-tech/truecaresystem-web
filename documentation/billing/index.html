@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Billing documentation for True Care System">
-  <title>Billing | True Care System Documentation</title>
-  <link rel="stylesheet" href="/documentation/assets/documentation.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Billing | True Care System Documentation</title>
+<link rel="stylesheet" href="/documentation/assets/documentation.css">
+
+<style>
+.doc-article img{display:block;max-width:100%;height:auto}
+.doc-image-frame{margin:22px 0 10px;padding:14px;border:1px solid var(--border);border-radius:14px;background:var(--surface);overflow:hidden}
+.doc-image-frame img{width:100%;max-width:100%;height:auto;object-fit:contain;border-radius:9px}
+.doc-image-caption{margin:10px 0 0;color:var(--muted);font-size:13px;text-align:center}
+.doc-callout{margin:24px 0;padding:18px 20px;border:1px solid #93d5df;border-radius:12px;background:#eefbfd}
+.doc-callout.certification{border-color:#8dd8bd;background:#effcf6}
+.doc-callout.warning{border-color:#e7c66c;background:#fff9e7}
+.doc-table{width:100%;border-collapse:collapse;table-layout:fixed}
+.doc-table th,.doc-table td{padding:13px 15px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+.doc-table th{background:var(--surface);color:var(--navy);font-weight:800}
+.doc-table col:first-child{width:29%}
+.doc-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:18px 0}
+.doc-info-card{padding:18px;border:1px solid var(--border);border-radius:12px;background:var(--white)}
+.doc-info-card strong{display:block;margin-bottom:8px;color:var(--navy);font-size:16px}
+.doc-info-card p{margin:0;color:var(--muted)}
+.doc-page-navigation{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;padding:28px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.doc-page-navigation .doc-button:nth-child(2){justify-self:center}
+.doc-page-navigation .doc-button:last-child{justify-self:end}
+.doc-button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border:1px solid var(--border);border-radius:9px;background:var(--white);color:var(--navy);font-weight:700}
+.doc-list-tight li{margin-bottom:8px}
+@media(max-width:900px){.doc-card-grid{grid-template-columns:1fr}.doc-table{table-layout:auto}}
+</style>
+
 </head>
 <body>
-  <header class="doc-header">
-    <a class="doc-brand" href="/documentation/">
-      <img src="/logo.png" alt="True Care System">
-      <span>
-        <strong>True Care System</strong>
-        <small>Documentation</small>
-      </span>
-    </a>
-
-    <button class="doc-mobile-menu" id="docMobileMenu"
-            aria-label="Open documentation menu">☰</button>
-
-    <div class="doc-header-actions">
-      <label class="doc-search">
-        <span>⌕</span>
-        <input id="docSearchInput" type="search"
-               placeholder="Search documentation..."
-               autocomplete="off">
-      </label>
-      <a href="/" class="doc-back-link">Return to Website</a>
-    </div>
-  </header>
-
-  <div class="doc-layout">
-    <aside class="doc-sidebar" id="docSidebar">
-      <div class="doc-sidebar-title">Documentation</div>
-      <nav>
-        <a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
+<header class="doc-header">
+<a class="doc-brand" href="/documentation/"><img src="/logo.png" alt="True Care System"><span><strong>True Care System</strong><small>Documentation</small></span></a>
+<button class="doc-mobile-menu" id="docMobileMenu" type="button">☰</button>
+<div class="doc-header-actions">
+<label class="doc-search"><span>⌕</span><input id="docSearchInput" type="search" placeholder="Search documentation..."></label>
+<a class="doc-back-link" href="https://www.truecaresystem.com">Return to Website</a>
+</div>
+</header>
+<div class="doc-layout">
+<aside class="doc-sidebar" id="docSidebar"><p class="doc-sidebar-title">Documentation</p><nav><a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
 <a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
 <a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
 <a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
@@ -51,93 +57,76 @@
 <a class="doc-nav-module" href="/documentation/house-management/"><span class="doc-nav-number">14</span><span>House Management</span></a>
 <a class="doc-nav-module" href="/documentation/payroll/"><span class="doc-nav-number">15</span><span>Payroll</span></a>
 <a class="doc-nav-module active" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
-<a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
+<a class="doc-nav-module" href="/documentation/hipaa/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
 <a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
-<a class="doc-nav-module" href="/documentation/provider-administration/"><span class="doc-nav-number">19</span><span>Admin</span></a>
+<a class="doc-nav-module" href="/documentation/admin/"><span class="doc-nav-number">19</span><span>Admin</span></a>
 <a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
 <a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
 <a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
 <a class="doc-nav-module" href="/documentation/qa-guide/"><span class="doc-nav-number">23</span><span>QA Guide</span></a>
 <a class="doc-nav-module" href="/documentation/test-catalog/"><span class="doc-nav-number">24</span><span>Test Catalog</span></a>
-<a class="doc-nav-module" href="/documentation/api-documentation/"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
+<a class="doc-nav-module" href="/documentation/api/"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
 <a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
 <a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
 <a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
-<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>Frequently Asked Questions</span></a>
-<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
-      </nav>
-    </aside>
+<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>FAQ</span></a>
+<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a></nav></aside>
+<main class="doc-main">
+<nav class="doc-breadcrumb"><a href="/documentation/">Documentation</a><span>›</span><a href="/documentation/billing/">Billing</a><span>›</span><span>Overview</span></nav>
+<article class="doc-article">
+<header class="doc-article-header">
+<div><p class="doc-eyebrow">BILLING • EVV OPERATIONS</p><h1>Billing</h1><p>Manage Sandata readiness, Provider setup, Client and Employee records, Visit Review, EVV batches, transaction history, and service rates.</p></div>
+<dl class="doc-metadata">
+<div><dt>Document ID</dt><dd>BIL-DOC-001</dd></div>
+<div><dt>Version</dt><dd>1.0</dd></div>
+<div><dt>Status</dt><dd>Draft</dd></div>
+<div><dt>Last Updated</dt><dd>07/26/2026</dd></div>
+</dl>
+</header>
+<div class="doc-callout"><strong>HIPAA and protected billing-data notice</strong><p>Billing and EVV pages may contain PHI, Medicaid identifiers, employee identifiers, service information, visit dates, GPS evidence, claim-supporting data, and submission credentials. Screenshots in this public guide use redacted or demonstration information. Production access must be role-based, Provider-scoped, logged, and limited to the minimum information necessary.</p></div>
+<div class="doc-callout certification"><strong>Sandata Alternate EVV certification and production readiness</strong><p>True Care System has implemented the Sandata Alternate EVV workflow for Client, Employee, Visit, Call, correction, batching, transaction tracking, rejection review, and resubmission. The platform has completed the applicable Sandata testing and production-onboarding work for its certified payer program. Sandata certification is program-specific; availability in another state or payer program requires that program's registration, testing, approval, credentials, and current technical specifications.</p></div>
+<div class="doc-callout warning"><strong>EVV submission is not the Medicaid claim itself</strong><p>True Care System sends required EVV data to the Sandata Aggregator. After accepted EVV submission, the Provider completes the Medicaid billing or claim workflow through the applicable state claims system, such as Pennsylvania PROMISe, unless the payer program specifies a different process.</p></div>
 
-    <main class="doc-main">
-      <div class="doc-breadcrumb">
-        <a href="/documentation/">Documentation</a>
-        <span>›</span><a href='/documentation/billing/'>Billing</a>
-        <span>›</span><span>Billing</span>
-      </div>
+<section class="doc-section">
+<h2>Billing and EVV Management Overview</h2>
+<p>The Billing module provides a controlled, readiness-first workflow for converting operational service data into Sandata-compliant EVV submissions. It validates the Provider configuration, Individual records, DSP records, authorizations, service codes, visits, calls, GPS, corrections, units, effective dates, and submission history before data is transmitted.</p>
+<figure class="doc-image-frame"><img src="images/billing-menu.jpg" alt="Billing menu"><figcaption class="doc-image-caption">Billing navigation showing Dashboard, four EVV workflow steps, Provider Setup, and Service Rates.</figcaption></figure>
+</section>
+<section class="doc-section">
+<h2>Billing Workspaces</h2>
+<table class="doc-table"><colgroup><col><col></colgroup><thead><tr><th>Workspace</th><th>General Purpose</th><th>Documentation</th></tr></thead><tbody>
+<tr><td><strong>Billing Dashboard</strong></td><td>Review the complete EVV readiness picture, Provider integration status, submission counts, and workflow stages.</td><td><a href="dashboard.html">Open guide</a></td></tr>
+<tr><td><strong>Step 1 · Individual Readiness</strong></td><td>Validate Sandata Client information, payer/program, service, address, identifiers, and sequence data.</td><td><a href="individual-readiness.html">Open guide</a></td></tr>
+<tr><td><strong>Step 2 · DSP Readiness</strong></td><td>Validate Sandata Employee identification, mapping, employment information, role, status, and sequence data.</td><td><a href="dsp-readiness.html">Open guide</a></td></tr>
+<tr><td><strong>Step 3 · Visit Review</strong></td><td>Review completed visits, calls, GPS, schedule-versus-actual time, units, corrections, and batch eligibility.</td><td><a href="visit-review.html">Open guide</a></td></tr>
+<tr><td><strong>Step 4 · Sandata Submission</strong></td><td>Submit EVV batches, track UUIDs and responses, review rejected records, and maintain resubmission history.</td><td><a href="sandata-submission.html">Open guide</a></td></tr>
+<tr><td><strong>Provider Setup</strong></td><td>Configure Provider identifiers, Sandata environment, endpoints, credentials, payer/program, timezone, and activation status.</td><td><a href="provider-setup.html">Open guide</a></td></tr>
+<tr><td><strong>Service Rates</strong></td><td>Maintain Provider-specific service rates, formats, ratios, levels, zones, payer relationships, and effective dates.</td><td><a href="service-rates.html">Open guide</a></td></tr>
+</tbody></table>
+</section>
+<section class="doc-section">
+<h2>Controlled EVV Workflow</h2>
+<ol class="doc-steps">
+<li><div><strong>Configure the Provider.</strong><p>Confirm Sandata environment, Provider identifier, payer/program, timezone, endpoints, and credentials.</p></div></li>
+<li><div><strong>Validate Individuals.</strong><p>Resolve missing Client identifiers, addresses, payer information, procedure codes, and sequence requirements.</p></div></li>
+<li><div><strong>Validate DSPs.</strong><p>Resolve Employee identifier, mapping, role, employment, personal information, and sequence requirements.</p></div></li>
+<li><div><strong>Review Visits.</strong><p>Confirm schedule, actual calls, GPS, authorization, service, units, corrections, and readiness.</p></div></li>
+<li><div><strong>Create and submit the EVV batch.</strong><p>Preview the request, submit to the configured environment, and retain the transaction UUID and response.</p></div></li>
+<li><div><strong>Resolve and resubmit.</strong><p>Correct rejected or invalid records, preserve history, and resubmit without losing the original audit trail.</p></div></li>
+</ol>
+</section>
+<section class="doc-section">
+<h2>Marketing and Procurement Positioning</h2>
+<p>True Care System combines Mobile EVV, scheduling, visit maintenance, authorization control, billing readiness, Sandata integration, payroll, reports, HIPAA audit logging, and multi-tenant Provider isolation in one operational platform. For proposals and investor materials, certification statements should name the applicable Sandata payer program and certification scope rather than imply automatic approval for every state. Additional state programs can be onboarded through Sandata's program-specific Alternate EVV registration and certification process.</p>
+</section>
 
-      <article class="doc-article">
-        <header class="doc-article-header">
-          <div>
-            <p class="doc-eyebrow">TRUE CARE SYSTEM DOCUMENTATION</p>
-            <h1>Billing</h1>
-          </div>
-
-          <dl class="doc-metadata">
-            <div><dt>Document ID</dt><dd>BIL-DOC-000</dd></div>
-            <div><dt>Version</dt><dd>1.0</dd></div>
-            <div><dt>Status</dt><dd>Structure Created</dd></div>
-            <div><dt>Last Updated</dt><dd>Pending</dd></div>
-          </dl>
-        </header>
-
-        
-    <div class="doc-notice doc-notice-info">
-      <strong>Module documentation structure created</strong>
-      <p>Each page below contains the standard enterprise template and
-         a named screenshot placeholder.</p>
-    </div>
-
-    <section class="doc-section">
-      <h2>Purpose</h2>
-      <p>This section will contain the approved documentation for
-         Billing.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Documentation Pages</h2>
-      <ul class="doc-page-list">
-        <li><a href="/documentation/billing/overview.html">Overview</a></li>
-<li><a href="/documentation/billing/dashboard.html">Dashboard</a></li>
-<li><a href="/documentation/billing/individual-readiness.html">Step 1 · Individual Readiness</a></li>
-<li><a href="/documentation/billing/dsp-readiness.html">Step 2 · DSP Readiness</a></li>
-<li><a href="/documentation/billing/visit-review.html">Step 3 · Visit Review</a></li>
-<li><a href="/documentation/billing/sandata-submission.html">Step 4 · Sandata Submission</a></li>
-<li><a href="/documentation/billing/provider-setup.html">Provider Setup</a></li>
-<li><a href="/documentation/billing/service-rates.html">Service Rates</a></li>
-<li><a href="/documentation/billing/claim-batches.html">Claim Batches</a></li>
-<li><a href="/documentation/billing/submission-history.html">Submission History</a></li>
-<li><a href="/documentation/billing/billing-errors.html">Billing Errors</a></li>
-<li><a href="/documentation/billing/billing-reports.html">Billing Reports</a></li>
-<li><a href="/documentation/billing/faq.html">FAQ</a></li>
-      </ul>
-    </section>
-
-    <section class="doc-section">
-      <h2>Screenshot Library</h2>
-      <p>Images for this module are stored in
-         <code>documentation/billing/images/</code>.</p>
-    </section>
-    
-      </article>
-
-      <footer class="doc-page-footer">
-        <p>© 2026 True Care System. All rights reserved.</p>
-        <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
-      </footer>
-    </main>
-  </div>
-
-  <div class="doc-search-results" id="docSearchResults" hidden></div>
-  <script src="/documentation/assets/documentation.js"></script>
-</body>
-</html>
+<div class="doc-page-navigation">
+<a class="doc-button" href="../payroll/index.html">← Back</a>
+<a class="doc-button" href="/documentation/billing/">🏠 Home</a>
+<a class="doc-button" href="dashboard.html">Next →</a>
+</div>
+</article>
+<footer class="doc-page-footer"><p>© 2026 True Care System. All rights reserved.</p><p>Documentation is maintained as part of the True Care System product lifecycle.</p></footer>
+</main></div>
+<script src="/documentation/assets/documentation.js"></script>
+</body></html>
