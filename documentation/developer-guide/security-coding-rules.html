@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Repository Structure | True Care System Documentation</title>
+<title>Security Coding Rules | True Care System Documentation</title>
 <link rel="stylesheet" href="/documentation/assets/documentation.css">
 <style>
 .doc-article img{display:block;max-width:100%;height:auto}
@@ -71,12 +71,12 @@
 <a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>FAQ</span></a>
 <a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a></nav></aside>
 <main class="doc-main">
-<nav class="doc-breadcrumb"><a href="/documentation/">Documentation</a><span>›</span><a href="/documentation/developer-guide/">Developer Guide</a><span>›</span><span>Repository Structure</span></nav>
+<nav class="doc-breadcrumb"><a href="/documentation/">Documentation</a><span>›</span><a href="/documentation/developer-guide/">Developer Guide</a><span>›</span><span>Security Coding Rules</span></nav>
 <article class="doc-article">
 <header class="doc-article-header">
-<div><p class="doc-eyebrow">SOURCE ORGANIZATION</p><h1>Repository Structure</h1><p>Use predictable project paths and keep modules isolated, discoverable, and maintainable.</p></div>
+<div><p class="doc-eyebrow">SECURE DEVELOPMENT</p><h1>Security Coding Rules</h1><p>Apply authorization, validation, secret management, tenant isolation, and secure defaults to every change.</p></div>
 <dl class="doc-metadata">
-<div><dt>Document ID</dt><dd>DEV-DOC-004</dd></div>
+<div><dt>Document ID</dt><dd>DEV-DOC-010</dd></div>
 <div><dt>Version</dt><dd>1.0</dd></div>
 <div><dt>Status</dt><dd>Draft</dd></div>
 <div><dt>Last Updated</dt><dd>07/27/2026</dd></div>
@@ -84,28 +84,14 @@
 </header>
 <div class="doc-callout security"><strong>Production stability and security notice</strong><p>Development changes must preserve working functionality, Provider isolation, role-based access, HIPAA auditability, released Mobile compatibility, and integration stability. Never deploy AI-generated or unreviewed code directly to production.</p></div>
 
-<section class="doc-section"><h2>Primary Projects</h2><table class="doc-table"><colgroup><col><col></colgroup><thead><tr><th>Topic</th><th>Standard</th></tr></thead><tbody><tr><td><strong>API</strong></td><td>C:\TruecareSystem\API — NestJS, Prisma, PostgreSQL access, integrations, security, and background services.</td></tr><tr><td><strong>Web</strong></td><td>C:\TruecareSystem\Web — Next.js user interface, reports, administration, and documentation portal.</td></tr><tr><td><strong>Mobile</strong></td><td>C:\TruecareSystem\Mobile — React Native / Expo application for workforce and EVV workflows.</td></tr></tbody></table>
+<section class="doc-section"><h2>Mandatory Controls</h2><table class="doc-table"><colgroup><col><col></colgroup><thead><tr><th>Topic</th><th>Standard</th></tr></thead><tbody><tr><td><strong>Authentication</strong></td><td>Verify user identity before protected operations.</td></tr><tr><td><strong>Authorization</strong></td><td>Check role, permission, Provider scope, and resource ownership.</td></tr><tr><td><strong>Input validation</strong></td><td>Reject malformed, unexpected, or unsafe input.</td></tr><tr><td><strong>Output control</strong></td><td>Return only the minimum data required.</td></tr><tr><td><strong>Secrets</strong></td><td>Use environment variables or approved secret storage.</td></tr><tr><td><strong>Password handling</strong></td><td>Never log, return, or store plain-text passwords.</td></tr><tr><td><strong>Uploads</strong></td><td>Validate type, size, ownership, and storage destination.</td></tr><tr><td><strong>Exports</strong></td><td>Audit sensitive exports and restrict access.</td></tr></tbody></table>
 </section>
-<section class="doc-section"><h2>Module Organization</h2><p>Each backend module should group its controller, service, DTOs, types, guards, tests, and module definition. Shared frameworks such as HIPAA should remain in dedicated folders rather than being scattered across unrelated files.</p>
-<pre class="doc-code">src/
-  hipaa/
-    constants/
-    decorators/
-    guards/
-    interceptors/
-    middleware/
-    services/
-    types/
-  schedule/
-  mobile/
-  billing/
-  support/</pre></section>
-<section class="doc-section"><h2>File Rules</h2><ul class="doc-list-tight"><li>Use descriptive names that match the business domain.</li><li>Avoid duplicate implementations of the same business rule.</li><li>Do not place secrets or environment-specific values in source files.</li><li>Keep generated files out of manual editing.</li><li>Store public documentation images under each module's <code>images/</code> folder.</li></ul></section>
+<section class="doc-section"><h2>Prohibited Patterns</h2><ul class="doc-list-tight"><li>Hard-coded Provider names or IDs in production logic.</li><li>Client-controlled Provider scope.</li><li>Catch blocks that hide security errors and continue.</li><li>Logs containing passwords, tokens, SSNs, or full PHI payloads.</li><li>Unrestricted support impersonation.</li><li>Public access to private storage paths.</li></ul></section>
 
 <div class="doc-page-navigation">
-<a class="doc-button" href="system-architecture.html">← Back</a>
+<a class="doc-button" href="api-standards.html">← Back</a>
 <a class="doc-button" href="/documentation/developer-guide/">🏠 Home</a>
-<a class="doc-button" href="backend-standards.html">Next →</a>
+<a class="doc-button" href="hipaa-coding-rules.html">Next →</a>
 </div>
 </article>
 <footer class="doc-page-footer"><p>© 2026 True Care System. All rights reserved.</p><p>Documentation is maintained as part of the True Care System product lifecycle.</p></footer>

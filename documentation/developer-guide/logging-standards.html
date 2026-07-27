@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Repository Structure | True Care System Documentation</title>
+<title>Logging Standards | True Care System Documentation</title>
 <link rel="stylesheet" href="/documentation/assets/documentation.css">
 <style>
 .doc-article img{display:block;max-width:100%;height:auto}
@@ -71,12 +71,12 @@
 <a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>FAQ</span></a>
 <a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a></nav></aside>
 <main class="doc-main">
-<nav class="doc-breadcrumb"><a href="/documentation/">Documentation</a><span>›</span><a href="/documentation/developer-guide/">Developer Guide</a><span>›</span><span>Repository Structure</span></nav>
+<nav class="doc-breadcrumb"><a href="/documentation/">Documentation</a><span>›</span><a href="/documentation/developer-guide/">Developer Guide</a><span>›</span><span>Logging Standards</span></nav>
 <article class="doc-article">
 <header class="doc-article-header">
-<div><p class="doc-eyebrow">SOURCE ORGANIZATION</p><h1>Repository Structure</h1><p>Use predictable project paths and keep modules isolated, discoverable, and maintainable.</p></div>
+<div><p class="doc-eyebrow">OBSERVABILITY AND AUDIT</p><h1>Logging Standards</h1><p>Separate operational diagnostics from immutable business and HIPAA audit evidence.</p></div>
 <dl class="doc-metadata">
-<div><dt>Document ID</dt><dd>DEV-DOC-004</dd></div>
+<div><dt>Document ID</dt><dd>DEV-DOC-012</dd></div>
 <div><dt>Version</dt><dd>1.0</dd></div>
 <div><dt>Status</dt><dd>Draft</dd></div>
 <div><dt>Last Updated</dt><dd>07/27/2026</dd></div>
@@ -84,28 +84,14 @@
 </header>
 <div class="doc-callout security"><strong>Production stability and security notice</strong><p>Development changes must preserve working functionality, Provider isolation, role-based access, HIPAA auditability, released Mobile compatibility, and integration stability. Never deploy AI-generated or unreviewed code directly to production.</p></div>
 
-<section class="doc-section"><h2>Primary Projects</h2><table class="doc-table"><colgroup><col><col></colgroup><thead><tr><th>Topic</th><th>Standard</th></tr></thead><tbody><tr><td><strong>API</strong></td><td>C:\TruecareSystem\API — NestJS, Prisma, PostgreSQL access, integrations, security, and background services.</td></tr><tr><td><strong>Web</strong></td><td>C:\TruecareSystem\Web — Next.js user interface, reports, administration, and documentation portal.</td></tr><tr><td><strong>Mobile</strong></td><td>C:\TruecareSystem\Mobile — React Native / Expo application for workforce and EVV workflows.</td></tr></tbody></table>
+<section class="doc-section"><h2>Log Categories</h2><table class="doc-table"><colgroup><col><col></colgroup><thead><tr><th>Topic</th><th>Standard</th></tr></thead><tbody><tr><td><strong>Operational logs</strong></td><td>Application startup, dependency health, job execution, integration timing, and non-sensitive diagnostics.</td></tr><tr><td><strong>Error logs</strong></td><td>Failures with correlation context and sanitized technical details.</td></tr><tr><td><strong>Audit logs</strong></td><td>User actions, entity changes, support access, exports, and administrative activity.</td></tr><tr><td><strong>PHI access logs</strong></td><td>Purpose, decision, minimum necessary, Individual, module, and technical context.</td></tr><tr><td><strong>Integration logs</strong></td><td>Environment, endpoint category, transaction ID, status, and sanitized response summary.</td></tr></tbody></table>
 </section>
-<section class="doc-section"><h2>Module Organization</h2><p>Each backend module should group its controller, service, DTOs, types, guards, tests, and module definition. Shared frameworks such as HIPAA should remain in dedicated folders rather than being scattered across unrelated files.</p>
-<pre class="doc-code">src/
-  hipaa/
-    constants/
-    decorators/
-    guards/
-    interceptors/
-    middleware/
-    services/
-    types/
-  schedule/
-  mobile/
-  billing/
-  support/</pre></section>
-<section class="doc-section"><h2>File Rules</h2><ul class="doc-list-tight"><li>Use descriptive names that match the business domain.</li><li>Avoid duplicate implementations of the same business rule.</li><li>Do not place secrets or environment-specific values in source files.</li><li>Keep generated files out of manual editing.</li><li>Store public documentation images under each module's <code>images/</code> folder.</li></ul></section>
+<section class="doc-section"><h2>Safe Logging Rules</h2><ul class="doc-list-tight"><li>Use request or correlation IDs.</li><li>Never log passwords, access tokens, full SSNs, or raw PHI payloads.</li><li>Do not use console output as the only production audit mechanism.</li><li>Include Provider scope where appropriate.</li><li>Use structured fields rather than ambiguous text.</li><li>Record failures without exposing secrets to the client.</li></ul></section>
 
 <div class="doc-page-navigation">
-<a class="doc-button" href="system-architecture.html">← Back</a>
+<a class="doc-button" href="hipaa-coding-rules.html">← Back</a>
 <a class="doc-button" href="/documentation/developer-guide/">🏠 Home</a>
-<a class="doc-button" href="backend-standards.html">Next →</a>
+<a class="doc-button" href="git-workflow.html">Next →</a>
 </div>
 </article>
 <footer class="doc-page-footer"><p>© 2026 True Care System. All rights reserved.</p><p>Documentation is maintained as part of the True Care System product lifecycle.</p></footer>

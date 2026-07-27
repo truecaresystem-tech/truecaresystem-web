@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Developer Guide documentation for True Care System">
-  <title>Developer Guide | True Care System Documentation</title>
-  <link rel="stylesheet" href="/documentation/assets/documentation.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Developer Guide | True Care System Documentation</title>
+<link rel="stylesheet" href="/documentation/assets/documentation.css">
+<style>
+.doc-article img{display:block;max-width:100%;height:auto}
+.doc-image-frame{margin:22px 0 10px;padding:14px;border:1px solid var(--border);border-radius:14px;background:var(--surface);overflow:hidden}
+.doc-image-frame img{width:100%;height:auto;object-fit:contain;border-radius:9px}
+.doc-image-caption{margin-top:10px;color:var(--muted);font-size:13px;text-align:center}
+.doc-callout{margin:24px 0;padding:18px 20px;border:1px solid #8fd1dc;border-radius:12px;background:#eefbfd}
+.doc-callout.security{border-color:#8ed1b7;background:#effcf7}
+.doc-callout.warning{border-color:#e7c76f;background:#fff9e8}
+.doc-table{width:100%;border-collapse:collapse;table-layout:fixed}
+.doc-table th,.doc-table td{padding:13px 15px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+.doc-table th{background:var(--surface);color:var(--navy);font-weight:800}
+.doc-table col:first-child{width:28%}
+.doc-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:18px 0}
+.doc-info-card{padding:18px;border:1px solid var(--border);border-radius:12px;background:var(--white)}
+.doc-info-card strong{display:block;margin-bottom:8px;color:var(--navy);font-size:16px}
+.doc-info-card p{margin:0;color:var(--muted)}
+.doc-page-navigation{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;padding:28px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.doc-page-navigation .doc-button:nth-child(2){justify-self:center}
+.doc-page-navigation .doc-button:last-child{justify-self:end}
+.doc-button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border:1px solid var(--border);border-radius:9px;background:var(--white);color:var(--navy);font-weight:700}
+.doc-code{overflow:auto;padding:16px;border:1px solid var(--border);border-radius:10px;background:#0b1220;color:#f8fafc;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;line-height:1.6}
+.doc-list-tight li{margin-bottom:8px}
+@media(max-width:900px){.doc-card-grid{grid-template-columns:1fr}.doc-table{table-layout:auto}}
+</style>
 </head>
 <body>
-  <header class="doc-header">
-    <a class="doc-brand" href="/documentation/">
-      <img src="/logo.png" alt="True Care System">
-      <span>
-        <strong>True Care System</strong>
-        <small>Documentation</small>
-      </span>
-    </a>
-
-    <button class="doc-mobile-menu" id="docMobileMenu"
-            aria-label="Open documentation menu">☰</button>
-
-    <div class="doc-header-actions">
-      <label class="doc-search">
-        <span>⌕</span>
-        <input id="docSearchInput" type="search"
-               placeholder="Search documentation..."
-               autocomplete="off">
-      </label>
-      <a href="/" class="doc-back-link">Return to Website</a>
-    </div>
-  </header>
-
-  <div class="doc-layout">
-    <aside class="doc-sidebar" id="docSidebar">
-      <div class="doc-sidebar-title">Documentation</div>
-      <nav>
-        <a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
+<header class="doc-header">
+<a class="doc-brand" href="/documentation/"><img src="/logo.png" alt="True Care System"><span><strong>True Care System</strong><small>Documentation</small></span></a>
+<button class="doc-mobile-menu" id="docMobileMenu" type="button">☰</button>
+<div class="doc-header-actions">
+<label class="doc-search"><span>⌕</span><input id="docSearchInput" type="search" placeholder="Search documentation..."></label>
+<a class="doc-back-link" href="https://www.truecaresystem.com">Return to Website</a>
+</div>
+</header>
+<div class="doc-layout">
+<aside class="doc-sidebar" id="docSidebar"><p class="doc-sidebar-title">Documentation Modules</p><nav><a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
 <a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
 <a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
 <a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
@@ -53,7 +58,7 @@
 <a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
 <a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
 <a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
-<a class="doc-nav-module" href="/documentation/provider-administration/"><span class="doc-nav-number">19</span><span>Admin</span></a>
+<a class="doc-nav-module" href="/documentation/admin/"><span class="doc-nav-number">19</span><span>Admin</span></a>
 <a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
 <a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
 <a class="doc-nav-module active" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
@@ -63,82 +68,65 @@
 <a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
 <a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
 <a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
-<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>Frequently Asked Questions</span></a>
-<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
-      </nav>
-    </aside>
+<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>FAQ</span></a>
+<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a></nav></aside>
+<main class="doc-main">
+<nav class="doc-breadcrumb"><a href="/documentation/">Documentation</a><span>›</span><a href="/documentation/developer-guide/">Developer Guide</a><span>›</span><span>Developer Guide</span></nav>
+<article class="doc-article">
+<header class="doc-article-header">
+<div><p class="doc-eyebrow">TRUE CARE SYSTEM ENGINEERING</p><h1>Developer Guide</h1><p>Engineering standards for architecture, repositories, backend, frontend, database, APIs, security, HIPAA, logging, Git, deployment, and AI-assisted development.</p></div>
+<dl class="doc-metadata">
+<div><dt>Document ID</dt><dd>DEV-DOC-001</dd></div>
+<div><dt>Version</dt><dd>1.0</dd></div>
+<div><dt>Status</dt><dd>Draft</dd></div>
+<div><dt>Last Updated</dt><dd>07/27/2026</dd></div>
+</dl>
+</header>
+<div class="doc-callout security"><strong>Production stability and security notice</strong><p>Development changes must preserve working functionality, Provider isolation, role-based access, HIPAA auditability, released Mobile compatibility, and integration stability. Never deploy AI-generated or unreviewed code directly to production.</p></div>
 
-    <main class="doc-main">
-      <div class="doc-breadcrumb">
-        <a href="/documentation/">Documentation</a>
-        <span>›</span><a href='/documentation/developer-guide/'>Developer Guide</a>
-        <span>›</span><span>Developer Guide</span>
-      </div>
+<section class="doc-section"><h2>Purpose</h2>
+<p>The Developer Guide defines the approved engineering practices used to build and maintain True Care System. Its purpose is to protect production stability, multi-tenant isolation, HIPAA-aligned auditability, data integrity, and consistent delivery across Web, API, Mobile, background jobs, integrations, and future AI agents.</p>
+<p>The standards in this guide are designed for developers, technical leads, QA engineers, security reviewers, support engineers, and implementation partners working on the platform.</p>
+<figure class="doc-image-frame"><img src="images/developer-guide-index.jpg" alt="Developer Guide index"><figcaption class="doc-image-caption">Developer Guide documentation structure and approved engineering topics.</figcaption></figure>
+</section>
+<section class="doc-section"><h2>Core Engineering Principles</h2>
+<table class="doc-table"><colgroup><col><col></colgroup><thead><tr><th>Topic</th><th>Standard</th></tr></thead><tbody><tr><td><strong>Preserve working functionality</strong></td><td>Do not rewrite or remove stable production logic unless the change is required, reviewed, tested, and explicitly approved.</td></tr><tr><td><strong>Provider isolation</strong></td><td>Every business record and query must enforce the authenticated Provider scope.</td></tr><tr><td><strong>Minimal integration points</strong></td><td>New frameworks such as HIPAA, support, logging, or AI should remain self-contained and integrate through small, explicit, reversible boundaries.</td></tr><tr><td><strong>Traceability</strong></td><td>Security-sensitive, PHI-related, support, impersonation, billing, and administrative actions must be attributable.</td></tr><tr><td><strong>Backward compatibility</strong></td><td>Changes must account for existing APIs, data, Mobile versions, scheduled jobs, and integration payloads.</td></tr><tr><td><strong>Explicit data ownership</strong></td><td>Each module must define which service owns validation, persistence, and state transitions.</td></tr><tr><td><strong>No silent fallback</strong></td><td>Errors, missing configuration, or invalid states must be surfaced clearly rather than hidden by guessed defaults.</td></tr></tbody></table>
+</section>
+<section class="doc-section"><h2>Documentation Pages</h2>
+<table class="doc-table"><colgroup><col><col></colgroup><thead><tr><th>Guide</th><th>Purpose</th></tr></thead><tbody>
+<tr><td><a href="overview.html">Overview</a></td><td>Engineering principles, scope, responsibilities, and change governance.</td></tr>
+<tr><td><a href="system-architecture.html">System Architecture</a></td><td>Platform components, data flow, multi-tenancy, integrations, and trust boundaries.</td></tr>
+<tr><td><a href="repository-structure.html">Repository Structure</a></td><td>Approved organization of API, Web, Mobile, documentation, and shared assets.</td></tr>
+<tr><td><a href="backend-standards.html">Backend Standards</a></td><td>NestJS modules, services, controllers, validation, authorization, and error handling.</td></tr>
+<tr><td><a href="frontend-standards.html">Frontend Standards</a></td><td>Next.js and React conventions, data loading, forms, state, accessibility, and stability.</td></tr>
+<tr><td><a href="database-standards.html">Database Standards</a></td><td>PostgreSQL integrity, Provider scoping, indexes, transactions, and manual SQL discipline.</td></tr>
+<tr><td><a href="prisma-standards.html">Prisma Standards</a></td><td>Schema changes, relations, generation, query patterns, and the no-migration policy.</td></tr>
+<tr><td><a href="api-standards.html">API Standards</a></td><td>Routes, DTOs, authentication, response structure, pagination, filtering, and version safety.</td></tr>
+<tr><td><a href="security-coding-rules.html">Security Coding Rules</a></td><td>Authorization, secrets, input validation, tenant isolation, and secure defaults.</td></tr>
+<tr><td><a href="hipaa-coding-rules.html">HIPAA Coding Rules</a></td><td>PHI handling, purpose of use, minimum necessary, audit metadata, and support access.</td></tr>
+<tr><td><a href="logging-standards.html">Logging Standards</a></td><td>Operational logs, audit logs, PHI-safe diagnostics, correlation IDs, and observability.</td></tr>
+<tr><td><a href="git-workflow.html">Git Workflow</a></td><td>Branch discipline, focused commits, review, rollback readiness, and separate deployment units.</td></tr>
+<tr><td><a href="deployment.html">Deployment</a></td><td>Build verification, environment configuration, rollout, smoke testing, and rollback.</td></tr>
+<tr><td><a href="ai-coding-rules.html">AI Coding Rules</a></td><td>Safe use of AI assistance without weakening review, privacy, or production safeguards.</td></tr>
+</tbody></table></section>
+<section class="doc-section"><h2>Required Change Sequence</h2>
+<ol class="doc-steps">
+<li><div><strong>Understand the existing workflow.</strong><p>Review the current API, database, Web, Mobile, background job, and integration behavior before editing.</p></div></li>
+<li><div><strong>Define the smallest safe change.</strong><p>Do not combine unrelated refactoring with a production fix.</p></div></li>
+<li><div><strong>Protect Provider scope and authorization.</strong><p>Confirm every read and write is restricted correctly.</p></div></li>
+<li><div><strong>Implement and validate.</strong><p>Run type checking, targeted tests, build verification, and manual workflow checks.</p></div></li>
+<li><div><strong>Document and commit.</strong><p>Record the purpose, affected files, database steps, testing evidence, and rollback approach.</p></div></li>
+</ol></section>
 
-      <article class="doc-article">
-        <header class="doc-article-header">
-          <div>
-            <p class="doc-eyebrow">TRUE CARE SYSTEM DOCUMENTATION</p>
-            <h1>Developer Guide</h1>
-          </div>
-
-          <dl class="doc-metadata">
-            <div><dt>Document ID</dt><dd>DEV-DOC-000</dd></div>
-            <div><dt>Version</dt><dd>1.0</dd></div>
-            <div><dt>Status</dt><dd>Structure Created</dd></div>
-            <div><dt>Last Updated</dt><dd>Pending</dd></div>
-          </dl>
-        </header>
-
-        
-    <div class="doc-notice doc-notice-info">
-      <strong>Module documentation structure created</strong>
-      <p>Each page below contains the standard enterprise template and
-         a named screenshot placeholder.</p>
-    </div>
-
-    <section class="doc-section">
-      <h2>Purpose</h2>
-      <p>This section will contain the approved documentation for
-         Developer Guide.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Documentation Pages</h2>
-      <ul class="doc-page-list">
-        <li><a href="/documentation/developer-guide/overview.html">Overview</a></li>
-<li><a href="/documentation/developer-guide/system-architecture.html">System Architecture</a></li>
-<li><a href="/documentation/developer-guide/repository-structure.html">Repository Structure</a></li>
-<li><a href="/documentation/developer-guide/backend-standards.html">Backend Standards</a></li>
-<li><a href="/documentation/developer-guide/frontend-standards.html">Frontend Standards</a></li>
-<li><a href="/documentation/developer-guide/database-standards.html">Database Standards</a></li>
-<li><a href="/documentation/developer-guide/prisma-standards.html">Prisma Standards</a></li>
-<li><a href="/documentation/developer-guide/api-standards.html">API Standards</a></li>
-<li><a href="/documentation/developer-guide/security-coding.html">Security Coding Rules</a></li>
-<li><a href="/documentation/developer-guide/hipaa-coding.html">HIPAA Coding Rules</a></li>
-<li><a href="/documentation/developer-guide/logging.html">Logging Standards</a></li>
-<li><a href="/documentation/developer-guide/git-workflow.html">Git Workflow</a></li>
-<li><a href="/documentation/developer-guide/deployment.html">Deployment</a></li>
-<li><a href="/documentation/developer-guide/ai-coding-rules.html">AI Coding Rules</a></li>
-      </ul>
-    </section>
-
-    <section class="doc-section">
-      <h2>Screenshot Library</h2>
-      <p>Images for this module are stored in
-         <code>documentation/developer-guide/images/</code>.</p>
-    </section>
-    
-      </article>
-
-      <footer class="doc-page-footer">
-        <p>© 2026 True Care System. All rights reserved.</p>
-        <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
-      </footer>
-    </main>
-  </div>
-
-  <div class="doc-search-results" id="docSearchResults" hidden></div>
-  <script src="/documentation/assets/documentation.js"></script>
+<div class="doc-page-navigation">
+<a class="doc-button" href="../audit-logs/">← Back</a>
+<a class="doc-button" href="/documentation/developer-guide/">🏠 Home</a>
+<a class="doc-button" href="overview.html">Next →</a>
+</div>
+</article>
+<footer class="doc-page-footer"><p>© 2026 True Care System. All rights reserved.</p><p>Documentation is maintained as part of the True Care System product lifecycle.</p></footer>
+</main>
+</div>
+<script src="/documentation/assets/documentation.js"></script>
 </body>
 </html>
