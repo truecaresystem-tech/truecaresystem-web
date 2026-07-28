@@ -1,210 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Overview documentation for True Care System">
-  <title>Overview | True Care System Documentation</title>
-  <link rel="stylesheet" href="/documentation/assets/documentation.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Release Notes Overview | True Care System Documentation</title>
+<link rel="stylesheet" href="/documentation/assets/documentation.css">
+<style>
+.rn-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.rn-card{border:1px solid #d8e1ec;border-radius:12px;padding:16px;background:#fff}
+.rn-card h3{margin-top:0}
+.rn-link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.rn-link{display:flex;justify-content:space-between;gap:16px;align-items:center;border:1px solid #d8e1ec;border-radius:10px;padding:14px;text-decoration:none;background:#fff}
+.rn-table{width:100%;border-collapse:collapse}
+.rn-table th,.rn-table td{padding:12px;text-align:left;vertical-align:top;border-bottom:1px solid #d8e1ec}
+.rn-badge{display:inline-flex;align-items:center;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:700;background:#e8f3ff;color:#075895}
+@media(max-width:760px){.rn-grid,.rn-link-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-  <header class="doc-header">
-    <a class="doc-brand" href="/documentation/">
-      <img src="/logo.png" alt="True Care System">
-      <span>
-        <strong>True Care System</strong>
-        <small>Documentation</small>
-      </span>
-    </a>
+<header class="doc-header">
+<a class="doc-brand" href="/documentation/">
+<img src="/logo.png" alt="True Care System">
+<span><strong>True Care System</strong><small>Documentation</small></span>
+</a>
+<button class="doc-mobile-menu" id="docMobileMenu" type="button" aria-label="Open documentation menu">☰</button>
+<div class="doc-header-actions">
+<label class="doc-search"><span>⌕</span><input id="docSearchInput" type="search" placeholder="Search documentation..." autocomplete="off"></label>
+<a href="/" class="doc-back-link">Return to Website</a>
+</div>
+</header>
 
-    <button class="doc-mobile-menu" id="docMobileMenu"
-            aria-label="Open documentation menu">☰</button>
+<div class="doc-layout">
+<aside class="doc-sidebar" id="docSidebar">
+<div class="doc-sidebar-title">Documentation Modules</div>
+<nav class="doc-sidebar-nav"><a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span class="doc-nav-label">Getting Started</span></a>
+<a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span class="doc-nav-label">Services</span></a>
+<a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span class="doc-nav-label">Individual</span></a>
+<a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span class="doc-nav-label">Employees</span></a>
+<a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span class="doc-nav-label">Schedule</span></a>
+<a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span class="doc-nav-label">Medication</span></a>
+<a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span class="doc-nav-label">BSS</span></a>
+<a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span class="doc-nav-label">Authorizations</span></a>
+<a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span class="doc-nav-label">Reports</span></a>
+<a class="doc-nav-module" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span class="doc-nav-label">KPI</span></a>
+<a class="doc-nav-module" href="/documentation/time-keeping/"><span class="doc-nav-number">11</span><span class="doc-nav-label">Time Keeping</span></a>
+<a class="doc-nav-module" href="/documentation/mobile-evv/"><span class="doc-nav-number">12</span><span class="doc-nav-label">Mobile EVV</span></a>
+<a class="doc-nav-module" href="/documentation/visit-maintenance/"><span class="doc-nav-number">13</span><span class="doc-nav-label">Visit Maintenance</span></a>
+<a class="doc-nav-module" href="/documentation/house-management/"><span class="doc-nav-number">14</span><span class="doc-nav-label">House Management</span></a>
+<a class="doc-nav-module" href="/documentation/payroll/"><span class="doc-nav-number">15</span><span class="doc-nav-label">Payroll</span></a>
+<a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span class="doc-nav-label">Billing</span></a>
+<a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span class="doc-nav-label">HIPAA</span></a>
+<a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span class="doc-nav-label">Support</span></a>
+<a class="doc-nav-module" href="/documentation/admin/"><span class="doc-nav-number">19</span><span class="doc-nav-label">Admin</span></a>
+<a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span class="doc-nav-label">Security</span></a>
+<a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span class="doc-nav-label">Audit Logs</span></a>
+<a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span class="doc-nav-label">Developer Guide</span></a>
+<a class="doc-nav-module" href="/documentation/qa-guide/"><span class="doc-nav-number">23</span><span class="doc-nav-label">QA Guide</span></a>
+<a class="doc-nav-module" href="/documentation/test-catalog/"><span class="doc-nav-number">24</span><span class="doc-nav-label">Test Catalog</span></a>
+<a class="doc-nav-module" href="/documentation/api-documentation/"><span class="doc-nav-number">25</span><span class="doc-nav-label">API Documentation</span></a>
+<a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span class="doc-nav-label">AI Agents</span></a>
+<a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span class="doc-nav-label">Company Playbook</span></a>
+<a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span class="doc-nav-label">Troubleshooting</span></a>
+<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span class="doc-nav-label">Frequently Asked Questions</span></a>
+<a class="doc-nav-module active" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span class="doc-nav-label">Release Notes</span></a></nav>
+</aside>
 
-    <div class="doc-header-actions">
-      <label class="doc-search">
-        <span>⌕</span>
-        <input id="docSearchInput" type="search"
-               placeholder="Search documentation..."
-               autocomplete="off">
-      </label>
-      <a href="/" class="doc-back-link">Return to Website</a>
-    </div>
-  </header>
+<main class="doc-main">
+<nav class="doc-breadcrumb">
+<a href="/documentation/">Documentation</a><span>›</span>
+<a href="/documentation/release-notes/">Release Notes</a><span>›</span>
+<span>Release Notes Overview</span>
+</nav>
 
-  <div class="doc-layout">
-    <aside class="doc-sidebar" id="docSidebar">
-      <div class="doc-sidebar-title">Documentation</div>
-      <nav>
-        <a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
-<a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
-<a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
-<a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
-<a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
-<a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
-<a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
-<a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
-<a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
-<a class="doc-nav-module" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span>KPI</span></a>
-<a class="doc-nav-module" href="/documentation/time-keeping/"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
-<a class="doc-nav-module" href="/documentation/mobile-evv/"><span class="doc-nav-number">12</span><span>Mobile EVV</span></a>
-<a class="doc-nav-module" href="/documentation/visit-maintenance/"><span class="doc-nav-number">13</span><span>Visit Maintenance</span></a>
-<a class="doc-nav-module" href="/documentation/house-management/"><span class="doc-nav-number">14</span><span>House Management</span></a>
-<a class="doc-nav-module" href="/documentation/payroll/"><span class="doc-nav-number">15</span><span>Payroll</span></a>
-<a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
-<a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
-<a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
-<a class="doc-nav-module" href="/documentation/provider-administration/"><span class="doc-nav-number">19</span><span>Admin</span></a>
-<a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
-<a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
-<a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
-<a class="doc-nav-module" href="/documentation/qa-guide/"><span class="doc-nav-number">23</span><span>QA Guide</span></a>
-<a class="doc-nav-module" href="/documentation/test-catalog/"><span class="doc-nav-number">24</span><span>Test Catalog</span></a>
-<a class="doc-nav-module" href="/documentation/api-documentation/"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
-<a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
-<a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
-<a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
-<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>Frequently Asked Questions</span></a>
-<a class="doc-nav-module active" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
-      </nav>
-    </aside>
+<article class="doc-article">
+<header class="doc-article-header">
+<div>
+<p class="doc-eyebrow">TRUE CARE SYSTEM • RELEASE NOTES</p>
+<h1>Release Notes Overview</h1>
+<p>Explains how True Care System documents product versions, scope, risk, deployment status, validation evidence, and customer-facing changes.</p>
+</div>
+<dl class="doc-metadata">
+<div><dt>Document ID</dt><dd>REL-DOC-002</dd></div>
+<div><dt>Version</dt><dd>1.0</dd></div>
+<div><dt>Status</dt><dd>Draft</dd></div>
+<div><dt>Last Updated</dt><dd>07/28/2026</dd></div>
+</dl>
+</header>
 
-    <main class="doc-main">
-      <div class="doc-breadcrumb">
-        <a href="/documentation/">Documentation</a>
-        <span>›</span><a href='/documentation/release-notes/'>Release Notes</a>
-        <span>›</span><span>Overview</span>
-      </div>
+<div class="doc-notice">
+<strong>Release governance, HIPAA, and proprietary-information notice</strong>
+<p>Release notes may reference Provider operations, PHI-related workflows, security controls, billing, payroll, EVV, integrations, or proprietary implementation details. Public documentation must avoid credentials, private endpoints, source code, customer data, and sensitive internal security information.</p>
+</div>
 
-      <article class="doc-article">
-        <header class="doc-article-header">
-          <div>
-            <p class="doc-eyebrow">TRUE CARE SYSTEM DOCUMENTATION</p>
-            <h1>Overview</h1>
-          </div>
 
-          <dl class="doc-metadata">
-            <div><dt>Document ID</dt><dd>REL-DOC-001</dd></div>
-            <div><dt>Version</dt><dd>1.0</dd></div>
-            <div><dt>Status</dt><dd>Planned</dd></div>
-            <div><dt>Last Updated</dt><dd>Pending</dd></div>
-          </dl>
-        </header>
+<section class="doc-section">
+<h2>Purpose</h2>
+<p>Explains how True Care System documents product versions, scope, risk, deployment status, validation evidence, and customer-facing changes.</p>
+</section>
 
-        
-    <div class="doc-notice doc-notice-info">
-      <strong>Documentation placeholder</strong>
-      <p>This page has been created and is ready for detailed content,
-         screenshots and review.</p>
-    </div>
+<section class="doc-section">
+<h2>Release Documentation Requirements</h2>
+<div class="rn-grid"><div class="rn-card"><h3>Release Transparency</h3><p>Each release should explain what changed, why it changed, who is affected, and whether Provider action is required.</p></div>
+<div class="rn-card"><h3>Environment Awareness</h3><p>Release notes should distinguish development, testing, staging, production, TestFlight, Google Play, and Apple App Store status.</p></div>
+<div class="rn-card"><h3>Risk Communication</h3><p>Security, HIPAA, billing, payroll, EVV, data-integrity, and Provider-isolation impact must be clearly identified.</p></div>
+<div class="rn-card"><h3>Traceability</h3><p>Every production release should remain linked to approved tickets, commits, tests, deployment records, and validation evidence.</p></div>
+<div class="rn-card"><h3>Customer Readability</h3><p>Provider-facing notes should explain operational impact without exposing proprietary code, credentials, or sensitive implementation details.</p></div></div>
+</section>
 
-    <section class="doc-section">
-      <h2>Purpose</h2>
-      <p class="doc-pending">Detailed purpose will be added during module documentation.</p>
-    </section>
+<section class="doc-section">
+<h2>Required Release Record</h2>
+<table class="rn-table">
+<thead><tr><th>Field</th><th>Required Information</th></tr></thead>
+<tbody>
+<tr><td>Version</td><td>Product version, build, release identifier, or deployment reference.</td></tr>
+<tr><td>Date</td><td>Release, deployment, publication, or approval date.</td></tr>
+<tr><td>Environment</td><td>Development, QA, staging, production, TestFlight, Google Play, or Apple App Store.</td></tr>
+<tr><td>Scope</td><td>Affected product, module, Provider workflow, integration, or documentation area.</td></tr>
+<tr><td>Validation</td><td>QA result, regression evidence, smoke tests, security review, and production confirmation.</td></tr>
+<tr><td>Provider Action</td><td>App update, browser refresh, training, configuration review, data correction, or no action.</td></tr>
+<tr><td>Rollback</td><td>Rollback trigger, prior stable version, reversal steps, and data-reconciliation requirements.</td></tr>
+</tbody>
+</table>
+</section>
 
-    <section class="doc-section">
-      <h2>Who Can Use This Feature</h2>
-      <p class="doc-pending">Roles and permissions will be documented after verification.</p>
-    </section>
+<section class="doc-section">
+<h2>Related Documentation</h2>
+<div class="rn-link-grid">
+<a class="rn-link" href="../company-playbook/release-process.html"><strong>Company Playbook — Release Process</strong><span>Open Guide →</span></a>
+<a class="rn-link" href="../qa-guide/"><strong>QA Guide</strong><span>Open Guide →</span></a>
+<a class="rn-link" href="../test-catalog/"><strong>Test Catalog</strong><span>Open Guide →</span></a>
+<a class="rn-link" href="../troubleshooting/"><strong>Troubleshooting</strong><span>Open Guide →</span></a>
+</div>
+</section>
 
-    <section class="doc-section">
-      <h2>Navigation</h2>
-      <p class="doc-pending">The exact navigation path will be documented here.</p>
-    </section>
 
-    <section class="doc-section">
-      <h2>Business Flow</h2>
-      <p class="doc-pending">The approved business workflow will be documented here.</p>
-    </section>
+<div class="doc-page-navigation">
+<a class="doc-button" href="index.html">← Back</a>
+<a class="doc-button" href="index.html">🏠 Home</a>
+<a class="doc-button" href="current-release.html">Next →</a>
+</div>
+</article>
+</main>
+</div>
 
-    
-    <section class="doc-section">
-      <h2>Screenshot</h2>
-      <div class="doc-screenshot-placeholder">
-        <div class="doc-placeholder-icon">▧</div>
-        <div>
-          <strong>Screenshot Required</strong>
-          <p><b>Screenshot ID:</b> REL-001</p>
-          <p><b>Screen:</b> Overview</p>
-          <p><b>File:</b> images/REL-001-overview.jpg</p>
-          <p><b>Recommended capture:</b> Desktop, 100% browser zoom,
-             full page title, navigation, actions, filters and data area visible.</p>
-          <p><b>Privacy requirement:</b> Use demo or training data only.
-             Do not include real PHI, credentials, passwords, SSNs or Medicaid IDs.</p>
-        </div>
-      </div>
-    </section>
-    
-
-    <section class="doc-section">
-      <h2>Interface Overview</h2>
-      <p class="doc-pending">Buttons, fields, filters, tabs and page regions will be explained here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Step-by-Step Instructions</h2>
-      <ol class="doc-steps">
-        <li><span>Step instructions pending.</span></li>
-        <li><span>Step instructions pending.</span></li>
-        <li><span>Step instructions pending.</span></li>
-      </ol>
-    </section>
-
-    <section class="doc-section">
-      <h2>Permissions</h2>
-      <p class="doc-pending">Access requirements and permission rules will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Validation Rules</h2>
-      <p class="doc-pending">Required fields and business validation rules will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Tips</h2>
-      <p class="doc-pending">Recommended usage tips will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Warnings</h2>
-      <p class="doc-pending">Important operational and data safety warnings will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>HIPAA Considerations</h2>
-      <p class="doc-pending">PHI handling and minimum-necessary requirements will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Audit Log Behavior</h2>
-      <p class="doc-pending">Expected audit events and recorded details will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Troubleshooting</h2>
-      <p class="doc-pending">Known issues and recommended resolutions will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Frequently Asked Questions</h2>
-      <p class="doc-pending">Frequently asked questions will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Related Documentation</h2>
-      <p><a href="/documentation/release-notes/">Return to Release Notes</a></p>
-    </section>
-    
-      </article>
-
-      <footer class="doc-page-footer">
-        <p>© 2026 True Care System. All rights reserved.</p>
-        <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
-      </footer>
-    </main>
-  </div>
-
-  <div class="doc-search-results" id="docSearchResults" hidden></div>
-  <script src="/documentation/assets/documentation.js"></script>
+<footer class="doc-footer">
+<p>© 2026 True Care System. All rights reserved.</p>
+<p>Documentation is maintained as part of the True Care System product lifecycle.</p>
+</footer>
+<script src="/documentation/assets/documentation.js"></script>
 </body>
 </html>

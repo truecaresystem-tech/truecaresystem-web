@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Current Release | True Care System Documentation</title>
+<title>Upgrade Guide | True Care System Documentation</title>
 <link rel="stylesheet" href="/documentation/assets/documentation.css">
 <style>
 .rn-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
@@ -69,18 +69,18 @@
 <nav class="doc-breadcrumb">
 <a href="/documentation/">Documentation</a><span>›</span>
 <a href="/documentation/release-notes/">Release Notes</a><span>›</span>
-<span>Current Release</span>
+<span>Upgrade Guide</span>
 </nav>
 
 <article class="doc-article">
 <header class="doc-article-header">
 <div>
 <p class="doc-eyebrow">TRUE CARE SYSTEM • RELEASE NOTES</p>
-<h1>Current Release</h1>
-<p>Provides a consolidated view of the latest approved True Care System Web, API, Mobile, integration, security, and documentation updates.</p>
+<h1>Upgrade Guide</h1>
+<p>Defines the actions required before, during, and after a True Care System release.</p>
 </div>
 <dl class="doc-metadata">
-<div><dt>Document ID</dt><dd>REL-DOC-003</dd></div>
+<div><dt>Document ID</dt><dd>REL-DOC-011</dd></div>
 <div><dt>Version</dt><dd>1.0</dd></div>
 <div><dt>Status</dt><dd>Draft</dd></div>
 <div><dt>Last Updated</dt><dd>07/28/2026</dd></div>
@@ -95,30 +95,16 @@
 
 <section class="doc-section">
 <h2>Purpose</h2>
-<p>Provides a consolidated view of the latest approved True Care System Web, API, Mobile, integration, security, and documentation updates.</p>
+<p>Defines the actions required before, during, and after a True Care System release.</p>
 </section>
 
 <section class="doc-section">
 <h2>Release Documentation Requirements</h2>
-<div class="rn-grid"><div class="rn-card"><h3>Release Summary</h3><p>Summarize the release objective, affected products, deployment status, and expected Provider benefit.</p></div>
-<div class="rn-card"><h3>Web</h3><p>List approved interface, workflow, validation, reporting, or administrative changes.</p></div>
-<div class="rn-card"><h3>API</h3><p>List approved backend, Provider-isolation, audit, integration, performance, or data-processing changes.</p></div>
-<div class="rn-card"><h3>Mobile</h3><p>List the current approved mobile version and major DSP-facing changes.</p></div>
-<div class="rn-card"><h3>Integrations</h3><p>List Sandata, storage, email, notification, or other third-party integration changes.</p></div>
-<div class="rn-card"><h3>Provider Action</h3><p>Clearly state whether users must update the app, refresh the browser, review settings, complete training, or take no action.</p></div></div>
-</section>
-
-<section class="doc-section">
-<h2>Current Release Record</h2>
-<table class="rn-table">
-<thead><tr><th>Product</th><th>Version / Status</th><th>Customer-Facing Summary</th></tr></thead>
-<tbody>
-<tr><td>Web</td><td>Production release record</td><td>Provider-facing workflows, documentation, administration, reporting, billing, payroll, HIPAA, and support updates are documented by approved deployment.</td></tr>
-<tr><td>API</td><td>Production release record</td><td>Backend logic, Provider isolation, audit behavior, validation, integrations, and data-processing changes are tracked with each approved deployment.</td></tr>
-<tr><td>Mobile</td><td>Version 1.1.6</td><td>DSP users can receive Provider backup-shift alerts, review available coverage, and claim eligible shifts through the approved mobile workflow.</td></tr>
-<tr><td>Documentation</td><td>Current documentation set</td><td>Module guides, Company Playbook, Troubleshooting, FAQ, API Documentation, AI Agents, and Release Notes are maintained as part of the product lifecycle.</td></tr>
-</tbody>
-</table>
+<div class="rn-grid"><div class="rn-card"><h3>Before Upgrade</h3><p>Review release scope, backups, dependencies, database steps, mobile-store status, Provider communication, and rollback plan.</p></div>
+<div class="rn-card"><h3>During Upgrade</h3><p>Deploy in the approved sequence and prevent duplicate jobs, submissions, or conflicting writes.</p></div>
+<div class="rn-card"><h3>After Upgrade</h3><p>Run smoke tests, Provider-isolation checks, audit validation, integration checks, and business-workflow verification.</p></div>
+<div class="rn-card"><h3>Provider Actions</h3><p>Identify browser refresh, app update, settings review, training, or data-readiness tasks.</p></div>
+<div class="rn-card"><h3>Rollback</h3><p>Define conditions that require stopping deployment and restoring the prior stable state.</p></div></div>
 </section>
 
 <section class="doc-section">
@@ -149,9 +135,9 @@
 
 
 <div class="doc-page-navigation">
-<a class="doc-button" href="overview.html">← Back</a>
+<a class="doc-button" href="known-issues.html">← Back</a>
 <a class="doc-button" href="index.html">🏠 Home</a>
-<a class="doc-button" href="web-release-notes.html">Next →</a>
+<a class="doc-button" href="version-history.html">Next →</a>
 </div>
 </article>
 </main>
