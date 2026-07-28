@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Create and manage Provider support tickets, ticket numbers, attachments, conversations, temporary support access, session history, and audited support activity.">
-<title>Support API | True Care System Documentation</title>
+<meta name="description" content="Support authenticated mobile workflows, shift access, EVV check-in and check-out, GPS evidence, Daily Notes, incidents, call-off, backup coverage, and mobile messaging.">
+<title>Mobile EVV API | True Care System Documentation</title>
 <link rel="stylesheet" href="/documentation/assets/documentation.css">
 <style>
 .api-table{width:100%;table-layout:fixed;border-collapse:collapse}
@@ -57,20 +57,20 @@ code{overflow-wrap:anywhere}
 <a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>FAQ</span></a>
 <a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a></nav></aside>
 <main class="doc-main">
-<div class="doc-breadcrumb"><a href="/documentation/">Documentation</a><span>›</span><a href="/documentation/api-documentation/">API Documentation</a><span>›</span><span>Support API</span></div>
+<div class="doc-breadcrumb"><a href="/documentation/">Documentation</a><span>›</span><a href="/documentation/api-documentation/">API Documentation</a><span>›</span><span>Mobile EVV API</span></div>
 <article class="doc-article">
-<header class="doc-article-header"><div><p class="doc-eyebrow">TRUE CARE SYSTEM • API DOCUMENTATION</p><h1>Support API</h1><p>Create and manage Provider support tickets, ticket numbers, attachments, conversations, temporary support access, session history, and audited support activity.</p></div>
-<dl class="doc-metadata"><div><dt>Document ID</dt><dd>API-DOC-020</dd></div><div><dt>Version</dt><dd>1.0</dd></div><div><dt>Status</dt><dd>Draft</dd></div><div><dt>Last Updated</dt><dd>07/28/2026</dd></div></dl></header>
+<header class="doc-article-header"><div><p class="doc-eyebrow">TRUE CARE SYSTEM • API DOCUMENTATION</p><h1>Mobile EVV API</h1><p>Support authenticated mobile workflows, shift access, EVV check-in and check-out, GPS evidence, Daily Notes, incidents, call-off, backup coverage, and mobile messaging.</p></div>
+<dl class="doc-metadata"><div><dt>Document ID</dt><dd>API-DOC-014</dd></div><div><dt>Version</dt><dd>1.0</dd></div><div><dt>Status</dt><dd>Draft</dd></div><div><dt>Last Updated</dt><dd>07/28/2026</dd></div></dl></header>
 
-<div class="doc-notice doc-notice-info"><strong>Purpose</strong><p>Create and manage Provider support tickets, ticket numbers, attachments, conversations, temporary support access, session history, and audited support activity.</p></div>
+<div class="doc-notice doc-notice-info"><strong>Purpose</strong><p>Support authenticated mobile workflows, shift access, EVV check-in and check-out, GPS evidence, Daily Notes, incidents, call-off, backup coverage, and mobile messaging.</p></div>
 <div class="doc-notice api-security"><strong>Security, privacy, and proprietary workflow notice</strong>
-<p>The Support API may process PHI, workforce data, payroll information, Provider identifiers, EVV evidence, location data, or administrative records. Public examples use demonstration values. Production credentials, tokens, private routes, customer data, and proprietary validation details must remain restricted.</p></div>
+<p>The Mobile EVV API may process PHI, workforce data, payroll information, Provider identifiers, EVV evidence, location data, or administrative records. Public examples use demonstration values. Production credentials, tokens, private routes, customer data, and proprietary validation details must remain restricted.</p></div>
 
 <section class="doc-section"><h2>Functional Scope</h2>
-<p>The Support API provides the backend contract for the related True Care System workspace. The API is responsible for Provider isolation, role authorization, input validation, business-state enforcement, safe response shaping, and applicable audit evidence.</p>
+<p>The Mobile EVV API provides the backend contract for the related True Care System workspace. The API is responsible for Provider isolation, role authorization, input validation, business-state enforcement, safe response shaping, and applicable audit evidence.</p>
 </section>
 
-<section class="doc-section"><h2>Primary Endpoint Groups</h2><div class="doc-table-wrap"><table class="doc-table api-table"><thead><tr><th>Method</th><th>Route</th><th>General Purpose</th></tr></thead><tbody><tr><td><code>GET</code></td><td><code>/support/tickets</code></td><td>Return Provider-visible support tickets.</td></tr><tr><td><code>POST</code></td><td><code>/support/tickets</code></td><td>Create a ticket and assign a generated ticket number.</td></tr><tr><td><code>GET</code></td><td><code>/support/tickets/:id</code></td><td>Return ticket details and conversation.</td></tr><tr><td><code>POST</code></td><td><code>/support/tickets/:id/messages</code></td><td>Add a ticket message.</td></tr><tr><td><code>POST</code></td><td><code>/support/tickets/:id/access</code></td><td>Grant temporary Platform Support access.</td></tr><tr><td><code>POST</code></td><td><code>/support/sessions/:id/end</code></td><td>End an active support or impersonation session.</td></tr></tbody></table></div></section>
+<section class="doc-section"><h2>Primary Endpoint Groups</h2><div class="doc-table-wrap"><table class="doc-table api-table"><thead><tr><th>Method</th><th>Route</th><th>General Purpose</th></tr></thead><tbody><tr><td><code>POST</code></td><td><code>/mobile/login/request-code</code></td><td>Send an approved mobile sign-in code.</td></tr><tr><td><code>POST</code></td><td><code>/mobile/login/verify</code></td><td>Verify the code and establish a mobile session.</td></tr><tr><td><code>GET</code></td><td><code>/mobile/dashboard</code></td><td>Return mobile dashboard counts and shifts.</td></tr><tr><td><code>POST</code></td><td><code>/mobile/visits/:id/check-in</code></td><td>Record EVV check-in, time, source, and GPS.</td></tr><tr><td><code>POST</code></td><td><code>/mobile/visits/:id/check-out</code></td><td>Record EVV check-out, time, source, and GPS.</td></tr><tr><td><code>POST</code></td><td><code>/mobile/daily-notes</code></td><td>Submit a Daily Note.</td></tr><tr><td><code>POST</code></td><td><code>/mobile/incidents</code></td><td>Submit a Health &amp; Incident report.</td></tr></tbody></table></div></section>
 
 <section class="doc-section"><h2>Request and Authorization Controls</h2>
 <ul>
@@ -83,14 +83,14 @@ code{overflow-wrap:anywhere}
 </ul></section>
 
 <section class="doc-section"><h2>Example Request</h2>
-<pre><code>GET /api/support?page=1&amp;limit=25
+<pre><code>GET /api/mobile-evv?page=1&amp;limit=25
 Authorization: Bearer &lt;access-token&gt;
 Accept: application/json</code></pre></section>
 
 <section class="doc-section"><h2>Example Success Response</h2>
 <pre><code>{
   "success": true,
-  "message": "Support data returned.",
+  "message": "Mobile EVV data returned.",
   "data": {
     "items": [],
     "page": 1,
@@ -147,9 +147,9 @@ Accept: application/json</code></pre></section>
 </ul></section>
 
 <div class="doc-page-navigation">
-<a class="doc-button" href="hipaa-api.html">← Back: HIPAA API</a>
+<a class="doc-button" href="time-keeping-api.html">← Back: Time Keeping API</a>
 <a class="doc-button" href="/documentation/api-documentation/">🏠 Home</a>
-<a class="doc-button" href="admin-api.html">Next: Admin API →</a>
+<a class="doc-button" href="visit-api.html">Next: Visit API →</a>
 </div>
 </article>
 <footer class="doc-page-footer"><p>© 2026 True Care System. All rights reserved.</p><p>Documentation is maintained as part of the True Care System product lifecycle.</p></footer>

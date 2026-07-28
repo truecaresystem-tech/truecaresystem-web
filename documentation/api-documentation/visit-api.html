@@ -1,41 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Visit API documentation for True Care System">
-  <title>Visit API | True Care System Documentation</title>
-  <link rel="stylesheet" href="/documentation/assets/documentation.css">
-</head>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Maintain normalized visit records, call logs, GPS, authorization linkage, exceptions, corrections, readiness, merge behavior, and billing decisions.">
+<title>Visit API | True Care System Documentation</title>
+<link rel="stylesheet" href="/documentation/assets/documentation.css">
+<style>
+.api-table{width:100%;table-layout:fixed;border-collapse:collapse}
+.api-table th,.api-table td{text-align:left;vertical-align:top;padding:12px 14px}
+.api-table th:first-child,.api-table td:first-child{width:150px}
+.doc-table-wrap{width:100%;overflow-x:auto}
+.api-security{border:1px solid #d7c7ff;background:#f5f1ff}
+.api-security strong{color:#3d348b}
+pre{max-width:100%;overflow:auto;border:1px solid #d8e1ec;border-radius:12px;padding:16px;background:#f7f9fc}
+code{overflow-wrap:anywhere}
+.doc-page-navigation{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;align-items:center;margin-top:34px}
+.doc-page-navigation .doc-button:nth-child(1){justify-self:start}
+.doc-page-navigation .doc-button:nth-child(2){justify-self:center}
+.doc-page-navigation .doc-button:nth-child(3){justify-self:end}
+@media(max-width:760px){.doc-page-navigation{grid-template-columns:1fr}.doc-page-navigation .doc-button{justify-self:stretch!important;text-align:center}}
+</style></head>
 <body>
-  <header class="doc-header">
-    <a class="doc-brand" href="/documentation/">
-      <img src="/logo.png" alt="True Care System">
-      <span>
-        <strong>True Care System</strong>
-        <small>Documentation</small>
-      </span>
-    </a>
-
-    <button class="doc-mobile-menu" id="docMobileMenu"
-            aria-label="Open documentation menu">☰</button>
-
-    <div class="doc-header-actions">
-      <label class="doc-search">
-        <span>⌕</span>
-        <input id="docSearchInput" type="search"
-               placeholder="Search documentation..."
-               autocomplete="off">
-      </label>
-      <a href="/" class="doc-back-link">Return to Website</a>
-    </div>
-  </header>
-
-  <div class="doc-layout">
-    <aside class="doc-sidebar" id="docSidebar">
-      <div class="doc-sidebar-title">Documentation</div>
-      <nav>
-        <a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
+<header class="doc-header">
+<a class="doc-brand" href="/documentation/"><img src="/logo.png" alt="True Care System"><span><strong>True Care System</strong><small>Documentation</small></span></a>
+<button class="doc-mobile-menu" id="docMobileMenu" type="button" aria-label="Open documentation menu">☰</button>
+<div class="doc-header-actions"><label class="doc-search"><span>⌕</span><input id="docSearchInput" type="search" placeholder="Search documentation..." autocomplete="off"></label><a href="/" class="doc-back-link">Return to Website</a></div>
+</header>
+<div class="doc-layout">
+<aside class="doc-sidebar" id="docSidebar"><div class="doc-sidebar-title">Documentation</div><nav><a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
 <a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
 <a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
 <a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
@@ -53,7 +44,7 @@
 <a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
 <a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
 <a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
-<a class="doc-nav-module" href="/documentation/provider-administration/"><span class="doc-nav-number">19</span><span>Admin</span></a>
+<a class="doc-nav-module" href="/documentation/admin/"><span class="doc-nav-number">19</span><span>Admin</span></a>
 <a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
 <a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
 <a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
@@ -63,148 +54,106 @@
 <a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
 <a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
 <a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
-<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>Frequently Asked Questions</span></a>
-<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
-      </nav>
-    </aside>
+<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>FAQ</span></a>
+<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a></nav></aside>
+<main class="doc-main">
+<div class="doc-breadcrumb"><a href="/documentation/">Documentation</a><span>›</span><a href="/documentation/api-documentation/">API Documentation</a><span>›</span><span>Visit API</span></div>
+<article class="doc-article">
+<header class="doc-article-header"><div><p class="doc-eyebrow">TRUE CARE SYSTEM • API DOCUMENTATION</p><h1>Visit API</h1><p>Maintain normalized visit records, call logs, GPS, authorization linkage, exceptions, corrections, readiness, merge behavior, and billing decisions.</p></div>
+<dl class="doc-metadata"><div><dt>Document ID</dt><dd>API-DOC-015</dd></div><div><dt>Version</dt><dd>1.0</dd></div><div><dt>Status</dt><dd>Draft</dd></div><div><dt>Last Updated</dt><dd>07/28/2026</dd></div></dl></header>
 
-    <main class="doc-main">
-      <div class="doc-breadcrumb">
-        <a href="/documentation/">Documentation</a>
-        <span>›</span><a href='/documentation/api-documentation/'>API Documentation</a>
-        <span>›</span><span>Visit API</span>
-      </div>
+<div class="doc-notice doc-notice-info"><strong>Purpose</strong><p>Maintain normalized visit records, call logs, GPS, authorization linkage, exceptions, corrections, readiness, merge behavior, and billing decisions.</p></div>
+<div class="doc-notice api-security"><strong>Security, privacy, and proprietary workflow notice</strong>
+<p>The Visit API may process PHI, workforce data, payroll information, Provider identifiers, EVV evidence, location data, or administrative records. Public examples use demonstration values. Production credentials, tokens, private routes, customer data, and proprietary validation details must remain restricted.</p></div>
 
-      <article class="doc-article">
-        <header class="doc-article-header">
-          <div>
-            <p class="doc-eyebrow">TRUE CARE SYSTEM DOCUMENTATION</p>
-            <h1>Visit API</h1>
-          </div>
+<section class="doc-section"><h2>Functional Scope</h2>
+<p>The Visit API provides the backend contract for the related True Care System workspace. The API is responsible for Provider isolation, role authorization, input validation, business-state enforcement, safe response shaping, and applicable audit evidence.</p>
+</section>
 
-          <dl class="doc-metadata">
-            <div><dt>Document ID</dt><dd>API-DOC-015</dd></div>
-            <div><dt>Version</dt><dd>1.0</dd></div>
-            <div><dt>Status</dt><dd>Planned</dd></div>
-            <div><dt>Last Updated</dt><dd>Pending</dd></div>
-          </dl>
-        </header>
+<section class="doc-section"><h2>Primary Endpoint Groups</h2><div class="doc-table-wrap"><table class="doc-table api-table"><thead><tr><th>Method</th><th>Route</th><th>General Purpose</th></tr></thead><tbody><tr><td><code>GET</code></td><td><code>/visits</code></td><td>Search and list Provider visits.</td></tr><tr><td><code>GET</code></td><td><code>/visits/:id</code></td><td>Return Visit Details and readiness.</td></tr><tr><td><code>PATCH</code></td><td><code>/visits/:id</code></td><td>Apply an authorized visit correction.</td></tr><tr><td><code>POST</code></td><td><code>/visits/:id/merge</code></td><td>Merge approved visit segments for billing.</td></tr><tr><td><code>POST</code></td><td><code>/visits/:id/review</code></td><td>Mark the visit reviewed.</td></tr><tr><td><code>DELETE</code></td><td><code>/visits/:id</code></td><td>Delete an eligible visit with audit evidence.</td></tr></tbody></table></div></section>
 
-        
-    <div class="doc-notice doc-notice-info">
-      <strong>Documentation placeholder</strong>
-      <p>This page has been created and is ready for detailed content,
-         screenshots and review.</p>
-    </div>
+<section class="doc-section"><h2>Request and Authorization Controls</h2>
+<ul>
+<li>Require a valid authenticated session for protected routes.</li>
+<li>Resolve Provider scope from trusted server-side identity context.</li>
+<li>Apply role and action permission checks before data access.</li>
+<li>Validate route parameters, query filters, dates, statuses, and request bodies.</li>
+<li>Prevent cross-Provider access and avoid disclosing whether out-of-scope records exist.</li>
+<li>Record applicable view, create, update, delete, approve, submit, export, or impersonation activity.</li>
+</ul></section>
 
-    <section class="doc-section">
-      <h2>Purpose</h2>
-      <p class="doc-pending">Detailed purpose will be added during module documentation.</p>
-    </section>
+<section class="doc-section"><h2>Example Request</h2>
+<pre><code>GET /api/visit?page=1&amp;limit=25
+Authorization: Bearer &lt;access-token&gt;
+Accept: application/json</code></pre></section>
 
-    <section class="doc-section">
-      <h2>Who Can Use This Feature</h2>
-      <p class="doc-pending">Roles and permissions will be documented after verification.</p>
-    </section>
+<section class="doc-section"><h2>Example Success Response</h2>
+<pre><code>{
+  "success": true,
+  "message": "Visit data returned.",
+  "data": {
+    "items": [],
+    "page": 1,
+    "limit": 25,
+    "total": 0
+  },
+  "requestId": "demo-request-id"
+}</code></pre></section>
 
-    <section class="doc-section">
-      <h2>Navigation</h2>
-      <p class="doc-pending">The exact navigation path will be documented here.</p>
-    </section>
+<section class="doc-section"><h2>Common Error Conditions</h2>
+<div class="doc-table-wrap"><table class="doc-table api-table">
+<thead><tr><th>Condition</th><th>Expected handling</th></tr></thead>
+<tbody>
+<tr><td>Unauthenticated</td><td>Return an authentication error without exposing account details.</td></tr>
+<tr><td>Forbidden role</td><td>Return a forbidden response and preserve security-relevant evidence where required.</td></tr>
+<tr><td>Cross-Provider identifier</td><td>Reject access without confirming the existence of the external record.</td></tr>
+<tr><td>Invalid input</td><td>Return safe field-level validation details.</td></tr>
+<tr><td>Invalid state transition</td><td>Reject workflow actions that do not meet readiness, approval, status, or effective-date requirements.</td></tr>
+<tr><td>Unexpected failure</td><td>Return a generic error and request ID while storing diagnostics only in protected logs.</td></tr>
+</tbody></table></div></section>
 
-    <section class="doc-section">
-      <h2>Business Flow</h2>
-      <p class="doc-pending">The approved business workflow will be documented here.</p>
-    </section>
+<section class="doc-section"><h2>Audit and HIPAA Expectations</h2>
+<p>Where a request accesses or changes PHI or sensitive operational information, the system should preserve the authorized Provider, user or actor, target record, module, action, timestamp, request context, purpose of use where applicable, minimum-necessary status, outcome, and approved metadata.</p>
+</section>
 
-    
-    <section class="doc-section">
-      <h2>Screenshot</h2>
-      <div class="doc-screenshot-placeholder">
-        <div class="doc-placeholder-icon">▧</div>
-        <div>
-          <strong>Screenshot Required</strong>
-          <p><b>Screenshot ID:</b> API-015</p>
-          <p><b>Screen:</b> Visit API</p>
-          <p><b>File:</b> images/API-015-visit-api.jpg</p>
-          <p><b>Recommended capture:</b> Desktop, 100% browser zoom,
-             full page title, navigation, actions, filters and data area visible.</p>
-          <p><b>Privacy requirement:</b> Use demo or training data only.
-             Do not include real PHI, credentials, passwords, SSNs or Medicaid IDs.</p>
-        </div>
-      </div>
-    </section>
-    
+<section class="doc-section"><h2>Implementation Checklist</h2>
+<ul>
+<li>Route and controller contract documented.</li>
+<li>Request DTO or schema validation implemented.</li>
+<li>Provider filter enforced in business logic and data access.</li>
+<li>Role authorization verified.</li>
+<li>Sensitive response fields reviewed.</li>
+<li>Audit behavior verified.</li>
+<li>Success, validation, forbidden, not-found, conflict, and failure cases tested.</li>
+<li>QA Guide and Test Catalog updated.</li>
+</ul></section>
 
-    <section class="doc-section">
-      <h2>Interface Overview</h2>
-      <p class="doc-pending">Buttons, fields, filters, tabs and page regions will be explained here.</p>
-    </section>
+<section class="doc-section"><h2>Troubleshooting</h2>
+<h3>No records returned</h3><p>Review Provider scope, date range, filters, status, pagination, user role, and record readiness.</p>
+<h3>Forbidden response</h3><p>Confirm the user's assigned role and permission. Do not bypass backend guards or replace the Provider identifier.</p>
+<h3>Validation failure</h3><p>Compare the payload with the approved DTO, required fields, effective dates, enum values, and workflow state.</p>
+<h3>Unexpected server error</h3><p>Use the request identifier to locate protected server logs. Do not expose stack traces, secrets, or raw database errors to the client.</p>
+</section>
 
-    <section class="doc-section">
-      <h2>Step-by-Step Instructions</h2>
-      <ol class="doc-steps">
-        <li><span>Step instructions pending.</span></li>
-        <li><span>Step instructions pending.</span></li>
-        <li><span>Step instructions pending.</span></li>
-      </ol>
-    </section>
+<section class="doc-section"><h2>Related Documentation</h2>
+<ul>
+<li><a href="overview.html">API Overview</a></li>
+<li><a href="authentication-api.html">Authentication API</a></li>
+<li><a href="/documentation/security/">Security</a></li>
+<li><a href="/documentation/hipaa-compliance/">HIPAA</a></li>
+<li><a href="/documentation/audit-logs/">Audit Logs</a></li>
+<li><a href="/documentation/developer-guide/api-standards.html">Developer Guide — API Standards</a></li>
+<li><a href="/documentation/qa-guide/integration-testing.html">QA Guide — Integration Testing</a></li>
+</ul></section>
 
-    <section class="doc-section">
-      <h2>Permissions</h2>
-      <p class="doc-pending">Access requirements and permission rules will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Validation Rules</h2>
-      <p class="doc-pending">Required fields and business validation rules will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Tips</h2>
-      <p class="doc-pending">Recommended usage tips will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Warnings</h2>
-      <p class="doc-pending">Important operational and data safety warnings will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>HIPAA Considerations</h2>
-      <p class="doc-pending">PHI handling and minimum-necessary requirements will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Audit Log Behavior</h2>
-      <p class="doc-pending">Expected audit events and recorded details will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Troubleshooting</h2>
-      <p class="doc-pending">Known issues and recommended resolutions will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Frequently Asked Questions</h2>
-      <p class="doc-pending">Frequently asked questions will be documented here.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Related Documentation</h2>
-      <p><a href="/documentation/api-documentation/">Return to API Documentation</a></p>
-    </section>
-    
-      </article>
-
-      <footer class="doc-page-footer">
-        <p>© 2026 True Care System. All rights reserved.</p>
-        <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
-      </footer>
-    </main>
-  </div>
-
-  <div class="doc-search-results" id="docSearchResults" hidden></div>
-  <script src="/documentation/assets/documentation.js"></script>
-</body>
-</html>
+<div class="doc-page-navigation">
+<a class="doc-button" href="mobile-evv-api.html">← Back: Mobile EVV API</a>
+<a class="doc-button" href="/documentation/api-documentation/">🏠 Home</a>
+<a class="doc-button" href="house-management-api.html">Next: House Management API →</a>
+</div>
+</article>
+<footer class="doc-page-footer"><p>© 2026 True Care System. All rights reserved.</p><p>Documentation is maintained as part of the True Care System product lifecycle.</p></footer>
+</main></div>
+<div class="doc-search-results" id="docSearchResults" hidden></div>
+<script src="/documentation/assets/documentation.js"></script>
+</body></html>
