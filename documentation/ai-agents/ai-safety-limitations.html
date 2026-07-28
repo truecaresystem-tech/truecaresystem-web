@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Payroll AI | True Care System Documentation</title>
+<title>AI Safety &amp; Limitations | True Care System Documentation</title>
 <link rel="stylesheet" href="/documentation/assets/documentation.css">
 <style>
 *{box-sizing:border-box}
@@ -70,33 +70,38 @@ img{max-width:100%;height:auto}
 <a href="/documentation/release-notes/"><span>30</span><strong>Release Notes</strong></a></nav>
 </aside>
 <main class="doc-main">
-<div class="doc-breadcrumb"><a href="/documentation/">Documentation</a> › <a href="/documentation/ai-agents/">AI Agents</a> › Payroll AI</div>
+<div class="doc-breadcrumb"><a href="/documentation/">Documentation</a> › <a href="/documentation/ai-agents/">AI Agents</a> › AI Safety &amp; Limitations</div>
 <div class="doc-hero">
 <div>
-<div class="doc-eyebrow">AI AGENTS • PAYROLL</div>
-<h1>Payroll AI</h1>
-<p class="doc-lead">Payroll anomaly detection and workforce compensation review support.</p>
+<div class="doc-eyebrow">AI AGENTS • GOVERNANCE</div>
+<h1>AI Safety &amp; Limitations</h1>
+<p class="doc-lead">Responsible-AI controls, prohibited uses, and human accountability.</p>
 </div>
 <div class="doc-meta">
-<div><span>Document ID</span><strong>AI-DOC-005</strong></div>
+<div><span>Document ID</span><strong>AI-DOC-010</strong></div>
 <div><span>Version</span><strong>1.0</strong></div>
 <div><span>Status</span><strong>Draft</strong></div>
 <div><span>Last Updated</span><strong>07/28/2026</strong></div>
 </div>
 </div>
 <div class="ai-notice"><strong>Responsible AI, privacy, and provider-isolation notice</strong><p>AI features are designed as assistive tools for authorized users. They do not replace required human review, professional judgment, Provider policy, or applicable legal and regulatory obligations. Public screenshots and examples must use redacted or demonstration information.</p></div>
-<section><h2>Purpose</h2><p>Payroll AI assists authorized payroll and HR staff in reviewing time, rates, overtime, mileage, and payroll exceptions. It does not replace configured payroll rules, employment agreements, or required approval.</p>
-<figure class="doc-figure"><img src="images/payroll-ai.jpg" alt="Payroll AI"><figcaption>Payroll AI workspace or infographic.</figcaption></figure>
+<section><h2>Purpose</h2><p>This page defines the safety boundaries that apply to all True Care System AI capabilities. AI is an assistive layer and must not bypass user permissions, Provider policy, regulatory obligations, or required professional judgment.</p>
+<figure class="doc-figure"><img src="images/ai-safety.jpg" alt="AI Safety &amp; Limitations"><figcaption>AI Safety &amp; Limitations workspace or infographic.</figcaption></figure>
 </section>
 
-<section><h2>Payroll Intelligence</h2><div class="doc-detail-grid"><div class="doc-detail-row"><strong>Missing-time detection</strong><p>Identifies incomplete check-in/check-out records and unresolved office time.</p></div>
-<div class="doc-detail-row"><strong>Duplicate-hour detection</strong><p>Flags overlapping office and DSP work or duplicate entries across work sources.</p></div>
-<div class="doc-detail-row"><strong>Overtime review</strong><p>Highlights weekly hours that may trigger configured overtime treatment.</p></div>
-<div class="doc-detail-row"><strong>Rate validation</strong><p>Compares the applicable employee rate, training rate, and mileage reimbursement configuration.</p></div>
-<div class="doc-detail-row"><strong>Mileage anomalies</strong><p>Surfaces unusual or incomplete mileage entries for review.</p></div>
-<div class="doc-detail-row"><strong>Payroll trend support</strong><p>Helps identify repeated corrections, exceptional hours, or unusual variance across periods.</p></div></div></section><section><h2>Approval Boundary</h2><div class="doc-detail-grid"><div class="doc-detail-row"><strong>Payroll remains authoritative</strong><p>Final hours, rates, deductions, taxes, and payments are approved by authorized staff.</p></div>
-<div class="doc-detail-row"><strong>No legal determination</strong><p>AI does not determine worker classification, wage law compliance, or tax liability.</p></div>
-<div class="doc-detail-row"><strong>Provider configuration</strong><p>Recommendations depend on the Provider’s configured rules and available data.</p></div></div></section>
+<section><h2>Required Controls</h2><div class="doc-detail-grid"><div class="doc-detail-row"><strong>Human-in-the-loop</strong><p>Material decisions require review and confirmation by an authorized person.</p></div>
+<div class="doc-detail-row"><strong>Role-based access</strong><p>AI cannot grant permissions or disclose records beyond the user’s role.</p></div>
+<div class="doc-detail-row"><strong>Provider isolation</strong><p>AI may not combine or expose data from different Providers.</p></div>
+<div class="doc-detail-row"><strong>Data minimization</strong><p>Only the minimum information necessary for the approved task should be processed.</p></div>
+<div class="doc-detail-row"><strong>Audit logging</strong><p>Relevant AI-assisted actions, approvals, and exceptions should be reviewable.</p></div>
+<div class="doc-detail-row"><strong>Source transparency</strong><p>Users should be able to identify whether an answer is based on system data, documentation, or an AI inference.</p></div></div></section><section><h2>Prohibited Uses</h2><div class="doc-detail-grid"><div class="doc-detail-row"><strong>Autonomous clinical decisions</strong><p>AI must not diagnose, prescribe, administer medication, or replace licensed clinical judgment.</p></div>
+<div class="doc-detail-row"><strong>Autonomous legal or regulatory decisions</strong><p>AI must not make final breach, employment, tax, billing, or compliance determinations.</p></div>
+<div class="doc-detail-row"><strong>Credential processing</strong><p>Do not submit passwords, OTP codes, private keys, or full financial credentials.</p></div>
+<div class="doc-detail-row"><strong>Unapproved PHI disclosure</strong><p>Do not transmit PHI to unapproved external AI systems.</p></div>
+<div class="doc-detail-row"><strong>Silent record changes</strong><p>AI must not alter operational records without an authorized, attributable action.</p></div></div></section><section><h2>Known Limitations</h2><div class="doc-detail-grid"><div class="doc-detail-row"><strong>Incomplete data</strong><p>Recommendations may be incorrect when source records are missing, stale, or inconsistent.</p></div>
+<div class="doc-detail-row"><strong>Model error</strong><p>AI can misunderstand context or produce inaccurate statements.</p></div>
+<div class="doc-detail-row"><strong>Changing requirements</strong><p>Federal, state, payer, and program requirements may change and must be independently verified.</p></div>
+<div class="doc-detail-row"><strong>Human accountability</strong><p>The authorized user remains responsible for the final action.</p></div></div></section>
 <section><h2>Security and HIPAA Expectations</h2>
 <div class="doc-detail-grid">
 <div class="doc-detail-row"><strong>Authorization</strong><p>Users may access only the records and functions permitted by their assigned role and Provider scope.</p></div>
@@ -105,9 +110,9 @@ img{max-width:100%;height:auto}
 <div class="doc-detail-row"><strong>Auditability</strong><p>Material AI-assisted activity should remain attributable, reviewable, and connected to the source workflow.</p></div>
 </div></section>
 <div class="doc-page-navigation">
-<a class="doc-button" href="billing-ai.html">← Back</a>
+<a class="doc-button" href="training-ai.html">← Back</a>
 <a class="doc-button" href="/documentation/ai-agents/">🏠 Home</a>
-<a class="doc-button" href="compliance-ai.html">Next →</a>
+<a class="doc-button" href="/documentation/company-playbook/">Next →</a>
 </div>
 <footer class="doc-footer"><p>© 2026 True Care System. All rights reserved.</p><p>Documentation is maintained as part of the True Care System product lifecycle.</p></footer>
 </main>
