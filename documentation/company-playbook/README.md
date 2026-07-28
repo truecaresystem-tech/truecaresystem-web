@@ -1,19 +1,21 @@
-# Company Playbook — Fixed Layout
+# Company Playbook — Official Vertical Menu Layout
 
-These files were updated to:
+All 12 HTML files were rebuilt to use the exact official documentation structure:
 
-- Keep the official `/documentation/assets/documentation.css`
-- Keep `/documentation/assets/documentation.js`
-- Remove inline overrides for:
-  - `.doc-page-shell`
-  - `.doc-sidebar`
-  - `.doc-main`
-  - `.doc-hero`
-  - `.doc-meta`
-  - other core documentation layout classes
-- Preserve only Company Playbook-specific card, notice, and responsive grid styles
-- Preserve all page content, metadata, sidebar links, breadcrumbs, footer, and navigation
+- `doc-layout`
+- `doc-sidebar` with `id="docSidebar"`
+- `doc-nav-module`
+- `doc-nav-number`
+- `doc-main`
+- `doc-article`
+- `doc-article-header`
+- `doc-metadata`
+- `doc-section`
+- `doc-page-footer`
+- official search markup and `docSearchResults`
 
-Replace the corresponding files in:
+This restores the full vertical sidebar menu used by the earlier approved documentation pages.
+
+Replace all matching files in:
 
 `documentation/company-playbook/`
