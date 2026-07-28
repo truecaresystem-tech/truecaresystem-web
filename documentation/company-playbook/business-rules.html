@@ -5,186 +5,147 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Business Rules | True Care System Documentation</title>
 <link rel="stylesheet" href="/documentation/assets/documentation.css">
-
 <style>
-.playbook-notice{
-    border:1px solid #b9d6ff;
-    background:#eef6ff;
-    border-radius:12px;
-    padding:16px;
-    margin:22px 0;
-}
-
-.playbook-notice p{
-    margin:8px 0 0;
-}
-
-.doc-detail-grid{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:14px;
-}
-
-.doc-detail-row{
-    border:1px solid #d8e1ec;
-    border-radius:12px;
-    padding:16px;
-    background:#fff;
-}
-
-.doc-detail-row p{
-    margin:.45rem 0 0;
-}
-
-.doc-card-list{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:12px;
-}
-
-.doc-card-link{
-    display:flex;
-    justify-content:space-between;
-    gap:16px;
-    align-items:center;
-    border:1px solid #d8e1ec;
-    border-radius:12px;
-    padding:16px;
-    text-decoration:none;
-    background:#fff;
-}
-
-@media(max-width:760px){
-    .doc-detail-grid,
-    .doc-card-list{
-        grid-template-columns:1fr;
-    }
-}
+.cp-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.cp-card{border:1px solid #d8e1ec;border-radius:12px;padding:16px;background:#fff}
+.cp-card h3{margin-top:0}
+.cp-table{width:100%;border-collapse:collapse}
+.cp-table th,.cp-table td{padding:12px;text-align:left;vertical-align:top;border-bottom:1px solid #d8e1ec}
+.cp-link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cp-link{display:flex;justify-content:space-between;gap:16px;align-items:center;border:1px solid #d8e1ec;border-radius:10px;padding:14px;text-decoration:none}
+@media(max-width:760px){.cp-grid,.cp-link-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
 <header class="doc-header">
-  <a class="doc-brand" href="/documentation/">
-    <img src="/logo.png" alt="True Care System">
-    <span>
-      <strong>True Care System</strong>
-      <small>Documentation</small>
-    </span>
-  </a>
-
-  <button
-    class="doc-mobile-menu"
-    id="docMobileMenu"
-    type="button"
-    aria-label="Open documentation menu"
-  >
-    ☰
-  </button>
-
-  <div class="doc-header-actions">
-    <label class="doc-search">
-      <span>⌕</span>
-      <input
-        id="docSearchInput"
-        type="search"
-        placeholder="Search documentation..."
-        autocomplete="off"
-      >
-    </label>
-
-    <a href="/" class="doc-back-link">Return to Website</a>
-  </div>
+<a class="doc-brand" href="/documentation/">
+<img src="/logo.png" alt="True Care System">
+<span><strong>True Care System</strong><small>Documentation</small></span>
+</a>
+<button class="doc-mobile-menu" id="docMobileMenu" type="button" aria-label="Open documentation menu">☰</button>
+<div class="doc-header-actions">
+<label class="doc-search"><span>⌕</span><input id="docSearchInput" type="search" placeholder="Search documentation..." autocomplete="off"></label>
+<a href="/" class="doc-back-link">Return to Website</a>
+</div>
 </header>
 
 <div class="doc-layout">
-
-<a class="doc-nav-module" href="#"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
-<a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
-<a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
-<a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
-<a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
-<a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
-<a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
-<a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
-<a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
-<a class="doc-nav-module" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span>KPI</span></a>
-<a class="doc-nav-module" href="/documentation/time-keeping/"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
-<a class="doc-nav-module" href="/documentation/mobile-evv/"><span class="doc-nav-number">12</span><span>Mobile EVV</span></a>
-<a class="doc-nav-module" href="/documentation/visit-maintenance/"><span class="doc-nav-number">13</span><span>Visit Maintenance</span></a>
-<a class="doc-nav-module" href="/documentation/house-management/"><span class="doc-nav-number">14</span><span>House Management</span></a>
-<a class="doc-nav-module" href="/documentation/payroll/"><span class="doc-nav-number">15</span><span>Payroll</span></a>
-<a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
-<a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
-<a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
-<a class="doc-nav-module" href="/documentation/admin/"><span class="doc-nav-number">19</span><span>Admin</span></a>
-<a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
-<a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
-<a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
-<a class="doc-nav-module" href="/documentation/qa-guide/"><span class="doc-nav-number">23</span><span>QA Guide</span></a>
-<a class="doc-nav-module" href="/documentation/test-catalog/"><span class="doc-nav-number">24</span><span>Test Catalog</span></a>
-<a class="doc-nav-module" href="/documentation/api-documentation/"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
-<a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
-<a class="doc-nav-module active" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
-<a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
-<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>Frequently Asked Questions</span></a>
-<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
+<aside class="doc-sidebar" id="docSidebar">
+<div class="doc-sidebar-title">Documentation Modules</div>
+<nav class="doc-sidebar-nav">
+<a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span class="doc-nav-label">Getting Started</span></a>
+<a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span class="doc-nav-label">Services</span></a>
+<a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span class="doc-nav-label">Individual</span></a>
+<a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span class="doc-nav-label">Employees</span></a>
+<a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span class="doc-nav-label">Schedule</span></a>
+<a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span class="doc-nav-label">Medication</span></a>
+<a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span class="doc-nav-label">BSS</span></a>
+<a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span class="doc-nav-label">Authorizations</span></a>
+<a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span class="doc-nav-label">Reports</span></a>
+<a class="doc-nav-module" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span class="doc-nav-label">KPI</span></a>
+<a class="doc-nav-module" href="/documentation/time-keeping/"><span class="doc-nav-number">11</span><span class="doc-nav-label">Time Keeping</span></a>
+<a class="doc-nav-module" href="/documentation/mobile-evv/"><span class="doc-nav-number">12</span><span class="doc-nav-label">Mobile EVV</span></a>
+<a class="doc-nav-module" href="/documentation/visit-maintenance/"><span class="doc-nav-number">13</span><span class="doc-nav-label">Visit Maintenance</span></a>
+<a class="doc-nav-module" href="/documentation/house-management/"><span class="doc-nav-number">14</span><span class="doc-nav-label">House Management</span></a>
+<a class="doc-nav-module" href="/documentation/payroll/"><span class="doc-nav-number">15</span><span class="doc-nav-label">Payroll</span></a>
+<a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span class="doc-nav-label">Billing</span></a>
+<a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span class="doc-nav-label">HIPAA</span></a>
+<a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span class="doc-nav-label">Support</span></a>
+<a class="doc-nav-module" href="/documentation/admin/"><span class="doc-nav-number">19</span><span class="doc-nav-label">Admin</span></a>
+<a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span class="doc-nav-label">Security</span></a>
+<a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span class="doc-nav-label">Audit Logs</span></a>
+<a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span class="doc-nav-label">Developer Guide</span></a>
+<a class="doc-nav-module" href="/documentation/qa-guide/"><span class="doc-nav-number">23</span><span class="doc-nav-label">QA Guide</span></a>
+<a class="doc-nav-module" href="/documentation/test-catalog/"><span class="doc-nav-number">24</span><span class="doc-nav-label">Test Catalog</span></a>
+<a class="doc-nav-module" href="/documentation/api-documentation/"><span class="doc-nav-number">25</span><span class="doc-nav-label">API Documentation</span></a>
+<a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span class="doc-nav-label">AI Agents</span></a>
+<a class="doc-nav-module active" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span class="doc-nav-label">Company Playbook</span></a>
+<a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span class="doc-nav-label">Troubleshooting</span></a>
+<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span class="doc-nav-label">Frequently Asked Questions</span></a>
+<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span class="doc-nav-label">Release Notes</span></a>
 </nav>
 </aside>
 
 <main class="doc-main">
-<nav class="doc-breadcrumb"><a href="/documentation/">Documentation</a><span>›</span><a href="/documentation/company-playbook/">Company Playbook</a><span>›</span>Business Rules</nav>
+<nav class="doc-breadcrumb">
+<a href="/documentation/">Documentation</a><span>›</span>
+<a href="/documentation/company-playbook/">Company Playbook</a><span>›</span>
+<span>Business Rules</span>
+</nav>
 
 <article class="doc-article">
 <header class="doc-article-header">
 <div>
-<div class="doc-eyebrow">TRUE CARE SYSTEM • COMPANY PLAYBOOK</div>
+<p class="doc-eyebrow">TRUE CARE SYSTEM • COMPANY PLAYBOOK</p>
 <h1>Business Rules</h1>
-<p class="doc-lead">Approved rules that protect data integrity, provider isolation, compliance, and operational consistency.</p>
+<p>Establishes the mandatory business rules that guide product behavior, data handling, workflow design, and Provider operations.</p>
 </div>
 <dl class="doc-metadata">
-  <div><dt>Document ID</dt><dd>PLY-DOC-003</dd></div>
-  <div><dt>Version</dt><dd>1.0</dd></div>
-  <div><dt>Status</dt><dd>Draft</dd></div>
-  <div><dt>Last Updated</dt><dd>07/28/2026</dd></div>
+<div><dt>Document ID</dt><dd>PLY-DOC-003</dd></div>
+<div><dt>Version</dt><dd>1.0</dd></div>
+<div><dt>Status</dt><dd>Draft</dd></div>
+<div><dt>Last Updated</dt><dd>07/28/2026</dd></div>
 </dl>
 </header>
 
-<div class="doc-notice doc-notice-info playbook-notice"><strong>Governance, security, and compliance notice</strong><p>This playbook supports controlled healthcare-software operations. It does not replace applicable law, Provider policy, contractual requirements, professional judgment, or formal legal and compliance review.</p></div>
+<div class="doc-notice">
+<strong>Governance, privacy, security, and compliance notice</strong>
+<p>Company Playbook guidance supports controlled healthcare-software operations. It does not replace applicable law, Provider policy, contractual requirements, professional judgment, or formal legal and compliance review.</p>
+</div>
 
-<section class="doc-section"><h2>Purpose</h2><p>Approved rules that protect data integrity, provider isolation, compliance, and operational consistency.</p></section>
-<section class="doc-section"><h2>Core Standards and Workflow</h2><div class="doc-detail-grid">
-<div class="doc-detail-row"><strong>Provider isolation</strong><p>Every business record and user action must remain scoped to the authenticated Provider.</p></div>
-<div class="doc-detail-row"><strong>Least privilege</strong><p>Access is granted only to the roles and permissions required for assigned responsibilities.</p></div>
-<div class="doc-detail-row"><strong>Source-of-truth integrity</strong><p>Operational records must be updated through approved workflows rather than bypassed or silently overwritten.</p></div>
-<div class="doc-detail-row"><strong>Auditability</strong><p>Material viewing, creation, updates, deletion, support access, exports, and approvals must remain attributable.</p></div>
-<div class="doc-detail-row"><strong>Stability protection</strong><p>Do not change working production logic unless the change is necessary, reviewed, tested, and reversible.</p></div>
-<div class="doc-detail-row"><strong>Data-change control</strong><p>Database changes follow the approved schema, manually reviewed SQL, generation, validation, and backup process.</p></div>
-</div></section>
-<section class="doc-section"><h2>Governance and Documentation Expectations</h2>
-<div class="doc-detail-grid">
-<div class="doc-detail-row"><strong>Ownership</strong><p>Each workflow must identify accountable owners, reviewers, approvers, and escalation contacts.</p></div>
-<div class="doc-detail-row"><strong>Evidence</strong><p>Decisions, test results, approvals, exceptions, and follow-up actions should remain documented.</p></div>
-<div class="doc-detail-row"><strong>Security and HIPAA</strong><p>Provider isolation, least privilege, minimum necessary, secure handling, and audit logging apply throughout.</p></div>
-<div class="doc-detail-row"><strong>Continuous improvement</strong><p>Lessons learned should result in updated procedures, controls, training, tests, and documentation.</p></div>
-</div></section>
+
+<section class="doc-section">
+<h2>Purpose</h2>
+<p>Establishes the mandatory business rules that guide product behavior, data handling, workflow design, and Provider operations.</p>
+</section>
+
+<section class="doc-section">
+<h2>Core Requirements</h2>
+<div class="cp-grid"><div class="cp-card"><h3>Source of Truth</h3><p>The production database and approved Provider configuration are the authoritative source for operational records.</p></div>
+<div class="cp-card"><h3>No Cross-Provider Access</h3><p>Users may only view or change records within their authorized Provider scope unless an approved, time-limited support session is active.</p></div>
+<div class="cp-card"><h3>No Silent Data Changes</h3><p>Material changes to PHI, schedules, visits, billing, payroll, or authorization data must be attributable to a user, time, reason, and audit event.</p></div>
+<div class="cp-card"><h3>Effective-Dated Configuration</h3><p>Rates, service codes, tax settings, and other time-sensitive rules should preserve historical accuracy through effective dates.</p></div>
+<div class="cp-card"><h3>No Duplicate Operational Time</h3><p>Office time, DSP visit time, payroll time, and billing time must be reconciled to prevent duplicate compensation or duplicate billing.</p></div></div>
+</section>
+
+<section class="doc-section">
+<h2>Required Documentation</h2>
+<table class="cp-table">
+<thead><tr><th>Record</th><th>Expectation</th></tr></thead>
+<tbody>
+<tr><td>Owner</td><td>Identify the accountable role or team.</td></tr>
+<tr><td>Scope</td><td>Document affected systems, Providers, users, workflows, and data.</td></tr>
+<tr><td>Evidence</td><td>Retain timestamps, identifiers, approvals, screenshots, logs, or test results as applicable.</td></tr>
+<tr><td>Decision</td><td>Record the approved action, reason, risk, and validation result.</td></tr>
+<tr><td>Follow-up</td><td>Track corrective actions, training, documentation, and future prevention.</td></tr>
+</tbody>
+</table>
+</section>
+
+<section class="doc-section">
+<h2>Related Documentation</h2>
+<div class="cp-link-grid">
+<a class="cp-link" href="index.html"><strong>Company Playbook Home</strong><span>Open Guide →</span></a>
+<a class="cp-link" href="../audit-logs/"><strong>Audit Logs</strong><span>Open Guide →</span></a>
+<a class="cp-link" href="../security/"><strong>Security</strong><span>Open Guide →</span></a>
+<a class="cp-link" href="../support/"><strong>Support</strong><span>Open Guide →</span></a>
+</div>
+</section>
+
 
 <div class="doc-page-navigation">
 <a class="doc-button" href="overview.html">← Back</a>
-<a class="doc-button" href="/documentation/company-playbook/">🏠 Home</a>
-<a class="doc-button" href="development-workflow.html">Development Workflow →</a>
+<a class="doc-button" href="index.html">🏠 Home</a>
+<a class="doc-button" href="development-workflow.html">Next →</a>
+</div>
+</article>
+</main>
 </div>
 
-</article>
-
-<footer class="doc-page-footer">
+<footer class="doc-footer">
 <p>© 2026 True Care System. All rights reserved.</p>
 <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
 </footer>
-
-</main>
-</div>
-<div class="doc-search-results" id="docSearchResults" hidden></div>
 <script src="/documentation/assets/documentation.js"></script>
 </body>
 </html>
