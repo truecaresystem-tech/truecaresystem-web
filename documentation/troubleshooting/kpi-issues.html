@@ -7,38 +7,80 @@
 <link rel="stylesheet" href="/documentation/assets/documentation.css">
 
 <style>
-*{box-sizing:border-box}
-html,body{margin:0;max-width:100%;overflow-x:hidden}
-img{max-width:100%;height:auto}
-.doc-page-shell{display:grid;grid-template-columns:280px minmax(0,1fr);min-height:100vh}
-.doc-sidebar{min-width:0;overflow-y:auto}
-.doc-main{min-width:0;padding:28px 34px 50px}
-.doc-hero{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:28px;align-items:start}
-.doc-meta{width:100%;min-width:0}
-.doc-detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.doc-detail-row{border:1px solid #d8e1ec;border-radius:12px;padding:16px;background:#fff}
-.doc-detail-row p{margin:.45rem 0 0}
-.doc-card-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.doc-card-link{display:flex;justify-content:space-between;gap:16px;align-items:center;border:1px solid #d8e1ec;border-radius:12px;padding:16px;text-decoration:none;background:#fff}
-.doc-table-wrap{width:100%;overflow-x:auto}
-.doc-table{width:100%;border-collapse:collapse}
-.doc-table th,.doc-table td{text-align:left;vertical-align:top;padding:13px;border-bottom:1px solid #d8e1ec}
-.doc-table th:first-child{width:220px}
-.doc-page-navigation{display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-top:28px;padding-top:20px;border-top:1px solid #d8e1ec}
-.doc-button{display:inline-flex;align-items:center;justify-content:center;min-width:120px;padding:11px 16px;border:1px solid #c9d5e3;border-radius:10px;text-decoration:none}
-.notice{border:1px solid #b9d6ff;background:#eef6ff;border-radius:12px;padding:16px;margin:22px 0}
-.warning{border:1px solid #f0d59a;background:#fff8e7;border-radius:12px;padding:16px;margin:22px 0}
-.checklist{padding-left:22px}
-.checklist li{margin:8px 0}
-@media(max-width:960px){
-.doc-page-shell{grid-template-columns:1fr}
-.doc-sidebar{display:none}
-.doc-main{padding:20px}
-.doc-hero{grid-template-columns:1fr}
-.doc-detail-grid,.doc-card-list{grid-template-columns:1fr}
+.notice{
+    border:1px solid #b9d6ff;
+    background:#eef6ff;
+    border-radius:12px;
+    padding:16px;
+    margin:22px 0;
+}
+
+.notice p{
+    margin:8px 0 0;
+}
+
+.warning{
+    border:1px solid #f0d59a;
+    background:#fff8e7;
+    border-radius:12px;
+    padding:16px;
+    margin:22px 0;
+}
+
+.warning p{
+    margin:8px 0 0;
+}
+
+.doc-detail-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+}
+
+.doc-detail-row{
+    border:1px solid #d8e1ec;
+    border-radius:12px;
+    padding:16px;
+    background:#fff;
+}
+
+.doc-detail-row p{
+    margin:.45rem 0 0;
+}
+
+.doc-card-list{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+}
+
+.doc-card-link{
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    align-items:center;
+    border:1px solid #d8e1ec;
+    border-radius:12px;
+    padding:16px;
+    text-decoration:none;
+    background:#fff;
+}
+
+.checklist{
+    padding-left:22px;
+}
+
+.checklist li{
+    margin:8px 0;
+}
+
+@media(max-width:760px){
+    .doc-detail-grid,
+    .doc-card-list{
+        grid-template-columns:1fr;
+    }
 }
 </style>
-
 </head>
 <body>
 
@@ -118,7 +160,6 @@ KPI Issues
 <p>Troubleshooting may expose workforce information, Provider configuration, PHI, audit data, billing records, payroll information, or technical identifiers. Use minimum-necessary access, redact public evidence, and perform changes only through approved roles and workflows.</p>
 </div>
 
-
 <section><h2>Purpose</h2><p>Diagnose KPI ownership, targets, actuals, workflow status, scorecards, weighted scores, and approval issues.</p></section>
 <section><h2>Diagnostic Checklist</h2><div class="doc-detail-grid">
 <div class="doc-detail-row"><strong>Missing scorecard</strong><p>Confirm period, entity selection, role, Provider, and scorecard initialization.</p></div>
@@ -141,13 +182,11 @@ KPI Issues
 <div class="warning"><strong>Escalate immediately</strong><p>Contact authorized Provider leadership or Platform Support when the issue involves possible cross-provider data, unauthorized PHI access, suspicious login activity, data loss, billing submission risk, payroll impact, medication safety, or a critical production outage.</p></div>
 </section>
 
-
 <div class="doc-page-navigation">
 <a class="doc-button" href="bss-issues.html">← Back</a>
 <a class="doc-button" href="/documentation/troubleshooting/">🏠 Home</a>
 <a class="doc-button" href="time-keeping-issues.html">Time Keeping Issues →</a>
 </div>
-
 
 <footer class="doc-footer">
 <p>© 2026 True Care System. All rights reserved.</p>
