@@ -5,171 +5,87 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Troubleshooting Overview | True Care System Documentation</title>
 <link rel="stylesheet" href="/documentation/assets/documentation.css">
-
 <style>
-.notice{
-    border:1px solid #b9d6ff;
-    background:#eef6ff;
-    border-radius:12px;
-    padding:16px;
-    margin:22px 0;
-}
-
-.notice p{
-    margin:8px 0 0;
-}
-
-.warning{
-    border:1px solid #f0d59a;
-    background:#fff8e7;
-    border-radius:12px;
-    padding:16px;
-    margin:22px 0;
-}
-
-.warning p{
-    margin:8px 0 0;
-}
-
-.doc-detail-grid{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:14px;
-}
-
-.doc-detail-row{
-    border:1px solid #d8e1ec;
-    border-radius:12px;
-    padding:16px;
-    background:#fff;
-}
-
-.doc-detail-row p{
-    margin:.45rem 0 0;
-}
-
-.doc-card-list{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:12px;
-}
-
-.doc-card-link{
-    display:flex;
-    justify-content:space-between;
-    gap:16px;
-    align-items:center;
-    border:1px solid #d8e1ec;
-    border-radius:12px;
-    padding:16px;
-    text-decoration:none;
-    background:#fff;
-}
-
-.checklist{
-    padding-left:22px;
-}
-
-.checklist li{
-    margin:8px 0;
-}
-
-@media(max-width:760px){
-    .doc-detail-grid,
-    .doc-card-list{
-        grid-template-columns:1fr;
-    }
-}
+.notice,.warning{border-radius:12px;padding:16px;margin:22px 0}
+.notice{border:1px solid #b9d6ff;background:#eef6ff}
+.warning{border:1px solid #f0d59a;background:#fff8e7}
+.notice p,.warning p{margin:8px 0 0}
+.doc-detail-grid,.doc-card-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.doc-detail-row,.doc-card-link{border:1px solid #d8e1ec;border-radius:12px;padding:16px;background:#fff}
+.doc-detail-row p{margin:.45rem 0 0}
+.doc-card-link{display:flex;justify-content:space-between;gap:16px;align-items:center;text-decoration:none}
+.checklist{padding-left:22px}.checklist li{margin:8px 0}
+@media(max-width:760px){.doc-detail-grid,.doc-card-list{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
 <header class="doc-header">
-<a class="doc-brand" href="/documentation/">
-<img src="/logo.png" alt="True Care System">
-<span><strong>True Care System</strong><small>Documentation</small></span>
-</a>
-<button class="doc-mobile-menu" id="docMobileMenu" type="button">☰</button>
-<div class="doc-header-actions">
-<input type="search" placeholder="Search documentation">
-<a href="/">Return to Website</a>
-</div>
+  <a class="doc-brand" href="/documentation/">
+    <img src="/logo.png" alt="True Care System">
+    <span><strong>True Care System</strong><small>Documentation</small></span>
+  </a>
+  <button class="doc-mobile-menu" id="docMobileMenu" type="button" aria-label="Open documentation menu">☰</button>
+  <div class="doc-header-actions">
+    <label class="doc-search"><span>⌕</span><input id="docSearchInput" type="search" placeholder="Search documentation..." autocomplete="off"></label>
+    <a href="/" class="doc-back-link">Return to Website</a>
+  </div>
 </header>
-
-<div class="doc-page-shell">
-
-<aside class="doc-sidebar">
-<div class="doc-sidebar-title">DOCUMENTATION MODULES</div>
-<nav>
-<a href="/documentation/getting-started/"><span>01</span><strong>Getting Started</strong></a>
-<a href="/documentation/service-management/"><span>02</span><strong>Services</strong></a>
-<a href="/documentation/individual-management/"><span>03</span><strong>Individual</strong></a>
-<a href="/documentation/employee-management/"><span>04</span><strong>Employees</strong></a>
-<a href="/documentation/scheduling/"><span>05</span><strong>Schedule</strong></a>
-<a href="/documentation/medication-management/"><span>06</span><strong>Medication</strong></a>
-<a href="/documentation/bss/"><span>07</span><strong>BSS</strong></a>
-<a href="/documentation/authorization/"><span>08</span><strong>Authorizations</strong></a>
-<a href="/documentation/reports/"><span>09</span><strong>Reports</strong></a>
-<a href="/documentation/kpi/"><span>10</span><strong>KPI</strong></a>
-<a href="/documentation/time-keeping/"><span>11</span><strong>Time Keeping</strong></a>
-<a href="/documentation/mobile-evv/"><span>12</span><strong>Mobile EVV</strong></a>
-<a href="/documentation/visit-maintenance/"><span>13</span><strong>Visit Maintenance</strong></a>
-<a href="/documentation/house-management/"><span>14</span><strong>House Management</strong></a>
-<a href="/documentation/payroll/"><span>15</span><strong>Payroll</strong></a>
-<a href="/documentation/billing/"><span>16</span><strong>Billing</strong></a>
-<a href="/documentation/hipaa-compliance/"><span>17</span><strong>HIPAA</strong></a>
-<a href="/documentation/support/"><span>18</span><strong>Support</strong></a>
-<a href="/documentation/admin/"><span>19</span><strong>Admin</strong></a>
-<a href="/documentation/security/"><span>20</span><strong>Security</strong></a>
-<a href="/documentation/audit-logs/"><span>21</span><strong>Audit Logs</strong></a>
-<a href="/documentation/developer-guide/"><span>22</span><strong>Developer Guide</strong></a>
-<a href="/documentation/qa-guide/"><span>23</span><strong>QA Guide</strong></a>
-<a href="/documentation/test-catalog/"><span>24</span><strong>Test Catalog</strong></a>
-<a href="/documentation/api-documentation/"><span>25</span><strong>API Documentation</strong></a>
-<a href="/documentation/ai-agents/"><span>26</span><strong>AI Agents</strong></a>
-<a href="/documentation/company-playbook/"><span>27</span><strong>Company Playbook</strong></a>
-<a class="active" href="/documentation/troubleshooting/"><span>28</span><strong>Troubleshooting</strong></a>
-<a href="/documentation/faq/"><span>29</span><strong>Frequently Asked Questions</strong></a>
-<a href="/documentation/release-notes/"><span>30</span><strong>Release Notes</strong></a>
-</nav>
+<div class="doc-layout">
+<aside class="doc-sidebar" id="docSidebar">
+<div class="doc-sidebar-title">Documentation</div>
+<nav><a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
+<a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
+<a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
+<a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
+<a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
+<a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
+<a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
+<a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
+<a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
+<a class="doc-nav-module" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span>KPI</span></a>
+<a class="doc-nav-module" href="/documentation/time-keeping/"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
+<a class="doc-nav-module" href="/documentation/mobile-evv/"><span class="doc-nav-number">12</span><span>Mobile EVV</span></a>
+<a class="doc-nav-module" href="/documentation/visit-maintenance/"><span class="doc-nav-number">13</span><span>Visit Maintenance</span></a>
+<a class="doc-nav-module" href="/documentation/house-management/"><span class="doc-nav-number">14</span><span>House Management</span></a>
+<a class="doc-nav-module" href="/documentation/payroll/"><span class="doc-nav-number">15</span><span>Payroll</span></a>
+<a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
+<a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
+<a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
+<a class="doc-nav-module" href="/documentation/admin/"><span class="doc-nav-number">19</span><span>Admin</span></a>
+<a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
+<a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
+<a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
+<a class="doc-nav-module" href="/documentation/qa-guide/"><span class="doc-nav-number">23</span><span>QA Guide</span></a>
+<a class="doc-nav-module" href="/documentation/test-catalog/"><span class="doc-nav-number">24</span><span>Test Catalog</span></a>
+<a class="doc-nav-module" href="/documentation/api-documentation/"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
+<a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
+<a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
+<a class="doc-nav-module active" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
+<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>Frequently Asked Questions</span></a>
+<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a></nav>
 </aside>
-
 <main class="doc-main">
-<div class="doc-breadcrumb">
-<a href="/documentation/">Documentation</a> ›
-<a href="/documentation/troubleshooting/">Troubleshooting</a> ›
-Troubleshooting Overview
-</div>
+<nav class="doc-breadcrumb"><a href="/documentation/">Documentation</a><span>›</span><a href="/documentation/troubleshooting/">Troubleshooting</a><span>›</span><span>Troubleshooting Overview</span></nav>
+<article class="doc-article">
+<header class="doc-article-header">
+<div><p class="doc-eyebrow">TRUE CARE SYSTEM • TROUBLESHOOTING</p><h1>Troubleshooting Overview</h1><p>A safe, repeatable method for diagnosing and resolving True Care System issues.</p></div>
+<dl class="doc-metadata">
+<div><dt>Document ID</dt><dd>TRB-DOC-002</dd></div>
+<div><dt>Version</dt><dd>1.0</dd></div>
+<div><dt>Status</dt><dd>Draft</dd></div>
+<div><dt>Last Updated</dt><dd>07/28/2026</dd></div>
+</dl>
+</header>
+<div class="doc-notice doc-notice-info notice"><strong>Privacy, HIPAA, and production safety notice</strong><p>Troubleshooting may expose workforce information, Provider configuration, PHI, audit data, billing records, payroll information, or technical identifiers. Use minimum-necessary access, redact public evidence, and perform changes only through approved roles and workflows.</p></div>
 
-<div class="doc-hero">
-<div>
-<div class="doc-eyebrow">TRUE CARE SYSTEM • TROUBLESHOOTING</div>
-<h1>Troubleshooting Overview</h1>
-<p class="doc-lead">A controlled approach for diagnosing issues while protecting production stability, provider isolation, PHI, and audit evidence.</p>
-</div>
-<div class="doc-meta">
-<div><span>Document ID</span><strong>TRB-DOC-002</strong></div>
-<div><span>Version</span><strong>1.0</strong></div>
-<div><span>Status</span><strong>Draft</strong></div>
-<div><span>Last Updated</span><strong>07/28/2026</strong></div>
-</div>
-</div>
-
-<div class="notice">
-<strong>Privacy, HIPAA, and production safety notice</strong>
-<p>Troubleshooting may expose workforce information, Provider configuration, PHI, audit data, billing records, payroll information, or technical identifiers. Use minimum-necessary access, redact public evidence, and perform changes only through approved roles and workflows.</p>
-</div>
-
-<section><h2>Purpose</h2><p>A controlled approach for diagnosing issues while protecting production stability, provider isolation, PHI, and audit evidence.</p></section>
-<section><h2>Diagnostic Checklist</h2><div class="doc-detail-grid">
-<div class="doc-detail-row"><strong>Confirm the scope</strong><p>Identify Provider, user, role, module, record, date/time, device, browser, environment, and exact symptom.</p></div>
-<div class="doc-detail-row"><strong>Preserve evidence</strong><p>Capture screenshots, error text, record identifiers, timestamps, and steps already attempted.</p></div>
-<div class="doc-detail-row"><strong>Protect production</strong><p>Do not delete, overwrite, mass-update, or change working code before the cause is understood.</p></div>
-<div class="doc-detail-row"><strong>Check provider isolation</strong><p>Confirm the authenticated Provider and providerId scope before interpreting missing or unexpected data.</p></div>
-<div class="doc-detail-row"><strong>Use the smallest safe correction</strong><p>Prefer configuration, permission, data, or targeted code fixes over broad rewrites.</p></div>
-<div class="doc-detail-row"><strong>Document the outcome</strong><p>Record root cause, corrective action, validation, affected users, and follow-up prevention.</p></div>
-</div></section>
-<section><h2>Recommended Resolution Sequence</h2>
+<section class="doc-section"><h2>Purpose</h2><p>A safe, repeatable method for diagnosing and resolving True Care System issues.</p></section>
+<section class="doc-section"><h2>Diagnostic Checklist</h2><div class="doc-detail-grid"><div class="doc-detail-row"><strong>Confirm the correct Provider</strong><p>Verify the authenticated Provider, user, role, branch, location, and selected record before reviewing or changing data.</p></div>
+<div class="doc-detail-row"><strong>Capture the exact symptom</strong><p>Record the page, action, message, date/time, user, device, browser, and relevant record identifiers.</p></div>
+<div class="doc-detail-row"><strong>Preserve evidence</strong><p>Capture screenshots, logs, request IDs, transaction IDs, and before/after values before making changes.</p></div>
+<div class="doc-detail-row"><strong>Use the smallest safe correction</strong><p>Avoid unrelated code, configuration, or data changes. Prefer reversible user or administrative steps.</p></div>
+<div class="doc-detail-row"><strong>Retest the original workflow</strong><p>Repeat the exact scenario using the same Provider, role, date range, and record.</p></div>
+<div class="doc-detail-row"><strong>Escalate securely</strong><p>Use the Support module when the issue requires Platform Support, production access, code changes, or deeper investigation.</p></div></div></section>
+<section class="doc-section"><h2>Recommended Resolution Sequence</h2>
 <ol class="checklist">
 <li>Reproduce the issue using the same Provider, user role, record, date range, and device context.</li>
 <li>Confirm filters, status, account access, Provider scope, effective dates, and related records.</li>
@@ -178,23 +94,19 @@ Troubleshooting Overview
 <li>Retest the original workflow and one related regression workflow.</li>
 <li>Document the cause, correction, validation, and any required follow-up.</li>
 </ol></section>
-<section><h2>When to Escalate</h2>
+<section class="doc-section"><h2>When to Escalate</h2>
 <div class="warning"><strong>Escalate immediately</strong><p>Contact authorized Provider leadership or Platform Support when the issue involves possible cross-provider data, unauthorized PHI access, suspicious login activity, data loss, billing submission risk, payroll impact, medication safety, or a critical production outage.</p></div>
 </section>
-
 <div class="doc-page-navigation">
 <a class="doc-button" href="index.html">← Back</a>
 <a class="doc-button" href="/documentation/troubleshooting/">🏠 Home</a>
-<a class="doc-button" href="login-issues.html">Login Issues →</a>
+<a class="doc-button" href="login-issues.html">Next →</a>
 </div>
-
-<footer class="doc-footer">
-<p>© 2026 True Care System. All rights reserved.</p>
-<p>Documentation is maintained as part of the True Care System product lifecycle.</p>
-</footer>
-
+</article>
+<footer class="doc-page-footer"><p>© 2026 True Care System. All rights reserved.</p><p>Documentation is maintained as part of the True Care System product lifecycle.</p></footer>
 </main>
 </div>
+<div class="doc-search-results" id="docSearchResults" hidden></div>
 <script src="/documentation/assets/documentation.js"></script>
 </body>
 </html>
