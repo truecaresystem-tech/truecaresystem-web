@@ -1,18 +1,19 @@
-# Company Playbook Documentation
+# Company Playbook — Fixed Layout
 
-Generated files:
-- index.html
-- overview.html
-- business-rules.html
-- development-workflow.html
-- qa-workflow.html
-- release-process.html
-- support-workflow.html
-- security-workflow.html
-- incident-response.html
-- disaster-recovery.html
-- provider-onboarding.html
-- employee-training.html
+These files were updated to:
 
-Place all files in:
-documentation/company-playbook/
+- Keep the official `/documentation/assets/documentation.css`
+- Keep `/documentation/assets/documentation.js`
+- Remove inline overrides for:
+  - `.doc-page-shell`
+  - `.doc-sidebar`
+  - `.doc-main`
+  - `.doc-hero`
+  - `.doc-meta`
+  - other core documentation layout classes
+- Preserve only Company Playbook-specific card, notice, and responsive grid styles
+- Preserve all page content, metadata, sidebar links, breadcrumbs, footer, and navigation
+
+Replace the corresponding files in:
+
+`documentation/company-playbook/`
