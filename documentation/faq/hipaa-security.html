@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Billing and Sandata | True Care System Documentation</title>
+<title>HIPAA and Security | True Care System Documentation</title>
 <link rel="stylesheet" href="/documentation/assets/documentation.css">
 <style>
 .doc-card-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
@@ -67,12 +67,12 @@
 <a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a></nav>
 </aside>
 <main class="doc-main">
-<nav class="doc-breadcrumb"><a href="/documentation/">Documentation</a><span>›</span><a href="/documentation/faq/">Frequently Asked Questions</a><span>›</span><span>Billing and Sandata</span></nav>
+<nav class="doc-breadcrumb"><a href="/documentation/">Documentation</a><span>›</span><a href="/documentation/faq/">Frequently Asked Questions</a><span>›</span><span>HIPAA and Security</span></nav>
 <article class="doc-article">
 <header class="doc-article-header">
-<div><p class="doc-eyebrow">TRUE CARE SYSTEM • FAQ</p><h1>Billing and Sandata</h1><p>Answers about readiness, Provider Setup, service rates, Sandata submission, transaction status, and resubmission.</p></div>
+<div><p class="doc-eyebrow">TRUE CARE SYSTEM • FAQ</p><h1>HIPAA and Security</h1><p>Answers about PHI access, minimum necessary, audit logging, login history, security monitoring, and privacy safeguards.</p></div>
 <dl class="doc-metadata">
-<div><dt>Document ID</dt><dd>FAQ-DOC-008</dd></div>
+<div><dt>Document ID</dt><dd>FAQ-DOC-010</dd></div>
 <div><dt>Version</dt><dd>1.0</dd></div>
 <div><dt>Status</dt><dd>Draft</dd></div>
 <div><dt>Last Updated</dt><dd>07/28/2026</dd></div>
@@ -80,20 +80,19 @@
 </header>
 <div class="doc-notice-custom"><strong>Privacy, HIPAA, and information-use notice</strong><p>FAQ answers may reference PHI, workforce data, billing, payroll, authentication, support, or Provider configuration. Use minimum-necessary access, do not place sensitive values into public evidence, and follow approved Provider policies and roles.</p></div>
 
-<section class="doc-section"><h2>Questions and Answers</h2><div class="faq-list"><details class="faq-item"><summary>What are the four billing readiness steps?</summary><div class="faq-answer">Individual Readiness, DSP Readiness, Visit Review, and Sandata Submission.</div></details>
-<details class="faq-item"><summary>What is Provider Setup?</summary><div class="faq-answer">It stores Provider-specific Sandata environment, identifiers, payer/program, timezone, endpoints, account information, and enabled status.</div></details>
-<details class="faq-item"><summary>Why is a record Not Ready?</summary><div class="faq-answer">One or more required Provider, Individual, employee, service, payer, visit, call/GPS, correction, or sequence fields are missing or invalid.</div></details>
-<details class="faq-item"><summary>What does Preview JSON do?</summary><div class="faq-answer">It allows authorized billing staff to review the selected outbound payload before submission.</div></details>
-<details class="faq-item"><summary>What does a transaction UUID represent?</summary><div class="faq-answer">It identifies the Sandata transaction used to track submission status and responses.</div></details>
-<details class="faq-item"><summary>What should happen after rejection?</summary><div class="faq-answer">Correct only the identified source issue, preserve the prior history, create or reuse the approved resubmission workflow, and verify the new result.</div></details>
-<details class="faq-item"><summary>Does Sandata submission replace Medicaid claim submission?</summary><div class="faq-answer">No. EVV submission and Medicaid claim processing are separate workflows unless a specific payer or state program defines otherwise.</div></details></div></section>
+<section class="doc-section"><h2>Questions and Answers</h2><div class="faq-list"><details class="faq-item"><summary>Does True Care System track PHI access?</summary><div class="faq-answer">The HIPAA framework records supported PHI access events with user, role, Provider, Individual, module, action, purpose, decision, minimum-necessary status, IP address, and device context.</div></details>
+<details class="faq-item"><summary>What is minimum necessary?</summary><div class="faq-answer">It is the principle of limiting PHI access to the amount reasonably needed for the authorized purpose.</div></details>
+<details class="faq-item"><summary>What is recorded in Audit Logs?</summary><div class="faq-answer">Supported events may include views, creates, updates, deletes, authentication, support impersonation, exports, and administrative changes.</div></details>
+<details class="faq-item"><summary>Can login activity be reviewed?</summary><div class="faq-answer">Yes. Login History supports review of success, failure, blocked status, IP address, device, browser, location, and session context where available.</div></details>
+<details class="faq-item"><summary>Does software alone make a Provider HIPAA compliant?</summary><div class="faq-answer">No. Compliance also depends on Provider policies, workforce training, contracts, access governance, risk analysis, incident response, and operational practices.</div></details>
+<details class="faq-item"><summary>What should happen after suspected unauthorized access?</summary><div class="faq-answer">Preserve evidence, limit further access, notify authorized privacy or security leadership, and follow the Provider’s incident and breach-assessment procedures.</div></details></div></section>
 <section class="doc-section"><h2>Need More Help?</h2>
 <p>Review the related module guide and Troubleshooting page first. Create a Provider-scoped support ticket when the question involves unresolved production behavior, PHI, security, billing, payroll, integrations, or data integrity.</p>
 </section>
 <div class="doc-page-navigation">
-<a class="doc-button" href="visit-maintenance.html">← Back</a>
+<a class="doc-button" href="payroll.html">← Back</a>
 <a class="doc-button" href="/documentation/faq/">🏠 Home</a>
-<a class="doc-button" href="payroll.html">Next →</a>
+<a class="doc-button" href="support.html">Next →</a>
 </div>
 </article>
 <footer class="doc-page-footer">

@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Frequently Asked Questions documentation for True Care System">
-  <title>Frequently Asked Questions | True Care System Documentation</title>
-  <link rel="stylesheet" href="/documentation/assets/documentation.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Frequently Asked Questions | True Care System Documentation</title>
+<link rel="stylesheet" href="/documentation/assets/documentation.css">
+<style>
+.doc-card-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.doc-card-link{display:flex;justify-content:space-between;gap:16px;align-items:center;border:1px solid #d8e1ec;border-radius:12px;padding:16px;background:#fff;text-decoration:none}
+.faq-list{display:grid;gap:14px}
+.faq-item{border:1px solid #d8e1ec;border-radius:12px;background:#fff;overflow:hidden}
+.faq-item summary{cursor:pointer;padding:16px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-size:20px}
+.faq-item[open] summary::after{content:"−"}
+.faq-answer{padding:0 16px 16px;line-height:1.7}
+.doc-notice-custom{border:1px solid #b9d6ff;background:#eef6ff;border-radius:12px;padding:16px;margin:22px 0}
+.doc-notice-custom p{margin:8px 0 0}
+@media(max-width:760px){.doc-card-list{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-  <header class="doc-header">
-    <a class="doc-brand" href="/documentation/">
-      <img src="/logo.png" alt="True Care System">
-      <span>
-        <strong>True Care System</strong>
-        <small>Documentation</small>
-      </span>
-    </a>
-
-    <button class="doc-mobile-menu" id="docMobileMenu"
-            aria-label="Open documentation menu">☰</button>
-
-    <div class="doc-header-actions">
-      <label class="doc-search">
-        <span>⌕</span>
-        <input id="docSearchInput" type="search"
-               placeholder="Search documentation..."
-               autocomplete="off">
-      </label>
-      <a href="/" class="doc-back-link">Return to Website</a>
-    </div>
-  </header>
-
-  <div class="doc-layout">
-    <aside class="doc-sidebar" id="docSidebar">
-      <div class="doc-sidebar-title">Documentation</div>
-      <nav>
-        <a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
+<header class="doc-header">
+<a class="doc-brand" href="/documentation/">
+<img src="/logo.png" alt="True Care System">
+<span><strong>True Care System</strong><small>Documentation</small></span>
+</a>
+<button class="doc-mobile-menu" id="docMobileMenu" type="button" aria-label="Open documentation menu">☰</button>
+<div class="doc-header-actions">
+<label class="doc-search"><span>⌕</span><input id="docSearchInput" type="search" placeholder="Search documentation..." autocomplete="off"></label>
+<a href="/" class="doc-back-link">Return to Website</a>
+</div>
+</header>
+<div class="doc-layout">
+<aside class="doc-sidebar" id="docSidebar">
+<div class="doc-sidebar-title">Documentation</div>
+<nav><a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
 <a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
 <a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
 <a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
@@ -53,7 +53,7 @@
 <a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
 <a class="doc-nav-module" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
 <a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
-<a class="doc-nav-module" href="/documentation/provider-administration/"><span class="doc-nav-number">19</span><span>Admin</span></a>
+<a class="doc-nav-module" href="/documentation/admin/"><span class="doc-nav-number">19</span><span>Admin</span></a>
 <a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
 <a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
 <a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
@@ -64,82 +64,58 @@
 <a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
 <a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
 <a class="doc-nav-module active" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>Frequently Asked Questions</span></a>
-<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a>
-      </nav>
-    </aside>
+<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a></nav>
+</aside>
+<main class="doc-main">
+<nav class="doc-breadcrumb"><a href="/documentation/">Documentation</a><span>›</span><a href="/documentation/faq/">Frequently Asked Questions</a><span>›</span><span>Frequently Asked Questions</span></nav>
+<article class="doc-article">
+<header class="doc-article-header">
+<div><p class="doc-eyebrow">TRUE CARE SYSTEM • FAQ</p><h1>Frequently Asked Questions</h1><p>Central answers for common True Care System questions about access, operations, compliance, Mobile EVV, billing, payroll, support, and administration.</p></div>
+<dl class="doc-metadata">
+<div><dt>Document ID</dt><dd>FAQ-DOC-001</dd></div>
+<div><dt>Version</dt><dd>1.0</dd></div>
+<div><dt>Status</dt><dd>Draft</dd></div>
+<div><dt>Last Updated</dt><dd>07/28/2026</dd></div>
+</dl>
+</header>
+<div class="doc-notice-custom"><strong>Privacy, HIPAA, and information-use notice</strong><p>FAQ answers may reference PHI, workforce data, billing, payroll, authentication, support, or Provider configuration. Use minimum-necessary access, do not place sensitive values into public evidence, and follow approved Provider policies and roles.</p></div>
 
-    <main class="doc-main">
-      <div class="doc-breadcrumb">
-        <a href="/documentation/">Documentation</a>
-        <span>›</span><a href='/documentation/faq/'>Frequently Asked Questions</a>
-        <span>›</span><span>Frequently Asked Questions</span>
-      </div>
-
-      <article class="doc-article">
-        <header class="doc-article-header">
-          <div>
-            <p class="doc-eyebrow">TRUE CARE SYSTEM DOCUMENTATION</p>
-            <h1>Frequently Asked Questions</h1>
-          </div>
-
-          <dl class="doc-metadata">
-            <div><dt>Document ID</dt><dd>FAQ-DOC-000</dd></div>
-            <div><dt>Version</dt><dd>1.0</dd></div>
-            <div><dt>Status</dt><dd>Structure Created</dd></div>
-            <div><dt>Last Updated</dt><dd>Pending</dd></div>
-          </dl>
-        </header>
-
-        
-    <div class="doc-notice doc-notice-info">
-      <strong>Module documentation structure created</strong>
-      <p>Each page below contains the standard enterprise template and
-         a named screenshot placeholder.</p>
-    </div>
-
-    <section class="doc-section">
-      <h2>Purpose</h2>
-      <p>This section will contain the approved documentation for
-         Frequently Asked Questions.</p>
-    </section>
-
-    <section class="doc-section">
-      <h2>Documentation Pages</h2>
-      <ul class="doc-page-list">
-        <li><a href="/documentation/faq/overview.html">Overview</a></li>
-<li><a href="/documentation/faq/account.html">Account FAQ</a></li>
-<li><a href="/documentation/faq/services.html">Services FAQ</a></li>
-<li><a href="/documentation/faq/employees.html">Employee FAQ</a></li>
-<li><a href="/documentation/faq/individuals.html">Individual FAQ</a></li>
-<li><a href="/documentation/faq/scheduling.html">Scheduling FAQ</a></li>
-<li><a href="/documentation/faq/medication.html">Medication FAQ</a></li>
-<li><a href="/documentation/faq/bss.html">BSS FAQ</a></li>
-<li><a href="/documentation/faq/kpi.html">KPI FAQ</a></li>
-<li><a href="/documentation/faq/time-keeping.html">Time Keeping FAQ</a></li>
-<li><a href="/documentation/faq/mobile.html">Mobile EVV FAQ</a></li>
-<li><a href="/documentation/faq/billing.html">Billing FAQ</a></li>
-<li><a href="/documentation/faq/payroll.html">Payroll FAQ</a></li>
-<li><a href="/documentation/faq/security.html">Security FAQ</a></li>
-<li><a href="/documentation/faq/hipaa.html">HIPAA FAQ</a></li>
-      </ul>
-    </section>
-
-    <section class="doc-section">
-      <h2>Screenshot Library</h2>
-      <p>Images for this module are stored in
-         <code>documentation/faq/images/</code>.</p>
-    </section>
-    
-      </article>
-
-      <footer class="doc-page-footer">
-        <p>© 2026 True Care System. All rights reserved.</p>
-        <p>Documentation is maintained as part of the True Care System product lifecycle.</p>
-      </footer>
-    </main>
-  </div>
-
-  <div class="doc-search-results" id="docSearchResults" hidden></div>
-  <script src="/documentation/assets/documentation.js"></script>
+<section class="doc-section"><h2>Purpose</h2>
+<p>The Frequently Asked Questions section gives Provider administrators, office staff, DSPs, clinical teams, billing, payroll, compliance, support, technical teams, customers, and implementation partners a direct place to find approved product answers.</p>
+<p>Questions are organized by workflow. Each answer explains the standard True Care System approach while preserving Provider responsibility for policy, legal requirements, payer rules, employment practices, and professional judgment.</p></section>
+<section class="doc-section"><h2>FAQ Categories</h2><div class="doc-card-list"><a class="doc-card-link" href="general.html"><strong>General Questions</strong><span>Open Guide →</span></a>
+<a class="doc-card-link" href="account-access.html"><strong>Account and Access</strong><span>Open Guide →</span></a>
+<a class="doc-card-link" href="individuals-employees.html"><strong>Individuals and Employees</strong><span>Open Guide →</span></a>
+<a class="doc-card-link" href="scheduling.html"><strong>Scheduling</strong><span>Open Guide →</span></a>
+<a class="doc-card-link" href="mobile-evv.html"><strong>Mobile EVV</strong><span>Open Guide →</span></a>
+<a class="doc-card-link" href="visit-maintenance.html"><strong>Visit Maintenance</strong><span>Open Guide →</span></a>
+<a class="doc-card-link" href="billing.html"><strong>Billing and Sandata</strong><span>Open Guide →</span></a>
+<a class="doc-card-link" href="payroll.html"><strong>Payroll</strong><span>Open Guide →</span></a>
+<a class="doc-card-link" href="hipaa-security.html"><strong>HIPAA and Security</strong><span>Open Guide →</span></a>
+<a class="doc-card-link" href="support.html"><strong>Support</strong><span>Open Guide →</span></a>
+<a class="doc-card-link" href="admin.html"><strong>Administration</strong><span>Open Guide →</span></a>
+<a class="doc-card-link" href="data-reports.html"><strong>Data, Reports, and Exports</strong><span>Open Guide →</span></a>
+<a class="doc-card-link" href="technical.html"><strong>Technical and Browser Questions</strong><span>Open Guide →</span></a>
+<a class="doc-card-link" href="contact-support.html"><strong>When to Contact Support</strong><span>Open Guide →</span></a></div></section>
+<section class="doc-section"><h2>How to Use This Section</h2>
+<div class="faq-list">
+<details class="faq-item" open><summary>Start with the workflow category</summary><div class="faq-answer">Choose the page that matches the affected module or business process.</div></details>
+<details class="faq-item"><summary>Use Troubleshooting for errors</summary><div class="faq-answer">FAQ explains standard behavior. Troubleshooting provides diagnostic and resolution steps.</div></details>
+<details class="faq-item"><summary>Use Support for unresolved or high-risk issues</summary><div class="faq-answer">Create a Provider-scoped ticket when the issue cannot be safely resolved or involves production, PHI, billing, payroll, security, or integration risk.</div></details>
+</div></section>
+<div class="doc-page-navigation">
+<a class="doc-button" href="../troubleshooting/">← Back</a>
+<a class="doc-button" href="/documentation/faq/">🏠 Home</a>
+<a class="doc-button" href="general.html">Next →</a>
+</div>
+</article>
+<footer class="doc-page-footer">
+<p>© 2026 True Care System. All rights reserved.</p>
+<p>Documentation is maintained as part of the True Care System product lifecycle.</p>
+</footer>
+</main>
+</div>
+<div class="doc-search-results" id="docSearchResults" hidden></div>
+<script src="/documentation/assets/documentation.js"></script>
 </body>
 </html>
