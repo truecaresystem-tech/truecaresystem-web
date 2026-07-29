@@ -3,13 +3,155 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta http-equiv="refresh" content="0; url=/documentation/hipaa-compliance/index.html">
-<meta name="robots" content="noindex">
-<link rel="canonical" href="/documentation/hipaa-compliance/index.html">
-<title>HIPAA Documentation | True Care System</title>
-<script>window.location.replace("/documentation/hipaa-compliance/index.html");</script>
+<meta name="description" content="Central privacy, security, audit, incident, risk, and compliance documentation for True Care System.">
+<title>HIPAA Compliance | True Care System Documentation</title>
+<link rel="stylesheet" href="/documentation/assets/documentation.css">
+<style>
+.hipaa-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.hipaa-card{border:1px solid #d8e1ec;border-radius:12px;padding:16px;background:#fff}
+.hipaa-card h3{margin-top:0}
+.hipaa-link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.hipaa-link{display:flex;justify-content:space-between;gap:16px;align-items:center;border:1px solid #d8e1ec;border-radius:10px;padding:14px;background:#fff;text-decoration:none}
+.hipaa-table{width:100%;border-collapse:collapse}
+.hipaa-table th,.hipaa-table td{padding:12px;text-align:left;vertical-align:top;border-bottom:1px solid #d8e1ec}
+@media(max-width:760px){.hipaa-grid,.hipaa-link-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-<p>This documentation page has moved to <a href="/documentation/hipaa-compliance/index.html">HIPAA Compliance Documentation</a>.</p>
+<header class="doc-header">
+<a class="doc-brand" href="/documentation/index.html">
+<img src="/logo.png" alt="True Care System">
+<span><strong>True Care System</strong><small>Documentation</small></span>
+</a>
+<button class="doc-mobile-menu" id="docMobileMenu" type="button" aria-label="Open documentation menu" aria-controls="docSidebar" aria-expanded="false">☰</button>
+<div class="doc-header-actions">
+<label class="doc-search"><span>⌕</span><input id="docSearchInput" type="search" placeholder="Search documentation" autocomplete="off"></label>
+<a class="doc-back-link" href="/">Return to Website</a>
+</div>
+</header>
+
+<div class="doc-layout">
+<aside class="doc-sidebar" id="docSidebar">
+<div class="doc-sidebar-title">Documentation Modules</div>
+<nav><a class="doc-nav-module" href="/documentation/getting-started/index.html"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
+<a class="doc-nav-module" href="/documentation/service-management/index.html"><span class="doc-nav-number">02</span><span>Services</span></a>
+<a class="doc-nav-module" href="/documentation/individual-management/index.html"><span class="doc-nav-number">03</span><span>Individual</span></a>
+<a class="doc-nav-module" href="/documentation/employee-management/index.html"><span class="doc-nav-number">04</span><span>Employees</span></a>
+<a class="doc-nav-module" href="/documentation/scheduling/index.html"><span class="doc-nav-number">05</span><span>Schedule</span></a>
+<a class="doc-nav-module" href="/documentation/medication-management/index.html"><span class="doc-nav-number">06</span><span>Medication</span></a>
+<a class="doc-nav-module" href="/documentation/bss/index.html"><span class="doc-nav-number">07</span><span>BSS</span></a>
+<a class="doc-nav-module" href="/documentation/authorization/index.html"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
+<a class="doc-nav-module" href="/documentation/reports/index.html"><span class="doc-nav-number">09</span><span>Reports</span></a>
+<a class="doc-nav-module" href="/documentation/kpi/index.html"><span class="doc-nav-number">10</span><span>KPI</span></a>
+<a class="doc-nav-module" href="/documentation/time-keeping/index.html"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
+<a class="doc-nav-module" href="/documentation/mobile-evv/index.html"><span class="doc-nav-number">12</span><span>Mobile EVV</span></a>
+<a class="doc-nav-module" href="/documentation/visit-maintenance/index.html"><span class="doc-nav-number">13</span><span>Visit Maintenance</span></a>
+<a class="doc-nav-module" href="/documentation/house-management/index.html"><span class="doc-nav-number">14</span><span>House Management</span></a>
+<a class="doc-nav-module" href="/documentation/payroll/index.html"><span class="doc-nav-number">15</span><span>Payroll</span></a>
+<a class="doc-nav-module" href="/documentation/billing/index.html"><span class="doc-nav-number">16</span><span>Billing</span></a>
+<a class="doc-nav-module active" href="/documentation/hipaa-compliance/index.html"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
+<a class="doc-nav-module" href="/documentation/support/index.html"><span class="doc-nav-number">18</span><span>Support</span></a>
+<a class="doc-nav-module" href="/documentation/admin/index.html"><span class="doc-nav-number">19</span><span>Admin</span></a>
+<a class="doc-nav-module" href="/documentation/security/index.html"><span class="doc-nav-number">20</span><span>Security</span></a>
+<a class="doc-nav-module" href="/documentation/audit-logs/index.html"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
+<a class="doc-nav-module" href="/documentation/developer-guide/index.html"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
+<a class="doc-nav-module" href="/documentation/qa-guide/index.html"><span class="doc-nav-number">23</span><span>QA Guide</span></a>
+<a class="doc-nav-module" href="/documentation/test-catalog/index.html"><span class="doc-nav-number">24</span><span>Test Catalog</span></a>
+<a class="doc-nav-module" href="/documentation/api/index.html"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
+<a class="doc-nav-module" href="/documentation/ai-agents/index.html"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
+<a class="doc-nav-module" href="/documentation/company-playbook/index.html"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
+<a class="doc-nav-module" href="/documentation/troubleshooting/index.html"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
+<a class="doc-nav-module" href="/documentation/faq/index.html"><span class="doc-nav-number">29</span><span>FAQ</span></a>
+<a class="doc-nav-module" href="/documentation/release-notes/index.html"><span class="doc-nav-number">30</span><span>Release Notes</span></a></nav>
+</aside>
+
+<main class="doc-main">
+<div class="doc-breadcrumb">
+<a href="/documentation/index.html">Documentation</a><span>/</span>
+<a href="/documentation/hipaa-compliance/index.html">HIPAA</a><span>/</span>
+<span>HIPAA Compliance</span>
+</div>
+
+<article class="doc-article">
+<header class="doc-article-header">
+<div>
+<p class="doc-eyebrow">HIPAA COMPLIANCE FRAMEWORK</p>
+<h1>HIPAA Compliance</h1>
+<p>Central privacy, security, audit, incident, risk, and compliance documentation for True Care System.</p>
+</div>
+<dl class="doc-metadata">
+<div><dt>Document ID</dt><dd>HIP-DOC-001</dd></div>
+<div><dt>Version</dt><dd>1.0</dd></div>
+<div><dt>Status</dt><dd>Official</dd></div>
+</dl>
+</header>
+
+<div class="doc-notice doc-notice-warning">
+<strong>Privacy, security, legal, and Provider responsibility notice</strong>
+<p>These pages describe True Care System functionality and operating expectations. They do not replace Provider policies, legal advice, risk analysis, workforce training, contracts, or regulatory obligations. Use minimum-necessary access and protect PHI in screenshots, exports, tickets, messages, and reports.</p>
+</div>
+
+
+<section class="doc-section">
+<h2>Purpose</h2>
+<p>The HIPAA Compliance module provides a centralized framework for privacy, security, auditability, Provider isolation, PHI access oversight, authentication review, support-session governance, export monitoring, incident management, and risk management.</p>
+<p>It is designed to support reusable controls across True Care System Web, API, Mobile, background jobs, Sandata integration, support workflows, and future AI agents.</p>
+</section>
+
+<section class="doc-section">
+<h2>Documentation Pages</h2>
+<div class="hipaa-link-grid"><a class="hipaa-link" href="overview.html"><strong>HIPAA Compliance Overview</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="dashboard.html"><strong>HIPAA Dashboard</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="administrative-safeguards.html"><strong>Administrative Safeguards</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="technical-safeguards.html"><strong>Technical Safeguards</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="physical-safeguards.html"><strong>Physical Safeguards</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="privacy-rule.html"><strong>HIPAA Privacy Rule</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="security-rule.html"><strong>HIPAA Security Rule</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="minimum-necessary.html"><strong>Minimum Necessary</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="phi-access.html"><strong>PHI Access History</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="audit-logs.html"><strong>HIPAA Audit Logs</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="audit-log-detail.html"><strong>Audit Log Detail</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="login-history.html"><strong>Login History</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="security-events.html"><strong>Security Events</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="support-sessions.html"><strong>Support Sessions</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="export-history.html"><strong>Export History</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="incidents.html"><strong>HIPAA Incidents</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="incident-response.html"><strong>HIPAA Incident Response</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="breach-notification.html"><strong>Breach Notification</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="risk-management.html"><strong>Risk Management</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="reports.html"><strong>HIPAA Reports</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="settings.html"><strong>HIPAA Settings</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="faq.html"><strong>HIPAA FAQ</strong><span>Open Guide →</span></a></div>
+</section>
+
+<section class="doc-section">
+<h2>Core Compliance Principles</h2>
+<div class="hipaa-grid">
+<div class="hipaa-card"><h3>Provider Isolation</h3><p>Keep every PHI record, audit event, report, export, incident, and support session in the correct Provider scope.</p></div>
+<div class="hipaa-card"><h3>Minimum Necessary</h3><p>Limit access, fields, exports, support actions, and reports to the smallest reasonable scope.</p></div>
+<div class="hipaa-card"><h3>Role-Based Access</h3><p>Grant only the permissions required for approved responsibilities.</p></div>
+<div class="hipaa-card"><h3>Auditability</h3><p>Preserve supported access, change, authentication, export, support, and security evidence.</p></div>
+<div class="hipaa-card"><h3>Incident Readiness</h3><p>Detect, contain, investigate, remediate, communicate, and document incidents.</p></div>
+<div class="hipaa-card"><h3>Provider Governance</h3><p>Providers remain responsible for policy, training, risk analysis, legal review, and compliance operations.</p></div>
+</div>
+</section>
+
+
+<div class="doc-page-navigation">
+<a class="doc-button" href="/documentation/billing/index.html">← Back</a>
+<a class="doc-button" href="index.html">🏠 Home</a>
+<a class="doc-button" href="overview.html">Next →</a>
+</div>
+</article>
+
+<footer class="doc-page-footer">
+<p>© 2026 True Care System. All rights reserved.</p>
+<p>Documentation is maintained as part of the True Care System product lifecycle.</p>
+</footer>
+</main>
+</div>
+
+<div class="doc-search-results" id="docSearchResults" hidden></div>
+<script src="/documentation/assets/documentation.js"></script>
 </body>
 </html>

@@ -1,30 +1,151 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Audit Log Detail | True Care System Documentation</title><link rel="stylesheet" href="/documentation/assets/documentation.css"><style>.doc-article img{display:block;max-width:100%;height:auto}.doc-image-frame{margin:22px 0 10px;padding:14px;border:1px solid var(--border);border-radius:14px;background:var(--surface);overflow:hidden}.doc-image-frame img{width:100%;max-width:100%;height:auto;object-fit:contain;border-radius:9px}.doc-image-caption{margin:10px 0 0;color:var(--muted);font-size:13px;text-align:center}.doc-callout{margin:24px 0;padding:18px 20px;border:1px solid #93d5df;border-radius:12px;background:#eefbfd}.doc-callout.privacy{border-color:#9f8bea;background:#f5f0ff}.doc-callout.security{border-color:#7ccfb3;background:#effcf7}.doc-callout.warning{border-color:#e7c66c;background:#fff9e7}.doc-table{width:100%;border-collapse:collapse;table-layout:fixed}.doc-table th,.doc-table td{padding:13px 15px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}.doc-table th{background:var(--surface);color:var(--navy);font-weight:800}.doc-table col:first-child{width:29%}.doc-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:18px 0}.doc-info-card{padding:18px;border:1px solid var(--border);border-radius:12px;background:var(--white)}.doc-info-card strong{display:block;margin-bottom:8px;color:var(--navy);font-size:16px}.doc-info-card p{margin:0;color:var(--muted)}.doc-page-navigation{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;padding:28px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}.doc-page-navigation .doc-button:nth-child(2){justify-self:center}.doc-page-navigation .doc-button:last-child{justify-self:end}.doc-button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border:1px solid var(--border);border-radius:9px;background:var(--white);color:var(--navy);font-weight:700}.doc-list-tight li{margin-bottom:8px}.doc-reference-list li{margin-bottom:10px}@media(max-width:900px){.doc-card-grid{grid-template-columns:1fr}.doc-table{table-layout:auto}}</style></head><body><header class="doc-header"><a class="doc-brand" href="/documentation/"><img src="/logo.png" alt="True Care System"><span><strong>True Care System</strong><small>Documentation</small></span></a><button class="doc-mobile-menu" id="docMobileMenu" type="button">☰</button><div class="doc-header-actions"><label class="doc-search"><span>⌕</span><input id="docSearchInput" type="search" placeholder="Search documentation..."></label><a class="doc-back-link" href="https://www.truecaresystem.com">Return to Website</a></div></header><div class="doc-layout"><aside class="doc-sidebar" id="docSidebar"><p class="doc-sidebar-title">Documentation</p><nav><a class="doc-nav-module" href="/documentation/getting-started/"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
-<a class="doc-nav-module" href="/documentation/service-management/"><span class="doc-nav-number">02</span><span>Services</span></a>
-<a class="doc-nav-module" href="/documentation/individual-management/"><span class="doc-nav-number">03</span><span>Individual</span></a>
-<a class="doc-nav-module" href="/documentation/employee-management/"><span class="doc-nav-number">04</span><span>Employees</span></a>
-<a class="doc-nav-module" href="/documentation/scheduling/"><span class="doc-nav-number">05</span><span>Schedule</span></a>
-<a class="doc-nav-module" href="/documentation/medication-management/"><span class="doc-nav-number">06</span><span>Medication</span></a>
-<a class="doc-nav-module" href="/documentation/bss/"><span class="doc-nav-number">07</span><span>BSS</span></a>
-<a class="doc-nav-module" href="/documentation/authorization/"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
-<a class="doc-nav-module" href="/documentation/reports/"><span class="doc-nav-number">09</span><span>Reports</span></a>
-<a class="doc-nav-module" href="/documentation/kpi/"><span class="doc-nav-number">10</span><span>KPI</span></a>
-<a class="doc-nav-module" href="/documentation/time-keeping/"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
-<a class="doc-nav-module" href="/documentation/mobile-evv/"><span class="doc-nav-number">12</span><span>Mobile EVV</span></a>
-<a class="doc-nav-module" href="/documentation/visit-maintenance/"><span class="doc-nav-number">13</span><span>Visit Maintenance</span></a>
-<a class="doc-nav-module" href="/documentation/house-management/"><span class="doc-nav-number">14</span><span>House Management</span></a>
-<a class="doc-nav-module" href="/documentation/payroll/"><span class="doc-nav-number">15</span><span>Payroll</span></a>
-<a class="doc-nav-module" href="/documentation/billing/"><span class="doc-nav-number">16</span><span>Billing</span></a>
-<a class="doc-nav-module active" href="/documentation/hipaa-compliance/"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
-<a class="doc-nav-module" href="/documentation/support/"><span class="doc-nav-number">18</span><span>Support</span></a>
-<a class="doc-nav-module" href="/documentation/admin/"><span class="doc-nav-number">19</span><span>Admin</span></a>
-<a class="doc-nav-module" href="/documentation/security/"><span class="doc-nav-number">20</span><span>Security</span></a>
-<a class="doc-nav-module" href="/documentation/audit-logs/"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
-<a class="doc-nav-module" href="/documentation/developer-guide/"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
-<a class="doc-nav-module" href="/documentation/qa-guide/"><span class="doc-nav-number">23</span><span>QA Guide</span></a>
-<a class="doc-nav-module" href="/documentation/test-catalog/"><span class="doc-nav-number">24</span><span>Test Catalog</span></a>
-<a class="doc-nav-module" href="/documentation/api/"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
-<a class="doc-nav-module" href="/documentation/ai-agents/"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
-<a class="doc-nav-module" href="/documentation/company-playbook/"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
-<a class="doc-nav-module" href="/documentation/troubleshooting/"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
-<a class="doc-nav-module" href="/documentation/faq/"><span class="doc-nav-number">29</span><span>FAQ</span></a>
-<a class="doc-nav-module" href="/documentation/release-notes/"><span class="doc-nav-number">30</span><span>Release Notes</span></a></nav></aside><main class="doc-main"><nav class="doc-breadcrumb"><a href="/documentation/">Documentation</a><span>›</span><a href="/documentation/hipaa-compliance/">HIPAA</a><span>›</span><span>Audit Log Detail</span></nav><article class="doc-article"><header class="doc-article-header"><div><p class="doc-eyebrow">HIPAA • EVENT EVIDENCE</p><h1>Audit Log Detail</h1><p>Review complete event identity, request evidence, device context, old values, new values, and compliance metadata.</p></div><dl class="doc-metadata"><div><dt>Document ID</dt><dd>HIP-DOC-004</dd></div><div><dt>Version</dt><dd>1.0</dd></div><div><dt>Status</dt><dd>Draft</dd></div><div><dt>Last Updated</dt><dd>07/26/2026</dd></div></dl></header><div class="doc-callout privacy"><strong>HIPAA, PHI, and public-documentation notice</strong><p>HIPAA screens may display PHI, workforce identities, IP addresses, devices, routes, event metadata, before-and-after values, and other protected operational evidence. Screenshots in this public guide use redacted or demonstration information. Production access must be Provider-scoped, role-based, purpose-limited, auditable, and restricted to the minimum information reasonably necessary.</p></div><div class="doc-callout security"><strong>Compliance-supporting architecture</strong><p>True Care System is designed to operationalize privacy, security, accountability, and minimum-necessary controls through Provider isolation, role-based permissions, PHI access logging, authentication monitoring, detailed audit history, support-session tracking, and security-event review. These capabilities support—but do not replace—the Provider's required policies, risk analysis, workforce training, business associate agreements, sanctions, incident response, and legal review.</p></div><section class="doc-section"><h2>Purpose</h2><p>Audit Log Detail provides the complete evidence package for one recorded event. It combines event identity, Provider and user context, request metadata, endpoint information, device evidence, description, before-and-after values, and compliance metadata.</p><figure class="doc-image-frame"><img src="images/hipaa-audit-logs-detail.jpg" alt="Audit Log Detail"><figcaption class="doc-image-caption">Audit Log Detail showing identity, request, device, old values, new values, and HIPAA metadata.</figcaption></figure></section><section class="doc-section"><h2>Event Identity</h2><table class="doc-table"><colgroup><col><col></colgroup><thead><tr><th>Field</th><th>Function</th></tr></thead><tbody><tr><td><strong>Date/Time</strong></td><td>Establishes when the event occurred.</td></tr><tr><td><strong>Severity</strong></td><td>Classifies operational importance.</td></tr><tr><td><strong>Status</strong></td><td>Shows whether the action succeeded, failed, was denied, or requires review.</td></tr><tr><td><strong>Module / Action / Event Type</strong></td><td>Identifies the affected system area, normalized action, and event classification.</td></tr><tr><td><strong>Provider</strong></td><td>Confirms the tenant to which the event belongs.</td></tr><tr><td><strong>User / Actor User / Target User</strong></td><td>Separates the authenticated user, acting identity, and affected user.</td></tr><tr><td><strong>Individual / Employee</strong></td><td>Links the event to the affected protected record where applicable.</td></tr><tr><td><strong>Entity Type / Entity ID / Audit Log ID</strong></td><td>Provides durable identifiers for investigation and correlation.</td></tr></tbody></table></section><section class="doc-section"><h2>Request and Device Evidence</h2><p>IP Address, HTTP Method, Route, Browser, Device, Operating System, Request ID, Support Ticket ID, Impersonation Session ID, User Agent, and Description help reconstruct the technical context of the event. Copy controls allow authorized users to copy identifiers without exposing unrelated data.</p></section><section class="doc-section"><h2>Old Values and New Values</h2><p>The side-by-side JSON panels preserve the record state before and after an update. This supports integrity review, dispute resolution, error correction, and determination of whether sensitive fields were changed. Reviewers should focus on material differences rather than treating every technical field as a compliance issue.</p></section><section class="doc-section"><h2>HIPAA Metadata</h2><p>Metadata may include submodule, PHI category, purpose of use, access decision, support ticket, and minimum-necessary status. These fields connect the technical event to the Provider's privacy and compliance review process.</p></section><section class="doc-section"><h2>Investigation Practice</h2><ol class="doc-steps"><li><div><strong>Confirm the Provider and identity.</strong><p>Verify tenant scope, authenticated user, actor, target, and affected Individual.</p></div></li><li><div><strong>Review purpose and authority.</strong><p>Confirm that the role and purpose support the action.</p></div></li><li><div><strong>Compare the record states.</strong><p>Identify the exact fields changed.</p></div></li><li><div><strong>Correlate request evidence.</strong><p>Review route, IP, device, request ID, and support or impersonation session.</p></div></li><li><div><strong>Document the outcome.</strong><p>Escalate, close, or preserve the event according to Provider policy.</p></div></li></ol></section><section class="doc-section"><h2>Authoritative Framework References</h2><ul class="doc-reference-list"><li><a href="https://www.hhs.gov/hipaa/for-professionals/privacy/index.html">HHS — HIPAA Privacy Rule</a></li><li><a href="https://www.hhs.gov/hipaa/for-professionals/security/index.html">HHS — HIPAA Security Rule</a></li><li><a href="https://www.hhs.gov/hipaa/for-professionals/breach-notification/index.html">HHS — HIPAA Breach Notification Rule</a></li><li><a href="https://www.hhs.gov/hipaa/for-professionals/special-topics/enforcement-rule/index.html">HHS — HIPAA Enforcement Rule</a></li><li><a href="https://csrc.nist.gov/pubs/sp/800/66/r2/final">NIST SP 800-66 Rev. 2</a></li></ul><p>True Care System uses these authorities as implementation references. Software features support Provider compliance operations, but legal compliance also depends on each Provider's policies, workforce training, contracts, risk analysis, incident response, state-law obligations, and actual use of the system.</p></section><div class="doc-page-navigation"><a class="doc-button" href="audit-logs.html">← Back</a><a class="doc-button" href="/documentation/hipaa-compliance/">🏠 Home</a><a class="doc-button" href="phi-access.html">Next →</a></div></article><footer class="doc-page-footer"><p>© 2026 True Care System. All rights reserved.</p><p>Documentation is maintained as part of the True Care System product lifecycle.</p></footer></main></div><script src="/documentation/assets/documentation.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Explains how to review a single audit event and its actor, target, purpose, decision, technical context, and change evidence.">
+<title>Audit Log Detail | True Care System Documentation</title>
+<link rel="stylesheet" href="/documentation/assets/documentation.css">
+<style>
+.hipaa-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.hipaa-card{border:1px solid #d8e1ec;border-radius:12px;padding:16px;background:#fff}
+.hipaa-card h3{margin-top:0}
+.hipaa-link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.hipaa-link{display:flex;justify-content:space-between;gap:16px;align-items:center;border:1px solid #d8e1ec;border-radius:10px;padding:14px;background:#fff;text-decoration:none}
+.hipaa-table{width:100%;border-collapse:collapse}
+.hipaa-table th,.hipaa-table td{padding:12px;text-align:left;vertical-align:top;border-bottom:1px solid #d8e1ec}
+@media(max-width:760px){.hipaa-grid,.hipaa-link-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="doc-header">
+<a class="doc-brand" href="/documentation/index.html">
+<img src="/logo.png" alt="True Care System">
+<span><strong>True Care System</strong><small>Documentation</small></span>
+</a>
+<button class="doc-mobile-menu" id="docMobileMenu" type="button" aria-label="Open documentation menu" aria-controls="docSidebar" aria-expanded="false">☰</button>
+<div class="doc-header-actions">
+<label class="doc-search"><span>⌕</span><input id="docSearchInput" type="search" placeholder="Search documentation" autocomplete="off"></label>
+<a class="doc-back-link" href="/">Return to Website</a>
+</div>
+</header>
+
+<div class="doc-layout">
+<aside class="doc-sidebar" id="docSidebar">
+<div class="doc-sidebar-title">Documentation Modules</div>
+<nav><a class="doc-nav-module" href="/documentation/getting-started/index.html"><span class="doc-nav-number">01</span><span>Getting Started</span></a>
+<a class="doc-nav-module" href="/documentation/service-management/index.html"><span class="doc-nav-number">02</span><span>Services</span></a>
+<a class="doc-nav-module" href="/documentation/individual-management/index.html"><span class="doc-nav-number">03</span><span>Individual</span></a>
+<a class="doc-nav-module" href="/documentation/employee-management/index.html"><span class="doc-nav-number">04</span><span>Employees</span></a>
+<a class="doc-nav-module" href="/documentation/scheduling/index.html"><span class="doc-nav-number">05</span><span>Schedule</span></a>
+<a class="doc-nav-module" href="/documentation/medication-management/index.html"><span class="doc-nav-number">06</span><span>Medication</span></a>
+<a class="doc-nav-module" href="/documentation/bss/index.html"><span class="doc-nav-number">07</span><span>BSS</span></a>
+<a class="doc-nav-module" href="/documentation/authorization/index.html"><span class="doc-nav-number">08</span><span>Authorizations</span></a>
+<a class="doc-nav-module" href="/documentation/reports/index.html"><span class="doc-nav-number">09</span><span>Reports</span></a>
+<a class="doc-nav-module" href="/documentation/kpi/index.html"><span class="doc-nav-number">10</span><span>KPI</span></a>
+<a class="doc-nav-module" href="/documentation/time-keeping/index.html"><span class="doc-nav-number">11</span><span>Time Keeping</span></a>
+<a class="doc-nav-module" href="/documentation/mobile-evv/index.html"><span class="doc-nav-number">12</span><span>Mobile EVV</span></a>
+<a class="doc-nav-module" href="/documentation/visit-maintenance/index.html"><span class="doc-nav-number">13</span><span>Visit Maintenance</span></a>
+<a class="doc-nav-module" href="/documentation/house-management/index.html"><span class="doc-nav-number">14</span><span>House Management</span></a>
+<a class="doc-nav-module" href="/documentation/payroll/index.html"><span class="doc-nav-number">15</span><span>Payroll</span></a>
+<a class="doc-nav-module" href="/documentation/billing/index.html"><span class="doc-nav-number">16</span><span>Billing</span></a>
+<a class="doc-nav-module active" href="/documentation/hipaa-compliance/index.html"><span class="doc-nav-number">17</span><span>HIPAA</span></a>
+<a class="doc-nav-module" href="/documentation/support/index.html"><span class="doc-nav-number">18</span><span>Support</span></a>
+<a class="doc-nav-module" href="/documentation/admin/index.html"><span class="doc-nav-number">19</span><span>Admin</span></a>
+<a class="doc-nav-module" href="/documentation/security/index.html"><span class="doc-nav-number">20</span><span>Security</span></a>
+<a class="doc-nav-module" href="/documentation/audit-logs/index.html"><span class="doc-nav-number">21</span><span>Audit Logs</span></a>
+<a class="doc-nav-module" href="/documentation/developer-guide/index.html"><span class="doc-nav-number">22</span><span>Developer Guide</span></a>
+<a class="doc-nav-module" href="/documentation/qa-guide/index.html"><span class="doc-nav-number">23</span><span>QA Guide</span></a>
+<a class="doc-nav-module" href="/documentation/test-catalog/index.html"><span class="doc-nav-number">24</span><span>Test Catalog</span></a>
+<a class="doc-nav-module" href="/documentation/api/index.html"><span class="doc-nav-number">25</span><span>API Documentation</span></a>
+<a class="doc-nav-module" href="/documentation/ai-agents/index.html"><span class="doc-nav-number">26</span><span>AI Agents</span></a>
+<a class="doc-nav-module" href="/documentation/company-playbook/index.html"><span class="doc-nav-number">27</span><span>Company Playbook</span></a>
+<a class="doc-nav-module" href="/documentation/troubleshooting/index.html"><span class="doc-nav-number">28</span><span>Troubleshooting</span></a>
+<a class="doc-nav-module" href="/documentation/faq/index.html"><span class="doc-nav-number">29</span><span>FAQ</span></a>
+<a class="doc-nav-module" href="/documentation/release-notes/index.html"><span class="doc-nav-number">30</span><span>Release Notes</span></a></nav>
+</aside>
+
+<main class="doc-main">
+<div class="doc-breadcrumb">
+<a href="/documentation/index.html">Documentation</a><span>/</span>
+<a href="/documentation/hipaa-compliance/index.html">HIPAA</a><span>/</span>
+<span>Audit Log Detail</span>
+</div>
+
+<article class="doc-article">
+<header class="doc-article-header">
+<div>
+<p class="doc-eyebrow">HIPAA COMPLIANCE FRAMEWORK</p>
+<h1>Audit Log Detail</h1>
+<p>Explains how to review a single audit event and its actor, target, purpose, decision, technical context, and change evidence.</p>
+</div>
+<dl class="doc-metadata">
+<div><dt>Document ID</dt><dd>HIP-DOC-012</dd></div>
+<div><dt>Version</dt><dd>1.0</dd></div>
+<div><dt>Status</dt><dd>Official</dd></div>
+</dl>
+</header>
+
+<div class="doc-notice doc-notice-warning">
+<strong>Privacy, security, legal, and Provider responsibility notice</strong>
+<p>These pages describe True Care System functionality and operating expectations. They do not replace Provider policies, legal advice, risk analysis, workforce training, contracts, or regulatory obligations. Use minimum-necessary access and protect PHI in screenshots, exports, tickets, messages, and reports.</p>
+</div>
+
+
+<section class="doc-section">
+<h2>Purpose</h2>
+<p>Explains how to review a single audit event and its actor, target, purpose, decision, technical context, and change evidence.</p>
+</section>
+
+<section class="doc-section">
+<h2>Core Requirements</h2>
+<div class="hipaa-grid"><div class="hipaa-card"><h3>Event Identity</h3><p>Confirm event ID, timestamp, source, environment, Provider, and module.</p></div>
+<div class="hipaa-card"><h3>Actor Context</h3><p>Review user, role, account, session, and support impersonation context.</p></div>
+<div class="hipaa-card"><h3>Target Context</h3><p>Review the Individual, employee, visit, report, export, or administrative record involved.</p></div>
+<div class="hipaa-card"><h3>Change Detail</h3><p>Review action, reason, before/after values, status, and result.</p></div>
+<div class="hipaa-card"><h3>Escalation</h3><p>Escalate unexpected, denied, cross-Provider, bulk, or sensitive activity.</p></div></div>
+</section>
+
+<section class="doc-section">
+<h2>Operational Review Checklist</h2>
+<table class="hipaa-table">
+<thead><tr><th>Review Area</th><th>Expectation</th></tr></thead>
+<tbody>
+<tr><td>Provider Scope</td><td>Confirm the correct Provider before viewing, changing, exporting, or investigating records.</td></tr>
+<tr><td>Authorized Purpose</td><td>Confirm the user’s role, approved purpose, and minimum-necessary scope.</td></tr>
+<tr><td>Evidence</td><td>Retain relevant timestamps, actors, targets, identifiers, IP addresses, devices, reasons, and results.</td></tr>
+<tr><td>Escalation</td><td>Escalate unexpected, denied, suspicious, cross-Provider, bulk, or high-risk activity.</td></tr>
+<tr><td>Documentation</td><td>Record decisions, corrective action, validation, and required follow-up.</td></tr>
+</tbody>
+</table>
+</section>
+
+<section class="doc-section">
+<h2>Related Documentation</h2>
+<div class="hipaa-link-grid">
+<a class="hipaa-link" href="audit-logs.html"><strong>HIPAA Audit Logs</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="phi-access.html"><strong>PHI Access History</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="security-events.html"><strong>Security Events</strong><span>Open Guide →</span></a>
+<a class="hipaa-link" href="incidents.html"><strong>HIPAA Incidents</strong><span>Open Guide →</span></a>
+</div>
+</section>
+
+
+<div class="doc-page-navigation">
+<a class="doc-button" href="audit-logs.html">← Back</a>
+<a class="doc-button" href="index.html">🏠 Home</a>
+<a class="doc-button" href="login-history.html">Next →</a>
+</div>
+</article>
+
+<footer class="doc-page-footer">
+<p>© 2026 True Care System. All rights reserved.</p>
+<p>Documentation is maintained as part of the True Care System product lifecycle.</p>
+</footer>
+</main>
+</div>
+
+<div class="doc-search-results" id="docSearchResults" hidden></div>
+<script src="/documentation/assets/documentation.js"></script>
+</body>
+</html>
