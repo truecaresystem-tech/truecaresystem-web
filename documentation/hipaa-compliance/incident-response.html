@@ -16,6 +16,42 @@
 .hipaa-table th,.hipaa-table td{padding:12px;text-align:left;vertical-align:top;border-bottom:1px solid #d8e1ec}
 @media(max-width:760px){.hipaa-grid,.hipaa-link-grid{grid-template-columns:1fr}}
 </style>
+
+<style id="hipaa-image-width-fix">
+/* Scoped fix for HIPAA Compliance documentation only */
+.doc-article,
+.doc-section,
+.doc-figure {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.doc-figure {
+    width: 100%;
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+.doc-figure img {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0;
+    object-fit: contain;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+.doc-figure figcaption {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+</style>
+
 </head>
 <body>
 <header class="doc-header">

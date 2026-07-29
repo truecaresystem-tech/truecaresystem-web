@@ -24,3 +24,13 @@ The package intentionally keeps the existing `images/` folder unchanged.
 
 The existing `images/` directory should remain at:
 `documentation/hipaa-compliance/images/`
+
+
+## HIPAA image width fix
+
+All HTML pages in this package include a scoped CSS block named:
+
+`hipaa-image-width-fix`
+
+It constrains `.doc-figure` and screenshot images to the right edge of the article.
+No global `documentation.css` changes are required.
