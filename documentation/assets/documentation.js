@@ -79,4 +79,599 @@
       }
     });
   }
+  /* =========================================================
+     RESTRICTED DOCUMENTATION — MODULES 19–30
+     ========================================================= */
+
+  const DOCUMENTATION_ACCESS_PASSWORD = "Tcs@Admin2025!";
+  const DOCUMENTATION_SESSION_KEY =
+    "tcs_documentation_authorized_v1";
+
+  const restrictedModuleNumbers = new Set([
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+  ]);
+
+  const restrictedModuleSlugs = new Set([
+    "admin",
+    "provider-administration",
+    "security",
+    "audit-logs",
+    "developer-guide",
+    "qa-guide",
+    "test-catalog",
+    "api",
+    "api-documentation",
+    "ai-agents",
+    "company-playbook",
+    "troubleshooting",
+    "faq",
+    "release-notes",
+  ]);
+
+  let pendingRestrictedUrl = "";
+  let lastRestrictedTrigger = null;
+
+  function isRestrictedSessionAuthorized() {
+    try {
+      return (
+        sessionStorage.getItem(DOCUMENTATION_SESSION_KEY) ===
+        "true"
+      );
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function saveRestrictedSessionAuthorization() {
+    try {
+      sessionStorage.setItem(
+        DOCUMENTATION_SESSION_KEY,
+        "true"
+      );
+    } catch (error) {
+      console.warn(
+        "Unable to save documentation authorization.",
+        error
+      );
+    }
+  }
+
+  function getRestrictedModuleFromUrl(urlValue) {
+    try {
+      const url = new URL(
+        urlValue,
+        window.location.origin
+      );
+
+      const match = url.pathname.match(
+        /^\/documentation\/([^/]+)/i
+      );
+
+      return match
+        ? match[1].toLowerCase()
+        : "";
+    } catch (error) {
+      return "";
+    }
+  }
+
+  function isRestrictedDocumentationUrl(urlValue) {
+    const slug =
+      getRestrictedModuleFromUrl(urlValue);
+
+    return restrictedModuleSlugs.has(slug);
+  }
+
+  function getLinkTitle(link) {
+    const explicitTitle =
+      link.getAttribute("data-doc-title");
+
+    if (explicitTitle) {
+      return explicitTitle.trim();
+    }
+
+    const textNodes = Array.from(
+      link.querySelectorAll("span")
+    )
+      .map((span) => span.textContent.trim())
+      .filter(Boolean)
+      .filter((text) => !/^\d{2}$/.test(text))
+      .filter((text) => text !== "🔒");
+
+    return (
+      textNodes.join(" ").trim() ||
+      link.textContent.replace("🔒", "").trim() ||
+      "Restricted Documentation"
+    );
+  }
+
+  function markRestrictedSidebarModules() {
+    const sidebarLinks =
+      document.querySelectorAll(
+        "#docSidebar .doc-nav-module, " +
+        ".doc-sidebar .doc-nav-module"
+      );
+
+    sidebarLinks.forEach((link) => {
+      const numberElement =
+        link.querySelector(
+          ".doc-nav-number"
+        );
+
+      const moduleNumber =
+        numberElement
+          ? numberElement.textContent
+              .trim()
+              .padStart(2, "0")
+          : "";
+
+      if (
+        !restrictedModuleNumbers.has(
+          moduleNumber
+        )
+      ) {
+        return;
+      }
+
+      const moduleTitle =
+        getLinkTitle(link);
+
+      link.classList.add(
+        "doc-nav-locked"
+      );
+
+      link.setAttribute(
+        "data-doc-locked",
+        "true"
+      );
+
+      link.setAttribute(
+        "data-doc-title",
+        moduleTitle
+      );
+
+      link.setAttribute(
+        "aria-label",
+        `${moduleTitle} - restricted documentation`
+      );
+
+      if (
+        !link.querySelector(
+          ".doc-nav-lock-icon"
+        )
+      ) {
+        const lockIcon =
+          document.createElement("span");
+
+        lockIcon.className =
+          "doc-nav-lock-icon";
+
+        lockIcon.setAttribute(
+          "aria-hidden",
+          "true"
+        );
+
+        lockIcon.textContent = "🔒";
+
+        link.appendChild(lockIcon);
+      }
+    });
+  }
+
+  function createRestrictedDialog() {
+    const existing =
+      document.getElementById(
+        "docRestrictedOverlay"
+      );
+
+    if (existing) {
+      return existing;
+    }
+
+    const overlay =
+      document.createElement("div");
+
+    overlay.id =
+      "docRestrictedOverlay";
+
+    overlay.className =
+      "doc-restricted-overlay";
+
+    overlay.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    overlay.innerHTML = `
+      <div
+        class="doc-restricted-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="docRestrictedTitle"
+      >
+        <div class="doc-restricted-header">
+          <div
+            class="doc-restricted-header-icon"
+            aria-hidden="true"
+          >
+            🔒
+          </div>
+
+          <div>
+            <h2 id="docRestrictedTitle">
+              Restricted Documentation
+            </h2>
+
+            <p id="docRestrictedModule"></p>
+          </div>
+        </div>
+
+        <div class="doc-restricted-body">
+          <div id="docRestrictedNotice">
+            <p class="doc-restricted-message">
+              Access to this documentation is
+              restricted to authorized True Care
+              System customers and is granted
+              according to assigned roles and
+              permission levels.
+            </p>
+
+            <p class="doc-restricted-message">
+              Quyền truy cập tài liệu này chỉ dành
+              cho khách hàng được ủy quyền của
+              True Care System và được cấp theo vai
+              trò cùng phân cấp quyền tương ứng.
+            </p>
+          </div>
+
+          <form
+            id="docRestrictedLogin"
+            hidden
+          >
+            <label
+              class="doc-restricted-label"
+              for="docRestrictedPassword"
+            >
+              Authorized access password
+            </label>
+
+            <input
+              id="docRestrictedPassword"
+              class="doc-restricted-input"
+              type="password"
+              autocomplete="current-password"
+              placeholder="Enter access password"
+              required
+            >
+
+            <p
+              id="docRestrictedError"
+              class="doc-restricted-error"
+              role="alert"
+              hidden
+            ></p>
+          </form>
+        </div>
+
+        <div class="doc-restricted-actions">
+          <button
+            class="doc-restricted-close"
+            id="docRestrictedClose"
+            type="button"
+          >
+            Close
+          </button>
+
+          <button
+            class="doc-restricted-authorized"
+            id="docRestrictedAuthorized"
+            type="button"
+          >
+            Authorized User Access
+          </button>
+
+          <button
+            class="doc-restricted-submit"
+            id="docRestrictedSubmit"
+            type="button"
+            hidden
+          >
+            Verify Access
+          </button>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(
+      overlay
+    );
+
+    return overlay;
+  }
+
+  const restrictedOverlay =
+    createRestrictedDialog();
+
+  const restrictedModuleName =
+    document.getElementById(
+      "docRestrictedModule"
+    );
+
+  const restrictedNotice =
+    document.getElementById(
+      "docRestrictedNotice"
+    );
+
+  const restrictedLoginForm =
+    document.getElementById(
+      "docRestrictedLogin"
+    );
+
+  const restrictedPasswordInput =
+    document.getElementById(
+      "docRestrictedPassword"
+    );
+
+  const restrictedError =
+    document.getElementById(
+      "docRestrictedError"
+    );
+
+  const restrictedCloseButton =
+    document.getElementById(
+      "docRestrictedClose"
+    );
+
+  const restrictedAuthorizedButton =
+    document.getElementById(
+      "docRestrictedAuthorized"
+    );
+
+  const restrictedSubmitButton =
+    document.getElementById(
+      "docRestrictedSubmit"
+    );
+
+  function resetRestrictedDialog() {
+    restrictedNotice.hidden = false;
+    restrictedLoginForm.hidden = true;
+    restrictedAuthorizedButton.hidden =
+      false;
+    restrictedSubmitButton.hidden = true;
+
+    restrictedPasswordInput.value = "";
+
+    restrictedError.hidden = true;
+    restrictedError.textContent = "";
+
+    restrictedSubmitButton.disabled =
+      false;
+
+    restrictedSubmitButton.textContent =
+      "Verify Access";
+  }
+
+  function openRestrictedDialog(link) {
+    pendingRestrictedUrl = link.href;
+    lastRestrictedTrigger = link;
+
+    restrictedModuleName.textContent =
+      getLinkTitle(link);
+
+    resetRestrictedDialog();
+
+    restrictedOverlay.classList.add(
+      "is-open"
+    );
+
+    restrictedOverlay.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+    document.body.style.overflow =
+      "hidden";
+
+    restrictedCloseButton.focus();
+  }
+
+  function closeRestrictedDialog() {
+    restrictedOverlay.classList.remove(
+      "is-open"
+    );
+
+    restrictedOverlay.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    document.body.style.overflow = "";
+
+    resetRestrictedDialog();
+
+    if (lastRestrictedTrigger) {
+      lastRestrictedTrigger.focus();
+    }
+  }
+
+  function showRestrictedPasswordForm() {
+    restrictedNotice.hidden = true;
+    restrictedLoginForm.hidden = false;
+    restrictedAuthorizedButton.hidden =
+      true;
+    restrictedSubmitButton.hidden =
+      false;
+
+    restrictedPasswordInput.focus();
+  }
+
+  function verifyRestrictedPassword() {
+    const password =
+      restrictedPasswordInput.value;
+
+    if (!password) {
+      restrictedError.textContent =
+        "Please enter the authorized access password.";
+
+      restrictedError.hidden = false;
+      restrictedPasswordInput.focus();
+
+      return;
+    }
+
+    restrictedSubmitButton.disabled =
+      true;
+
+    restrictedSubmitButton.textContent =
+      "Verifying...";
+
+    restrictedError.hidden = true;
+
+    window.setTimeout(() => {
+      if (
+        password !==
+        DOCUMENTATION_ACCESS_PASSWORD
+      ) {
+        restrictedError.textContent =
+          "Incorrect password. Please contact True Care System if you believe you should have access.";
+
+        restrictedError.hidden = false;
+
+        restrictedPasswordInput.focus();
+        restrictedPasswordInput.select();
+
+        restrictedSubmitButton.disabled =
+          false;
+
+        restrictedSubmitButton.textContent =
+          "Verify Access";
+
+        return;
+      }
+
+      saveRestrictedSessionAuthorization();
+
+      const destination =
+        pendingRestrictedUrl;
+
+      closeRestrictedDialog();
+
+      if (destination) {
+        window.location.href =
+          destination;
+      }
+    }, 250);
+  }
+
+  markRestrictedSidebarModules();
+
+  /*
+   * Khóa cả:
+   * - menu dọc;
+   * - kết quả Search;
+   * - module card;
+   * - các link khác trỏ tới module 19–30.
+   */
+  document.addEventListener(
+    "click",
+    (event) => {
+      const link =
+        event.target.closest("a[href]");
+
+      if (!link) {
+        return;
+      }
+
+      const isMarkedLocked =
+        link.getAttribute(
+          "data-doc-locked"
+        ) === "true";
+
+      const isRestrictedUrl =
+        isRestrictedDocumentationUrl(
+          link.href
+        );
+
+      if (
+        !isMarkedLocked &&
+        !isRestrictedUrl
+      ) {
+        return;
+      }
+
+      if (
+        isRestrictedSessionAuthorized()
+      ) {
+        return;
+      }
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      openRestrictedDialog(link);
+    },
+    true
+  );
+
+  restrictedAuthorizedButton.addEventListener(
+    "click",
+    showRestrictedPasswordForm
+  );
+
+  restrictedSubmitButton.addEventListener(
+    "click",
+    verifyRestrictedPassword
+  );
+
+  restrictedPasswordInput.addEventListener(
+    "keydown",
+    (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        verifyRestrictedPassword();
+      }
+    }
+  );
+
+  restrictedCloseButton.addEventListener(
+    "click",
+    closeRestrictedDialog
+  );
+
+  restrictedOverlay.addEventListener(
+    "click",
+    (event) => {
+      if (
+        event.target ===
+        restrictedOverlay
+      ) {
+        closeRestrictedDialog();
+      }
+    }
+  );
+
+  document.addEventListener(
+    "keydown",
+    (event) => {
+      if (
+        event.key === "Escape" &&
+        restrictedOverlay.classList.contains(
+          "is-open"
+        )
+      ) {
+        closeRestrictedDialog();
+      }
+    }
+  );
 })();
